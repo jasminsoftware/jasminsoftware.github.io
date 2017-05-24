@@ -1,0 +1,1641 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Online Store | ECommerce Item</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a id="current-menu-item" class="menu-item " href="onlinestore.html">
+		Online Store
+    </a>
+	<a class="menu-subitem menu-item-selected" href="ecommerce.ecommerceitems.html">
+		ECommerce Item
+	</a>
+	<a class="menu-subitem " href="ecommerce.ecommercelistitems.html">
+		ECommerce List Items
+	</a>
+	<a class="menu-subitem " href="ecommerce.ecommercesetups.html">
+		ECommerce Setup
+	</a>
+	<a class="menu-subitem " href="ecommerce.itemcategories.html">
+		Item Category
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Online Store | ECommerce Item</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/eCommerce/eCommerceItems</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'ECommerceItem'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ae239f92-6b86-43c1-bb65-48c821a20e2c"></a>
+                    <h3>GET ECommerceItems</h3>
+                    <p class="operation-description">Returns all ECommerce Item user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of ECommerce Item. See <a href="#ECommerceItemResource">ECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="982c5d4f-7151-4eaf-a3bb-9d64234746b1"></a>
+                    <h3>GET ECommerceItems (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of ECommerce Item user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of ECommerce Item. See <a href="#ECommerceItemResource">ECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="05331f1f-a08a-4f94-84f9-ecc100d6b9d7"></a>
+                    <h3>GET ECommerceItem by identifier</h3>
+                    <p class="operation-description">Returns information for a given ECommerce Item, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the ECommerce Item. See <a href="#ECommerceItemResource">ECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{id}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a8db7a62-f6ed-4c61-af2d-4fec22db8d37"></a>
+                    <h3>GET ECommerceItem by key</h3>
+                    <p class="operation-description">Returns information for a given ECommerce Item, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the ECommerce Item. See <a href="#ECommerceItemResource">ECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{itemKey}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5ec908e1-2c39-43f8-a77d-47fafe86893a"></a>
+                    <h3>GET ECommerceItems (with Item)</h3>
+                    <p class="operation-description">Returns all the information of the ECommerceItem and the Item it's related to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a list of resources of the ECommerceItem and its related Item. See <a href="#BaseECommerceItemResource">BaseECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6739f6fb-07e2-406f-963c-f1dc3b7a4453"></a>
+                    <h3>GET ECommerceItems (with Item) paged</h3>
+                    <p class="operation-description">Returns a paginated list of ECommerce Item and its related Item user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of resources with the information of ECommerce Item and its related Item. See <a href="#BaseECommerceItemResource">BaseECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e4dd697f-f27f-4292-a14c-8439fb36c88f"></a>
+                    <h3>GET ECommerceItem (with Item) by identifier</h3>
+                    <p class="operation-description">Returns information for a given ECommerce Item and its related Item, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerceItem.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the ECommerce Item and its related Item. See <a href="#BaseECommerceItemResource">BaseECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e87b7a44-b0a0-409a-9e08-a5c64b3fcaec"></a>
+                    <h3>GET ECommerceItem (with Item) by key</h3>
+                    <p class="operation-description">Returns information for a given ECommerce Item and its related Item, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the ECommerce Item and its related Item. See <a href="#BaseECommerceItemResource">BaseECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{itemKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="71946cc4-d690-442c-aeb2-cdc12a83b15c"></a>
+                    <h3>GET ECommerce Item Image1.</h3>
+                    <p class="operation-description">Returns the Image1 of the specified ECommerce Item. This method returns an image stream.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fileName</td>
+                                <td><i>(string)</i> File name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the image file of the ECommerce Item Image1.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{id}/image1</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="29da1134-58fd-4760-980a-61a889b666ff"></a>
+                    <h3>GET ECommerce Item Image2.</h3>
+                    <p class="operation-description">Returns the Image2 of the specified ECommerce Item. This method returns an image stream.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fileName</td>
+                                <td><i>(string)</i> File name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the image file of the ECommerce Item Image2.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{id}/image2</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="72324296-7a90-4153-8a62-48b562ce1e42"></a>
+                    <h3>GET ECommerce Item Image3.</h3>
+                    <p class="operation-description">Returns the Image3 of the specified ECommerce Item. This method returns an image stream.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fileName</td>
+                                <td><i>(string)</i> File name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the image file of the ECommerce Item Image3.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{id}/image3</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="50d87922-629a-4c49-9df8-ca0121d04ad2"></a>
+                    <h3>GET ECommerce Item Image4.</h3>
+                    <p class="operation-description">Returns the Image4 of the specified ECommerce Item. This method returns an image stream.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fileName</td>
+                                <td><i>(string)</i> File name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the image file of the ECommerce Item Image4.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceItems/{id}/image4</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4d2c521e-9075-433b-9964-e05733ec7e04"></a>
+                    <h3>POST ECommerceItems</h3>
+                    <p class="operation-description">Creates a new ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">eCommerceItemResource</td>
+                                <td><i>(ApiECommerceItemResource)</i> In the request body, supply a resource containing the ECommerce Item information.<br/>See <a href="#ApiECommerceItemResource">ApiECommerceItemResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the ECommerce Item identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiECommerceItemResource">ApiECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the ECommerce Item was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /eCommerce/eCommerceItems/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="42f6397d-e2df-49a7-8742-66c8574cdef6"></a>
+                    <h3>POST ECommerceItems (with ApiBaseECommerceItem)</h3>
+                    <p class="operation-description">Creates a new ECommerce Item and its related Item</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">eCommerceItemResource</td>
+                                <td><i>(ApiECommerceItemResource)</i> The resource containing the information of the ECommerce Item and its related ECommerce Item.<br/>See <a href="#ApiECommerceItemResource">ApiECommerceItemResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the ECommerce Item identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiBaseECommerceItemResource">ApiBaseECommerceItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the ECommerce Item and its related Item were created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /eCommerce/eCommerceItems</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="240dcd6f-5e75-403d-a26e-294f867835cf"></a>
+                    <h3>PUT Set Availability ECommerceItem</h3>
+                    <p class="operation-description">Updates the Availability for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the Availability.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/availability</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2c1d3218-300e-4106-9463-d9adc36c0a26"></a>
+                    <h3>PUT Set Description ECommerceItem</h3>
+                    <p class="operation-description">Updates the Description for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="08b905c9-b4e0-462a-a121-02c015cef35d"></a>
+                    <h3>PUT Set Image1 ECommerceItem</h3>
+                    <p class="operation-description">Updates the Image1 for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Image1.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/image1</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2c559bf1-9af7-4e12-a9c7-2dffc820ac74"></a>
+                    <h3>PUT Set Image2 ECommerceItem</h3>
+                    <p class="operation-description">Updates the Image2 for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Image2.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/image2</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="39326982-5c2b-4faa-9241-15008fa42139"></a>
+                    <h3>PUT Set Image3 ECommerceItem</h3>
+                    <p class="operation-description">Updates the Image3 for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Image3.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/image3</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="74aff33f-59a9-4c56-984c-8dcea6e6c505"></a>
+                    <h3>PUT Set Image4 ECommerceItem</h3>
+                    <p class="operation-description">Updates the Image4 for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Image4.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/image4</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="62025ffa-a08e-4a73-a2e1-9f4fb2b46c07"></a>
+                    <h3>PUT Set IsActive ECommerceItem</h3>
+                    <p class="operation-description">Updates the IsActive for the specified ECommerceItem.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8f795ad7-a274-45e5-8ea2-8d32c3e30135"></a>
+                    <h3>PUT Set ItemCategory ECommerceItem</h3>
+                    <p class="operation-description">Updates the ItemCategory for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ItemCategory.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/itemCategory</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e0632b9c-a4c9-4592-bf08-d620f1643a43"></a>
+                    <h3>PUT Set TechnicalFeatures ECommerceItem</h3>
+                    <p class="operation-description">Updates the TechnicalFeatures for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the TechnicalFeatures.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/technicalFeatures</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="69958ec6-6c40-4c65-891b-8ec194a5060a"></a>
+                    <h3>PUT Set Unit ECommerceItem</h3>
+                    <p class="operation-description">Updates the Unit for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Unit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/unit</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e063436b-e9e9-41ff-8b6d-93e9feb5fe01"></a>
+                    <h3>PUT Set Weight ECommerceItem</h3>
+                    <p class="operation-description">Updates the Weight for the specified ECommerce Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the Weight.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceItems/{itemKey}/weight</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c5452899-6255-4ffb-9fb5-bf7939c9d960"></a>
+                    <h3>DELETE ECommerceItem by identifier</h3>
+                    <p class="operation-description">Deletes the specified ECommerce Item by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The ECommerce Item was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The ECommerce Item does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /eCommerce/eCommerceItems/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e4222b21-b4e5-4df5-a4c1-5c5036017470"></a>
+                    <h3>DELETE ECommerceItem by key</h3>
+                    <p class="operation-description">Deletes the specified ECommerce Item by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The ECommerce Item was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The ECommerce Item does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /eCommerce/eCommerceItems/{itemKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="ECommerceItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ECommerceItemResourceResourceDiv')">ECommerceItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ECommerceItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> This is the public description displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">weight</td>
+                                <td  class="wrap"><i>(decimal)</i> The item weight used to calculate the shipping cost.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit used on the shipping method. Only mass units are available.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">availability</td>
+                                <td  class="wrap"><i>(bool)</i> If this atribute is set to true then the item is displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">technicalFeatures</td>
+                                <td  class="wrap"><i>(string)</i> Use this attribute to set all the detail item technical features.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image1</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image2</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image3</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image4</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemCategory</td>
+                                <td  class="wrap"><i>(string)</i> The category where the item will be displaid. If an item has an associated category only itens with category will be displayed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="BaseECommerceItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'BaseECommerceItemResourceResourceDiv')">BaseECommerceItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="BaseECommerceItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> This is the public description displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">weight</td>
+                                <td  class="wrap"><i>(decimal)</i> The item weight used to calculate the shipping cost.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit used on the shipping method. Only mass units are available.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the item is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">baseUnit</td>
+                                <td  class="wrap"><i>(string)</i> The base unit for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> The item type for the item.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">availability</td>
+                                <td  class="wrap"><i>(bool)</i> If this atribute is set to true then the item is displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">technicalFeatures</td>
+                                <td  class="wrap"><i>(string)</i> Use this attribute to set all the detail item technical features.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image1</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image2</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image3</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image4</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemCategory</td>
+                                <td  class="wrap"><i>(string)</i> The category where the item will be displaid. If an item has an associated category only itens with category will be displayed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">complementaryDescription</td>
+                                <td  class="wrap"><i>(string)</i> The extended description for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">assortment</td>
+                                <td  class="wrap"><i>(string)</i> The assortment for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">barcode</td>
+                                <td  class="wrap"><i>(string)</i> The barcode for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brand</td>
+                                <td  class="wrap"><i>(string)</i> The brand for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The remarks for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brandModel</td>
+                                <td  class="wrap"><i>(string)</i> The brand model for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiECommerceItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiECommerceItemResourceResourceDiv')">ApiECommerceItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiECommerceItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> This is the public description displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">weight</td>
+                                <td  class="wrap"><i>(decimal)</i> The item weight used to calculate the shipping cost.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit used on the shipping method. Only mass units are available.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">availability</td>
+                                <td  class="wrap"><i>(bool)</i> If this atribute is set to true then the item is displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">technicalFeatures</td>
+                                <td  class="wrap"><i>(string)</i> Use this attribute to set all the detail item technical features.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image1</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image2</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image3</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image4</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemCategory</td>
+                                <td  class="wrap"><i>(string)</i> The category where the item will be displaid. If an item has an associated category only itens with category will be displayed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiBaseECommerceItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiBaseECommerceItemResourceResourceDiv')">ApiBaseECommerceItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiBaseECommerceItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> This is the public description displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">weight</td>
+                                <td  class="wrap"><i>(decimal)</i> The item weight used to calculate the shipping cost.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit used on the shipping method. Only mass units are available.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the item is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">baseUnit</td>
+                                <td  class="wrap"><i>(string)</i> The base unit for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> The item type for the item.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">availability</td>
+                                <td  class="wrap"><i>(bool)</i> If this atribute is set to true then the item is displayed in the store.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">technicalFeatures</td>
+                                <td  class="wrap"><i>(string)</i> Use this attribute to set all the detail item technical features.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image1</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image2</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image3</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image4</td>
+                                <td  class="wrap"><i>(string)</i> Item alternative Image.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemCategory</td>
+                                <td  class="wrap"><i>(string)</i> The category where the item will be displaid. If an item has an associated category only itens with category will be displayed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">complementaryDescription</td>
+                                <td  class="wrap"><i>(string)</i> The extended description for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">assortment</td>
+                                <td  class="wrap"><i>(string)</i> The assortment for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">barcode</td>
+                                <td  class="wrap"><i>(string)</i> The barcode for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brand</td>
+                                <td  class="wrap"><i>(string)</i> The brand for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The remarks for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brandModel</td>
+                                <td  class="wrap"><i>(string)</i> The brand model for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="ItemType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemTypeValueListDiv')">ItemType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Item</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Service</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

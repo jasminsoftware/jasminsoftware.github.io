@@ -1,0 +1,1704 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Platform | Currency</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a id="current-menu-item" class="menu-item " href="platform.html">
+		Platform
+    </a>
+	<a class="menu-subitem " href="corepatterns.addresses.html">
+		Address
+	</a>
+	<a class="menu-subitem " href="corepatterns.companies.html">
+		Company
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacts.html">
+		Contact
+	</a>
+	<a class="menu-subitem " href="corepatterns.contactgroups.html">
+		Contact Group
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacttypes.html">
+		Contact Type
+	</a>
+	<a class="menu-subitem " href="corepatterns.countries.html">
+		Country
+	</a>
+	<a class="menu-subitem " href="corepatterns.cultures.html">
+		Culture
+	</a>
+	<a class="menu-subitem menu-item-selected" href="corepatterns.currencies.html">
+		Currency
+	</a>
+	<a class="menu-subitem " href="operations.emailtemplates.html">
+		Email Template
+	</a>
+	<a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+		Fiscal Time Zone
+	</a>
+	<a class="menu-subitem " href="operations.notifications.html">
+		Notification
+	</a>
+	<a class="menu-subitem " href="corepatterns.postalzones.html">
+		Postal Code
+	</a>
+	<a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+		Power Bi Info
+	</a>
+	<a class="menu-subitem " href="corepatterns.regions.html">
+		Region
+	</a>
+	<a class="menu-subitem " href="corepatterns.units.html">
+		Unit
+	</a>
+	<a class="menu-subitem " href="corepatterns.unitdimensions.html">
+		Unit Dimension
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Currency</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/corePatterns/currencies</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Currency'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="98485436-c2b2-4de6-8418-3f6df4d27f27"></a>
+                    <h3>GET Currencies</h3>
+                    <p class="operation-description">Returns all Currency user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Currency. See <a href="#CurrencyResource">CurrencyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/currencies</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="affdc9a7-149c-450c-8c6f-af2e01b9bf87"></a>
+                    <h3>GET Currencies (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Currency user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Currency. See <a href="#CurrencyResource">CurrencyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/currencies</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="57bd93ad-70f3-430d-b85a-eb91f5591f94"></a>
+                    <h3>GET Currency by identifier</h3>
+                    <p class="operation-description">Returns information for a given Currency, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Currency. See <a href="#CurrencyResource">CurrencyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/currencies/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2b6473af-18fb-436e-a2b1-4c52cdabd24e"></a>
+                    <h3>GET Currency by key</h3>
+                    <p class="operation-description">Returns information for a given Currency, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Currency. See <a href="#CurrencyResource">CurrencyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/currencies/{currencyKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="92daaa16-9ba8-4479-b433-5115957515c6"></a>
+                    <h3>GET Print Currency by identifier</h3>
+                    <p class="operation-description">Prints the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Currency.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/currencies/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0e19273e-7258-468b-9b1b-9ae8788e3494"></a>
+                    <h3>GET Print Currency by key</h3>
+                    <p class="operation-description">Prints the specified Currency by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Currency.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/currencies/{currencyKey}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bdaa119f-e6e7-428d-8d11-b1ed42f1633a"></a>
+                    <h3>GET Custom operation 'GetValidCurrencies'.</h3>
+                    <p class="operation-description">Custom operation 'GetValidCurrencies'.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">referenceDate</td>
+                                <td><i>(DateTimeOffset)</i> ReferenceDate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of CurrencyResource resources. See <a href="#CurrencyResource">CurrencyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operations was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/currencies/getValidCurrencies</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b79552ce-b1a9-47de-ade3-30bcfd502e95"></a>
+                    <h3>POST Currencies</h3>
+                    <p class="operation-description">Creates a new Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyResource</td>
+                                <td><i>(ApiCurrencyResource)</i> In the request body, supply a resource containing the Currency information.<br/>See <a href="#ApiCurrencyResource">ApiCurrencyResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Currency identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiCurrencyResource">ApiCurrencyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Currency was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /corePatterns/currencies</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5709101c-5945-4a50-9c33-f7ad1d24e73b"></a>
+                    <h3>POST Currency </h3>
+                    <p class="operation-description">Inserts a new Currency Rate in an existing Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiCurrencyCurrencyRatesResource)</i> The ApiCurrencyCurrencyRatesResource instance.<br/>See <a href="#ApiCurrencyCurrencyRatesResource">ApiCurrencyCurrencyRatesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /corePatterns/currencies/{currencyKey}/currencyRates</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4a8702fe-2316-4e86-adb2-138e0702e58c"></a>
+                    <h3>PUT Set ConversionFactor Currency</h3>
+                    <p class="operation-description">Updates the ConversionFactor for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ConversionFactor.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/conversionFactor</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cf209db3-3af0-4703-9e06-cee6208f34ea"></a>
+                    <h3>PUT Set CurrencyKey Currency</h3>
+                    <p class="operation-description">Updates the CurrencyKey for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CurrencyKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/currencyKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="34774269-f886-454e-b12b-996625eb344e"></a>
+                    <h3>PUT Set CurrencySubUnit Currency</h3>
+                    <p class="operation-description">Updates the CurrencySubUnit for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CurrencySubUnit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/currencySubUnit</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5524391a-4ad0-4e11-bcf9-425be7ab9def"></a>
+                    <h3>PUT Set CurrencyUnit Currency</h3>
+                    <p class="operation-description">Updates the CurrencyUnit for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CurrencyUnit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/currencyUnit</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8bd54733-b1b2-4c40-b1c0-c6dac0613349"></a>
+                    <h3>PUT Set Description Currency</h3>
+                    <p class="operation-description">Updates the Description for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="74999ed8-94e2-4015-821e-8283176f4704"></a>
+                    <h3>PUT Set ExternalId Currency</h3>
+                    <p class="operation-description">Updates the ExternalId for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ExternalId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/externalId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bc9a2527-ff6e-4e8d-9af8-1d7c2500a4bd"></a>
+                    <h3>PUT Set ExternalVersion Currency</h3>
+                    <p class="operation-description">Updates the ExternalVersion for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ExternalVersion.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/externalVersion</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ff268751-c18e-429a-ab64-bebaf84c0396"></a>
+                    <h3>PUT Set FixedRateReferenceCurrency Currency</h3>
+                    <p class="operation-description">Updates the FixedRateReferenceCurrency for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FixedRateReferenceCurrency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/fixedRateReferenceCurrency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3cf2e23a-9fb5-4c35-b894-6153cb68b576"></a>
+                    <h3>PUT Set IsActive Currency</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0091ec57-6a28-4f05-9ffc-0078a894e8bb"></a>
+                    <h3>PUT Set IsExternallyManaged Currency</h3>
+                    <p class="operation-description">Updates the IsExternallyManaged for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsExternallyManaged.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/isExternallyManaged</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="53075e45-8a40-4fc4-bde7-35803ee98034"></a>
+                    <h3>PUT Set IsoCode Currency</h3>
+                    <p class="operation-description">Updates the IsoCode for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the IsoCode.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/isoCode</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ebd4b532-f729-4778-817b-d82154618900"></a>
+                    <h3>PUT Set PricesFractionDigits Currency</h3>
+                    <p class="operation-description">Updates the PricesFractionDigits for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> In the request body, supply the new value for the PricesFractionDigits.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/pricesFractionDigits</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d33ac52b-6c2e-4668-add5-1a09e45cccf4"></a>
+                    <h3>PUT Set Rate Currency</h3>
+                    <p class="operation-description">Updates the Rate for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the Rate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/currencyRates/{lineId}/rate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c23ffcb8-4a69-4294-ac33-debac6addff8"></a>
+                    <h3>PUT Set Symbol Currency</h3>
+                    <p class="operation-description">Updates the Symbol for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Symbol.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/symbol</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7d47dbb4-4f48-497a-87e9-21af4b030e8b"></a>
+                    <h3>PUT Set TargetCurrency Currency</h3>
+                    <p class="operation-description">Updates the TargetCurrency for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the TargetCurrency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/currencyRates/{lineId}/targetCurrency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a5398e77-1b6d-446e-a55c-657976eb4117"></a>
+                    <h3>PUT Set UseFixedRate Currency</h3>
+                    <p class="operation-description">Updates the UseFixedRate for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the UseFixedRate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/useFixedRate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a688d999-ed63-4217-bc39-6c258e910d03"></a>
+                    <h3>PUT Set ValidFrom Currency</h3>
+                    <p class="operation-description">Updates the ValidFrom for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValidFrom.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/validFrom</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0d3fbb45-b748-4404-afd3-2972462962c7"></a>
+                    <h3>PUT Set ValidTo Currency</h3>
+                    <p class="operation-description">Updates the ValidTo for the specified Currency.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValidTo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/currencies/{currencyKey}/validTo</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a0bb4d8d-4282-4909-901b-f3fc96ba8002"></a>
+                    <h3>DELETE Currency Rate by identifier</h3>
+                    <p class="operation-description">Deletes the specified Currency Rate.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /corePatterns/currencies/{currencyKey}/currencyRates/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="62d83996-1b10-468c-b3f6-678a23ea026b"></a>
+                    <h3>DELETE Currency by identifier</h3>
+                    <p class="operation-description">Deletes the specified Currency by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Currency was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Currency does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /corePatterns/currencies/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="404efe2c-ad6f-4913-85e5-915d00d18476"></a>
+                    <h3>DELETE Currency by key</h3>
+                    <p class="operation-description">Deletes the specified Currency by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Currency was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Currency does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /corePatterns/currencies/{currencyKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="CurrencyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'CurrencyResourceResourceDiv')">CurrencyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="CurrencyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td  class="wrap"><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The currency description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Number of digits used to represent fraction values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currencyUnit</td>
+                                <td  class="wrap"><i>(string)</i> The currency main unit (e.g. Euro).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isoCode</td>
+                                <td  class="wrap"><i>(string)</i> ISO standard currency code</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">symbol</td>
+                                <td  class="wrap"><i>(string)</i> Symbol used to represent values in the currency (e.g. $)</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Is Externally Managed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencySubUnit</td>
+                                <td  class="wrap"><i>(string)</i> The currency sub unit (e.g. Cent).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(DateTime)</i> Specifies the date from which the currency becomes effective.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validTo</td>
+                                <td  class="wrap"><i>(DateTime)</i> Specifies the date from which the currency becomes no longer effective.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">useFixedRate</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if this currency uses a fixed rate.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">conversionFactor</td>
+                                <td  class="wrap"><i>(decimal)</i> Specifies the conversion factor when the currency uses a fixed rate.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pricesFractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Explicit number of digits used to represent fraction values in Prices</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> External Id</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> External Version</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fixedRateReferenceCurrency</td>
+                                <td  class="wrap"><i>(string)</i> The currency fixed rate reference currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currencyRates</td>
+                                <td  class="wrap"><i>(List of CurrencyRateResource)</i> Currency Rates<br/>See <a href="#CurrencyRateResource">CurrencyRateResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="CurrencyRateResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'CurrencyRateResourceResourceDiv')">CurrencyRateResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="CurrencyRateResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">targetCurrency</td>
+                                <td  class="wrap"><i>(string)</i> The target currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">rate</td>
+                                <td  class="wrap"><i>(decimal)</i> The rate value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiCurrencyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiCurrencyResourceResourceDiv')">ApiCurrencyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiCurrencyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencyKey</td>
+                                <td  class="wrap"><i>(string)</i> The currency logical key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The currency description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Number of digits used to represent fraction values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currencyUnit</td>
+                                <td  class="wrap"><i>(string)</i> The currency main unit (e.g. Euro).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isoCode</td>
+                                <td  class="wrap"><i>(string)</i> ISO standard currency code</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">symbol</td>
+                                <td  class="wrap"><i>(string)</i> Symbol used to represent values in the currency (e.g. $)</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Is Externally Managed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currencySubUnit</td>
+                                <td  class="wrap"><i>(string)</i> The currency sub unit (e.g. Cent).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(DateTime)</i> Specifies the date from which the currency becomes effective.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validTo</td>
+                                <td  class="wrap"><i>(DateTime)</i> Specifies the date from which the currency becomes no longer effective.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">useFixedRate</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if this currency uses a fixed rate.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">conversionFactor</td>
+                                <td  class="wrap"><i>(decimal)</i> Specifies the conversion factor when the currency uses a fixed rate.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pricesFractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Explicit number of digits used to represent fraction values in Prices</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> External Id</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> External Version</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fixedRateReferenceCurrency</td>
+                                <td  class="wrap"><i>(string)</i> The currency fixed rate reference currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currencyRates</td>
+                                <td  class="wrap"><i>(List of ApiCurrencyCurrencyRatesResource)</i> Currency Rates<br/>See <a href="#ApiCurrencyCurrencyRatesResource">ApiCurrencyCurrencyRatesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiCurrencyCurrencyRatesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiCurrencyCurrencyRatesResourceResourceDiv')">ApiCurrencyCurrencyRatesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiCurrencyCurrencyRatesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">targetCurrency</td>
+                                <td  class="wrap"><i>(string)</i> The target currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">rate</td>
+                                <td  class="wrap"><i>(decimal)</i> The rate value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

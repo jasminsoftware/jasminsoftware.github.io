@@ -1,0 +1,1847 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Materials Management | Materials Item</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+		Materials Management
+    </a>
+	<a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+		Adjustment Reason
+	</a>
+	<a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
+		Item Adjustment
+	</a>
+	<a class="menu-subitem " href="materialscore.itemsubtypes.html">
+		Item Subtype
+	</a>
+	<a class="menu-subitem menu-item-selected" href="materialscore.materialsitems.html">
+		Materials Item
+	</a>
+	<a class="menu-subitem " href="materialscore.materialssetups.html">
+		Materials Setup
+	</a>
+	<a class="menu-subitem " href="materialscore.warehouses.html">
+		Warehouse
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Materials Management | Materials Item</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/materialsCore/materialsItems</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'MaterialsItem'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ff0bece7-ccbc-4924-a4e2-8618f6b0e30f"></a>
+                    <h3>GET MaterialsItems</h3>
+                    <p class="operation-description">Returns all Materials Item user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Materials Item. See <a href="#MaterialsItemResource">MaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0f9cebdc-9fe5-44ae-b8e8-f3fd69db76c5"></a>
+                    <h3>GET MaterialsItems (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Materials Item user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Materials Item. See <a href="#MaterialsItemResource">MaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eac2e969-7d90-4aad-a5f3-379c69574e7c"></a>
+                    <h3>GET MaterialsItem by identifier</h3>
+                    <p class="operation-description">Returns information for a given Materials Item, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Materials Item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Materials Item. See <a href="#MaterialsItemResource">MaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems/{id}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2763843f-f3e9-473e-8328-ee6f5da77513"></a>
+                    <h3>GET MaterialsItem by key</h3>
+                    <p class="operation-description">Returns information for a given Materials Item, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Materials Item. See <a href="#MaterialsItemResource">MaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems/{itemKey}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e3f1bb59-34b3-41b0-abc8-b29b11e3bd1c"></a>
+                    <h3>GET MaterialsItems (with Item)</h3>
+                    <p class="operation-description">Returns all the information of the MaterialsItem and the Item it's related to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a list of resources of the MaterialsItem and its related Item. See <a href="#BaseMaterialsItemResource">BaseMaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="526829e9-4718-4c05-a7aa-caf1f60f1413"></a>
+                    <h3>GET MaterialsItems (with Item) paged</h3>
+                    <p class="operation-description">Returns a paginated list of Materials Item and its related Item user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of resources with the information of Materials Item and its related Item. See <a href="#BaseMaterialsItemResource">BaseMaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cad49255-7d53-4177-91ce-60981d2ba55a"></a>
+                    <h3>GET MaterialsItem (with Item) by identifier</h3>
+                    <p class="operation-description">Returns information for a given Materials Item and its related Item, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the MaterialsItem.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the Materials Item and its related Item. See <a href="#BaseMaterialsItemResource">BaseMaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="afc6f571-99e2-40fe-a789-f32b63b13230"></a>
+                    <h3>GET MaterialsItem (with Item) by key</h3>
+                    <p class="operation-description">Returns information for a given Materials Item and its related Item, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the Materials Item and its related Item. See <a href="#BaseMaterialsItemResource">BaseMaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/materialsItems/{itemKey}</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c3078a20-b7f2-4aa4-ae3c-4920d6ee05da"></a>
+                    <h3>POST MaterialsItems</h3>
+                    <p class="operation-description">Creates a new Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">materialsItemResource</td>
+                                <td><i>(ApiMaterialsItemResource)</i> In the request body, supply a resource containing the Materials Item information.<br/>See <a href="#ApiMaterialsItemResource">ApiMaterialsItemResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Materials Item identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiMaterialsItemResource">ApiMaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Materials Item was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /materialsCore/materialsItems/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a829eac3-8e62-40d8-b09b-5b787725dadc"></a>
+                    <h3>POST MaterialsItems (with ApiBaseMaterialsItem)</h3>
+                    <p class="operation-description">Creates a new Materials Item and its related Item</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">materialsItemResource</td>
+                                <td><i>(ApiMaterialsItemResource)</i> The resource containing the information of the Materials Item and its related Materials Item.<br/>See <a href="#ApiMaterialsItemResource">ApiMaterialsItemResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Materials Item identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiBaseMaterialsItemResource">ApiBaseMaterialsItemResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Materials Item and its related Item were created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /materialsCore/materialsItems</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0735211e-ac07-47d8-ab14-8d3739de6e73"></a>
+                    <h3>POST Materials Item </h3>
+                    <p class="operation-description">Inserts a new Materials Item Warehouse in an existing Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiMaterialsItemMaterialsItemWarehousesResource)</i> The ApiMaterialsItemMaterialsItemWarehousesResource instance.<br/>See <a href="#ApiMaterialsItemMaterialsItemWarehousesResource">ApiMaterialsItemMaterialsItemWarehousesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1911c0e9-5f38-4bb0-a0df-b26d68ed0a82"></a>
+                    <h3>PUT Set CalculatedUnitCost MaterialsItem</h3>
+                    <p class="operation-description">Updates the CalculatedUnitCost for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the CalculatedUnitCost.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/calculatedUnitCost</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4d7698d8-9c27-40b7-bbe9-6d399e896e64"></a>
+                    <h3>PUT Set CommittedQuantity MaterialsItem</h3>
+                    <p class="operation-description">Updates the CommittedQuantity for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the CommittedQuantity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/committedQuantity</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8e917da4-41c8-4228-9e2f-63711673b143"></a>
+                    <h3>PUT Set Currency MaterialsItem</h3>
+                    <p class="operation-description">Updates the Currency for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fa99c126-d183-4c18-8249-9b972baf0022"></a>
+                    <h3>PUT Set DefaultWarehouse MaterialsItem</h3>
+                    <p class="operation-description">Updates the DefaultWarehouse for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the DefaultWarehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/defaultWarehouse</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="31eefc31-7852-405d-bf0c-bbbaf2051b3b"></a>
+                    <h3>PUT Set InventoryBalance MaterialsItem</h3>
+                    <p class="operation-description">Updates the InventoryBalance for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the InventoryBalance.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/inventoryBalance</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1aebc659-84ef-4746-a798-3535b49ec764"></a>
+                    <h3>PUT Set IsActive MaterialsItem</h3>
+                    <p class="operation-description">Updates the IsActive for the specified MaterialsItem.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1b744edb-641c-4d71-83ff-f286f2c27d5a"></a>
+                    <h3>PUT Set IsLocked MaterialsItem</h3>
+                    <p class="operation-description">Updates the IsLocked for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsLocked.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/isLocked</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b9f85093-cd40-431e-a27a-66ff23a12651"></a>
+                    <h3>PUT Set ItemSubtype MaterialsItem</h3>
+                    <p class="operation-description">Updates the ItemSubtype for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ItemSubtype.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/itemSubtype</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cd4a7c9a-1afa-4d26-8de5-d2882fe1bd70"></a>
+                    <h3>PUT Set LastUnitCost MaterialsItem</h3>
+                    <p class="operation-description">Updates the LastUnitCost for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the LastUnitCost.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/lastUnitCost</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0399b343-61a3-44fb-90d3-7dcd26194c5b"></a>
+                    <h3>PUT Set MaxStock MaterialsItem</h3>
+                    <p class="operation-description">Updates the MaxStock for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the MaxStock.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/maxStock</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="48f40f34-864e-4ae9-b278-21fd6efae370"></a>
+                    <h3>PUT Set MinStock MaterialsItem</h3>
+                    <p class="operation-description">Updates the MinStock for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the MinStock.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/minStock</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="70f1222c-b884-4fa2-9103-8b4b471ba96a"></a>
+                    <h3>PUT Set OrderedQuantity MaterialsItem</h3>
+                    <p class="operation-description">Updates the OrderedQuantity for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the OrderedQuantity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/orderedQuantity</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cb48aba8-0637-4ca9-b19e-5cf846ef2e8b"></a>
+                    <h3>PUT Set StockBalance MaterialsItem</h3>
+                    <p class="operation-description">Updates the StockBalance for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the StockBalance.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/stockBalance</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e62a94e4-7b65-4d23-a953-7971951b3199"></a>
+                    <h3>PUT Set Warehouse MaterialsItem</h3>
+                    <p class="operation-description">Updates the Warehouse for the specified Materials Item.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}/warehouse</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="65947c25-9f69-4feb-8acc-160744220817"></a>
+                    <h3>DELETE Materials Item Warehouse by identifier</h3>
+                    <p class="operation-description">Deletes the specified Materials Item Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsCore/materialsItems/{itemKey}/materialsItemWarehouses/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="574c4022-dabe-4b02-bf1d-fe5358f2c553"></a>
+                    <h3>DELETE MaterialsItem by identifier</h3>
+                    <p class="operation-description">Deletes the specified Materials Item by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Materials Item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Materials Item was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Materials Item does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsCore/materialsItems/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9a8f3a9b-660d-42c1-b042-5a307cf04314"></a>
+                    <h3>DELETE MaterialsItem by key</h3>
+                    <p class="operation-description">Deletes the specified Materials Item by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Materials Item was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Materials Item does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsCore/materialsItems/{itemKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="MaterialsItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'MaterialsItemResourceResourceDiv')">MaterialsItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="MaterialsItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">defaultWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> The default warehouse for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">maxStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The maximum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">minStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The minimum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">materialsItemWarehouses</td>
+                                <td  class="wrap"><i>(List of MaterialsItemWarehouseResource)</i> The Materials Item Warehouses for the Materials Item.<br/>See <a href="#MaterialsItemWarehouseResource">MaterialsItemWarehouseResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemSubtype</td>
+                                <td  class="wrap"><i>(string)</i> The Item Subtype for the Materials Item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="MaterialsItemWarehouseResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'MaterialsItemWarehouseResourceResourceDiv')">MaterialsItemWarehouseResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="MaterialsItemWarehouseResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The warehouse for the Materials Item Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">stockBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The stock balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">calculatedUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The inventory balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">committedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The committed quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">orderedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The ordered quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="BaseMaterialsItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'BaseMaterialsItemResourceResourceDiv')">BaseMaterialsItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="BaseMaterialsItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">defaultWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> The default warehouse for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the item is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">baseUnit</td>
+                                <td  class="wrap"><i>(string)</i> The base unit for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> The item type for the item.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">maxStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The maximum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">minStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The minimum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">materialsItemWarehouses</td>
+                                <td title="(List of BaseMaterialsItemMaterialsItemWarehousesResource) The Materials Item Warehouses for the Materials Item. See BaseMaterialsItemMaterialsItemWarehousesResource." class="wrap"><i>(List of BaseMaterialsItemMaterialsItemWarehousesResource)</i> The Materials Item Warehouses for the Materials Item.<br/>See <a href="#BaseMaterialsItemMaterialsItemWarehousesResource">BaseMaterialsItemMaterialsItemWarehousesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemSubtype</td>
+                                <td  class="wrap"><i>(string)</i> The Item Subtype for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">complementaryDescription</td>
+                                <td  class="wrap"><i>(string)</i> The extended description for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">assortment</td>
+                                <td  class="wrap"><i>(string)</i> The assortment for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">barcode</td>
+                                <td  class="wrap"><i>(string)</i> The barcode for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brand</td>
+                                <td  class="wrap"><i>(string)</i> The brand for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The remarks for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brandModel</td>
+                                <td  class="wrap"><i>(string)</i> The brand model for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="BaseMaterialsItemMaterialsItemWarehousesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'BaseMaterialsItemMaterialsItemWarehousesResourceResourceDiv')">BaseMaterialsItemMaterialsItemWarehousesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="BaseMaterialsItemMaterialsItemWarehousesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The warehouse for the Materials Item Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">stockBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The stock balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">calculatedUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The inventory balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">committedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The committed quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">orderedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The ordered quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiMaterialsItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiMaterialsItemResourceResourceDiv')">ApiMaterialsItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiMaterialsItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">defaultWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> The default warehouse for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">maxStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The maximum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">minStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The minimum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">materialsItemWarehouses</td>
+                                <td title="(List of ApiMaterialsItemMaterialsItemWarehousesResource) The Materials Item Warehouses for the Materials Item. See ApiMaterialsItemMaterialsItemWarehousesResource." class="wrap"><i>(List of ApiMaterialsItemMaterialsItemWarehousesResource)</i> The Materials Item Warehouses for the Materials Item.<br/>See <a href="#ApiMaterialsItemMaterialsItemWarehousesResource">ApiMaterialsItemMaterialsItemWarehousesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemSubtype</td>
+                                <td  class="wrap"><i>(string)</i> The Item Subtype for the Materials Item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiMaterialsItemMaterialsItemWarehousesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiMaterialsItemMaterialsItemWarehousesResourceResourceDiv')">ApiMaterialsItemMaterialsItemWarehousesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiMaterialsItemMaterialsItemWarehousesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The warehouse for the Materials Item Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">stockBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The stock balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">calculatedUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The inventory balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">committedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The committed quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">orderedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The ordered quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiBaseMaterialsItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiBaseMaterialsItemResourceResourceDiv')">ApiBaseMaterialsItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiBaseMaterialsItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">defaultWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> The default warehouse for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the item. Uniquely identifies the item within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the item is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">baseUnit</td>
+                                <td  class="wrap"><i>(string)</i> The base unit for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> The item type for the item.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">maxStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The maximum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">minStock</td>
+                                <td  class="wrap"><i>(decimal)</i> The minimum stock for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">materialsItemWarehouses</td>
+                                <td title="(List of ApiBaseMaterialsItemMaterialsItemWarehousesResource) The Materials Item Warehouses for the Materials Item. See ApiBaseMaterialsItemMaterialsItemWarehousesResource." class="wrap"><i>(List of ApiBaseMaterialsItemMaterialsItemWarehousesResource)</i> The Materials Item Warehouses for the Materials Item.<br/>See <a href="#ApiBaseMaterialsItemMaterialsItemWarehousesResource">ApiBaseMaterialsItemMaterialsItemWarehousesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemSubtype</td>
+                                <td  class="wrap"><i>(string)</i> The Item Subtype for the Materials Item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">complementaryDescription</td>
+                                <td  class="wrap"><i>(string)</i> The extended description for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">assortment</td>
+                                <td  class="wrap"><i>(string)</i> The assortment for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">barcode</td>
+                                <td  class="wrap"><i>(string)</i> The barcode for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brand</td>
+                                <td  class="wrap"><i>(string)</i> The brand for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">image</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The remarks for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">brandModel</td>
+                                <td  class="wrap"><i>(string)</i> The brand model for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiBaseMaterialsItemMaterialsItemWarehousesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiBaseMaterialsItemMaterialsItemWarehousesResourceResourceDiv')">ApiBaseMaterialsItemMaterialsItemWarehousesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiBaseMaterialsItemMaterialsItemWarehousesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The warehouse for the Materials Item Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">stockBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The stock balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">calculatedUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryBalance</td>
+                                <td  class="wrap"><i>(decimal)</i> The inventory balance for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">committedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The committed quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">orderedQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The ordered quantity for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastUnitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The calculated unit cost for the warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="ItemType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemTypeValueListDiv')">ItemType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Item</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Service</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

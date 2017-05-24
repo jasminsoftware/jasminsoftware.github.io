@@ -1,0 +1,3366 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Financials | Account Posting</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="financials.html">
+		Financials
+    </a>
+	<a class="menu-subitem menu-item-selected" href="financialcore.accountpostings.html">
+		Account Posting
+	</a>
+	<a class="menu-subitem " href="financialcore.accounttransactions.html">
+		Account Transaction
+	</a>
+	<a class="menu-subitem " href="financialcore.accounttypebudgets.html">
+		Account Type Budget
+	</a>
+	<a class="menu-subitem " href="financialcore.bankaccounttypes.html">
+		Bank Account Type
+	</a>
+	<a class="menu-subitem " href="financialcore.cashflowitems.html">
+		Cash Flow Item
+	</a>
+	<a class="menu-subitem " href="financialcore.checks.html">
+		Check
+	</a>
+	<a class="menu-subitem " href="financialcore.dunningmethods.html">
+		Dunning Method
+	</a>
+	<a class="menu-subitem " href="financialcore.financialaccounts.html">
+		Financial Account
+	</a>
+	<a class="menu-subitem " href="financialcore.financialinstitutions.html">
+		Financial Institution
+	</a>
+	<a class="menu-subitem " href="financialcore.financialparties.html">
+		Financial Party
+	</a>
+	<a class="menu-subitem " href="financialcore.financialsetups.html">
+		Financial Setup
+	</a>
+	<a class="menu-subitem " href="financialcore.outgoingchecklots.html">
+		Outgoing Check Lot
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentcategorypurposes.html">
+		Payment Category Purpose
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentmethods.html">
+		Payment Method
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentterms.html">
+		Payment Term
+	</a>
+	<a class="menu-subitem " href="financialcore.paymenttypes.html">
+		Payment Type
+	</a>
+	<a class="menu-subitem " href="financialcore.pettycashes.html">
+		Petty Cash
+	</a>
+	<a class="menu-subitem " href="financialcore.profitandlossreports.html">
+		Profit and Loss Report
+	</a>
+	<a class="menu-subitem " href="financialcore.purposes.html">
+		Purpose
+	</a>
+	<a class="menu-subitem " href="financialcore.receipttypes.html">
+		Receipt Type
+	</a>
+	<a class="menu-subitem " href="financialcore.voidreasons.html">
+		Void Reason
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Account Posting</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/financialCore/accountPostings</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'AccountPosting'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c26c87ec-2c04-4958-8415-e409d8999f6e"></a>
+                    <h3>GET AccountPostings</h3>
+                    <p class="operation-description">Returns all Account Posting user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Account Posting. See <a href="#AccountPostingResource">AccountPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/accountPostings</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="221cbdd2-57f9-4dc3-9bd4-71313111eb83"></a>
+                    <h3>GET AccountPostings (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Account Posting user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Account Posting. See <a href="#AccountPostingResource">AccountPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/accountPostings</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="98084d23-a5d5-41c9-a0e5-03233ecc9113"></a>
+                    <h3>GET AccountPosting by identifier</h3>
+                    <p class="operation-description">Returns information for a given Account Posting, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Account Posting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Account Posting. See <a href="#AccountPostingResource">AccountPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/accountPostings/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a8d69dd7-f0cd-4551-a530-d21841c4539c"></a>
+                    <h3>GET AccountPosting by key</h3>
+                    <p class="operation-description">Returns information for a given Account Posting, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Account Posting. See <a href="#AccountPostingResource">AccountPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/accountPostings/{companyKey}/{postingKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ae492e73-688a-4381-947b-fa5069a557d9"></a>
+                    <h3>GET Print AccountPosting by identifier</h3>
+                    <p class="operation-description">Prints the specified AccountPosting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the AccountPosting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed AccountPosting.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/accountPostings/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="284d1271-504e-4e70-a47d-ac747d2c477b"></a>
+                    <h3>GET Print AccountPosting by key</h3>
+                    <p class="operation-description">Prints the specified AccountPosting by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested AccountPosting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed AccountPosting.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/accountPostings/{companyKey}/{postingKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0c306e44-0091-4a58-88a5-243d7e93cfcb"></a>
+                    <h3>POST AccountPostings</h3>
+                    <p class="operation-description">Creates a new Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">accountPostingResource</td>
+                                <td><i>(ApiAccountPostingResource)</i> In the request body, supply a resource containing the Account Posting information.<br/>See <a href="#ApiAccountPostingResource">ApiAccountPostingResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Account Posting identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiAccountPostingResource">ApiAccountPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Account Posting was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/accountPostings</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c009352a-9633-498f-acfa-c4a7a2b0be55"></a>
+                    <h3>PUT Set AccountingSchema AccountPosting</h3>
+                    <p class="operation-description">Updates the AccountingSchema for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AccountingSchema)</i> In the request body, supply the new value for the AccountingSchema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/accountingSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="af3ccb8d-c8c8-4fe9-b7e5-f1321527f2a6"></a>
+                    <h3>PUT Set CashFlowItem AccountPosting</h3>
+                    <p class="operation-description">Updates the CashFlowItem for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CashFlowItem.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/cashFlowItem</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5b1ebb36-0e18-42ad-88ae-2e3a13a31b3e"></a>
+                    <h3>PUT Set Check AccountPosting</h3>
+                    <p class="operation-description">Updates the Check for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Check.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/check</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6c56730a-0a00-4206-b570-941ccd87202d"></a>
+                    <h3>PUT Set Company AccountPosting</h3>
+                    <p class="operation-description">Updates the Company for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6c12b442-e6f7-474f-8e11-f601e0eb3a33"></a>
+                    <h3>PUT Set Currency AccountPosting</h3>
+                    <p class="operation-description">Updates the Currency for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f43e7565-5f10-4fc2-a81a-0bda263b2637"></a>
+                    <h3>PUT Set Description AccountPosting</h3>
+                    <p class="operation-description">Updates the Description for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="10754630-86f9-43bd-a50b-8c7ebf67b848"></a>
+                    <h3>PUT Set Discount AccountPosting</h3>
+                    <p class="operation-description">Updates the Discount for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the Discount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/discount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6ad27f6f-623b-40f7-b070-4ed3e6cb6047"></a>
+                    <h3>PUT Set DueDate AccountPosting</h3>
+                    <p class="operation-description">Updates the DueDate for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the DueDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/dueDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ebb45872-1c28-4c34-9e86-e80e0d231712"></a>
+                    <h3>PUT Set DunningId AccountPosting</h3>
+                    <p class="operation-description">Updates the DunningId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the DunningId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/dunningId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c92e3003-29b6-4eef-841e-f4daac30d988"></a>
+                    <h3>PUT Set DunningLevelId AccountPosting</h3>
+                    <p class="operation-description">Updates the DunningLevelId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the DunningLevelId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/dunningLevelId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ae80d925-acd7-473a-a54c-796e7f7991b7"></a>
+                    <h3>PUT Set ExchangeRate AccountPosting</h3>
+                    <p class="operation-description">Updates the ExchangeRate for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ExchangeRate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/exchangeRate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="18e25217-9c69-4e78-9c49-9778d4c28092"></a>
+                    <h3>PUT Set ExchangeRateDate AccountPosting</h3>
+                    <p class="operation-description">Updates the ExchangeRateDate for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ExchangeRateDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/exchangeRateDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b20e0bae-3bfe-4b2c-8e16-d8e6b8d3527b"></a>
+                    <h3>PUT Set ExchangeRateDifferencesBase AccountPosting</h3>
+                    <p class="operation-description">Updates the ExchangeRateDifferencesBase for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ExchangeRateDifferencesBase.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/exchangeRateDifferencesBase</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0e4cd234-acb3-4056-a30a-87c376570797"></a>
+                    <h3>PUT Set ExchangeRateDifferencesReporting AccountPosting</h3>
+                    <p class="operation-description">Updates the ExchangeRateDifferencesReporting for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ExchangeRateDifferencesReporting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/exchangeRateDifferencesReporting</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="29ba350d-2a56-4dd6-9b2f-20398a1ba8db"></a>
+                    <h3>PUT Set FinancialAccount AccountPosting</h3>
+                    <p class="operation-description">Updates the FinancialAccount for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FinancialAccount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/financialAccount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2b77e7b1-bd66-4061-b440-825c7f5a5b34"></a>
+                    <h3>PUT Set FinancialArea AccountPosting</h3>
+                    <p class="operation-description">Updates the FinancialArea for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum FinancialArea)</i> In the request body, supply the new value for the FinancialArea.<br/>See <a href="#FinancialArea">FinancialArea.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/financialArea</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="41619ea6-c91d-407c-95fa-4be4891b2c0f"></a>
+                    <h3>PUT Set InTransit AccountPosting</h3>
+                    <p class="operation-description">Updates the InTransit for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the InTransit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/inTransit</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="90bdd605-5dfd-49f1-9cb8-cd727ef72803"></a>
+                    <h3>PUT Set IsActive AccountPosting</h3>
+                    <p class="operation-description">Updates the IsActive for the specified AccountPosting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested AccountPosting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ebbba26f-e0c3-4dd6-b82a-edc7f3f03106"></a>
+                    <h3>PUT Set IssueDate AccountPosting</h3>
+                    <p class="operation-description">Updates the IssueDate for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the IssueDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/issueDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c29b40dc-9580-4120-820c-5aa4a97293ce"></a>
+                    <h3>PUT Set Nature AccountPosting</h3>
+                    <p class="operation-description">Updates the Nature for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum Nature)</i> In the request body, supply the new value for the Nature.<br/>See <a href="#Nature">Nature.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/nature</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5a356e64-64e8-4593-8c87-acc9a8490ee5"></a>
+                    <h3>PUT Set Note AccountPosting</h3>
+                    <p class="operation-description">Updates the Note for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Note.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/note</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cda119c3-f7ad-4306-be26-6631c3600bb6"></a>
+                    <h3>PUT Set OpenItemManaged AccountPosting</h3>
+                    <p class="operation-description">Updates the OpenItemManaged for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the OpenItemManaged.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/openItemManaged</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="56e7b2c9-04cb-4e07-8e5a-dcf587a91c30"></a>
+                    <h3>PUT Set OriginalDocument AccountPosting</h3>
+                    <p class="operation-description">Updates the OriginalDocument for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the OriginalDocument.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/originalDocument</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f5dd61d4-7842-4aba-81ff-91b483857a27"></a>
+                    <h3>PUT Set Party AccountPosting</h3>
+                    <p class="operation-description">Updates the Party for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Party.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/party</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="17faab80-d9c0-4247-9107-8c0640e18ee9"></a>
+                    <h3>PUT Set PartyAccountingSchema AccountPosting</h3>
+                    <p class="operation-description">Updates the PartyAccountingSchema for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AccountingSchema)</i> In the request body, supply the new value for the PartyAccountingSchema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/partyAccountingSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="05e76fba-3ee0-401b-987c-3e92de2063aa"></a>
+                    <h3>PUT Set PaymentMethod AccountPosting</h3>
+                    <p class="operation-description">Updates the PaymentMethod for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PaymentMethod.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/paymentMethod</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="029dc4cf-8cc3-43e4-bd0d-4e1c01358ba3"></a>
+                    <h3>PUT Set PaymentTerm AccountPosting</h3>
+                    <p class="operation-description">Updates the PaymentTerm for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PaymentTerm.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/paymentTerm</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="50d36ac4-8a85-4eee-89fb-8d0a0cbf5c92"></a>
+                    <h3>PUT Set PettyCash AccountPosting</h3>
+                    <p class="operation-description">Updates the PettyCash for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PettyCash.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/pettyCash</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c2635883-3509-44be-9b93-b74bc82a72fa"></a>
+                    <h3>PUT Set PostingDate AccountPosting</h3>
+                    <p class="operation-description">Updates the PostingDate for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the PostingDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/postingDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fb61babb-113f-447f-bb63-47ba4f301382"></a>
+                    <h3>PUT Set PostingKey AccountPosting</h3>
+                    <p class="operation-description">Updates the PostingKey for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> In the request body, supply the new value for the PostingKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/postingKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="efad0aad-7371-4bc4-a701-d7e3a894b44d"></a>
+                    <h3>PUT Set ReconciliationDifferenceId AccountPosting</h3>
+                    <p class="operation-description">Updates the ReconciliationDifferenceId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the ReconciliationDifferenceId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/reconciliationDifferenceId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="50d953f3-8bd1-40b1-8c28-40fb0db03e33"></a>
+                    <h3>PUT Set ReconciliationId AccountPosting</h3>
+                    <p class="operation-description">Updates the ReconciliationId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the ReconciliationId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/reconciliationId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8dc10da4-62a9-4c2b-a49b-1768b2429f7f"></a>
+                    <h3>PUT Set ReconciliationLineId AccountPosting</h3>
+                    <p class="operation-description">Updates the ReconciliationLineId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the ReconciliationLineId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/reconciliationLineId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6b1bdd13-7f46-46f4-ada5-511d721f91bc"></a>
+                    <h3>PUT Set ReferencePosting AccountPosting</h3>
+                    <p class="operation-description">Updates the ReferencePosting for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ReferencePosting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/referencePosting</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c3394252-1d66-434f-8717-21b5d0392620"></a>
+                    <h3>PUT Set ReportingExchangeRate AccountPosting</h3>
+                    <p class="operation-description">Updates the ReportingExchangeRate for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ReportingExchangeRate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/reportingExchangeRate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="71386255-f2ff-4870-9ef9-2cf6ab5d64eb"></a>
+                    <h3>PUT Set RoundingDifferencesBase AccountPosting</h3>
+                    <p class="operation-description">Updates the RoundingDifferencesBase for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the RoundingDifferencesBase.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/roundingDifferencesBase</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="554e16da-4565-4b29-93a7-9632519878cb"></a>
+                    <h3>PUT Set RoundingDifferencesReporting AccountPosting</h3>
+                    <p class="operation-description">Updates the RoundingDifferencesReporting for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the RoundingDifferencesReporting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/roundingDifferencesReporting</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d862b635-df95-4fdc-84ab-415b2a46f251"></a>
+                    <h3>PUT Set SettledByPosting AccountPosting</h3>
+                    <p class="operation-description">Updates the SettledByPosting for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SettledByPosting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/settledByPosting</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a99123e2-59e5-44a4-89b7-3f9943ce38be"></a>
+                    <h3>PUT Set SourceDoc AccountPosting</h3>
+                    <p class="operation-description">Updates the SourceDoc for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SourceDoc.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/sourceDoc</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ffbbc6b0-c0ef-4718-bacf-58142b1a06c6"></a>
+                    <h3>PUT Set SourceDocId AccountPosting</h3>
+                    <p class="operation-description">Updates the SourceDocId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the SourceDocId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/sourceDocId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3fd5521a-97e3-4d7a-aa86-a36943e0cf46"></a>
+                    <h3>PUT Set SourceLineId AccountPosting</h3>
+                    <p class="operation-description">Updates the SourceLineId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the SourceLineId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/sourceLineId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="216164ca-c249-4570-a6b2-4a78ba8d470f"></a>
+                    <h3>PUT Set SourceSchemaEntity AccountPosting</h3>
+                    <p class="operation-description">Updates the SourceSchemaEntity for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SourceSchemaEntity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/sourceSchemaEntity</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cf6946c8-ff14-4f67-8c09-7d6a9b23ec45"></a>
+                    <h3>PUT Set TaxExclusiveAmount AccountPosting</h3>
+                    <p class="operation-description">Updates the TaxExclusiveAmount for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the TaxExclusiveAmount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/taxExclusiveAmount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f7a12fdf-c855-4172-a08b-42203272df3a"></a>
+                    <h3>PUT Set TaxTotal AccountPosting</h3>
+                    <p class="operation-description">Updates the TaxTotal for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the TaxTotal.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/taxTotal</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="254ff292-d582-45f0-9e7c-33ab25b764cb"></a>
+                    <h3>PUT Set TotalAmount AccountPosting</h3>
+                    <p class="operation-description">Updates the TotalAmount for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the TotalAmount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/totalAmount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="82d10773-afaf-4dd6-8425-596f0e49a89a"></a>
+                    <h3>PUT Set ValueDate AccountPosting</h3>
+                    <p class="operation-description">Updates the ValueDate for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValueDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/valueDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ba1b11ca-1c3a-4311-a89f-7dd014ede227"></a>
+                    <h3>PUT Set WithholdingTaxAmount AccountPosting</h3>
+                    <p class="operation-description">Updates the WithholdingTaxAmount for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the WithholdingTaxAmount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/withholdingTaxAmount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5d34dace-c893-4106-bf16-ab8a76d9766b"></a>
+                    <h3>PUT Set WTaxPostingId AccountPosting</h3>
+                    <p class="operation-description">Updates the WTaxPostingId for the specified Account Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the WTaxPostingId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/accountPostings/{companyKey}/{postingKey}/wTaxPostingId</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b3f85db5-d334-4280-b0b6-4be6b18ce24f"></a>
+                    <h3>DELETE AccountPosting by identifier</h3>
+                    <p class="operation-description">Deletes the specified Account Posting by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Account Posting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Account Posting was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Account Posting does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/accountPostings/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0ec9447b-4def-4bdd-bb98-a6418c1bbc01"></a>
+                    <h3>DELETE AccountPosting by key</h3>
+                    <p class="operation-description">Deletes the specified Account Posting by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Account Posting is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td><i>(int)</i> Posting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Account Posting was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Account Posting does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/accountPostings/{companyKey}/{postingKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="AccountPostingResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AccountPostingResourceResourceDiv')">AccountPostingResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AccountPostingResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td  class="wrap"><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxExclusiveAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Tax Exclusive Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxTotal</td>
+                                <td  class="wrap"><i>(decimal)</i> Tax Total</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Withholding Tax Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDifferencesBase</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate Differences Base</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDifferencesReporting</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate Differences Rep.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Due Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount</td>
+                                <td  class="wrap"><i>(decimal)</i> Discount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">valueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Value Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inTransit</td>
+                                <td  class="wrap"><i>(bool)</i> In Transit</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingDifferencesBase</td>
+                                <td  class="wrap"><i>(decimal)</i> Rounding Differences Base</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingDifferencesReporting</td>
+                                <td  class="wrap"><i>(decimal)</i> Rounding Differences Reporting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reportingExchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Reporting Exchange Rate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">issueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Exchange Rate Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">openItemManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Open Item Managed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceLineId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Line Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningId</td>
+                                <td  class="wrap"><i>(Guid)</i> Dunning Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningLevelId</td>
+                                <td  class="wrap"><i>(Guid)</i> Dunning Level Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">wTaxPostingId</td>
+                                <td  class="wrap"><i>(Guid)</i> Withholding Tax Posting Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationId</td>
+                                <td  class="wrap"><i>(Guid)</i> Reconciliation Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationLineId</td>
+                                <td  class="wrap"><i>(Guid)</i> Reconciliation Line Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationDifferenceId</td>
+                                <td  class="wrap"><i>(Guid)</i> Reconciliation Difference Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">originalDocument</td>
+                                <td  class="wrap"><i>(string)</i> Original Document</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow Item</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">nature</td>
+                                <td  class="wrap"><i>(enum Nature)</i> Nature<br/>See <a href="#Nature">Nature.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentTerm</td>
+                                <td  class="wrap"><i>(string)</i> Payment Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financial Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Source Schema Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> Party Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialArea</td>
+                                <td  class="wrap"><i>(enum FinancialArea)</i> Financial Area<br/>See <a href="#FinancialArea">FinancialArea.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">check</td>
+                                <td  class="wrap"><i>(string)</i> Check</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">referencePosting</td>
+                                <td  class="wrap"><i>(string)</i> Reference Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">settledByPosting</td>
+                                <td  class="wrap"><i>(string)</i> Settled by Posting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiAccountPostingResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiAccountPostingResourceResourceDiv')">ApiAccountPostingResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiAccountPostingResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">postingKey</td>
+                                <td  class="wrap"><i>(int)</i> Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxExclusiveAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Tax Exclusive Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxTotal</td>
+                                <td  class="wrap"><i>(decimal)</i> Tax Total</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Withholding Tax Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDifferencesBase</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate Differences Base</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDifferencesReporting</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate Differences Rep.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Due Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount</td>
+                                <td  class="wrap"><i>(decimal)</i> Discount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">valueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Value Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inTransit</td>
+                                <td  class="wrap"><i>(bool)</i> In Transit</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingDifferencesBase</td>
+                                <td  class="wrap"><i>(decimal)</i> Rounding Differences Base</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingDifferencesReporting</td>
+                                <td  class="wrap"><i>(decimal)</i> Rounding Differences Reporting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reportingExchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Reporting Exchange Rate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">issueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Exchange Rate Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">openItemManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Open Item Managed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceLineId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Line Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningId</td>
+                                <td  class="wrap"><i>(Guid)</i> Dunning Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningLevelId</td>
+                                <td  class="wrap"><i>(Guid)</i> Dunning Level Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">wTaxPostingId</td>
+                                <td  class="wrap"><i>(Guid)</i> Withholding Tax Posting Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationId</td>
+                                <td  class="wrap"><i>(Guid)</i> Reconciliation Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationLineId</td>
+                                <td  class="wrap"><i>(Guid)</i> Reconciliation Line Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationDifferenceId</td>
+                                <td  class="wrap"><i>(Guid)</i> Reconciliation Difference Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">originalDocument</td>
+                                <td  class="wrap"><i>(string)</i> Original Document</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow Item</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">nature</td>
+                                <td  class="wrap"><i>(enum Nature)</i> Nature<br/>See <a href="#Nature">Nature.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentTerm</td>
+                                <td  class="wrap"><i>(string)</i> Payment Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financial Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Source Schema Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> Party Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialArea</td>
+                                <td  class="wrap"><i>(enum FinancialArea)</i> Financial Area<br/>See <a href="#FinancialArea">FinancialArea.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">check</td>
+                                <td  class="wrap"><i>(string)</i> Check</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">referencePosting</td>
+                                <td  class="wrap"><i>(string)</i> Reference Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">settledByPosting</td>
+                                <td  class="wrap"><i>(string)</i> Settled by Posting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="Nature"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NatureValueListDiv')">Nature<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="NatureValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Debit</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Credit</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="AccountingSchema"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AccountingSchemaValueListDiv')">AccountingSchema<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AccountingSchemaValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Accrual</td>
+								<td>Acrrual Accounting Schema</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Cash</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="FinancialArea"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'FinancialAreaValueListDiv')">FinancialArea<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="FinancialAreaValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>AccountsReceivable</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>AccountsPayable</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

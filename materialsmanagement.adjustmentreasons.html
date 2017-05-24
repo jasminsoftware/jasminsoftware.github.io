@@ -1,0 +1,839 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Materials Management | Adjustment Reason</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+		Materials Management
+    </a>
+	<a class="menu-subitem menu-item-selected" href="materialsmanagement.adjustmentreasons.html">
+		Adjustment Reason
+	</a>
+	<a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
+		Item Adjustment
+	</a>
+	<a class="menu-subitem " href="materialscore.itemsubtypes.html">
+		Item Subtype
+	</a>
+	<a class="menu-subitem " href="materialscore.materialsitems.html">
+		Materials Item
+	</a>
+	<a class="menu-subitem " href="materialscore.materialssetups.html">
+		Materials Setup
+	</a>
+	<a class="menu-subitem " href="materialscore.warehouses.html">
+		Warehouse
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Materials Management | Adjustment Reason</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/materialsManagement/adjustmentReasons</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'AdjustmentReason'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2f3c6a68-9e7e-4b25-8d1a-cd4b50a3d46e"></a>
+                    <h3>GET AdjustmentReasons</h3>
+                    <p class="operation-description">Returns all Adjustment Reason user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Adjustment Reason. See <a href="#AdjustmentReasonResource">AdjustmentReasonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/adjustmentReasons</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f41cd054-fa05-4b97-aded-443054fe9925"></a>
+                    <h3>GET AdjustmentReasons (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Adjustment Reason user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Adjustment Reason. See <a href="#AdjustmentReasonResource">AdjustmentReasonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/adjustmentReasons</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="04591a3a-e3d6-40f6-8136-65803ea1634c"></a>
+                    <h3>GET AdjustmentReason by identifier</h3>
+                    <p class="operation-description">Returns information for a given Adjustment Reason, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Adjustment Reason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Adjustment Reason. See <a href="#AdjustmentReasonResource">AdjustmentReasonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/adjustmentReasons/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bcc0badc-3610-48b7-9375-c70aef9313b1"></a>
+                    <h3>GET AdjustmentReason by key</h3>
+                    <p class="operation-description">Returns information for a given Adjustment Reason, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Adjustment Reason. See <a href="#AdjustmentReasonResource">AdjustmentReasonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/adjustmentReasons/{adjustmentReasonKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="802d6b4c-61ea-4c02-98c3-6ebf8cb4ce18"></a>
+                    <h3>GET Print AdjustmentReason by identifier</h3>
+                    <p class="operation-description">Prints the specified AdjustmentReason.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the AdjustmentReason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed AdjustmentReason.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/adjustmentReasons/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="58ea9f60-78fb-408f-84f1-7e43738b08b1"></a>
+                    <h3>GET Print AdjustmentReason by key</h3>
+                    <p class="operation-description">Prints the specified AdjustmentReason by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed AdjustmentReason.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/adjustmentReasons/{adjustmentReasonKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b616acd9-47b1-4fc3-856e-dd37c3c75e7d"></a>
+                    <h3>POST AdjustmentReasons</h3>
+                    <p class="operation-description">Creates a new Adjustment Reason.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonResource</td>
+                                <td><i>(ApiAdjustmentReasonResource)</i> In the request body, supply a resource containing the Adjustment Reason information.<br/>See <a href="#ApiAdjustmentReasonResource">ApiAdjustmentReasonResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Adjustment Reason identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiAdjustmentReasonResource">ApiAdjustmentReasonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Adjustment Reason was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /materialsManagement/adjustmentReasons</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="276a7ff8-cb65-4f57-a9c0-0bc87776fe7f"></a>
+                    <h3>PUT Set AdjustmentReasonKey AdjustmentReason</h3>
+                    <p class="operation-description">Updates the AdjustmentReasonKey for the specified Adjustment Reason.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the AdjustmentReasonKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/adjustmentReasons/{adjustmentReasonKey}/adjustmentReasonKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6f8fead6-def8-4233-aaab-6fdf049ac6e0"></a>
+                    <h3>PUT Set AdjustmentType AdjustmentReason</h3>
+                    <p class="operation-description">Updates the AdjustmentType for the specified Adjustment Reason.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AdjustmentType)</i> In the request body, supply the new value for the AdjustmentType.<br/>See <a href="#AdjustmentType">AdjustmentType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/adjustmentReasons/{adjustmentReasonKey}/adjustmentType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7e014c96-98b7-4fe5-9077-6d21f2577f31"></a>
+                    <h3>PUT Set Description AdjustmentReason</h3>
+                    <p class="operation-description">Updates the Description for the specified Adjustment Reason.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/adjustmentReasons/{adjustmentReasonKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fd88f320-1746-4257-9b6c-fc786f7c00fa"></a>
+                    <h3>PUT Set IsActive AdjustmentReason</h3>
+                    <p class="operation-description">Updates the IsActive for the specified AdjustmentReason.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/adjustmentReasons/{adjustmentReasonKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5a35d776-8699-4ba7-a87e-c0dfb8ed6880"></a>
+                    <h3>PUT Set IsInValue AdjustmentReason</h3>
+                    <p class="operation-description">Updates the IsInValue for the specified Adjustment Reason.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsInValue.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/adjustmentReasons/{adjustmentReasonKey}/isInValue</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7b4cbfef-baff-4a56-bad3-b44006011133"></a>
+                    <h3>DELETE AdjustmentReason by identifier</h3>
+                    <p class="operation-description">Deletes the specified Adjustment Reason by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Adjustment Reason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Adjustment Reason was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Adjustment Reason does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsManagement/adjustmentReasons/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1eed63f0-5c92-471c-8942-82d50786a04b"></a>
+                    <h3>DELETE AdjustmentReason by key</h3>
+                    <p class="operation-description">Deletes the specified Adjustment Reason by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Adjustment Reason was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Adjustment Reason does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsManagement/adjustmentReasons/{adjustmentReasonKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="AdjustmentReasonResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AdjustmentReasonResourceResourceDiv')">AdjustmentReasonResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AdjustmentReasonResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isInValue</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the Adjustment Reason is in value.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">adjustmentType</td>
+                                <td  class="wrap"><i>(enum AdjustmentType)</i> The adjustment type for the Adjustment Reason.<br/>See <a href="#AdjustmentType">AdjustmentType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Adjustment Reason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiAdjustmentReasonResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiAdjustmentReasonResourceResourceDiv')">ApiAdjustmentReasonResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiAdjustmentReasonResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">adjustmentReasonKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Adjustment Reason.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isInValue</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the Adjustment Reason is in value.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">adjustmentType</td>
+                                <td  class="wrap"><i>(enum AdjustmentType)</i> The adjustment type for the Adjustment Reason.<br/>See <a href="#AdjustmentType">AdjustmentType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Adjustment Reason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="AdjustmentType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AdjustmentTypeValueListDiv')">AdjustmentType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AdjustmentTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Entry</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Issue</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

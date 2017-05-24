@@ -1,0 +1,860 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Cash Management | Incoming Check</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="cashmanagement.html">
+		Cash Management
+    </a>
+	<a class="menu-subitem " href="cashmanagement.incomingcashjournals.html">
+		Incoming Cash Journal
+	</a>
+	<a class="menu-subitem menu-item-selected" href="cashmanagement.incomingchecks.html">
+		Incoming Check
+	</a>
+	<a class="menu-subitem " href="cashmanagement.outgoingcashjournals.html">
+		Outgoing Cash Journal
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Cash Management | Incoming Check</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/cashManagement/incomingChecks</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'IncomingCheck'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a57f813a-5acc-4eed-a796-6e9fd5bd202a"></a>
+                    <h3>GET IncomingChecks</h3>
+                    <p class="operation-description">Get all the instances of <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A list of IncomingCheckResource. See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A list of IncomingCheckResource.<br/>See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/incomingChecks</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="afdbd3b9-797c-4696-bd81-e37ee155fd0f"></a>
+                    <h3>GET IncomingChecks (paged)</h3>
+                    <p class="operation-description">Get all the instances of <a href="#IncomingCheckResource">IncomingCheckResource</a>, paged.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The page number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The page size.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A page of the list of IncomingCheckResource. See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A page of the list of IncomingCheckResource.<br/>See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/incomingChecks</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ebbe38b3-8390-46d3-8992-3a70ecaa60c5"></a>
+                    <h3>GET IncomingCheck by identifier</h3>
+                    <p class="operation-description">Gets the specified <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The IncomingCheckResource instance. See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The IncomingCheckResource instance.<br/>See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/incomingChecks/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e16c7f3e-5cae-4b5b-9191-aa8d56499918"></a>
+                    <h3>GET IncomingCheck by natural key</h3>
+                    <p class="operation-description">Gets the specified <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The IncomingCheckResource instance. See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The IncomingCheckResource instance.<br/>See <a href="#IncomingCheckResource">IncomingCheckResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/incomingChecks/{companyKey}/{incomingCheckKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3c27bf48-d8bb-4edc-8d08-968c2fabb6b0"></a>
+                    <h3>GET Print IncomingCheck by identifier</h3>
+                    <p class="operation-description">Prints the specified <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/incomingChecks/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ff3c2ab6-39a5-4ec6-83a9-878c77a83670"></a>
+                    <h3>GET Print IncomingCheck by natural key</h3>
+                    <p class="operation-description">Prints the specified <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/incomingChecks/{companyKey}//{incomingCheckKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4e91c074-8047-4291-b027-84fb1cb1631b"></a>
+                    <h3>POST IncomingChecks</h3>
+                    <p class="operation-description">Creates a new <a href="#ApiIncomingCheckResource">ApiIncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">incomingCheckResource</td>
+                                <td><i>(ApiIncomingCheckResource)</i> The resource containing the entity data.<br/>See <a href="#ApiIncomingCheckResource">ApiIncomingCheckResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The entity resource with all the default values set as needed. See <a href="#ApiIncomingCheckResource">ApiIncomingCheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The entity resource with all the default values set as needed.<br/>See <a href="#ApiIncomingCheckResource">ApiIncomingCheckResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">POST /cashManagement/incomingChecks</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="58f98f48-7beb-431d-a833-75e0673c2174"></a>
+                    <h3>PUT IncomingCheck IsActive</h3>
+                    <p class="operation-description">Updates the attribute 'IsActive' of a <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /cashManagement/incomingChecks/{companyKey}/{incomingCheckKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="47ff8628-cc85-489f-b51b-6277ca73463c"></a>
+                    <h3>PUT IncomingCheck Note</h3>
+                    <p class="operation-description">Updates the attribute 'Note' of a <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /cashManagement/incomingChecks/{companyKey}/{incomingCheckKey}/note</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4372f855-5253-4e36-b5a3-03bd3ec599fa"></a>
+                    <h3>PUT IncomingCheck Remarks</h3>
+                    <p class="operation-description">Updates the attribute 'Remarks' of a <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /cashManagement/incomingChecks/{companyKey}/{incomingCheckKey}/remarks</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8c1dd806-4ad6-4e28-a279-814ee8fe80f6"></a>
+                    <h3>DELETE IncomingCheck by identifier</h3>
+                    <p class="operation-description">Deletes the specified <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">DELETE /cashManagement/incomingChecks/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4937fe36-e866-443b-b7a7-df3085d04b4b"></a>
+                    <h3>DELETE IncomingCheck by natural key</h3>
+                    <p class="operation-description">Deletes the specified <a href="#IncomingCheckResource">IncomingCheckResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">DELETE /cashManagement/incomingChecks/{companyKey}/{incomingCheckKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="IncomingCheckResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'IncomingCheckResourceResourceDiv')">IncomingCheckResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="IncomingCheckResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> Financ. Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financ. Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkEndorsed</td>
+                                <td  class="wrap"><i>(bool)</i> Endorsed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Check Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkIssuePlace</td>
+                                <td  class="wrap"><i>(string)</i> Place of Issue</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Exchange Rate Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAddress</td>
+                                <td  class="wrap"><i>(string)</i> Party Address</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">check</td>
+                                <td  class="wrap"><i>(string)</i> Check</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Party Account Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCashAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash Account Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiIncomingCheckResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiIncomingCheckResourceResourceDiv')">ApiIncomingCheckResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiIncomingCheckResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">incomingCheckKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> Financ. Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financ. Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkEndorsed</td>
+                                <td  class="wrap"><i>(bool)</i> Endorsed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Check Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkIssuePlace</td>
+                                <td  class="wrap"><i>(string)</i> Place of Issue</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Exchange Rate Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAddress</td>
+                                <td  class="wrap"><i>(string)</i> Party Address</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">check</td>
+                                <td  class="wrap"><i>(string)</i> Check</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Party Account Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCashAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash Account Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

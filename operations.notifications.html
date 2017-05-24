@@ -1,0 +1,2154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Platform | Notification</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a id="current-menu-item" class="menu-item " href="platform.html">
+		Platform
+    </a>
+	<a class="menu-subitem " href="corepatterns.addresses.html">
+		Address
+	</a>
+	<a class="menu-subitem " href="corepatterns.companies.html">
+		Company
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacts.html">
+		Contact
+	</a>
+	<a class="menu-subitem " href="corepatterns.contactgroups.html">
+		Contact Group
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacttypes.html">
+		Contact Type
+	</a>
+	<a class="menu-subitem " href="corepatterns.countries.html">
+		Country
+	</a>
+	<a class="menu-subitem " href="corepatterns.cultures.html">
+		Culture
+	</a>
+	<a class="menu-subitem " href="corepatterns.currencies.html">
+		Currency
+	</a>
+	<a class="menu-subitem " href="operations.emailtemplates.html">
+		Email Template
+	</a>
+	<a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+		Fiscal Time Zone
+	</a>
+	<a class="menu-subitem menu-item-selected" href="operations.notifications.html">
+		Notification
+	</a>
+	<a class="menu-subitem " href="corepatterns.postalzones.html">
+		Postal Code
+	</a>
+	<a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+		Power Bi Info
+	</a>
+	<a class="menu-subitem " href="corepatterns.regions.html">
+		Region
+	</a>
+	<a class="menu-subitem " href="corepatterns.units.html">
+		Unit
+	</a>
+	<a class="menu-subitem " href="corepatterns.unitdimensions.html">
+		Unit Dimension
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Notification</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/operations/notifications</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Notification'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7cd76647-c097-438f-8f4e-88aafa474c0d"></a>
+                    <h3>GET Notifications</h3>
+                    <p class="operation-description">Returns all Notification user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Notification. See <a href="#NotificationResource">NotificationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /operations/notifications</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ff17247b-ad59-437f-9783-ff59bce50581"></a>
+                    <h3>GET Notifications (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Notification user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Notification. See <a href="#NotificationResource">NotificationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /operations/notifications</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="16940f59-3a4e-40e7-98a6-3a445b6d1630"></a>
+                    <h3>GET Notification by identifier</h3>
+                    <p class="operation-description">Returns information for a given Notification, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Notification. See <a href="#NotificationResource">NotificationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /operations/notifications/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2343dd11-adca-4a82-ac34-7352b298d428"></a>
+                    <h3>GET Notification by key</h3>
+                    <p class="operation-description">Returns information for a given Notification, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Notification. See <a href="#NotificationResource">NotificationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /operations/notifications/{notificationKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d1ee50c7-bb07-4b53-9711-47b51d0c0eda"></a>
+                    <h3>GET Print Notification by identifier</h3>
+                    <p class="operation-description">Prints the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Notification.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /operations/notifications/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e7b75ef0-95d1-430e-b455-9b169d445e4f"></a>
+                    <h3>GET Print Notification by key</h3>
+                    <p class="operation-description">Prints the specified Notification by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Notification.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /operations/notifications/{notificationKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="df2cf579-3a85-4c9a-a5f7-a1f4fc5ef1c8"></a>
+                    <h3>POST Notifications</h3>
+                    <p class="operation-description">Creates a new Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationResource</td>
+                                <td><i>(ApiNotificationResource)</i> In the request body, supply a resource containing the Notification information.<br/>See <a href="#ApiNotificationResource">ApiNotificationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Notification identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiNotificationResource">ApiNotificationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Notification was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /operations/notifications</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="978addb1-43f8-4f86-841c-4acefdfea0eb"></a>
+                    <h3>POST Notification </h3>
+                    <p class="operation-description">Inserts a new Notification User in an existing Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiNotificationNotificationUsersResource)</i> The ApiNotificationNotificationUsersResource instance.<br/>See <a href="#ApiNotificationNotificationUsersResource">ApiNotificationNotificationUsersResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /operations/notifications/{notificationKey}/notificationUsers</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6798aefe-2ef0-41ab-b7a9-237209283f88"></a>
+                    <h3>POST Notification </h3>
+                    <p class="operation-description">Inserts a new Notification User Group in an existing Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiNotificationNotificationUserGroupsResource)</i> The ApiNotificationNotificationUserGroupsResource instance.<br/>See <a href="#ApiNotificationNotificationUserGroupsResource">ApiNotificationNotificationUserGroupsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /operations/notifications/{notificationKey}/notificationUserGroups</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="63b23807-bcd3-4ed2-8020-d4eb63d16a1d"></a>
+                    <h3>POST Notification </h3>
+                    <p class="operation-description">Inserts a new Notification Contact in an existing Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiNotificationNotificationContactsResource)</i> The ApiNotificationNotificationContactsResource instance.<br/>See <a href="#ApiNotificationNotificationContactsResource">ApiNotificationNotificationContactsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /operations/notifications/{notificationKey}/notificationContacts</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ed8679d1-818f-4260-a3f4-7aa80d23c32a"></a>
+                    <h3>POST Notification </h3>
+                    <p class="operation-description">Inserts a new Email Templates in an existing Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiNotificationEmailTemplateListsResource)</i> The ApiNotificationEmailTemplateListsResource instance.<br/>See <a href="#ApiNotificationEmailTemplateListsResource">ApiNotificationEmailTemplateListsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /operations/notifications/{notificationKey}/emailTemplateLists</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="88e4454d-5f6c-46b2-a2b1-1c5de4d39d6f"></a>
+                    <h3>POST Notification </h3>
+                    <p class="operation-description">Inserts a new Notific. Contact Group List in an existing Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiNotificationNotificationContactGroupListsResource)</i> The ApiNotificationNotificationContactGroupListsResource instance.<br/>See <a href="#ApiNotificationNotificationContactGroupListsResource">ApiNotificationNotificationContactGroupListsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /operations/notifications/{notificationKey}/notificationContactGroupLists</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="adabc5b5-40b7-4b88-8397-f671f2af9f86"></a>
+                    <h3>PUT Set Contact Notification</h3>
+                    <p class="operation-description">Updates the Contact for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationContacts/{lineId}/contact</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="11b9f095-ffc9-4f18-9dc0-7f79282be74b"></a>
+                    <h3>PUT Set ContactGroup Notification</h3>
+                    <p class="operation-description">Updates the ContactGroup for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactGroup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationContactGroupLists/{lineId}/contactGroup</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="39c7cb0e-103d-4c78-bb15-17cf3bc92828"></a>
+                    <h3>PUT Set Culture Notification</h3>
+                    <p class="operation-description">Updates the Culture for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Culture.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationUsers/{lineId}/culture</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2238ca35-bc15-457e-90f2-cb689f4c6401"></a>
+                    <h3>PUT Set Culture Notification</h3>
+                    <p class="operation-description">Updates the Culture for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Culture.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationUserGroups/{lineId}/culture</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="969ee8d8-8e6a-4d87-a831-d019d06d67ab"></a>
+                    <h3>PUT Set Culture Notification</h3>
+                    <p class="operation-description">Updates the Culture for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Culture.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationContacts/{lineId}/culture</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4fb6d4c4-08bb-4707-a55a-0cea1ccde3de"></a>
+                    <h3>PUT Set Culture Notification</h3>
+                    <p class="operation-description">Updates the Culture for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Culture.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationContactGroupLists/{lineId}/culture</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bd47c62b-9fd5-4588-a603-ef1a0d31b7f0"></a>
+                    <h3>PUT Set Description Notification</h3>
+                    <p class="operation-description">Updates the Description for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cd59cfdb-69ff-41cf-9b5c-c3d1419e3834"></a>
+                    <h3>PUT Set EmailTemplate Notification</h3>
+                    <p class="operation-description">Updates the EmailTemplate for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the EmailTemplate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/emailTemplateLists/{lineId}/emailTemplate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f90d3ce3-6e20-436d-9f1e-cd17d36a8e99"></a>
+                    <h3>PUT Set IsActive Notification</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="769c9c6e-58e8-485d-bcf6-9792798f9af4"></a>
+                    <h3>PUT Set IsDefault Notification</h3>
+                    <p class="operation-description">Updates the IsDefault for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsDefault.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/emailTemplateLists/{lineId}/isDefault</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d9ae9d39-6193-4287-8958-f46ca7c209b1"></a>
+                    <h3>PUT Set NotificationKey Notification</h3>
+                    <p class="operation-description">Updates the NotificationKey for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the NotificationKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cc80eaea-75e0-4993-b339-a2f6c5f68a0d"></a>
+                    <h3>PUT Set ReceiptOption Notification</h3>
+                    <p class="operation-description">Updates the ReceiptOption for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum NotificationReceiptOption)</i> In the request body, supply the new value for the ReceiptOption.<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationUsers/{lineId}/receiptOption</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a1b01e9e-3bfe-484b-ae30-b2fc308a8bdb"></a>
+                    <h3>PUT Set ReceiptOption Notification</h3>
+                    <p class="operation-description">Updates the ReceiptOption for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum NotificationReceiptOption)</i> In the request body, supply the new value for the ReceiptOption.<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationUserGroups/{lineId}/receiptOption</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8e45bd73-3af1-45dc-bba7-11de5732e629"></a>
+                    <h3>PUT Set ReceiptOption Notification</h3>
+                    <p class="operation-description">Updates the ReceiptOption for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum NotificationReceiptOption)</i> In the request body, supply the new value for the ReceiptOption.<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationContacts/{lineId}/receiptOption</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a326bc91-cb76-49a9-bbd9-352d276dc969"></a>
+                    <h3>PUT Set ReceiptOption Notification</h3>
+                    <p class="operation-description">Updates the ReceiptOption for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum NotificationReceiptOption)</i> In the request body, supply the new value for the ReceiptOption.<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationContactGroupLists/{lineId}/receiptOption</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="39318b11-cdf6-4195-9bf5-d01b9afb8707"></a>
+                    <h3>PUT Set UserGroupNotification Notification</h3>
+                    <p class="operation-description">Updates the UserGroupNotification for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the UserGroupNotification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationUserGroups/{lineId}/userGroupNotification</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="28b89924-5ad8-431a-b53e-97f77e72e83f"></a>
+                    <h3>PUT Set UserNotification Notification</h3>
+                    <p class="operation-description">Updates the UserNotification for the specified Notification.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the UserNotification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /operations/notifications/{notificationKey}/notificationUsers/{lineId}/userNotification</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="77166331-e9fb-4693-aa40-9d57fcc05b16"></a>
+                    <h3>DELETE Notification User by identifier</h3>
+                    <p class="operation-description">Deletes the specified Notification User.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /operations/notifications/{notificationKey}/notificationUsers/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e79f1616-7d65-4d34-8794-892bcd0912bd"></a>
+                    <h3>DELETE Notification User Group by identifier</h3>
+                    <p class="operation-description">Deletes the specified Notification User Group.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /operations/notifications/{notificationKey}/notificationUserGroups/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8c5e7d0d-d14d-4f09-abb1-770374b35eef"></a>
+                    <h3>DELETE Notification Contact by identifier</h3>
+                    <p class="operation-description">Deletes the specified Notification Contact.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /operations/notifications/{notificationKey}/notificationContacts/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f11bb25e-20ef-43ca-a126-1a856f5b2b17"></a>
+                    <h3>DELETE Email Templates by identifier</h3>
+                    <p class="operation-description">Deletes the specified Email Templates.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /operations/notifications/{notificationKey}/emailTemplateLists/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e4c25b70-53d5-45ce-9c4f-120a4343155d"></a>
+                    <h3>DELETE Notific. Contact Group List by identifier</h3>
+                    <p class="operation-description">Deletes the specified Notific. Contact Group List.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /operations/notifications/{notificationKey}/notificationContactGroupLists/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="626e19db-9aae-4732-a30c-df030e1b8189"></a>
+                    <h3>DELETE Notification by identifier</h3>
+                    <p class="operation-description">Deletes the specified Notification by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Notification was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Notification does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /operations/notifications/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b74296bd-5401-4a05-979a-d04636f02dc4"></a>
+                    <h3>DELETE Notification by key</h3>
+                    <p class="operation-description">Deletes the specified Notification by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Notification was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Notification does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /operations/notifications/{notificationKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="NotificationResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NotificationResourceResourceDiv')">NotificationResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="NotificationResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationUsers</td>
+                                <td  class="wrap"><i>(List of NotificationUserResource)</i> The notification users.<br/>See <a href="#NotificationUserResource">NotificationUserResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationUserGroups</td>
+                                <td  class="wrap"><i>(List of NotificationUserGroupResource)</i> The notification user groups.<br/>See <a href="#NotificationUserGroupResource">NotificationUserGroupResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationContacts</td>
+                                <td  class="wrap"><i>(List of NotificationContactResource)</i> The notification contacts.<br/>See <a href="#NotificationContactResource">NotificationContactResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">emailTemplateLists</td>
+                                <td  class="wrap"><i>(List of EmailTemplateListResource)</i> The email templates.<br/>See <a href="#EmailTemplateListResource">EmailTemplateListResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationContactGroupLists</td>
+                                <td title="(List of NotificationContactGroupListResource) The notification contact groups. See NotificationContactGroupListResource." class="wrap"><i>(List of NotificationContactGroupListResource)</i> The notification contact groups.<br/>See <a href="#NotificationContactGroupListResource">NotificationContactGroupListResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="NotificationUserResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NotificationUserResourceResourceDiv')">NotificationUserResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="NotificationUserResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">userNotification</td>
+                                <td  class="wrap"><i>(string)</i> The user notification for the notification user.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="NotificationUserGroupResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NotificationUserGroupResourceResourceDiv')">NotificationUserGroupResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="NotificationUserGroupResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">userGroupNotification</td>
+                                <td  class="wrap"><i>(string)</i> The user group notification for the notification user group.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user group is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="NotificationContactResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NotificationContactResourceResourceDiv')">NotificationContactResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="NotificationContactResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user group is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The contact for the notification contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="EmailTemplateListResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'EmailTemplateListResourceResourceDiv')">EmailTemplateListResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="EmailTemplateListResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">emailTemplate</td>
+                                <td  class="wrap"><i>(string)</i> The email template for the email template list.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isDefault</td>
+                                <td  class="wrap"><i>(bool)</i> The is default property choose which email template is by default for the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="NotificationContactGroupListResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NotificationContactGroupListResourceResourceDiv')">NotificationContactGroupListResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="NotificationContactGroupListResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user group is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactGroup</td>
+                                <td  class="wrap"><i>(string)</i> The contact group for the notification contact group list.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiNotificationResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiNotificationResourceResourceDiv')">ApiNotificationResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiNotificationResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">notificationKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the notification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationUsers</td>
+                                <td title="(List of ApiNotificationNotificationUsersResource) The notification users. See ApiNotificationNotificationUsersResource." class="wrap"><i>(List of ApiNotificationNotificationUsersResource)</i> The notification users.<br/>See <a href="#ApiNotificationNotificationUsersResource">ApiNotificationNotificationUsersResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationUserGroups</td>
+                                <td title="(List of ApiNotificationNotificationUserGroupsResource) The notification user groups. See ApiNotificationNotificationUserGroupsResource." class="wrap"><i>(List of ApiNotificationNotificationUserGroupsResource)</i> The notification user groups.<br/>See <a href="#ApiNotificationNotificationUserGroupsResource">ApiNotificationNotificationUserGroupsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationContacts</td>
+                                <td title="(List of ApiNotificationNotificationContactsResource) The notification contacts. See ApiNotificationNotificationContactsResource." class="wrap"><i>(List of ApiNotificationNotificationContactsResource)</i> The notification contacts.<br/>See <a href="#ApiNotificationNotificationContactsResource">ApiNotificationNotificationContactsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">emailTemplateLists</td>
+                                <td title="(List of ApiNotificationEmailTemplateListsResource) The email templates. See ApiNotificationEmailTemplateListsResource." class="wrap"><i>(List of ApiNotificationEmailTemplateListsResource)</i> The email templates.<br/>See <a href="#ApiNotificationEmailTemplateListsResource">ApiNotificationEmailTemplateListsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notificationContactGroupLists</td>
+                                <td title="(List of ApiNotificationNotificationContactGroupListsResource) The notification contact groups. See ApiNotificationNotificationContactGroupListsResource." class="wrap"><i>(List of ApiNotificationNotificationContactGroupListsResource)</i> The notification contact groups.<br/>See <a href="#ApiNotificationNotificationContactGroupListsResource">ApiNotificationNotificationContactGroupListsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiNotificationNotificationUsersResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiNotificationNotificationUsersResourceResourceDiv')">ApiNotificationNotificationUsersResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiNotificationNotificationUsersResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">userNotification</td>
+                                <td  class="wrap"><i>(string)</i> The user notification for the notification user.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiNotificationNotificationUserGroupsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiNotificationNotificationUserGroupsResourceResourceDiv')">ApiNotificationNotificationUserGroupsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiNotificationNotificationUserGroupsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">userGroupNotification</td>
+                                <td  class="wrap"><i>(string)</i> The user group notification for the notification user group.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user group is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiNotificationNotificationContactsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiNotificationNotificationContactsResourceResourceDiv')">ApiNotificationNotificationContactsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiNotificationNotificationContactsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user group is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The contact for the notification contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiNotificationEmailTemplateListsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiNotificationEmailTemplateListsResourceResourceDiv')">ApiNotificationEmailTemplateListsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiNotificationEmailTemplateListsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">emailTemplate</td>
+                                <td  class="wrap"><i>(string)</i> The email template for the email template list.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isDefault</td>
+                                <td  class="wrap"><i>(bool)</i> The is default property choose which email template is by default for the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiNotificationNotificationContactGroupListsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiNotificationNotificationContactGroupListsResourceResourceDiv')">ApiNotificationNotificationContactGroupListsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiNotificationNotificationContactGroupListsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">receiptOption</td>
+                                <td  class="wrap"><i>(enum NotificationReceiptOption)</i> The receipt option. The notification option defines if the user group is "TO", "CC" or "BCC".<br/>See <a href="#NotificationReceiptOption">NotificationReceiptOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Variable that represents the country and affects some system attributes such as language, the date format or the supported character set.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactGroup</td>
+                                <td  class="wrap"><i>(string)</i> The contact group for the notification contact group list.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="NotificationReceiptOption"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NotificationReceiptOptionValueListDiv')">NotificationReceiptOption<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="NotificationReceiptOptionValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>To</td>
+								<td>The notification receipt option "To".</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>CC</td>
+								<td>The notification receipt option "CC".</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Bcc</td>
+								<td>The notification receipt option "Bcc".</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

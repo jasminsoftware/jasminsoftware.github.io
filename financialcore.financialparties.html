@@ -1,0 +1,1601 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Financials | Financial Party</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="financials.html">
+		Financials
+    </a>
+	<a class="menu-subitem " href="financialcore.accountpostings.html">
+		Account Posting
+	</a>
+	<a class="menu-subitem " href="financialcore.accounttransactions.html">
+		Account Transaction
+	</a>
+	<a class="menu-subitem " href="financialcore.accounttypebudgets.html">
+		Account Type Budget
+	</a>
+	<a class="menu-subitem " href="financialcore.bankaccounttypes.html">
+		Bank Account Type
+	</a>
+	<a class="menu-subitem " href="financialcore.cashflowitems.html">
+		Cash Flow Item
+	</a>
+	<a class="menu-subitem " href="financialcore.checks.html">
+		Check
+	</a>
+	<a class="menu-subitem " href="financialcore.dunningmethods.html">
+		Dunning Method
+	</a>
+	<a class="menu-subitem " href="financialcore.financialaccounts.html">
+		Financial Account
+	</a>
+	<a class="menu-subitem " href="financialcore.financialinstitutions.html">
+		Financial Institution
+	</a>
+	<a class="menu-subitem menu-item-selected" href="financialcore.financialparties.html">
+		Financial Party
+	</a>
+	<a class="menu-subitem " href="financialcore.financialsetups.html">
+		Financial Setup
+	</a>
+	<a class="menu-subitem " href="financialcore.outgoingchecklots.html">
+		Outgoing Check Lot
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentcategorypurposes.html">
+		Payment Category Purpose
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentmethods.html">
+		Payment Method
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentterms.html">
+		Payment Term
+	</a>
+	<a class="menu-subitem " href="financialcore.paymenttypes.html">
+		Payment Type
+	</a>
+	<a class="menu-subitem " href="financialcore.pettycashes.html">
+		Petty Cash
+	</a>
+	<a class="menu-subitem " href="financialcore.profitandlossreports.html">
+		Profit and Loss Report
+	</a>
+	<a class="menu-subitem " href="financialcore.purposes.html">
+		Purpose
+	</a>
+	<a class="menu-subitem " href="financialcore.receipttypes.html">
+		Receipt Type
+	</a>
+	<a class="menu-subitem " href="financialcore.voidreasons.html">
+		Void Reason
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Financial Party</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/financialCore/financialParties</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'FinancialParty'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bfb27fa5-fa3f-491c-9518-c30cdca094e9"></a>
+                    <h3>GET FinancialParties</h3>
+                    <p class="operation-description">Returns all Financial Party user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Financial Party. See <a href="#FinancialPartyResource">FinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6469c2dc-0838-4fb9-9855-6e49b62fcf7a"></a>
+                    <h3>GET FinancialParties (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Financial Party user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Financial Party. See <a href="#FinancialPartyResource">FinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="39b3691c-801d-41f5-a706-6bbc47b011de"></a>
+                    <h3>GET FinancialParty by identifier</h3>
+                    <p class="operation-description">Returns information for a given Financial Party, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Financial Party.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Financial Party. See <a href="#FinancialPartyResource">FinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties/{id}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e7314f93-63d6-4c29-85ab-14ee0c0e0c33"></a>
+                    <h3>GET FinancialParty by key</h3>
+                    <p class="operation-description">Returns information for a given Financial Party, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Financial Party. See <a href="#FinancialPartyResource">FinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties/{partyKey}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="db98406d-ffa3-4007-8d40-f604fd2261ea"></a>
+                    <h3>GET FinancialParties (with Party)</h3>
+                    <p class="operation-description">Returns all the information of the FinancialParty and the Entity it's related to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a list of resources of the FinancialParty and its related Entity. See <a href="#BaseFinancialPartyResource">BaseFinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9d3cc546-7701-4d57-9b73-019684e6f341"></a>
+                    <h3>GET FinancialParties (with Party) paged</h3>
+                    <p class="operation-description">Returns a paginated list of Financial Party and its related Entity user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of resources with the information of Financial Party and its related Entity. See <a href="#BaseFinancialPartyResource">BaseFinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2ec6a24a-d465-4fa9-a76d-2a5a4bce934f"></a>
+                    <h3>GET FinancialParty (with Party) by identifier</h3>
+                    <p class="operation-description">Returns information for a given Financial Party and its related Entity, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the FinancialParty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the Financial Party and its related Entity. See <a href="#BaseFinancialPartyResource">BaseFinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3d2f6f7f-40a7-4668-a124-e2fd539f13cc"></a>
+                    <h3>GET FinancialParty (with Party) by key</h3>
+                    <p class="operation-description">Returns information for a given Financial Party and its related Entity, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the Financial Party and its related Entity. See <a href="#BaseFinancialPartyResource">BaseFinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialParties/{partyKey}</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="682209b8-c79b-4da0-8dac-f17dc0835921"></a>
+                    <h3>POST FinancialParties</h3>
+                    <p class="operation-description">Creates a new Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialPartyResource</td>
+                                <td><i>(ApiFinancialPartyResource)</i> In the request body, supply a resource containing the Financial Party information.<br/>See <a href="#ApiFinancialPartyResource">ApiFinancialPartyResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Financial Party identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiFinancialPartyResource">ApiFinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Financial Party was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/financialParties/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="de1d49c1-9cb4-4021-8812-2af61dc14446"></a>
+                    <h3>POST FinancialParties (with ApiBaseFinancialParty)</h3>
+                    <p class="operation-description">Creates a new Financial Party and its related Entity</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialPartyResource</td>
+                                <td><i>(ApiFinancialPartyResource)</i> The resource containing the information of the Financial Party and its related Financial Party.<br/>See <a href="#ApiFinancialPartyResource">ApiFinancialPartyResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Financial Party identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiBaseFinancialPartyResource">ApiBaseFinancialPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Financial Party and its related Entity were created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/financialParties</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="78552769-cdf8-40f9-97e5-597e838b7664"></a>
+                    <h3>POST Financial Party </h3>
+                    <p class="operation-description">Inserts a new Financial Party Bank Account in an existing Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiFinancialPartyFinancialPartyBankAccountsResource)</i> The ApiFinancialPartyFinancialPartyBankAccountsResource instance.<br/>See <a href="#ApiFinancialPartyFinancialPartyBankAccountsResource">ApiFinancialPartyFinancialPartyBankAccountsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/financialParties/{partyKey}/financialPartyBankAccounts</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0171f5f0-a008-4339-9a1c-86451399f0f3"></a>
+                    <h3>PUT Set AccountNumber FinancialParty</h3>
+                    <p class="operation-description">Updates the AccountNumber for the specified Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the AccountNumber.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/financialPartyBankAccounts/{lineId}/accountNumber</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9d8528bb-3bad-4d0f-9332-431bddd82a1c"></a>
+                    <h3>PUT Set BankAccountType FinancialParty</h3>
+                    <p class="operation-description">Updates the BankAccountType for the specified Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the BankAccountType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/financialPartyBankAccounts/{lineId}/bankAccountType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="385619e8-f5e5-491a-8f92-a7736745c367"></a>
+                    <h3>PUT Set Branch FinancialParty</h3>
+                    <p class="operation-description">Updates the Branch for the specified Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Branch.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/financialPartyBankAccounts/{lineId}/branch</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b31280fc-b40a-4086-8c37-fc9855cb1335"></a>
+                    <h3>PUT Set Country FinancialParty</h3>
+                    <p class="operation-description">Updates the Country for the specified Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/financialPartyBankAccounts/{lineId}/country</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ced41b65-8df6-4423-9e26-dca29f04cc5b"></a>
+                    <h3>PUT Set IBAN FinancialParty</h3>
+                    <p class="operation-description">Updates the IBAN for the specified Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the IBAN.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/financialPartyBankAccounts/{lineId}/iBAN</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7e396412-b560-4e6f-9cce-7e02cf1ebcbf"></a>
+                    <h3>PUT Set IsActive FinancialParty</h3>
+                    <p class="operation-description">Updates the IsActive for the specified FinancialParty.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="df9c6928-7b4a-446b-b7a8-3c56b7b4ceea"></a>
+                    <h3>PUT Set IsLocked FinancialParty</h3>
+                    <p class="operation-description">Updates the IsLocked for the specified Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsLocked.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/isLocked</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d2e481ca-a9fa-4e4b-afb9-4aa89556c664"></a>
+                    <h3>PUT Set SWIFT FinancialParty</h3>
+                    <p class="operation-description">Updates the SWIFT for the specified Financial Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SWIFT.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialParties/{partyKey}/financialPartyBankAccounts/{lineId}/sWIFT</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7a6f78b8-431d-4bd7-bfa6-9a7b4f0b9950"></a>
+                    <h3>DELETE Financial Party Bank Account by identifier</h3>
+                    <p class="operation-description">Deletes the specified Financial Party Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/financialParties/{partyKey}/financialPartyBankAccounts/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ea822433-4948-417c-a2c8-82999a80e93f"></a>
+                    <h3>DELETE FinancialParty by identifier</h3>
+                    <p class="operation-description">Deletes the specified Financial Party by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Financial Party.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Financial Party was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Financial Party does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/financialParties/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9047c0d1-3e18-4202-be77-bb0bfe1f4efc"></a>
+                    <h3>DELETE FinancialParty by key</h3>
+                    <p class="operation-description">Deletes the specified Financial Party by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Financial Party was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Financial Party does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/financialParties/{partyKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="FinancialPartyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'FinancialPartyResourceResourceDiv')">FinancialPartyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="FinancialPartyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Is Locked</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialPartyBankAccounts</td>
+                                <td  class="wrap"><i>(List of FinancialPartyBankAccountResource)</i> Financial Party Bank Accounts<br/>See <a href="#FinancialPartyBankAccountResource">FinancialPartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="FinancialPartyBankAccountResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'FinancialPartyBankAccountResourceResourceDiv')">FinancialPartyBankAccountResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="FinancialPartyBankAccountResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> Country</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">bankAccountType</td>
+                                <td  class="wrap"><i>(string)</i> Bank Account Type</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">branch</td>
+                                <td  class="wrap"><i>(string)</i> Branch</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountNumber</td>
+                                <td  class="wrap"><i>(string)</i> Account Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> SWIFT</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> IBAN</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="BaseFinancialPartyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'BaseFinancialPartyResourceResourceDiv')">BaseFinancialPartyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="BaseFinancialPartyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The party default currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party main address country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Is Locked</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialPartyBankAccounts</td>
+                                <td title="(List of BaseFinancialPartyFinancialPartyBankAccountsResource) Financial Party Bank Accounts See BaseFinancialPartyFinancialPartyBankAccountsResource." class="wrap"><i>(List of BaseFinancialPartyFinancialPartyBankAccountsResource)</i> Financial Party Bank Accounts<br/>See <a href="#BaseFinancialPartyFinancialPartyBankAccountsResource">BaseFinancialPartyFinancialPartyBankAccountsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax id. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact title.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party Identity Username.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party main address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="BaseFinancialPartyFinancialPartyBankAccountsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'BaseFinancialPartyFinancialPartyBankAccountsResourceResourceDiv')">BaseFinancialPartyFinancialPartyBankAccountsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="BaseFinancialPartyFinancialPartyBankAccountsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> Country</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">bankAccountType</td>
+                                <td  class="wrap"><i>(string)</i> Bank Account Type</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">branch</td>
+                                <td  class="wrap"><i>(string)</i> Branch</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountNumber</td>
+                                <td  class="wrap"><i>(string)</i> Account Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> SWIFT</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> IBAN</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiFinancialPartyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiFinancialPartyResourceResourceDiv')">ApiFinancialPartyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiFinancialPartyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Is Locked</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialPartyBankAccounts</td>
+                                <td title="(List of ApiFinancialPartyFinancialPartyBankAccountsResource) Financial Party Bank Accounts See ApiFinancialPartyFinancialPartyBankAccountsResource." class="wrap"><i>(List of ApiFinancialPartyFinancialPartyBankAccountsResource)</i> Financial Party Bank Accounts<br/>See <a href="#ApiFinancialPartyFinancialPartyBankAccountsResource">ApiFinancialPartyFinancialPartyBankAccountsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiFinancialPartyFinancialPartyBankAccountsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiFinancialPartyFinancialPartyBankAccountsResourceResourceDiv')">ApiFinancialPartyFinancialPartyBankAccountsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiFinancialPartyFinancialPartyBankAccountsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> Country</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">bankAccountType</td>
+                                <td  class="wrap"><i>(string)</i> Bank Account Type</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">branch</td>
+                                <td  class="wrap"><i>(string)</i> Branch</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountNumber</td>
+                                <td  class="wrap"><i>(string)</i> Account Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> SWIFT</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> IBAN</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiBaseFinancialPartyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiBaseFinancialPartyResourceResourceDiv')">ApiBaseFinancialPartyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiBaseFinancialPartyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The party default currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party main address country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Is Locked</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialPartyBankAccounts</td>
+                                <td title="(List of ApiBaseFinancialPartyFinancialPartyBankAccountsResource) Financial Party Bank Accounts See ApiBaseFinancialPartyFinancialPartyBankAccountsResource." class="wrap"><i>(List of ApiBaseFinancialPartyFinancialPartyBankAccountsResource)</i> Financial Party Bank Accounts<br/>See <a href="#ApiBaseFinancialPartyFinancialPartyBankAccountsResource">ApiBaseFinancialPartyFinancialPartyBankAccountsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax id. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact title.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party Identity Username.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party main address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiBaseFinancialPartyFinancialPartyBankAccountsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiBaseFinancialPartyFinancialPartyBankAccountsResourceResourceDiv')">ApiBaseFinancialPartyFinancialPartyBankAccountsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiBaseFinancialPartyFinancialPartyBankAccountsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> Country</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">bankAccountType</td>
+                                <td  class="wrap"><i>(string)</i> Bank Account Type</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">branch</td>
+                                <td  class="wrap"><i>(string)</i> Branch</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountNumber</td>
+                                <td  class="wrap"><i>(string)</i> Account Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> SWIFT</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> IBAN</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

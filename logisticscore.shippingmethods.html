@@ -1,0 +1,1413 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Logistics | Shipping Method</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a id="current-menu-item" class="menu-item " href="logistics.html">
+		Logistics
+    </a>
+	<a class="menu-subitem " href="logisticscore.deliveryterms.html">
+		Delivery Term
+	</a>
+	<a class="menu-subitem " href="logisticscore.deliverytypes.html">
+		Delivery Type
+	</a>
+	<a class="menu-subitem " href="logisticscore.goodsreceiptnotetypes.html">
+		Goods Receipt Type
+	</a>
+	<a class="menu-subitem " href="logisticscore.memoreasons.html">
+		Memo Reason
+	</a>
+	<a class="menu-subitem menu-item-selected" href="logisticscore.shippingmethods.html">
+		Shipping Method
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Logistics | Shipping Method</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/logisticsCore/shippingMethods</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'ShippingMethod'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5dae43eb-b7a8-4831-a425-5e4b48b5e430"></a>
+                    <h3>GET ShippingMethods</h3>
+                    <p class="operation-description">Returns all Shipping Method user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Shipping Method. See <a href="#ShippingMethodResource">ShippingMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /logisticsCore/shippingMethods</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a65a051f-8236-4c89-901c-d7e637e780a3"></a>
+                    <h3>GET ShippingMethods (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Shipping Method user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Shipping Method. See <a href="#ShippingMethodResource">ShippingMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /logisticsCore/shippingMethods</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="470eaf15-3675-409e-90a8-50e7ed2d4477"></a>
+                    <h3>GET ShippingMethod by identifier</h3>
+                    <p class="operation-description">Returns information for a given Shipping Method, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Shipping Method.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Shipping Method. See <a href="#ShippingMethodResource">ShippingMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /logisticsCore/shippingMethods/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6fbc3748-0443-4003-b5f2-b2f85431c251"></a>
+                    <h3>GET ShippingMethod by key</h3>
+                    <p class="operation-description">Returns information for a given Shipping Method, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Shipping Method. See <a href="#ShippingMethodResource">ShippingMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /logisticsCore/shippingMethods/{shippingMethodKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="97982492-8847-4b47-a561-51d200b49847"></a>
+                    <h3>GET Print ShippingMethod by identifier</h3>
+                    <p class="operation-description">Prints the specified ShippingMethod.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ShippingMethod.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ShippingMethod.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /logisticsCore/shippingMethods/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9ed6d6cf-ac4f-4834-b2fa-7fa362b85a31"></a>
+                    <h3>GET Print ShippingMethod by key</h3>
+                    <p class="operation-description">Prints the specified ShippingMethod by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ShippingMethod.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /logisticsCore/shippingMethods/{shippingMethodKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="94f7249a-ab50-4dd7-b17a-4e93d216cff5"></a>
+                    <h3>POST ShippingMethods</h3>
+                    <p class="operation-description">Creates a new Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodResource</td>
+                                <td><i>(ApiShippingMethodResource)</i> In the request body, supply a resource containing the Shipping Method information.<br/>See <a href="#ApiShippingMethodResource">ApiShippingMethodResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Shipping Method identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiShippingMethodResource">ApiShippingMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Shipping Method was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /logisticsCore/shippingMethods</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1217356a-71d0-422f-a11b-4ced089341d4"></a>
+                    <h3>POST Shipping Method </h3>
+                    <p class="operation-description">Inserts a new Shipping Method Detail in an existing Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiShippingMethodShippingMethodDetailsResource)</i> The ApiShippingMethodShippingMethodDetailsResource instance.<br/>See <a href="#ApiShippingMethodShippingMethodDetailsResource">ApiShippingMethodShippingMethodDetailsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /logisticsCore/shippingMethods/{shippingMethodKey}/shippingMethodDetails</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1b4255e7-6c3a-43ea-82cb-9b2496f66e2f"></a>
+                    <h3>PUT Set AdditionalWeight ShippingMethod</h3>
+                    <p class="operation-description">Updates the AdditionalWeight for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the AdditionalWeight.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/additionalWeight</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f0061076-0214-47d8-969e-7a7cae156b8c"></a>
+                    <h3>PUT Set AdditionalWeightPrice ShippingMethod</h3>
+                    <p class="operation-description">Updates the AdditionalWeightPrice for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the AdditionalWeightPrice.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/additionalWeightPrice</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d128adfa-eceb-4467-a92d-02224c6f94c3"></a>
+                    <h3>PUT Set Currency ShippingMethod</h3>
+                    <p class="operation-description">Updates the Currency for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="68106be7-36b3-4a29-94a9-763e3085ead2"></a>
+                    <h3>PUT Set Currency ShippingMethod</h3>
+                    <p class="operation-description">Updates the Currency for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/shippingMethodDetails/{lineId}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f74b018e-acfa-43ef-a77a-fc3395c49587"></a>
+                    <h3>PUT Set DeliverySpeed ShippingMethod</h3>
+                    <p class="operation-description">Updates the DeliverySpeed for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> In the request body, supply the new value for the DeliverySpeed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/deliverySpeed</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="df247bbc-d810-4dda-aaf1-f08775e73c16"></a>
+                    <h3>PUT Set DeliveryTerm ShippingMethod</h3>
+                    <p class="operation-description">Updates the DeliveryTerm for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the DeliveryTerm.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/deliveryTerm</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="18763507-d590-4140-98ef-6aa93a272c65"></a>
+                    <h3>PUT Set Description ShippingMethod</h3>
+                    <p class="operation-description">Updates the Description for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="75d68215-3ef3-4577-9eb6-9d67ddf65015"></a>
+                    <h3>PUT Set FreeShipping ShippingMethod</h3>
+                    <p class="operation-description">Updates the FreeShipping for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the FreeShipping.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/freeShipping</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1852dab6-2e0b-4d74-88dc-a523ea3504ad"></a>
+                    <h3>PUT Set From ShippingMethod</h3>
+                    <p class="operation-description">Updates the From for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the From.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/shippingMethodDetails/{lineId}/from</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e9bd4499-296a-4adf-b077-280900fa1e3d"></a>
+                    <h3>PUT Set IsActive ShippingMethod</h3>
+                    <p class="operation-description">Updates the IsActive for the specified ShippingMethod.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d2cfb68b-544e-4e4d-8f2d-0a9acfd92a8e"></a>
+                    <h3>PUT Set ShippingMethodKey ShippingMethod</h3>
+                    <p class="operation-description">Updates the ShippingMethodKey for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ShippingMethodKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/shippingMethodKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7e6b5d04-2a63-4755-b31d-42691c829175"></a>
+                    <h3>PUT Set ShippingValue ShippingMethod</h3>
+                    <p class="operation-description">Updates the ShippingValue for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ShippingValue.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/shippingMethodDetails/{lineId}/shippingValue</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d8f6b94c-b9d8-462c-adf2-c75884b3d893"></a>
+                    <h3>PUT Set To ShippingMethod</h3>
+                    <p class="operation-description">Updates the To for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the To.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/shippingMethodDetails/{lineId}/to</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="473b1340-2063-4bdc-bc24-d171e922d5ec"></a>
+                    <h3>PUT Set Unit ShippingMethod</h3>
+                    <p class="operation-description">Updates the Unit for the specified Shipping Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Unit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /logisticsCore/shippingMethods/{shippingMethodKey}/unit</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f42155d2-7b0f-48e8-a524-1e881cc2bd3e"></a>
+                    <h3>DELETE Shipping Method Detail by identifier</h3>
+                    <p class="operation-description">Deletes the specified Shipping Method Detail.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /logisticsCore/shippingMethods/{shippingMethodKey}/shippingMethodDetails/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9ea6f7e5-9b83-4547-a590-f0dab5dd2781"></a>
+                    <h3>DELETE ShippingMethod by identifier</h3>
+                    <p class="operation-description">Deletes the specified Shipping Method by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Shipping Method.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Shipping Method was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Shipping Method does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /logisticsCore/shippingMethods/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9332319f-7d75-4ec7-a37b-795f09c088d0"></a>
+                    <h3>DELETE ShippingMethod by key</h3>
+                    <p class="operation-description">Deletes the specified Shipping Method by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Shipping Method was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Shipping Method does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /logisticsCore/shippingMethods/{shippingMethodKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="ShippingMethodResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ShippingMethodResourceResourceDiv')">ShippingMethodResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ShippingMethodResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td  class="wrap"><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">additionalWeight</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping method additional weight.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">additionalWeightPrice</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping method additional weight price.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">freeShipping</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping method free shipping amount.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryTerm</td>
+                                <td  class="wrap"><i>(string)</i> The delivery term for the shipping method.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit for the shipping method.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the shipping method.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the shipping method.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliverySpeed</td>
+                                <td  class="wrap"><i>(int)</i> The shipping method delivery speed in work days.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingMethodDetails</td>
+                                <td  class="wrap"><i>(List of ShippingMethodDetailResource)</i> The details of the shipping method.<br/>See <a href="#ShippingMethodDetailResource">ShippingMethodDetailResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ShippingMethodDetailResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ShippingMethodDetailResourceResourceDiv')">ShippingMethodDetailResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ShippingMethodDetailResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">from</td>
+                                <td  class="wrap"><i>(decimal)</i> The min weigth for the item for the shipping value.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">to</td>
+                                <td  class="wrap"><i>(decimal)</i> The max weigth for the item for the shipping value.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingValue</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping value for the shipping method detail.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the shipping method detail.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiShippingMethodResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiShippingMethodResourceResourceDiv')">ApiShippingMethodResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiShippingMethodResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">shippingMethodKey</td>
+                                <td  class="wrap"><i>(string)</i> The key of the shipping method. The shipping method that the user can select before finalize the purchase.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">additionalWeight</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping method additional weight.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">additionalWeightPrice</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping method additional weight price.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">freeShipping</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping method free shipping amount.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryTerm</td>
+                                <td  class="wrap"><i>(string)</i> The delivery term for the shipping method.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit for the shipping method.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the shipping method.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the shipping method.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliverySpeed</td>
+                                <td  class="wrap"><i>(int)</i> The shipping method delivery speed in work days.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingMethodDetails</td>
+                                <td title="(List of ApiShippingMethodShippingMethodDetailsResource) The details of the shipping method. See ApiShippingMethodShippingMethodDetailsResource." class="wrap"><i>(List of ApiShippingMethodShippingMethodDetailsResource)</i> The details of the shipping method.<br/>See <a href="#ApiShippingMethodShippingMethodDetailsResource">ApiShippingMethodShippingMethodDetailsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiShippingMethodShippingMethodDetailsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiShippingMethodShippingMethodDetailsResourceResourceDiv')">ApiShippingMethodShippingMethodDetailsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiShippingMethodShippingMethodDetailsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">from</td>
+                                <td  class="wrap"><i>(decimal)</i> The min weigth for the item for the shipping value.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">to</td>
+                                <td  class="wrap"><i>(decimal)</i> The max weigth for the item for the shipping value.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingValue</td>
+                                <td  class="wrap"><i>(decimal)</i> The shipping value for the shipping method detail.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the shipping method detail.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

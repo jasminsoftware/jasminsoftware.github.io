@@ -1,0 +1,923 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Taxes | Item WHT Schema</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a id="current-menu-item" class="menu-item " href="taxes.html">
+		Taxes
+    </a>
+	<a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+		AT Communication Request
+	</a>
+	<a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+		Economic Activity Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+		Exemption Reason Code
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+		Fiscal Document Type
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+		Fiscal Witholding Tax Type
+	</a>
+	<a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+		Item Tax Schema
+	</a>
+	<a class="menu-subitem menu-item-selected" href="taxescore.itemwithholdingtaxschemas.html">
+		Item WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxes.obligations.html">
+		Obligation
+	</a>
+	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
+		Party Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
+		Party WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+		Payment Method Fiscal Class
+	</a>
+	<a class="menu-subitem " href="taxes.legaldeclarations.html">
+		SAF-T (PT)
+	</a>
+	<a class="menu-subitem " href="taxescore.taxclasses.html">
+		Tax Class
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+		Tax Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
+		Tax Regional Area
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsubclasses.html">
+		Tax Sub Class
+	</a>
+	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
+		Tax Type Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
+		WHT Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+		WHT Type
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Taxes | Item WHT Schema</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/taxesCore/itemWithholdingTaxSchemas</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'ItemWithholdingTaxSchema'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="454b28ff-f3c9-4a89-8244-412978207942"></a>
+                    <h3>GET ItemWithholdingTaxSchemas</h3>
+                    <p class="operation-description">Returns all Item Withholding Tax Schema user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Item Withholding Tax Schema. See <a href="#ItemWithholdingTaxSchemaResource">ItemWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/itemWithholdingTaxSchemas</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6aab0a54-73a6-429e-b992-4585ad54e216"></a>
+                    <h3>GET ItemWithholdingTaxSchemas (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Item Withholding Tax Schema user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Item Withholding Tax Schema. See <a href="#ItemWithholdingTaxSchemaResource">ItemWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/itemWithholdingTaxSchemas</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="12f49e9c-58a7-4a16-872b-87611cfd442d"></a>
+                    <h3>GET ItemWithholdingTaxSchema by identifier</h3>
+                    <p class="operation-description">Returns information for a given Item Withholding Tax Schema, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Item Withholding Tax Schema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Item Withholding Tax Schema. See <a href="#ItemWithholdingTaxSchemaResource">ItemWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/itemWithholdingTaxSchemas/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="384e135b-7f14-4c25-b661-ee69df6a8613"></a>
+                    <h3>GET ItemWithholdingTaxSchema by key</h3>
+                    <p class="operation-description">Returns information for a given Item Withholding Tax Schema, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Item Withholding Tax Schema. See <a href="#ItemWithholdingTaxSchemaResource">ItemWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e7c957e1-87c4-43cb-b06a-6e694186312b"></a>
+                    <h3>GET Print ItemWithholdingTaxSchema by identifier</h3>
+                    <p class="operation-description">Prints the specified ItemWithholdingTaxSchema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ItemWithholdingTaxSchema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ItemWithholdingTaxSchema.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/itemWithholdingTaxSchemas/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f75b7465-b759-43d7-ac03-6f4344068fea"></a>
+                    <h3>GET Print ItemWithholdingTaxSchema by key</h3>
+                    <p class="operation-description">Prints the specified ItemWithholdingTaxSchema by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ItemWithholdingTaxSchema.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8a677604-efd6-49f6-9f10-367878df89b5"></a>
+                    <h3>POST ItemWithholdingTaxSchemas</h3>
+                    <p class="operation-description">Creates a new Item Withholding Tax Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxSchemaResource</td>
+                                <td><i>(ApiItemWithholdingTaxSchemaResource)</i> In the request body, supply a resource containing the Item Withholding Tax Schema information.<br/>See <a href="#ApiItemWithholdingTaxSchemaResource">ApiItemWithholdingTaxSchemaResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Item Withholding Tax Schema identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiItemWithholdingTaxSchemaResource">ApiItemWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Item Withholding Tax Schema was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/itemWithholdingTaxSchemas</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8d0250e2-f722-4afd-af8b-3f8949f9ec7c"></a>
+                    <h3>POST Item Withholding Tax Schema </h3>
+                    <p class="operation-description">Inserts a new Item WTax Schema List in an existing Item Withholding Tax Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource)</i> The ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource instance.<br/>See <a href="#ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource">ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}/itemWithholdingTaxSchemaLists</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c440a173-8aa6-4200-84ed-95c8f1ff1572"></a>
+                    <h3>PUT Set Description ItemWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the Description for the specified Item Withholding Tax Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fc6d9cce-2531-4ccf-9734-fc9f5b8b95f3"></a>
+                    <h3>PUT Set IsActive ItemWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the IsActive for the specified ItemWithholdingTaxSchema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="332ae595-c6ba-461a-9dad-1cb3babac7b1"></a>
+                    <h3>PUT Set ItemWithholdingTaxGroupKey ItemWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the ItemWithholdingTaxGroupKey for the specified Item Withholding Tax Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ItemWithholdingTaxGroupKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}/itemWithholdingTaxGroupKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7777a502-60c4-456e-99be-bcf36de12922"></a>
+                    <h3>PUT Set WithholdingTaxCode ItemWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the WithholdingTaxCode for the specified Item Withholding Tax Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WithholdingTaxCode.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}/itemWithholdingTaxSchemaLists/{lineId}/withholdingTaxCode</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7ed762fe-1415-4679-b353-f9a8318b84c0"></a>
+                    <h3>DELETE Item WTax Schema List by identifier</h3>
+                    <p class="operation-description">Deletes the specified Item WTax Schema List.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}/itemWithholdingTaxSchemaLists/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="035d3345-2c7f-455b-a394-ad921c135180"></a>
+                    <h3>DELETE ItemWithholdingTaxSchema by identifier</h3>
+                    <p class="operation-description">Deletes the specified Item Withholding Tax Schema by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Item Withholding Tax Schema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Item Withholding Tax Schema was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Item Withholding Tax Schema does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/itemWithholdingTaxSchemas/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f3e4f619-1fe1-43d6-846b-91d92319ac19"></a>
+                    <h3>DELETE ItemWithholdingTaxSchema by key</h3>
+                    <p class="operation-description">Deletes the specified Item Withholding Tax Schema by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Item Withholding Tax Schema was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Item Withholding Tax Schema does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/itemWithholdingTaxSchemas/{itemWithholdingTaxGroupKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="ItemWithholdingTaxSchemaResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemWithholdingTaxSchemaResourceResourceDiv')">ItemWithholdingTaxSchemaResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemWithholdingTaxSchemaResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td  class="wrap"><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxSchemaLists</td>
+                                <td title="(List of ItemWithholdingTaxSchemaListResource) The list of withholding taxes. See ItemWithholdingTaxSchemaListResource." class="wrap"><i>(List of ItemWithholdingTaxSchemaListResource)</i> The list of withholding taxes.<br/>See <a href="#ItemWithholdingTaxSchemaListResource">ItemWithholdingTaxSchemaListResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The item withholding tax schema description. The withholding tax schema identifies the group of withholgin taxes an item is liable for.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ItemWithholdingTaxSchemaListResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemWithholdingTaxSchemaListResourceResourceDiv')">ItemWithholdingTaxSchemaListResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemWithholdingTaxSchemaListResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCode</td>
+                                <td  class="wrap"><i>(string)</i> Withholding Tax Type Code. The calculation base and the net value are set in the withheld tax code. You can set any number of withheld tax codes required for each type of withheld tax.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiItemWithholdingTaxSchemaResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiItemWithholdingTaxSchemaResourceResourceDiv')">ApiItemWithholdingTaxSchemaResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiItemWithholdingTaxSchemaResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxGroupKey</td>
+                                <td  class="wrap"><i>(string)</i> The item withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxSchemaLists</td>
+                                <td title="(List of ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource) The list of withholding taxes. See ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource." class="wrap"><i>(List of ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource)</i> The list of withholding taxes.<br/>See <a href="#ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource">ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The item withholding tax schema description. The withholding tax schema identifies the group of withholgin taxes an item is liable for.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResourceResourceDiv')">ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiItemWithholdingTaxSchemaItemWithholdingTaxSchemaListsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCode</td>
+                                <td  class="wrap"><i>(string)</i> Withholding Tax Type Code. The calculation base and the net value are set in the withheld tax code. You can set any number of withheld tax codes required for each type of withheld tax.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

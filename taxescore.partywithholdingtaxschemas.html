@@ -1,0 +1,1045 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Taxes | Party WHT Schema</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a id="current-menu-item" class="menu-item " href="taxes.html">
+		Taxes
+    </a>
+	<a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+		AT Communication Request
+	</a>
+	<a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+		Economic Activity Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+		Exemption Reason Code
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+		Fiscal Document Type
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+		Fiscal Witholding Tax Type
+	</a>
+	<a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+		Item Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
+		Item WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxes.obligations.html">
+		Obligation
+	</a>
+	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
+		Party Tax Schema
+	</a>
+	<a class="menu-subitem menu-item-selected" href="taxescore.partywithholdingtaxschemas.html">
+		Party WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+		Payment Method Fiscal Class
+	</a>
+	<a class="menu-subitem " href="taxes.legaldeclarations.html">
+		SAF-T (PT)
+	</a>
+	<a class="menu-subitem " href="taxescore.taxclasses.html">
+		Tax Class
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+		Tax Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
+		Tax Regional Area
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsubclasses.html">
+		Tax Sub Class
+	</a>
+	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
+		Tax Type Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
+		WHT Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+		WHT Type
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Taxes | Party WHT Schema</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/taxesCore/partyWithholdingTaxSchemas</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'PartyWithholdingTaxSchema'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b734fdd4-e50a-4d3f-9786-72eb336880a8"></a>
+                    <h3>GET PartyWithholdingTaxSchemas</h3>
+                    <p class="operation-description">Returns all Party WHT Schema user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Party WHT Schema. See <a href="#PartyWithholdingTaxSchemaResource">PartyWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/partyWithholdingTaxSchemas</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f9b6d6bc-98af-4027-a764-9a070349a922"></a>
+                    <h3>GET PartyWithholdingTaxSchemas (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Party WHT Schema user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Party WHT Schema. See <a href="#PartyWithholdingTaxSchemaResource">PartyWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/partyWithholdingTaxSchemas</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2f53df18-2b90-49db-b5a2-3bc1aa07efb7"></a>
+                    <h3>GET PartyWithholdingTaxSchema by identifier</h3>
+                    <p class="operation-description">Returns information for a given Party WHT Schema, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Party WHT Schema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Party WHT Schema. See <a href="#PartyWithholdingTaxSchemaResource">PartyWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/partyWithholdingTaxSchemas/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e5f9d8f6-ecf9-47ec-917f-59e23e37135a"></a>
+                    <h3>GET PartyWithholdingTaxSchema by key</h3>
+                    <p class="operation-description">Returns information for a given Party WHT Schema, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Party WHT Schema. See <a href="#PartyWithholdingTaxSchemaResource">PartyWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3b56a6eb-0efe-4f7c-b8e5-31127689c7b6"></a>
+                    <h3>GET Print PartyWithholdingTaxSchema by identifier</h3>
+                    <p class="operation-description">Prints the specified PartyWithholdingTaxSchema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the PartyWithholdingTaxSchema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed PartyWithholdingTaxSchema.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/partyWithholdingTaxSchemas/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="290f4f8f-b604-4672-8081-09640ae8a4e9"></a>
+                    <h3>GET Print PartyWithholdingTaxSchema by key</h3>
+                    <p class="operation-description">Prints the specified PartyWithholdingTaxSchema by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed PartyWithholdingTaxSchema.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="07dff8df-6cfd-45bd-8367-59b85aa1dc1d"></a>
+                    <h3>POST PartyWithholdingTaxSchemas</h3>
+                    <p class="operation-description">Creates a new Party WHT Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaResource</td>
+                                <td><i>(ApiPartyWithholdingTaxSchemaResource)</i> In the request body, supply a resource containing the Party WHT Schema information.<br/>See <a href="#ApiPartyWithholdingTaxSchemaResource">ApiPartyWithholdingTaxSchemaResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Party WHT Schema identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiPartyWithholdingTaxSchemaResource">ApiPartyWithholdingTaxSchemaResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Party WHT Schema was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/partyWithholdingTaxSchemas</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="777666e6-675a-452f-90a6-044a21f3bb91"></a>
+                    <h3>POST Party WHT Schema </h3>
+                    <p class="operation-description">Inserts a new Party WHT Schema List in an existing Party WHT Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource)</i> The ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource instance.<br/>See <a href="#ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource">ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/partyWithholdingTaxSchemaLists</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ccc4bdde-c1c7-4081-b7a1-dfe3dc7b45ce"></a>
+                    <h3>PUT Set Description PartyWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the Description for the specified Party WHT Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cc072050-e3d4-47d4-be31-63d5354caad0"></a>
+                    <h3>PUT Set ExemptionReasonCode PartyWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the ExemptionReasonCode for the specified Party WHT Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ExemptionReasonCode.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/partyWithholdingTaxSchemaLists/{lineId}/exemptionReasonCode</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2ddfa577-f7e5-4440-816f-66a5324c5ec3"></a>
+                    <h3>PUT Set IsActive PartyWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the IsActive for the specified PartyWithholdingTaxSchema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="181201d4-cafe-4c98-a96f-6c0db124dd4b"></a>
+                    <h3>PUT Set IsExempt PartyWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the IsExempt for the specified Party WHT Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsExempt.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/partyWithholdingTaxSchemaLists/{lineId}/isExempt</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7eda0eda-39ec-483d-92c5-8ff22474f666"></a>
+                    <h3>PUT Set PartyWithholdingTaxSchemaKey PartyWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the PartyWithholdingTaxSchemaKey for the specified Party WHT Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PartyWithholdingTaxSchemaKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/partyWithholdingTaxSchemaKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b946248c-a040-4977-a09f-67a002e444cf"></a>
+                    <h3>PUT Set WithholdingTaxCode PartyWithholdingTaxSchema</h3>
+                    <p class="operation-description">Updates the WithholdingTaxCode for the specified Party WHT Schema.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WithholdingTaxCode.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/partyWithholdingTaxSchemaLists/{lineId}/withholdingTaxCode</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d697ce10-e805-4fea-85bd-f907ebc9fab2"></a>
+                    <h3>DELETE Party WHT Schema List by identifier</h3>
+                    <p class="operation-description">Deletes the specified Party WHT Schema List.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}/partyWithholdingTaxSchemaLists/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fdc0fbae-cf4e-4548-a74b-96e11495a94f"></a>
+                    <h3>DELETE PartyWithholdingTaxSchema by identifier</h3>
+                    <p class="operation-description">Deletes the specified Party WHT Schema by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Party WHT Schema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Party WHT Schema was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Party WHT Schema does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/partyWithholdingTaxSchemas/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b6bed321-b685-408b-ac3f-8c5c6c45bf8e"></a>
+                    <h3>DELETE PartyWithholdingTaxSchema by key</h3>
+                    <p class="operation-description">Deletes the specified Party WHT Schema by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Party WHT Schema was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Party WHT Schema does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/partyWithholdingTaxSchemas/{partyWithholdingTaxSchemaKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="PartyWithholdingTaxSchemaResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PartyWithholdingTaxSchemaResourceResourceDiv')">PartyWithholdingTaxSchemaResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PartyWithholdingTaxSchemaResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td  class="wrap"><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The party withholding schema description. The withholding tax schema identifies the group of withholding taxes a party is liable for.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaLists</td>
+                                <td title="(List of PartyWithholdingTaxSchemaListResource) List of withholding taxes. See PartyWithholdingTaxSchemaListResource." class="wrap"><i>(List of PartyWithholdingTaxSchemaListResource)</i> List of withholding taxes.<br/>See <a href="#PartyWithholdingTaxSchemaListResource">PartyWithholdingTaxSchemaListResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="PartyWithholdingTaxSchemaListResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PartyWithholdingTaxSchemaListResourceResourceDiv')">PartyWithholdingTaxSchemaListResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PartyWithholdingTaxSchemaListResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCode</td>
+                                <td  class="wrap"><i>(string)</i> Withholding tax type code. Code that identifies the type of withholding tax applied.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExempt</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if is exempt or not. Discharge from payment of certain fees based on the fulfillment of certain attributes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">exemptionReasonCode</td>
+                                <td  class="wrap"><i>(string)</i> The exemption reason code. It represents the reason why a specific operation does not pay withholding taxes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPartyWithholdingTaxSchemaResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPartyWithholdingTaxSchemaResourceResourceDiv')">ApiPartyWithholdingTaxSchemaResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPartyWithholdingTaxSchemaResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaKey</td>
+                                <td  class="wrap"><i>(string)</i> The party withholding tax schema key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The party withholding schema description. The withholding tax schema identifies the group of withholding taxes a party is liable for.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchemaLists</td>
+                                <td title="(List of ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource) List of withholding taxes. See ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource." class="wrap"><i>(List of ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource)</i> List of withholding taxes.<br/>See <a href="#ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource">ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResourceResourceDiv')">ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPartyWithholdingTaxSchemaPartyWithholdingTaxSchemaListsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCode</td>
+                                <td  class="wrap"><i>(string)</i> Withholding tax type code. Code that identifies the type of withholding tax applied.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExempt</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if is exempt or not. Discharge from payment of certain fees based on the fulfillment of certain attributes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">exemptionReasonCode</td>
+                                <td  class="wrap"><i>(string)</i> The exemption reason code. It represents the reason why a specific operation does not pay withholding taxes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

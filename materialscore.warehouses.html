@@ -1,0 +1,1436 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Materials Management | Warehouse</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+		Materials Management
+    </a>
+	<a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+		Adjustment Reason
+	</a>
+	<a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
+		Item Adjustment
+	</a>
+	<a class="menu-subitem " href="materialscore.itemsubtypes.html">
+		Item Subtype
+	</a>
+	<a class="menu-subitem " href="materialscore.materialsitems.html">
+		Materials Item
+	</a>
+	<a class="menu-subitem " href="materialscore.materialssetups.html">
+		Materials Setup
+	</a>
+	<a class="menu-subitem menu-item-selected" href="materialscore.warehouses.html">
+		Warehouse
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Materials Management | Warehouse</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/materialsCore/warehouses</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Warehouse'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fad88cb8-8390-4fb3-b8be-bc9a15db377d"></a>
+                    <h3>GET Warehouses</h3>
+                    <p class="operation-description">Returns all Warehouse user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/warehouses</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b5df593c-6502-4254-8830-c96460bb2cbf"></a>
+                    <h3>GET Warehouses (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Warehouse user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/warehouses</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e3b5534b-148a-462e-be1f-d520130e9a67"></a>
+                    <h3>GET Warehouse by identifier</h3>
+                    <p class="operation-description">Returns information for a given Warehouse, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/warehouses/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2300f90a-89b2-4d80-b035-fa3f8ebbba1b"></a>
+                    <h3>GET Warehouse by key</h3>
+                    <p class="operation-description">Returns information for a given Warehouse, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/warehouses/{warehouseKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="34edbb5e-37a5-4192-b446-bb87861efaa3"></a>
+                    <h3>GET Print Warehouse by identifier</h3>
+                    <p class="operation-description">Prints the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Warehouse.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/warehouses/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eaec92d4-2ae4-4192-ae9a-159556dbadb8"></a>
+                    <h3>GET Print Warehouse by key</h3>
+                    <p class="operation-description">Prints the specified Warehouse by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Warehouse.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsCore/warehouses/{warehouseKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b4198fcf-a454-43bb-bdea-8bdaf4f7580e"></a>
+                    <h3>POST Warehouses</h3>
+                    <p class="operation-description">Creates a new Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseResource</td>
+                                <td><i>(ApiWarehouseResource)</i> In the request body, supply a resource containing the Warehouse information.<br/>See <a href="#ApiWarehouseResource">ApiWarehouseResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Warehouse identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiWarehouseResource">ApiWarehouseResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Warehouse was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /materialsCore/warehouses</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="aadd7647-136d-4087-abe1-90ca6f258aef"></a>
+                    <h3>PUT Set AllowItemEntries Warehouse</h3>
+                    <p class="operation-description">Updates the AllowItemEntries for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the AllowItemEntries.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/allowItemEntries</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="73740473-7baa-4dd5-83c8-35888bd5bbd2"></a>
+                    <h3>PUT Set AllowItemIssues Warehouse</h3>
+                    <p class="operation-description">Updates the AllowItemIssues for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the AllowItemIssues.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/allowItemIssues</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="01c89bc5-37cf-4a25-ad2e-8e873e142f2b"></a>
+                    <h3>PUT Set BuildingNumber Warehouse</h3>
+                    <p class="operation-description">Updates the BuildingNumber for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the BuildingNumber.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/buildingNumber</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="023a79a9-ce49-4a43-addc-26e64adc0d98"></a>
+                    <h3>PUT Set CityName Warehouse</h3>
+                    <p class="operation-description">Updates the CityName for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CityName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/cityName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1a896fb6-c733-457f-be3a-27c0bc00a1ec"></a>
+                    <h3>PUT Set ClosedExercise Warehouse</h3>
+                    <p class="operation-description">Updates the ClosedExercise for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ClosedExercise.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/closedExercise</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ab634684-e5fc-46f1-bd66-14f6cd9bd384"></a>
+                    <h3>PUT Set Company Warehouse</h3>
+                    <p class="operation-description">Updates the Company for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="699b741b-03a8-4d10-89c0-5965bec4ebb3"></a>
+                    <h3>PUT Set Country Warehouse</h3>
+                    <p class="operation-description">Updates the Country for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/country</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7a2d4735-4067-4048-840f-2df09e7ce4fb"></a>
+                    <h3>PUT Set Description Warehouse</h3>
+                    <p class="operation-description">Updates the Description for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="49df9431-3802-4f1b-b68f-ea74a3ba5abc"></a>
+                    <h3>PUT Set ExternalId Warehouse</h3>
+                    <p class="operation-description">Updates the ExternalId for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ExternalId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/externalId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e153669a-8f42-4325-bb1a-d84f2e0d8996"></a>
+                    <h3>PUT Set ExternalVersion Warehouse</h3>
+                    <p class="operation-description">Updates the ExternalVersion for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ExternalVersion.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/externalVersion</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a0c8abb4-ccb0-4003-a3d5-4ec4cdc1d46e"></a>
+                    <h3>PUT Set IsActive Warehouse</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="633a5d88-7564-494c-8c6f-72fbcf880a1f"></a>
+                    <h3>PUT Set IsExternallyManaged Warehouse</h3>
+                    <p class="operation-description">Updates the IsExternallyManaged for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsExternallyManaged.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/isExternallyManaged</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2ca5ceae-0b32-429c-9b17-82351e426e77"></a>
+                    <h3>PUT Set IsLocked Warehouse</h3>
+                    <p class="operation-description">Updates the IsLocked for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsLocked.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/isLocked</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3d770e5a-90a2-41c1-888f-3ce36f6a125a"></a>
+                    <h3>PUT Set PostalZone Warehouse</h3>
+                    <p class="operation-description">Updates the PostalZone for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PostalZone.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/postalZone</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3d876c1e-2cc4-45a8-af80-d6737975dd4a"></a>
+                    <h3>PUT Set Region Warehouse</h3>
+                    <p class="operation-description">Updates the Region for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Region.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/region</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="26cc466e-69b7-46d1-aef6-e06f5f19f7ee"></a>
+                    <h3>PUT Set StreetName Warehouse</h3>
+                    <p class="operation-description">Updates the StreetName for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the StreetName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/streetName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e6cab802-3977-43aa-889c-e9bc0bb03bd3"></a>
+                    <h3>PUT Set WarehouseKey Warehouse</h3>
+                    <p class="operation-description">Updates the WarehouseKey for the specified Warehouse.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WarehouseKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsCore/warehouses/{warehouseKey}/warehouseKey</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2b325c89-0a17-4a22-bdee-1c1849ba48b1"></a>
+                    <h3>DELETE Warehouse by identifier</h3>
+                    <p class="operation-description">Deletes the specified Warehouse by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Warehouse was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Warehouse does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsCore/warehouses/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8ea05757-951c-4f06-bcd5-81c5f42bad45"></a>
+                    <h3>DELETE Warehouse by key</h3>
+                    <p class="operation-description">Deletes the specified Warehouse by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Warehouse was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Warehouse does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsCore/warehouses/{warehouseKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="WarehouseResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'WarehouseResourceResourceDiv')">WarehouseResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="WarehouseResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">allowItemEntries</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item entries.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">allowItemIssues</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item issues.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the warehouse is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The city name for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">closedExercise</td>
+                                <td  class="wrap"><i>(DateTime)</i> The closed exercose date for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external identification for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">region</td>
+                                <td  class="wrap"><i>(string)</i> The region for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The country for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiWarehouseResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiWarehouseResourceResourceDiv')">ApiWarehouseResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiWarehouseResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">allowItemEntries</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item entries.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">allowItemIssues</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item issues.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the warehouse is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The city name for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">closedExercise</td>
+                                <td  class="wrap"><i>(DateTime)</i> The closed exercose date for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external identification for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">region</td>
+                                <td  class="wrap"><i>(string)</i> The region for the Warehouse.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The country for the Warehouse.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

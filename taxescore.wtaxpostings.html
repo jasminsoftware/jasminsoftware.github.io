@@ -1,0 +1,1829 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Taxes | Withholding Tax Posting</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a id="current-menu-item" class="menu-item " href="taxes.html">
+		Taxes
+    </a>
+	<a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+		AT Communication Request
+	</a>
+	<a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+		Economic Activity Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+		Exemption Reason Code
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+		Fiscal Document Type
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+		Fiscal Witholding Tax Type
+	</a>
+	<a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+		Item Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
+		Item WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxes.obligations.html">
+		Obligation
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsummaries.html">
+		Open Tax Item
+	</a>
+	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
+		Party Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
+		Party WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+		Payment Method Fiscal Class
+	</a>
+	<a class="menu-subitem " href="taxes.legaldeclarations.html">
+		SAF-T (PT)
+	</a>
+	<a class="menu-subitem " href="taxescore.taxclasses.html">
+		Tax Class
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+		Tax Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.taxpostings.html">
+		Tax Posting
+	</a>
+	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
+		Tax Regional Area
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsubclasses.html">
+		Tax Sub Class
+	</a>
+	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
+		Tax Type Code
+	</a>
+	<a class="menu-subitem " href="taxescore.taxessetups.html">
+		Taxes Setup
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
+		WHT Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+		WHT Type
+	</a>
+	<a class="menu-subitem menu-item-selected" href="taxescore.wtaxpostings.html">
+		Withholding Tax Posting
+	</a>
+	<a class="menu-subitem " href="taxescore.wtaxsummaries.html">
+		Withholding Tax Summary
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Taxes | Withholding Tax Posting</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/taxesCore/wTaxPostings</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'WTaxPosting'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c46f6850-a4fc-48ab-9636-fa04b6de9527"></a>
+                    <h3>GET WTaxPostings</h3>
+                    <p class="operation-description">Returns all Withholding Tax Posting user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Withholding Tax Posting. See <a href="#WTaxPostingResource">WTaxPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/wTaxPostings</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0253fe69-5d95-4331-b892-496bab5a7d45"></a>
+                    <h3>GET WTaxPostings (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Withholding Tax Posting user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Withholding Tax Posting. See <a href="#WTaxPostingResource">WTaxPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/wTaxPostings</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="823b7af4-ead8-425d-8204-64efe630aa1f"></a>
+                    <h3>GET WTaxPosting by identifier</h3>
+                    <p class="operation-description">Returns information for a given Withholding Tax Posting, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Withholding Tax Posting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Withholding Tax Posting. See <a href="#WTaxPostingResource">WTaxPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/wTaxPostings/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d99ca090-63a4-4877-aa30-98b58a416cff"></a>
+                    <h3>GET WTaxPosting by key</h3>
+                    <p class="operation-description">Returns information for a given Withholding Tax Posting, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Withholding Tax Posting. See <a href="#WTaxPostingResource">WTaxPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/wTaxPostings/{wTaxPostingKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="83f1c341-372e-4068-beb9-dd0e28b84ece"></a>
+                    <h3>GET Print WTaxPosting by identifier</h3>
+                    <p class="operation-description">Prints the specified WTaxPosting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the WTaxPosting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed WTaxPosting.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/wTaxPostings/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="da63ae89-6946-484e-b292-872aebcb3e70"></a>
+                    <h3>GET Print WTaxPosting by key</h3>
+                    <p class="operation-description">Prints the specified WTaxPosting by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed WTaxPosting.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/wTaxPostings/{wTaxPostingKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ee6b256e-6180-4cc8-b4a7-47437597f118"></a>
+                    <h3>POST WTaxPostings</h3>
+                    <p class="operation-description">Creates a new Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingResource</td>
+                                <td><i>(ApiWTaxPostingResource)</i> In the request body, supply a resource containing the Withholding Tax Posting information.<br/>See <a href="#ApiWTaxPostingResource">ApiWTaxPostingResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Withholding Tax Posting identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiWTaxPostingResource">ApiWTaxPostingResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Withholding Tax Posting was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/wTaxPostings</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="076b017f-b8e0-4005-b635-821ecd534a15"></a>
+                    <h3>PUT Set BeneficiaryParty WTaxPosting</h3>
+                    <p class="operation-description">Updates the BeneficiaryParty for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the BeneficiaryParty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/beneficiaryParty</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bdb4f972-898f-4e46-82ee-041810b50463"></a>
+                    <h3>PUT Set Company WTaxPosting</h3>
+                    <p class="operation-description">Updates the Company for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1fa7292e-488e-4bbd-bae4-f9de0c2de62b"></a>
+                    <h3>PUT Set CompanyTaxId WTaxPosting</h3>
+                    <p class="operation-description">Updates the CompanyTaxId for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CompanyTaxId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/companyTaxId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="382dbb92-1d2c-478c-b471-18f43975fc58"></a>
+                    <h3>PUT Set Country WTaxPosting</h3>
+                    <p class="operation-description">Updates the Country for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/country</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b3a438b2-301b-4260-bcc3-7984950416ad"></a>
+                    <h3>PUT Set Currency WTaxPosting</h3>
+                    <p class="operation-description">Updates the Currency for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="759b9060-9e01-470a-9b6b-5e0bbe76a2b7"></a>
+                    <h3>PUT Set ExchangeRate WTaxPosting</h3>
+                    <p class="operation-description">Updates the ExchangeRate for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ExchangeRate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/exchangeRate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="df700647-477e-40c4-b580-a407e88dda6a"></a>
+                    <h3>PUT Set ExchangeRateDate WTaxPosting</h3>
+                    <p class="operation-description">Updates the ExchangeRateDate for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ExchangeRateDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/exchangeRateDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1dd74b6a-a176-4ae8-a13a-48b444c66337"></a>
+                    <h3>PUT Set FinancialAccountPostingId WTaxPosting</h3>
+                    <p class="operation-description">Updates the FinancialAccountPostingId for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the FinancialAccountPostingId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/financialAccountPostingId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="62ead9b9-6211-40d3-9565-44f7f9d9ab0b"></a>
+                    <h3>PUT Set IsActive WTaxPosting</h3>
+                    <p class="operation-description">Updates the IsActive for the specified WTaxPosting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8d1f2715-a977-42e3-ae43-85f14b83e510"></a>
+                    <h3>PUT Set IssueDate WTaxPosting</h3>
+                    <p class="operation-description">Updates the IssueDate for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the IssueDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/issueDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6c8a5338-a49c-47eb-9b30-420f6a8a0ce1"></a>
+                    <h3>PUT Set Percentage WTaxPosting</h3>
+                    <p class="operation-description">Updates the Percentage for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the Percentage.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/percentage</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="54463929-5551-4a6c-af05-28221ff1a748"></a>
+                    <h3>PUT Set PostingDate WTaxPosting</h3>
+                    <p class="operation-description">Updates the PostingDate for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the PostingDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/postingDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d2fad638-7512-424b-8fcf-8319ab5892b3"></a>
+                    <h3>PUT Set SourceDoc WTaxPosting</h3>
+                    <p class="operation-description">Updates the SourceDoc for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SourceDoc.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/sourceDoc</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="90c78fc2-f49f-45f5-9916-480ada776a15"></a>
+                    <h3>PUT Set SourceDocId WTaxPosting</h3>
+                    <p class="operation-description">Updates the SourceDocId for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the SourceDocId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/sourceDocId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="483e1b5d-25c0-417e-9a06-d30db8e0dcc3"></a>
+                    <h3>PUT Set SourceSchemaEntity WTaxPosting</h3>
+                    <p class="operation-description">Updates the SourceSchemaEntity for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SourceSchemaEntity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/sourceSchemaEntity</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ae6b88be-de84-4930-b563-a3e7ec70fd1b"></a>
+                    <h3>PUT Set TaxableAmount WTaxPosting</h3>
+                    <p class="operation-description">Updates the TaxableAmount for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the TaxableAmount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/taxableAmount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b3709cc4-2c7e-4b73-83d2-92f1067ceb07"></a>
+                    <h3>PUT Set WithholdingNature WTaxPosting</h3>
+                    <p class="operation-description">Updates the WithholdingNature for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum WithholdingNature)</i> In the request body, supply the new value for the WithholdingNature.<br/>See <a href="#WithholdingNature">WithholdingNature.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/withholdingNature</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5f58d091-b543-45a9-8b49-78a33750d4f1"></a>
+                    <h3>PUT Set WithholdingTaxAmount WTaxPosting</h3>
+                    <p class="operation-description">Updates the WithholdingTaxAmount for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the WithholdingTaxAmount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/withholdingTaxAmount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cb920d1b-194f-4bc5-9b91-33fb6ea8de26"></a>
+                    <h3>PUT Set WithholdingTaxCode WTaxPosting</h3>
+                    <p class="operation-description">Updates the WithholdingTaxCode for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WithholdingTaxCode.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/withholdingTaxCode</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1f48624c-7523-4be3-bdd3-2ee71a7387cc"></a>
+                    <h3>PUT Set WithholdingTaxType WTaxPosting</h3>
+                    <p class="operation-description">Updates the WithholdingTaxType for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WithholdingTaxType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/withholdingTaxType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7ffe71e2-4bb0-4170-a368-17ddb852bc57"></a>
+                    <h3>PUT Set WithholdParty WTaxPosting</h3>
+                    <p class="operation-description">Updates the WithholdParty for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WithholdParty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/withholdParty</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fc554ccd-af6a-4c5f-a111-6dc165f1f908"></a>
+                    <h3>PUT Set WTaxPostingKey WTaxPosting</h3>
+                    <p class="operation-description">Updates the WTaxPostingKey for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> In the request body, supply the new value for the WTaxPostingKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/wTaxPostingKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c2fceceb-b756-4806-9680-182b1fb38079"></a>
+                    <h3>PUT Set WTaxSummary WTaxPosting</h3>
+                    <p class="operation-description">Updates the WTaxSummary for the specified Withholding Tax Posting.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WTaxSummary.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/wTaxPostings/{wTaxPostingKey}/wTaxSummary</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="026045e8-e49f-46b8-9529-2522941e5ba1"></a>
+                    <h3>DELETE WTaxPosting by identifier</h3>
+                    <p class="operation-description">Deletes the specified Withholding Tax Posting by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Withholding Tax Posting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Withholding Tax Posting was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Withholding Tax Posting does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/wTaxPostings/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8eee844a-9ec5-4aac-90cb-ddd66dd88ad2"></a>
+                    <h3>DELETE WTaxPosting by key</h3>
+                    <p class="operation-description">Deletes the specified Withholding Tax Posting by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Withholding Tax Posting was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Withholding Tax Posting does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/wTaxPostings/{wTaxPostingKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="WTaxPostingResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'WTaxPostingResourceResourceDiv')">WTaxPostingResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="WTaxPostingResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">taxableAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Valor base</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Valor retido</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">percentage</td>
+                                <td  class="wrap"><i>(decimal)</i> Percentagem de retenção</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Taxa de conversão entre a moeda da transacção e a moeda da taxa</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td  class="wrap"><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Data da transação original</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Data em que a transacção é contabilizada.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Identificação (legível do documento que deu origem a esta transacção de taxa)</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdParty</td>
+                                <td  class="wrap"><i>(string)</i> Withhold Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCode</td>
+                                <td  class="wrap"><i>(string)</i> Withholding Tax Code</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td  class="wrap"><i>(string)</i> Withholding Tax Type</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> Country</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Source Schema Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">wTaxSummary</td>
+                                <td  class="wrap"><i>(string)</i> WTax Summary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Data do cambio anterior</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxId</td>
+                                <td  class="wrap"><i>(string)</i> Numero fiscal do terceiro envolvido na transacção</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccountPostingId</td>
+                                <td  class="wrap"><i>(Guid)</i> Financial Account Posting Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">beneficiaryParty</td>
+                                <td  class="wrap"><i>(string)</i> Beneficiary Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingNature</td>
+                                <td  class="wrap"><i>(enum WithholdingNature)</i> Withholding Nature<br/>See <a href="#WithholdingNature">WithholdingNature.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiWTaxPostingResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiWTaxPostingResourceResourceDiv')">ApiWTaxPostingResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiWTaxPostingResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">taxableAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Valor base</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Valor retido</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">percentage</td>
+                                <td  class="wrap"><i>(decimal)</i> Percentagem de retenção</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Taxa de conversão entre a moeda da transacção e a moeda da taxa</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">wTaxPostingKey</td>
+                                <td  class="wrap"><i>(int)</i> Chave única desta tabela</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Data da transação original</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Data em que a transacção é contabilizada.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Identificação (legível do documento que deu origem a esta transacção de taxa)</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdParty</td>
+                                <td  class="wrap"><i>(string)</i> Withhold Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCode</td>
+                                <td  class="wrap"><i>(string)</i> Withholding Tax Code</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td  class="wrap"><i>(string)</i> Withholding Tax Type</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> Country</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Source Schema Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">wTaxSummary</td>
+                                <td  class="wrap"><i>(string)</i> WTax Summary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Data do cambio anterior</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxId</td>
+                                <td  class="wrap"><i>(string)</i> Numero fiscal do terceiro envolvido na transacção</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccountPostingId</td>
+                                <td  class="wrap"><i>(Guid)</i> Financial Account Posting Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">beneficiaryParty</td>
+                                <td  class="wrap"><i>(string)</i> Beneficiary Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingNature</td>
+                                <td  class="wrap"><i>(enum WithholdingNature)</i> Withholding Nature<br/>See <a href="#WithholdingNature">WithholdingNature.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="WithholdingNature"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'WithholdingNatureValueListDiv')">WithholdingNature<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="WithholdingNatureValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Payable</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Receivable</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

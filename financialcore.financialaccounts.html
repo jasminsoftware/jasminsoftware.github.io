@@ -1,0 +1,1393 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Financials | Financial Account</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="financials.html">
+		Financials
+    </a>
+	<a class="menu-subitem " href="financialcore.cashflowitems.html">
+		Cash Flow Item
+	</a>
+	<a class="menu-subitem menu-item-selected" href="financialcore.financialaccounts.html">
+		Financial Account
+	</a>
+	<a class="menu-subitem " href="financialcore.financialinstitutions.html">
+		Financial Institution
+	</a>
+	<a class="menu-subitem " href="financialcore.financialsetups.html">
+		Financial Setup
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentmethods.html">
+		Payment Method
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentterms.html">
+		Payment Term
+	</a>
+	<a class="menu-subitem " href="financialcore.paymenttypes.html">
+		Payment Type
+	</a>
+	<a class="menu-subitem " href="financialcore.pettycashes.html">
+		Petty Cash
+	</a>
+	<a class="menu-subitem " href="financialcore.receipttypes.html">
+		Receipt Type
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Financial Account</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/financialCore/financialAccounts</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'FinancialAccount'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1f644d52-1088-4b09-a104-f8397041ef8f"></a>
+                    <h3>GET FinancialAccounts</h3>
+                    <p class="operation-description">Returns all Bank Account user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Bank Account. See <a href="#FinancialAccountResource">FinancialAccountResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialAccounts</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6e16f803-0880-4158-a62e-71c6d11715f8"></a>
+                    <h3>GET FinancialAccounts (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Bank Account user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Bank Account. See <a href="#FinancialAccountResource">FinancialAccountResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialAccounts</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5145d4c8-841f-4526-9734-26e065a08451"></a>
+                    <h3>GET FinancialAccount by identifier</h3>
+                    <p class="operation-description">Returns information for a given Bank Account, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Bank Account.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Bank Account. See <a href="#FinancialAccountResource">FinancialAccountResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialAccounts/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9421070f-fe90-4ccc-af9f-3f38e0bd0215"></a>
+                    <h3>GET FinancialAccount by key</h3>
+                    <p class="operation-description">Returns information for a given Bank Account, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Bank Account. See <a href="#FinancialAccountResource">FinancialAccountResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialAccounts/{financialAccountKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9e175255-c824-448a-a8a6-1f7e954f1ec8"></a>
+                    <h3>GET Print FinancialAccount by identifier</h3>
+                    <p class="operation-description">Prints the specified FinancialAccount.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the FinancialAccount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed FinancialAccount.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialAccounts/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f494d689-4fb5-4d62-8b01-2f0ee11c2f2c"></a>
+                    <h3>GET Print FinancialAccount by key</h3>
+                    <p class="operation-description">Prints the specified FinancialAccount by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed FinancialAccount.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/financialAccounts/{financialAccountKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="99e5ae0d-9ce8-42ab-b346-8dca00a22a7e"></a>
+                    <h3>POST FinancialAccounts</h3>
+                    <p class="operation-description">Creates a new Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountResource</td>
+                                <td><i>(ApiFinancialAccountResource)</i> In the request body, supply a resource containing the Bank Account information.<br/>See <a href="#ApiFinancialAccountResource">ApiFinancialAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Bank Account identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiFinancialAccountResource">ApiFinancialAccountResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Bank Account was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/financialAccounts</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="397625b2-d411-4a4c-8175-807b6ace9b33"></a>
+                    <h3>PUT Set AccountNumber FinancialAccount</h3>
+                    <p class="operation-description">Updates the AccountNumber for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the AccountNumber.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/accountNumber</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9bf654c8-5a24-4e92-baa5-8a0707a3d911"></a>
+                    <h3>PUT Set Branch FinancialAccount</h3>
+                    <p class="operation-description">Updates the Branch for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Branch.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/branch</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d220a2f5-7a70-47f2-b074-828e14d37f81"></a>
+                    <h3>PUT Set Company FinancialAccount</h3>
+                    <p class="operation-description">Updates the Company for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5826f9b5-cbae-4e85-9b36-1bd2320be3ed"></a>
+                    <h3>PUT Set Country FinancialAccount</h3>
+                    <p class="operation-description">Updates the Country for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/country</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a0a4cd34-c3ca-4aed-a94e-eaff2cbc7634"></a>
+                    <h3>PUT Set Currency FinancialAccount</h3>
+                    <p class="operation-description">Updates the Currency for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9e264a92-2505-44e0-aa25-dcfb7c5d0063"></a>
+                    <h3>PUT Set Description FinancialAccount</h3>
+                    <p class="operation-description">Updates the Description for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="85771d44-542f-4aea-8266-3813923119f5"></a>
+                    <h3>PUT Set FinancialAccountKey FinancialAccount</h3>
+                    <p class="operation-description">Updates the FinancialAccountKey for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FinancialAccountKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/financialAccountKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4cdec9f5-4814-4fb4-a664-d8263818e8f3"></a>
+                    <h3>PUT Set FinancialInstitution FinancialAccount</h3>
+                    <p class="operation-description">Updates the FinancialInstitution for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FinancialInstitution.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/financialInstitution</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="33618c98-791a-48fd-9f89-c93851f31ea2"></a>
+                    <h3>PUT Set IBAN FinancialAccount</h3>
+                    <p class="operation-description">Updates the IBAN for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the IBAN.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/iBAN</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="713282f4-c5d0-411f-8598-15474dda63df"></a>
+                    <h3>PUT Set IsActive FinancialAccount</h3>
+                    <p class="operation-description">Updates the IsActive for the specified FinancialAccount.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1c07940c-19b0-4cba-b439-a4740c6e148d"></a>
+                    <h3>PUT Set PartyTaxSchema FinancialAccount</h3>
+                    <p class="operation-description">Updates the PartyTaxSchema for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PartyTaxSchema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/partyTaxSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="77670aa7-913c-4701-9274-f1e839c8a94c"></a>
+                    <h3>PUT Set PartyWithholdingTaxSchema FinancialAccount</h3>
+                    <p class="operation-description">Updates the PartyWithholdingTaxSchema for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PartyWithholdingTaxSchema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/partyWithholdingTaxSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c60cc457-07b4-43c5-b335-48c93be5eaa8"></a>
+                    <h3>PUT Set ReconciliationTolerance FinancialAccount</h3>
+                    <p class="operation-description">Updates the ReconciliationTolerance for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the ReconciliationTolerance.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/reconciliationTolerance</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0400d6cf-3761-4d3c-9e42-fc88fb292467"></a>
+                    <h3>PUT Set SWIFT FinancialAccount</h3>
+                    <p class="operation-description">Updates the SWIFT for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SWIFT.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/sWIFT</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="622d19e2-5d9f-4792-89fa-b1b57fed48ed"></a>
+                    <h3>PUT Set ValidFrom FinancialAccount</h3>
+                    <p class="operation-description">Updates the ValidFrom for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValidFrom.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/validFrom</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="48cf7f23-5cd9-48e0-9e5c-47d029756d35"></a>
+                    <h3>PUT Set ValidTo FinancialAccount</h3>
+                    <p class="operation-description">Updates the ValidTo for the specified Bank Account.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValidTo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/financialAccounts/{financialAccountKey}/validTo</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="72296821-00ad-47c4-bfb1-24f615370ef5"></a>
+                    <h3>DELETE FinancialAccount by identifier</h3>
+                    <p class="operation-description">Deletes the specified Bank Account by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Bank Account.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Bank Account was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Bank Account does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/financialAccounts/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3c41f885-e5f1-4b96-90c6-676ab8fb794d"></a>
+                    <h3>DELETE FinancialAccount by key</h3>
+                    <p class="operation-description">Deletes the specified Bank Account by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td><i>(string)</i> The financial account key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Bank Account was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Bank Account does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/financialAccounts/{financialAccountKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="FinancialAccountResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'FinancialAccountResourceResourceDiv')">FinancialAccountResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="FinancialAccountResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The financial account's associated company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountNumber</td>
+                                <td  class="wrap"><i>(string)</i> The account number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td  class="wrap"><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationTolerance</td>
+                                <td  class="wrap"><i>(decimal)</i> The reconciliation tolerance, by default 2.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency which the accounts operates.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The country where the account's institution is based.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The financial account description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> The finacial account's International Bank Account Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> The society for Worldwide Interbank Financial Telecommunication number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">branch</td>
+                                <td  class="wrap"><i>(string)</i> The branch name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(DateTime)</i> The account's lower date validation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validTo</td>
+                                <td  class="wrap"><i>(DateTime)</i> The account's upper date validation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The party tax schema.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> The associated financial institution.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The party withholding tax schema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiFinancialAccountResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiFinancialAccountResourceResourceDiv')">ApiFinancialAccountResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiFinancialAccountResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The financial account's associated company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountNumber</td>
+                                <td  class="wrap"><i>(string)</i> The account number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccountKey</td>
+                                <td  class="wrap"><i>(string)</i> The financial account key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">reconciliationTolerance</td>
+                                <td  class="wrap"><i>(decimal)</i> The reconciliation tolerance, by default 2.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency which the accounts operates.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The country where the account's institution is based.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The financial account description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> The finacial account's International Bank Account Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> The society for Worldwide Interbank Financial Telecommunication number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">branch</td>
+                                <td  class="wrap"><i>(string)</i> The branch name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(DateTime)</i> The account's lower date validation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validTo</td>
+                                <td  class="wrap"><i>(DateTime)</i> The account's upper date validation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The party tax schema.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> The associated financial institution.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The party withholding tax schema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1313 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Materials Management | Item Adjustment</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+		Materials Management
+    </a>
+	<a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+		Adjustment Reason
+	</a>
+	<a class="menu-subitem menu-item-selected" href="materialsmanagement.itemadjustments.html">
+		Item Adjustment
+	</a>
+	<a class="menu-subitem " href="materialscore.itemsubtypes.html">
+		Item Subtype
+	</a>
+	<a class="menu-subitem " href="materialscore.materialsitems.html">
+		Materials Item
+	</a>
+	<a class="menu-subitem " href="materialscore.materialssetups.html">
+		Materials Setup
+	</a>
+	<a class="menu-subitem " href="materialscore.warehouses.html">
+		Warehouse
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Materials Management | Item Adjustment</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'ItemAdjustment'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2098e406-4bae-4d0c-b3b3-ed2f890c73e9"></a>
+                    <h3>GET ItemAdjustments</h3>
+                    <p class="operation-description">Returns all Item Adjustment user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/itemAdjustments</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d46fce2c-a45f-4eb3-94e5-0a89e721ec2f"></a>
+                    <h3>GET ItemAdjustments (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Item Adjustment user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/itemAdjustments</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ea8ce9a3-8646-4ae9-b834-0f8dad781fb4"></a>
+                    <h3>GET ItemAdjustment by identifier</h3>
+                    <p class="operation-description">Returns information for a given Item Adjustment, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Item Adjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/itemAdjustments/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="76bd9906-aa77-4f98-a973-f6a2a3765668"></a>
+                    <h3>GET ItemAdjustment by key</h3>
+                    <p class="operation-description">Returns information for a given Item Adjustment, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f38986b2-70a4-4e47-9102-4f2c19a17f53"></a>
+                    <h3>GET Print ItemAdjustment by identifier</h3>
+                    <p class="operation-description">Prints the specified ItemAdjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ItemAdjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ItemAdjustment.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/itemAdjustments/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="52cfaab9-410b-41e4-9c90-a3e7da9235eb"></a>
+                    <h3>GET Print ItemAdjustment by key</h3>
+                    <p class="operation-description">Prints the specified ItemAdjustment by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ItemAdjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ItemAdjustment.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ecc47ef8-c735-429b-a713-b05b609a2c45"></a>
+                    <h3>POST ItemAdjustments</h3>
+                    <p class="operation-description">Creates a new Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentResource</td>
+                                <td><i>(ApiItemAdjustmentResource)</i> In the request body, supply a resource containing the Item Adjustment information.<br/>See <a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Item Adjustment identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Item Adjustment was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /materialsManagement/itemAdjustments</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1978108e-a8ea-4d00-8fec-44dae5073da8"></a>
+                    <h3>POST Item Adjustment </h3>
+                    <p class="operation-description">Inserts a new Item Adjustment Line in an existing Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiItemAdjustmentDocumentLinesResource)</i> The ApiItemAdjustmentDocumentLinesResource instance.<br/>See <a href="#ApiItemAdjustmentDocumentLinesResource">ApiItemAdjustmentDocumentLinesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="15475e35-2730-462c-904b-ada7aaf275f6"></a>
+                    <h3>PUT Set IsActive ItemAdjustment</h3>
+                    <p class="operation-description">Updates the IsActive for the specified ItemAdjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ItemAdjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5843d307-36e1-46a5-870a-79862adf2201"></a>
+                    <h3>PUT Set MaterialsItem ItemAdjustment</h3>
+                    <p class="operation-description">Updates the MaterialsItem for the specified Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the MaterialsItem.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/materialsItem</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="193642b4-b770-47dc-ab94-617217c62001"></a>
+                    <h3>PUT Set Note ItemAdjustment</h3>
+                    <p class="operation-description">Updates the Note for the specified Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Note.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/note</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4c0af7fd-aab5-4899-904f-edc5f03bdc74"></a>
+                    <h3>PUT Set PostingDate ItemAdjustment</h3>
+                    <p class="operation-description">Updates the PostingDate for the specified Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the PostingDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/postingDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b2e3aff4-2bd8-4465-9368-7112624d2179"></a>
+                    <h3>PUT Set Quantity ItemAdjustment</h3>
+                    <p class="operation-description">Updates the Quantity for the specified Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the Quantity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/quantity</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f163ee44-56a2-47f9-a2ad-dd348073757f"></a>
+                    <h3>PUT Set Remarks ItemAdjustment</h3>
+                    <p class="operation-description">Updates the Remarks for the specified Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Remarks.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/remarks</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a8026f10-ab74-43c0-8bd6-ea4bf7b783b7"></a>
+                    <h3>PUT Set Unit ItemAdjustment</h3>
+                    <p class="operation-description">Updates the Unit for the specified Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Unit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unit</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="33fa700e-a03a-4cfa-94be-bc22cd38f6af"></a>
+                    <h3>PUT Set UnitPrice ItemAdjustment</h3>
+                    <p class="operation-description">Updates the UnitPrice for the specified Item Adjustment.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the UnitPrice.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unitPrice</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b3914d4b-f2dc-4670-a829-91a3828c1e8f"></a>
+                    <h3>DELETE Item Adjustment Line by identifier</h3>
+                    <p class="operation-description">Deletes the specified Item Adjustment Line.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsManagement/itemAdjustments{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="844e1c3b-b0ff-4138-bcf7-c59aa51b979e"></a>
+                    <h3>DELETE ItemAdjustment by identifier</h3>
+                    <p class="operation-description">Deletes the specified Item Adjustment by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Item Adjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Item Adjustment was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Item Adjustment does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsManagement/itemAdjustments/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="490725ab-0462-4bda-8df4-6a3bd2cbd204"></a>
+                    <h3>DELETE ItemAdjustment by key</h3>
+                    <p class="operation-description">Deletes the specified Item Adjustment by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Item Adjustment was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Item Adjustment does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="ItemAdjustmentResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemAdjustmentResourceResourceDiv')">ItemAdjustmentResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemAdjustmentResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The document date for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalValue</td>
+                                <td  class="wrap"><i>(decimal)</i> The total value for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The posting date for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the Item Adjustment is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The warehouse for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">adjustmentReason</td>
+                                <td  class="wrap"><i>(string)</i> The adjustment reason for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isInValue</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the Item Adjustment is in value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentLines</td>
+                                <td  class="wrap"><i>(List of ItemAdjustmentLineResource)</i> The document lines for the Item Adjustment.<br/>See <a href="#ItemAdjustmentLineResource">ItemAdjustmentLineResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The remarks for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The note for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the Item Adjustment has been printed. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external identification for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">adjustmentType</td>
+                                <td  class="wrap"><i>(enum AdjustmentType)</i> The adjustment type for the Item Adjustment.<br/>See <a href="#AdjustmentType">AdjustmentType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ItemAdjustmentLineResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemAdjustmentLineResourceResourceDiv')">ItemAdjustmentLineResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemAdjustmentLineResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The quantity for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unitPrice</td>
+                                <td  class="wrap"><i>(decimal)</i> The unit price for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td  class="wrap"><i>(decimal)</i> The value for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">conversionFactor</td>
+                                <td  class="wrap"><i>(decimal)</i> The conversion factor for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The unit cost for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">materialsItem</td>
+                                <td  class="wrap"><i>(string)</i> The materials item for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> The item type for the Item Adjustment Line.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">inventoryAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The inventory amount for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">baseUnit</td>
+                                <td  class="wrap"><i>(string)</i> The base unit for the Item Adjustment Line.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiItemAdjustmentResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiItemAdjustmentResourceResourceDiv')">ApiItemAdjustmentResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiItemAdjustmentResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The document date for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The posting date for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The warehouse for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">adjustmentReason</td>
+                                <td  class="wrap"><i>(string)</i> The adjustment reason for the Item Adjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentLines</td>
+                                <td title="(List of ApiItemAdjustmentDocumentLinesResource) The document lines for the Item Adjustment. See ApiItemAdjustmentDocumentLinesResource." class="wrap"><i>(List of ApiItemAdjustmentDocumentLinesResource)</i> The document lines for the Item Adjustment.<br/>See <a href="#ApiItemAdjustmentDocumentLinesResource">ApiItemAdjustmentDocumentLinesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The remarks for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The note for the Item Adjustment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiItemAdjustmentDocumentLinesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiItemAdjustmentDocumentLinesResourceResourceDiv')">ApiItemAdjustmentDocumentLinesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiItemAdjustmentDocumentLinesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The quantity for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unitPrice</td>
+                                <td  class="wrap"><i>(decimal)</i> The unit price for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The unit for the Item Adjustment Line.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">materialsItem</td>
+                                <td  class="wrap"><i>(string)</i> The materials item for the Item Adjustment Line.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="AdjustmentType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AdjustmentTypeValueListDiv')">AdjustmentType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AdjustmentTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Entry</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Issue</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ItemType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemTypeValueListDiv')">ItemType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Item</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Service</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

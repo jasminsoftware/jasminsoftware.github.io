@@ -1,0 +1,2876 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Master Data Business Entities | Entity</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a id="current-menu-item" class="menu-item " href="masterdatabusinessentities.html">
+		Master Data Business Entities
+    </a>
+	<a class="menu-subitem " href="businesscore.assortments.html">
+		Assortment
+	</a>
+	<a class="menu-subitem " href="businesscore.brands.html">
+		Brand
+	</a>
+	<a class="menu-subitem menu-item-selected" href="businesscore.parties.html">
+		Entity
+	</a>
+	<a class="menu-subitem " href="businesscore.exchangeratesdocuments.html">
+		Exchange Rates Document
+	</a>
+	<a class="menu-subitem " href="businesscore.items.html">
+		Item
+	</a>
+	<a class="menu-subitem " href="businesscore.brandmodels.html">
+		Model
+	</a>
+	<a class="menu-subitem " href="businesscore.series.html">
+		Serie
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Master Data Business Entities | Entity</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/businessCore/parties</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Party'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7c2025d7-9cf0-4b00-879e-1e8bd1fc1ef8"></a>
+                    <h3>GET Parties</h3>
+                    <p class="operation-description">Returns all Entity user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Entity. See <a href="#PartyResource">PartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ed99c90a-89a4-496e-bc65-472cbdbda6ba"></a>
+                    <h3>GET Parties (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Entity user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Entity. See <a href="#PartyResource">PartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="485c8666-5fc3-4e4e-9260-ff67aeb8d645"></a>
+                    <h3>GET Party by identifier</h3>
+                    <p class="operation-description">Returns information for a given Entity, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Entity. See <a href="#PartyResource">PartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="328c80b4-f673-48bc-9253-b88c07a88154"></a>
+                    <h3>GET Party by key</h3>
+                    <p class="operation-description">Returns information for a given Entity, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Entity. See <a href="#PartyResource">PartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties/{partyKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1d259a11-f274-49c2-92d8-f354dcc59809"></a>
+                    <h3>GET Print Party by identifier</h3>
+                    <p class="operation-description">Prints the specified Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Party.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Party.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a2306e1e-d33c-40d7-bc17-074b9bf5bf8e"></a>
+                    <h3>GET Print Party by key</h3>
+                    <p class="operation-description">Prints the specified Party by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Party.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties/{partyKey}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0692b00a-fefb-4489-a572-89b6e770db6a"></a>
+                    <h3>GET Entity Picture.</h3>
+                    <p class="operation-description">Returns the Picture of the specified Entity. This method returns an image stream.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fileName</td>
+                                <td><i>(string)</i> File name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the image file of the Entity Picture.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties/{id}/picture</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f537e4ec-9388-426e-b639-9cd8f025a6a7"></a>
+                    <h3>GET Get Party By Company Tax Id</h3>
+                    <p class="operation-description">Custom operation 'GetPartyByCompanyTaxId'.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyTaxId</td>
+                                <td><i>(string)</i> CompanyTaxId</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a PartyDataResource. See <a href="#PartyDataResource">PartyDataResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operations was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /businessCore/parties/getPartyByCompanyTaxId</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="daf94f5b-9810-4d87-87ce-99c9ade92af2"></a>
+                    <h3>POST Parties</h3>
+                    <p class="operation-description">Creates a new Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyResource</td>
+                                <td><i>(ApiPartyResource)</i> In the request body, supply a resource containing the Entity information.<br/>See <a href="#ApiPartyResource">ApiPartyResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Entity identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiPartyResource">ApiPartyResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Entity was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /businessCore/parties</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bd9f5db0-11bd-465a-881f-abab87dba45c"></a>
+                    <h3>POST Entity </h3>
+                    <p class="operation-description">Inserts a new Party Address in an existing Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiPartyPartyAddressesResource)</i> The ApiPartyPartyAddressesResource instance.<br/>See <a href="#ApiPartyPartyAddressesResource">ApiPartyPartyAddressesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /businessCore/parties/{partyKey}/partyAddresses</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ee30325f-420f-4965-b79c-9c28e7acb471"></a>
+                    <h3>POST Entity </h3>
+                    <p class="operation-description">Inserts a new Party Contact in an existing Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiPartyPartyContactsResource)</i> The ApiPartyPartyContactsResource instance.<br/>See <a href="#ApiPartyPartyContactsResource">ApiPartyPartyContactsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /businessCore/parties/{partyKey}/partyContacts</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ffb4d7c3-5427-49aa-809a-d4f99c5a6a14"></a>
+                    <h3>PUT Set Address Party</h3>
+                    <p class="operation-description">Updates the Address for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Address.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/address</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f722d62d-05a6-485c-b746-4eb304dfaa09"></a>
+                    <h3>PUT Set BuildingNumber Party</h3>
+                    <p class="operation-description">Updates the BuildingNumber for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the BuildingNumber.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/buildingNumber</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3d4cea5a-1fa8-4306-ba24-f7c894e65d11"></a>
+                    <h3>PUT Set BuildingNumber Party</h3>
+                    <p class="operation-description">Updates the BuildingNumber for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the BuildingNumber.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyAddresses/{lineId}/buildingNumber</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a977c859-a0da-47f1-b066-b0fa5f753f72"></a>
+                    <h3>PUT Set CityName Party</h3>
+                    <p class="operation-description">Updates the CityName for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CityName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/cityName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="49159362-1223-4d69-b962-ed29955da409"></a>
+                    <h3>PUT Set CityName Party</h3>
+                    <p class="operation-description">Updates the CityName for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CityName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyAddresses/{lineId}/cityName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b4df6070-f309-4168-a9cb-ba89b5056e62"></a>
+                    <h3>PUT Set CompanyTaxID Party</h3>
+                    <p class="operation-description">Updates the CompanyTaxID for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CompanyTaxID.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/companyTaxID</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="17cd12ca-96af-4613-9e71-2c2d9b32ffb0"></a>
+                    <h3>PUT Set Contact Party</h3>
+                    <p class="operation-description">Updates the Contact for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/contact</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9844bcf8-ee62-4f24-b93d-c7ef66f4f5d2"></a>
+                    <h3>PUT Set ContactName Party</h3>
+                    <p class="operation-description">Updates the ContactName for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/contactName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f4364369-af9b-4c45-b7ba-0dd8a037a045"></a>
+                    <h3>PUT Set ContactName Party</h3>
+                    <p class="operation-description">Updates the ContactName for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyAddresses/{lineId}/contactName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="23c3baab-e23f-490b-8e0b-2c3362c17078"></a>
+                    <h3>PUT Set ContactName Party</h3>
+                    <p class="operation-description">Updates the ContactName for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyContacts/{lineId}/contactName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="92ad374a-23e3-4378-b54c-59cac694c193"></a>
+                    <h3>PUT Set ContactTitle Party</h3>
+                    <p class="operation-description">Updates the ContactTitle for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactTitle.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/contactTitle</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9c819a28-e456-4537-a6e3-41e8b74f1399"></a>
+                    <h3>PUT Set ContactTitle Party</h3>
+                    <p class="operation-description">Updates the ContactTitle for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactTitle.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyAddresses/{lineId}/contactTitle</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d8b77187-3acb-43f4-9d9b-4a81c06ba580"></a>
+                    <h3>PUT Set ContactTitle Party</h3>
+                    <p class="operation-description">Updates the ContactTitle for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactTitle.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyContacts/{lineId}/contactTitle</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1de9137a-cd9b-43c6-83b5-619e056614ac"></a>
+                    <h3>PUT Set ContactType Party</h3>
+                    <p class="operation-description">Updates the ContactType for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyContacts/{lineId}/contactType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a31c56f5-914d-431c-b280-d47da0d299e7"></a>
+                    <h3>PUT Set Country Party</h3>
+                    <p class="operation-description">Updates the Country for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/country</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fd1ed8f5-6995-40bc-bcaa-bfb83b9dfde7"></a>
+                    <h3>PUT Set Country Party</h3>
+                    <p class="operation-description">Updates the Country for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyAddresses/{lineId}/country</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cd4641e8-3168-4ed5-885f-c3a37b07b1b2"></a>
+                    <h3>PUT Set Culture Party</h3>
+                    <p class="operation-description">Updates the Culture for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Culture.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/culture</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e6fa2c53-0b2c-4717-810f-061363708e2b"></a>
+                    <h3>PUT Set Currency Party</h3>
+                    <p class="operation-description">Updates the Currency for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5f30e492-0373-49c7-b0ee-68d4391d216b"></a>
+                    <h3>PUT Set ElectronicMail Party</h3>
+                    <p class="operation-description">Updates the ElectronicMail for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ElectronicMail.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/electronicMail</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eab1ba67-302e-4590-9f0a-3ce151c768df"></a>
+                    <h3>PUT Set ElectronicMail Party</h3>
+                    <p class="operation-description">Updates the ElectronicMail for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ElectronicMail.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyContacts/{lineId}/electronicMail</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="03d90642-6cdb-42da-aa89-4b33102f66e6"></a>
+                    <h3>PUT Set IsActive Party</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Party.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1651d5e7-459b-497d-bf0e-1f7705135fb4"></a>
+                    <h3>PUT Set Mobile Party</h3>
+                    <p class="operation-description">Updates the Mobile for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Mobile.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/mobile</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d03f488c-0c48-472f-b10d-c5edfc1fb5b0"></a>
+                    <h3>PUT Set Mobile Party</h3>
+                    <p class="operation-description">Updates the Mobile for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Mobile.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyContacts/{lineId}/mobile</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3ab5145d-50ce-433f-8af9-54c83ba7b504"></a>
+                    <h3>PUT Set Name Party</h3>
+                    <p class="operation-description">Updates the Name for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/name</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="080e8bea-1e35-46ec-9cc0-8a78b4cdec91"></a>
+                    <h3>PUT Set Notes Party</h3>
+                    <p class="operation-description">Updates the Notes for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Notes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/notes</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2676568a-a686-4fb0-a460-2f947034a4d7"></a>
+                    <h3>PUT Set PartyKey Party</h3>
+                    <p class="operation-description">Updates the PartyKey for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PartyKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="008177b5-09eb-4cf6-a804-8f78d2d9196b"></a>
+                    <h3>PUT Set Picture Party</h3>
+                    <p class="operation-description">Updates the Picture for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Picture.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/picture</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b3b38c63-610a-482e-bb2b-cf512fae9cc4"></a>
+                    <h3>PUT Set PostalZone Party</h3>
+                    <p class="operation-description">Updates the PostalZone for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PostalZone.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/postalZone</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e8429259-a13d-4dca-967b-2caad1f3329f"></a>
+                    <h3>PUT Set PostalZone Party</h3>
+                    <p class="operation-description">Updates the PostalZone for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PostalZone.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyAddresses/{lineId}/postalZone</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fb3b57c3-8953-48ff-b280-acf00642f457"></a>
+                    <h3>PUT Set SearchTerm Party</h3>
+                    <p class="operation-description">Updates the SearchTerm for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SearchTerm.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/searchTerm</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="de64cf72-9b9e-4c1b-b528-a6495da994a7"></a>
+                    <h3>PUT Set StreetName Party</h3>
+                    <p class="operation-description">Updates the StreetName for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the StreetName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/streetName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3fdfb1c2-7c09-44a4-9373-4572e674e72d"></a>
+                    <h3>PUT Set StreetName Party</h3>
+                    <p class="operation-description">Updates the StreetName for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the StreetName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyAddresses/{lineId}/streetName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ea438f64-b92b-4fa6-b133-305163b9e022"></a>
+                    <h3>PUT Set Telephone Party</h3>
+                    <p class="operation-description">Updates the Telephone for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Telephone.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/telephone</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d7b69b36-b13d-4126-878a-a863e50eae13"></a>
+                    <h3>PUT Set Telephone Party</h3>
+                    <p class="operation-description">Updates the Telephone for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Telephone.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/partyContacts/{lineId}/telephone</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="29077681-f60e-419d-bf49-ce179e9440b0"></a>
+                    <h3>PUT Set Username Party</h3>
+                    <p class="operation-description">Updates the Username for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Username.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/username</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="70b4a0a0-544c-4c06-b1a1-43c4cb4ee946"></a>
+                    <h3>PUT Set WebsiteUrl Party</h3>
+                    <p class="operation-description">Updates the WebsiteUrl for the specified Entity.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WebsiteUrl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /businessCore/parties/{partyKey}/websiteUrl</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="391f303d-497b-4b30-9972-4499bdb29497"></a>
+                    <h3>DELETE Party Address by identifier</h3>
+                    <p class="operation-description">Deletes the specified Party Address.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /businessCore/parties/{partyKey}/partyAddresses/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8bf5cc69-67db-4a4c-9a7b-7d4398748b5c"></a>
+                    <h3>DELETE Party Contact by identifier</h3>
+                    <p class="operation-description">Deletes the specified Party Contact.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /businessCore/parties/{partyKey}/partyContacts/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4a2856bc-a802-4c1a-ba65-0c462057b292"></a>
+                    <h3>DELETE Party by identifier</h3>
+                    <p class="operation-description">Deletes the specified Entity by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /businessCore/parties/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c487b743-f740-4f44-a4b0-f0cee486c51d"></a>
+                    <h3>DELETE Party by key</h3>
+                    <p class="operation-description">Deletes the specified Entity by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /businessCore/parties/{partyKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="PartyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PartyResourceResourceDiv')">PartyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PartyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The party default currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party main address country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax id. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact title.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party Identity Username.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAddresses</td>
+                                <td  class="wrap"><i>(List of PartyAddressResource)</i> The party alternative addresses.<br/>See <a href="#PartyAddressResource">PartyAddressResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyContacts</td>
+                                <td  class="wrap"><i>(List of PartyContactResource)</i> The party alternative contacts.<br/>See <a href="#PartyContactResource">PartyContactResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party main address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="PartyAddressResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PartyAddressResourceResourceDiv')">PartyAddressResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PartyAddressResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The country for the party address.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The city name for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The contact name for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The contact title for the party address.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="PartyContactResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PartyContactResourceResourceDiv')">PartyContactResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PartyContactResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactType</td>
+                                <td  class="wrap"><i>(string)</i> The contact type for the party contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The title for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="PartyDataResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PartyDataResourceResourceDiv')">PartyDataResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PartyDataResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax id. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPartyResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPartyResourceResourceDiv')">ApiPartyResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPartyResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The party default currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party main address country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax id. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact title.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party Identity Username.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAddresses</td>
+                                <td  class="wrap"><i>(List of ApiPartyPartyAddressesResource)</i> The party alternative addresses.<br/>See <a href="#ApiPartyPartyAddressesResource">ApiPartyPartyAddressesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyContacts</td>
+                                <td  class="wrap"><i>(List of ApiPartyPartyContactsResource)</i> The party alternative contacts.<br/>See <a href="#ApiPartyPartyContactsResource">ApiPartyPartyContactsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party main address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPartyPartyAddressesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPartyPartyAddressesResourceResourceDiv')">ApiPartyPartyAddressesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPartyPartyAddressesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The country for the party address.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The city name for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The contact name for the party address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The contact title for the party address.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPartyPartyContactsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPartyPartyContactsResourceResourceDiv')">ApiPartyPartyContactsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPartyPartyContactsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactType</td>
+                                <td  class="wrap"><i>(string)</i> The contact type for the party contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The title for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party contact.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

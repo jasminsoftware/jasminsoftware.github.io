@@ -1,0 +1,1492 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Financials | Payment Method</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="financials.html">
+		Financials
+    </a>
+	<a class="menu-subitem " href="financialcore.cashflowitems.html">
+		Cash Flow Item
+	</a>
+	<a class="menu-subitem " href="financialcore.financialaccounts.html">
+		Financial Account
+	</a>
+	<a class="menu-subitem " href="financialcore.financialinstitutions.html">
+		Financial Institution
+	</a>
+	<a class="menu-subitem " href="financialcore.financialsetups.html">
+		Financial Setup
+	</a>
+	<a class="menu-subitem menu-item-selected" href="financialcore.paymentmethods.html">
+		Payment Method
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentterms.html">
+		Payment Term
+	</a>
+	<a class="menu-subitem " href="financialcore.paymenttypes.html">
+		Payment Type
+	</a>
+	<a class="menu-subitem " href="financialcore.pettycashes.html">
+		Petty Cash
+	</a>
+	<a class="menu-subitem " href="financialcore.receipttypes.html">
+		Receipt Type
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Payment Method</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/financialCore/paymentMethods</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'PaymentMethod'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="31a4b9d9-eb82-4ece-8413-63072393d520"></a>
+                    <h3>GET PaymentMethods</h3>
+                    <p class="operation-description">Returns all Payment Method user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Payment Method. See <a href="#PaymentMethodResource">PaymentMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentMethods</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d6a0d029-6624-4c6f-ab64-d712ef1aeae7"></a>
+                    <h3>GET PaymentMethods (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Payment Method user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Payment Method. See <a href="#PaymentMethodResource">PaymentMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentMethods</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e79f59f6-d856-4a83-949a-68bf8268c60a"></a>
+                    <h3>GET PaymentMethod by identifier</h3>
+                    <p class="operation-description">Returns information for a given Payment Method, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Payment Method.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Payment Method. See <a href="#PaymentMethodResource">PaymentMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentMethods/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3597fb0a-10e2-49f1-83fc-b018044ab2f7"></a>
+                    <h3>GET PaymentMethod by key</h3>
+                    <p class="operation-description">Returns information for a given Payment Method, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Payment Method. See <a href="#PaymentMethodResource">PaymentMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentMethods/{paymentMethodsKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ccd5bab8-2e76-424b-951e-4b4a788515ec"></a>
+                    <h3>GET Print PaymentMethod by identifier</h3>
+                    <p class="operation-description">Prints the specified PaymentMethod.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the PaymentMethod.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed PaymentMethod.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentMethods/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="28b0b6af-798b-4323-8031-7ab54841b251"></a>
+                    <h3>GET Print PaymentMethod by key</h3>
+                    <p class="operation-description">Prints the specified PaymentMethod by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed PaymentMethod.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentMethods/{paymentMethodsKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4580dc77-67f5-4455-a398-eaa0dc891569"></a>
+                    <h3>POST PaymentMethods</h3>
+                    <p class="operation-description">Creates a new Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodResource</td>
+                                <td><i>(ApiPaymentMethodResource)</i> In the request body, supply a resource containing the Payment Method information.<br/>See <a href="#ApiPaymentMethodResource">ApiPaymentMethodResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Payment Method identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiPaymentMethodResource">ApiPaymentMethodResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Payment Method was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/paymentMethods</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="88b17b58-afc2-40c5-81aa-c7236468b91c"></a>
+                    <h3>PUT Set BalanceManaged PaymentMethod</h3>
+                    <p class="operation-description">Updates the BalanceManaged for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the BalanceManaged.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/balanceManaged</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d420c7cf-7def-4690-ad92-3d22c0cc405f"></a>
+                    <h3>PUT Set Description PaymentMethod</h3>
+                    <p class="operation-description">Updates the Description for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="691d367f-bcca-40e5-943a-40dedbc79fce"></a>
+                    <h3>PUT Set Details PaymentMethod</h3>
+                    <p class="operation-description">Updates the Details for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Details.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/details</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="78ef3e6c-bcbb-4c4d-8669-0fd288c861b0"></a>
+                    <h3>PUT Set FiscalClassification PaymentMethod</h3>
+                    <p class="operation-description">Updates the FiscalClassification for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FiscalClassification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/fiscalClassification</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c5996952-937b-4691-8605-47d8ad2a4c32"></a>
+                    <h3>PUT Set IsActive PaymentMethod</h3>
+                    <p class="operation-description">Updates the IsActive for the specified PaymentMethod.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bb5cbafb-fcd0-4bf7-95b0-c7dc4ea4577c"></a>
+                    <h3>PUT Set IsAllowedInFinancialAccount PaymentMethod</h3>
+                    <p class="operation-description">Updates the IsAllowedInFinancialAccount for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsAllowedInFinancialAccount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/isAllowedInFinancialAccount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="47488cc9-5436-41c7-a4ca-7370345b7c92"></a>
+                    <h3>PUT Set IsAllowedInPettyCash PaymentMethod</h3>
+                    <p class="operation-description">Updates the IsAllowedInPettyCash for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsAllowedInPettyCash.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/isAllowedInPettyCash</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="61eb99ef-929c-492f-b0a5-0808dbd8ada6"></a>
+                    <h3>PUT Set IsAvailableInOnLineStore PaymentMethod</h3>
+                    <p class="operation-description">Updates the IsAvailableInOnLineStore for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsAvailableInOnLineStore.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/isAvailableInOnLineStore</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="acc8a358-8697-472c-9f6f-ebc4bd778982"></a>
+                    <h3>PUT Set IsAvailableInPurchases PaymentMethod</h3>
+                    <p class="operation-description">Updates the IsAvailableInPurchases for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsAvailableInPurchases.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/isAvailableInPurchases</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="32e0ef0b-2f3d-492c-a8f8-1d1c67fc0c49"></a>
+                    <h3>PUT Set IsAvailableInSales PaymentMethod</h3>
+                    <p class="operation-description">Updates the IsAvailableInSales for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsAvailableInSales.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/isAvailableInSales</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4041cee8-2b3c-4179-a09a-3ed8f72de30b"></a>
+                    <h3>PUT Set IsEft PaymentMethod</h3>
+                    <p class="operation-description">Updates the IsEft for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsEft.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/isEft</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5165fbab-5c35-4019-9753-9af6817ee88f"></a>
+                    <h3>PUT Set PaymentMethodsKey PaymentMethod</h3>
+                    <p class="operation-description">Updates the PaymentMethodsKey for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PaymentMethodsKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/paymentMethodsKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4353a449-c177-40bd-8353-fc5bd698504e"></a>
+                    <h3>PUT Set PaymentMethodType PaymentMethod</h3>
+                    <p class="operation-description">Updates the PaymentMethodType for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum PaymentMethodType)</i> In the request body, supply the new value for the PaymentMethodType.<br/>See <a href="#PaymentMethodType">PaymentMethodType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/paymentMethodType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2f36698e-b244-4cbd-aeca-8d6d07c292a6"></a>
+                    <h3>PUT Set PayPalClientid PaymentMethod</h3>
+                    <p class="operation-description">Updates the PayPalClientid for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PayPalClientid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/payPalClientid</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5145712f-b549-4483-ad9e-a64168592c88"></a>
+                    <h3>PUT Set PayPalClientSecret PaymentMethod</h3>
+                    <p class="operation-description">Updates the PayPalClientSecret for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PayPalClientSecret.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/payPalClientSecret</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e478f832-a20a-4d7f-9c55-74c0ff98b236"></a>
+                    <h3>PUT Set PayPalMerchantid PaymentMethod</h3>
+                    <p class="operation-description">Updates the PayPalMerchantid for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PayPalMerchantid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/payPalMerchantid</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="45153285-d128-4c04-a7a7-d59e43c7ca22"></a>
+                    <h3>PUT Set ValueDateOffset PaymentMethod</h3>
+                    <p class="operation-description">Updates the ValueDateOffset for the specified Payment Method.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> In the request body, supply the new value for the ValueDateOffset.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentMethods/{paymentMethodsKey}/valueDateOffset</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7878e8ca-aff7-4827-ac7f-d57abb40dab8"></a>
+                    <h3>DELETE PaymentMethod by identifier</h3>
+                    <p class="operation-description">Deletes the specified Payment Method by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Payment Method.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Payment Method was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Payment Method does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/paymentMethods/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="316b847e-3cd8-48eb-ad45-4a20ce04f287"></a>
+                    <h3>DELETE PaymentMethod by key</h3>
+                    <p class="operation-description">Deletes the specified Payment Method by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td><i>(string)</i> Payment method key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Payment Method was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Payment Method does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/paymentMethods/{paymentMethodsKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="PaymentMethodResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PaymentMethodResourceResourceDiv')">PaymentMethodResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PaymentMethodResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td  class="wrap"><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAvailableInSales</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in sales</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAvailableInPurchases</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in purchases</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAllowedInPettyCash</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in petty cash operations</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAllowedInFinancialAccount</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in finnancial accounts</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAvailableInOnLineStore</td>
+                                <td  class="wrap"><i>(bool)</i> Available in Online Store</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">balanceManaged</td>
+                                <td  class="wrap"><i>(bool)</i> indicates whether this payment method is balance managed or not.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">valueDateOffset</td>
+                                <td  class="wrap"><i>(int)</i> Number of days to offset this payment term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethodType</td>
+                                <td  class="wrap"><i>(enum PaymentMethodType)</i> The associated payment method type.<br/>See <a href="#PaymentMethodType">PaymentMethodType.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isEft</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the payment method is an Electronic funds transfer.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Payment method description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalClassification</td>
+                                <td  class="wrap"><i>(string)</i> The associated fiscal classification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">details</td>
+                                <td  class="wrap"><i>(string)</i> The details.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">payPalMerchantid</td>
+                                <td  class="wrap"><i>(string)</i> The PayPal Merchant ID.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">payPalClientid</td>
+                                <td  class="wrap"><i>(string)</i> The paypal client id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">payPalClientSecret</td>
+                                <td  class="wrap"><i>(string)</i> The paypal client's secret.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPaymentMethodResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPaymentMethodResourceResourceDiv')">ApiPaymentMethodResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPaymentMethodResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentMethodsKey</td>
+                                <td  class="wrap"><i>(string)</i> Payment method key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAvailableInSales</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in sales</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAvailableInPurchases</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in purchases</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAllowedInPettyCash</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in petty cash operations</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAllowedInFinancialAccount</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this payment method can be used in finnancial accounts</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isAvailableInOnLineStore</td>
+                                <td  class="wrap"><i>(bool)</i> Available in Online Store</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">balanceManaged</td>
+                                <td  class="wrap"><i>(bool)</i> indicates whether this payment method is balance managed or not.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">valueDateOffset</td>
+                                <td  class="wrap"><i>(int)</i> Number of days to offset this payment term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethodType</td>
+                                <td  class="wrap"><i>(enum PaymentMethodType)</i> The associated payment method type.<br/>See <a href="#PaymentMethodType">PaymentMethodType.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isEft</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the payment method is an Electronic funds transfer.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Payment method description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalClassification</td>
+                                <td  class="wrap"><i>(string)</i> The associated fiscal classification.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">details</td>
+                                <td  class="wrap"><i>(string)</i> The details.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">payPalMerchantid</td>
+                                <td  class="wrap"><i>(string)</i> The PayPal Merchant ID.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">payPalClientid</td>
+                                <td  class="wrap"><i>(string)</i> The paypal client id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">payPalClientSecret</td>
+                                <td  class="wrap"><i>(string)</i> The paypal client's secret.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="PaymentMethodType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PaymentMethodTypeValueListDiv')">PaymentMethodType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PaymentMethodTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Cash</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Check</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>ElectronicTransfer</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">5</td>
+                                <td>PayPal</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>Other</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">6</td>
+                                <td>BankTransfer</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1429 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Financials | Payment Type</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="financials.html">
+		Financials
+    </a>
+	<a class="menu-subitem " href="financialcore.cashflowitems.html">
+		Cash Flow Item
+	</a>
+	<a class="menu-subitem " href="financialcore.financialaccounts.html">
+		Financial Account
+	</a>
+	<a class="menu-subitem " href="financialcore.financialinstitutions.html">
+		Financial Institution
+	</a>
+	<a class="menu-subitem " href="financialcore.financialsetups.html">
+		Financial Setup
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentmethods.html">
+		Payment Method
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentterms.html">
+		Payment Term
+	</a>
+	<a class="menu-subitem menu-item-selected" href="financialcore.paymenttypes.html">
+		Payment Type
+	</a>
+	<a class="menu-subitem " href="financialcore.pettycashes.html">
+		Petty Cash
+	</a>
+	<a class="menu-subitem " href="financialcore.receipttypes.html">
+		Receipt Type
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Payment Type</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/financialCore/paymentTypes</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'PaymentType'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="849c6589-1cf5-47d7-a105-a6113ddb1d34"></a>
+                    <h3>GET PaymentTypes</h3>
+                    <p class="operation-description">Returns all Payment Type user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Payment Type. See <a href="#PaymentTypeResource">PaymentTypeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentTypes</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="384e393d-7f10-427c-ac72-cfba1c503509"></a>
+                    <h3>GET PaymentTypes (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Payment Type user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Payment Type. See <a href="#PaymentTypeResource">PaymentTypeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentTypes</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a460e462-0bb8-49c0-a9fe-149343f1d416"></a>
+                    <h3>GET PaymentType by identifier</h3>
+                    <p class="operation-description">Returns information for a given Payment Type, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Payment Type.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Payment Type. See <a href="#PaymentTypeResource">PaymentTypeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentTypes/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6aa58046-ea68-4edb-965d-255ae799e7f3"></a>
+                    <h3>GET PaymentType by key</h3>
+                    <p class="operation-description">Returns information for a given Payment Type, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Payment Type. See <a href="#PaymentTypeResource">PaymentTypeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentTypes/{companyKey}/{typeKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d8493084-9ebc-4096-9a54-ef4b871bb3b8"></a>
+                    <h3>GET Print PaymentType by identifier</h3>
+                    <p class="operation-description">Prints the specified PaymentType.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the PaymentType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed PaymentType.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentTypes/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f8b6e887-5721-444a-8f0f-fc9b553c6fcd"></a>
+                    <h3>GET Print PaymentType by key</h3>
+                    <p class="operation-description">Prints the specified PaymentType by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested PaymentType is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed PaymentType.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/paymentTypes/{companyKey}/{typeKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2cdce964-b401-42a0-b475-4b79db58b283"></a>
+                    <h3>POST PaymentTypes</h3>
+                    <p class="operation-description">Creates a new Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">paymentTypeResource</td>
+                                <td><i>(ApiPaymentTypeResource)</i> In the request body, supply a resource containing the Payment Type information.<br/>See <a href="#ApiPaymentTypeResource">ApiPaymentTypeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Payment Type identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiPaymentTypeResource">ApiPaymentTypeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Payment Type was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/paymentTypes</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9bfa352a-f793-4dd6-8a1c-8a149da04829"></a>
+                    <h3>POST Payment Type </h3>
+                    <p class="operation-description">Inserts a new Payment Type Serie in an existing Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiPaymentTypeDocumentTypeSeriesResource)</i> The ApiPaymentTypeDocumentTypeSeriesResource instance.<br/>See <a href="#ApiPaymentTypeDocumentTypeSeriesResource">ApiPaymentTypeDocumentTypeSeriesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/paymentTypes/{companyKey}/{typeKey}/documentTypeSeries</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b21a7243-758f-469c-ac80-9c3ba1d1ddff"></a>
+                    <h3>PUT Set AccountingSchema PaymentType</h3>
+                    <p class="operation-description">Updates the AccountingSchema for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AccountingSchema)</i> In the request body, supply the new value for the AccountingSchema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/accountingSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f496042c-e1c2-4673-baed-a61331d6b697"></a>
+                    <h3>PUT Set Company PaymentType</h3>
+                    <p class="operation-description">Updates the Company for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8e39eb0f-c581-4fd4-938f-276bc8ec679c"></a>
+                    <h3>PUT Set ContactType PaymentType</h3>
+                    <p class="operation-description">Updates the ContactType for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ContactType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/contactType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="32349bf7-9965-471d-a63f-17980896e37c"></a>
+                    <h3>PUT Set DefaultCashFlowItem PaymentType</h3>
+                    <p class="operation-description">Updates the DefaultCashFlowItem for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the DefaultCashFlowItem.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/defaultCashFlowItem</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="147ae876-6ffd-456e-ad97-b2e331a9ead5"></a>
+                    <h3>PUT Set DefaultFinancialAccount PaymentType</h3>
+                    <p class="operation-description">Updates the DefaultFinancialAccount for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the DefaultFinancialAccount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/defaultFinancialAccount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d4adb2de-52a0-4d49-b08a-f388b7b6d7c9"></a>
+                    <h3>PUT Set DefaultPettyCash PaymentType</h3>
+                    <p class="operation-description">Updates the DefaultPettyCash for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the DefaultPettyCash.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/defaultPettyCash</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f98d6871-dab4-430c-84ad-2e3e40cca3ee"></a>
+                    <h3>PUT Set Description PaymentType</h3>
+                    <p class="operation-description">Updates the Description for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2f10f3e4-2364-4387-8d13-075cb6914002"></a>
+                    <h3>PUT Set IsActive PaymentType</h3>
+                    <p class="operation-description">Updates the IsActive for the specified PaymentType.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested PaymentType is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b46b81bc-8afe-4f8f-b1a9-4ca9c3335b0d"></a>
+                    <h3>PUT Set IsDefault PaymentType</h3>
+                    <p class="operation-description">Updates the IsDefault for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsDefault.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/documentTypeSeries/{lineId}/isDefault</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="396b9840-ae3e-4639-bed7-daabf57c61eb"></a>
+                    <h3>PUT Set Notification PaymentType</h3>
+                    <p class="operation-description">Updates the Notification for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/notification</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8707eef7-621d-462a-9324-810f7e517f1b"></a>
+                    <h3>PUT Set NumberOfCopies PaymentType</h3>
+                    <p class="operation-description">Updates the NumberOfCopies for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> In the request body, supply the new value for the NumberOfCopies.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/documentTypeSeries/{lineId}/numberOfCopies</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2bbcee58-df89-413c-8e05-aa052fec11b3"></a>
+                    <h3>PUT Set TypeKey PaymentType</h3>
+                    <p class="operation-description">Updates the TypeKey for the specified Payment Type.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the TypeKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/paymentTypes/{companyKey}/{typeKey}/typeKey</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7d628fc5-e328-4fad-a365-578b9c59ee7c"></a>
+                    <h3>DELETE Payment Type Serie by identifier</h3>
+                    <p class="operation-description">Deletes the specified Payment Type Serie.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/paymentTypes{companyKey}/{typeKey}/documentTypeSeries/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b82781d0-aa1f-4d59-a44b-4306b6457cc7"></a>
+                    <h3>DELETE PaymentType by identifier</h3>
+                    <p class="operation-description">Deletes the specified Payment Type by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Payment Type.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Payment Type was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Payment Type does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/paymentTypes/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a7d12939-ee35-4173-a0bd-84790d445651"></a>
+                    <h3>DELETE PaymentType by key</h3>
+                    <p class="operation-description">Deletes the specified Payment Type by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Payment Type is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td><i>(string)</i> The payment type key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Payment Type was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Payment Type does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/paymentTypes/{companyKey}/{typeKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="PaymentTypeResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PaymentTypeResourceResourceDiv')">PaymentTypeResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PaymentTypeResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The associated company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td  class="wrap"><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> The associated account schema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The payment type description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentTypeSeries</td>
+                                <td  class="wrap"><i>(List of PaymentTypeSerieResource)</i> Document Type Series<br/>See <a href="#PaymentTypeSerieResource">PaymentTypeSerieResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">defaultFinancialAccount</td>
+                                <td  class="wrap"><i>(string)</i> The financial account used by default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">defaultPettyCash</td>
+                                <td  class="wrap"><i>(string)</i> The petty cash used by default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">defaultCashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> The cash flow item used by default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactType</td>
+                                <td  class="wrap"><i>(string)</i> The associated contact type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notification</td>
+                                <td  class="wrap"><i>(string)</i> The associated notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="PaymentTypeSerieResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'PaymentTypeSerieResourceResourceDiv')">PaymentTypeSerieResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="PaymentTypeSerieResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isDefault</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if this is the default serie for the document.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">numberOfCopies</td>
+                                <td  class="wrap"><i>(int)</i> Number of copies of the document to print.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> The serie for the payment type serie.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">currentNumber</td>
+                                <td  class="wrap"><i>(int)</i> The current serie numerator, indicating the last number to be used.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date  for the payment type serie.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPaymentTypeResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPaymentTypeResourceResourceDiv')">ApiPaymentTypeResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPaymentTypeResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The associated company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">typeKey</td>
+                                <td  class="wrap"><i>(string)</i> The payment type key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> The associated account schema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The payment type description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentTypeSeries</td>
+                                <td title="(List of ApiPaymentTypeDocumentTypeSeriesResource) Document Type Series See ApiPaymentTypeDocumentTypeSeriesResource." class="wrap"><i>(List of ApiPaymentTypeDocumentTypeSeriesResource)</i> Document Type Series<br/>See <a href="#ApiPaymentTypeDocumentTypeSeriesResource">ApiPaymentTypeDocumentTypeSeriesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">defaultFinancialAccount</td>
+                                <td  class="wrap"><i>(string)</i> The financial account used by default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">defaultPettyCash</td>
+                                <td  class="wrap"><i>(string)</i> The petty cash used by default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">defaultCashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> The cash flow item used by default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactType</td>
+                                <td  class="wrap"><i>(string)</i> The associated contact type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notification</td>
+                                <td  class="wrap"><i>(string)</i> The associated notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiPaymentTypeDocumentTypeSeriesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiPaymentTypeDocumentTypeSeriesResourceResourceDiv')">ApiPaymentTypeDocumentTypeSeriesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiPaymentTypeDocumentTypeSeriesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isDefault</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if this is the default serie for the document.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">numberOfCopies</td>
+                                <td  class="wrap"><i>(int)</i> Number of copies of the document to print.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> The serie for the payment type serie.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="AccountingSchema"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AccountingSchemaValueListDiv')">AccountingSchema<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AccountingSchemaValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Accrual</td>
+								<td>Acrrual Accounting Schema</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Cash</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

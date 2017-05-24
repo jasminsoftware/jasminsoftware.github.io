@@ -1,0 +1,2652 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Sales | Invoice</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a id="current-menu-item" class="menu-item " href="sales.html">
+		Sales
+    </a>
+	<a class="menu-subitem " href="billing.companyinvoices.html">
+		Company Invoice
+	</a>
+	<a class="menu-subitem " href="salescore.customergroups.html">
+		Customer Group
+	</a>
+	<a class="menu-subitem " href="salescore.customerparties.html">
+		Customer Party
+	</a>
+	<a class="menu-subitem menu-item-selected" href="billing.invoices.html">
+		Invoice
+	</a>
+	<a class="menu-subitem " href="salescore.invoicetypes.html">
+		Invoice Type
+	</a>
+	<a class="menu-subitem " href="billing.memos.html">
+		Memo
+	</a>
+	<a class="menu-subitem " href="salescore.memotypes.html">
+		Memo Type
+	</a>
+	<a class="menu-subitem " href="sales.orders.html">
+		Order
+	</a>
+	<a class="menu-subitem " href="salescore.ordertypes.html">
+		Order Type
+	</a>
+	<a class="menu-subitem " href="salescore.pricelists.html">
+		Price List
+	</a>
+	<a class="menu-subitem " href="billing.processorders.html">
+		Process Order
+	</a>
+	<a class="menu-subitem " href="billing.processreturnorders.html">
+		Process Return Order
+	</a>
+	<a class="menu-subitem " href="sales.quotations.html">
+		Quotation
+	</a>
+	<a class="menu-subitem " href="salescore.quotationtypes.html">
+		Quotation Type
+	</a>
+	<a class="menu-subitem " href="salescore.saleschannels.html">
+		Sales Channel
+	</a>
+	<a class="menu-subitem " href="salescore.salesitems.html">
+		Sales Item
+	</a>
+	<a class="menu-subitem " href="salescore.salessetups.html">
+		Sales Setup
+	</a>
+	<a class="menu-subitem " href="salescore.salespersons.html">
+		Salesperson
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Sales | Invoice</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/billing/invoices</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Invoice'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d9558d2b-9b91-4dc9-960f-ea3f5949bf59"></a>
+                    <h3>GET Invoices</h3>
+                    <p class="operation-description">Returns all Invoice user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Invoice. See <a href="#InvoiceResource">InvoiceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /billing/invoices</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f2a6c1ec-41fd-4004-b466-89adffe729b3"></a>
+                    <h3>GET Invoices (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Invoice user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Invoice. See <a href="#InvoiceResource">InvoiceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /billing/invoices</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6405fcbd-ae5b-4910-9788-6461a5f8747d"></a>
+                    <h3>GET Invoice by identifier</h3>
+                    <p class="operation-description">Returns information for a given Invoice, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Invoice.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Invoice. See <a href="#InvoiceResource">InvoiceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /billing/invoices/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7d115702-daf9-485e-b876-2aeedd0ea1cc"></a>
+                    <h3>GET Invoice by key</h3>
+                    <p class="operation-description">Returns information for a given Invoice, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Invoice. See <a href="#InvoiceResource">InvoiceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="57652182-660d-4a54-bb08-84aa764d4e66"></a>
+                    <h3>GET Print Invoice by identifier</h3>
+                    <p class="operation-description">Prints the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Invoice.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Invoice.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /billing/invoices/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3bf92dcc-c9be-49f0-9606-6595207b00be"></a>
+                    <h3>GET Print Invoice by key</h3>
+                    <p class="operation-description">Prints the specified Invoice by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Invoice.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="541a4316-ebe5-4fdb-894b-c26cef1f0dee"></a>
+                    <h3>POST Invoices</h3>
+                    <p class="operation-description">Creates a new Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">invoiceResource</td>
+                                <td><i>(ApiInvoiceResource)</i> In the request body, supply a resource containing the Invoice information.<br/>See <a href="#ApiInvoiceResource">ApiInvoiceResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Invoice identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiInvoiceResource">ApiInvoiceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Invoice was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /billing/invoices</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="aebf62bb-6d62-414a-a725-721a38bd88e1"></a>
+                    <h3>PUT Set AccountingSchema Invoice</h3>
+                    <p class="operation-description">Updates the AccountingSchema for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AccountingSchema)</i> In the request body, supply the new value for the AccountingSchema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/accountingSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bb646cb4-03d5-4946-8899-3b72012d1890"></a>
+                    <h3>PUT Set EmailTo Invoice</h3>
+                    <p class="operation-description">Updates the EmailTo for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the EmailTo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/emailTo</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="59b780b9-78d7-4d5b-9d39-95f825391577"></a>
+                    <h3>PUT Set FiscalDocumentType Invoice</h3>
+                    <p class="operation-description">Updates the FiscalDocumentType for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FiscalDocumentType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/fiscalDocumentType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3bebddd4-4f8e-4e18-8039-4d28dadbbcaf"></a>
+                    <h3>PUT Set IsActive Invoice</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6bcd81d2-5dad-4017-9d17-99f1f3b9108e"></a>
+                    <h3>PUT Set IsExternal Invoice</h3>
+                    <p class="operation-description">Updates the IsExternal for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsExternal.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/isExternal</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="29c7e272-befb-4969-85e0-3cc29aedadc8"></a>
+                    <h3>PUT Set IsManual Invoice</h3>
+                    <p class="operation-description">Updates the IsManual for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsManual.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/isManual</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="459e6788-8b04-440e-afda-b578f8502feb"></a>
+                    <h3>PUT Set IsManualSerie Invoice</h3>
+                    <p class="operation-description">Updates the IsManualSerie for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsManualSerie.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/isManualSerie</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="215ab68c-6d01-42d8-9507-b7a800cfa194"></a>
+                    <h3>PUT Set IsOneTimeCustomer Invoice</h3>
+                    <p class="operation-description">Updates the IsOneTimeCustomer for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsOneTimeCustomer.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/isOneTimeCustomer</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="64c57b53-ae4b-4d50-b67e-ed71d9133610"></a>
+                    <h3>PUT Set IsSimpleInvoice Invoice</h3>
+                    <p class="operation-description">Updates the IsSimpleInvoice for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsSimpleInvoice.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/isSimpleInvoice</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="dd95572e-f11a-47b3-a7b2-6ef745d69bde"></a>
+                    <h3>PUT Set IsWsCommunicable Invoice</h3>
+                    <p class="operation-description">Updates the IsWsCommunicable for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsWsCommunicable.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/isWsCommunicable</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="938c12da-f82b-42ba-9be6-e40cf1bd73bb"></a>
+                    <h3>PUT Set Note Invoice</h3>
+                    <p class="operation-description">Updates the Note for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Note.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/note</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1f54a4ef-616a-4705-9cfa-29a55289ae79"></a>
+                    <h3>PUT Set NoteToRecipient Invoice</h3>
+                    <p class="operation-description">Updates the NoteToRecipient for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the NoteToRecipient.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/noteToRecipient</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="681aaf76-2bed-430a-a80f-99a149f5fb85"></a>
+                    <h3>PUT Set Notification Invoice</h3>
+                    <p class="operation-description">Updates the Notification for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/notification</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5da88a8b-1640-4377-8959-1efcc1cbf9a6"></a>
+                    <h3>PUT Set PartyAccountingSchema Invoice</h3>
+                    <p class="operation-description">Updates the PartyAccountingSchema for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AccountingSchema)</i> In the request body, supply the new value for the PartyAccountingSchema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/partyAccountingSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9889ec71-4fe1-489e-9077-0b037e98d586"></a>
+                    <h3>PUT Set Remarks Invoice</h3>
+                    <p class="operation-description">Updates the Remarks for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Remarks.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/remarks</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="430cca4b-a0a8-41e9-baef-90df20a5235d"></a>
+                    <h3>PUT Set SalesChannel Invoice</h3>
+                    <p class="operation-description">Updates the SalesChannel for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SalesChannel.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/salesChannel</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="dd7e837b-693a-4ffb-adf9-adda35cb573d"></a>
+                    <h3>PUT Set TransactionAccount Invoice</h3>
+                    <p class="operation-description">Updates the TransactionAccount for the specified Invoice.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the TransactionAccount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}/documentLines/{lineId}/transactionAccount</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="28f24797-8bff-41c0-9fa4-ff7a71629885"></a>
+                    <h3>DELETE Invoice by identifier</h3>
+                    <p class="operation-description">Deletes the specified Invoice by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Invoice.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Invoice was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Invoice does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /billing/invoices/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="057eb5f2-2a79-4df6-865c-93eb7bf501a5"></a>
+                    <h3>DELETE Invoice by key</h3>
+                    <p class="operation-description">Deletes the specified Invoice by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Invoice is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Invoice was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Invoice does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /billing/invoices/{companyKey}/{documentType}/{serie}/{seriesNumber}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="InvoiceResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InvoiceResourceResourceDiv')">InvoiceResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InvoiceResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td  class="wrap"><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td  class="wrap"><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The memo company. The company code is the central organizational unit within the system.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryTerm</td>
+                                <td  class="wrap"><i>(string)</i> The invoice delivery term. The conditions in a sales or transportation contract that specify the means of transportation. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentTerm</td>
+                                <td  class="wrap"><i>(string)</i> The invoice payment term. Term specifying the manner in which a trade will be done. Generally, these terms specify a period in which the buyer can pay the due amount. They can also demand some money to be paid in advance, paid in cash at delivery, a 30 day or longer period, or other similar arrangements for deferred payment. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> The invoice payment method. Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Money unit used by the document. This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is issued.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is created.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer party that receives or consumes products (goods or services).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerPartyName</td>
+                                <td  class="wrap"><i>(string)</i> The customer name. It is inferred from the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer designated in the invoice as the party to whom the invoice should be sent for payment. It may or may not be the party to whom the goods or services are delivered. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> The rate that translates the values in the document from the document currency to company base currency. By default the system uses the exchange rates table at the document date.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount</td>
+                                <td  class="wrap"><i>(decimal)</i> The discount percentage. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashInvoice</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the invoice is a cash invoice or not. Defined internally and inferred from the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">grossValue</td>
+                                <td  class="wrap"><i>(decimal)</i> Total value of goods and services before taxes or discounts. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">allowanceChargeAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total discount over goods and services. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxExclusiveAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice total net value. Total value of goods and services after discounts, excluding taxes. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxTotal</td>
+                                <td  class="wrap"><i>(decimal)</i> Total tax value of goods and services. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">payableAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice payable amount. Total value of goods and services including taxes and discounts. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">wTaxTotal</td>
+                                <td  class="wrap"><i>(decimal)</i> Total withholding tax value of goods and services. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalLiability</td>
+                                <td  class="wrap"><i>(decimal)</i> Document total liability. The payable amount without withholding taxes. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> The country of the physical location where the goods are loaded. The default is the company country.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> The physical location address country where the goods are unloaded. The default is customer address country.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isTransformed</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice was transformed from the other document. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternal</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type series is defined as external. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isManual</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type series is defined as manual. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isSimpleInvoice</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type is defined as simple invoice type. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isWsCommunicable</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the invoice is communicated via web service to fiscal authority. Inferred from the invoice type serie.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">economicActivityClassification</td>
+                                <td  class="wrap"><i>(string)</i> The invoice economic activity classification. A national legal standard that attributes a 5-digit value to identify a company's specific category of professional activity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Incoming and outgoing cash flow caused by the main business activities. The component of the cash flow operations shows how much money is generated by a company's products or services. Generally, the changes made to the cash, banks, accounts receivables and accounts payable affects operational cash. The classification of each of these operations' types is made by using cash flows.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> An account that exists in a financial institution. The financial institution holds someone's money, resulting in a positive balance. It can also be a credit or loans account in which the bank lends money, resulting in a negative balance or debit. Unlike a brokerage account, which allows the investor to buy and sell stocks, a bank account is used for savings. The types of bank accounts include savings accounts and current accounts.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Refers to a cash drawer that collects small amounts of cash in a business.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxIncluded</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the unit prices have taxes included or not. The value is inferred from the invoice series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerPartyTaxId</td>
+                                <td  class="wrap"><i>(string)</i> The customer tax code. Unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities. Inferred from the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerPartyAddress</td>
+                                <td  class="wrap"><i>(string)</i> The customer address. It is inferred from the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingPartyName</td>
+                                <td  class="wrap"><i>(string)</i> The accounting party name. It is inferred from the accounting party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingPartyTaxId</td>
+                                <td  class="wrap"><i>(string)</i> The accounting tax code. Unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities. Inferred from the accounting party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingPartyAddress</td>
+                                <td  class="wrap"><i>(string)</i> The accounting customer address. It is inferred from the accounting party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The exchange rate creation date.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The payment check date. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkBank</td>
+                                <td  class="wrap"><i>(string)</i> The payment check bank. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkBranch</td>
+                                <td  class="wrap"><i>(string)</i> The payment check bank branch. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkAccount</td>
+                                <td  class="wrap"><i>(string)</i> The payment check bank account. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkEndorsed</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the payment check endsorded. Applicable only when the invoice is cash invoice and the payment method is of type check. In some countries, the beneficiary can endorse the check, which allows him or her to specify a third party to whom it should be paid. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> The payment check number. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issuePlace</td>
+                                <td  class="wrap"><i>(string)</i> The payment check issue place. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkPayment</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if the used payment method is of type check. Applicable only when the invoice is cash invoice and the payment method is of type check. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Invoice remarks.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The document note.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">priceList</td>
+                                <td  class="wrap"><i>(string)</i> Catalogued table values ​​that sets the standard price for the products and goods traded by a specific entity. The default is inferred from the customer party if defined, otherwise from the sales setup.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">noteToRecipient</td>
+                                <td  class="wrap"><i>(string)</i> Note to the invoice recipient.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the invoice has been printed. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesperson</td>
+                                <td  class="wrap"><i>(string)</i> The sales person associated to the invoice. Sales representative or salesman (whether he is under direct control of a company or not) is authorized to procure business opportunities for a company. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">settlementDiscountPercent</td>
+                                <td  class="wrap"><i>(decimal)</i> Obsolete.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">altAddress</td>
+                                <td  class="wrap"><i>(string)</i> The alternative customer address key to be used on the invoice. The alternative addresses keys are defined on the customer party addresses. When defined overrides the customer party address and unloading address values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentStatus</td>
+                                <td  class="wrap"><i>(enum DocumentStatus)</i> The document status. Internally determined.<br/>See <a href="#DocumentStatus">DocumentStatus.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> The physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> The city of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> The goods loading date and time from the loading physical location. The default is the invoice creation date and time.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingPointAddress</td>
+                                <td  class="wrap"><i>(string)</i> The physical location address where the goods are loaded. The default is the company physical location address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> The loading warehouse. When defined the warehouse address will replace the loading address values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> The physical location where the goods are unloaded. Defines the unloading from the freight. The default is customer address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name of the physical location where the goods are unloaded. The default is customer address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number of the physical location where the goods are unloaded. The default is customer address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone of the physical location where the goods are unloaded. The default is customer address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> The city name of the physical location where the goods are unloaded. The default is customer address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingPointAddress</td>
+                                <td  class="wrap"><i>(string)</i> The physical location address where the goods are unloaded. The default is customer address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> The goods unloading date and time on the unloading physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">vehiclePlateNumber</td>
+                                <td  class="wrap"><i>(string)</i> The vehicle plate used to trasnport the goods.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">hash</td>
+                                <td  class="wrap"><i>(string)</i> Reference value to determine the authenticity or integrity of an object. The result of applying a mathematical formula to the object must be equal to this value for it to be authentic. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">hashControl</td>
+                                <td  class="wrap"><i>(string)</i> Reference value subset to determine the authenticity or integrity of an object. The result of applying a mathematical formula to the object must be equal to this value for it to be authentic. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">legalStamp</td>
+                                <td  class="wrap"><i>(string)</i> In some countries, the documents issued by a company have to contain mandatory remarks, clearly visible in printing, which may vary according to the document. These texts are printed under the signature terms. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">manualNumber</td>
+                                <td  class="wrap"><i>(int)</i> The invoice manual serie number. Applicable only when the invoice type series is defined as manual.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">manualDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The invoice manual date. Applicable only when the invoice type series is defined as manual.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">manualSerie</td>
+                                <td  class="wrap"><i>(string)</i> The invoice manual serie. Applicable only when the invoice type series is defined as manual.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentLines</td>
+                                <td  class="wrap"><i>(List of InvoiceLineResource)</i> The invoice lines.<br/>See <a href="#InvoiceLineResource">InvoiceLineResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentTaxes</td>
+                                <td  class="wrap"><i>(List of InvoiceTaxResource)</i> The invoice taxes.<br/>See <a href="#InvoiceTaxResource">InvoiceTaxResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesChannel</td>
+                                <td  class="wrap"><i>(string)</i> The invoice sales channel origin. The default value is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date in which the payment is due. In some countries it is also known as law date.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isManualSerie</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type series is defined as manual. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isOneTimeCustomer</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the customer party is a marked as an one time customer. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalDocumentType</td>
+                                <td  class="wrap"><i>(string)</i> The legal fiscal document type defined on the invoice type. Inferred from the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingAltAddress</td>
+                                <td  class="wrap"><i>(string)</i> The alternative accounting party address key to be used on the invoice. The alternative addresses keys are defined on the accounting party addresses. When defined overrides the accounting party address values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> The accounting organization method. The organization can follow the rules of "Cash Accounting" or "Accrual Accounting".<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> The customer accounting organization method. The customer organication can follow the rules of "Cash Accounting" or "Accrual Accounting".<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notification</td>
+                                <td  class="wrap"><i>(string)</i> The invoice notification configuration. Inferred from the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">emailTo</td>
+                                <td  class="wrap"><i>(string)</i> The email(s) to send invoice notification. Inferred from the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="InvoiceLineResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InvoiceLineResourceResourceDiv')">InvoiceLineResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InvoiceLineResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">salesItem</td>
+                                <td  class="wrap"><i>(string)</i> The sales item representing the good or service to be invoiced.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item description. The default is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice line item quantity. The default 1.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unitPrice</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice line item unit price. The default price is loaded from sales item prices when there is a match on the combination of price list, currency, tax included and unit.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item sales unit. The default sales unit is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item tax schema. The tax schema identifies the group of taxes a item is liable for. The default tax schema is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The invoice customer party tax schema. The tax schema identifies the group of taxes a party is liable for. The tax schema is defined in the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The expected line item delivery date. The default is the document date.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxTotal</td>
+                                <td  class="wrap"><i>(decimal)</i> Total amount of taxes for this line. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">allowanceChargeAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Invoice line total discount. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxExclusiveAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice line net value.  The line value after discounts, excluding taxes. Internally calculated. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">grossValue</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice line value before taxes or discounts. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineExtensionAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice line payable amount. The line value including taxes and discounts. Internally calculated.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Money unit. Inferred from the invoice currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> The invoice line item type. Inferred from the sales item type. Internally determined.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item warehouse. The default is defined on the materials item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item withholding tax schema. The withholding tax schema identifies the group of withholding taxes a item is liable for. The default withholding tax schema is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyWithholdingTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The invoice customer party withholding tax schema. The withholding tax schema identifies the group of withholding taxes a party is liable for. The withholding tax schema is defined in the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount1</td>
+                                <td  class="wrap"><i>(decimal)</i> The line item discount 1 percentage. The default is 0.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount2</td>
+                                <td  class="wrap"><i>(decimal)</i> The line item discount 2 percentage. The default is 0.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount3</td>
+                                <td  class="wrap"><i>(decimal)</i> The line item discount 3 percentage. The default is 0.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">complementaryDescription</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item complementary description. The default is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentLineStatus</td>
+                                <td  class="wrap"><i>(enum DocumentLineStatus)</i> The document line status. The default is Open.<br/>See <a href="#DocumentLineStatus">DocumentLineStatus.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema entity from originating document, possible values: Orders, Deliveries, GoodsReturns.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Source document using the format {<DocumentType>.<Series>.<Number>} when the invoice is transformed from another document. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source document id when the invoice is transformed from other source document. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocLine</td>
+                                <td  class="wrap"><i>(int)</i> The source document line number, when the invoice was transformed. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocLineId</td>
+                                <td  class="wrap"><i>(Guid)</i> The source document line id, when the invoice was transformed. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">delivery</td>
+                                <td  class="wrap"><i>(string)</i> Source delivery when the invoice is transformed from a transport document. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryId</td>
+                                <td  class="wrap"><i>(Guid)</i> The source delivery id when the invoice was transformed from delivery. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryLine</td>
+                                <td  class="wrap"><i>(int)</i> Source delivery line index when the invoice is transformed from a transport document. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryLineId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source delivery line id when the invoice is transformed from a transport document. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">billingRequestId</td>
+                                <td  class="wrap"><i>(Guid)</i> The billing request id that originated the invoice line, when the invoice is transformed. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">billingRequestLineId</td>
+                                <td  class="wrap"><i>(Guid)</i> The billing request line id that originated the invoice line, when the invoice is transformed. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">transactionAccount</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item transaction account. Inferred from the sales item income account. Internally determined.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="InvoiceTaxResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InvoiceTaxResourceResourceDiv')">InvoiceTaxResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InvoiceTaxResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">taxableAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The amount of revenue subject to tax. This taxable amount is calculated by subtracting the corresponding discounts and allowance charges to the gross value. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Invoice tax amount. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExempt</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the invoice tax schema is exempt. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">taxTypeCode</td>
+                                <td  class="wrap"><i>(string)</i> Invoice tax type code. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Money unit. Inferred from the invoice currency. Internally determined.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">taxPercentage</td>
+                                <td  class="wrap"><i>(decimal)</i> Invoice tax rate percentage. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exemptionReasonCode</td>
+                                <td  class="wrap"><i>(string)</i> Indicates the invoice tax schema exemption reason. Applicable only if the tax schema is exempt. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">customExemptionReasonCode</td>
+                                <td  class="wrap"><i>(string)</i> Indicates the invoice tax schema custom exemption reason. Applicable only if the tax schema is exempt. Internally determined.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiInvoiceResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiInvoiceResourceResourceDiv')">ApiInvoiceResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiInvoiceResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td  class="wrap"><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default invoice type is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td  class="wrap"><i>(int)</i> Sequential number internally determined that uniquely identifies the document within the invoice type and serie. Part of the document natural key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The memo company. The company code is the central organizational unit within the system.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryTerm</td>
+                                <td  class="wrap"><i>(string)</i> The invoice delivery term. The conditions in a sales or transportation contract that specify the means of transportation. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentTerm</td>
+                                <td  class="wrap"><i>(string)</i> The invoice payment term. Term specifying the manner in which a trade will be done. Generally, these terms specify a period in which the buyer can pay the due amount. They can also demand some money to be paid in advance, paid in cash at delivery, a 30 day or longer period, or other similar arrangements for deferred payment. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> The invoice payment method. Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Money unit used by the document. This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is issued.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is created.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer party that receives or consumes products (goods or services).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerPartyName</td>
+                                <td  class="wrap"><i>(string)</i> The customer name. It is inferred from the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer designated in the invoice as the party to whom the invoice should be sent for payment. It may or may not be the party to whom the goods or services are delivered. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> The rate that translates the values in the document from the document currency to company base currency. By default the system uses the exchange rates table at the document date.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount</td>
+                                <td  class="wrap"><i>(decimal)</i> The discount percentage. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> The country of the physical location where the goods are loaded. The default is the company country.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> The physical location address country where the goods are unloaded. The default is customer address country.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternal</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type series is defined as external. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isManual</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type series is defined as manual. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isSimpleInvoice</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type is defined as simple invoice type. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isWsCommunicable</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the invoice is communicated via web service to fiscal authority. Inferred from the invoice type serie.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">economicActivityClassification</td>
+                                <td  class="wrap"><i>(string)</i> The invoice economic activity classification. A national legal standard that attributes a 5-digit value to identify a company's specific category of professional activity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Incoming and outgoing cash flow caused by the main business activities. The component of the cash flow operations shows how much money is generated by a company's products or services. Generally, the changes made to the cash, banks, accounts receivables and accounts payable affects operational cash. The classification of each of these operations' types is made by using cash flows.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> An account that exists in a financial institution. The financial institution holds someone's money, resulting in a positive balance. It can also be a credit or loans account in which the bank lends money, resulting in a negative balance or debit. Unlike a brokerage account, which allows the investor to buy and sell stocks, a bank account is used for savings. The types of bank accounts include savings accounts and current accounts.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Refers to a cash drawer that collects small amounts of cash in a business.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerPartyTaxId</td>
+                                <td  class="wrap"><i>(string)</i> The customer tax code. Unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities. Inferred from the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buyerCustomerPartyAddress</td>
+                                <td  class="wrap"><i>(string)</i> The customer address. It is inferred from the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingPartyName</td>
+                                <td  class="wrap"><i>(string)</i> The accounting party name. It is inferred from the accounting party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingPartyTaxId</td>
+                                <td  class="wrap"><i>(string)</i> The accounting tax code. Unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities. Inferred from the accounting party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingPartyAddress</td>
+                                <td  class="wrap"><i>(string)</i> The accounting customer address. It is inferred from the accounting party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The exchange rate creation date.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The payment check date. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkBank</td>
+                                <td  class="wrap"><i>(string)</i> The payment check bank. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkBranch</td>
+                                <td  class="wrap"><i>(string)</i> The payment check bank branch. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkAccount</td>
+                                <td  class="wrap"><i>(string)</i> The payment check bank account. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkEndorsed</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the payment check endsorded. Applicable only when the invoice is cash invoice and the payment method is of type check. In some countries, the beneficiary can endorse the check, which allows him or her to specify a third party to whom it should be paid. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> The payment check number. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issuePlace</td>
+                                <td  class="wrap"><i>(string)</i> The payment check issue place. Applicable only when the invoice is cash invoice and the payment method is of type check.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkPayment</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if the used payment method is of type check. Applicable only when the invoice is cash invoice and the payment method is of type check. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Invoice remarks.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The document note.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">priceList</td>
+                                <td  class="wrap"><i>(string)</i> Catalogued table values ​​that sets the standard price for the products and goods traded by a specific entity. The default is inferred from the customer party if defined, otherwise from the sales setup.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">noteToRecipient</td>
+                                <td  class="wrap"><i>(string)</i> Note to the invoice recipient.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesperson</td>
+                                <td  class="wrap"><i>(string)</i> The sales person associated to the invoice. Sales representative or salesman (whether he is under direct control of a company or not) is authorized to procure business opportunities for a company. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">settlementDiscountPercent</td>
+                                <td  class="wrap"><i>(decimal)</i> Obsolete.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">altAddress</td>
+                                <td  class="wrap"><i>(string)</i> The alternative customer address key to be used on the invoice. The alternative addresses keys are defined on the customer party addresses. When defined overrides the customer party address and unloading address values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> The physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> The city of the physical location where the goods are loaded. The default is the company physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> The goods loading date and time from the loading physical location. The default is the invoice creation date and time.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingPointAddress</td>
+                                <td  class="wrap"><i>(string)</i> The physical location address where the goods are loaded. The default is the company physical location address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">loadingWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> The loading warehouse. When defined the warehouse address will replace the loading address values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> The physical location where the goods are unloaded. Defines the unloading from the freight. The default is customer address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name of the physical location where the goods are unloaded. The default is customer address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number of the physical location where the goods are unloaded. The default is customer address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone of the physical location where the goods are unloaded. The default is customer address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> The city name of the physical location where the goods are unloaded. The default is customer address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingPointAddress</td>
+                                <td  class="wrap"><i>(string)</i> The physical location address where the goods are unloaded. The default is customer address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unloadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> The goods unloading date and time on the unloading physical location.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">vehiclePlateNumber</td>
+                                <td  class="wrap"><i>(string)</i> The vehicle plate used to trasnport the goods.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">manualNumber</td>
+                                <td  class="wrap"><i>(int)</i> The invoice manual serie number. Applicable only when the invoice type series is defined as manual.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">manualDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The invoice manual date. Applicable only when the invoice type series is defined as manual.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">manualSerie</td>
+                                <td  class="wrap"><i>(string)</i> The invoice manual serie. Applicable only when the invoice type series is defined as manual.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentLines</td>
+                                <td  class="wrap"><i>(List of ApiInvoiceDocumentLinesResource)</i> The invoice lines.<br/>See <a href="#ApiInvoiceDocumentLinesResource">ApiInvoiceDocumentLinesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentTaxes</td>
+                                <td  class="wrap"><i>(List of ApiInvoiceDocumentTaxesResource)</i> The invoice taxes.<br/>See <a href="#ApiInvoiceDocumentTaxesResource">ApiInvoiceDocumentTaxesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesChannel</td>
+                                <td  class="wrap"><i>(string)</i> The invoice sales channel origin. The default value is defined in the sales setup configuration settings.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date in which the payment is due. In some countries it is also known as law date.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isManualSerie</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the invoice type series is defined as manual. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isOneTimeCustomer</td>
+                                <td  class="wrap"><i>(bool)</i> Defines if the customer party is a marked as an one time customer. Internally determined.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalDocumentType</td>
+                                <td  class="wrap"><i>(string)</i> The legal fiscal document type defined on the invoice type. Inferred from the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingAltAddress</td>
+                                <td  class="wrap"><i>(string)</i> The alternative accounting party address key to be used on the invoice. The alternative addresses keys are defined on the accounting party addresses. When defined overrides the accounting party address values.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> The accounting organization method. The organization can follow the rules of "Cash Accounting" or "Accrual Accounting".<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> The customer accounting organization method. The customer organication can follow the rules of "Cash Accounting" or "Accrual Accounting".<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notification</td>
+                                <td  class="wrap"><i>(string)</i> The invoice notification configuration. Inferred from the invoice type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">emailTo</td>
+                                <td  class="wrap"><i>(string)</i> The email(s) to send invoice notification. Inferred from the notification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiInvoiceDocumentLinesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiInvoiceDocumentLinesResourceResourceDiv')">ApiInvoiceDocumentLinesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiInvoiceDocumentLinesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">salesItem</td>
+                                <td  class="wrap"><i>(string)</i> The sales item representing the good or service to be invoiced.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item description. The default is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice line item quantity. The default 1.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unitPrice</td>
+                                <td  class="wrap"><i>(decimal)</i> The invoice line item unit price. The default price is loaded from sales item prices when there is a match on the combination of price list, currency, tax included and unit.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item sales unit. The default sales unit is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item tax schema. The tax schema identifies the group of taxes a item is liable for. The default tax schema is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">deliveryDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The expected line item delivery date. The default is the document date.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item warehouse. The default is defined on the materials item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">itemWithholdingTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item withholding tax schema. The withholding tax schema identifies the group of withholding taxes a item is liable for. The default withholding tax schema is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount1</td>
+                                <td  class="wrap"><i>(decimal)</i> The line item discount 1 percentage. The default is 0.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount2</td>
+                                <td  class="wrap"><i>(decimal)</i> The line item discount 2 percentage. The default is 0.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">discount3</td>
+                                <td  class="wrap"><i>(decimal)</i> The line item discount 3 percentage. The default is 0.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">complementaryDescription</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item complementary description. The default is defined on the sales item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentLineStatus</td>
+                                <td  class="wrap"><i>(enum DocumentLineStatus)</i> The document line status. The default is Open.<br/>See <a href="#DocumentLineStatus">DocumentLineStatus.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">transactionAccount</td>
+                                <td  class="wrap"><i>(string)</i> The invoice line item transaction account. Inferred from the sales item income account. Internally determined.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiInvoiceDocumentTaxesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiInvoiceDocumentTaxesResourceResourceDiv')">ApiInvoiceDocumentTaxesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiInvoiceDocumentTaxesResourceResourceDiv" style="display:none">
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">customExemptionReasonCode</td>
+                                <td  class="wrap"><i>(string)</i> Indicates the invoice tax schema custom exemption reason. Applicable only if the tax schema is exempt. Internally determined.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="DocumentStatus"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DocumentStatusValueListDiv')">DocumentStatus<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DocumentStatusValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Open</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Completed</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="AccountingSchema"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AccountingSchemaValueListDiv')">AccountingSchema<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AccountingSchemaValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Accrual</td>
+								<td>Acrrual Accounting Schema</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Cash</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="DocumentLineStatus"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DocumentLineStatusValueListDiv')">DocumentLineStatus<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DocumentLineStatusValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Open</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Completed</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ItemType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemTypeValueListDiv')">ItemType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ItemTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Item</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Service</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

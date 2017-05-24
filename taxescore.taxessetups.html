@@ -1,0 +1,1226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Taxes | Taxes Setup</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a id="current-menu-item" class="menu-item " href="taxes.html">
+		Taxes
+    </a>
+	<a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+		AT Communication Request
+	</a>
+	<a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+		Economic Activity Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+		Exemption Reason Code
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+		Fiscal Document Type
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+		Fiscal Witholding Tax Type
+	</a>
+	<a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+		Item Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
+		Item WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxes.obligations.html">
+		Obligation
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsummaries.html">
+		Open Tax Item
+	</a>
+	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
+		Party Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
+		Party WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+		Payment Method Fiscal Class
+	</a>
+	<a class="menu-subitem " href="taxes.legaldeclarations.html">
+		SAF-T (PT)
+	</a>
+	<a class="menu-subitem " href="taxescore.taxclasses.html">
+		Tax Class
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+		Tax Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.taxpostings.html">
+		Tax Posting
+	</a>
+	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
+		Tax Regional Area
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsubclasses.html">
+		Tax Sub Class
+	</a>
+	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
+		Tax Type Code
+	</a>
+	<a class="menu-subitem menu-item-selected" href="taxescore.taxessetups.html">
+		Taxes Setup
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
+		WHT Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+		WHT Type
+	</a>
+	<a class="menu-subitem " href="taxescore.wtaxpostings.html">
+		Withholding Tax Posting
+	</a>
+	<a class="menu-subitem " href="taxescore.wtaxsummaries.html">
+		Withholding Tax Summary
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Taxes | Taxes Setup</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/taxesCore/taxesSetups</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Setup'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="05bcdf87-b548-434d-99e7-b7716f038ede"></a>
+                    <h3>GET TaxesSetups</h3>
+                    <p class="operation-description">Returns all Taxes Setup user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Taxes Setup. See <a href="#TaxesSetupResource">TaxesSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/taxesSetups</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b7535fca-038a-41a9-8ab1-46edd9f62292"></a>
+                    <h3>GET TaxesSetups (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Taxes Setup user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Taxes Setup. See <a href="#TaxesSetupResource">TaxesSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/taxesSetups</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="462d9c96-6238-49b8-9777-8c26d41a20c4"></a>
+                    <h3>GET TaxesSetup by identifier</h3>
+                    <p class="operation-description">Returns information for a given Taxes Setup, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Taxes Setup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Taxes Setup. See <a href="#TaxesSetupResource">TaxesSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/taxesSetups/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="779efbcc-ebe2-458b-ab07-34e83b359984"></a>
+                    <h3>GET TaxesSetup by key</h3>
+                    <p class="operation-description">Returns information for a given Taxes Setup, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Taxes Setup. See <a href="#TaxesSetupResource">TaxesSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/taxesSetups/{company}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="83e6fb20-5c4a-4d29-881a-63274ffc4f26"></a>
+                    <h3>GET Print TaxesSetup by identifier</h3>
+                    <p class="operation-description">Prints the specified TaxesSetup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the TaxesSetup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed TaxesSetup.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/taxesSetups/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="600b576b-c993-4b49-b2a0-0452b05a1ec3"></a>
+                    <h3>GET Print TaxesSetup by key</h3>
+                    <p class="operation-description">Prints the specified TaxesSetup by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed TaxesSetup.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/taxesSetups/{company}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cbe2f97d-0905-4d6d-9b1a-ee618697edfb"></a>
+                    <h3>POST TaxesSetups</h3>
+                    <p class="operation-description">Creates a new Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">taxesSetupResource</td>
+                                <td><i>(ApiTaxesSetupResource)</i> In the request body, supply a resource containing the Taxes Setup information.<br/>See <a href="#ApiTaxesSetupResource">ApiTaxesSetupResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Taxes Setup identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiTaxesSetupResource">ApiTaxesSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Taxes Setup was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/taxesSetups</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="394ce405-3956-4b3f-b8db-1f9452539c80"></a>
+                    <h3>PUT Set AccountingSchema TaxesSetup</h3>
+                    <p class="operation-description">Updates the AccountingSchema for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AccountingSchema)</i> In the request body, supply the new value for the AccountingSchema.<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/accountingSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6c80c87a-4c05-4703-86bc-2bcf76892440"></a>
+                    <h3>PUT Set AuthorityCommPassword TaxesSetup</h3>
+                    <p class="operation-description">Updates the AuthorityCommPassword for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the AuthorityCommPassword.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/authorityCommPassword</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cd67b05c-b94d-4b10-8021-f0e3dad3b9ae"></a>
+                    <h3>PUT Set AuthorityCommUserName TaxesSetup</h3>
+                    <p class="operation-description">Updates the AuthorityCommUserName for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the AuthorityCommUserName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/authorityCommUserName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="684d41f4-02dc-4734-8311-c005b36eae5c"></a>
+                    <h3>PUT Set Company TaxesSetup</h3>
+                    <p class="operation-description">Updates the Company for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="95cebd5b-20bb-42e9-b32b-7b6bc433fe91"></a>
+                    <h3>PUT Set EconomicActivityClassification TaxesSetup</h3>
+                    <p class="operation-description">Updates the EconomicActivityClassification for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the EconomicActivityClassification.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/economicActivityClassification</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4b0dc718-c1b9-4791-bc7f-f61df1e25f30"></a>
+                    <h3>PUT Set FinancialCommOption TaxesSetup</h3>
+                    <p class="operation-description">Updates the FinancialCommOption for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AuthorityCommunicationOption)</i> In the request body, supply the new value for the FinancialCommOption.<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/financialCommOption</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f61cb46b-617d-47dc-91ac-5d48aeba686f"></a>
+                    <h3>PUT Set FiscalTimeZone TaxesSetup</h3>
+                    <p class="operation-description">Updates the FiscalTimeZone for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FiscalTimeZone.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/fiscalTimeZone</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3d62971c-d1b9-4e63-ab08-4a7fa7c675df"></a>
+                    <h3>PUT Set IsActive TaxesSetup</h3>
+                    <p class="operation-description">Updates the IsActive for the specified TaxesSetup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="68bd0342-0026-4a0f-bf9a-b4841f1a4e0a"></a>
+                    <h3>PUT Set IsPortugueseCompany TaxesSetup</h3>
+                    <p class="operation-description">Updates the IsPortugueseCompany for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsPortugueseCompany.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/isPortugueseCompany</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="47149d94-765a-4499-99af-27a9fdc44ba9"></a>
+                    <h3>PUT Set TransportCommOption TaxesSetup</h3>
+                    <p class="operation-description">Updates the TransportCommOption for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AuthorityCommunicationOption)</i> In the request body, supply the new value for the TransportCommOption.<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/transportCommOption</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="adad899e-1775-484e-89a9-55eea8b221ab"></a>
+                    <h3>PUT Set UseTestModeCommunication TaxesSetup</h3>
+                    <p class="operation-description">Updates the UseTestModeCommunication for the specified Taxes Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the UseTestModeCommunication.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/useTestModeCommunication</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="73a05b40-8b37-461e-ba1d-dd32fb6115e4"></a>
+                    <h3>DELETE TaxesSetup by identifier</h3>
+                    <p class="operation-description">Deletes the specified Taxes Setup by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Taxes Setup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Taxes Setup was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Taxes Setup does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/taxesSetups/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2ae40c80-3769-48cc-b42f-4c2df1ff4a22"></a>
+                    <h3>DELETE TaxesSetup by key</h3>
+                    <p class="operation-description">Deletes the specified Taxes Setup by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Taxes Setup was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Taxes Setup does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/taxesSetups/{company}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="TaxesSetupResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'TaxesSetupResourceResourceDiv')">TaxesSetupResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="TaxesSetupResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">useTestModeCommunication</td>
+                                <td  class="wrap"><i>(bool)</i> Use Test Mode Communication</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPortugueseCompany</td>
+                                <td  class="wrap"><i>(bool)</i> Is Portuguese Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">authorityCommUserName</td>
+                                <td  class="wrap"><i>(string)</i> Username</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">authorityCommPassword</td>
+                                <td  class="wrap"><i>(string)</i> Password</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialCommOption</td>
+                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Financial Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">transportCommOption</td>
+                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Transport Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">economicActivityClassification</td>
+                                <td  class="wrap"><i>(string)</i> Classif. of Econ. Activ.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalTimeZone</td>
+                                <td  class="wrap"><i>(string)</i> Fiscal Time Zone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiTaxesSetupResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiTaxesSetupResourceResourceDiv')">ApiTaxesSetupResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiTaxesSetupResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">useTestModeCommunication</td>
+                                <td  class="wrap"><i>(bool)</i> Use Test Mode Communication</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountingSchema</td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPortugueseCompany</td>
+                                <td  class="wrap"><i>(bool)</i> Is Portuguese Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">authorityCommUserName</td>
+                                <td  class="wrap"><i>(string)</i> Username</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">authorityCommPassword</td>
+                                <td  class="wrap"><i>(string)</i> Password</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialCommOption</td>
+                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Financial Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">transportCommOption</td>
+                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Transport Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">economicActivityClassification</td>
+                                <td  class="wrap"><i>(string)</i> Classif. of Econ. Activ.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalTimeZone</td>
+                                <td  class="wrap"><i>(string)</i> Fiscal Time Zone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="AuthorityCommunicationOption"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AuthorityCommunicationOptionValueListDiv')">AuthorityCommunicationOption<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AuthorityCommunicationOptionValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Automatic</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Manual</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="AccountingSchema"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AccountingSchemaValueListDiv')">AccountingSchema<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AccountingSchemaValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Accrual</td>
+								<td>Acrrual Accounting Schema</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Cash</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

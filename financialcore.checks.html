@@ -1,0 +1,1940 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Financials | Check</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="financials.html">
+		Financials
+    </a>
+	<a class="menu-subitem " href="financialcore.accountpostings.html">
+		Account Posting
+	</a>
+	<a class="menu-subitem " href="financialcore.accounttransactions.html">
+		Account Transaction
+	</a>
+	<a class="menu-subitem " href="financialcore.accounttypebudgets.html">
+		Account Type Budget
+	</a>
+	<a class="menu-subitem " href="financialcore.bankaccounttypes.html">
+		Bank Account Type
+	</a>
+	<a class="menu-subitem " href="financialcore.cashflowitems.html">
+		Cash Flow Item
+	</a>
+	<a class="menu-subitem menu-item-selected" href="financialcore.checks.html">
+		Check
+	</a>
+	<a class="menu-subitem " href="financialcore.dunningmethods.html">
+		Dunning Method
+	</a>
+	<a class="menu-subitem " href="financialcore.financialaccounts.html">
+		Financial Account
+	</a>
+	<a class="menu-subitem " href="financialcore.financialinstitutions.html">
+		Financial Institution
+	</a>
+	<a class="menu-subitem " href="financialcore.financialparties.html">
+		Financial Party
+	</a>
+	<a class="menu-subitem " href="financialcore.financialsetups.html">
+		Financial Setup
+	</a>
+	<a class="menu-subitem " href="financialcore.outgoingchecklots.html">
+		Outgoing Check Lot
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentcategorypurposes.html">
+		Payment Category Purpose
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentmethods.html">
+		Payment Method
+	</a>
+	<a class="menu-subitem " href="financialcore.paymentterms.html">
+		Payment Term
+	</a>
+	<a class="menu-subitem " href="financialcore.paymenttypes.html">
+		Payment Type
+	</a>
+	<a class="menu-subitem " href="financialcore.pettycashes.html">
+		Petty Cash
+	</a>
+	<a class="menu-subitem " href="financialcore.profitandlossreports.html">
+		Profit and Loss Report
+	</a>
+	<a class="menu-subitem " href="financialcore.purposes.html">
+		Purpose
+	</a>
+	<a class="menu-subitem " href="financialcore.receipttypes.html">
+		Receipt Type
+	</a>
+	<a class="menu-subitem " href="financialcore.voidreasons.html">
+		Void Reason
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Check</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/financialCore/checks</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Check'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f8c58645-4073-4391-af5d-5074dc106748"></a>
+                    <h3>GET Checks</h3>
+                    <p class="operation-description">Returns all Check user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Check. See <a href="#CheckResource">CheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/checks</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1e42b48c-f1b2-4ec0-ab91-d4599bf63444"></a>
+                    <h3>GET Checks (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Check user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Check. See <a href="#CheckResource">CheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/checks</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0769954d-7b1a-4956-97ce-8f624df49bfd"></a>
+                    <h3>GET Check by identifier</h3>
+                    <p class="operation-description">Returns information for a given Check, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Check.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Check. See <a href="#CheckResource">CheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/checks/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6bd8521f-1d5c-4805-990f-29fdd0a22094"></a>
+                    <h3>GET Check by key</h3>
+                    <p class="operation-description">Returns information for a given Check, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Check. See <a href="#CheckResource">CheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3a08ca1e-bb91-4a81-9419-5451cf4a3695"></a>
+                    <h3>GET Print Check by identifier</h3>
+                    <p class="operation-description">Prints the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Check.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Check.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/checks/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="70de0ecd-7ea3-495a-b6a8-df1f1f1f0140"></a>
+                    <h3>GET Print Check by key</h3>
+                    <p class="operation-description">Prints the specified Check by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Check.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="088d40f2-22a6-40b6-b832-f7f87b42a714"></a>
+                    <h3>POST Checks</h3>
+                    <p class="operation-description">Creates a new Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">checkResource</td>
+                                <td><i>(ApiCheckResource)</i> In the request body, supply a resource containing the Check information.<br/>See <a href="#ApiCheckResource">ApiCheckResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Check identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiCheckResource">ApiCheckResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Check was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /financialCore/checks</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8d0ba003-2a98-4831-adb4-478118a50cee"></a>
+                    <h3>PUT Set CheckDate Check</h3>
+                    <p class="operation-description">Updates the CheckDate for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the CheckDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/checkDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8e39dc9f-f900-44f7-8d2c-cdca40a8ff5b"></a>
+                    <h3>PUT Set CheckNumber Check</h3>
+                    <p class="operation-description">Updates the CheckNumber for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CheckNumber.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/checkNumber</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c4a5544a-601a-4ca3-afa0-89213f98260f"></a>
+                    <h3>PUT Set CheckType Check</h3>
+                    <p class="operation-description">Updates the CheckType for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum CheckType)</i> In the request body, supply the new value for the CheckType.<br/>See <a href="#CheckType">CheckType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/checkType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="26256cf5-61ff-49a2-a544-afabdf6d08f6"></a>
+                    <h3>PUT Set Company Check</h3>
+                    <p class="operation-description">Updates the Company for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="693dbae3-c132-4028-8595-369357ddf867"></a>
+                    <h3>PUT Set Currency Check</h3>
+                    <p class="operation-description">Updates the Currency for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/currency</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="71e8ebdb-516c-41fd-a5fa-640868ecf53f"></a>
+                    <h3>PUT Set Endorsed Check</h3>
+                    <p class="operation-description">Updates the Endorsed for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the Endorsed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/endorsed</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="23c7e80e-550f-402b-b14e-c8fb8c7944bd"></a>
+                    <h3>PUT Set FinancialAccount Check</h3>
+                    <p class="operation-description">Updates the FinancialAccount for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FinancialAccount.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/financialAccount</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="69cf5d4d-3232-4b6e-b370-6af6c73a73a2"></a>
+                    <h3>PUT Set FinancialBranch Check</h3>
+                    <p class="operation-description">Updates the FinancialBranch for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FinancialBranch.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/financialBranch</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="898f982b-291b-4ba6-b575-2270f1fec3f4"></a>
+                    <h3>PUT Set FinancialInstitution Check</h3>
+                    <p class="operation-description">Updates the FinancialInstitution for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the FinancialInstitution.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/financialInstitution</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="341185a3-daf7-487d-9ad7-aabc278b2874"></a>
+                    <h3>PUT Set IsActive Check</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="739ba5c6-6f17-4f3e-b97e-e948f38ca01a"></a>
+                    <h3>PUT Set IssueDate Check</h3>
+                    <p class="operation-description">Updates the IssueDate for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the IssueDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/issueDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4e31c23c-951d-4233-b57e-a932e0b2c99a"></a>
+                    <h3>PUT Set IssuePlace Check</h3>
+                    <p class="operation-description">Updates the IssuePlace for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the IssuePlace.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/issuePlace</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f28f0b2c-8f74-4f12-b10e-3b9418154023"></a>
+                    <h3>PUT Set IssueUser Check</h3>
+                    <p class="operation-description">Updates the IssueUser for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the IssueUser.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/issueUser</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9ed630f6-75d6-4aaf-897b-5784d93518ed"></a>
+                    <h3>PUT Set OutgoingCheckLot Check</h3>
+                    <p class="operation-description">Updates the OutgoingCheckLot for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the OutgoingCheckLot.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/outgoingCheckLot</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b1725ac8-d7cc-4027-b979-29a0ab97df3b"></a>
+                    <h3>PUT Set Party Check</h3>
+                    <p class="operation-description">Updates the Party for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Party.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/party</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="984345f5-d4bb-4b80-8c58-3caba73cbd38"></a>
+                    <h3>PUT Set SourceDocId Check</h3>
+                    <p class="operation-description">Updates the SourceDocId for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the SourceDocId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/sourceDocId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="18335480-5e96-46c7-92bb-49263853baf1"></a>
+                    <h3>PUT Set SourceSchemaEntityId Check</h3>
+                    <p class="operation-description">Updates the SourceSchemaEntityId for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the SourceSchemaEntityId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/sourceSchemaEntityId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c4458d15-9ef7-4624-b57a-f4f75249aefd"></a>
+                    <h3>PUT Set TotalValue Check</h3>
+                    <p class="operation-description">Updates the TotalValue for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the TotalValue.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/totalValue</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ce3bf3dc-b8df-4957-8b3a-64dc7cf93afd"></a>
+                    <h3>PUT Set VoidDate Check</h3>
+                    <p class="operation-description">Updates the VoidDate for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the VoidDate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/voidDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cbe9a499-ba9a-4fb8-8cdf-725d5f5e25e5"></a>
+                    <h3>PUT Set VoidReason Check</h3>
+                    <p class="operation-description">Updates the VoidReason for the specified Check.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the VoidReason.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}/voidReason</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0ed98210-3a34-4ba9-a454-d1aaff19d263"></a>
+                    <h3>DELETE Check by identifier</h3>
+                    <p class="operation-description">Deletes the specified Check by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Check.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Check was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Check does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/checks/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b1f8d1aa-2f0b-42a5-945e-5dd780104db8"></a>
+                    <h3>DELETE Check by key</h3>
+                    <p class="operation-description">Deletes the specified Check by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested Check is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Check was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Check does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /financialCore/checks/{companyKey}/{financialInstitution}/{financialAccount}/{checkNumber}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="CheckResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'CheckResourceResourceDiv')">CheckResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="CheckResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">checkDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Check Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalValue</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntityId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Schema Entity Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialBranch</td>
+                                <td  class="wrap"><i>(string)</i> Financial Branch</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">endorsed</td>
+                                <td  class="wrap"><i>(bool)</i> Endorsed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issueUser</td>
+                                <td  class="wrap"><i>(string)</i> Issuer</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issuePlace</td>
+                                <td  class="wrap"><i>(string)</i> Place of Issue</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">voidDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Void Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">voidReason</td>
+                                <td  class="wrap"><i>(string)</i> Void Reason</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">outgoingCheckLot</td>
+                                <td  class="wrap"><i>(string)</i> Outgoing Check Lot</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkType</td>
+                                <td  class="wrap"><i>(enum CheckType)</i> Check Type<br/>See <a href="#CheckType">CheckType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiCheckResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiCheckResourceResourceDiv')">ApiCheckResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiCheckResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">checkDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Check Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> Financial Institution</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Bank Account</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> Check Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalValue</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntityId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Schema Entity Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialBranch</td>
+                                <td  class="wrap"><i>(string)</i> Financial Branch</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">endorsed</td>
+                                <td  class="wrap"><i>(bool)</i> Endorsed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issueUser</td>
+                                <td  class="wrap"><i>(string)</i> Issuer</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">issuePlace</td>
+                                <td  class="wrap"><i>(string)</i> Place of Issue</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">voidDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Void Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">voidReason</td>
+                                <td  class="wrap"><i>(string)</i> Void Reason</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">outgoingCheckLot</td>
+                                <td  class="wrap"><i>(string)</i> Outgoing Check Lot</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkType</td>
+                                <td  class="wrap"><i>(enum CheckType)</i> Check Type<br/>See <a href="#CheckType">CheckType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="CheckType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'CheckTypeValueListDiv')">CheckType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="CheckTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Incoming</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Outgoing</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

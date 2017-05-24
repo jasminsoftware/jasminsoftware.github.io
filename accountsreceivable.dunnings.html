@@ -1,0 +1,991 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>AccountsReceivable | Dunning</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		AccountsPayable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="accountsreceivable.html">
+		AccountsReceivable
+    </a>
+	<a class="menu-subitem menu-item-selected" href="accountsreceivable.dunnings.html">
+		Dunning
+	</a>
+	<a class="menu-subitem " href="accountsreceivable.processopenitems.html">
+		Create Receipt
+	</a>
+	<a class="menu-subitem " href="accountsreceivable.receipts.html">
+		Receipt
+	</a>
+	<a class="menu-item" href="bankaccounting.html">
+		BankAccounting
+	</a>
+	<a class="menu-item" href="billing.html">
+		Billing
+	</a>
+	<a class="menu-item" href="businesscore.html">
+		BusinessCore
+	</a>
+	<a class="menu-item" href="cashmanagement.html">
+		CashManagement
+	</a>
+	<a class="menu-item" href="corepatterns.html">
+		CorePatterns
+	</a>
+	<a class="menu-item" href="ecommerce.html">
+		ECommerce
+	</a>
+	<a class="menu-item" href="financialcore.html">
+		FinancialCore
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		GoodsReceipt
+	</a>
+	<a class="menu-item" href="identity.html">
+		Identity
+	</a>
+	<a class="menu-item" href="invoicereceipt.html">
+		InvoiceReceipt
+	</a>
+	<a class="menu-item" href="logisticscore.html">
+		LogisticsCore
+	</a>
+	<a class="menu-item" href="materialscore.html">
+		MaterialsCore
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		MaterialsManagement
+	</a>
+	<a class="menu-item" href="operations.html">
+		Operations
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="purchasescore.html">
+		PurchasesCore
+	</a>
+	<a class="menu-item" href="querybuilder.html">
+		QueryBuilder
+	</a>
+	<a class="menu-item" href="reporting.html">
+		Reporting
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="salescore.html">
+		SalesCore
+	</a>
+	<a class="menu-item" href="shell.html">
+		Shell
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+	<a class="menu-item" href="taxescore.html">
+		TaxesCore
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>AccountsReceivable | Dunning</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/accountsReceivable/dunnings</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Dunning'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d1abc47f-a881-47e5-88b7-9aabcbbb777f"></a>
+                    <h3>GET Dunnings</h3>
+                    <p class="operation-description">Get all the instances of <a href="#DunningResource">DunningResource</a>.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A list of DunningResource. See <a href="#DunningResource">DunningResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A list of DunningResource.<br/>See <a href="#DunningResource">DunningResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /accountsReceivable/dunnings</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4340b6fa-6881-496d-bc7f-b48480a56cb5"></a>
+                    <h3>GET Dunnings (paged)</h3>
+                    <p class="operation-description">Get all the instances of <a href="#DunningResource">DunningResource</a>, paged.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The page number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The page size.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A page of the list of DunningResource. See <a href="#DunningResource">DunningResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A page of the list of DunningResource.<br/>See <a href="#DunningResource">DunningResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /accountsReceivable/dunnings</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="69f81e28-0648-4835-8485-e14662d981c5"></a>
+                    <h3>GET Dunning by identifier</h3>
+                    <p class="operation-description">Gets the specified <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The DunningResource instance. See <a href="#DunningResource">DunningResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The DunningResource instance.<br/>See <a href="#DunningResource">DunningResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /accountsReceivable/dunnings/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b7ed6a56-8e9a-4ea9-80b5-0f74216daf68"></a>
+                    <h3>GET Dunning by natural key</h3>
+                    <p class="operation-description">Gets the specified <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The DunningResource instance. See <a href="#DunningResource">DunningResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The DunningResource instance.<br/>See <a href="#DunningResource">DunningResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /accountsReceivable/dunnings/{companyKey}/{dunningKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="65cade45-22a5-470a-9925-31c48d7709d2"></a>
+                    <h3>GET Print Dunning by identifier</h3>
+                    <p class="operation-description">Prints the specified <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /accountsReceivable/dunnings/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9a5e0e55-d5e9-419c-ab54-0afe453b3309"></a>
+                    <h3>GET Print Dunning by natural key</h3>
+                    <p class="operation-description">Prints the specified <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /accountsReceivable/dunnings/{companyKey}//{dunningKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1ab10ac7-c0e0-45b6-81f4-88ddca2c2b1b"></a>
+                    <h3>POST Dunnings</h3>
+                    <p class="operation-description">Creates a new <a href="#ApiDunningResource">ApiDunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningResource</td>
+                                <td><i>(ApiDunningResource)</i> The resource containing the entity data.<br/>See <a href="#ApiDunningResource">ApiDunningResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The entity resource with all the default values set as needed. See <a href="#ApiDunningResource">ApiDunningResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The entity resource with all the default values set as needed.<br/>See <a href="#ApiDunningResource">ApiDunningResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">POST /accountsReceivable/dunnings</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="56cd3793-aff9-4e11-a7aa-17c477d445f0"></a>
+                    <h3>PUT Dunning IsActive</h3>
+                    <p class="operation-description">Updates the attribute 'IsActive' of a <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /accountsReceivable/dunnings/{companyKey}/{dunningKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2e63826d-0c3a-44e2-9440-81b9301c32ac"></a>
+                    <h3>PUT Dunning Note</h3>
+                    <p class="operation-description">Updates the attribute 'Note' of a <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /accountsReceivable/dunnings/{companyKey}/{dunningKey}/note</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4e9f9506-d3e8-4f3f-b608-f21b2349952f"></a>
+                    <h3>PUT Dunning Remarks</h3>
+                    <p class="operation-description">Updates the attribute 'Remarks' of a <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /accountsReceivable/dunnings/{companyKey}/{dunningKey}/remarks</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b2cd2c75-af44-4c64-8e9e-dba3f3aaca97"></a>
+                    <h3>DELETE Dunning by identifier</h3>
+                    <p class="operation-description">Deletes the specified <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">DELETE /accountsReceivable/dunnings/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9929f844-40e0-44af-bbf6-aeefdc3d6af9"></a>
+                    <h3>DELETE Dunning by natural key</h3>
+                    <p class="operation-description">Deletes the specified <a href="#DunningResource">DunningResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">DELETE /accountsReceivable/dunnings/{companyKey}/{dunningKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="DunningResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DunningResourceResourceDiv')">DunningResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DunningResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningState</td>
+                                <td  class="wrap"><i>(enum DunningState)</i> Status<br/>See <a href="#DunningState">DunningState.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningLines</td>
+                                <td  class="wrap"><i>(Array of DunningLineResource)</i> Dunning Lines<br/>See <a href="#DunningLineResource">DunningLineResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="DunningDocumentResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DunningDocumentResourceResourceDiv')">DunningDocumentResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DunningDocumentResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">openAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Open Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceSchemaEntityId</td>
+                                <td  class="wrap"><i>(Guid)</i> Source Schema Entity Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">accountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Account Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunn</td>
+                                <td  class="wrap"><i>(bool)</i> Dun</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dueDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Due Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastDunningDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Last Dunning Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastDunning</td>
+                                <td  class="wrap"><i>(string)</i> Last Dunning</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="DunningLineResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DunningLineResourceResourceDiv')">DunningLineResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DunningLineResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">openAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Open Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningMethod</td>
+                                <td  class="wrap"><i>(string)</i> Dunning Method</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunn</td>
+                                <td  class="wrap"><i>(bool)</i> Dun</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> Email</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">email</td>
+                                <td  class="wrap"><i>(bool)</i> Email</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningLevelId</td>
+                                <td  class="wrap"><i>(Guid)</i> Dunning Level Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastDunningDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Last Dunning Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningLevelStep</td>
+                                <td  class="wrap"><i>(string)</i> Dunning Level Step</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningDocuments</td>
+                                <td  class="wrap"><i>(Array of DunningDocumentResource)</i> Dunning Documents<br/>See <a href="#DunningDocumentResource">DunningDocumentResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiDunningResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiDunningResourceResourceDiv')">ApiDunningResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiDunningResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningState</td>
+                                <td  class="wrap"><i>(enum DunningState)</i> Status<br/>See <a href="#DunningState">DunningState.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunningLines</td>
+                                <td  class="wrap"><i>(Array of ApiDunningDunningLinesResource)</i> Dunning Lines<br/>See <a href="#ApiDunningDunningLinesResource">ApiDunningDunningLinesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiDunningDunningLinesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiDunningDunningLinesResourceResourceDiv')">ApiDunningDunningLinesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiDunningDunningLinesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">openAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Open Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningMethod</td>
+                                <td  class="wrap"><i>(string)</i> Dunning Method</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">dunn</td>
+                                <td  class="wrap"><i>(bool)</i> Dun</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> Email</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">email</td>
+                                <td  class="wrap"><i>(bool)</i> Email</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningLevelId</td>
+                                <td  class="wrap"><i>(Guid)</i> Dunning Level Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lastDunningDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Last Dunning Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dunningLevelStep</td>
+                                <td  class="wrap"><i>(string)</i> Dunning Level Step</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="DunningState"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DunningStateValueListDiv')">DunningState<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DunningStateValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Saved</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Issued</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Canceled</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

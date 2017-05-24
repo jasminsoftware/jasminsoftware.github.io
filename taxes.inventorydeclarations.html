@@ -1,0 +1,2335 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Taxes | Inventory Declaration</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="cashmanagement.html">
+		Cash Management
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a id="current-menu-item" class="menu-item " href="taxes.html">
+		Taxes
+    </a>
+	<a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+		AT Communication Request
+	</a>
+	<a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+		Economic Activity Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+		Exemption Reason Code
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+		Fiscal Document Type
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+		Fiscal Witholding Tax Type
+	</a>
+	<a class="menu-subitem " href="taxes.generatesafts.html">
+		Generate Saft
+	</a>
+	<a class="menu-subitem menu-item-selected" href="taxes.inventorydeclarations.html">
+		Inventory Declaration
+	</a>
+	<a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+		Item Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
+		Item WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxes.manualcommunicationrequests.html">
+		Manual Communication Request
+	</a>
+	<a class="menu-subitem " href="taxes.obligations.html">
+		Obligation
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsummaries.html">
+		Open Tax Item
+	</a>
+	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
+		Party Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
+		Party WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+		Payment Method Fiscal Class
+	</a>
+	<a class="menu-subitem " href="taxes.legaldeclarations.html">
+		SAF-T (PT)
+	</a>
+	<a class="menu-subitem " href="taxescore.taxclasses.html">
+		Tax Class
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+		Tax Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.taxpostings.html">
+		Tax Posting
+	</a>
+	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
+		Tax Regional Area
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsubclasses.html">
+		Tax Sub Class
+	</a>
+	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
+		Tax Type Code
+	</a>
+	<a class="menu-subitem " href="taxescore.taxessetups.html">
+		Taxes Setup
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
+		WHT Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+		WHT Type
+	</a>
+	<a class="menu-subitem " href="taxescore.wtaxpostings.html">
+		Withholding Tax Posting
+	</a>
+	<a class="menu-subitem " href="taxescore.wtaxsummaries.html">
+		Withholding Tax Summary
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Taxes | Inventory Declaration</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/taxes/inventoryDeclarations</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'InventoryDeclaration'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2bbd987e-eb65-41eb-bb58-6a4a74fdcb98"></a>
+                    <h3>GET InventoryDeclarations</h3>
+                    <p class="operation-description">Get all the instances of <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A list of InventoryDeclarationResource. See <a href="#InventoryDeclarationResource">InventoryDeclarationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A list of InventoryDeclarationResource.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxes/inventoryDeclarations</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7b2a639b-407c-413a-abd5-007087d442ec"></a>
+                    <h3>GET InventoryDeclarations (paged)</h3>
+                    <p class="operation-description">Get all the instances of <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>, paged.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The page number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The page size.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A page of the list of InventoryDeclarationResource. See <a href="#InventoryDeclarationResource">InventoryDeclarationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A page of the list of InventoryDeclarationResource.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxes/inventoryDeclarations</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="770b18cf-99ef-4c2a-b53a-ba72f8221cb7"></a>
+                    <h3>GET InventoryDeclaration by identifier</h3>
+                    <p class="operation-description">Gets the specified <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The InventoryDeclarationResource instance. See <a href="#InventoryDeclarationResource">InventoryDeclarationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The InventoryDeclarationResource instance.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxes/inventoryDeclarations/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eeb3ed94-829a-407b-a13a-9a4dffb75d40"></a>
+                    <h3>GET InventoryDeclaration by natural key</h3>
+                    <p class="operation-description">Gets the specified <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The InventoryDeclarationResource instance. See <a href="#InventoryDeclarationResource">InventoryDeclarationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The InventoryDeclarationResource instance.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="97647105-e979-4fac-8460-7c6c23594510"></a>
+                    <h3>GET Print InventoryDeclaration by identifier</h3>
+                    <p class="operation-description">Prints the specified <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxes/inventoryDeclarations/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3d4fc38e-fdbb-4c0b-b00a-9bc99ce8f790"></a>
+                    <h3>GET Print InventoryDeclaration by natural key</h3>
+                    <p class="operation-description">Prints the specified <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxes/inventoryDeclarations/{companyKey}//{documentKey}/{sequenceNumber}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="93bf7400-ccc7-4dee-bb7a-198719253012"></a>
+                    <h3>POST InventoryDeclarations</h3>
+                    <p class="operation-description">Creates a new <a href="#ApiInventoryDeclarationResource">ApiInventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">inventoryDeclarationResource</td>
+                                <td><i>(ApiInventoryDeclarationResource)</i> The resource containing the entity data.<br/>See <a href="#ApiInventoryDeclarationResource">ApiInventoryDeclarationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The entity resource with all the default values set as needed. See <a href="#ApiInventoryDeclarationResource">ApiInventoryDeclarationResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The entity resource with all the default values set as needed.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxes/inventoryDeclarations</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="dfe76bae-ca30-49e0-94bd-fba6fac176a9"></a>
+                    <h3>POST InventoryDeclarationItems</h3>
+                    <p class="operation-description">Inserts a new <a href="#ApiInventoryDeclarationItemsResource">ApiInventoryDeclarationItemsResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiInventoryDeclarationItemsResource)</i> The ApiInventoryDeclarationItemsResource instance.<br/>See <a href="#ApiInventoryDeclarationItemsResource">ApiInventoryDeclarationItemsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a7230563-af03-4b62-8d86-7a094ec457d3"></a>
+                    <h3>POST InventoryDeclarationWarehouses</h3>
+                    <p class="operation-description">Inserts a new <a href="#ApiInventoryDeclarationWarehousesResource">ApiInventoryDeclarationWarehousesResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiInventoryDeclarationWarehousesResource)</i> The ApiInventoryDeclarationWarehousesResource instance.<br/>See <a href="#ApiInventoryDeclarationWarehousesResource">ApiInventoryDeclarationWarehousesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/warehouses</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f02d4491-2b13-44ff-9a2c-42ccbf2262f9"></a>
+                    <h3>POST InventoryDeclarationMessages</h3>
+                    <p class="operation-description">Inserts a new <a href="#ApiInventoryDeclarationMessagesResource">ApiInventoryDeclarationMessagesResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiInventoryDeclarationMessagesResource)</i> The ApiInventoryDeclarationMessagesResource instance.<br/>See <a href="#ApiInventoryDeclarationMessagesResource">ApiInventoryDeclarationMessagesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/messages</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4b905e0c-d1e0-4c76-b2ef-358e05a18a1c"></a>
+                    <h3>PUT InventoryDeclaration ClosingStockQuantity</h3>
+                    <p class="operation-description">Updates the attribute 'ClosingStockQuantity' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}/closingStockQuantity</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c4fb2938-f453-40af-965a-4e7a61c282a7"></a>
+                    <h3>PUT InventoryDeclaration Company</h3>
+                    <p class="operation-description">Updates the attribute 'Company' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="872e3fa5-0146-4314-b398-5890a3fcbdb6"></a>
+                    <h3>PUT InventoryDeclaration Description</h3>
+                    <p class="operation-description">Updates the attribute 'Description' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b529b595-1b99-4af4-8ac1-8893f45b7f1c"></a>
+                    <h3>PUT InventoryDeclaration Details</h3>
+                    <p class="operation-description">Updates the attribute 'Details' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/messages/{lineId}/details</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cd72f7ba-0066-4238-8a44-da8f61d78057"></a>
+                    <h3>PUT InventoryDeclaration DocumentDate</h3>
+                    <p class="operation-description">Updates the attribute 'DocumentDate' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/documentDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2b37d82e-c531-440d-8ed0-ed3c3cc81e99"></a>
+                    <h3>PUT InventoryDeclaration DocumentKey</h3>
+                    <p class="operation-description">Updates the attribute 'DocumentKey' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/documentKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="46655582-e0c6-4df7-bb28-6b720ab053e7"></a>
+                    <h3>PUT InventoryDeclaration FiscalYear</h3>
+                    <p class="operation-description">Updates the attribute 'FiscalYear' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/fiscalYear</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="07b07cc4-7c4a-4c22-bf6f-5604716ef172"></a>
+                    <h3>PUT InventoryDeclaration InventoryDate</h3>
+                    <p class="operation-description">Updates the attribute 'InventoryDate' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/inventoryDate</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a79bc2ab-8cf4-4670-8861-98468ed504f7"></a>
+                    <h3>PUT InventoryDeclaration InventoryDeclarationVersion</h3>
+                    <p class="operation-description">Updates the attribute 'InventoryDeclarationVersion' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AuditFileVersion)</i> The value.<br/>See <a href="#AuditFileVersion">AuditFileVersion.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/inventoryDeclarationVersion</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6702f5ac-be58-496f-b1c1-cb909ffadc49"></a>
+                    <h3>PUT InventoryDeclaration IsActive</h3>
+                    <p class="operation-description">Updates the attribute 'IsActive' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="437ba200-f47f-4a8e-ba11-306dffe0f450"></a>
+                    <h3>PUT InventoryDeclaration IsPrinted</h3>
+                    <p class="operation-description">Updates the attribute 'IsPrinted' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/isPrinted</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e96c3972-a669-4f5c-8727-13519db80fa6"></a>
+                    <h3>PUT InventoryDeclaration Item</h3>
+                    <p class="operation-description">Updates the attribute 'Item' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}/item</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="30455c3a-808c-4b91-9c47-9d84c50f7ae7"></a>
+                    <h3>PUT InventoryDeclaration Message</h3>
+                    <p class="operation-description">Updates the attribute 'Message' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/messages/{lineId}/message</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c54175eb-3862-4d7a-8eaf-30ed3c2e1bec"></a>
+                    <h3>PUT InventoryDeclaration NumberOfItems</h3>
+                    <p class="operation-description">Updates the attribute 'NumberOfItems' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/numberOfItems</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="102d3b0e-3780-49a9-ad43-fe87fe5b7135"></a>
+                    <h3>PUT InventoryDeclaration ProductCategory</h3>
+                    <p class="operation-description">Updates the attribute 'ProductCategory' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}/productCategory</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2483cb2b-8fc5-4b08-bef7-387c08f9db88"></a>
+                    <h3>PUT InventoryDeclaration ProductCode</h3>
+                    <p class="operation-description">Updates the attribute 'ProductCode' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}/productCode</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bef88f0f-2450-4e0c-aad5-48226b135bd8"></a>
+                    <h3>PUT InventoryDeclaration ProductDescription</h3>
+                    <p class="operation-description">Updates the attribute 'ProductDescription' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}/productDescription</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6235b9df-19b5-49bc-b99b-be432d6669bd"></a>
+                    <h3>PUT InventoryDeclaration ProductNumberCode</h3>
+                    <p class="operation-description">Updates the attribute 'ProductNumberCode' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}/productNumberCode</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e416e4c3-b8d2-4144-a69a-e99a6e956c59"></a>
+                    <h3>PUT InventoryDeclaration Remarks</h3>
+                    <p class="operation-description">Updates the attribute 'Remarks' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/remarks</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d9830b61-cb1f-45d6-8f7e-591f95ad85b8"></a>
+                    <h3>PUT InventoryDeclaration Selected</h3>
+                    <p class="operation-description">Updates the attribute 'Selected' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/warehouses/{lineId}/selected</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8aac1e5d-9443-49a9-98e9-2126f7c39e47"></a>
+                    <h3>PUT InventoryDeclaration SequenceNumber</h3>
+                    <p class="operation-description">Updates the attribute 'SequenceNumber' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/sequenceNumber</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="65a824f5-e59e-4f20-982c-294deaa12474"></a>
+                    <h3>PUT InventoryDeclaration Status</h3>
+                    <p class="operation-description">Updates the attribute 'Status' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum InventoryDeclarationStatus)</i> The value.<br/>See <a href="#InventoryDeclarationStatus">InventoryDeclarationStatus.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/status</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cdc16dd7-f540-429a-a0e2-6fb276700787"></a>
+                    <h3>PUT InventoryDeclaration UnitOfMeasure</h3>
+                    <p class="operation-description">Updates the attribute 'UnitOfMeasure' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}/unitOfMeasure</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e70e4dea-e214-4ae6-b3be-2ee74a2501ed"></a>
+                    <h3>PUT InventoryDeclaration Warehouse</h3>
+                    <p class="operation-description">Updates the attribute 'Warehouse' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/warehouses/{lineId}/warehouse</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="009142c9-984b-4ff7-b2ea-7d02e08f6179"></a>
+                    <h3>PUT InventoryDeclaration XmlDocument</h3>
+                    <p class="operation-description">Updates the attribute 'XmlDocument' of a <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}/xmlDocument</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bde5da6d-97ad-4eee-83b5-d99ecb5e3f69"></a>
+                    <h3>DELETE InventoryDeclarationItems by identifier</h3>
+                    <p class="operation-description">Delete the specified <a href="#ApiInventoryDeclarationItemsResource">ApiInventoryDeclarationItemsResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxes/inventoryDeclarations{companyKey}/{documentKey}/{sequenceNumber}/items/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="423fcde8-732b-48ae-8249-fa19626698c4"></a>
+                    <h3>DELETE InventoryDeclarationWarehouses by identifier</h3>
+                    <p class="operation-description">Delete the specified <a href="#ApiInventoryDeclarationWarehousesResource">ApiInventoryDeclarationWarehousesResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxes/inventoryDeclarations{companyKey}/{documentKey}/{sequenceNumber}/warehouses/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f6ec8dcf-f334-4790-a0c3-a4a3cc787ada"></a>
+                    <h3>DELETE InventoryDeclarationMessages by identifier</h3>
+                    <p class="operation-description">Delete the specified <a href="#ApiInventoryDeclarationMessagesResource">ApiInventoryDeclarationMessagesResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxes/inventoryDeclarations{companyKey}/{documentKey}/{sequenceNumber}/messages/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3845d866-5829-4b0d-84e1-80963edf4732"></a>
+                    <h3>DELETE InventoryDeclaration by identifier</h3>
+                    <p class="operation-description">Deletes the specified <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxes/inventoryDeclarations/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a0ba8972-e69c-48c2-bb47-015ad652adcd"></a>
+                    <h3>DELETE InventoryDeclaration by natural key</h3>
+                    <p class="operation-description">Deletes the specified <a href="#InventoryDeclarationResource">InventoryDeclarationResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td><i>(int)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxes/inventoryDeclarations/{companyKey}/{documentKey}/{sequenceNumber}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="InventoryDeclarationResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InventoryDeclarationResourceResourceDiv')">InventoryDeclarationResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InventoryDeclarationResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td  class="wrap"><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalYear</td>
+                                <td  class="wrap"><i>(int)</i> Fiscal Year</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryDeclarationVersion</td>
+                                <td  class="wrap"><i>(enum AuditFileVersion)</i> Version<br/>See <a href="#AuditFileVersion">AuditFileVersion.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">status</td>
+                                <td  class="wrap"><i>(enum InventoryDeclarationStatus)</i> Status<br/>See <a href="#InventoryDeclarationStatus">InventoryDeclarationStatus.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">items</td>
+                                <td  class="wrap"><i>(Array of InventoryDeclarationItemResource)</i> Items<br/>See <a href="#InventoryDeclarationItemResource">InventoryDeclarationItemResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">warehouses</td>
+                                <td title="(Array of InventoryDeclarationWarehouseResource) Warehouses See InventoryDeclarationWarehouseResource." class="wrap"><i>(Array of InventoryDeclarationWarehouseResource)</i> Warehouses<br/>See <a href="#InventoryDeclarationWarehouseResource">InventoryDeclarationWarehouseResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">messages</td>
+                                <td  class="wrap"><i>(Array of InventoryDeclarationMessageResource)</i> Messages<br/>See <a href="#InventoryDeclarationMessageResource">InventoryDeclarationMessageResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Document Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Inventory Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">numberOfItems</td>
+                                <td  class="wrap"><i>(int)</i> Number Of Items</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">xmlDocument</td>
+                                <td  class="wrap"><i>(string)</i> Xml Document</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="InventoryDeclarationItemResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InventoryDeclarationItemResourceResourceDiv')">InventoryDeclarationItemResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InventoryDeclarationItemResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">item</td>
+                                <td  class="wrap"><i>(string)</i> Item</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">productCategory</td>
+                                <td  class="wrap"><i>(string)</i> Category</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">productCode</td>
+                                <td  class="wrap"><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">productDescription</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">productNumberCode</td>
+                                <td  class="wrap"><i>(string)</i> Barcode</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">closingStockQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> Closing Stock Quantity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unitOfMeasure</td>
+                                <td  class="wrap"><i>(string)</i> Unit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="InventoryDeclarationWarehouseResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InventoryDeclarationWarehouseResourceResourceDiv')">InventoryDeclarationWarehouseResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InventoryDeclarationWarehouseResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">selected</td>
+                                <td  class="wrap"><i>(bool)</i> Selected</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> Warehouse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="InventoryDeclarationMessageResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InventoryDeclarationMessageResourceResourceDiv')">InventoryDeclarationMessageResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InventoryDeclarationMessageResourceResourceDiv" style="display:none">
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">message</td>
+                                <td  class="wrap"><i>(string)</i> Message</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">details</td>
+                                <td  class="wrap"><i>(string)</i> Details</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiInventoryDeclarationResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiInventoryDeclarationResourceResourceDiv')">ApiInventoryDeclarationResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiInventoryDeclarationResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceNumber</td>
+                                <td  class="wrap"><i>(int)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fiscalYear</td>
+                                <td  class="wrap"><i>(int)</i> Fiscal Year</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryDeclarationVersion</td>
+                                <td  class="wrap"><i>(enum AuditFileVersion)</i> Version<br/>See <a href="#AuditFileVersion">AuditFileVersion.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">status</td>
+                                <td  class="wrap"><i>(enum InventoryDeclarationStatus)</i> Status<br/>See <a href="#InventoryDeclarationStatus">InventoryDeclarationStatus.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">items</td>
+                                <td title="(Array of ApiInventoryDeclarationItemsResource) Items See ApiInventoryDeclarationItemsResource." class="wrap"><i>(Array of ApiInventoryDeclarationItemsResource)</i> Items<br/>See <a href="#ApiInventoryDeclarationItemsResource">ApiInventoryDeclarationItemsResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">warehouses</td>
+                                <td title="(Array of ApiInventoryDeclarationWarehousesResource) Warehouses See ApiInventoryDeclarationWarehousesResource." class="wrap"><i>(Array of ApiInventoryDeclarationWarehousesResource)</i> Warehouses<br/>See <a href="#ApiInventoryDeclarationWarehousesResource">ApiInventoryDeclarationWarehousesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">messages</td>
+                                <td title="(Array of ApiInventoryDeclarationMessagesResource) Messages See ApiInventoryDeclarationMessagesResource." class="wrap"><i>(Array of ApiInventoryDeclarationMessagesResource)</i> Messages<br/>See <a href="#ApiInventoryDeclarationMessagesResource">ApiInventoryDeclarationMessagesResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Document Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">inventoryDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Inventory Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">numberOfItems</td>
+                                <td  class="wrap"><i>(int)</i> Number Of Items</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">xmlDocument</td>
+                                <td  class="wrap"><i>(string)</i> Xml Document</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiInventoryDeclarationItemsResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiInventoryDeclarationItemsResourceResourceDiv')">ApiInventoryDeclarationItemsResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiInventoryDeclarationItemsResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">item</td>
+                                <td  class="wrap"><i>(string)</i> Item</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">productCategory</td>
+                                <td  class="wrap"><i>(string)</i> Category</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">productCode</td>
+                                <td  class="wrap"><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">productDescription</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">productNumberCode</td>
+                                <td  class="wrap"><i>(string)</i> Barcode</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">closingStockQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> Closing Stock Quantity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">unitOfMeasure</td>
+                                <td  class="wrap"><i>(string)</i> Unit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiInventoryDeclarationWarehousesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiInventoryDeclarationWarehousesResourceResourceDiv')">ApiInventoryDeclarationWarehousesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiInventoryDeclarationWarehousesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">selected</td>
+                                <td  class="wrap"><i>(bool)</i> Selected</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> Warehouse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiInventoryDeclarationMessagesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiInventoryDeclarationMessagesResourceResourceDiv')">ApiInventoryDeclarationMessagesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiInventoryDeclarationMessagesResourceResourceDiv" style="display:none">
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">message</td>
+                                <td  class="wrap"><i>(string)</i> Message</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">details</td>
+                                <td  class="wrap"><i>(string)</i> Details</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="AuditFileVersion"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AuditFileVersionValueListDiv')">AuditFileVersion<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AuditFileVersionValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Version10201</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Version10301</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>LatestVersion</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="InventoryDeclarationStatus"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'InventoryDeclarationStatusValueListDiv')">InventoryDeclarationStatus<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="InventoryDeclarationStatusValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Pending</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Processing</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Succeeded</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>Failed</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Platform | Sequence</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a id="current-menu-item" class="menu-item " href="platform.html">
+		Platform
+    </a>
+	<a class="menu-subitem " href="corepatterns.addresses.html">
+		Address
+	</a>
+	<a class="menu-subitem " href="corepatterns.companies.html">
+		Company
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacts.html">
+		Contact
+	</a>
+	<a class="menu-subitem " href="corepatterns.contactgroups.html">
+		Contact Group
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacttypes.html">
+		Contact Type
+	</a>
+	<a class="menu-subitem " href="corepatterns.countries.html">
+		Country
+	</a>
+	<a class="menu-subitem " href="corepatterns.cultures.html">
+		Culture
+	</a>
+	<a class="menu-subitem " href="corepatterns.currencies.html">
+		Currency
+	</a>
+	<a class="menu-subitem " href="corepatterns.drafts.html">
+		Draft
+	</a>
+	<a class="menu-subitem " href="operations.emailtemplates.html">
+		Email Template
+	</a>
+	<a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+		Fiscal Time Zone
+	</a>
+	<a class="menu-subitem " href="operations.notifications.html">
+		Notification
+	</a>
+	<a class="menu-subitem " href="corepatterns.operations.html">
+		Operation
+	</a>
+	<a class="menu-subitem " href="corepatterns.postalzones.html">
+		Postal Code
+	</a>
+	<a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+		Power Bi Info
+	</a>
+	<a class="menu-subitem " href="corepatterns.regions.html">
+		Region
+	</a>
+	<a class="menu-subitem menu-item-selected" href="corepatterns.sequences.html">
+		Sequence
+	</a>
+	<a class="menu-subitem " href="corepatterns.units.html">
+		Unit
+	</a>
+	<a class="menu-subitem " href="corepatterns.unitdimensions.html">
+		Unit Dimension
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Sequence</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/corePatterns/sequences</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Sequence'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fc0a30d8-9827-4ed8-a532-807c1fe802ed"></a>
+                    <h3>GET Sequences</h3>
+                    <p class="operation-description">Returns all of the Sequences user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Sequences. See <a href="#SequenceResource">SequenceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/sequences</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f98df0b3-a518-49b7-883d-c0f857ceeb0a"></a>
+                    <h3>GET Sequences (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Sequences user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Sequences. See <a href="#SequenceResource">SequenceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/sequences</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="97255339-7876-497d-9e4d-99d7a0e141df"></a>
+                    <h3>GET Sequence by identifier</h3>
+                    <p class="operation-description">Returns information for the specified Sequence, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Sequence.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Sequence. See <a href="#SequenceResource">SequenceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/sequences/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="072a0c98-dd23-4d52-b904-666b4f5812b6"></a>
+                    <h3>GET Sequence by key</h3>
+                    <p class="operation-description">Returns information for the specified Sequence, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td><i>(string)</i> Sequence key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Sequence. See <a href="#SequenceResource">SequenceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/sequences/{sequenceKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="85fb5318-096c-4ae7-a7ac-39b0516e932d"></a>
+                    <h3>GET Print Sequence by identifier</h3>
+                    <p class="operation-description">Prints the specified Sequence.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Sequence.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Sequence.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/sequences/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="55addbfc-52a0-404c-a92f-3142d45260a9"></a>
+                    <h3>GET Print Sequence by key</h3>
+                    <p class="operation-description">Prints the specified Sequence by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td><i>(string)</i> Sequence key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Sequence.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/sequences/{sequenceKey}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6bb0e064-fefa-49dc-bbf2-a8ea9ce28ea9"></a>
+                    <h3>GET Get Default Sequence For Entity Attribute</h3>
+                    <p class="operation-description">Custom operation 'GetDefaultSequenceForEntityAttribute'.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entityName</td>
+                                <td><i>(string)</i> EntityName</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">attributeName</td>
+                                <td><i>(string)</i> AttributeName</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">groupingKey</td>
+                                <td><i>(string)</i> GroupingKey</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of StandardSequenceResource resources. See <a href="#StandardSequenceResource">StandardSequenceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operations was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/sequences/getDefaultSequenceForEntityAttribute</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4982b114-180f-4e64-8cb3-4e40ce2b0fec"></a>
+                    <h3>POST Sequences</h3>
+                    <p class="operation-description">Creates a new Sequence.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sequenceResource</td>
+                                <td><i>(ApiSequenceResource)</i> In the request body, supply a resource containing the Sequence information.<br/>See <a href="#ApiSequenceResource">ApiSequenceResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Sequence identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiSequenceResource">ApiSequenceResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Sequence was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /corePatterns/sequences</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d15d9851-8f8c-4d07-92f2-964b398517c3"></a>
+                    <h3>PUT Set IsActive Sequence</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Sequence.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td><i>(string)</i> Sequence key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/sequences/{sequenceKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6136a858-9cae-4070-901f-e04888707ea8"></a>
+                    <h3>PUT Set IsDefault Sequence</h3>
+                    <p class="operation-description">Updates the IsDefault for the specified Sequence.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td><i>(string)</i> Sequence key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsDefault.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/sequences/{sequenceKey}/isDefault</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fdb71539-cda3-4f09-a9cc-071aa33c2e1a"></a>
+                    <h3>DELETE Sequence by identifier</h3>
+                    <p class="operation-description">Deletes the specified Sequence by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Sequence.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Sequence was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Sequence does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /corePatterns/sequences/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6d81f70a-0e37-4cc9-b6f8-1f723fc2de09"></a>
+                    <h3>DELETE Sequence by key</h3>
+                    <p class="operation-description">Deletes the specified Sequence by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td><i>(string)</i> Sequence key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Sequence was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Sequence does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /corePatterns/sequences/{sequenceKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="SequenceResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'SequenceResourceResourceDiv')">SequenceResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="SequenceResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td  class="wrap"><i>(string)</i> Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entityAttribute</td>
+                                <td  class="wrap"><i>(string)</i> Entity Attribute</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isDefault</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether this sequence is default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td  class="wrap"><i>(string)</i> Sequence key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Sequence description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sampleText</td>
+                                <td  class="wrap"><i>(string)</i> Sequence sample text.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">charactersUsed</td>
+                                <td  class="wrap"><i>(string)</i> Characters Used</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceLines</td>
+                                <td  class="wrap"><i>(Array of SequenceLineResource)</i> Sequence Elements<br/>See <a href="#SequenceLineResource">SequenceLineResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="SequenceLineResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'SequenceLineResourceResourceDiv')">SequenceLineResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="SequenceLineResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isReadOnly</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the segment is read-only.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isRequired</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the segment is required.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">segmentType</td>
+                                <td  class="wrap"><i>(enum SequenceSegmentType)</i> Segment Type<br/>See <a href="#SequenceSegmentType">SequenceSegmentType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td  class="wrap"><i>(string)</i> Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entityAttribute</td>
+                                <td  class="wrap"><i>(string)</i> Entity Attribute</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">length</td>
+                                <td  class="wrap"><i>(int)</i> The segment length</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">constantText</td>
+                                <td  class="wrap"><i>(string)</i> Constant Text</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lowerNumber</td>
+                                <td  class="wrap"><i>(int)</i> Lower Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">separatorType</td>
+                                <td  class="wrap"><i>(enum SequenceSeparatorType)</i> Separator Type<br/>See <a href="#SequenceSeparatorType">SequenceSeparatorType.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fixedDigits</td>
+                                <td  class="wrap"><i>(int)</i> Fixed Digits</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">suggestedNumber</td>
+                                <td  class="wrap"><i>(int)</i> Suggested Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceEntityAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The name of the attribute of the entity whose key is being defined as sequence</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lookupAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> Lookup Attribute Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">applyToSequentialNumber</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the segment value will be used as sequential number segment group</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="StandardSequenceResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'StandardSequenceResourceResourceDiv')">StandardSequenceResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="StandardSequenceResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Sequence description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td  class="wrap"><i>(string)</i> Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entityAttribute</td>
+                                <td  class="wrap"><i>(string)</i> Entity Attribute</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td  class="wrap"><i>(string)</i> Sequence key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isDefault</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether this sequence is default.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">charactersUsed</td>
+                                <td  class="wrap"><i>(string)</i> Characters Used</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sampleText</td>
+                                <td  class="wrap"><i>(string)</i> Sequence sample text.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceLines</td>
+                                <td title="(List of StandardSequenceSequenceLinesResource) Sequence Elements See StandardSequenceSequenceLinesResource." class="wrap"><i>(List of StandardSequenceSequenceLinesResource)</i> Sequence Elements<br/>See <a href="#StandardSequenceSequenceLinesResource">StandardSequenceSequenceLinesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="StandardSequenceSequenceLinesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'StandardSequenceSequenceLinesResourceResourceDiv')">StandardSequenceSequenceLinesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="StandardSequenceSequenceLinesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">segmentType</td>
+                                <td  class="wrap"><i>(enum SequenceSegmentType)</i> Segment Type<br/>See <a href="#SequenceSegmentType">SequenceSegmentType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">applyToSequentialNumber</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the segment value will be used as sequential number segment group</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">constantText</td>
+                                <td  class="wrap"><i>(string)</i> Constant Text</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td  class="wrap"><i>(string)</i> Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entityAttribute</td>
+                                <td  class="wrap"><i>(string)</i> Entity Attribute</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fixedDigits</td>
+                                <td  class="wrap"><i>(int)</i> Fixed Digits</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">length</td>
+                                <td  class="wrap"><i>(int)</i> The segment length</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lookupAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> Lookup Attribute Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lowerNumber</td>
+                                <td  class="wrap"><i>(int)</i> Lower Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">separatorType</td>
+                                <td  class="wrap"><i>(enum SequenceSeparatorType)</i> Separator Type<br/>See <a href="#SequenceSeparatorType">SequenceSeparatorType.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceEntityAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The name of the attribute of the entity whose key is being defined as sequence</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">suggestedNumber</td>
+                                <td  class="wrap"><i>(int)</i> Suggested Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiSequenceResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiSequenceResourceResourceDiv')">ApiSequenceResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiSequenceResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td  class="wrap"><i>(string)</i> Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entityAttribute</td>
+                                <td  class="wrap"><i>(string)</i> Entity Attribute</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isDefault</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether this sequence is default.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceKey</td>
+                                <td  class="wrap"><i>(string)</i> Sequence key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Sequence description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sampleText</td>
+                                <td  class="wrap"><i>(string)</i> Sequence sample text.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">charactersUsed</td>
+                                <td  class="wrap"><i>(string)</i> Characters Used</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceLines</td>
+                                <td  class="wrap"><i>(List of ApiSequenceSequenceLinesResource)</i> Sequence Elements<br/>See <a href="#ApiSequenceSequenceLinesResource">ApiSequenceSequenceLinesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiSequenceSequenceLinesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiSequenceSequenceLinesResourceResourceDiv')">ApiSequenceSequenceLinesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiSequenceSequenceLinesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isReadOnly</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the segment is read-only.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isRequired</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the segment is required.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">segmentType</td>
+                                <td  class="wrap"><i>(enum SequenceSegmentType)</i> Segment Type<br/>See <a href="#SequenceSegmentType">SequenceSegmentType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td  class="wrap"><i>(string)</i> Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entityAttribute</td>
+                                <td  class="wrap"><i>(string)</i> Entity Attribute</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">length</td>
+                                <td  class="wrap"><i>(int)</i> The segment length</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">constantText</td>
+                                <td  class="wrap"><i>(string)</i> Constant Text</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lowerNumber</td>
+                                <td  class="wrap"><i>(int)</i> Lower Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">separatorType</td>
+                                <td  class="wrap"><i>(enum SequenceSeparatorType)</i> Separator Type<br/>See <a href="#SequenceSeparatorType">SequenceSeparatorType.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">fixedDigits</td>
+                                <td  class="wrap"><i>(int)</i> Fixed Digits</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">suggestedNumber</td>
+                                <td  class="wrap"><i>(int)</i> Suggested Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sequenceEntityAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The name of the attribute of the entity whose key is being defined as sequence</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lookupAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> Lookup Attribute Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">applyToSequentialNumber</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the segment value will be used as sequential number segment group</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="SequenceSegmentType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'SequenceSegmentTypeValueListDiv')">SequenceSegmentType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="SequenceSegmentTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Entity</td>
+								<td>Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>ConstantText</td>
+								<td>StaticName</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>SequentialNumber</td>
+								<td>AutoIncrement</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>Separator</td>
+								<td>Separator</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="SequenceSeparatorType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'SequenceSeparatorTypeValueListDiv')">SequenceSeparatorType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="SequenceSeparatorTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Dash</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Underscore</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

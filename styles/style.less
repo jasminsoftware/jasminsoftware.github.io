@@ -1,0 +1,372 @@
+@import 'variables.less';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    height: 100%;
+    background-color: @background-color;
+    color: @foreground-color;
+    font-family: @main-font-family;
+    font-size: 11pt;
+}
+
+a {
+    text-decoration: none;
+    color: @color-jasmin;
+
+    &:hover, &:active, &:focus{
+        color: @color-jasmin;
+    }
+
+    &.anchor {
+        display: block;
+        position: relative;
+        top: -@header-height;
+        visibility: hidden;
+    }
+}
+
+p {
+    line-height: 22px;
+}
+
+h1, h2, h3, h4, h5 {
+    color: @color-jasmin; 
+}
+
+.header {
+    height: @header-height;
+    width: @header-width;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1; 
+
+    .menu-icon {
+        float: left;
+        font-size: 16pt;
+        margin:10px;
+        display: none;
+        cursor: pointer;
+    }
+
+    .search {
+        float: right;
+        background: #fff;
+        color: @foreground-color;
+        font-size: 11pt;
+        height: calc(@header-height ~'-' 16px);
+        width: 200px;
+        margin:8px 10px;
+        border-radius: 4px;
+
+        .search-icon{
+            margin:5px 5px;
+        }
+
+        input {
+            width: 170px;
+            background: transparent;
+            border:none;
+            &:focus{
+                outline: none;
+            }
+        }
+
+        .search-result {
+            background-color: #fff;
+            width: 190px;
+            display: block;
+            padding: 10px 5px;
+            color: @foreground-color;
+            margin-left: -27px;
+            font-size: 10pt;
+            
+            &:hover{
+                background-color: #f2f2f2;
+            }
+
+            &:last-child{
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+    }
+
+    .title {
+        float: left;
+        font-weight: bold;
+        line-height: 40px;
+        font-size: 12pt;
+        display: block;
+        margin-left: 10px;
+        width: calc(100% ~'-' 275px);
+        overflow:hidden; 
+        white-space:nowrap; 
+        text-overflow: ellipsis;
+    }
+}
+
+.sidebar {
+    width: @sidebar-width;
+    height: @sidebar-height;
+    float: left;
+    position: fixed;
+    top:@sidebar-top;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 10pt;
+    background-color: @background-color;
+    z-index: 2;
+
+    .menu-item {
+        width: 100%;
+        display: block;
+        height: @sidebar-menu-item-height;
+        line-height: @sidebar-menu-item-line-height;
+        padding: 10px;
+        color: @foreground-color;
+        font-weight:600;
+
+        &-selected {
+            background-color: #f2f2f2;
+        }
+
+        &:hover{
+            cursor: pointer;
+            background-color: #f2f2f2;
+        }
+    }
+
+    .menu-subitem {
+        width: 100%;
+        display: block;
+        padding: 10px 10px 10px 20px;
+        height: @sidebar-menu-subitem-height;
+        line-height: @sidebar-menu-subitem-line-height;
+        color: #666;
+
+        &:hover{
+            cursor: pointer;
+            background-color: #f2f2f2;
+        }
+    }
+}
+
+.content {
+    width: @content-width;
+    min-height: @content-min-height;
+    top: @content-top;
+    left:@content-left;
+    position: relative;
+    float: left;
+    
+    &:before{
+        content: ' ';
+        background:#eee;
+        left:50%;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .content-section {
+        width:100%;
+        float: left;
+
+        .content-section-col1 {
+            width: @content-section-col-width;
+            margin-left: @content-section-col-margin-left;
+            margin-right: @content-section-col-margin-right;
+            margin-top: @content-section-col-margin-top;
+            margin-bottom: @content-section-col-margin-bottom;
+            float: left;
+        }
+
+        .content-section-col1 h2 {
+            margin-bottom: 0px!important;
+        }
+
+        .content-section-col2 {
+            width: @content-section-col-width;
+            margin-left: @content-section-col-margin-left;
+            margin-right: @content-section-col-margin-right;
+            margin-top: @content-section-col-margin-top;
+            margin-bottom: @content-section-col-margin-bottom;
+            float: left;
+            color: #666;
+
+            pre {
+                color: #333;
+                background-color: #ddd;
+                padding:10px;
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+        font-size: 10pt;
+        border-spacing: 0;
+        line-height: 18px;
+
+        tr {
+            height: 40px;
+
+            &:first-child {
+                td {
+                    border-top: 1px solid #eee;
+                }
+            }
+        } 
+
+        td {
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+
+            &.highlighted {
+                font-weight: bold;
+                width: 25%;
+            }
+
+            &.wrap {
+                max-width: 20px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+
+    ul {
+        li{
+            line-height: 25px;
+        }
+    }
+}
+
+pre{
+    &.endpoint{
+        overflow-x: auto;
+    }
+
+    &.prettyprint{
+        border:none !important;
+        overflow: auto !important;
+    }
+}
+
+.operation-description {
+    padding-bottom: 15px;
+}
+
+html, body, #wrapper {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+}
+
+#wrapper td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* #region Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+  /*-webkit-border-radius: 10px;*/
+  /*border-radius: 10px;*/
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /*-webkit-border-radius: 10px;*/
+  /*border-radius: 10px;*/
+  background: rgba(180, 180, 180, 0.8);
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);*/
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(180, 180, 180, 0.4);
+}
+/* #endregion Scrollbars */
+
+
+// tablet landscape
+@media screen and (max-width: 992px) {
+    .content{
+        &:before{
+            display: none;
+        }
+        .content-section {
+            .content-section-col1{
+                width:calc(100% ~'-' @content-section-col-margin-left ~'-' @content-section-col-margin-right);
+            }
+
+            .content-section-col2{
+                padding-left: @content-section-col-margin-left;
+                padding-right: @content-section-col-margin-right;
+                margin-left: 0;
+                margin-right: 0;
+                width:calc(100% ~'-' @content-section-col-margin-left ~'-' @content-section-col-margin-right);
+                background: #eee;
+            }
+        }
+    }
+}
+
+// tablet portrait
+@media screen and (max-width: 768px) {
+    
+    .header {
+        .menu-icon {
+            display: block;
+        }
+    }
+
+    .sidebar {
+        width:100%;
+        height:100%;
+        left:-100%;
+        transition: all .35s ease-in-out;
+        -webkit-transition: all .35s ease-in-out;
+        -moz-transition: all .35s ease-in-out;
+        -o-transition: all .35s ease-in-out;
+        -ms-transition: all .35s ease-in-out;
+
+        &-show{
+            left:0;
+        }
+    }
+
+    .content{
+        left:0;
+        width: 100%;
+    }
+}
+
+/* //phone
+@media screen and (max-width: 480px) {
+    .header {
+        .menu-icon {
+            display: block;
+        }
+    }
+} */
+
+// phone

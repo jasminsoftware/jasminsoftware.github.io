@@ -1,0 +1,842 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Cash Management | Outgoing Cash Journal</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a id="current-menu-item" class="menu-item " href="cashmanagement.html">
+		Cash Management
+    </a>
+	<a class="menu-subitem " href="cashmanagement.incomingcashjournals.html">
+		Incoming Cash Journal
+	</a>
+	<a class="menu-subitem " href="cashmanagement.incomingchecks.html">
+		Incoming Check
+	</a>
+	<a class="menu-subitem menu-item-selected" href="cashmanagement.outgoingcashjournals.html">
+		Outgoing Cash Journal
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Cash Management | Outgoing Cash Journal</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/cashManagement/outgoingCashJournals</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'OutgoingCashJournal'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ff863c7d-cc17-4f03-9b4a-81ef91403449"></a>
+                    <h3>GET OutgoingCashJournals</h3>
+                    <p class="operation-description">Get all the instances of <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A list of OutgoingCashJournalResource. See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A list of OutgoingCashJournalResource.<br/>See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/outgoingCashJournals</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ada0cf59-d47f-4762-a4d3-287e2aeddb56"></a>
+                    <h3>GET OutgoingCashJournals (paged)</h3>
+                    <p class="operation-description">Get all the instances of <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>, paged.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The page number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The page size.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A page of the list of OutgoingCashJournalResource. See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>A page of the list of OutgoingCashJournalResource.<br/>See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/outgoingCashJournals</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cf2484a3-2dd0-4466-83d8-4bf483d4703b"></a>
+                    <h3>GET OutgoingCashJournal by identifier</h3>
+                    <p class="operation-description">Gets the specified <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The OutgoingCashJournalResource instance. See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The OutgoingCashJournalResource instance.<br/>See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/outgoingCashJournals/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="dbb7bd0a-b05e-4e44-8b85-f1d92759ef90"></a>
+                    <h3>GET OutgoingCashJournal by natural key</h3>
+                    <p class="operation-description">Gets the specified <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The OutgoingCashJournalResource instance. See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The OutgoingCashJournalResource instance.<br/>See <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/outgoingCashJournals/{companyKey}/{outgoingCashJournalKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="769b88ad-5741-4edc-83cd-e15edf230ea6"></a>
+                    <h3>GET Print OutgoingCashJournal by identifier</h3>
+                    <p class="operation-description">Prints the specified <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/outgoingCashJournals/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="aea7ad0b-73d5-48c0-bed3-2625bd7f691b"></a>
+                    <h3>GET Print OutgoingCashJournal by natural key</h3>
+                    <p class="operation-description">Prints the specified <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The report.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">GET /cashManagement/outgoingCashJournals/{companyKey}//{outgoingCashJournalKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1664522a-d450-43f9-acc7-f54b32318c51"></a>
+                    <h3>POST OutgoingCashJournals</h3>
+                    <p class="operation-description">Creates a new <a href="#ApiOutgoingCashJournalResource">ApiOutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalResource</td>
+                                <td><i>(ApiOutgoingCashJournalResource)</i> The resource containing the entity data.<br/>See <a href="#ApiOutgoingCashJournalResource">ApiOutgoingCashJournalResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>The entity resource with all the default values set as needed. See <a href="#ApiOutgoingCashJournalResource">ApiOutgoingCashJournalResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The entity resource with all the default values set as needed.<br/>See <a href="#ApiOutgoingCashJournalResource">ApiOutgoingCashJournalResource.</a></td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">POST /cashManagement/outgoingCashJournals</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d3472d5c-67d4-4e8d-aecb-6c54565184b9"></a>
+                    <h3>PUT OutgoingCashJournal IsActive</h3>
+                    <p class="operation-description">Updates the attribute 'IsActive' of a <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /cashManagement/outgoingCashJournals/{companyKey}/{outgoingCashJournalKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="32c447c8-8128-4add-8a29-21feed3e7e1f"></a>
+                    <h3>PUT OutgoingCashJournal Note</h3>
+                    <p class="operation-description">Updates the attribute 'Note' of a <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /cashManagement/outgoingCashJournals/{companyKey}/{outgoingCashJournalKey}/note</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b19f3f97-9f80-4de5-b949-a683ef11c069"></a>
+                    <h3>PUT OutgoingCashJournal OutgoingCashJournalKey</h3>
+                    <p class="operation-description">Updates the attribute 'OutgoingCashJournalKey' of a <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /cashManagement/outgoingCashJournals/{companyKey}/{outgoingCashJournalKey}/outgoingCashJournalKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="15293552-b4ce-4f33-8ca9-1fd869540631"></a>
+                    <h3>PUT OutgoingCashJournal Remarks</h3>
+                    <p class="operation-description">Updates the attribute 'Remarks' of a <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">PUT /cashManagement/outgoingCashJournals/{companyKey}/{outgoingCashJournalKey}/remarks</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3ab4b175-2bc5-495c-902f-32f94b2810ca"></a>
+                    <h3>DELETE OutgoingCashJournal by identifier</h3>
+                    <p class="operation-description">Deletes the specified <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">DELETE /cashManagement/outgoingCashJournals/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e288330c-3e8e-4600-bff5-fc4673aa6075"></a>
+                    <h3>DELETE OutgoingCashJournal by natural key</h3>
+                    <p class="operation-description">Deletes the specified <a href="#OutgoingCashJournalResource">OutgoingCashJournalResource</a>.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td><i>(string)</i> Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>A System.Net.Http.HttpResponseMessage containing the operation result.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The entity was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The entity does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Request URI:</p>
+                    <pre class="endpoint">DELETE /cashManagement/outgoingCashJournals/{companyKey}/{outgoingCashJournalKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="OutgoingCashJournalResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'OutgoingCashJournalResourceResourceDiv')">OutgoingCashJournalResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="OutgoingCashJournalResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Exchange Rate Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAddress</td>
+                                <td  class="wrap"><i>(string)</i> Party Address</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCashAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash Account Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Party Account Posting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiOutgoingCashJournalResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiOutgoingCashJournalResourceResourceDiv')">ApiOutgoingCashJournalResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiOutgoingCashJournalResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">outgoingCashJournalKey</td>
+                                <td  class="wrap"><i>(string)</i> Number</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">totalAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCash</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Note</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Exchange Rate Date</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAddress</td>
+                                <td  class="wrap"><i>(string)</i> Party Address</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pettyCashAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Petty Cash Account Posting</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyAccountPosting</td>
+                                <td  class="wrap"><i>(string)</i> Party Account Posting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

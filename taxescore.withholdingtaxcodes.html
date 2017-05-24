@@ -1,0 +1,1426 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Taxes | WHT Code</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a id="current-menu-item" class="menu-item " href="taxes.html">
+		Taxes
+    </a>
+	<a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+		AT Communication Request
+	</a>
+	<a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+		Economic Activity Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+		Exemption Reason Code
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+		Fiscal Document Type
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+		Fiscal Witholding Tax Type
+	</a>
+	<a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+		Item Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
+		Item WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxes.obligations.html">
+		Obligation
+	</a>
+	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
+		Party Tax Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
+		Party WHT Schema
+	</a>
+	<a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+		Payment Method Fiscal Class
+	</a>
+	<a class="menu-subitem " href="taxes.legaldeclarations.html">
+		SAF-T (PT)
+	</a>
+	<a class="menu-subitem " href="taxescore.taxclasses.html">
+		Tax Class
+	</a>
+	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+		Tax Classification
+	</a>
+	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
+		Tax Regional Area
+	</a>
+	<a class="menu-subitem " href="taxescore.taxsubclasses.html">
+		Tax Sub Class
+	</a>
+	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
+		Tax Type Code
+	</a>
+	<a class="menu-subitem menu-item-selected" href="taxescore.withholdingtaxcodes.html">
+		WHT Code
+	</a>
+	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+		WHT Type
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Taxes | WHT Code</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/taxesCore/withholdingTaxCodes</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'WithholdingTaxCode'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e0a610c1-3045-44d0-8785-a461e6c6a514"></a>
+                    <h3>GET WithholdingTaxCodes</h3>
+                    <p class="operation-description">Returns all WHT Code user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of WHT Code. See <a href="#WithholdingTaxCodeResource">WithholdingTaxCodeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/withholdingTaxCodes</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1a6c7dba-ea0e-4208-af3f-48cdbca4082e"></a>
+                    <h3>GET WithholdingTaxCodes (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of WHT Code user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of WHT Code. See <a href="#WithholdingTaxCodeResource">WithholdingTaxCodeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/withholdingTaxCodes</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="dd9a2543-617e-44f5-91a0-ec1c3c7a946a"></a>
+                    <h3>GET WithholdingTaxCode by identifier</h3>
+                    <p class="operation-description">Returns information for a given WHT Code, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the WHT Code.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the WHT Code. See <a href="#WithholdingTaxCodeResource">WithholdingTaxCodeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/withholdingTaxCodes/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ae80e974-1b42-4c4f-b52b-c401921b7c65"></a>
+                    <h3>GET WithholdingTaxCode by key</h3>
+                    <p class="operation-description">Returns information for a given WHT Code, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the WHT Code. See <a href="#WithholdingTaxCodeResource">WithholdingTaxCodeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8047d97c-271d-4a46-8666-c13f9601eb20"></a>
+                    <h3>GET Print WithholdingTaxCode by identifier</h3>
+                    <p class="operation-description">Prints the specified WithholdingTaxCode.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the WithholdingTaxCode.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed WithholdingTaxCode.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/withholdingTaxCodes/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eb0adc7f-b2d4-403d-b01b-15bda61bc935"></a>
+                    <h3>GET Print WithholdingTaxCode by key</h3>
+                    <p class="operation-description">Prints the specified WithholdingTaxCode by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed WithholdingTaxCode.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="811813c8-5dae-4acf-8958-f3df6025be9a"></a>
+                    <h3>POST WithholdingTaxCodes</h3>
+                    <p class="operation-description">Creates a new WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeResource</td>
+                                <td><i>(ApiWithholdingTaxCodeResource)</i> In the request body, supply a resource containing the WHT Code information.<br/>See <a href="#ApiWithholdingTaxCodeResource">ApiWithholdingTaxCodeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the WHT Code identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiWithholdingTaxCodeResource">ApiWithholdingTaxCodeResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the WHT Code was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/withholdingTaxCodes</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="66291a96-69fa-4214-9378-bdf68f62af4a"></a>
+                    <h3>POST WHT Code </h3>
+                    <p class="operation-description">Inserts a new WHT Rate in an existing WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiWithholdingTaxCodeWithholdingTaxRatesResource)</i> The ApiWithholdingTaxCodeWithholdingTaxRatesResource instance.<br/>See <a href="#ApiWithholdingTaxCodeWithholdingTaxRatesResource">ApiWithholdingTaxCodeWithholdingTaxRatesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxRates</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f74d633d-4906-4504-bf61-98309a6d9b20"></a>
+                    <h3>PUT Set AmountBase WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the AmountBase for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum AmountBase)</i> In the request body, supply the new value for the AmountBase.<br/>See <a href="#AmountBase">AmountBase.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/amountBase</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4654f58a-4850-4e8e-bc2c-59456d57d55f"></a>
+                    <h3>PUT Set Description WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the Description for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0056cab5-d88e-4d13-94a7-c5278f7187c1"></a>
+                    <h3>PUT Set Description WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the Description for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxRates/{lineId}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1776ece3-f487-4d4a-925a-9cb7f8769a6e"></a>
+                    <h3>PUT Set IsActive WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the IsActive for the specified WithholdingTaxCode.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fe272708-82c5-46b9-8606-0bc06a17d5e9"></a>
+                    <h3>PUT Set RoundingOff WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the RoundingOff for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> In the request body, supply the new value for the RoundingOff.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/roundingOff</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="21a81a49-f57c-49f8-b103-287fc2c7f474"></a>
+                    <h3>PUT Set RoundingType WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the RoundingType for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum RoundingType)</i> In the request body, supply the new value for the RoundingType.<br/>See <a href="#RoundingType">RoundingType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/roundingType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c0f93125-130f-47af-b335-77b0a8afbae0"></a>
+                    <h3>PUT Set ValidFrom WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the ValidFrom for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValidFrom.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxRates/{lineId}/validFrom</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="87f3d864-2623-4956-868f-498e91e18d51"></a>
+                    <h3>PUT Set ValidTo WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the ValidTo for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValidTo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxRates/{lineId}/validTo</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1ca4b3d6-85f4-4926-93ba-7e1ccbf362b9"></a>
+                    <h3>PUT Set Value WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the Value for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the Value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxRates/{lineId}/value</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e45fed3b-1f39-4142-a161-d4019b091b64"></a>
+                    <h3>PUT Set WithholdingTaxCodeKey WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the WithholdingTaxCodeKey for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WithholdingTaxCodeKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxCodeKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a2966030-ba45-4e2e-9d79-0510821dd9e4"></a>
+                    <h3>PUT Set WithholdingTaxType WithholdingTaxCode</h3>
+                    <p class="operation-description">Updates the WithholdingTaxType for the specified WHT Code.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the WithholdingTaxType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxType</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2551e425-8601-4b34-bfa6-63e8b039aa5a"></a>
+                    <h3>DELETE WHT Rate by identifier</h3>
+                    <p class="operation-description">Deletes the specified WHT Rate.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}/withholdingTaxRates/{lineId}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="92f7a72b-aa7d-4007-bf39-8ce74c97ff2b"></a>
+                    <h3>DELETE WithholdingTaxCode by identifier</h3>
+                    <p class="operation-description">Deletes the specified WHT Code by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the WHT Code.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The WHT Code was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The WHT Code does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/withholdingTaxCodes/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8a2d1204-5e95-4f60-8802-686481275bcf"></a>
+                    <h3>DELETE WithholdingTaxCode by key</h3>
+                    <p class="operation-description">Deletes the specified WHT Code by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The WHT Code was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The WHT Code does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /taxesCore/withholdingTaxCodes/{withholdingTaxCodeKey}/{withholdingTaxType}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="WithholdingTaxCodeResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'WithholdingTaxCodeResourceResourceDiv')">WithholdingTaxCodeResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="WithholdingTaxCodeResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td  class="wrap"><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td  class="wrap"><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">amountBase</td>
+                                <td  class="wrap"><i>(enum AmountBase)</i> Indicates if it is total amount or net amount.<br/>See <a href="#AmountBase">AmountBase.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingOff</td>
+                                <td  class="wrap"><i>(int)</i> Indicates the number of decimal places.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingType</td>
+                                <td  class="wrap"><i>(enum RoundingType)</i> The type of rounding applicable on withholding tax.<br/>See <a href="#RoundingType">RoundingType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The withholding tax type description. The calculation base and the net value are set in the withheld tax code. You can set any number of withheld tax codes required for each type of withheld tax.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxRates</td>
+                                <td  class="wrap"><i>(List of WithholdingTaxRateResource)</i> The list of withholding tax rates.<br/>See <a href="#WithholdingTaxRateResource">WithholdingTaxRateResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="WithholdingTaxRateResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'WithholdingTaxRateResourceResourceDiv')">WithholdingTaxRateResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="WithholdingTaxRateResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date from which the rate is valid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validTo</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date until which the rate is valid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td  class="wrap"><i>(decimal)</i> The rate value. Reference value for the calculation of values. percentage or a fraction value when it concerns rates (VAT, Withholding ...).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The rate description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiWithholdingTaxCodeResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiWithholdingTaxCodeResourceResourceDiv')">ApiWithholdingTaxCodeResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiWithholdingTaxCodeResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">withholdingTaxCodeKey</td>
+                                <td  class="wrap"><i>(string)</i> The withholding tax code key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxType</td>
+                                <td  class="wrap"><i>(string)</i> Thw withholding tax type. </td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">amountBase</td>
+                                <td  class="wrap"><i>(enum AmountBase)</i> Indicates if it is total amount or net amount.<br/>See <a href="#AmountBase">AmountBase.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingOff</td>
+                                <td  class="wrap"><i>(int)</i> Indicates the number of decimal places.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">roundingType</td>
+                                <td  class="wrap"><i>(enum RoundingType)</i> The type of rounding applicable on withholding tax.<br/>See <a href="#RoundingType">RoundingType.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The withholding tax type description. The calculation base and the net value are set in the withheld tax code. You can set any number of withheld tax codes required for each type of withheld tax.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">withholdingTaxRates</td>
+                                <td title="(List of ApiWithholdingTaxCodeWithholdingTaxRatesResource) The list of withholding tax rates. See ApiWithholdingTaxCodeWithholdingTaxRatesResource." class="wrap"><i>(List of ApiWithholdingTaxCodeWithholdingTaxRatesResource)</i> The list of withholding tax rates.<br/>See <a href="#ApiWithholdingTaxCodeWithholdingTaxRatesResource">ApiWithholdingTaxCodeWithholdingTaxRatesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiWithholdingTaxCodeWithholdingTaxRatesResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiWithholdingTaxCodeWithholdingTaxRatesResourceResourceDiv')">ApiWithholdingTaxCodeWithholdingTaxRatesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiWithholdingTaxCodeWithholdingTaxRatesResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date from which the rate is valid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">validTo</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date until which the rate is valid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td  class="wrap"><i>(decimal)</i> The rate value. Reference value for the calculation of values. percentage or a fraction value when it concerns rates (VAT, Withholding ...).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The rate description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+					<br />
+                    <a class="anchor" name="AmountBase"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AmountBaseValueListDiv')">AmountBase<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="AmountBaseValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>TotalAmount</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>NetAmount</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="RoundingType"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'RoundingTypeValueListDiv')">RoundingType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="RoundingTypeValueListDiv" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>RoundUp</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Downwards</td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Normal</td>
+								<td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

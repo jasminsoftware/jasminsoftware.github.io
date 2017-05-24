@@ -1,0 +1,1834 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Platform | Draft</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a id="current-menu-item" class="menu-item " href="platform.html">
+		Platform
+    </a>
+	<a class="menu-subitem " href="corepatterns.addresses.html">
+		Address
+	</a>
+	<a class="menu-subitem " href="corepatterns.companies.html">
+		Company
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacts.html">
+		Contact
+	</a>
+	<a class="menu-subitem " href="corepatterns.contactgroups.html">
+		Contact Group
+	</a>
+	<a class="menu-subitem " href="corepatterns.contacttypes.html">
+		Contact Type
+	</a>
+	<a class="menu-subitem " href="corepatterns.countries.html">
+		Country
+	</a>
+	<a class="menu-subitem " href="corepatterns.cultures.html">
+		Culture
+	</a>
+	<a class="menu-subitem " href="corepatterns.currencies.html">
+		Currency
+	</a>
+	<a class="menu-subitem menu-item-selected" href="corepatterns.drafts.html">
+		Draft
+	</a>
+	<a class="menu-subitem " href="operations.emailtemplates.html">
+		Email Template
+	</a>
+	<a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+		Fiscal Time Zone
+	</a>
+	<a class="menu-subitem " href="operations.notifications.html">
+		Notification
+	</a>
+	<a class="menu-subitem " href="corepatterns.operations.html">
+		Operation
+	</a>
+	<a class="menu-subitem " href="corepatterns.postalzones.html">
+		Postal Code
+	</a>
+	<a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+		Power Bi Info
+	</a>
+	<a class="menu-subitem " href="corepatterns.regions.html">
+		Region
+	</a>
+	<a class="menu-subitem " href="corepatterns.sequences.html">
+		Sequence
+	</a>
+	<a class="menu-subitem " href="corepatterns.units.html">
+		Unit
+	</a>
+	<a class="menu-subitem " href="corepatterns.unitdimensions.html">
+		Unit Dimension
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Draft</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/corePatterns/drafts</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="acc9f5cb-fd5c-4c67-83ce-456b8acdf4ff"></a>
+                    <h3>GET Drafts</h3>
+                    <p class="operation-description">Returns all of the Drafts user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Drafts. See <a href="#DraftResource">DraftResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e725342f-232d-4869-916c-bd3a22853502"></a>
+                    <h3>GET Drafts (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Drafts user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Drafts. See <a href="#DraftResource">DraftResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b5be1982-52e3-441a-b499-2f2d20577d77"></a>
+                    <h3>GET Draft by identifier</h3>
+                    <p class="operation-description">Returns information for the specified Draft, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Draft.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Draft. See <a href="#DraftResource">DraftResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f47a4299-a390-4641-9b67-20a024dc9b4f"></a>
+                    <h3>GET Draft by key</h3>
+                    <p class="operation-description">Returns information for the specified Draft, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Draft. See <a href="#DraftResource">DraftResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts/{draftId}/{key}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1cf4ab88-c14a-4cde-b41a-7788b976e56e"></a>
+                    <h3>GET Print Draft by identifier</h3>
+                    <p class="operation-description">Prints the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Draft.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Draft.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="190541b5-4222-4f87-b1b4-3902d26caf45"></a>
+                    <h3>GET Print Draft by key</h3>
+                    <p class="operation-description">Prints the specified Draft by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed Draft.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts/{draftId}/{key}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="195f9536-c120-441f-9461-98d044ebba63"></a>
+                    <h3>GET Get Total Drafts</h3>
+                    <p class="operation-description">Get the total drafts.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td><i>(string)</i> Operation</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">state</td>
+                                <td><i>(string)</i> State</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a number.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operations was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts/getTotalDrafts</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b625f8bd-23b2-4752-a48b-dbc2b0821c6c"></a>
+                    <h3>GET Get Drafts From Group Ex</h3>
+                    <p class="operation-description">Custom operation 'GetDraftsFromGroupEx'.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">minDate</td>
+                                <td><i>(DateTimeOffset)</i> MinDate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">maxDate</td>
+                                <td><i>(DateTimeOffset)</i> MaxDate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td><i>(string)</i> Operation</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">state</td>
+                                <td><i>(string)</i> State</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">maxSize</td>
+                                <td><i>(int)</i> MaxSize</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of DraftDataResource resources. See <a href="#DraftDataResource">DraftDataResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operations was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts/getDraftsFromGroupEx</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2dc33c77-0c66-4ea8-bf07-b61df841e882"></a>
+                    <h3>GET Get All Drafts Time Groups Ex</h3>
+                    <p class="operation-description">Custom operation 'GetAllDraftsTimeGroupsEx'.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td><i>(string)</i> Operation</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">state</td>
+                                <td><i>(string)</i> State</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of DraftsGroupData resources. See <a href="#DraftsGroupData">DraftsGroupData.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operations was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /corePatterns/drafts/getAllDraftsTimeGroupsEx</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fb51113d-86ba-4358-86ba-1578890e9d49"></a>
+                    <h3>POST Drafts</h3>
+                    <p class="operation-description">Creates a new Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftResource</td>
+                                <td><i>(ApiDraftResource)</i> In the request body, supply a resource containing the Draft information.<br/>See <a href="#ApiDraftResource">ApiDraftResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Draft identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiDraftResource">ApiDraftResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Draft was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /corePatterns/drafts</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="170ffcc1-7008-4802-8f6f-ac57788333c6"></a>
+                    <h3>POST Delete Drafts From Group</h3>
+                    <p class="operation-description">Custom operation 'DeleteDraftsFromGroup'.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">minDate</td>
+                                <td><i>(DateTimeOffset)</i> MinDate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">maxDate</td>
+                                <td><i>(DateTimeOffset)</i> MaxDate</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td><i>(string)</i> Operation</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">openedDraftKey</td>
+                                <td><i>(Guid)</i> OpenedDraftKey</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /corePatterns/drafts/deleteDraftsFromGroup</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b24696d3-f0df-4b67-9bda-020258d7ffc5"></a>
+                    <h3>PUT Set ControllerName Draft</h3>
+                    <p class="operation-description">Updates the ControllerName for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ControllerName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/controllerName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3cb2a061-6030-4423-9331-95714176d38b"></a>
+                    <h3>PUT Set Description Draft</h3>
+                    <p class="operation-description">Updates the Description for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c8423420-66f5-46cb-a3a3-5ea3c656b1d6"></a>
+                    <h3>PUT Set DraftId Draft</h3>
+                    <p class="operation-description">Updates the DraftId for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the DraftId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/draftId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eb54f133-d874-4148-8f16-ae4ea7167052"></a>
+                    <h3>PUT Set IsActive Draft</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="30643ea5-0c8f-427d-83de-97be76b1829d"></a>
+                    <h3>PUT Set Key Draft</h3>
+                    <p class="operation-description">Updates the Key for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/key</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="62c9dca4-745d-4f31-a068-6ecd6a122982"></a>
+                    <h3>PUT Set ModuleName Draft</h3>
+                    <p class="operation-description">Updates the ModuleName for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ModuleName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/moduleName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="80175245-547f-4f45-ae67-9ed5f37ee83f"></a>
+                    <h3>PUT Set Operation Draft</h3>
+                    <p class="operation-description">Updates the Operation for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Operation.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/operation</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4f3a4ab6-7f12-496e-a95f-334c49eaf6f1"></a>
+                    <h3>PUT Set OperationName Draft</h3>
+                    <p class="operation-description">Updates the OperationName for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the OperationName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/operationName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="411990ec-8e37-41cd-a5f9-c7d667270384"></a>
+                    <h3>PUT Set OperationType Draft</h3>
+                    <p class="operation-description">Updates the OperationType for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the OperationType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/operationType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e5d0cbd0-6049-4bde-a77c-f860be8a98e3"></a>
+                    <h3>PUT Set ParentId Draft</h3>
+                    <p class="operation-description">Updates the ParentId for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> In the request body, supply the new value for the ParentId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/parentId</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a141d2d6-0e7a-4b7c-bccf-f09a888527ad"></a>
+                    <h3>PUT Set ProcessCaption Draft</h3>
+                    <p class="operation-description">Updates the ProcessCaption for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ProcessCaption.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/processCaption</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d9c93e12-6aa4-475d-b8da-2872d77b07f5"></a>
+                    <h3>PUT Set ProcessColor Draft</h3>
+                    <p class="operation-description">Updates the ProcessColor for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ProcessColor.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/processColor</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="185e1f1c-eb1a-4ee2-a620-ea25346ed3a7"></a>
+                    <h3>PUT Set Resource Draft</h3>
+                    <p class="operation-description">Updates the Resource for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Resource.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/resource</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9be8a91d-4d8f-426e-ae7b-b50f7369df9f"></a>
+                    <h3>PUT Set ResourceObject Draft</h3>
+                    <p class="operation-description">Updates the ResourceObject for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(byte[])</i> In the request body, supply the new value for the ResourceObject.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/resourceObject</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="446cc56e-d411-4a0e-bcac-6a7cadf4d61f"></a>
+                    <h3>PUT Set ServiceName Draft</h3>
+                    <p class="operation-description">Updates the ServiceName for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ServiceName.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/serviceName</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0458af61-0fdb-4ba9-816b-283b801ebe92"></a>
+                    <h3>PUT Set State Draft</h3>
+                    <p class="operation-description">Updates the State for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the State.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/state</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d49cba47-8790-4b7a-8047-44c7cc9b5bc3"></a>
+                    <h3>PUT Set Title Draft</h3>
+                    <p class="operation-description">Updates the Title for the specified Draft.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Title.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/title</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0c9ae94a-696b-46c4-a18f-7122617cce35"></a>
+                    <h3>DELETE Draft by identifier</h3>
+                    <p class="operation-description">Deletes the specified Draft by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Draft.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Draft was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Draft does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /corePatterns/drafts/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3dc81c06-b0bb-4749-9c19-c67ee90a18cc"></a>
+                    <h3>DELETE Draft by key</h3>
+                    <p class="operation-description">Deletes the specified Draft by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Draft was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Draft does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /corePatterns/drafts/{draftId}/{key}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="DraftResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DraftResourceResourceDiv')">DraftResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DraftResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td  class="wrap"><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">resource</td>
+                                <td  class="wrap"><i>(string)</i> Resource</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">controllerName</td>
+                                <td  class="wrap"><i>(string)</i> Controller Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td  class="wrap"><i>(string)</i> Operation</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">timestamp</td>
+                                <td  class="wrap"><i>(string)</i> Timestamp</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">url</td>
+                                <td  class="wrap"><i>(string)</i> Url</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">title</td>
+                                <td  class="wrap"><i>(string)</i> Title</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">parentId</td>
+                                <td  class="wrap"><i>(Guid)</i> Parent Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operationType</td>
+                                <td  class="wrap"><i>(string)</i> Operation Type</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">state</td>
+                                <td  class="wrap"><i>(string)</i> State</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">processColor</td>
+                                <td  class="wrap"><i>(string)</i> Process Color</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">processCaption</td>
+                                <td  class="wrap"><i>(string)</i> Process Caption</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td  class="wrap"><i>(string)</i> Module Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serviceName</td>
+                                <td  class="wrap"><i>(string)</i> Service Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">resourceObject</td>
+                                <td  class="wrap"><i>(byte[])</i> Resource Object</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operationName</td>
+                                <td  class="wrap"><i>(string)</i> Operation Name</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="DraftDataResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DraftDataResourceResourceDiv')">DraftDataResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DraftDataResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td  class="wrap"><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">timestamp</td>
+                                <td  class="wrap"><i>(string)</i> Timestamp</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">url</td>
+                                <td  class="wrap"><i>(string)</i> Url</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">processCaption</td>
+                                <td  class="wrap"><i>(string)</i> Process Caption</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">processColor</td>
+                                <td  class="wrap"><i>(string)</i> Process Color</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">title</td>
+                                <td  class="wrap"><i>(string)</i> Title</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="DraftsGroupData"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'DraftsGroupDataResourceDiv')">DraftsGroupData<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="DraftsGroupDataResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">caption</td>
+                                <td  class="wrap"><i>(string)</i> Caption</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">total</td>
+                                <td  class="wrap"><i>(int)</i> Total</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">from</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> From</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">to</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> To</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiDraftResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiDraftResourceResourceDiv')">ApiDraftResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiDraftResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">draftId</td>
+                                <td  class="wrap"><i>(Guid)</i> Draft Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Key</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">resource</td>
+                                <td  class="wrap"><i>(string)</i> Resource</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">controllerName</td>
+                                <td  class="wrap"><i>(string)</i> Controller Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td  class="wrap"><i>(string)</i> Operation</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">timestamp</td>
+                                <td  class="wrap"><i>(string)</i> Timestamp</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">url</td>
+                                <td  class="wrap"><i>(string)</i> Url</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">title</td>
+                                <td  class="wrap"><i>(string)</i> Title</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">parentId</td>
+                                <td  class="wrap"><i>(Guid)</i> Parent Id.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operationType</td>
+                                <td  class="wrap"><i>(string)</i> Operation Type</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">state</td>
+                                <td  class="wrap"><i>(string)</i> State</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">processColor</td>
+                                <td  class="wrap"><i>(string)</i> Process Color</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">processCaption</td>
+                                <td  class="wrap"><i>(string)</i> Process Caption</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td  class="wrap"><i>(string)</i> Module Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serviceName</td>
+                                <td  class="wrap"><i>(string)</i> Service Name</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">resourceObject</td>
+                                <td  class="wrap"><i>(byte[])</i> Resource Object</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">operationName</td>
+                                <td  class="wrap"><i>(string)</i> Operation Name</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

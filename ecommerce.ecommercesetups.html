@@ -1,0 +1,1622 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Online Store | ECommerce Setup</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a id="current-menu-item" class="menu-item " href="onlinestore.html">
+		Online Store
+    </a>
+	<a class="menu-subitem " href="ecommerce.ecommerceitems.html">
+		ECommerce Item
+	</a>
+	<a class="menu-subitem " href="ecommerce.ecommercelistitems.html">
+		ECommerce List Items
+	</a>
+	<a class="menu-subitem menu-item-selected" href="ecommerce.ecommercesetups.html">
+		ECommerce Setup
+	</a>
+	<a class="menu-subitem " href="ecommerce.itemcategories.html">
+		Item Category
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a class="menu-item" href="sales.html">
+		Sales
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Online Store | ECommerce Setup</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/eCommerce/eCommerceSetups</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'ECommerceSetup'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d6268c0f-c454-4b8e-af1b-b7a3b4bdd8df"></a>
+                    <h3>GET ECommerceSetups</h3>
+                    <p class="operation-description">Returns all ECommerce Setup user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of ECommerce Setup. See <a href="#ECommerceSetupResource">ECommerceSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceSetups</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="91e65811-5584-4f73-ad1c-52240e3c0e90"></a>
+                    <h3>GET ECommerceSetups (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of ECommerce Setup user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of ECommerce Setup. See <a href="#ECommerceSetupResource">ECommerceSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceSetups</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8d316579-a5b0-44e2-882c-24dfbc698e0b"></a>
+                    <h3>GET ECommerceSetup by identifier</h3>
+                    <p class="operation-description">Returns information for a given ECommerce Setup, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Setup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the ECommerce Setup. See <a href="#ECommerceSetupResource">ECommerceSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceSetups/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4af90f28-5280-42d5-ac53-d2a8dc33eb42"></a>
+                    <h3>GET ECommerceSetup by key</h3>
+                    <p class="operation-description">Returns information for a given ECommerce Setup, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the ECommerce Setup. See <a href="#ECommerceSetupResource">ECommerceSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f5aef6cb-e6be-4bd7-b04a-2f2ad266e30e"></a>
+                    <h3>GET Print ECommerceSetup by identifier</h3>
+                    <p class="operation-description">Prints the specified ECommerceSetup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerceSetup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ECommerceSetup.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceSetups/{id}/print</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="191d8dc5-d63a-4e77-b014-6e86e3c63624"></a>
+                    <h3>GET Print ECommerceSetup by key</h3>
+                    <p class="operation-description">Prints the specified ECommerceSetup by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerceSetup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a stream with the file of the printed ECommerceSetup.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/print</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6869a481-be42-454a-bf95-4e1b2963bbdc"></a>
+                    <h3>POST ECommerceSetups</h3>
+                    <p class="operation-description">Creates a new ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">eCommerceSetupResource</td>
+                                <td><i>(ApiECommerceSetupResource)</i> In the request body, supply a resource containing the ECommerce Setup information.<br/>See <a href="#ApiECommerceSetupResource">ApiECommerceSetupResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the ECommerce Setup identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiECommerceSetupResource">ApiECommerceSetupResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the ECommerce Setup was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /eCommerce/eCommerceSetups</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="91a6a9fc-3cb2-4f83-b293-7605c1a26829"></a>
+                    <h3>PUT Set Aboutus ECommerceSetup</h3>
+                    <p class="operation-description">Updates the Aboutus for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Aboutus.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/aboutus</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ed900110-f61c-4822-9ce9-818d2acf7871"></a>
+                    <h3>PUT Set Company ECommerceSetup</h3>
+                    <p class="operation-description">Updates the Company for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/company</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="78085d6a-36c8-4d03-9264-8a56f30652b5"></a>
+                    <h3>PUT Set CustomerGroup ECommerceSetup</h3>
+                    <p class="operation-description">Updates the CustomerGroup for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the CustomerGroup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/customerGroup</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8ecd22db-93c1-4cc3-ba70-8911c77f8982"></a>
+                    <h3>PUT Set Description ECommerceSetup</h3>
+                    <p class="operation-description">Updates the Description for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/description</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bff5a52f-42a7-44c0-98d5-7539c367430d"></a>
+                    <h3>PUT Set ExchangesAndReturns ECommerceSetup</h3>
+                    <p class="operation-description">Updates the ExchangesAndReturns for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ExchangesAndReturns.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/exchangesAndReturns</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9584cb98-4c64-41d6-bf17-af0095a5a3d3"></a>
+                    <h3>PUT Set IsActive ECommerceSetup</h3>
+                    <p class="operation-description">Updates the IsActive for the specified ECommerceSetup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerceSetup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/isActive</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8316eda9-3f20-4ea7-af13-5d23eee3d165"></a>
+                    <h3>PUT Set OrderType ECommerceSetup</h3>
+                    <p class="operation-description">Updates the OrderType for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the OrderType.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/orderType</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="be1767ed-4a1b-4b3b-993b-74f45aa2de18"></a>
+                    <h3>PUT Set PageInMaintenance ECommerceSetup</h3>
+                    <p class="operation-description">Updates the PageInMaintenance for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the PageInMaintenance.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/pageInMaintenance</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5311350e-8fe6-415f-b5bb-4479f98b5b3b"></a>
+                    <h3>PUT Set PartyTaxSchema ECommerceSetup</h3>
+                    <p class="operation-description">Updates the PartyTaxSchema for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PartyTaxSchema.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/partyTaxSchema</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3054b0bc-6db0-4d97-a96d-eb2c46cecc4d"></a>
+                    <h3>PUT Set PaymentMethod ECommerceSetup</h3>
+                    <p class="operation-description">Updates the PaymentMethod for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PaymentMethod.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/paymentMethod</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c996622a-c344-4b7f-b862-7ceb3a002946"></a>
+                    <h3>PUT Set PaymentTerm ECommerceSetup</h3>
+                    <p class="operation-description">Updates the PaymentTerm for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PaymentTerm.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/paymentTerm</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d87758f1-e4c1-49fb-b288-b7a2e31ecda6"></a>
+                    <h3>PUT Set PriceList ECommerceSetup</h3>
+                    <p class="operation-description">Updates the PriceList for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PriceList.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/priceList</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="36070fb0-9629-4300-bc6c-e74dc559e620"></a>
+                    <h3>PUT Set PrivacyPolicy ECommerceSetup</h3>
+                    <p class="operation-description">Updates the PrivacyPolicy for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the PrivacyPolicy.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/privacyPolicy</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="10b6ad05-377f-479e-96aa-a24676ce89af"></a>
+                    <h3>PUT Set SalesChannel ECommerceSetup</h3>
+                    <p class="operation-description">Updates the SalesChannel for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SalesChannel.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/salesChannel</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9c6f5276-801f-47c2-9d06-ed905b00d604"></a>
+                    <h3>PUT Set SalesItem ECommerceSetup</h3>
+                    <p class="operation-description">Updates the SalesItem for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the SalesItem.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/salesItem</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8eba50b4-fe5a-441b-b6b8-282cd557dd17"></a>
+                    <h3>PUT Set ShippingMethod ECommerceSetup</h3>
+                    <p class="operation-description">Updates the ShippingMethod for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ShippingMethod.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/shippingMethod</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ae3d8813-986a-461a-8513-6111d313c60c"></a>
+                    <h3>PUT Set ShippingPayment ECommerceSetup</h3>
+                    <p class="operation-description">Updates the ShippingPayment for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the ShippingPayment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/shippingPayment</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7e1763df-f2a5-45bb-9737-28f0be471342"></a>
+                    <h3>PUT Set StoreSetupKey ECommerceSetup</h3>
+                    <p class="operation-description">Updates the StoreSetupKey for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the StoreSetupKey.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/storeSetupKey</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5421e784-3cfb-4ac2-a344-854d7cd4dc16"></a>
+                    <h3>PUT Set TermsAndConditions ECommerceSetup</h3>
+                    <p class="operation-description">Updates the TermsAndConditions for the specified ECommerce Setup.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> In the request body, supply the new value for the TermsAndConditions.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}/termsAndConditions</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="de40ce25-fe13-441d-8302-c3cb8a26eaae"></a>
+                    <h3>DELETE ECommerceSetup by identifier</h3>
+                    <p class="operation-description">Deletes the specified ECommerce Setup by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the ECommerce Setup.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The ECommerce Setup was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The ECommerce Setup does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /eCommerce/eCommerceSetups/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="004a9b54-bcdc-4e24-95d0-a848375e6cf7"></a>
+                    <h3>DELETE ECommerceSetup by key</h3>
+                    <p class="operation-description">Deletes the specified ECommerce Setup by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> Company key to which the requested ECommerce Setup is associated to.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td><i>(string)</i> Store identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The ECommerce Setup was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The ECommerce Setup does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /eCommerce/eCommerceSetups/{companyKey}/{storeSetupKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="ECommerceSetupResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ECommerceSetupResourceResourceDiv')">ECommerceSetupResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ECommerceSetupResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td  class="wrap"><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company where the orders will be save.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">orderType</td>
+                                <td  class="wrap"><i>(string)</i> The default order type used when the customer complete the order process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">priceList</td>
+                                <td  class="wrap"><i>(string)</i> The price list used on the store. Only items with this price list will be listed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> The default payment method use on the checkout process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The party tax schema used by the customer.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingMethod</td>
+                                <td  class="wrap"><i>(string)</i> The default shipping method use on the checkout process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesChannel</td>
+                                <td  class="wrap"><i>(string)</i> This field allows you to organize your sales according to their origin.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentTerm</td>
+                                <td  class="wrap"><i>(string)</i> The default payment term use on the checkout process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">customerGroup</td>
+                                <td  class="wrap"><i>(string)</i> The customer group contains the default information that allows create a new customer when the user complete the registration process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesItem</td>
+                                <td  class="wrap"><i>(string)</i> The item that will be added to the document with the shipping costs.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Store description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">aboutus</td>
+                                <td  class="wrap"><i>(string)</i> Aboutus information that is displayed on the store footer page.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingPayment</td>
+                                <td  class="wrap"><i>(string)</i> Shipping and Payment accepted by the store. This information is displayed on the store footer page.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">termsAndConditions</td>
+                                <td  class="wrap"><i>(string)</i> Terms and Conditions defined by the store.  This information is displayed on the store footer page</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">privacyPolicy</td>
+                                <td  class="wrap"><i>(string)</i> Privacy and Policy defined  by the store. This information is displayed on the store footer page.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangesAndReturns</td>
+                                <td  class="wrap"><i>(string)</i> Exchanges And Returns policy defined by the store. This information is displayed on the store footer page</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageInMaintenance</td>
+                                <td  class="wrap"><i>(bool)</i> When this flag is set to true the page under maintenance message will be show to the customer. The page content is still available to the administrator.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiECommerceSetupResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiECommerceSetupResourceResourceDiv')">ApiECommerceSetupResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiECommerceSetupResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">storeSetupKey</td>
+                                <td  class="wrap"><i>(string)</i> Store identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company where the orders will be save.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">orderType</td>
+                                <td  class="wrap"><i>(string)</i> The default order type used when the customer complete the order process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">priceList</td>
+                                <td  class="wrap"><i>(string)</i> The price list used on the store. Only items with this price list will be listed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> The default payment method use on the checkout process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">partyTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The party tax schema used by the customer.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingMethod</td>
+                                <td  class="wrap"><i>(string)</i> The default shipping method use on the checkout process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesChannel</td>
+                                <td  class="wrap"><i>(string)</i> This field allows you to organize your sales according to their origin.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentTerm</td>
+                                <td  class="wrap"><i>(string)</i> The default payment term use on the checkout process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">customerGroup</td>
+                                <td  class="wrap"><i>(string)</i> The customer group contains the default information that allows create a new customer when the user complete the registration process.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">salesItem</td>
+                                <td  class="wrap"><i>(string)</i> The item that will be added to the document with the shipping costs.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Store description.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">aboutus</td>
+                                <td  class="wrap"><i>(string)</i> Aboutus information that is displayed on the store footer page.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">shippingPayment</td>
+                                <td  class="wrap"><i>(string)</i> Shipping and Payment accepted by the store. This information is displayed on the store footer page.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">termsAndConditions</td>
+                                <td  class="wrap"><i>(string)</i> Terms and Conditions defined by the store.  This information is displayed on the store footer page</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">privacyPolicy</td>
+                                <td  class="wrap"><i>(string)</i> Privacy and Policy defined  by the store. This information is displayed on the store footer page.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangesAndReturns</td>
+                                <td  class="wrap"><i>(string)</i> Exchanges And Returns policy defined by the store. This information is displayed on the store footer page</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageInMaintenance</td>
+                                <td  class="wrap"><i>(bool)</i> When this flag is set to true the page under maintenance message will be show to the customer. The page content is still available to the administrator.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

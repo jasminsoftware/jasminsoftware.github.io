@@ -1,0 +1,1036 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<title>Sales | Salesperson</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+	<a  class="menu-item " href="index.html">
+		Overview
+	</a>
+	<a class="menu-item" href="accountspayable.html">
+		Accounts Payable
+	</a>
+	<a class="menu-item" href="accountsreceivable.html">
+		Accounts Receivable
+	</a>
+	<a class="menu-item" href="financials.html">
+		Financials
+	</a>
+	<a class="menu-item" href="goodsreceipt.html">
+		Goods Receipt
+	</a>
+	<a class="menu-item" href="logistics.html">
+		Logistics
+	</a>
+	<a class="menu-item" href="masterdatabusinessentities.html">
+		Master Data Business Entities
+	</a>
+	<a class="menu-item" href="materialsmanagement.html">
+		Materials Management
+	</a>
+	<a class="menu-item" href="onlinestore.html">
+		Online Store
+	</a>
+	<a class="menu-item" href="platform.html">
+		Platform
+	</a>
+	<a class="menu-item" href="purchases.html">
+		Purchases
+	</a>
+	<a id="current-menu-item" class="menu-item " href="sales.html">
+		Sales
+    </a>
+	<a class="menu-subitem " href="billing.companyinvoices.html">
+		Company Invoice
+	</a>
+	<a class="menu-subitem " href="salescore.customergroups.html">
+		Customer Group
+	</a>
+	<a class="menu-subitem " href="salescore.customerparties.html">
+		Customer Party
+	</a>
+	<a class="menu-subitem " href="billing.invoices.html">
+		Invoice
+	</a>
+	<a class="menu-subitem " href="salescore.invoicetypes.html">
+		Invoice Type
+	</a>
+	<a class="menu-subitem " href="billing.memos.html">
+		Memo
+	</a>
+	<a class="menu-subitem " href="salescore.memotypes.html">
+		Memo Type
+	</a>
+	<a class="menu-subitem " href="sales.orders.html">
+		Order
+	</a>
+	<a class="menu-subitem " href="salescore.ordertypes.html">
+		Order Type
+	</a>
+	<a class="menu-subitem " href="salescore.pricelists.html">
+		Price List
+	</a>
+	<a class="menu-subitem " href="billing.processorders.html">
+		Process Order
+	</a>
+	<a class="menu-subitem " href="billing.processreturnorders.html">
+		Process Return Order
+	</a>
+	<a class="menu-subitem " href="sales.quotations.html">
+		Quotation
+	</a>
+	<a class="menu-subitem " href="salescore.quotationtypes.html">
+		Quotation Type
+	</a>
+	<a class="menu-subitem " href="salescore.saleschannels.html">
+		Sales Channel
+	</a>
+	<a class="menu-subitem " href="salescore.salesitems.html">
+		Sales Item
+	</a>
+	<a class="menu-subitem " href="salescore.salessetups.html">
+		Sales Setup
+	</a>
+	<a class="menu-subitem menu-item-selected" href="salescore.salespersons.html">
+		Salesperson
+	</a>
+	<a class="menu-item" href="shipping.html">
+		Shipping
+	</a>
+	<a class="menu-item" href="taxes.html">
+		Taxes
+	</a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Sales | Salesperson</h1>
+                    <h3>Overview</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td>api/{tenantKey}/{orgKey}/salesCore/salespersons</td>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Service to manage entities of type 'Salesperson'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2"></div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="GET"></a>
+                    <h2>GET OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5252c2fc-e794-42a9-b7e4-395312041ae6"></a>
+                    <h3>GET Salespersons</h3>
+                    <p class="operation-description">Returns all Salesperson user has access to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Salesperson. See <a href="#SalespersonResource">SalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0ce000da-0d55-434c-8e54-b710af688f6b"></a>
+                    <h3>GET Salespersons (paged)</h3>
+                    <p class="operation-description">Returns a paginated list of Salesperson user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of Salesperson. See <a href="#SalespersonResource">SalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="85c8d1e7-62c5-489e-9a7b-bac5023b2859"></a>
+                    <h3>GET Salesperson by identifier</h3>
+                    <p class="operation-description">Returns information for a given Salesperson, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Salesperson.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Salesperson. See <a href="#SalespersonResource">SalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons/{id}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0fecf337-5dfd-4e8f-8471-9eca2ba618f1"></a>
+                    <h3>GET Salesperson by key</h3>
+                    <p class="operation-description">Returns information for a given Salesperson, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource of the Salesperson. See <a href="#SalespersonResource">SalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons/{partyKey}/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="327d9c82-9805-4830-bd1c-9eb5071984f5"></a>
+                    <h3>GET Salespersons (with Party)</h3>
+                    <p class="operation-description">Returns all the information of the Salesperson and the Entity it's related to.</p>
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a list of resources of the Salesperson and its related Entity. See <a href="#BaseSalespersonResource">BaseSalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c21f4788-8bbb-4de7-a8e7-67f5caba9e90"></a>
+                    <h3>GET Salespersons (with Party) paged</h3>
+                    <p class="operation-description">Returns a paginated list of Salesperson and its related Entity user has access to.</p>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns a list of resources with the information of Salesperson and its related Entity. See <a href="#BaseSalespersonResource">BaseSalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="01e51b94-e58d-41be-951b-7ef9f76c0575"></a>
+                    <h3>GET Salesperson (with Party) by identifier</h3>
+                    <p class="operation-description">Returns information for a given Salesperson and its related Entity, by specifying its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Salesperson.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the Salesperson and its related Entity. See <a href="#BaseSalespersonResource">BaseSalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="41f2cb27-b5a8-4cc1-9b20-e137d35ab3eb"></a>
+                    <h3>GET Salesperson (with Party) by key</h3>
+                    <p class="operation-description">Returns information for a given Salesperson and its related Entity, by specifying its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns a resource with the information of the Salesperson and its related Entity. See <a href="#BaseSalespersonResource">BaseSalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">GET /salesCore/salespersons/{partyKey}</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="POST"></a>
+                    <h2>POST OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5c608303-5185-4bc2-ac81-3752a64ac432"></a>
+                    <h3>POST Salespeople</h3>
+                    <p class="operation-description">Creates a new Salesperson.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">salespersonResource</td>
+                                <td><i>(ApiSalespersonResource)</i> In the request body, supply a resource containing the Salesperson information.<br/>See <a href="#ApiSalespersonResource">ApiSalespersonResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Salesperson identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiSalespersonResource">ApiSalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Salesperson was created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /salesCore/salespersons/extension</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1a155c69-d0ad-4d16-a323-25e38884dc2c"></a>
+                    <h3>POST Salespeople (with ApiBaseSalesperson)</h3>
+                    <p class="operation-description">Creates a new Salesperson and its related Entity</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">salespersonResource</td>
+                                <td><i>(ApiSalespersonResource)</i> The resource containing the information of the Salesperson and its related Salesperson.<br/>See <a href="#ApiSalespersonResource">ApiSalespersonResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns the Salesperson identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiBaseSalespersonResource">ApiBaseSalespersonResource.</a></td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>The operation was successful and the Salesperson and its related Entity were created.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">POST /salesCore/salespersons</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="PUT"></a>
+                    <h2>PUT OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3581854c-c780-41ae-a9e7-84bf6463a287"></a>
+                    <h3>PUT Set Commission Salesperson</h3>
+                    <p class="operation-description">Updates the Commission for the specified Salesperson.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> In the request body, supply the new value for the Commission.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /salesCore/salespersons/{partyKey}/commission</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5b446de6-2ea1-4e64-9cef-05ecc093642f"></a>
+                    <h3>PUT Set IsActive Salesperson</h3>
+                    <p class="operation-description">Updates the IsActive for the specified Salesperson.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, this method returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>The operation was successful.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">PUT /salesCore/salespersons/{partyKey}/isActive</pre>
+                </div>
+            </div>
+			<div class="content-section">
+                <div class="content-section-col1">
+					<a class="anchor" name="DELETE"></a>
+                    <h2>DELETE OPERATIONS</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d9464a89-32cc-44c8-9355-34f652fef4ee"></a>
+                    <h3>DELETE Salesperson by identifier</h3>
+                    <p class="operation-description">Deletes the specified Salesperson by its identifier.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier for the Salesperson.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Salesperson was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Salesperson does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /salesCore/salespersons/{id}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="88981f5b-48b2-41a5-9def-12f74cf594e0"></a>
+                    <h3>DELETE Salesperson by key</h3>
+                    <p class="operation-description">Deletes the specified Salesperson by its key.</p>
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+				<p>Response:</p>
+					<table>
+                        <tbody>
+							<tr>
+								<td>If successful, returns an empty response body.</td>
+							</tr>
+						</tbody>
+                    </table>
+					<br />
+				<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>The Salesperson was successfully deleted.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>The Salesperson does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <pre class="endpoint">DELETE /salesCore/salespersons/{partyKey}</pre>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+					<br />
+                    <a class="anchor" name="SalespersonResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'SalespersonResourceResourceDiv')">SalespersonResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="SalespersonResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">commission</td>
+                                <td  class="wrap"><i>(decimal)</i> The salesman's commission.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="BaseSalespersonResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'BaseSalespersonResourceResourceDiv')">BaseSalespersonResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="BaseSalespersonResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The party default currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party main address country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">commission</td>
+                                <td  class="wrap"><i>(decimal)</i> The salesman's commission.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax id. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact title.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party Identity Username.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party main address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiSalespersonResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiSalespersonResourceResourceDiv')">ApiSalespersonResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiSalespersonResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">commission</td>
+                                <td  class="wrap"><i>(decimal)</i> The salesman's commission.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                    <a class="anchor" name="ApiBaseSalespersonResource"></a>
+					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiBaseSalespersonResourceResourceDiv')">ApiBaseSalespersonResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
+					<div id="ApiBaseSalespersonResourceResourceDiv" style="display:none">
+	
+					<p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The party default currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party main address country.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">commission</td>
+                                <td  class="wrap"><i>(decimal)</i> The salesman's commission.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax id. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The email for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the item.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact title.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party Identity Username.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party main address.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the item.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<br />
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
