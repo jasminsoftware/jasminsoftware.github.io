@@ -165,6 +165,11 @@
         keywords : "Economic Activity Classification"
 	},
 	{
+        url: 'taxescore.taxessetups.html',
+        description: "Taxes | Taxes Setup",
+        keywords : "Taxes Setup"
+	},
+	{
         url: 'taxescore.withholdingtaxcodes.html',
         description: "Taxes | WHT Code",
         keywords : "WHT Code"

@@ -1,5 +1,13 @@
 "use strict";
 
+function clipboardSuccess(e) {
+    console.log(e);
+}
+
+function clipboardError(e) {
+    console.log(e);
+}
+
 function toggleVisibility(element, toToggleElementId) {
     var toToggleElement = $('#' + toToggleElementId);
     

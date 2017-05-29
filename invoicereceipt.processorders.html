@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -118,7 +119,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/invoiceReceipt/processOrders</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/invoiceReceipt/processOrders  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-invoicereceipt-processorders"></i></td>
+								<div class="hidden-copylink" id="copy-invoicereceipt-processorders">api/{tenantKey}/{orgKey}/invoiceReceipt/processOrders</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -126,7 +128,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td></td>
+                                <td class="breakword">Service to allow picking of order to process for invoice creation purpose.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -141,8 +143,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="2d937c73-72c8-4a91-98ac-359af4926453"></a>
-                    <h3>GET Process Order</h3>
+                    <a class="anchor" name="fff3a956-a813-4d81-b07c-fb3baa6cb08a"></a>
+                    <h3>GET Process Order <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fff3a956-a813-4d81-b07c-fb3baa6cb08a"></i></h3>
+					<div class="hidden-copylink" id="copy-fff3a956-a813-4d81-b07c-fb3baa6cb08a"><a href="#fff3a956-a813-4d81-b07c-fb3baa6cb08a">GET Process Order</a></div>
                     <p class="operation-description">Returns a paginated list of available entities that can be processed by the Invoices service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -163,35 +166,35 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td><i>(string)</i> The company code is the central organizational unit within the system.</td>
+                                <td><i>(string)</i> The company code is the central organizational unit within the system. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">accountingSupplierParty</td>
-                                <td><i>(string)</i> The supplier designated in the party as the party to whom should be sent the invoice. It may or may not be the party to whom the goods or services are delivered.</td>
+                                <td><i>(string)</i> The supplier designated in the party as the party to whom should be sent the invoice. It may or may not be the party to whom the goods or services are delivered. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">invoiceType</td>
-                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. The default delivery type is defined in the purchases configuration setting.</td>
+                                <td><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted. The default delivery type is defined in the purchases configuration setting. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">invoiceReceiptNotificationDateFrom</td>
-                                <td><i>(DateTime?)</i> The invoice receipt notification starting date. Ignored if not set, is used to filter the date in which you received the goods. Only invoice recepit notifications with delivery date greater than or equal to this value will be displayed. Orders will also be displayes in case their document type is set as "Delivery on invoice".</td>
+                                <td><i>(DateTime?)</i> The invoice receipt notification starting date. Ignored if not set, is used to filter the date in which you received the goods. Only invoice recepit notifications with delivery date greater than or equal to this value will be displayed. Orders will also be displayes in case their document type is set as "Delivery on invoice". This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">invoiceReceiptNotificationDateUntil</td>
-                                <td><i>(DateTime?)</i> The invoice receipt notification end date. Ignored if not set, is used to filter the date in which you received the goods. Only invoice recepit notifications with delivery date less than or equal to this value will be displayed. Orders will also be displayes in case their document type is set as "Delivery on invoice".</td>
+                                <td><i>(DateTime?)</i> The invoice receipt notification end date. Ignored if not set, is used to filter the date in which you received the goods. Only invoice recepit notifications with delivery date less than or equal to this value will be displayed. Orders will also be displayes in case their document type is set as "Delivery on invoice". This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">currency</td>
-                                <td><i>(string)</i> The money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the supplier party.</td>
+                                <td><i>(string)</i> The money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the supplier party. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">sourceDoc</td>
-                                <td><i>(string)</i> The original document to be settled. The source document is usually an order. Ignored if not set, is used to filter de invoice receipt notifications to the ones whose source document is this document.</td>
+                                <td><i>(string)</i> The original document to be settled. The source document is usually an order. Ignored if not set, is used to filter de invoice receipt notifications to the ones whose source document is this document. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">goodsReceiptNoteKey</td>
-                                <td><i>(string)</i> The goods receipt document. Ignored is not set, is used to filter de invoice receipt notifications to the ones originated by this goods receipt note.</td>
+                                <td><i>(string)</i> The goods receipt document. Ignored is not set, is used to filter de invoice receipt notifications to the ones originated by this goods receipt note. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -218,7 +221,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /invoiceReceipt/processOrders/{pageIndex}/{pageSize}</pre>
+					<div class="hidden-copylink" id="copy2-fff3a956-a813-4d81-b07c-fb3baa6cb08a">api/{tenantKey}/{orgKey}/invoiceReceipt/processOrders/{pageIndex}/{pageSize}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /invoiceReceipt/processOrders/{pageIndex}/{pageSize}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fff3a956-a813-4d81-b07c-fb3baa6cb08a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -229,8 +236,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="9205c2a8-6617-4f1c-adcf-bb2766d91bc1"></a>
-                    <h3>POST Process Order</h3>
+                    <a class="anchor" name="77e4da0a-c9dc-45af-9434-1d6bd3ae58c6"></a>
+                    <h3>POST Process Order <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-77e4da0a-c9dc-45af-9434-1d6bd3ae58c6"></i></h3>
+					<div class="hidden-copylink" id="copy-77e4da0a-c9dc-45af-9434-1d6bd3ae58c6"><a href="#77e4da0a-c9dc-45af-9434-1d6bd3ae58c6">POST Process Order</a></div>
                     <p class="operation-description">Process the selected resources by the Invoices service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -268,7 +276,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /invoiceReceipt/processOrders/{companyKey}</pre>
+					<div class="hidden-copylink" id="copy2-77e4da0a-c9dc-45af-9434-1d6bd3ae58c6">api/{tenantKey}/{orgKey}/invoiceReceipt/processOrders/{companyKey}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>POST /invoiceReceipt/processOrders/{companyKey}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-77e4da0a-c9dc-45af-9434-1d6bd3ae58c6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -401,4 +413,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  clipboardSuccess(e);
+		});
+		
+		clipboard.on('error', function(e) {
+		  clipboardError(e);
+		});
+	</script>
 </html>

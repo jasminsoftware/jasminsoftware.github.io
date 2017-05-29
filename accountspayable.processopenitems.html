@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -79,7 +80,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-accountspayable-processopenitems"></i></td>
+								<div class="hidden-copylink" id="copy-accountspayable-processopenitems">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -87,7 +89,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td></td>
+                                <td class="breakword">Service to allow picking of opened item to process for payment purpose.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -102,8 +104,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="4799a01f-2ced-4718-ac12-b04f958486a1"></a>
-                    <h3>GET Create Payment</h3>
+                    <a class="anchor" name="05824fc2-acf6-4dec-b4ed-005680ab6141"></a>
+                    <h3>GET Create Payment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-05824fc2-acf6-4dec-b4ed-005680ab6141"></i></h3>
+					<div class="hidden-copylink" id="copy-05824fc2-acf6-4dec-b4ed-005680ab6141"><a href="#05824fc2-acf6-4dec-b4ed-005680ab6141">GET Create Payment</a></div>
                     <p class="operation-description">Returns a paginated list of available entities that can be processed by the Payments service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -118,27 +121,27 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td><i>(string)</i> The company code is the central organizational unit within the system.</td>
+                                <td><i>(string)</i> The company code is the central organizational unit within the system. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentDate</td>
-                                <td><i>(DateTime)</i> The date when the document is issued.</td>
+                                <td><i>(DateTime)</i> The date when the document is issued. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentExchangeRate</td>
-                                <td><i>(decimal)</i> The price of one country's currency expressed in another country's currency. In other words, the rate at which one currency can be exchanged for another. The default is infered using the defined exchange rates on the system for the document date and currency.</td>
+                                <td><i>(decimal)</i> The price of one country's currency expressed in another country's currency. In other words, the rate at which one currency can be exchanged for another. The default is infered using the defined exchange rates on the system for the document date and currency. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">party</td>
-                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent for payment. It may or may not be the party to whom the goods or services are delivered.</td>
+                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent for payment. It may or may not be the party to whom the goods or services are delivered. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">currency</td>
-                                <td><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.</td>
+                                <td><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentType</td>
-                                <td><i>(string)</i> Defines the account posting's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default account posting type is defined in the sales setup configuration setting.</td>
+                                <td><i>(string)</i> Defines the account posting's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default account posting type is defined in the sales setup configuration setting. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -148,23 +151,23 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">dueDateFrom</td>
-                                <td><i>(DateTime?)</i> The initial date in which you can pay.</td>
+                                <td><i>(DateTime?)</i> The initial date in which you can pay. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">dueDateUntil</td>
-                                <td><i>(DateTime?)</i> Date in which the payment is due. In some countries it is also known as law date.</td>
+                                <td><i>(DateTime?)</i> Date in which the payment is due. In some countries it is also known as law date. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">paymentMethod</td>
-                                <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.</td>
+                                <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">total</td>
-                                <td><i>(decimal?)</i> Document total. Internally calculated.</td>
+                                <td><i>(decimal?)</i> Document total. Internally calculated. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">sourceDoc</td>
-                                <td><i>(string)</i> The source document key.</td>
+                                <td><i>(string)</i> The source document key. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -191,7 +194,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /accountsPayable/processOpenItems/{pageIndex}/{pageSize}</pre>
+					<div class="hidden-copylink" id="copy2-05824fc2-acf6-4dec-b4ed-005680ab6141">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems/{pageIndex}/{pageSize}?company={company}&documentDate={documentDate}&documentExchangeRate={documentExchangeRate}&party={party}&currency={currency}&documentType={documentType}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /accountsPayable/processOpenItems/{pageIndex}/{pageSize}?company={company}&documentDate={documentDate}&documentExchangeRate={documentExchangeRate}&party={party}&currency={currency}&documentType={documentType}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-05824fc2-acf6-4dec-b4ed-005680ab6141"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -202,8 +209,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ed78310a-0000-43af-8d54-e2b060392881"></a>
-                    <h3>POST Create Payment</h3>
+                    <a class="anchor" name="0e4689d7-505f-469a-9910-ca207c1428ac"></a>
+                    <h3>POST Create Payment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0e4689d7-505f-469a-9910-ca207c1428ac"></i></h3>
+					<div class="hidden-copylink" id="copy-0e4689d7-505f-469a-9910-ca207c1428ac"><a href="#0e4689d7-505f-469a-9910-ca207c1428ac">POST Create Payment</a></div>
                     <p class="operation-description">Process the selected resources by the Payments service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -241,7 +249,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /accountsPayable/processOpenItems/{companyKey}</pre>
+					<div class="hidden-copylink" id="copy2-0e4689d7-505f-469a-9910-ca207c1428ac">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems/{companyKey}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>POST /accountsPayable/processOpenItems/{companyKey}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0e4689d7-505f-469a-9910-ca207c1428ac"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -386,4 +398,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  clipboardSuccess(e);
+		});
+		
+		clipboard.on('error', function(e) {
+		  clipboardError(e);
+		});
+	</script>
 </html>

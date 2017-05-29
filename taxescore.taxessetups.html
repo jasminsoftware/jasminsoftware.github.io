@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -90,9 +91,6 @@
 	<a class="menu-subitem " href="taxes.obligations.html">
 		Obligation
 	</a>
-	<a class="menu-subitem " href="taxescore.taxsummaries.html">
-		Open Tax Item
-	</a>
 	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
 		Party Tax Schema
 	</a>
@@ -110,9 +108,6 @@
 	</a>
 	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
 		Tax Classification
-	</a>
-	<a class="menu-subitem " href="taxescore.taxpostings.html">
-		Tax Posting
 	</a>
 	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
 		Tax Regional Area
@@ -132,12 +127,6 @@
 	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
 		WHT Type
 	</a>
-	<a class="menu-subitem " href="taxescore.wtaxpostings.html">
-		Withholding Tax Posting
-	</a>
-	<a class="menu-subitem " href="taxescore.wtaxsummaries.html">
-		Withholding Tax Summary
-	</a>
 </div>
         <div class="content">
             <div class="content-section">
@@ -148,15 +137,16 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/taxesCore/taxesSetups</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-taxescore-taxessetups"></i></td>
+								<div class="hidden-copylink" id="copy-taxescore-taxessetups">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
-                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                                <td><a href="#GET">GET</a>, <a href="#PUT">PUT</a></td>
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td>Service to manage entities of type 'Setup'.</td>
+                                <td class="breakword">Service to manage entities of type 'Setup'.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -171,8 +161,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="05bcdf87-b548-434d-99e7-b7716f038ede"></a>
-                    <h3>GET TaxesSetups</h3>
+                    <a class="anchor" name="27db9ed6-708b-4e93-be03-43c357e7622a"></a>
+                    <h3>GET TaxesSetups <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-27db9ed6-708b-4e93-be03-43c357e7622a"></i></h3>
+					<div class="hidden-copylink" id="copy-27db9ed6-708b-4e93-be03-43c357e7622a"><a href="#27db9ed6-708b-4e93-be03-43c357e7622a">GET TaxesSetups</a></div>
                     <p class="operation-description">Returns all Taxes Setup user has access to.</p>
 				<p>Response:</p>
 					<table>
@@ -196,24 +187,29 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxesSetups</pre>
+					<div class="hidden-copylink" id="copy2-27db9ed6-708b-4e93-be03-43c357e7622a">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /taxesCore/taxesSetups</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-27db9ed6-708b-4e93-be03-43c357e7622a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="b7535fca-038a-41a9-8ab1-46edd9f62292"></a>
-                    <h3>GET TaxesSetups (paged)</h3>
+                    <a class="anchor" name="edd8af91-fb28-4f9d-b24f-0407abb0b78a"></a>
+                    <h3>GET TaxesSetups (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-edd8af91-fb28-4f9d-b24f-0407abb0b78a"></i></h3>
+					<div class="hidden-copylink" id="copy-edd8af91-fb28-4f9d-b24f-0407abb0b78a"><a href="#edd8af91-fb28-4f9d-b24f-0407abb0b78a">GET TaxesSetups (paged)</a></div>
                     <p class="operation-description">Returns a paginated list of Taxes Setup user has access to.</p>
 					<p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -240,13 +236,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxesSetups</pre>
+					<div class="hidden-copylink" id="copy2-edd8af91-fb28-4f9d-b24f-0407abb0b78a">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /taxesCore/taxesSetups</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-edd8af91-fb28-4f9d-b24f-0407abb0b78a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="462d9c96-6238-49b8-9777-8c26d41a20c4"></a>
-                    <h3>GET TaxesSetup by identifier</h3>
+                    <a class="anchor" name="44d5521c-9594-44fe-bd00-21c74b4c2570"></a>
+                    <h3>GET TaxesSetup by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-44d5521c-9594-44fe-bd00-21c74b4c2570"></i></h3>
+					<div class="hidden-copylink" id="copy-44d5521c-9594-44fe-bd00-21c74b4c2570"><a href="#44d5521c-9594-44fe-bd00-21c74b4c2570">GET TaxesSetup by identifier</a></div>
                     <p class="operation-description">Returns information for a given Taxes Setup, by specifying its identifier.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -280,13 +281,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxesSetups/{id}</pre>
+					<div class="hidden-copylink" id="copy2-44d5521c-9594-44fe-bd00-21c74b4c2570">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{id}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /taxesCore/taxesSetups/{id}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-44d5521c-9594-44fe-bd00-21c74b4c2570"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="779efbcc-ebe2-458b-ab07-34e83b359984"></a>
-                    <h3>GET TaxesSetup by key</h3>
+                    <a class="anchor" name="698d4851-3472-4ea6-951c-af60083399c0"></a>
+                    <h3>GET TaxesSetup by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-698d4851-3472-4ea6-951c-af60083399c0"></i></h3>
+					<div class="hidden-copylink" id="copy-698d4851-3472-4ea6-951c-af60083399c0"><a href="#698d4851-3472-4ea6-951c-af60083399c0">GET TaxesSetup by key</a></div>
                     <p class="operation-description">Returns information for a given Taxes Setup, by specifying its key.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -320,13 +326,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxesSetups/{company}</pre>
+					<div class="hidden-copylink" id="copy2-698d4851-3472-4ea6-951c-af60083399c0">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /taxesCore/taxesSetups/{company}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-698d4851-3472-4ea6-951c-af60083399c0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="83e6fb20-5c4a-4d29-881a-63274ffc4f26"></a>
-                    <h3>GET Print TaxesSetup by identifier</h3>
+                    <a class="anchor" name="fb08fc33-9fc1-436e-a98a-613d173a282a"></a>
+                    <h3>GET Print TaxesSetup by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fb08fc33-9fc1-436e-a98a-613d173a282a"></i></h3>
+					<div class="hidden-copylink" id="copy-fb08fc33-9fc1-436e-a98a-613d173a282a"><a href="#fb08fc33-9fc1-436e-a98a-613d173a282a">GET Print TaxesSetup by identifier</a></div>
                     <p class="operation-description">Prints the specified TaxesSetup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -343,7 +354,7 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template.</td>
+                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -370,13 +381,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxesSetups/{id}/print</pre>
+					<div class="hidden-copylink" id="copy2-fb08fc33-9fc1-436e-a98a-613d173a282a">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{id}/print</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /taxesCore/taxesSetups/{id}/print</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fb08fc33-9fc1-436e-a98a-613d173a282a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="600b576b-c993-4b49-b2a0-0452b05a1ec3"></a>
-                    <h3>GET Print TaxesSetup by key</h3>
+                    <a class="anchor" name="c391c905-671f-48cf-9ac8-1117d4f41100"></a>
+                    <h3>GET Print TaxesSetup by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c391c905-671f-48cf-9ac8-1117d4f41100"></i></h3>
+					<div class="hidden-copylink" id="copy-c391c905-671f-48cf-9ac8-1117d4f41100"><a href="#c391c905-671f-48cf-9ac8-1117d4f41100">GET Print TaxesSetup by key</a></div>
                     <p class="operation-description">Prints the specified TaxesSetup by specifying its key.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -393,7 +409,7 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template.</td>
+                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -420,53 +436,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxesSetups/{company}/print</pre>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="POST"></a>
-                    <h2>POST OPERATIONS</h2>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="cbe2f97d-0905-4d6d-9b1a-ee618697edfb"></a>
-                    <h3>POST TaxesSetups</h3>
-                    <p class="operation-description">Creates a new Taxes Setup.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxesSetupResource</td>
-                                <td><i>(ApiTaxesSetupResource)</i> In the request body, supply a resource containing the Taxes Setup information.<br/>See <a href="#ApiTaxesSetupResource">ApiTaxesSetupResource.</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, returns the Taxes Setup identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiTaxesSetupResource">ApiTaxesSetupResource.</a></td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">201</td>
-                                <td>The operation was successful and the Taxes Setup was created.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">POST /taxesCore/taxesSetups</pre>
+					<div class="hidden-copylink" id="copy2-c391c905-671f-48cf-9ac8-1117d4f41100">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/print</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /taxesCore/taxesSetups/{company}/print</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c391c905-671f-48cf-9ac8-1117d4f41100"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -477,8 +451,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="394ce405-3956-4b3f-b8db-1f9452539c80"></a>
-                    <h3>PUT Set AccountingSchema TaxesSetup</h3>
+                    <a class="anchor" name="4424212a-0eda-47ba-82d6-5c9408710bae"></a>
+                    <h3>PUT Set AccountingSchema TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4424212a-0eda-47ba-82d6-5c9408710bae"></i></h3>
+					<div class="hidden-copylink" id="copy-4424212a-0eda-47ba-82d6-5c9408710bae"><a href="#4424212a-0eda-47ba-82d6-5c9408710bae">PUT Set AccountingSchema TaxesSetup</a></div>
                     <p class="operation-description">Updates the AccountingSchema for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -516,13 +491,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/accountingSchema</pre>
+					<div class="hidden-copylink" id="copy2-4424212a-0eda-47ba-82d6-5c9408710bae">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/accountingSchema</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/accountingSchema</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4424212a-0eda-47ba-82d6-5c9408710bae"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="6c80c87a-4c05-4703-86bc-2bcf76892440"></a>
-                    <h3>PUT Set AuthorityCommPassword TaxesSetup</h3>
+                    <a class="anchor" name="303dd6c1-11df-46eb-b3a9-2c6c495dc6d4"></a>
+                    <h3>PUT Set AuthorityCommPassword TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-303dd6c1-11df-46eb-b3a9-2c6c495dc6d4"></i></h3>
+					<div class="hidden-copylink" id="copy-303dd6c1-11df-46eb-b3a9-2c6c495dc6d4"><a href="#303dd6c1-11df-46eb-b3a9-2c6c495dc6d4">PUT Set AuthorityCommPassword TaxesSetup</a></div>
                     <p class="operation-description">Updates the AuthorityCommPassword for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -560,13 +540,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/authorityCommPassword</pre>
+					<div class="hidden-copylink" id="copy2-303dd6c1-11df-46eb-b3a9-2c6c495dc6d4">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/authorityCommPassword</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/authorityCommPassword</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-303dd6c1-11df-46eb-b3a9-2c6c495dc6d4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="cd67b05c-b94d-4b10-8021-f0e3dad3b9ae"></a>
-                    <h3>PUT Set AuthorityCommUserName TaxesSetup</h3>
+                    <a class="anchor" name="22ca090a-9e05-43e9-b1e9-5abbdbf2d4b8"></a>
+                    <h3>PUT Set AuthorityCommUserName TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-22ca090a-9e05-43e9-b1e9-5abbdbf2d4b8"></i></h3>
+					<div class="hidden-copylink" id="copy-22ca090a-9e05-43e9-b1e9-5abbdbf2d4b8"><a href="#22ca090a-9e05-43e9-b1e9-5abbdbf2d4b8">PUT Set AuthorityCommUserName TaxesSetup</a></div>
                     <p class="operation-description">Updates the AuthorityCommUserName for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -604,13 +589,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/authorityCommUserName</pre>
+					<div class="hidden-copylink" id="copy2-22ca090a-9e05-43e9-b1e9-5abbdbf2d4b8">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/authorityCommUserName</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/authorityCommUserName</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-22ca090a-9e05-43e9-b1e9-5abbdbf2d4b8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="684d41f4-02dc-4734-8311-c005b36eae5c"></a>
-                    <h3>PUT Set Company TaxesSetup</h3>
+                    <a class="anchor" name="b36f5be5-2009-45c9-aa18-32ae6f4b605b"></a>
+                    <h3>PUT Set Company TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b36f5be5-2009-45c9-aa18-32ae6f4b605b"></i></h3>
+					<div class="hidden-copylink" id="copy-b36f5be5-2009-45c9-aa18-32ae6f4b605b"><a href="#b36f5be5-2009-45c9-aa18-32ae6f4b605b">PUT Set Company TaxesSetup</a></div>
                     <p class="operation-description">Updates the Company for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -648,13 +638,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/company</pre>
+					<div class="hidden-copylink" id="copy2-b36f5be5-2009-45c9-aa18-32ae6f4b605b">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/company</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/company</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b36f5be5-2009-45c9-aa18-32ae6f4b605b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="95cebd5b-20bb-42e9-b32b-7b6bc433fe91"></a>
-                    <h3>PUT Set EconomicActivityClassification TaxesSetup</h3>
+                    <a class="anchor" name="3112e1cd-22b2-4e85-a781-22c61ad6f95f"></a>
+                    <h3>PUT Set EconomicActivityClassification TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3112e1cd-22b2-4e85-a781-22c61ad6f95f"></i></h3>
+					<div class="hidden-copylink" id="copy-3112e1cd-22b2-4e85-a781-22c61ad6f95f"><a href="#3112e1cd-22b2-4e85-a781-22c61ad6f95f">PUT Set EconomicActivityClassification TaxesSetup</a></div>
                     <p class="operation-description">Updates the EconomicActivityClassification for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -692,13 +687,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/economicActivityClassification</pre>
+					<div class="hidden-copylink" id="copy2-3112e1cd-22b2-4e85-a781-22c61ad6f95f">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/economicActivityClassification</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/economicActivityClassification</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3112e1cd-22b2-4e85-a781-22c61ad6f95f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="4b0dc718-c1b9-4791-bc7f-f61df1e25f30"></a>
-                    <h3>PUT Set FinancialCommOption TaxesSetup</h3>
+                    <a class="anchor" name="318c262e-8c8d-42fb-b117-7e1a10239bb8"></a>
+                    <h3>PUT Set FinancialCommOption TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-318c262e-8c8d-42fb-b117-7e1a10239bb8"></i></h3>
+					<div class="hidden-copylink" id="copy-318c262e-8c8d-42fb-b117-7e1a10239bb8"><a href="#318c262e-8c8d-42fb-b117-7e1a10239bb8">PUT Set FinancialCommOption TaxesSetup</a></div>
                     <p class="operation-description">Updates the FinancialCommOption for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -736,13 +736,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/financialCommOption</pre>
+					<div class="hidden-copylink" id="copy2-318c262e-8c8d-42fb-b117-7e1a10239bb8">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/financialCommOption</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/financialCommOption</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-318c262e-8c8d-42fb-b117-7e1a10239bb8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="f61cb46b-617d-47dc-91ac-5d48aeba686f"></a>
-                    <h3>PUT Set FiscalTimeZone TaxesSetup</h3>
+                    <a class="anchor" name="c21e606e-7772-4f57-9334-a0dac4dbc035"></a>
+                    <h3>PUT Set FiscalTimeZone TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c21e606e-7772-4f57-9334-a0dac4dbc035"></i></h3>
+					<div class="hidden-copylink" id="copy-c21e606e-7772-4f57-9334-a0dac4dbc035"><a href="#c21e606e-7772-4f57-9334-a0dac4dbc035">PUT Set FiscalTimeZone TaxesSetup</a></div>
                     <p class="operation-description">Updates the FiscalTimeZone for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -780,13 +785,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/fiscalTimeZone</pre>
+					<div class="hidden-copylink" id="copy2-c21e606e-7772-4f57-9334-a0dac4dbc035">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/fiscalTimeZone</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/fiscalTimeZone</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c21e606e-7772-4f57-9334-a0dac4dbc035"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="3d62971c-d1b9-4e63-ab08-4a7fa7c675df"></a>
-                    <h3>PUT Set IsActive TaxesSetup</h3>
+                    <a class="anchor" name="1b8df3c0-16f2-417d-83c9-a72a52072f6b"></a>
+                    <h3>PUT Set IsActive TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1b8df3c0-16f2-417d-83c9-a72a52072f6b"></i></h3>
+					<div class="hidden-copylink" id="copy-1b8df3c0-16f2-417d-83c9-a72a52072f6b"><a href="#1b8df3c0-16f2-417d-83c9-a72a52072f6b">PUT Set IsActive TaxesSetup</a></div>
                     <p class="operation-description">Updates the IsActive for the specified TaxesSetup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -824,57 +834,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/isActive</pre>
+					<div class="hidden-copylink" id="copy2-1b8df3c0-16f2-417d-83c9-a72a52072f6b">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/isActive</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/isActive</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1b8df3c0-16f2-417d-83c9-a72a52072f6b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="68bd0342-0026-4a0f-bf9a-b4841f1a4e0a"></a>
-                    <h3>PUT Set IsPortugueseCompany TaxesSetup</h3>
-                    <p class="operation-description">Updates the IsPortugueseCompany for the specified Taxes Setup.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">company</td>
-                                <td><i>(string)</i> Company</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsPortugueseCompany.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/isPortugueseCompany</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="47149d94-765a-4499-99af-27a9fdc44ba9"></a>
-                    <h3>PUT Set TransportCommOption TaxesSetup</h3>
+                    <a class="anchor" name="3c7b2743-2e94-4821-88c5-6d420bf7fa1d"></a>
+                    <h3>PUT Set TransportCommOption TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3c7b2743-2e94-4821-88c5-6d420bf7fa1d"></i></h3>
+					<div class="hidden-copylink" id="copy-3c7b2743-2e94-4821-88c5-6d420bf7fa1d"><a href="#3c7b2743-2e94-4821-88c5-6d420bf7fa1d">PUT Set TransportCommOption TaxesSetup</a></div>
                     <p class="operation-description">Updates the TransportCommOption for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -912,13 +883,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/transportCommOption</pre>
+					<div class="hidden-copylink" id="copy2-3c7b2743-2e94-4821-88c5-6d420bf7fa1d">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/transportCommOption</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/transportCommOption</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3c7b2743-2e94-4821-88c5-6d420bf7fa1d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="adad899e-1775-484e-89a9-55eea8b221ab"></a>
-                    <h3>PUT Set UseTestModeCommunication TaxesSetup</h3>
+                    <a class="anchor" name="fb2008f1-b4f8-4211-b5e9-e7fc582b6983"></a>
+                    <h3>PUT Set UseTestModeCommunication TaxesSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fb2008f1-b4f8-4211-b5e9-e7fc582b6983"></i></h3>
+					<div class="hidden-copylink" id="copy-fb2008f1-b4f8-4211-b5e9-e7fc582b6983"><a href="#fb2008f1-b4f8-4211-b5e9-e7fc582b6983">PUT Set UseTestModeCommunication TaxesSetup</a></div>
                     <p class="operation-description">Updates the UseTestModeCommunication for the specified Taxes Setup.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -956,101 +932,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxesSetups/{company}/useTestModeCommunication</pre>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="DELETE"></a>
-                    <h2>DELETE OPERATIONS</h2>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="73a05b40-8b37-461e-ba1d-dd32fb6115e4"></a>
-                    <h3>DELETE TaxesSetup by identifier</h3>
-                    <p class="operation-description">Deletes the specified Taxes Setup by its identifier.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Taxes Setup.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">204</td>
-                                <td>The Taxes Setup was successfully deleted.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">400</td>
-                                <td>The Taxes Setup does not exist.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">DELETE /taxesCore/taxesSetups/{id}</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="2ae40c80-3769-48cc-b42f-4c2df1ff4a22"></a>
-                    <h3>DELETE TaxesSetup by key</h3>
-                    <p class="operation-description">Deletes the specified Taxes Setup by its key.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">company</td>
-                                <td><i>(string)</i> Company</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">204</td>
-                                <td>The Taxes Setup was successfully deleted.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">400</td>
-                                <td>The Taxes Setup does not exist.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">DELETE /taxesCore/taxesSetups/{company}</pre>
+					<div class="hidden-copylink" id="copy2-fb2008f1-b4f8-4211-b5e9-e7fc582b6983">api/{tenantKey}/{orgKey}/taxesCore/taxesSetups/{company}/useTestModeCommunication</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /taxesCore/taxesSetups/{company}/useTestModeCommunication</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fb2008f1-b4f8-4211-b5e9-e7fc582b6983"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -1074,7 +960,7 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">accountingSchema</td>
-                                <td  class="wrap"><i>(enum AccountingSchema)</i> Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
+                                <td  class="wrap"><i>(enum AccountingSchema)</i> The entity's accounting organization method. This organization can follow the rules of "Cash Accounting" or "Accrual Accounting".<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">isPortugueseCompany</td>
@@ -1087,84 +973,27 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">authorityCommUserName</td>
-                                <td  class="wrap"><i>(string)</i> Username</td>
+                                <td  class="wrap"><i>(string)</i> The username of the login that allows the user to communicate with the financial authority. </td>
                             </tr>
                             <tr>
                                 <td class="highlighted">authorityCommPassword</td>
-                                <td  class="wrap"><i>(string)</i> Password</td>
+                                <td  class="wrap"><i>(string)</i> The password of the login that allows the user to communicate with the financial authority. </td>
                             </tr>
                             <tr>
                                 <td class="highlighted">financialCommOption</td>
-                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Financial Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Indicates if the communication of financial documents is  is done manually or automatically.<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">transportCommOption</td>
-                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Transport Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
+                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Indicates if the communication of transport documents is  is done manually or automatically.<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">economicActivityClassification</td>
-                                <td  class="wrap"><i>(string)</i> Classif. of Econ. Activ.</td>
+                                <td  class="wrap"><i>(string)</i> The CEA company. A national legal standard that attributes a 5-digit value to identify a company's specific category of professional activity.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">fiscalTimeZone</td>
-                                <td  class="wrap"><i>(string)</i> Fiscal Time Zone</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
-                    <a class="anchor" name="ApiTaxesSetupResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiTaxesSetupResourceResourceDiv')">ApiTaxesSetupResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiTaxesSetupResourceResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">company</td>
-                                <td  class="wrap"><i>(string)</i> Company</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">useTestModeCommunication</td>
-                                <td  class="wrap"><i>(bool)</i> Use Test Mode Communication</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">accountingSchema</td>
-                                <td  class="wrap"><i>(enum AccountingSchema)</i> Accounting Schema<br/>See <a href="#AccountingSchema">AccountingSchema.</a></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">isPortugueseCompany</td>
-                                <td  class="wrap"><i>(bool)</i> Is Portuguese Company</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">authorityCommUserName</td>
-                                <td  class="wrap"><i>(string)</i> Username</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">authorityCommPassword</td>
-                                <td  class="wrap"><i>(string)</i> Password</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">financialCommOption</td>
-                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Financial Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">transportCommOption</td>
-                                <td  class="wrap"><i>(enum AuthorityCommunicationOption)</i> Transport Communication<br/>See <a href="#AuthorityCommunicationOption">AuthorityCommunicationOption.</a></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">economicActivityClassification</td>
-                                <td  class="wrap"><i>(string)</i> Classif. of Econ. Activ.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">fiscalTimeZone</td>
-                                <td  class="wrap"><i>(string)</i> Fiscal Time Zone</td>
+                                <td  class="wrap"><i>(string)</i> The timezone of the company.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1223,4 +1052,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  clipboardSuccess(e);
+		});
+		
+		clipboard.on('error', function(e) {
+		  clipboardError(e);
+		});
+	</script>
 </html>

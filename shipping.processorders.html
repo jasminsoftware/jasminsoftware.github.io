@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -85,7 +86,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/shipping/processOrders</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/shipping/processOrders  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-shipping-processorders"></i></td>
+								<div class="hidden-copylink" id="copy-shipping-processorders">api/{tenantKey}/{orgKey}/shipping/processOrders</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -93,7 +95,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td></td>
+                                <td class="breakword">Service to allow picking of orders to process for shipping purpose.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -108,8 +110,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="1a290a3f-9441-42ec-99c5-d4014414b819"></a>
-                    <h3>GET Process Order</h3>
+                    <a class="anchor" name="a8cf056f-a4c6-4b83-aa39-7e5f0ececff7"></a>
+                    <h3>GET Process Order <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a8cf056f-a4c6-4b83-aa39-7e5f0ececff7"></i></h3>
+					<div class="hidden-copylink" id="copy-a8cf056f-a4c6-4b83-aa39-7e5f0ececff7"><a href="#a8cf056f-a4c6-4b83-aa39-7e5f0ececff7">GET Process Order</a></div>
                     <p class="operation-description">Returns a paginated list of available entities that can be processed by the Deliveries service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -124,7 +127,7 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td><i>(string)</i> The company code is the central organizational unit within the system.</td>
+                                <td><i>(string)</i> The company code is the central organizational unit within the system. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -134,31 +137,31 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">warehouse</td>
-                                <td><i>(string)</i> The warehouse from where the goods will be shipped.</td>
+                                <td><i>(string)</i> The warehouse from where the goods will be shipped. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">deliveryDateFrom</td>
-                                <td><i>(DateTime?)</i> The shipping request starting date. Ignored if not set, is used to filter the date in which you expect to deliver the goods. Only shipping requests with delivery date greater than or equal to this value will be displayed.</td>
+                                <td><i>(DateTime?)</i> The shipping request starting date. Ignored if not set, is used to filter the date in which you expect to deliver the goods. Only shipping requests with delivery date greater than or equal to this value will be displayed. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">deliveryDateUntil</td>
-                                <td><i>(DateTime?)</i> The shipping request end date. Ignored is not set is used to filter the date in which you expect to deliver the goods. Only shipping requests with delivery date less than or equal to this value will be displayed.</td>
+                                <td><i>(DateTime?)</i> The shipping request end date. Ignored is not set is used to filter the date in which you expect to deliver the goods. Only shipping requests with delivery date less than or equal to this value will be displayed. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">loadingPoint</td>
-                                <td><i>(string)</i> The physical location where the goods are loaded. The default is the company physical location.</td>
+                                <td><i>(string)</i> The physical location where the goods are loaded. The default is the company physical location. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">unloadingPoint</td>
-                                <td><i>(string)</i> The physical location where the goods are unloaded. Defines the unloading from the freight. The default is the customer address.</td>
+                                <td><i>(string)</i> The physical location where the goods are unloaded. Defines the unloading from the freight. The default is the customer address. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">party</td>
-                                <td><i>(string)</i> The customer to whom the shipping will be delivered.</td>
+                                <td><i>(string)</i> The customer to whom the shipping will be delivered. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">deliveryType</td>
-                                <td><i>(string)</i> Defines the delivery's purpose. Distinguishes the business transactions to be posted. The default delivery type is defined in the sales setup configuration setting.</td>
+                                <td><i>(string)</i> Defines the delivery's purpose. Distinguishes the business transactions to be posted. The default delivery type is defined in the sales setup configuration setting. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -185,7 +188,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /shipping/processOrders/{pageIndex}/{pageSize}</pre>
+					<div class="hidden-copylink" id="copy2-a8cf056f-a4c6-4b83-aa39-7e5f0ececff7">api/{tenantKey}/{orgKey}/shipping/processOrders/{pageIndex}/{pageSize}?company={company}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /shipping/processOrders/{pageIndex}/{pageSize}?company={company}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a8cf056f-a4c6-4b83-aa39-7e5f0ececff7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -196,8 +203,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="3ee91593-66ae-4275-a74b-cbdde3dec58f"></a>
-                    <h3>POST Process Order</h3>
+                    <a class="anchor" name="6e43ad6e-3bf5-4469-9bab-9ebc33714dae"></a>
+                    <h3>POST Process Order <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6e43ad6e-3bf5-4469-9bab-9ebc33714dae"></i></h3>
+					<div class="hidden-copylink" id="copy-6e43ad6e-3bf5-4469-9bab-9ebc33714dae"><a href="#6e43ad6e-3bf5-4469-9bab-9ebc33714dae">POST Process Order</a></div>
                     <p class="operation-description">Process the selected resources by the Deliveries service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -235,7 +243,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /shipping/processOrders/{companyKey}</pre>
+					<div class="hidden-copylink" id="copy2-6e43ad6e-3bf5-4469-9bab-9ebc33714dae">api/{tenantKey}/{orgKey}/shipping/processOrders/{companyKey}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>POST /shipping/processOrders/{companyKey}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6e43ad6e-3bf5-4469-9bab-9ebc33714dae"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -368,4 +380,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  clipboardSuccess(e);
+		});
+		
+		clipboard.on('error', function(e) {
+		  clipboardError(e);
+		});
+	</script>
 </html>

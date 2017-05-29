@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -117,6 +118,9 @@
 	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
 		Tax Type Code
 	</a>
+	<a class="menu-subitem " href="taxescore.taxessetups.html">
+		Taxes Setup
+	</a>
 	<a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
 		WHT Code
 	</a>
@@ -133,7 +137,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/taxes/obligations</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/taxes/obligations  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-taxes-obligations"></i></td>
+								<div class="hidden-copylink" id="copy-taxes-obligations">api/{tenantKey}/{orgKey}/taxes/obligations</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -141,7 +146,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td>Service to manage entities of type 'Obligation'.</td>
+                                <td class="breakword">Service to manage entities of type 'Obligation'.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -156,15 +161,16 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="3ac7a320-19de-4bb8-ac28-2a94ae0cf7b1"></a>
-                    <h3>POST Register Fiscal Obligation</h3>
+                    <a class="anchor" name="73173d2a-e9a0-44d4-ba1a-cfd0789b96f9"></a>
+                    <h3>POST Register Fiscal Obligation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-73173d2a-e9a0-44d4-ba1a-cfd0789b96f9"></i></h3>
+					<div class="hidden-copylink" id="copy-73173d2a-e9a0-44d4-ba1a-cfd0789b96f9"><a href="#73173d2a-e9a0-44d4-ba1a-cfd0789b96f9">POST Register Fiscal Obligation</a></div>
                     <p class="operation-description">Custom operation 'RegisterFiscalObligation'.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">obligationResource</td>
-                                <td><i>(ObligationPublicResource)</i> ObligationResource</td>
+                                <td><i>(ObligationPublicResource)</i> ObligationResource This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -181,7 +187,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /taxes/obligations/registerFiscalObligation</pre>
+					<div class="hidden-copylink" id="copy2-73173d2a-e9a0-44d4-ba1a-cfd0789b96f9">api/{tenantKey}/{orgKey}/taxes/obligations/registerFiscalObligation?obligationResource={obligationResource}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>POST /taxes/obligations/registerFiscalObligation?obligationResource={obligationResource}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-73173d2a-e9a0-44d4-ba1a-cfd0789b96f9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -236,4 +246,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  clipboardSuccess(e);
+		});
+		
+		clipboard.on('error', function(e) {
+		  clipboardError(e);
+		});
+	</script>
 </html>

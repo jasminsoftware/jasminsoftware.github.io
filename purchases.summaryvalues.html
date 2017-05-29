@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -118,7 +119,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/purchases/summaryValues</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/purchases/summaryValues  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-purchases-summaryvalues"></i></td>
+								<div class="hidden-copylink" id="copy-purchases-summaryvalues">api/{tenantKey}/{orgKey}/purchases/summaryValues</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -126,7 +128,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td></td>
+                                <td class="breakword"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -141,15 +143,16 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="c28e02e9-45d0-441b-aacd-4814f1afd4ee"></a>
-                    <h3>GET Get Named Summarized Values By Code</h3>
+                    <a class="anchor" name="7a4437f4-b711-4483-86d0-572aa1400fea"></a>
+                    <h3>GET Get Named Summarized Values By Code <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7a4437f4-b711-4483-86d0-572aa1400fea"></i></h3>
+					<div class="hidden-copylink" id="copy-7a4437f4-b711-4483-86d0-572aa1400fea"><a href="#7a4437f4-b711-4483-86d0-572aa1400fea">GET Get Named Summarized Values By Code</a></div>
                     <p class="operation-description">Custom operation 'GetNamedSummarizedValuesByCode'.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">codes</td>
-                                <td><i>(string)</i> Codes</td>
+                                <td><i>(string)</i> Codes This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -176,7 +179,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /purchases/summaryValues/getNamedSummarizedValuesByCode</pre>
+					<div class="hidden-copylink" id="copy2-7a4437f4-b711-4483-86d0-572aa1400fea">api/{tenantKey}/{orgKey}/purchases/summaryValues/getNamedSummarizedValuesByCode?codes={codes}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /purchases/summaryValues/getNamedSummarizedValuesByCode?codes={codes}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7a4437f4-b711-4483-86d0-572aa1400fea"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -222,4 +229,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  clipboardSuccess(e);
+		});
+		
+		clipboard.on('error', function(e) {
+		  clipboardError(e);
+		});
+	</script>
 </html>

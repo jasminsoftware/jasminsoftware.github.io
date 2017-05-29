@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -82,7 +83,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-accountsreceivable-processopenitems"></i></td>
+								<div class="hidden-copylink" id="copy-accountsreceivable-processopenitems">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -90,7 +92,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td></td>
+                                <td class="breakword">Service to allow picking of open items to process for receipt purpose.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -105,8 +107,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="198abc71-6b28-487a-bb40-afedb8d25da3"></a>
-                    <h3>GET Create Receipt</h3>
+                    <a class="anchor" name="b8929a1e-41b9-4a79-8034-792f9594537b"></a>
+                    <h3>GET Create Receipt <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b8929a1e-41b9-4a79-8034-792f9594537b"></i></h3>
+					<div class="hidden-copylink" id="copy-b8929a1e-41b9-4a79-8034-792f9594537b"><a href="#b8929a1e-41b9-4a79-8034-792f9594537b">GET Create Receipt</a></div>
                     <p class="operation-description">Returns a paginated list of available entities that can be processed by the Receipts service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -121,27 +124,27 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td><i>(string)</i> The company code is the central organizational unit within the system.</td>
+                                <td><i>(string)</i> The company code is the central organizational unit within the system. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">party</td>
-                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent the receipt. It may or may not be the party to whom the goods or services were delivered.</td>
+                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent the receipt. It may or may not be the party to whom the goods or services were delivered. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentDate</td>
-                                <td><i>(DateTime)</i> The date when the document is issued.</td>
+                                <td><i>(DateTime)</i> The date when the document is issued. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentExchangeRate</td>
-                                <td><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency.</td>
+                                <td><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">currency</td>
-                                <td><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.</td>
+                                <td><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentType</td>
-                                <td><i>(string)</i> Defines the receipt's purpose. Distinguishes the business transactions to be posted. The default receipt type is defined in the sales setup configuration setting.</td>
+                                <td><i>(string)</i> Defines the receipt's purpose. Distinguishes the business transactions to be posted. The default receipt type is defined in the sales setup configuration setting. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -151,23 +154,23 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">dueDateFrom</td>
-                                <td><i>(DateTime?)</i> The accounting posting starting due date. Ignored if not set, is used to filter the due date. Only account postings with due date greater than or equal to this value will be displayed.</td>
+                                <td><i>(DateTime?)</i> The accounting posting starting due date. Ignored if not set, is used to filter the due date. Only account postings with due date greater than or equal to this value will be displayed. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">dueDateUntil</td>
-                                <td><i>(DateTime?)</i> The accounting posting end due date. Ignored if not set, is used to filter the due date. Only account postings with due date less than or equal to this value will be displayed.</td>
+                                <td><i>(DateTime?)</i> The accounting posting end due date. Ignored if not set, is used to filter the due date. Only account postings with due date less than or equal to this value will be displayed. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">paymentMethod</td>
-                                <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.</td>
+                                <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">total</td>
-                                <td><i>(decimal?)</i> Document total. Internally calculated.</td>
+                                <td><i>(decimal?)</i> Document total. Internally calculated. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">sourceDoc</td>
-                                <td><i>(string)</i> The original document to be settled. The source documents is usually an invoice but other documents can be included on a receitp (ex: Credit or Debit Notes). Internally determined.</td>
+                                <td><i>(string)</i> The original document to be settled. The source documents is usually an invoice but other documents can be included on a receitp (ex: Credit or Debit Notes). Internally determined. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -194,7 +197,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /accountsReceivable/processOpenItems/{pageIndex}/{pageSize}</pre>
+					<div class="hidden-copylink" id="copy2-b8929a1e-41b9-4a79-8034-792f9594537b">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems/{pageIndex}/{pageSize}?company={company}&party={party}&documentDate={documentDate}&documentExchangeRate={documentExchangeRate}&currency={currency}&documentType={documentType}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /accountsReceivable/processOpenItems/{pageIndex}/{pageSize}?company={company}&party={party}&documentDate={documentDate}&documentExchangeRate={documentExchangeRate}&currency={currency}&documentType={documentType}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b8929a1e-41b9-4a79-8034-792f9594537b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -205,8 +212,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="1268a679-6cf1-40bb-b3ec-cbb74f3a8800"></a>
-                    <h3>POST Create Receipt</h3>
+                    <a class="anchor" name="452b1b94-ff52-427e-8a63-2ea9a4ac71e7"></a>
+                    <h3>POST Create Receipt <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-452b1b94-ff52-427e-8a63-2ea9a4ac71e7"></i></h3>
+					<div class="hidden-copylink" id="copy-452b1b94-ff52-427e-8a63-2ea9a4ac71e7"><a href="#452b1b94-ff52-427e-8a63-2ea9a4ac71e7">POST Create Receipt</a></div>
                     <p class="operation-description">Process the selected resources by the Receipts service.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -244,7 +252,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /accountsReceivable/processOpenItems/{companyKey}</pre>
+					<div class="hidden-copylink" id="copy2-452b1b94-ff52-427e-8a63-2ea9a4ac71e7">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems/{companyKey}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>POST /accountsReceivable/processOpenItems/{companyKey}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-452b1b94-ff52-427e-8a63-2ea9a4ac71e7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -389,4 +401,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  clipboardSuccess(e);
+		});
+		
+		clipboard.on('error', function(e) {
+		  clipboardError(e);
+		});
+	</script>
 </html>
