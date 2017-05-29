@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -87,6 +88,9 @@
 	<a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
 		Fiscal Time Zone
 	</a>
+	<a class="menu-subitem " href="corepatterns.importdatainfos.html">
+		Import Data Info
+	</a>
 	<a class="menu-subitem " href="operations.notifications.html">
 		Notification
 	</a>
@@ -133,7 +137,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/corePatterns/drafts</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/corePatterns/drafts  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-corepatterns-drafts"></i></td>
+								<div class="hidden-copylink" id="copy-corepatterns-drafts">api/{tenantKey}/{orgKey}/corePatterns/drafts</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -141,7 +146,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td></td>
+                                <td class="breakword">Service to manage entities of type 'Draft'.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -156,14 +161,15 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="acc9f5cb-fd5c-4c67-83ce-456b8acdf4ff"></a>
-                    <h3>GET Drafts</h3>
-                    <p class="operation-description">Returns all of the Drafts user has access to.</p>
+                    <a class="anchor" name="f7afca58-f462-42b0-b556-8fb5217fdb0b"></a>
+                    <h3>GET Drafts <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f7afca58-f462-42b0-b556-8fb5217fdb0b"></i></h3>
+					<div class="hidden-copylink" id="copy-f7afca58-f462-42b0-b556-8fb5217fdb0b"><a href="#f7afca58-f462-42b0-b556-8fb5217fdb0b">GET Drafts</a></div>
+                    <p class="operation-description">Returns all Draft user has access to.</p>
 				<p>Response:</p>
 					<table>
                         <tbody>
 							<tr>
-								<td>If successful, this method returns a list of Drafts. See <a href="#DraftResource">DraftResource.</a></td>
+								<td>If successful, this method returns a list of Draft. See <a href="#DraftResource">DraftResource.</a></td>
 							</tr>
 						</tbody>
                     </table>
@@ -181,24 +187,29 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts</pre>
+					<div class="hidden-copylink" id="copy2-f7afca58-f462-42b0-b556-8fb5217fdb0b">api/{tenantKey}/{orgKey}/corePatterns/drafts</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f7afca58-f462-42b0-b556-8fb5217fdb0b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="e725342f-232d-4869-916c-bd3a22853502"></a>
-                    <h3>GET Drafts (paged)</h3>
-                    <p class="operation-description">Returns a paginated list of Drafts user has access to.</p>
+                    <a class="anchor" name="a64188a5-84e3-4f53-8a57-3f0ecb482467"></a>
+                    <h3>GET Drafts (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a64188a5-84e3-4f53-8a57-3f0ecb482467"></i></h3>
+					<div class="hidden-copylink" id="copy-a64188a5-84e3-4f53-8a57-3f0ecb482467"><a href="#a64188a5-84e3-4f53-8a57-3f0ecb482467">GET Drafts (paged)</a></div>
+                    <p class="operation-description">Returns a paginated list of Draft user has access to.</p>
 					<p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -207,7 +218,7 @@
 					<table>
                         <tbody>
 							<tr>
-								<td>If successful, this method returns a list of Drafts. See <a href="#DraftResource">DraftResource.</a></td>
+								<td>If successful, this method returns a list of Draft. See <a href="#DraftResource">DraftResource.</a></td>
 							</tr>
 						</tbody>
                     </table>
@@ -225,14 +236,19 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts</pre>
+					<div class="hidden-copylink" id="copy2-a64188a5-84e3-4f53-8a57-3f0ecb482467">api/{tenantKey}/{orgKey}/corePatterns/drafts</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a64188a5-84e3-4f53-8a57-3f0ecb482467"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="b5be1982-52e3-441a-b499-2f2d20577d77"></a>
-                    <h3>GET Draft by identifier</h3>
-                    <p class="operation-description">Returns information for the specified Draft, by specifying its identifier.</p>
+                    <a class="anchor" name="d7e81f0e-b256-4293-9533-dcf8a9f9ae93"></a>
+                    <h3>GET Draft by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d7e81f0e-b256-4293-9533-dcf8a9f9ae93"></i></h3>
+					<div class="hidden-copylink" id="copy-d7e81f0e-b256-4293-9533-dcf8a9f9ae93"><a href="#d7e81f0e-b256-4293-9533-dcf8a9f9ae93">GET Draft by identifier</a></div>
+                    <p class="operation-description">Returns information for a given Draft, by specifying its identifier.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -265,14 +281,19 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts/{id}</pre>
+					<div class="hidden-copylink" id="copy2-d7e81f0e-b256-4293-9533-dcf8a9f9ae93">api/{tenantKey}/{orgKey}/corePatterns/drafts/{id}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts/{id}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d7e81f0e-b256-4293-9533-dcf8a9f9ae93"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="f47a4299-a390-4641-9b67-20a024dc9b4f"></a>
-                    <h3>GET Draft by key</h3>
-                    <p class="operation-description">Returns information for the specified Draft, by specifying its key.</p>
+                    <a class="anchor" name="8a003468-6d5e-4114-b8a3-4c53ebca8815"></a>
+                    <h3>GET Draft by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8a003468-6d5e-4114-b8a3-4c53ebca8815"></i></h3>
+					<div class="hidden-copylink" id="copy-8a003468-6d5e-4114-b8a3-4c53ebca8815"><a href="#8a003468-6d5e-4114-b8a3-4c53ebca8815">GET Draft by key</a></div>
+                    <p class="operation-description">Returns information for a given Draft, by specifying its key.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -309,13 +330,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts/{draftId}/{key}</pre>
+					<div class="hidden-copylink" id="copy2-8a003468-6d5e-4114-b8a3-4c53ebca8815">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts/{draftId}/{key}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8a003468-6d5e-4114-b8a3-4c53ebca8815"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="1cf4ab88-c14a-4cde-b41a-7788b976e56e"></a>
-                    <h3>GET Print Draft by identifier</h3>
+                    <a class="anchor" name="20003874-8656-44cd-bdc5-d7aa7d4df13e"></a>
+                    <h3>GET Print Draft by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-20003874-8656-44cd-bdc5-d7aa7d4df13e"></i></h3>
+					<div class="hidden-copylink" id="copy-20003874-8656-44cd-bdc5-d7aa7d4df13e"><a href="#20003874-8656-44cd-bdc5-d7aa7d4df13e">GET Print Draft by identifier</a></div>
                     <p class="operation-description">Prints the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -332,7 +358,7 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template.</td>
+                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -359,13 +385,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts/{id}/print</pre>
+					<div class="hidden-copylink" id="copy2-20003874-8656-44cd-bdc5-d7aa7d4df13e">api/{tenantKey}/{orgKey}/corePatterns/drafts/{id}/print</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts/{id}/print</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-20003874-8656-44cd-bdc5-d7aa7d4df13e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="190541b5-4222-4f87-b1b4-3902d26caf45"></a>
-                    <h3>GET Print Draft by key</h3>
+                    <a class="anchor" name="888d6d55-38d8-41f1-addc-eb85c49c0484"></a>
+                    <h3>GET Print Draft by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-888d6d55-38d8-41f1-addc-eb85c49c0484"></i></h3>
+					<div class="hidden-copylink" id="copy-888d6d55-38d8-41f1-addc-eb85c49c0484"><a href="#888d6d55-38d8-41f1-addc-eb85c49c0484">GET Print Draft by key</a></div>
                     <p class="operation-description">Prints the specified Draft by specifying its key.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -386,7 +417,7 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template.</td>
+                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -413,24 +444,29 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts/{draftId}/{key}/print</pre>
+					<div class="hidden-copylink" id="copy2-888d6d55-38d8-41f1-addc-eb85c49c0484">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/print</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts/{draftId}/{key}/print</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-888d6d55-38d8-41f1-addc-eb85c49c0484"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="195f9536-c120-441f-9461-98d044ebba63"></a>
-                    <h3>GET Get Total Drafts</h3>
+                    <a class="anchor" name="16f1565d-986a-43fe-9fb5-be6a9d88e5ec"></a>
+                    <h3>GET Get Total Drafts <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-16f1565d-986a-43fe-9fb5-be6a9d88e5ec"></i></h3>
+					<div class="hidden-copylink" id="copy-16f1565d-986a-43fe-9fb5-be6a9d88e5ec"><a href="#16f1565d-986a-43fe-9fb5-be6a9d88e5ec">GET Get Total Drafts</a></div>
                     <p class="operation-description">Get the total drafts.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">operation</td>
-                                <td><i>(string)</i> Operation</td>
+                                <td><i>(string)</i> Operation This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">state</td>
-                                <td><i>(string)</i> State</td>
+                                <td><i>(string)</i> State This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -457,36 +493,41 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts/getTotalDrafts</pre>
+					<div class="hidden-copylink" id="copy2-16f1565d-986a-43fe-9fb5-be6a9d88e5ec">api/{tenantKey}/{orgKey}/corePatterns/drafts/getTotalDrafts?operation={operation}&state={state}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts/getTotalDrafts?operation={operation}&state={state}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-16f1565d-986a-43fe-9fb5-be6a9d88e5ec"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="b625f8bd-23b2-4752-a48b-dbc2b0821c6c"></a>
-                    <h3>GET Get Drafts From Group Ex</h3>
+                    <a class="anchor" name="e1e5d636-c391-4cde-a9d5-a44528bab3ae"></a>
+                    <h3>GET Get Drafts From Group Ex <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e1e5d636-c391-4cde-a9d5-a44528bab3ae"></i></h3>
+					<div class="hidden-copylink" id="copy-e1e5d636-c391-4cde-a9d5-a44528bab3ae"><a href="#e1e5d636-c391-4cde-a9d5-a44528bab3ae">GET Get Drafts From Group Ex</a></div>
                     <p class="operation-description">Custom operation 'GetDraftsFromGroupEx'.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">minDate</td>
-                                <td><i>(DateTimeOffset)</i> MinDate</td>
+                                <td><i>(DateTimeOffset)</i> MinDate This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">maxDate</td>
-                                <td><i>(DateTimeOffset)</i> MaxDate</td>
+                                <td><i>(DateTimeOffset)</i> MaxDate This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">operation</td>
-                                <td><i>(string)</i> Operation</td>
+                                <td><i>(string)</i> Operation This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">state</td>
-                                <td><i>(string)</i> State</td>
+                                <td><i>(string)</i> State This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">maxSize</td>
-                                <td><i>(int)</i> MaxSize</td>
+                                <td><i>(int)</i> MaxSize This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -513,24 +554,29 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts/getDraftsFromGroupEx</pre>
+					<div class="hidden-copylink" id="copy2-e1e5d636-c391-4cde-a9d5-a44528bab3ae">api/{tenantKey}/{orgKey}/corePatterns/drafts/getDraftsFromGroupEx?minDate={minDate}&maxDate={maxDate}&operation={operation}&state={state}&maxSize={maxSize}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts/getDraftsFromGroupEx?minDate={minDate}&maxDate={maxDate}&operation={operation}&state={state}&maxSize={maxSize}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e1e5d636-c391-4cde-a9d5-a44528bab3ae"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="2dc33c77-0c66-4ea8-bf07-b61df841e882"></a>
-                    <h3>GET Get All Drafts Time Groups Ex</h3>
+                    <a class="anchor" name="5c216b81-edba-4c06-8d66-81762c5b1571"></a>
+                    <h3>GET Get All Drafts Time Groups Ex <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5c216b81-edba-4c06-8d66-81762c5b1571"></i></h3>
+					<div class="hidden-copylink" id="copy-5c216b81-edba-4c06-8d66-81762c5b1571"><a href="#5c216b81-edba-4c06-8d66-81762c5b1571">GET Get All Drafts Time Groups Ex</a></div>
                     <p class="operation-description">Custom operation 'GetAllDraftsTimeGroupsEx'.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">operation</td>
-                                <td><i>(string)</i> Operation</td>
+                                <td><i>(string)</i> Operation This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">state</td>
-                                <td><i>(string)</i> State</td>
+                                <td><i>(string)</i> State This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -557,7 +603,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/drafts/getAllDraftsTimeGroupsEx</pre>
+					<div class="hidden-copylink" id="copy2-5c216b81-edba-4c06-8d66-81762c5b1571">api/{tenantKey}/{orgKey}/corePatterns/drafts/getAllDraftsTimeGroupsEx?operation={operation}&state={state}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/drafts/getAllDraftsTimeGroupsEx?operation={operation}&state={state}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5c216b81-edba-4c06-8d66-81762c5b1571"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -568,8 +618,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="fb51113d-86ba-4358-86ba-1578890e9d49"></a>
-                    <h3>POST Drafts</h3>
+                    <a class="anchor" name="a0673d7d-1736-4d67-9310-3a90753c52e7"></a>
+                    <h3>POST Drafts <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a0673d7d-1736-4d67-9310-3a90753c52e7"></i></h3>
+					<div class="hidden-copylink" id="copy-a0673d7d-1736-4d67-9310-3a90753c52e7"><a href="#a0673d7d-1736-4d67-9310-3a90753c52e7">POST Drafts</a></div>
                     <p class="operation-description">Creates a new Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -603,32 +654,37 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /corePatterns/drafts</pre>
+					<div class="hidden-copylink" id="copy2-a0673d7d-1736-4d67-9310-3a90753c52e7">api/{tenantKey}/{orgKey}/corePatterns/drafts</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>POST /corePatterns/drafts</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a0673d7d-1736-4d67-9310-3a90753c52e7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="170ffcc1-7008-4802-8f6f-ac57788333c6"></a>
-                    <h3>POST Delete Drafts From Group</h3>
+                    <a class="anchor" name="bb77ef51-d0bc-4a6a-b1d0-022c5f253dc6"></a>
+                    <h3>POST Delete Drafts From Group <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bb77ef51-d0bc-4a6a-b1d0-022c5f253dc6"></i></h3>
+					<div class="hidden-copylink" id="copy-bb77ef51-d0bc-4a6a-b1d0-022c5f253dc6"><a href="#bb77ef51-d0bc-4a6a-b1d0-022c5f253dc6">POST Delete Drafts From Group</a></div>
                     <p class="operation-description">Custom operation 'DeleteDraftsFromGroup'.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">minDate</td>
-                                <td><i>(DateTimeOffset)</i> MinDate</td>
+                                <td><i>(DateTimeOffset)</i> MinDate This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">maxDate</td>
-                                <td><i>(DateTimeOffset)</i> MaxDate</td>
+                                <td><i>(DateTimeOffset)</i> MaxDate This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">operation</td>
-                                <td><i>(string)</i> Operation</td>
+                                <td><i>(string)</i> Operation This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">openedDraftKey</td>
-                                <td><i>(Guid)</i> OpenedDraftKey</td>
+                                <td><i>(Guid)</i> OpenedDraftKey This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -645,7 +701,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /corePatterns/drafts/deleteDraftsFromGroup</pre>
+					<div class="hidden-copylink" id="copy2-bb77ef51-d0bc-4a6a-b1d0-022c5f253dc6">api/{tenantKey}/{orgKey}/corePatterns/drafts/deleteDraftsFromGroup?minDate={minDate}&maxDate={maxDate}&operation={operation}&openedDraftKey={openedDraftKey}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>POST /corePatterns/drafts/deleteDraftsFromGroup?minDate={minDate}&maxDate={maxDate}&operation={operation}&openedDraftKey={openedDraftKey}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bb77ef51-d0bc-4a6a-b1d0-022c5f253dc6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -656,8 +716,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="b24696d3-f0df-4b67-9bda-020258d7ffc5"></a>
-                    <h3>PUT Set ControllerName Draft</h3>
+                    <a class="anchor" name="15ea5c3c-ffa2-43c6-b812-e04a668527e1"></a>
+                    <h3>PUT Set ControllerName Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-15ea5c3c-ffa2-43c6-b812-e04a668527e1"></i></h3>
+					<div class="hidden-copylink" id="copy-15ea5c3c-ffa2-43c6-b812-e04a668527e1"><a href="#15ea5c3c-ffa2-43c6-b812-e04a668527e1">PUT Set ControllerName Draft</a></div>
                     <p class="operation-description">Updates the ControllerName for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -699,13 +760,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/controllerName</pre>
+					<div class="hidden-copylink" id="copy2-15ea5c3c-ffa2-43c6-b812-e04a668527e1">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/controllerName</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/controllerName</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-15ea5c3c-ffa2-43c6-b812-e04a668527e1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="3cb2a061-6030-4423-9331-95714176d38b"></a>
-                    <h3>PUT Set Description Draft</h3>
+                    <a class="anchor" name="8529d360-ee28-41d6-b761-f834a6158d96"></a>
+                    <h3>PUT Set Description Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8529d360-ee28-41d6-b761-f834a6158d96"></i></h3>
+					<div class="hidden-copylink" id="copy-8529d360-ee28-41d6-b761-f834a6158d96"><a href="#8529d360-ee28-41d6-b761-f834a6158d96">PUT Set Description Draft</a></div>
                     <p class="operation-description">Updates the Description for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -747,13 +813,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/description</pre>
+					<div class="hidden-copylink" id="copy2-8529d360-ee28-41d6-b761-f834a6158d96">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/description</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/description</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8529d360-ee28-41d6-b761-f834a6158d96"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="c8423420-66f5-46cb-a3a3-5ea3c656b1d6"></a>
-                    <h3>PUT Set DraftId Draft</h3>
+                    <a class="anchor" name="e4480b60-9481-4455-9249-bca73f744124"></a>
+                    <h3>PUT Set DraftId Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e4480b60-9481-4455-9249-bca73f744124"></i></h3>
+					<div class="hidden-copylink" id="copy-e4480b60-9481-4455-9249-bca73f744124"><a href="#e4480b60-9481-4455-9249-bca73f744124">PUT Set DraftId Draft</a></div>
                     <p class="operation-description">Updates the DraftId for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -795,13 +866,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/draftId</pre>
+					<div class="hidden-copylink" id="copy2-e4480b60-9481-4455-9249-bca73f744124">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/draftId</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/draftId</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e4480b60-9481-4455-9249-bca73f744124"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="eb54f133-d874-4148-8f16-ae4ea7167052"></a>
-                    <h3>PUT Set IsActive Draft</h3>
+                    <a class="anchor" name="07cdc299-91dc-4ebc-b79a-38367de18bd2"></a>
+                    <h3>PUT Set IsActive Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-07cdc299-91dc-4ebc-b79a-38367de18bd2"></i></h3>
+					<div class="hidden-copylink" id="copy-07cdc299-91dc-4ebc-b79a-38367de18bd2"><a href="#07cdc299-91dc-4ebc-b79a-38367de18bd2">PUT Set IsActive Draft</a></div>
                     <p class="operation-description">Updates the IsActive for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -843,13 +919,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/isActive</pre>
+					<div class="hidden-copylink" id="copy2-07cdc299-91dc-4ebc-b79a-38367de18bd2">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/isActive</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/isActive</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-07cdc299-91dc-4ebc-b79a-38367de18bd2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="30643ea5-0c8f-427d-83de-97be76b1829d"></a>
-                    <h3>PUT Set Key Draft</h3>
+                    <a class="anchor" name="e1917192-8742-41d1-a96f-16f0af6be03d"></a>
+                    <h3>PUT Set Key Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e1917192-8742-41d1-a96f-16f0af6be03d"></i></h3>
+					<div class="hidden-copylink" id="copy-e1917192-8742-41d1-a96f-16f0af6be03d"><a href="#e1917192-8742-41d1-a96f-16f0af6be03d">PUT Set Key Draft</a></div>
                     <p class="operation-description">Updates the Key for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -891,13 +972,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/key</pre>
+					<div class="hidden-copylink" id="copy2-e1917192-8742-41d1-a96f-16f0af6be03d">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/key</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/key</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e1917192-8742-41d1-a96f-16f0af6be03d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="62c9dca4-745d-4f31-a068-6ecd6a122982"></a>
-                    <h3>PUT Set ModuleName Draft</h3>
+                    <a class="anchor" name="73d0096a-5095-4c28-8bf1-170054ff0ee3"></a>
+                    <h3>PUT Set ModuleName Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-73d0096a-5095-4c28-8bf1-170054ff0ee3"></i></h3>
+					<div class="hidden-copylink" id="copy-73d0096a-5095-4c28-8bf1-170054ff0ee3"><a href="#73d0096a-5095-4c28-8bf1-170054ff0ee3">PUT Set ModuleName Draft</a></div>
                     <p class="operation-description">Updates the ModuleName for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -939,13 +1025,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/moduleName</pre>
+					<div class="hidden-copylink" id="copy2-73d0096a-5095-4c28-8bf1-170054ff0ee3">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/moduleName</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/moduleName</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-73d0096a-5095-4c28-8bf1-170054ff0ee3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="80175245-547f-4f45-ae67-9ed5f37ee83f"></a>
-                    <h3>PUT Set Operation Draft</h3>
+                    <a class="anchor" name="ea287fb0-9430-489a-ac93-cd7cbf442f36"></a>
+                    <h3>PUT Set Operation Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ea287fb0-9430-489a-ac93-cd7cbf442f36"></i></h3>
+					<div class="hidden-copylink" id="copy-ea287fb0-9430-489a-ac93-cd7cbf442f36"><a href="#ea287fb0-9430-489a-ac93-cd7cbf442f36">PUT Set Operation Draft</a></div>
                     <p class="operation-description">Updates the Operation for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -987,13 +1078,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/operation</pre>
+					<div class="hidden-copylink" id="copy2-ea287fb0-9430-489a-ac93-cd7cbf442f36">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/operation</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/operation</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ea287fb0-9430-489a-ac93-cd7cbf442f36"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="4f3a4ab6-7f12-496e-a95f-334c49eaf6f1"></a>
-                    <h3>PUT Set OperationName Draft</h3>
+                    <a class="anchor" name="f538f529-ae0e-42c9-b0f5-a56c6a0a0abd"></a>
+                    <h3>PUT Set OperationName Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f538f529-ae0e-42c9-b0f5-a56c6a0a0abd"></i></h3>
+					<div class="hidden-copylink" id="copy-f538f529-ae0e-42c9-b0f5-a56c6a0a0abd"><a href="#f538f529-ae0e-42c9-b0f5-a56c6a0a0abd">PUT Set OperationName Draft</a></div>
                     <p class="operation-description">Updates the OperationName for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1035,13 +1131,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/operationName</pre>
+					<div class="hidden-copylink" id="copy2-f538f529-ae0e-42c9-b0f5-a56c6a0a0abd">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/operationName</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/operationName</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f538f529-ae0e-42c9-b0f5-a56c6a0a0abd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="411990ec-8e37-41cd-a5f9-c7d667270384"></a>
-                    <h3>PUT Set OperationType Draft</h3>
+                    <a class="anchor" name="5ec96fbf-d771-4d8a-9a9d-7ae6d3f9a460"></a>
+                    <h3>PUT Set OperationType Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5ec96fbf-d771-4d8a-9a9d-7ae6d3f9a460"></i></h3>
+					<div class="hidden-copylink" id="copy-5ec96fbf-d771-4d8a-9a9d-7ae6d3f9a460"><a href="#5ec96fbf-d771-4d8a-9a9d-7ae6d3f9a460">PUT Set OperationType Draft</a></div>
                     <p class="operation-description">Updates the OperationType for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1083,13 +1184,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/operationType</pre>
+					<div class="hidden-copylink" id="copy2-5ec96fbf-d771-4d8a-9a9d-7ae6d3f9a460">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/operationType</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/operationType</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5ec96fbf-d771-4d8a-9a9d-7ae6d3f9a460"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="e5d0cbd0-6049-4bde-a77c-f860be8a98e3"></a>
-                    <h3>PUT Set ParentId Draft</h3>
+                    <a class="anchor" name="e97782bf-b144-4b59-8124-0367ea1caddc"></a>
+                    <h3>PUT Set ParentId Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e97782bf-b144-4b59-8124-0367ea1caddc"></i></h3>
+					<div class="hidden-copylink" id="copy-e97782bf-b144-4b59-8124-0367ea1caddc"><a href="#e97782bf-b144-4b59-8124-0367ea1caddc">PUT Set ParentId Draft</a></div>
                     <p class="operation-description">Updates the ParentId for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1131,13 +1237,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/parentId</pre>
+					<div class="hidden-copylink" id="copy2-e97782bf-b144-4b59-8124-0367ea1caddc">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/parentId</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/parentId</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e97782bf-b144-4b59-8124-0367ea1caddc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a141d2d6-0e7a-4b7c-bccf-f09a888527ad"></a>
-                    <h3>PUT Set ProcessCaption Draft</h3>
+                    <a class="anchor" name="dbcfb669-de3c-4284-a233-4ab331270a38"></a>
+                    <h3>PUT Set ProcessCaption Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-dbcfb669-de3c-4284-a233-4ab331270a38"></i></h3>
+					<div class="hidden-copylink" id="copy-dbcfb669-de3c-4284-a233-4ab331270a38"><a href="#dbcfb669-de3c-4284-a233-4ab331270a38">PUT Set ProcessCaption Draft</a></div>
                     <p class="operation-description">Updates the ProcessCaption for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1179,13 +1290,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/processCaption</pre>
+					<div class="hidden-copylink" id="copy2-dbcfb669-de3c-4284-a233-4ab331270a38">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/processCaption</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/processCaption</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-dbcfb669-de3c-4284-a233-4ab331270a38"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="d9c93e12-6aa4-475d-b8da-2872d77b07f5"></a>
-                    <h3>PUT Set ProcessColor Draft</h3>
+                    <a class="anchor" name="6b060e40-60d6-440c-8628-c0eafd35dd07"></a>
+                    <h3>PUT Set ProcessColor Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6b060e40-60d6-440c-8628-c0eafd35dd07"></i></h3>
+					<div class="hidden-copylink" id="copy-6b060e40-60d6-440c-8628-c0eafd35dd07"><a href="#6b060e40-60d6-440c-8628-c0eafd35dd07">PUT Set ProcessColor Draft</a></div>
                     <p class="operation-description">Updates the ProcessColor for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1227,13 +1343,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/processColor</pre>
+					<div class="hidden-copylink" id="copy2-6b060e40-60d6-440c-8628-c0eafd35dd07">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/processColor</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/processColor</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6b060e40-60d6-440c-8628-c0eafd35dd07"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="185e1f1c-eb1a-4ee2-a620-ea25346ed3a7"></a>
-                    <h3>PUT Set Resource Draft</h3>
+                    <a class="anchor" name="b14a55ec-c4df-4ec7-bbe5-3509fbd20792"></a>
+                    <h3>PUT Set Resource Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b14a55ec-c4df-4ec7-bbe5-3509fbd20792"></i></h3>
+					<div class="hidden-copylink" id="copy-b14a55ec-c4df-4ec7-bbe5-3509fbd20792"><a href="#b14a55ec-c4df-4ec7-bbe5-3509fbd20792">PUT Set Resource Draft</a></div>
                     <p class="operation-description">Updates the Resource for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1275,13 +1396,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/resource</pre>
+					<div class="hidden-copylink" id="copy2-b14a55ec-c4df-4ec7-bbe5-3509fbd20792">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/resource</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/resource</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b14a55ec-c4df-4ec7-bbe5-3509fbd20792"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="9be8a91d-4d8f-426e-ae7b-b50f7369df9f"></a>
-                    <h3>PUT Set ResourceObject Draft</h3>
+                    <a class="anchor" name="3665fb62-0130-4f43-b9b1-164af229c0d6"></a>
+                    <h3>PUT Set ResourceObject Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3665fb62-0130-4f43-b9b1-164af229c0d6"></i></h3>
+					<div class="hidden-copylink" id="copy-3665fb62-0130-4f43-b9b1-164af229c0d6"><a href="#3665fb62-0130-4f43-b9b1-164af229c0d6">PUT Set ResourceObject Draft</a></div>
                     <p class="operation-description">Updates the ResourceObject for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1323,13 +1449,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/resourceObject</pre>
+					<div class="hidden-copylink" id="copy2-3665fb62-0130-4f43-b9b1-164af229c0d6">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/resourceObject</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/resourceObject</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3665fb62-0130-4f43-b9b1-164af229c0d6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="446cc56e-d411-4a0e-bcac-6a7cadf4d61f"></a>
-                    <h3>PUT Set ServiceName Draft</h3>
+                    <a class="anchor" name="9d91e616-71a6-4a85-855e-4c4e2ef61d1d"></a>
+                    <h3>PUT Set ServiceName Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9d91e616-71a6-4a85-855e-4c4e2ef61d1d"></i></h3>
+					<div class="hidden-copylink" id="copy-9d91e616-71a6-4a85-855e-4c4e2ef61d1d"><a href="#9d91e616-71a6-4a85-855e-4c4e2ef61d1d">PUT Set ServiceName Draft</a></div>
                     <p class="operation-description">Updates the ServiceName for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1371,13 +1502,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/serviceName</pre>
+					<div class="hidden-copylink" id="copy2-9d91e616-71a6-4a85-855e-4c4e2ef61d1d">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/serviceName</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/serviceName</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9d91e616-71a6-4a85-855e-4c4e2ef61d1d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="0458af61-0fdb-4ba9-816b-283b801ebe92"></a>
-                    <h3>PUT Set State Draft</h3>
+                    <a class="anchor" name="66edd295-bf04-4c51-acac-ebda77d32f9e"></a>
+                    <h3>PUT Set State Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-66edd295-bf04-4c51-acac-ebda77d32f9e"></i></h3>
+					<div class="hidden-copylink" id="copy-66edd295-bf04-4c51-acac-ebda77d32f9e"><a href="#66edd295-bf04-4c51-acac-ebda77d32f9e">PUT Set State Draft</a></div>
                     <p class="operation-description">Updates the State for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1419,13 +1555,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/state</pre>
+					<div class="hidden-copylink" id="copy2-66edd295-bf04-4c51-acac-ebda77d32f9e">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/state</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/state</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-66edd295-bf04-4c51-acac-ebda77d32f9e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="d49cba47-8790-4b7a-8047-44c7cc9b5bc3"></a>
-                    <h3>PUT Set Title Draft</h3>
+                    <a class="anchor" name="227cb8a0-e8f9-45c6-9a0c-e059e5448a2b"></a>
+                    <h3>PUT Set Title Draft <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-227cb8a0-e8f9-45c6-9a0c-e059e5448a2b"></i></h3>
+					<div class="hidden-copylink" id="copy-227cb8a0-e8f9-45c6-9a0c-e059e5448a2b"><a href="#227cb8a0-e8f9-45c6-9a0c-e059e5448a2b">PUT Set Title Draft</a></div>
                     <p class="operation-description">Updates the Title for the specified Draft.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1467,7 +1608,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /corePatterns/drafts/{draftId}/{key}/title</pre>
+					<div class="hidden-copylink" id="copy2-227cb8a0-e8f9-45c6-9a0c-e059e5448a2b">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}/title</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>PUT /corePatterns/drafts/{draftId}/{key}/title</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-227cb8a0-e8f9-45c6-9a0c-e059e5448a2b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
 			<div class="content-section">
@@ -1478,8 +1623,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="0c9ae94a-696b-46c4-a18f-7122617cce35"></a>
-                    <h3>DELETE Draft by identifier</h3>
+                    <a class="anchor" name="8360da4e-44b8-40db-b18b-e26b783400f7"></a>
+                    <h3>DELETE Draft by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8360da4e-44b8-40db-b18b-e26b783400f7"></i></h3>
+					<div class="hidden-copylink" id="copy-8360da4e-44b8-40db-b18b-e26b783400f7"><a href="#8360da4e-44b8-40db-b18b-e26b783400f7">DELETE Draft by identifier</a></div>
                     <p class="operation-description">Deletes the specified Draft by its identifier.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1517,13 +1663,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">DELETE /corePatterns/drafts/{id}</pre>
+					<div class="hidden-copylink" id="copy2-8360da4e-44b8-40db-b18b-e26b783400f7">api/{tenantKey}/{orgKey}/corePatterns/drafts/{id}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>DELETE /corePatterns/drafts/{id}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8360da4e-44b8-40db-b18b-e26b783400f7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="3dc81c06-b0bb-4749-9c19-c67ee90a18cc"></a>
-                    <h3>DELETE Draft by key</h3>
+                    <a class="anchor" name="af688a50-b877-437c-877f-6a5ed43331cf"></a>
+                    <h3>DELETE Draft by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-af688a50-b877-437c-877f-6a5ed43331cf"></i></h3>
+					<div class="hidden-copylink" id="copy-af688a50-b877-437c-877f-6a5ed43331cf"><a href="#af688a50-b877-437c-877f-6a5ed43331cf">DELETE Draft by key</a></div>
                     <p class="operation-description">Deletes the specified Draft by its key.</p>
 					<p>The following elements are required:</p>
                     <table>
@@ -1565,7 +1716,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">DELETE /corePatterns/drafts/{draftId}/{key}</pre>
+					<div class="hidden-copylink" id="copy2-af688a50-b877-437c-877f-6a5ed43331cf">api/{tenantKey}/{orgKey}/corePatterns/drafts/{draftId}/{key}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>DELETE /corePatterns/drafts/{draftId}/{key}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-af688a50-b877-437c-877f-6a5ed43331cf"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -1831,4 +1986,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  showTooltip(e.trigger, 'Copied!', 'left');
+		});
+		
+		clipboard.on('error', function(e) {
+		  showTooltip(e.trigger, 'Error!', 'left');
+		});
+	</script>
 </html>

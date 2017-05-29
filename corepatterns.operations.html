@@ -5,6 +5,7 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+	<script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -87,6 +88,9 @@
 	<a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
 		Fiscal Time Zone
 	</a>
+	<a class="menu-subitem " href="corepatterns.importdatainfos.html">
+		Import Data Info
+	</a>
 	<a class="menu-subitem " href="operations.notifications.html">
 		Notification
 	</a>
@@ -133,7 +137,8 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/corePatterns/operations</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/corePatterns/operations  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-corepatterns-operations"></i></td>
+								<div class="hidden-copylink" id="copy-corepatterns-operations">api/{tenantKey}/{orgKey}/corePatterns/operations</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
@@ -141,7 +146,7 @@
                             </tr>
                             <tr>
                                 <td>Description</td>
-                                <td>Service to manage entities of type 'Operation'.</td>
+                                <td class="breakword">Service to manage entities of type 'Operation'.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -156,14 +161,15 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="51e08d20-95af-4b38-b40b-1a3c2ebc5661"></a>
-                    <h3>GET Operations</h3>
-                    <p class="operation-description">Returns all of the Operations user has access to.</p>
+                    <a class="anchor" name="1536eba2-f0a5-49c7-b759-508aae4d0900"></a>
+                    <h3>GET Operations <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1536eba2-f0a5-49c7-b759-508aae4d0900"></i></h3>
+					<div class="hidden-copylink" id="copy-1536eba2-f0a5-49c7-b759-508aae4d0900"><a href="#1536eba2-f0a5-49c7-b759-508aae4d0900">GET Operations</a></div>
+                    <p class="operation-description">Returns all Operation user has access to.</p>
 				<p>Response:</p>
 					<table>
                         <tbody>
 							<tr>
-								<td>If successful, this method returns a list of Operations. See <a href="#OperationResource">OperationResource.</a></td>
+								<td>If successful, this method returns a list of Operation. See <a href="#OperationResource">OperationResource.</a></td>
 							</tr>
 						</tbody>
                     </table>
@@ -181,24 +187,29 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/operations</pre>
+					<div class="hidden-copylink" id="copy2-1536eba2-f0a5-49c7-b759-508aae4d0900">api/{tenantKey}/{orgKey}/corePatterns/operations</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/operations</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1536eba2-f0a5-49c7-b759-508aae4d0900"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="2d485653-b218-451f-bcde-d4dde9bf3ddc"></a>
-                    <h3>GET Operations (paged)</h3>
-                    <p class="operation-description">Returns a paginated list of Operations user has access to.</p>
+                    <a class="anchor" name="cbec4464-d7b7-4cb4-908e-6547bf7eb79e"></a>
+                    <h3>GET Operations (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-cbec4464-d7b7-4cb4-908e-6547bf7eb79e"></i></h3>
+					<div class="hidden-copylink" id="copy-cbec4464-d7b7-4cb4-908e-6547bf7eb79e"><a href="#cbec4464-d7b7-4cb4-908e-6547bf7eb79e">GET Operations (paged)</a></div>
+                    <p class="operation-description">Returns a paginated list of Operation user has access to.</p>
 					<p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -207,7 +218,7 @@
 					<table>
                         <tbody>
 							<tr>
-								<td>If successful, this method returns a list of Operations. See <a href="#OperationResource">OperationResource.</a></td>
+								<td>If successful, this method returns a list of Operation. See <a href="#OperationResource">OperationResource.</a></td>
 							</tr>
 						</tbody>
                     </table>
@@ -225,14 +236,19 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/operations</pre>
+					<div class="hidden-copylink" id="copy2-cbec4464-d7b7-4cb4-908e-6547bf7eb79e">api/{tenantKey}/{orgKey}/corePatterns/operations</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/operations</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-cbec4464-d7b7-4cb4-908e-6547bf7eb79e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="d4886a6e-bfdb-4f40-813d-8b66aaf2d640"></a>
-                    <h3>GET Operation by identifier</h3>
-                    <p class="operation-description">Returns information for the specified Operation, by specifying its identifier.</p>
+                    <a class="anchor" name="ceed7623-976d-422e-9b53-43be7b79d13d"></a>
+                    <h3>GET Operation by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ceed7623-976d-422e-9b53-43be7b79d13d"></i></h3>
+					<div class="hidden-copylink" id="copy-ceed7623-976d-422e-9b53-43be7b79d13d"><a href="#ceed7623-976d-422e-9b53-43be7b79d13d">GET Operation by identifier</a></div>
+                    <p class="operation-description">Returns information for a given Operation, by specifying its identifier.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -265,14 +281,19 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/operations/{id}</pre>
+					<div class="hidden-copylink" id="copy2-ceed7623-976d-422e-9b53-43be7b79d13d">api/{tenantKey}/{orgKey}/corePatterns/operations/{id}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/operations/{id}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ceed7623-976d-422e-9b53-43be7b79d13d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="c4c65f9a-3af7-4ec7-bbed-3518ab4c1465"></a>
-                    <h3>GET Operation by key</h3>
-                    <p class="operation-description">Returns information for the specified Operation, by specifying its key.</p>
+                    <a class="anchor" name="99ad9f11-bf67-4836-a88a-cc6094daa98d"></a>
+                    <h3>GET Operation by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-99ad9f11-bf67-4836-a88a-cc6094daa98d"></i></h3>
+					<div class="hidden-copylink" id="copy-99ad9f11-bf67-4836-a88a-cc6094daa98d"><a href="#99ad9f11-bf67-4836-a88a-cc6094daa98d">GET Operation by key</a></div>
+                    <p class="operation-description">Returns information for a given Operation, by specifying its key.</p>
 					<p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -313,7 +334,11 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /corePatterns/operations/{name}/{module}/{serviceName}</pre>
+					<div class="hidden-copylink" id="copy2-99ad9f11-bf67-4836-a88a-cc6094daa98d">api/{tenantKey}/{orgKey}/corePatterns/operations/{name}/{module}/{serviceName}</div>
+                    <div class="resource-url">
+						<div class="inner-resource-url"><div>GET /corePatterns/operations/{name}/{module}/{serviceName}</div></div>
+						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-99ad9f11-bf67-4836-a88a-cc6094daa98d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+					</div>
                 </div>
             </div>
             <div class="content-section">
@@ -479,4 +504,15 @@
             </div>
         </div>
     </body>
+	<script>
+		var clipboard = new Clipboard('.copy-clipboard');
+
+		clipboard.on('success', function(e) {
+		  showTooltip(e.trigger, 'Copied!', 'left');
+		});
+		
+		clipboard.on('error', function(e) {
+		  showTooltip(e.trigger, 'Error!', 'left');
+		});
+	</script>
 </html>

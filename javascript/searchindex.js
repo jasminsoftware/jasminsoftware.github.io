@@ -1,5 +1,15 @@
 ﻿window.searchIndexList = [
 	{
+        url: 'corepatterns.sequences.html',
+        description: "Platform | Sequence",
+        keywords : "Sequence"
+	},
+	{
+        url: 'corepatterns.drafts.html',
+        description: "Platform | Draft",
+        keywords : "Draft"
+	},
+	{
         url: 'corepatterns.cultures.html',
         description: "Platform | Culture",
         keywords : "Culture"
@@ -65,9 +75,19 @@
         keywords : "Contact Group"
 	},
 	{
+        url: 'corepatterns.operations.html',
+        description: "Platform | Operation",
+        keywords : "Operation"
+	},
+	{
         url: 'corepatterns.fiscaltimezones.html',
         description: "Platform | Fiscal Time Zone",
         keywords : "Fiscal Time Zone"
+	},
+	{
+        url: 'corepatterns.importdatainfos.html',
+        description: "Platform | Import Data Info",
+        keywords : "Import Data Info"
 	},
 	{
         url: 'operations.notifications.html',

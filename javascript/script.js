@@ -1,11 +1,46 @@
 "use strict";
 
-function clipboardSuccess(e) {
-    console.log(e);
-}
+function showTooltip(element, message, position) {
+    if (!position) {
+        position = 'left';
+    }
 
-function clipboardError(e) {
-    console.log(e);
+    var positions = ["left", "bottom", "top", "right"];
+    position = position.toLowerCase();
+    if (positions.indexOf(position) < 0) {
+        return;
+    }
+
+    var tooltipClass = "tooltip-".concat(position);
+    var tooltipElement = document.createElement('div');
+    tooltipElement.setAttribute("class", tooltipClass);
+    var tooltipText = document.createElement('span');
+
+    tooltipText.innerHTML = message;
+    tooltipElement.appendChild(tooltipText);
+
+    var elementOffset = $(element).offset();
+
+    $($('body')[0]).append(tooltipElement);
+    var tooltipWidth = $('.' + tooltipClass + ' span').width();
+    var tooltipHeight = $('.' + tooltipClass + ' span').height();
+    var elementHeight = $(element).height();
+
+    //TODO finish positions
+    switch (position) {
+        case 'left':
+            var top = elementOffset.top + elementHeight / 2 - tooltipHeight / 2;
+            var left = elementOffset.left - tooltipWidth - 8;
+            $('.' + tooltipClass).css({ top: top, left: left, position: "absolute" });
+            break;
+        case 'bottom':
+        case 'top':
+        case 'right':
+    }
+
+    setTimeout(function () {
+        $('.' + tooltipClass).remove();
+    }, 1000);
 }
 
 function toggleVisibility(element, toToggleElementId) {
