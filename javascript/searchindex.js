@@ -505,6 +505,11 @@
         keywords : "Invoice Receipt Notification"
 	},
 	{
+        url: 'invoicereceipt.expenses.html',
+        description: "Purchases | Expense",
+        keywords : "Expense"
+	},
+	{
         url: 'invoicereceipt.processorders.html',
         description: "Purchases | Process Order",
         keywords : "Process Order"
