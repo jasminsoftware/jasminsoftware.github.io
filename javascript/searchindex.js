@@ -235,6 +235,11 @@
         keywords : "Payment Term"
 	},
 	{
+        url: 'financialcore.accountpostings.html',
+        description: "Financials | Account Posting",
+        keywords : "Account Posting"
+	},
+	{
         url: 'financialcore.paymenttypes.html',
         description: "Financials | Payment Type",
         keywords : "Payment Type"
@@ -268,6 +273,11 @@
         url: 'financialcore.financialinstitutions.html',
         description: "Financials | Financial Institution",
         keywords : "Financial Institution"
+	},
+	{
+        url: 'financialcore.accounttransactions.html',
+        description: "Financials | Account Transaction",
+        keywords : "Account Transaction"
 	},
 	{
         url: 'materialscore.materialssetups.html',
@@ -446,8 +456,8 @@
 	},
 	{
         url: 'billing.memos.html',
-        description: "Sales | Memo",
-        keywords : "Memo"
+        description: "Sales | Credit or Debit Note",
+        keywords : "Credit or Debit Note"
 	},
 	{
         url: 'billing.processorders.html',
@@ -496,8 +506,8 @@
 	},
 	{
         url: 'invoicereceipt.memos.html',
-        description: "Purchases | Memo",
-        keywords : "Memo"
+        description: "Purchases | Credit or Debit Note",
+        keywords : "Credit or Debit Note"
 	},
 	{
         url: 'invoicereceipt.invoicereceiptnotifications.html',
