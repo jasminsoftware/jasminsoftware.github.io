@@ -5,257 +5,332 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
-	<script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-	<title>Master Data Business Entities | Exchange Rates Document</title>
+    <title>Jasmin Developers - Master Data Business Entities | Exchange Rates Document</title>
     </header>
 
     <body>
         <div class="header">
             <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div class="title">Jasmin Developers - Web API Reference</div>
             <div id="search" class="search">
                 <i class="search-icon fa fa-search" aria-hidden="true"></i>
                 <input class="typeahead" type="text" placeholder="Search">
             </div>
         </div>
         <div class="sidebar" id="sidebar">
-	<a  class="menu-item " href="index.html">
-		Overview
-	</a>
-	<a class="menu-item" href="accountspayable.html">
-		Accounts Payable
-	</a>
-	<a class="menu-item" href="accountsreceivable.html">
-		Accounts Receivable
-	</a>
-	<a class="menu-item" href="financials.html">
-		Financials
-	</a>
-	<a class="menu-item" href="goodsreceipt.html">
-		Goods Receipt
-	</a>
-	<a class="menu-item" href="logistics.html">
-		Logistics
-	</a>
-	<a id="current-menu-item" class="menu-item " href="masterdatabusinessentities.html">
-		Master Data Business Entities
+    <a  class="menu-item " href="index.html">
+        Overview
     </a>
-	<a class="menu-subitem " href="businesscore.assortments.html">
-		Assortment
-	</a>
-	<a class="menu-subitem " href="businesscore.brands.html">
-		Brand
-	</a>
-	<a class="menu-subitem " href="businesscore.parties.html">
-		Entity
-	</a>
-	<a class="menu-subitem menu-item-selected" href="businesscore.exchangeratesdocuments.html">
-		Exchange Rates Document
-	</a>
-	<a class="menu-subitem " href="businesscore.items.html">
-		Item
-	</a>
-	<a class="menu-subitem " href="businesscore.brandmodels.html">
-		Model
-	</a>
-	<a class="menu-subitem " href="businesscore.series.html">
-		Serie
-	</a>
-	<a class="menu-item" href="materialsmanagement.html">
-		Materials Management
-	</a>
-	<a class="menu-item" href="onlinestore.html">
-		Online Store
-	</a>
-	<a class="menu-item" href="platform.html">
-		Platform
-	</a>
-	<a class="menu-item" href="purchases.html">
-		Purchases
-	</a>
-	<a class="menu-item" href="sales.html">
-		Sales
-	</a>
-	<a class="menu-item" href="shipping.html">
-		Shipping
-	</a>
-	<a class="menu-item" href="taxes.html">
-		Taxes
-	</a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a id="current-menu-item" class="menu-item " href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-subitem " href="businesscore.assortments.html">
+        Assortment
+    </a>
+    <a class="menu-subitem " href="businesscore.brands.html">
+        Brand
+    </a>
+    <a class="menu-subitem " href="businesscore.parties.html">
+        Entity
+    </a>
+    <a class="menu-subitem menu-item-selected" href="businesscore.exchangeratesdocuments.html">
+        Exchange Rates Document
+    </a>
+    <a class="menu-subitem " href="businesscore.items.html">
+        Item
+    </a>
+    <a class="menu-subitem " href="businesscore.brandmodels.html">
+        Model
+    </a>
+    <a class="menu-subitem " href="businesscore.series.html">
+        Serie
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-item" href="onlinestore.html">
+        Online Store
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
 </div>
         <div class="content">
             <div class="content-section">
                 <div class="content-section-col1">
                     <h1>Master Data Business Entities | Exchange Rates Document</h1>
-                    <h3>Overview</h3>
+                    <p>
+                    Service to manage entities of type 'ExchangeRatesDocument'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
                     <table>
                         <tbody>
                             <tr>
                                 <td>URL</td>
                                 <td class="breakword url-cell">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-businesscore-exchangeratesdocuments"></i></td>
-								<div class="hidden-copylink" id="copy-businesscore-exchangeratesdocuments">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
+                                <div class="hidden-copylink" id="copy-businesscore-exchangeratesdocuments">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
                                 <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
                             </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td class="breakword">Service to manage entities of type 'ExchangeRatesDocument'.</td>
-                            </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="content-section-col2"></div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="GET"></a>
-                    <h2>GET OPERATIONS</h2>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#93331908-6af4-442b-aff2-a8edc2dd2625">GET ExchangeRatesDocuments</a></li>
+                            <li><a href="#063ccaf9-c2e5-481c-bfaa-ba38c0cc257f">GET ExchangeRatesDocuments (paged)</a></li>
+                            <li><a href="#b3a716ed-78c0-44a3-8757-70b951e2c39b">GET ExchangeRatesDocument by identifier</a></li>
+                            <li><a href="#71b824f4-fd02-4fbd-b98f-e692291c58ae">GET ExchangeRatesDocument by key</a></li>
+                            <li><a href="#0403d034-8a5a-4958-a2f8-5cb9c20c176f">GET Print ExchangeRatesDocument by identifier</a></li>
+                            <li><a href="#70c7f9b1-47f3-4392-9b41-9de4450c2de4">GET Print ExchangeRatesDocument by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#d2466737-f623-4def-bdd0-f898aeff9580">POST ExchangeRatesDocuments</a></li>
+                            <li><a href="#7f63fe7a-b2a6-4cf4-ac12-3cd095cc2afe">POST Exchange Rates Document </a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#75820af8-480f-4f75-aa83-ee5a26b2726b">PUT Set IsActive ExchangeRatesDocument</a></li>
+                            <li><a href="#5b7cec79-7373-4727-906d-1459ef28b58f">PUT Set Number ExchangeRatesDocument</a></li>
+                            <li><a href="#973d0f60-1bfa-407c-998b-1cdaf99458c7">PUT Set ValidFrom ExchangeRatesDocument</a></li>
+                            <li><a href="#6786f787-3e00-4a8a-99c7-f273279d4d13">PUT Set ExchangeRateType ExchangeRatesDocument</a></li>
+                            <li><a href="#62f207b8-56a0-424e-8f87-a5f25504dc67">PUT Set ExternalId ExchangeRatesDocument</a></li>
+                            <li><a href="#224af51c-ca0e-4cad-97f6-3a40dc524d72">PUT Set ExternalVersion ExchangeRatesDocument</a></li>
+                            <li><a href="#ef2aca57-fa44-47e7-86e8-937398b50402">PUT Set IsExternallyManaged ExchangeRatesDocument</a></li>
+                            <li><a href="#ca8c629d-e91d-442d-a183-d817eabebea8">PUT Set ConversionFactor ExchangeRateDocumentRate</a></li>
+                            <li><a href="#227bd835-c569-45eb-808b-0cf6a52cee8e">PUT Set ToCurrency ExchangeRateDocumentRate</a></li>
+                            <li><a href="#8897071b-7fcb-445c-9248-c456b6e30ebb">PUT Set FromCurrency ExchangeRateDocumentRate</a></li>
+                            <li><a href="#883fa701-79cc-440d-9d86-004a1891ebf2">PUT Set FromExchangeRateId ExchangeRateDocumentRate</a></li>
+                            <li><a href="#3140022f-0560-4678-b9cd-a7c5f06c9add">PUT Set ToExchangeRateId ExchangeRateDocumentRate</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#18b2deb5-8b7d-481d-a656-c813df7b45e3">DELETE Exchange Rate Document Rate by identifier</a></li>
+                            <li><a href="#dff39c44-bf6b-4be4-98a2-bdb0887b64ee">DELETE ExchangeRatesDocument by identifier</a></li>
+                            <li><a href="#b488e87b-f842-459b-af05-994a79791c1c">DELETE ExchangeRatesDocument by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiExchangeRatesDocumentExchangeRateDocumentRatesResource">ApiExchangeRatesDocumentExchangeRateDocumentRatesResource</a></li>
+                        <li><a href="#ApiExchangeRatesDocumentResource">ApiExchangeRatesDocumentResource</a></li>
+                        <li><a href="#ExchangeRateDocumentRateResource">ExchangeRateDocumentRateResource</a></li>
+                        <li><a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#ExchangeRateType">ExchangeRateType</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="fc1a04c4-0e61-49f5-a1f3-d48620cb58eb"></a>
-                    <h3>GET ExchangeRatesDocuments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fc1a04c4-0e61-49f5-a1f3-d48620cb58eb"></i></h3>
-					<div class="hidden-copylink" id="copy-fc1a04c4-0e61-49f5-a1f3-d48620cb58eb"><a href="#fc1a04c4-0e61-49f5-a1f3-d48620cb58eb">GET ExchangeRatesDocuments</a></div>
-                    <p class="operation-description">Returns all Exchange Rates Document user has access to.</p>
-				<p>Response:</p>
-					<table>
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="93331908-6af4-442b-aff2-a8edc2dd2625"></a>
+                    <h3>GET ExchangeRatesDocuments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-93331908-6af4-442b-aff2-a8edc2dd2625"></i></h3>
+                    <div class="hidden-copylink" id="copy-93331908-6af4-442b-aff2-a8edc2dd2625"><a href="#93331908-6af4-442b-aff2-a8edc2dd2625">GET ExchangeRatesDocuments</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Exchange Rates Document. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-fc1a04c4-0e61-49f5-a1f3-d48620cb58eb">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
+                    <div class="hidden-copylink" id="copy2-93331908-6af4-442b-aff2-a8edc2dd2625">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fc1a04c4-0e61-49f5-a1f3-d48620cb58eb"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-93331908-6af4-442b-aff2-a8edc2dd2625"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="013934eb-b394-4367-ba23-cbd492d923f9"></a>
-                    <h3>GET ExchangeRatesDocuments (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-013934eb-b394-4367-ba23-cbd492d923f9"></i></h3>
-					<div class="hidden-copylink" id="copy-013934eb-b394-4367-ba23-cbd492d923f9"><a href="#013934eb-b394-4367-ba23-cbd492d923f9">GET ExchangeRatesDocuments (paged)</a></div>
-                    <p class="operation-description">Returns a paginated list of Exchange Rates Document user has access to.</p>
-					<p>The following elements are optional:</p>
+                    <a class="anchor" name="063ccaf9-c2e5-481c-bfaa-ba38c0cc257f"></a>
+                    <h3>GET ExchangeRatesDocuments (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-063ccaf9-c2e5-481c-bfaa-ba38c0cc257f"></i></h3>
+                    <div class="hidden-copylink" id="copy-063ccaf9-c2e5-481c-bfaa-ba38c0cc257f"><a href="#063ccaf9-c2e5-481c-bfaa-ba38c0cc257f">GET ExchangeRatesDocuments (paged)</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Exchange Rates Document. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-013934eb-b394-4367-ba23-cbd492d923f9">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
+                    <div class="hidden-copylink" id="copy2-063ccaf9-c2e5-481c-bfaa-ba38c0cc257f">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-013934eb-b394-4367-ba23-cbd492d923f9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-063ccaf9-c2e5-481c-bfaa-ba38c0cc257f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="73e496fa-4103-45e5-90da-124cbfb778b7"></a>
-                    <h3>GET ExchangeRatesDocument by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-73e496fa-4103-45e5-90da-124cbfb778b7"></i></h3>
-					<div class="hidden-copylink" id="copy-73e496fa-4103-45e5-90da-124cbfb778b7"><a href="#73e496fa-4103-45e5-90da-124cbfb778b7">GET ExchangeRatesDocument by identifier</a></div>
-                    <p class="operation-description">Returns information for a given Exchange Rates Document, by specifying its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="b3a716ed-78c0-44a3-8757-70b951e2c39b"></a>
+                    <h3>GET ExchangeRatesDocument by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b3a716ed-78c0-44a3-8757-70b951e2c39b"></i></h3>
+                    <div class="hidden-copylink" id="copy-b3a716ed-78c0-44a3-8757-70b951e2c39b"><a href="#b3a716ed-78c0-44a3-8757-70b951e2c39b">GET ExchangeRatesDocument by identifier</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Exchange Rates Document.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Exchange Rates Document. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-73e496fa-4103-45e5-90da-124cbfb778b7">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{id}</div>
+                    <div class="hidden-copylink" id="copy2-b3a716ed-78c0-44a3-8757-70b951e2c39b">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-73e496fa-4103-45e5-90da-124cbfb778b7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b3a716ed-78c0-44a3-8757-70b951e2c39b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="2b72c7dd-9d3c-487a-b272-39b818600dca"></a>
-                    <h3>GET ExchangeRatesDocument by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2b72c7dd-9d3c-487a-b272-39b818600dca"></i></h3>
-					<div class="hidden-copylink" id="copy-2b72c7dd-9d3c-487a-b272-39b818600dca"><a href="#2b72c7dd-9d3c-487a-b272-39b818600dca">GET ExchangeRatesDocument by key</a></div>
-                    <p class="operation-description">Returns information for a given Exchange Rates Document, by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="71b824f4-fd02-4fbd-b98f-e692291c58ae"></a>
+                    <h3>GET ExchangeRatesDocument by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-71b824f4-fd02-4fbd-b98f-e692291c58ae"></i></h3>
+                    <div class="hidden-copylink" id="copy-71b824f4-fd02-4fbd-b98f-e692291c58ae"><a href="#71b824f4-fd02-4fbd-b98f-e692291c58ae">GET ExchangeRatesDocument by key</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -264,98 +339,106 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Exchange Rates Document. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-2b72c7dd-9d3c-487a-b272-39b818600dca">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}</div>
+                    <div class="hidden-copylink" id="copy2-71b824f4-fd02-4fbd-b98f-e692291c58ae">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{number}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2b72c7dd-9d3c-487a-b272-39b818600dca"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{number}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-71b824f4-fd02-4fbd-b98f-e692291c58ae"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="52931a75-ec65-4987-b9c9-9d6c5acf0028"></a>
-                    <h3>GET Print ExchangeRatesDocument by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-52931a75-ec65-4987-b9c9-9d6c5acf0028"></i></h3>
-					<div class="hidden-copylink" id="copy-52931a75-ec65-4987-b9c9-9d6c5acf0028"><a href="#52931a75-ec65-4987-b9c9-9d6c5acf0028">GET Print ExchangeRatesDocument by identifier</a></div>
-                    <p class="operation-description">Prints the specified ExchangeRatesDocument.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="0403d034-8a5a-4958-a2f8-5cb9c20c176f"></a>
+                    <h3>GET Print ExchangeRatesDocument by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0403d034-8a5a-4958-a2f8-5cb9c20c176f"></i></h3>
+                    <div class="hidden-copylink" id="copy-0403d034-8a5a-4958-a2f8-5cb9c20c176f"><a href="#0403d034-8a5a-4958-a2f8-5cb9c20c176f">GET Print ExchangeRatesDocument by identifier</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the ExchangeRatesDocument.</td>
+                                <td><i>(string)</i> The identifier of the resource that should be printed.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed ExchangeRatesDocument.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-52931a75-ec65-4987-b9c9-9d6c5acf0028">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{id}/print</div>
+                    <div class="hidden-copylink" id="copy2-0403d034-8a5a-4958-a2f8-5cb9c20c176f">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{id}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{id}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-52931a75-ec65-4987-b9c9-9d6c5acf0028"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0403d034-8a5a-4958-a2f8-5cb9c20c176f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="9fe4ad4c-eb6d-48d8-86cf-598b10fb52bc"></a>
-                    <h3>GET Print ExchangeRatesDocument by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9fe4ad4c-eb6d-48d8-86cf-598b10fb52bc"></i></h3>
-					<div class="hidden-copylink" id="copy-9fe4ad4c-eb6d-48d8-86cf-598b10fb52bc"><a href="#9fe4ad4c-eb6d-48d8-86cf-598b10fb52bc">GET Print ExchangeRatesDocument by key</a></div>
-                    <p class="operation-description">Prints the specified ExchangeRatesDocument by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="70c7f9b1-47f3-4392-9b41-9de4450c2de4"></a>
+                    <h3>GET Print ExchangeRatesDocument by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-70c7f9b1-47f3-4392-9b41-9de4450c2de4"></i></h3>
+                    <div class="hidden-copylink" id="copy-70c7f9b1-47f3-4392-9b41-9de4450c2de4"><a href="#70c7f9b1-47f3-4392-9b41-9de4450c2de4">GET Print ExchangeRatesDocument by key</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -364,104 +447,112 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed ExchangeRatesDocument.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-9fe4ad4c-eb6d-48d8-86cf-598b10fb52bc">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/print</div>
+                    <div class="hidden-copylink" id="copy2-70c7f9b1-47f3-4392-9b41-9de4450c2de4">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{number}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9fe4ad4c-eb6d-48d8-86cf-598b10fb52bc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="POST"></a>
-                    <h2>POST OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>GET /businessCore/exchangeRatesDocuments/{number}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-70c7f9b1-47f3-4392-9b41-9de4450c2de4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="294c6fe5-23eb-46f5-aebb-5fe32031a983"></a>
-                    <h3>POST ExchangeRatesDocuments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-294c6fe5-23eb-46f5-aebb-5fe32031a983"></i></h3>
-					<div class="hidden-copylink" id="copy-294c6fe5-23eb-46f5-aebb-5fe32031a983"><a href="#294c6fe5-23eb-46f5-aebb-5fe32031a983">POST ExchangeRatesDocuments</a></div>
-                    <p class="operation-description">Creates a new Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d2466737-f623-4def-bdd0-f898aeff9580"></a>
+                    <h3>POST ExchangeRatesDocuments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d2466737-f623-4def-bdd0-f898aeff9580"></i></h3>
+                    <div class="hidden-copylink" id="copy-d2466737-f623-4def-bdd0-f898aeff9580"><a href="#d2466737-f623-4def-bdd0-f898aeff9580">POST ExchangeRatesDocuments</a></div>
+                    <p class="operation-description">Creates a new resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">exchangeRatesDocumentResource</td>
-                                <td><i>(ApiExchangeRatesDocumentResource)</i> In the request body, supply a resource containing the Exchange Rates Document information.<br/>See <a href="#ApiExchangeRatesDocumentResource">ApiExchangeRatesDocumentResource.</a></td>
+                                <td><i>(ApiExchangeRatesDocumentResource)</i> The request body should contain the resource that should be created.<br/>See <a href="#ApiExchangeRatesDocumentResource">ApiExchangeRatesDocumentResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns the Exchange Rates Document identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiExchangeRatesDocumentResource">ApiExchangeRatesDocumentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new resource identifier. The resource header location property contains the URL for the new resource. See <a href="#ApiExchangeRatesDocumentResource">ApiExchangeRatesDocumentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">201</td>
-                                <td>The operation was successful and the Exchange Rates Document was created.</td>
+                                <td>Created. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-294c6fe5-23eb-46f5-aebb-5fe32031a983">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
+                    <div class="hidden-copylink" id="copy2-d2466737-f623-4def-bdd0-f898aeff9580">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>POST /businessCore/exchangeRatesDocuments</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-294c6fe5-23eb-46f5-aebb-5fe32031a983"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>POST /businessCore/exchangeRatesDocuments</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d2466737-f623-4def-bdd0-f898aeff9580"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="452459f5-4c57-4944-aca0-c61391aa7f5a"></a>
-                    <h3>POST Exchange Rates Document  <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-452459f5-4c57-4944-aca0-c61391aa7f5a"></i></h3>
-					<div class="hidden-copylink" id="copy-452459f5-4c57-4944-aca0-c61391aa7f5a"><a href="#452459f5-4c57-4944-aca0-c61391aa7f5a">POST Exchange Rates Document </a></div>
-                    <p class="operation-description">Inserts a new Exchange Rate Document Rate in an existing Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="7f63fe7a-b2a6-4cf4-ac12-3cd095cc2afe"></a>
+                    <h3>POST Exchange Rates Document  <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7f63fe7a-b2a6-4cf4-ac12-3cd095cc2afe"></i></h3>
+                    <div class="hidden-copylink" id="copy-7f63fe7a-b2a6-4cf4-ac12-3cd095cc2afe"><a href="#7f63fe7a-b2a6-4cf4-ac12-3cd095cc2afe">POST Exchange Rates Document </a></div>
+                    <p class="operation-description">Inserts a new 'Exchange Rate Document Rate' in the 'Exchange Rates Document'.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -474,49 +565,51 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The operation was successful.</td>
+                                <td>NoContent. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-452459f5-4c57-4944-aca0-c61391aa7f5a">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates</div>
+                    <div class="hidden-copylink" id="copy2-7f63fe7a-b2a6-4cf4-ac12-3cd095cc2afe">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>POST /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-452459f5-4c57-4944-aca0-c61391aa7f5a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="PUT"></a>
-                    <h2>PUT OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>POST /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7f63fe7a-b2a6-4cf4-ac12-3cd095cc2afe"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="63937cc9-0570-4452-9f21-853f5e123b8a"></a>
-                    <h3>PUT Set ConversionFactor ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-63937cc9-0570-4452-9f21-853f5e123b8a"></i></h3>
-					<div class="hidden-copylink" id="copy-63937cc9-0570-4452-9f21-853f5e123b8a"><a href="#63937cc9-0570-4452-9f21-853f5e123b8a">PUT Set ConversionFactor ExchangeRateDocumentRate</a></div>
-                    <p class="operation-description">Updates the ConversionFactor for the specified Exchange Rate Document Rate.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ca8c629d-e91d-442d-a183-d817eabebea8"></a>
+                    <h3>PUT Set ConversionFactor ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ca8c629d-e91d-442d-a183-d817eabebea8"></i></h3>
+                    <div class="hidden-copylink" id="copy-ca8c629d-e91d-442d-a183-d817eabebea8"><a href="#ca8c629d-e91d-442d-a183-d817eabebea8">PUT Set ConversionFactor ExchangeRateDocumentRate</a></div>
+                    <p class="operation-description">Updates the attribute 'ConversionFactor' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -529,47 +622,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(decimal)</i> In the request body, supply the new value for the ConversionFactor.</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-63937cc9-0570-4452-9f21-853f5e123b8a">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/conversionFactor</div>
+                    <div class="hidden-copylink" id="copy2-ca8c629d-e91d-442d-a183-d817eabebea8">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/conversionFactor</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/conversionFactor</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-63937cc9-0570-4452-9f21-853f5e123b8a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/conversionFactor</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ca8c629d-e91d-442d-a183-d817eabebea8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="4adc79f5-2eb7-4382-994e-3e17c10e1885"></a>
-                    <h3>PUT Set ExchangeRateType ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4adc79f5-2eb7-4382-994e-3e17c10e1885"></i></h3>
-					<div class="hidden-copylink" id="copy-4adc79f5-2eb7-4382-994e-3e17c10e1885"><a href="#4adc79f5-2eb7-4382-994e-3e17c10e1885">PUT Set ExchangeRateType ExchangeRatesDocument</a></div>
-                    <p class="operation-description">Updates the ExchangeRateType for the specified Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="6786f787-3e00-4a8a-99c7-f273279d4d13"></a>
+                    <h3>PUT Set ExchangeRateType ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6786f787-3e00-4a8a-99c7-f273279d4d13"></i></h3>
+                    <div class="hidden-copylink" id="copy-6786f787-3e00-4a8a-99c7-f273279d4d13"><a href="#6786f787-3e00-4a8a-99c7-f273279d4d13">PUT Set ExchangeRateType ExchangeRatesDocument</a></div>
+                    <p class="operation-description">Updates the attribute 'ExchangeRateType' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -578,47 +673,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(enum ExchangeRateType)</i> In the request body, supply the new value for the ExchangeRateType.<br/>See <a href="#ExchangeRateType">ExchangeRateType.</a></td>
+                                <td><i>(enum ExchangeRateType)</i> The request body should contain the new value for the attribute.<br/>See <a href="#ExchangeRateType">ExchangeRateType.</a></td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-4adc79f5-2eb7-4382-994e-3e17c10e1885">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateType</div>
+                    <div class="hidden-copylink" id="copy2-6786f787-3e00-4a8a-99c7-f273279d4d13">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateType</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateType</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4adc79f5-2eb7-4382-994e-3e17c10e1885"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateType</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6786f787-3e00-4a8a-99c7-f273279d4d13"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="721d5afa-1ef2-4cbc-81c3-9b0e8997443c"></a>
-                    <h3>PUT Set ExternalId ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-721d5afa-1ef2-4cbc-81c3-9b0e8997443c"></i></h3>
-					<div class="hidden-copylink" id="copy-721d5afa-1ef2-4cbc-81c3-9b0e8997443c"><a href="#721d5afa-1ef2-4cbc-81c3-9b0e8997443c">PUT Set ExternalId ExchangeRatesDocument</a></div>
-                    <p class="operation-description">Updates the ExternalId for the specified Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="62f207b8-56a0-424e-8f87-a5f25504dc67"></a>
+                    <h3>PUT Set ExternalId ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-62f207b8-56a0-424e-8f87-a5f25504dc67"></i></h3>
+                    <div class="hidden-copylink" id="copy-62f207b8-56a0-424e-8f87-a5f25504dc67"><a href="#62f207b8-56a0-424e-8f87-a5f25504dc67">PUT Set ExternalId ExchangeRatesDocument</a></div>
+                    <p class="operation-description">Updates the attribute 'ExternalId' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -627,47 +724,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the ExternalId.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-721d5afa-1ef2-4cbc-81c3-9b0e8997443c">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/externalId</div>
+                    <div class="hidden-copylink" id="copy2-62f207b8-56a0-424e-8f87-a5f25504dc67">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/externalId</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/externalId</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-721d5afa-1ef2-4cbc-81c3-9b0e8997443c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/externalId</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-62f207b8-56a0-424e-8f87-a5f25504dc67"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="e44d1974-02ac-4a5a-a900-5d3858769413"></a>
-                    <h3>PUT Set ExternalVersion ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e44d1974-02ac-4a5a-a900-5d3858769413"></i></h3>
-					<div class="hidden-copylink" id="copy-e44d1974-02ac-4a5a-a900-5d3858769413"><a href="#e44d1974-02ac-4a5a-a900-5d3858769413">PUT Set ExternalVersion ExchangeRatesDocument</a></div>
-                    <p class="operation-description">Updates the ExternalVersion for the specified Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="224af51c-ca0e-4cad-97f6-3a40dc524d72"></a>
+                    <h3>PUT Set ExternalVersion ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-224af51c-ca0e-4cad-97f6-3a40dc524d72"></i></h3>
+                    <div class="hidden-copylink" id="copy-224af51c-ca0e-4cad-97f6-3a40dc524d72"><a href="#224af51c-ca0e-4cad-97f6-3a40dc524d72">PUT Set ExternalVersion ExchangeRatesDocument</a></div>
+                    <p class="operation-description">Updates the attribute 'ExternalVersion' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -676,100 +775,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the ExternalVersion.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-e44d1974-02ac-4a5a-a900-5d3858769413">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/externalVersion</div>
-                    <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/externalVersion</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e44d1974-02ac-4a5a-a900-5d3858769413"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="d21c682a-9871-4489-af5a-483371eb6f7a"></a>
-                    <h3>PUT Set FromCurrency ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d21c682a-9871-4489-af5a-483371eb6f7a"></i></h3>
-					<div class="hidden-copylink" id="copy-d21c682a-9871-4489-af5a-483371eb6f7a"><a href="#d21c682a-9871-4489-af5a-483371eb6f7a">PUT Set FromCurrency ExchangeRateDocumentRate</a></div>
-                    <p class="operation-description">Updates the FromCurrency for the specified Exchange Rate Document Rate.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">number</td>
-                                <td><i>(int)</i> The exchange rates document's number.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">lineId</td>
-                                <td><i>(string)</i> The detail identifier.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the FromCurrency.</td>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-d21c682a-9871-4489-af5a-483371eb6f7a">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromCurrency</div>
+                    <div class="hidden-copylink" id="copy2-224af51c-ca0e-4cad-97f6-3a40dc524d72">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/externalVersion</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromCurrency</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d21c682a-9871-4489-af5a-483371eb6f7a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/externalVersion</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-224af51c-ca0e-4cad-97f6-3a40dc524d72"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="01cd7303-a080-47b2-93bd-58a853be3093"></a>
-                    <h3>PUT Set FromExchangeRateId ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-01cd7303-a080-47b2-93bd-58a853be3093"></i></h3>
-					<div class="hidden-copylink" id="copy-01cd7303-a080-47b2-93bd-58a853be3093"><a href="#01cd7303-a080-47b2-93bd-58a853be3093">PUT Set FromExchangeRateId ExchangeRateDocumentRate</a></div>
-                    <p class="operation-description">Updates the FromExchangeRateId for the specified Exchange Rate Document Rate.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="8897071b-7fcb-445c-9248-c456b6e30ebb"></a>
+                    <h3>PUT Set FromCurrency ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8897071b-7fcb-445c-9248-c456b6e30ebb"></i></h3>
+                    <div class="hidden-copylink" id="copy-8897071b-7fcb-445c-9248-c456b6e30ebb"><a href="#8897071b-7fcb-445c-9248-c456b6e30ebb">PUT Set FromCurrency ExchangeRateDocumentRate</a></div>
+                    <p class="operation-description">Updates the attribute 'FromCurrency' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -782,194 +830,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(Guid)</i> In the request body, supply the new value for the FromExchangeRateId.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-01cd7303-a080-47b2-93bd-58a853be3093">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromExchangeRateId</div>
-                    <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromExchangeRateId</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-01cd7303-a080-47b2-93bd-58a853be3093"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="7cdad126-f6fd-41c6-9388-5eb2c402fd79"></a>
-                    <h3>PUT Set IsActive ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7cdad126-f6fd-41c6-9388-5eb2c402fd79"></i></h3>
-					<div class="hidden-copylink" id="copy-7cdad126-f6fd-41c6-9388-5eb2c402fd79"><a href="#7cdad126-f6fd-41c6-9388-5eb2c402fd79">PUT Set IsActive ExchangeRatesDocument</a></div>
-                    <p class="operation-description">Updates the IsActive for the specified ExchangeRatesDocument.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">number</td>
-                                <td><i>(int)</i> The exchange rates document's number.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-7cdad126-f6fd-41c6-9388-5eb2c402fd79">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/isActive</div>
+                    <div class="hidden-copylink" id="copy2-8897071b-7fcb-445c-9248-c456b6e30ebb">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromCurrency</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/isActive</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7cdad126-f6fd-41c6-9388-5eb2c402fd79"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromCurrency</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8897071b-7fcb-445c-9248-c456b6e30ebb"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="e488d6a9-f316-4857-96c0-8300935d9494"></a>
-                    <h3>PUT Set IsExternallyManaged ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e488d6a9-f316-4857-96c0-8300935d9494"></i></h3>
-					<div class="hidden-copylink" id="copy-e488d6a9-f316-4857-96c0-8300935d9494"><a href="#e488d6a9-f316-4857-96c0-8300935d9494">PUT Set IsExternallyManaged ExchangeRatesDocument</a></div>
-                    <p class="operation-description">Updates the IsExternallyManaged for the specified Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">number</td>
-                                <td><i>(int)</i> The exchange rates document's number.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsExternallyManaged.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-e488d6a9-f316-4857-96c0-8300935d9494">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/isExternallyManaged</div>
-                    <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/isExternallyManaged</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e488d6a9-f316-4857-96c0-8300935d9494"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="9b9a50e3-d453-4e1a-8a95-4436f0b28b2f"></a>
-                    <h3>PUT Set Number ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9b9a50e3-d453-4e1a-8a95-4436f0b28b2f"></i></h3>
-					<div class="hidden-copylink" id="copy-9b9a50e3-d453-4e1a-8a95-4436f0b28b2f"><a href="#9b9a50e3-d453-4e1a-8a95-4436f0b28b2f">PUT Set Number ExchangeRatesDocument</a></div>
-                    <p class="operation-description">Updates the Number for the specified Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">number</td>
-                                <td><i>(int)</i> The exchange rates document's number.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(int)</i> In the request body, supply the new value for the Number.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-9b9a50e3-d453-4e1a-8a95-4436f0b28b2f">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/number</div>
-                    <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/number</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9b9a50e3-d453-4e1a-8a95-4436f0b28b2f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="f3cb9463-5867-402c-8bcb-41537cd23b93"></a>
-                    <h3>PUT Set ToCurrency ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f3cb9463-5867-402c-8bcb-41537cd23b93"></i></h3>
-					<div class="hidden-copylink" id="copy-f3cb9463-5867-402c-8bcb-41537cd23b93"><a href="#f3cb9463-5867-402c-8bcb-41537cd23b93">PUT Set ToCurrency ExchangeRateDocumentRate</a></div>
-                    <p class="operation-description">Updates the ToCurrency for the specified Exchange Rate Document Rate.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="883fa701-79cc-440d-9d86-004a1891ebf2"></a>
+                    <h3>PUT Set FromExchangeRateId ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-883fa701-79cc-440d-9d86-004a1891ebf2"></i></h3>
+                    <div class="hidden-copylink" id="copy-883fa701-79cc-440d-9d86-004a1891ebf2"><a href="#883fa701-79cc-440d-9d86-004a1891ebf2">PUT Set FromExchangeRateId ExchangeRateDocumentRate</a></div>
+                    <p class="operation-description">Updates the attribute 'FromExchangeRateId' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -982,47 +885,206 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the ToCurrency.</td>
+                                <td><i>(Guid)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-f3cb9463-5867-402c-8bcb-41537cd23b93">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toCurrency</div>
+                    <div class="hidden-copylink" id="copy2-883fa701-79cc-440d-9d86-004a1891ebf2">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromExchangeRateId</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toCurrency</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f3cb9463-5867-402c-8bcb-41537cd23b93"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/fromExchangeRateId</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-883fa701-79cc-440d-9d86-004a1891ebf2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7297ddae-a459-445c-9278-a1a2b12aec76"></a>
-                    <h3>PUT Set ToExchangeRateId ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7297ddae-a459-445c-9278-a1a2b12aec76"></i></h3>
-					<div class="hidden-copylink" id="copy-7297ddae-a459-445c-9278-a1a2b12aec76"><a href="#7297ddae-a459-445c-9278-a1a2b12aec76">PUT Set ToExchangeRateId ExchangeRateDocumentRate</a></div>
-                    <p class="operation-description">Updates the ToExchangeRateId for the specified Exchange Rate Document Rate.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="75820af8-480f-4f75-aa83-ee5a26b2726b"></a>
+                    <h3>PUT Set IsActive ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-75820af8-480f-4f75-aa83-ee5a26b2726b"></i></h3>
+                    <div class="hidden-copylink" id="copy-75820af8-480f-4f75-aa83-ee5a26b2726b"><a href="#75820af8-480f-4f75-aa83-ee5a26b2726b">PUT Set IsActive ExchangeRatesDocument</a></div>
+                    <p class="operation-description">Updates the attribute 'IsActive' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> The exchange rates document's number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-75820af8-480f-4f75-aa83-ee5a26b2726b">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-75820af8-480f-4f75-aa83-ee5a26b2726b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ef2aca57-fa44-47e7-86e8-937398b50402"></a>
+                    <h3>PUT Set IsExternallyManaged ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ef2aca57-fa44-47e7-86e8-937398b50402"></i></h3>
+                    <div class="hidden-copylink" id="copy-ef2aca57-fa44-47e7-86e8-937398b50402"><a href="#ef2aca57-fa44-47e7-86e8-937398b50402">PUT Set IsExternallyManaged ExchangeRatesDocument</a></div>
+                    <p class="operation-description">Updates the attribute 'IsExternallyManaged' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> The exchange rates document's number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-ef2aca57-fa44-47e7-86e8-937398b50402">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/isExternallyManaged</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/isExternallyManaged</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ef2aca57-fa44-47e7-86e8-937398b50402"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5b7cec79-7373-4727-906d-1459ef28b58f"></a>
+                    <h3>PUT Set Number ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5b7cec79-7373-4727-906d-1459ef28b58f"></i></h3>
+                    <div class="hidden-copylink" id="copy-5b7cec79-7373-4727-906d-1459ef28b58f"><a href="#5b7cec79-7373-4727-906d-1459ef28b58f">PUT Set Number ExchangeRatesDocument</a></div>
+                    <p class="operation-description">Updates the attribute 'Number' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> The exchange rates document's number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(int)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5b7cec79-7373-4727-906d-1459ef28b58f">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/number</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/number</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5b7cec79-7373-4727-906d-1459ef28b58f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="227bd835-c569-45eb-808b-0cf6a52cee8e"></a>
+                    <h3>PUT Set ToCurrency ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-227bd835-c569-45eb-808b-0cf6a52cee8e"></i></h3>
+                    <div class="hidden-copylink" id="copy-227bd835-c569-45eb-808b-0cf6a52cee8e"><a href="#227bd835-c569-45eb-808b-0cf6a52cee8e">PUT Set ToCurrency ExchangeRateDocumentRate</a></div>
+                    <p class="operation-description">Updates the attribute 'ToCurrency' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1035,47 +1097,104 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(Guid)</i> In the request body, supply the new value for the ToExchangeRateId.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-7297ddae-a459-445c-9278-a1a2b12aec76">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toExchangeRateId</div>
+                    <div class="hidden-copylink" id="copy2-227bd835-c569-45eb-808b-0cf6a52cee8e">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toCurrency</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toExchangeRateId</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7297ddae-a459-445c-9278-a1a2b12aec76"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toCurrency</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-227bd835-c569-45eb-808b-0cf6a52cee8e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a67dc796-16d4-4dbb-892f-1455783b9ab7"></a>
-                    <h3>PUT Set ValidFrom ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a67dc796-16d4-4dbb-892f-1455783b9ab7"></i></h3>
-					<div class="hidden-copylink" id="copy-a67dc796-16d4-4dbb-892f-1455783b9ab7"><a href="#a67dc796-16d4-4dbb-892f-1455783b9ab7">PUT Set ValidFrom ExchangeRatesDocument</a></div>
-                    <p class="operation-description">Updates the ValidFrom for the specified Exchange Rates Document.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="3140022f-0560-4678-b9cd-a7c5f06c9add"></a>
+                    <h3>PUT Set ToExchangeRateId ExchangeRateDocumentRate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3140022f-0560-4678-b9cd-a7c5f06c9add"></i></h3>
+                    <div class="hidden-copylink" id="copy-3140022f-0560-4678-b9cd-a7c5f06c9add"><a href="#3140022f-0560-4678-b9cd-a7c5f06c9add">PUT Set ToExchangeRateId ExchangeRateDocumentRate</a></div>
+                    <p class="operation-description">Updates the attribute 'ToExchangeRateId' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> The exchange rates document's number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Guid)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-3140022f-0560-4678-b9cd-a7c5f06c9add">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toExchangeRateId</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}/toExchangeRateId</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3140022f-0560-4678-b9cd-a7c5f06c9add"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="973d0f60-1bfa-407c-998b-1cdaf99458c7"></a>
+                    <h3>PUT Set ValidFrom ExchangeRatesDocument <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-973d0f60-1bfa-407c-998b-1cdaf99458c7"></i></h3>
+                    <div class="hidden-copylink" id="copy-973d0f60-1bfa-407c-998b-1cdaf99458c7"><a href="#973d0f60-1bfa-407c-998b-1cdaf99458c7">PUT Set ValidFrom ExchangeRatesDocument</a></div>
+                    <p class="operation-description">Updates the attribute 'ValidFrom' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1084,53 +1203,55 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(DateTime)</i> In the request body, supply the new value for the ValidFrom.</td>
+                                <td><i>(DateTime)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-a67dc796-16d4-4dbb-892f-1455783b9ab7">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/validFrom</div>
+                    <div class="hidden-copylink" id="copy2-973d0f60-1bfa-407c-998b-1cdaf99458c7">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/validFrom</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/validFrom</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a67dc796-16d4-4dbb-892f-1455783b9ab7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="DELETE"></a>
-                    <h2>DELETE OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>PUT /businessCore/exchangeRatesDocuments/{number}/validFrom</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-973d0f60-1bfa-407c-998b-1cdaf99458c7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a88857b1-fded-4e43-a85c-7f0aa1bc6e67"></a>
-                    <h3>DELETE Exchange Rate Document Rate by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a88857b1-fded-4e43-a85c-7f0aa1bc6e67"></i></h3>
-					<div class="hidden-copylink" id="copy-a88857b1-fded-4e43-a85c-7f0aa1bc6e67"><a href="#a88857b1-fded-4e43-a85c-7f0aa1bc6e67">DELETE Exchange Rate Document Rate by identifier</a></div>
-                    <p class="operation-description">Deletes the specified Exchange Rate Document Rate.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="18b2deb5-8b7d-481d-a656-c813df7b45e3"></a>
+                    <h3>DELETE Exchange Rate Document Rate by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-18b2deb5-8b7d-481d-a656-c813df7b45e3"></i></h3>
+                    <div class="hidden-copylink" id="copy-18b2deb5-8b7d-481d-a656-c813df7b45e3"><a href="#18b2deb5-8b7d-481d-a656-c813df7b45e3">DELETE Exchange Rate Document Rate by identifier</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1143,92 +1264,100 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The operation was successful.</td>
+                                <td>NoContent. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-a88857b1-fded-4e43-a85c-7f0aa1bc6e67">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}</div>
+                    <div class="hidden-copylink" id="copy2-18b2deb5-8b7d-481d-a656-c813df7b45e3">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a88857b1-fded-4e43-a85c-7f0aa1bc6e67"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /businessCore/exchangeRatesDocuments/{number}/exchangeRateDocumentRates/{lineId}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-18b2deb5-8b7d-481d-a656-c813df7b45e3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="d8dd52d8-f463-43d8-96d4-a112fea5ca69"></a>
-                    <h3>DELETE ExchangeRatesDocument by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d8dd52d8-f463-43d8-96d4-a112fea5ca69"></i></h3>
-					<div class="hidden-copylink" id="copy-d8dd52d8-f463-43d8-96d4-a112fea5ca69"><a href="#d8dd52d8-f463-43d8-96d4-a112fea5ca69">DELETE ExchangeRatesDocument by identifier</a></div>
-                    <p class="operation-description">Deletes the specified Exchange Rates Document by its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="dff39c44-bf6b-4be4-98a2-bdb0887b64ee"></a>
+                    <h3>DELETE ExchangeRatesDocument by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-dff39c44-bf6b-4be4-98a2-bdb0887b64ee"></i></h3>
+                    <div class="hidden-copylink" id="copy-dff39c44-bf6b-4be4-98a2-bdb0887b64ee"><a href="#dff39c44-bf6b-4be4-98a2-bdb0887b64ee">DELETE ExchangeRatesDocument by identifier</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Exchange Rates Document.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Exchange Rates Document was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Exchange Rates Document does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-d8dd52d8-f463-43d8-96d4-a112fea5ca69">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{id}</div>
+                    <div class="hidden-copylink" id="copy2-dff39c44-bf6b-4be4-98a2-bdb0887b64ee">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /businessCore/exchangeRatesDocuments/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d8dd52d8-f463-43d8-96d4-a112fea5ca69"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /businessCore/exchangeRatesDocuments/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-dff39c44-bf6b-4be4-98a2-bdb0887b64ee"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="9713a8f5-ef85-415f-b66b-94765ee44f7e"></a>
-                    <h3>DELETE ExchangeRatesDocument by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9713a8f5-ef85-415f-b66b-94765ee44f7e"></i></h3>
-					<div class="hidden-copylink" id="copy-9713a8f5-ef85-415f-b66b-94765ee44f7e"><a href="#9713a8f5-ef85-415f-b66b-94765ee44f7e">DELETE ExchangeRatesDocument by key</a></div>
-                    <p class="operation-description">Deletes the specified Exchange Rates Document by its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="b488e87b-f842-459b-af05-994a79791c1c"></a>
+                    <h3>DELETE ExchangeRatesDocument by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b488e87b-f842-459b-af05-994a79791c1c"></i></h3>
+                    <div class="hidden-copylink" id="copy-b488e87b-f842-459b-af05-994a79791c1c"><a href="#b488e87b-f842-459b-af05-994a79791c1c">DELETE ExchangeRatesDocument by key</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1237,253 +1366,290 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Exchange Rates Document was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Exchange Rates Document does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-9713a8f5-ef85-415f-b66b-94765ee44f7e">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}</div>
+                    <div class="hidden-copylink" id="copy2-b488e87b-f842-459b-af05-994a79791c1c">api/{tenantKey}/{orgKey}/businessCore/exchangeRatesDocuments/{number}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /businessCore/exchangeRatesDocuments/{number}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9713a8f5-ef85-415f-b66b-94765ee44f7e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /businessCore/exchangeRatesDocuments/{number}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b488e87b-f842-459b-af05-994a79791c1c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
-					<br />
-                    <a class="anchor" name="ExchangeRatesDocumentResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ExchangeRatesDocumentResourceResourceDiv')">ExchangeRatesDocumentResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ExchangeRatesDocumentResourceResourceDiv" style="display:none">
+                    <br />
+                    <a class="anchor" name="ApiExchangeRatesDocumentExchangeRateDocumentRatesResource"></a>
+                    <h4>ApiExchangeRatesDocumentExchangeRateDocumentRatesResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiExchangeRatesDocumentExchangeRateDocumentRatesResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiExchangeRatesDocumentExchangeRateDocumentRatesResource"><a href="#ApiExchangeRatesDocumentExchangeRateDocumentRatesResource">ApiExchangeRatesDocumentExchangeRateDocumentRatesResource</a></div>
 	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">number</td>
-                                <td  class="wrap"><i>(int)</i> The exchange rates document's number.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">validFrom</td>
-                                <td  class="wrap"><i>(DateTime)</i> The start date for validity period.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">exchangeRateType</td>
-                                <td  class="wrap"><i>(enum ExchangeRateType)</i> The exchange rates document's type.<br/>See <a href="#ExchangeRateType">ExchangeRateType.</a></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">isExternallyManaged</td>
-                                <td  class="wrap"><i>(bool)</i> A flag indicating if the exchange rates document is externally managed.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">exchangeRateDocumentRates</td>
-                                <td  class="wrap"><i>(List of ExchangeRateDocumentRateResource)</i> The rates contained on the exchange rates document.<br/>See <a href="#ExchangeRateDocumentRateResource">ExchangeRateDocumentRateResource.</a></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">externalId</td>
-                                <td  class="wrap"><i>(string)</i> The external id for the exchange rates document.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">externalVersion</td>
-                                <td  class="wrap"><i>(string)</i> The external version for the exchange rates document.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
-                    <a class="anchor" name="ExchangeRateDocumentRateResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ExchangeRateDocumentRateResourceResourceDiv')">ExchangeRateDocumentRateResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ExchangeRateDocumentRateResourceResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">conversionFactor</td>
                                 <td  class="wrap"><i>(decimal)</i> The exchange rate conversion factor. Reference value for the calculation of values. The price of one country's currency expressed in another country's currency.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">toCurrency</td>
                                 <td  class="wrap"><i>(string)</i> The exchange rate target currency. Money unit (currency) that establishes the target unit into which the calculation of a currency exchange will be done.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">fromCurrency</td>
                                 <td  class="wrap"><i>(string)</i> The exchange rate source currency. Original money unit (currency) that establishes the baseline for the calculation of a currency exchange.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
+
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">fromExchangeRateId</td>
                                 <td  class="wrap"><i>(Guid)</i> The source exchange rate identifier.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">toExchangeRateId</td>
                                 <td  class="wrap"><i>(Guid)</i> The target exchange rate identifier.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
                     <a class="anchor" name="ApiExchangeRatesDocumentResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiExchangeRatesDocumentResourceResourceDiv')">ApiExchangeRatesDocumentResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiExchangeRatesDocumentResourceResourceDiv" style="display:none">
+                    <h4>ApiExchangeRatesDocumentResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiExchangeRatesDocumentResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiExchangeRatesDocumentResource"><a href="#ApiExchangeRatesDocumentResource">ApiExchangeRatesDocumentResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">number</td>
                                 <td  class="wrap"><i>(int)</i> The exchange rates document's number.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">validFrom</td>
                                 <td  class="wrap"><i>(DateTime)</i> The start date for validity period.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">exchangeRateType</td>
                                 <td  class="wrap"><i>(enum ExchangeRateType)</i> The exchange rates document's type.<br/>See <a href="#ExchangeRateType">ExchangeRateType.</a></td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">isExternallyManaged</td>
                                 <td  class="wrap"><i>(bool)</i> A flag indicating if the exchange rates document is externally managed.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
+
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">exchangeRateDocumentRates</td>
                                 <td title="(List of ApiExchangeRatesDocumentExchangeRateDocumentRatesResource) The rates contained on the exchange rates document. See ApiExchangeRatesDocumentExchangeRateDocumentRatesResource." class="wrap"><i>(List of ApiExchangeRatesDocumentExchangeRateDocumentRatesResource)</i> The rates contained on the exchange rates document.<br/>See <a href="#ApiExchangeRatesDocumentExchangeRateDocumentRatesResource">ApiExchangeRatesDocumentExchangeRateDocumentRatesResource.</a></td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">externalId</td>
                                 <td  class="wrap"><i>(string)</i> The external id for the exchange rates document.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">externalVersion</td>
                                 <td  class="wrap"><i>(string)</i> The external version for the exchange rates document.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
-                    <a class="anchor" name="ApiExchangeRatesDocumentExchangeRateDocumentRatesResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiExchangeRatesDocumentExchangeRateDocumentRatesResourceResourceDiv')">ApiExchangeRatesDocumentExchangeRateDocumentRatesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiExchangeRatesDocumentExchangeRateDocumentRatesResourceResourceDiv" style="display:none">
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ExchangeRateDocumentRateResource"></a>
+                    <h4>ExchangeRateDocumentRateResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ExchangeRateDocumentRateResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ExchangeRateDocumentRateResource"><a href="#ExchangeRateDocumentRateResource">ExchangeRateDocumentRateResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">conversionFactor</td>
                                 <td  class="wrap"><i>(decimal)</i> The exchange rate conversion factor. Reference value for the calculation of values. The price of one country's currency expressed in another country's currency.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">toCurrency</td>
                                 <td  class="wrap"><i>(string)</i> The exchange rate target currency. Money unit (currency) that establishes the target unit into which the calculation of a currency exchange will be done.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">fromCurrency</td>
                                 <td  class="wrap"><i>(string)</i> The exchange rate source currency. Original money unit (currency) that establishes the baseline for the calculation of a currency exchange.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
+
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">fromExchangeRateId</td>
                                 <td  class="wrap"><i>(Guid)</i> The source exchange rate identifier.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">toExchangeRateId</td>
                                 <td  class="wrap"><i>(Guid)</i> The target exchange rate identifier.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ExchangeRatesDocumentResource"></a>
+                    <h4>ExchangeRatesDocumentResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ExchangeRatesDocumentResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ExchangeRatesDocumentResource"><a href="#ExchangeRatesDocumentResource">ExchangeRatesDocumentResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td  class="wrap"><i>(int)</i> The exchange rates document's number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(DateTime)</i> The start date for validity period.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">exchangeRateType</td>
+                                <td  class="wrap"><i>(enum ExchangeRateType)</i> The exchange rates document's type.<br/>See <a href="#ExchangeRateType">ExchangeRateType.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the exchange rates document is externally managed.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">exchangeRateDocumentRates</td>
+                                <td  class="wrap"><i>(List of ExchangeRateDocumentRateResource)</i> The rates contained on the exchange rates document.<br/>See <a href="#ExchangeRateDocumentRateResource">ExchangeRateDocumentRateResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external id for the exchange rates document.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the exchange rates document.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Enumerations</h2>
-					<br />
+                    <br />
                     <a class="anchor" name="ExchangeRateType"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ExchangeRateTypeValueListDiv')">ExchangeRateType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ExchangeRateTypeValueListDiv" style="display:none">
+                    <h4>ExchangeRateType <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ExchangeRateType"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-ExchangeRateType"><a href="#ExchangeRateType">ExchangeRateType</a></div>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">1</td>
                                 <td>Market</td>
-								<td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">2</td>
                                 <td>Organization</td>
-								<td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">3</td>
                                 <td>User</td>
-								<td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
 
-					<br />
-					<br />
-					</div>
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </body>
-	<script>
-		var clipboard = new Clipboard('.copy-clipboard');
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
 
-		clipboard.on('success', function(e) {
-		  showTooltip(e.trigger, 'Copied!', 'left');
-		});
-		
-		clipboard.on('error', function(e) {
-		  showTooltip(e.trigger, 'Error!', 'left');
-		});
-	</script>
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
 </html>

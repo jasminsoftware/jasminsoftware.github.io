@@ -5,259 +5,334 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
-	<script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-	<title>Materials Management | Item Adjustment</title>
+    <title>Jasmin Developers - Materials Management | Item Adjustment</title>
     </header>
 
     <body>
         <div class="header">
             <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div class="title">Jasmin Developers - Web API Reference</div>
             <div id="search" class="search">
                 <i class="search-icon fa fa-search" aria-hidden="true"></i>
                 <input class="typeahead" type="text" placeholder="Search">
             </div>
         </div>
         <div class="sidebar" id="sidebar">
-	<a  class="menu-item " href="index.html">
-		Overview
-	</a>
-	<a class="menu-item" href="accountspayable.html">
-		Accounts Payable
-	</a>
-	<a class="menu-item" href="accountsreceivable.html">
-		Accounts Receivable
-	</a>
-	<a class="menu-item" href="financials.html">
-		Financials
-	</a>
-	<a class="menu-item" href="goodsreceipt.html">
-		Goods Receipt
-	</a>
-	<a class="menu-item" href="logistics.html">
-		Logistics
-	</a>
-	<a class="menu-item" href="masterdatabusinessentities.html">
-		Master Data Business Entities
-	</a>
-	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
-		Materials Management
+    <a  class="menu-item " href="index.html">
+        Overview
     </a>
-	<a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
-		Adjustment Reason
-	</a>
-	<a class="menu-subitem menu-item-selected" href="materialsmanagement.itemadjustments.html">
-		Item Adjustment
-	</a>
-	<a class="menu-subitem " href="materialscore.itemsubtypes.html">
-		Item Subtype
-	</a>
-	<a class="menu-subitem " href="materialscore.materialsitems.html">
-		Materials Item
-	</a>
-	<a class="menu-subitem " href="materialscore.materialssetups.html">
-		Materials Setup
-	</a>
-	<a class="menu-subitem " href="materialscore.warehouses.html">
-		Warehouse
-	</a>
-	<a class="menu-item" href="onlinestore.html">
-		Online Store
-	</a>
-	<a class="menu-item" href="platform.html">
-		Platform
-	</a>
-	<a class="menu-item" href="purchases.html">
-		Purchases
-	</a>
-	<a class="menu-item" href="sales.html">
-		Sales
-	</a>
-	<a class="menu-item" href="shipping.html">
-		Shipping
-	</a>
-	<a class="menu-item" href="taxes.html">
-		Taxes
-	</a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+        Adjustment Reason
+    </a>
+    <a class="menu-subitem menu-item-selected" href="materialsmanagement.itemadjustments.html">
+        Item Adjustment
+    </a>
+    <a class="menu-subitem " href="materialscore.itemsubtypes.html">
+        Item Subtype
+    </a>
+    <a class="menu-subitem " href="materialscore.materialsitems.html">
+        Materials Item
+    </a>
+    <a class="menu-subitem " href="materialscore.materialssetups.html">
+        Materials Setup
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.stocktransferorders.html">
+        Stock Transfer Order
+    </a>
+    <a class="menu-subitem " href="materialscore.warehouses.html">
+        Warehouse
+    </a>
+    <a class="menu-item" href="onlinestore.html">
+        Online Store
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
 </div>
         <div class="content">
             <div class="content-section">
                 <div class="content-section-col1">
                     <h1>Materials Management | Item Adjustment</h1>
-                    <h3>Overview</h3>
+                    <p>
+                    Service to manage entities of type 'ItemAdjustment'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
                     <table>
                         <tbody>
                             <tr>
                                 <td>URL</td>
                                 <td class="breakword url-cell">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-materialsmanagement-itemadjustments"></i></td>
-								<div class="hidden-copylink" id="copy-materialsmanagement-itemadjustments">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
+                                <div class="hidden-copylink" id="copy-materialsmanagement-itemadjustments">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
                                 <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
                             </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td class="breakword">Service to manage entities of type 'ItemAdjustment'.</td>
-                            </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="content-section-col2"></div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="GET"></a>
-                    <h2>GET OPERATIONS</h2>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#56687e1b-b9dd-4152-88cd-b7e01b7b6820">GET ItemAdjustments</a></li>
+                            <li><a href="#f6e7dee1-d4c6-4753-81a8-661ea445fa4c">GET ItemAdjustments (paged)</a></li>
+                            <li><a href="#a4a15e4a-b9aa-4c0a-9011-5daf42bfbc13">GET ItemAdjustment by identifier</a></li>
+                            <li><a href="#19a31faa-5936-420e-9469-c7360f696bc3">GET ItemAdjustment by key</a></li>
+                            <li><a href="#b30aee13-b14d-43a4-adef-272e80558980">GET Print ItemAdjustment by identifier</a></li>
+                            <li><a href="#71c2beb7-3a03-4171-9412-52804292aaa7">GET Print ItemAdjustment by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#3a0892dd-b6f9-42f7-8731-41d9e5a08b72">POST ItemAdjustments</a></li>
+                            <li><a href="#4336050d-91dd-48b9-a4ad-79df55f1cbda">POST Item Adjustment </a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#df91d972-a71f-45bd-9ee9-b731a745f1ea">PUT Set IsActive ItemAdjustment</a></li>
+                            <li><a href="#dc518d12-3c5e-4ebb-bcd1-030850f57834">PUT Set PostingDate ItemAdjustment</a></li>
+                            <li><a href="#b7e75b22-4959-4de8-9879-5d6586011dc1">PUT Set Remarks ItemAdjustment</a></li>
+                            <li><a href="#b7e445f9-292a-4527-9560-47815773fa9b">PUT Set Note ItemAdjustment</a></li>
+                            <li><a href="#230c2414-ee90-404f-9941-9baee92211c0">PUT Set Quantity ItemAdjustmentLine</a></li>
+                            <li><a href="#5988fce5-2ac2-4bf0-a6b9-0ded6e3b0757">PUT Set UnitPrice ItemAdjustmentLine</a></li>
+                            <li><a href="#34d4a2cb-254f-4143-8c6f-dd5a7a7de85b">PUT Set Unit ItemAdjustmentLine</a></li>
+                            <li><a href="#6f4c2f39-86c8-478d-9c80-6cf7675d72e9">PUT Set MaterialsItem ItemAdjustmentLine</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#f7bbee70-f468-45b2-ad59-37d2bcb14d97">DELETE Item Adjustment Line by identifier</a></li>
+                            <li><a href="#9d1620de-805c-4474-a7c9-929db85733a2">DELETE ItemAdjustment by identifier</a></li>
+                            <li><a href="#b49789bc-b2c3-43b3-bc32-67852e8e5cec">DELETE ItemAdjustment by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiItemAdjustmentDocumentLinesResource">ApiItemAdjustmentDocumentLinesResource</a></li>
+                        <li><a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource</a></li>
+                        <li><a href="#ItemAdjustmentLineResource">ItemAdjustmentLineResource</a></li>
+                        <li><a href="#ItemAdjustmentResource">ItemAdjustmentResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#AdjustmentType">AdjustmentType</a></li>
+                        <li><a href="#ItemType">ItemType</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="02880cd3-d9ed-4333-8d2b-fd77808b88b2"></a>
-                    <h3>GET ItemAdjustments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-02880cd3-d9ed-4333-8d2b-fd77808b88b2"></i></h3>
-					<div class="hidden-copylink" id="copy-02880cd3-d9ed-4333-8d2b-fd77808b88b2"><a href="#02880cd3-d9ed-4333-8d2b-fd77808b88b2">GET ItemAdjustments</a></div>
-                    <p class="operation-description">Returns all Item Adjustment user has access to.</p>
-				<p>Response:</p>
-					<table>
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="56687e1b-b9dd-4152-88cd-b7e01b7b6820"></a>
+                    <h3>GET ItemAdjustments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-56687e1b-b9dd-4152-88cd-b7e01b7b6820"></i></h3>
+                    <div class="hidden-copylink" id="copy-56687e1b-b9dd-4152-88cd-b7e01b7b6820"><a href="#56687e1b-b9dd-4152-88cd-b7e01b7b6820">GET ItemAdjustments</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-02880cd3-d9ed-4333-8d2b-fd77808b88b2">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
+                    <div class="hidden-copylink" id="copy2-56687e1b-b9dd-4152-88cd-b7e01b7b6820">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-02880cd3-d9ed-4333-8d2b-fd77808b88b2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-56687e1b-b9dd-4152-88cd-b7e01b7b6820"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7a0648f1-fe89-4fbb-a8b6-275b990f4255"></a>
-                    <h3>GET ItemAdjustments (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7a0648f1-fe89-4fbb-a8b6-275b990f4255"></i></h3>
-					<div class="hidden-copylink" id="copy-7a0648f1-fe89-4fbb-a8b6-275b990f4255"><a href="#7a0648f1-fe89-4fbb-a8b6-275b990f4255">GET ItemAdjustments (paged)</a></div>
-                    <p class="operation-description">Returns a paginated list of Item Adjustment user has access to.</p>
-					<p>The following elements are optional:</p>
+                    <a class="anchor" name="f6e7dee1-d4c6-4753-81a8-661ea445fa4c"></a>
+                    <h3>GET ItemAdjustments (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f6e7dee1-d4c6-4753-81a8-661ea445fa4c"></i></h3>
+                    <div class="hidden-copylink" id="copy-f6e7dee1-d4c6-4753-81a8-661ea445fa4c"><a href="#f6e7dee1-d4c6-4753-81a8-661ea445fa4c">GET ItemAdjustments (paged)</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-7a0648f1-fe89-4fbb-a8b6-275b990f4255">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
+                    <div class="hidden-copylink" id="copy2-f6e7dee1-d4c6-4753-81a8-661ea445fa4c">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7a0648f1-fe89-4fbb-a8b6-275b990f4255"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f6e7dee1-d4c6-4753-81a8-661ea445fa4c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="54e6880f-4ae1-4997-97e2-6409d48e47e0"></a>
-                    <h3>GET ItemAdjustment by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-54e6880f-4ae1-4997-97e2-6409d48e47e0"></i></h3>
-					<div class="hidden-copylink" id="copy-54e6880f-4ae1-4997-97e2-6409d48e47e0"><a href="#54e6880f-4ae1-4997-97e2-6409d48e47e0">GET ItemAdjustment by identifier</a></div>
-                    <p class="operation-description">Returns information for a given Item Adjustment, by specifying its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="a4a15e4a-b9aa-4c0a-9011-5daf42bfbc13"></a>
+                    <h3>GET ItemAdjustment by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a4a15e4a-b9aa-4c0a-9011-5daf42bfbc13"></i></h3>
+                    <div class="hidden-copylink" id="copy-a4a15e4a-b9aa-4c0a-9011-5daf42bfbc13"><a href="#a4a15e4a-b9aa-4c0a-9011-5daf42bfbc13">GET ItemAdjustment by identifier</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Item Adjustment.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-54e6880f-4ae1-4997-97e2-6409d48e47e0">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{id}</div>
+                    <div class="hidden-copylink" id="copy2-a4a15e4a-b9aa-4c0a-9011-5daf42bfbc13">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-54e6880f-4ae1-4997-97e2-6409d48e47e0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a4a15e4a-b9aa-4c0a-9011-5daf42bfbc13"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="e0d4e647-ffcd-4494-9201-2d360eb1680f"></a>
-                    <h3>GET ItemAdjustment by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e0d4e647-ffcd-4494-9201-2d360eb1680f"></i></h3>
-					<div class="hidden-copylink" id="copy-e0d4e647-ffcd-4494-9201-2d360eb1680f"><a href="#e0d4e647-ffcd-4494-9201-2d360eb1680f">GET ItemAdjustment by key</a></div>
-                    <p class="operation-description">Returns information for a given Item Adjustment, by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="19a31faa-5936-420e-9469-c7360f696bc3"></a>
+                    <h3>GET ItemAdjustment by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-19a31faa-5936-420e-9469-c7360f696bc3"></i></h3>
+                    <div class="hidden-copylink" id="copy-19a31faa-5936-420e-9469-c7360f696bc3"><a href="#19a31faa-5936-420e-9469-c7360f696bc3">GET ItemAdjustment by key</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">itemAdjustmentKey</td>
@@ -265,103 +340,111 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Item Adjustment. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#ItemAdjustmentResource">ItemAdjustmentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-e0d4e647-ffcd-4494-9201-2d360eb1680f">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div>
+                    <div class="hidden-copylink" id="copy2-19a31faa-5936-420e-9469-c7360f696bc3">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e0d4e647-ffcd-4494-9201-2d360eb1680f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-19a31faa-5936-420e-9469-c7360f696bc3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="aa7db972-d303-4b31-ab44-5cf929301481"></a>
-                    <h3>GET Print ItemAdjustment by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-aa7db972-d303-4b31-ab44-5cf929301481"></i></h3>
-					<div class="hidden-copylink" id="copy-aa7db972-d303-4b31-ab44-5cf929301481"><a href="#aa7db972-d303-4b31-ab44-5cf929301481">GET Print ItemAdjustment by identifier</a></div>
-                    <p class="operation-description">Prints the specified ItemAdjustment.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="b30aee13-b14d-43a4-adef-272e80558980"></a>
+                    <h3>GET Print ItemAdjustment by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b30aee13-b14d-43a4-adef-272e80558980"></i></h3>
+                    <div class="hidden-copylink" id="copy-b30aee13-b14d-43a4-adef-272e80558980"><a href="#b30aee13-b14d-43a4-adef-272e80558980">GET Print ItemAdjustment by identifier</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the ItemAdjustment.</td>
+                                <td><i>(string)</i> The identifier of the resource that should be printed.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed ItemAdjustment.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-aa7db972-d303-4b31-ab44-5cf929301481">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{id}/print</div>
+                    <div class="hidden-copylink" id="copy2-b30aee13-b14d-43a4-adef-272e80558980">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{id}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{id}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-aa7db972-d303-4b31-ab44-5cf929301481"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b30aee13-b14d-43a4-adef-272e80558980"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="5117f579-dd6d-4fce-967d-0d9c07f4a813"></a>
-                    <h3>GET Print ItemAdjustment by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5117f579-dd6d-4fce-967d-0d9c07f4a813"></i></h3>
-					<div class="hidden-copylink" id="copy-5117f579-dd6d-4fce-967d-0d9c07f4a813"><a href="#5117f579-dd6d-4fce-967d-0d9c07f4a813">GET Print ItemAdjustment by key</a></div>
-                    <p class="operation-description">Prints the specified ItemAdjustment by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="71c2beb7-3a03-4171-9412-52804292aaa7"></a>
+                    <h3>GET Print ItemAdjustment by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-71c2beb7-3a03-4171-9412-52804292aaa7"></i></h3>
+                    <div class="hidden-copylink" id="copy-71c2beb7-3a03-4171-9412-52804292aaa7"><a href="#71c2beb7-3a03-4171-9412-52804292aaa7">GET Print ItemAdjustment by key</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested ItemAdjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">itemAdjustmentKey</td>
@@ -369,104 +452,112 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed ItemAdjustment.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-5117f579-dd6d-4fce-967d-0d9c07f4a813">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/print</div>
+                    <div class="hidden-copylink" id="copy2-71c2beb7-3a03-4171-9412-52804292aaa7">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5117f579-dd6d-4fce-967d-0d9c07f4a813"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="POST"></a>
-                    <h2>POST OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>GET /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-71c2beb7-3a03-4171-9412-52804292aaa7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="075a8f4c-318a-4e2e-8093-e060dbb2dc36"></a>
-                    <h3>POST ItemAdjustments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-075a8f4c-318a-4e2e-8093-e060dbb2dc36"></i></h3>
-					<div class="hidden-copylink" id="copy-075a8f4c-318a-4e2e-8093-e060dbb2dc36"><a href="#075a8f4c-318a-4e2e-8093-e060dbb2dc36">POST ItemAdjustments</a></div>
-                    <p class="operation-description">Creates a new Item Adjustment.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3a0892dd-b6f9-42f7-8731-41d9e5a08b72"></a>
+                    <h3>POST ItemAdjustments <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3a0892dd-b6f9-42f7-8731-41d9e5a08b72"></i></h3>
+                    <div class="hidden-copylink" id="copy-3a0892dd-b6f9-42f7-8731-41d9e5a08b72"><a href="#3a0892dd-b6f9-42f7-8731-41d9e5a08b72">POST ItemAdjustments</a></div>
+                    <p class="operation-description">Creates a new resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">itemAdjustmentResource</td>
-                                <td><i>(ApiItemAdjustmentResource)</i> In the request body, supply a resource containing the Item Adjustment information.<br/>See <a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource.</a></td>
+                                <td><i>(ApiItemAdjustmentResource)</i> The request body should contain the resource that should be created.<br/>See <a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns the Item Adjustment identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new resource identifier. The resource header location property contains the URL for the new resource. See <a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">201</td>
-                                <td>The operation was successful and the Item Adjustment was created.</td>
+                                <td>Created. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-075a8f4c-318a-4e2e-8093-e060dbb2dc36">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
+                    <div class="hidden-copylink" id="copy2-3a0892dd-b6f9-42f7-8731-41d9e5a08b72">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>POST /materialsManagement/itemAdjustments</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-075a8f4c-318a-4e2e-8093-e060dbb2dc36"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>POST /materialsManagement/itemAdjustments</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3a0892dd-b6f9-42f7-8731-41d9e5a08b72"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="68976030-28f1-4eca-ae0d-9b9a6be249c1"></a>
-                    <h3>POST Item Adjustment  <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-68976030-28f1-4eca-ae0d-9b9a6be249c1"></i></h3>
-					<div class="hidden-copylink" id="copy-68976030-28f1-4eca-ae0d-9b9a6be249c1"><a href="#68976030-28f1-4eca-ae0d-9b9a6be249c1">POST Item Adjustment </a></div>
-                    <p class="operation-description">Inserts a new Item Adjustment Line in an existing Item Adjustment.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="4336050d-91dd-48b9-a4ad-79df55f1cbda"></a>
+                    <h3>POST Item Adjustment  <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4336050d-91dd-48b9-a4ad-79df55f1cbda"></i></h3>
+                    <div class="hidden-copylink" id="copy-4336050d-91dd-48b9-a4ad-79df55f1cbda"><a href="#4336050d-91dd-48b9-a4ad-79df55f1cbda">POST Item Adjustment </a></div>
+                    <p class="operation-description">Inserts a new 'Item Adjustment Line' in the 'Item Adjustment'.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -475,7 +566,7 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
@@ -483,49 +574,51 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The operation was successful.</td>
+                                <td>NoContent. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-68976030-28f1-4eca-ae0d-9b9a6be249c1">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines</div>
+                    <div class="hidden-copylink" id="copy2-4336050d-91dd-48b9-a4ad-79df55f1cbda">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>POST /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-68976030-28f1-4eca-ae0d-9b9a6be249c1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="PUT"></a>
-                    <h2>PUT OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>POST /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4336050d-91dd-48b9-a4ad-79df55f1cbda"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="77e3bbc1-7372-4109-8a6d-93bda4db6f8f"></a>
-                    <h3>PUT Set IsActive ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-77e3bbc1-7372-4109-8a6d-93bda4db6f8f"></i></h3>
-					<div class="hidden-copylink" id="copy-77e3bbc1-7372-4109-8a6d-93bda4db6f8f"><a href="#77e3bbc1-7372-4109-8a6d-93bda4db6f8f">PUT Set IsActive ItemAdjustment</a></div>
-                    <p class="operation-description">Updates the IsActive for the specified ItemAdjustment.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="df91d972-a71f-45bd-9ee9-b731a745f1ea"></a>
+                    <h3>PUT Set IsActive ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-df91d972-a71f-45bd-9ee9-b731a745f1ea"></i></h3>
+                    <div class="hidden-copylink" id="copy-df91d972-a71f-45bd-9ee9-b731a745f1ea"><a href="#df91d972-a71f-45bd-9ee9-b731a745f1ea">PUT Set IsActive ItemAdjustment</a></div>
+                    <p class="operation-description">Updates the attribute 'IsActive' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -534,51 +627,57 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested ItemAdjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-77e3bbc1-7372-4109-8a6d-93bda4db6f8f">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/isActive</div>
+                    <div class="hidden-copylink" id="copy2-df91d972-a71f-45bd-9ee9-b731a745f1ea">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/isActive</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/isActive</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-77e3bbc1-7372-4109-8a6d-93bda4db6f8f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-df91d972-a71f-45bd-9ee9-b731a745f1ea"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="1a349a7c-a604-40c7-85c7-03e5826409d6"></a>
-                    <h3>PUT Set MaterialsItem ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1a349a7c-a604-40c7-85c7-03e5826409d6"></i></h3>
-					<div class="hidden-copylink" id="copy-1a349a7c-a604-40c7-85c7-03e5826409d6"><a href="#1a349a7c-a604-40c7-85c7-03e5826409d6">PUT Set MaterialsItem ItemAdjustmentLine</a></div>
-                    <p class="operation-description">Updates the MaterialsItem for the specified Item Adjustment Line.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="6f4c2f39-86c8-478d-9c80-6cf7675d72e9"></a>
+                    <h3>PUT Set MaterialsItem ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6f4c2f39-86c8-478d-9c80-6cf7675d72e9"></i></h3>
+                    <div class="hidden-copylink" id="copy-6f4c2f39-86c8-478d-9c80-6cf7675d72e9"><a href="#6f4c2f39-86c8-478d-9c80-6cf7675d72e9">PUT Set MaterialsItem ItemAdjustmentLine</a></div>
+                    <p class="operation-description">Updates the attribute 'MaterialsItem' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -591,51 +690,53 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment Line is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the MaterialsItem.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-1a349a7c-a604-40c7-85c7-03e5826409d6">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/materialsItem</div>
+                    <div class="hidden-copylink" id="copy2-6f4c2f39-86c8-478d-9c80-6cf7675d72e9">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/materialsItem</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/materialsItem</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1a349a7c-a604-40c7-85c7-03e5826409d6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/materialsItem</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6f4c2f39-86c8-478d-9c80-6cf7675d72e9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="0001ab4b-126c-40a8-8f56-28a097deb688"></a>
-                    <h3>PUT Set Note ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0001ab4b-126c-40a8-8f56-28a097deb688"></i></h3>
-					<div class="hidden-copylink" id="copy-0001ab4b-126c-40a8-8f56-28a097deb688"><a href="#0001ab4b-126c-40a8-8f56-28a097deb688">PUT Set Note ItemAdjustment</a></div>
-                    <p class="operation-description">Updates the Note for the specified Item Adjustment.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="b7e445f9-292a-4527-9560-47815773fa9b"></a>
+                    <h3>PUT Set Note ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b7e445f9-292a-4527-9560-47815773fa9b"></i></h3>
+                    <div class="hidden-copylink" id="copy-b7e445f9-292a-4527-9560-47815773fa9b"><a href="#b7e445f9-292a-4527-9560-47815773fa9b">PUT Set Note ItemAdjustment</a></div>
+                    <p class="operation-description">Updates the attribute 'Note' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -644,51 +745,53 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Note.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-0001ab4b-126c-40a8-8f56-28a097deb688">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/note</div>
+                    <div class="hidden-copylink" id="copy2-b7e445f9-292a-4527-9560-47815773fa9b">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/note</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/note</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0001ab4b-126c-40a8-8f56-28a097deb688"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/note</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b7e445f9-292a-4527-9560-47815773fa9b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7270d5b5-754a-412a-a29b-579d62004cf8"></a>
-                    <h3>PUT Set PostingDate ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7270d5b5-754a-412a-a29b-579d62004cf8"></i></h3>
-					<div class="hidden-copylink" id="copy-7270d5b5-754a-412a-a29b-579d62004cf8"><a href="#7270d5b5-754a-412a-a29b-579d62004cf8">PUT Set PostingDate ItemAdjustment</a></div>
-                    <p class="operation-description">Updates the PostingDate for the specified Item Adjustment.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="dc518d12-3c5e-4ebb-bcd1-030850f57834"></a>
+                    <h3>PUT Set PostingDate ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-dc518d12-3c5e-4ebb-bcd1-030850f57834"></i></h3>
+                    <div class="hidden-copylink" id="copy-dc518d12-3c5e-4ebb-bcd1-030850f57834"><a href="#dc518d12-3c5e-4ebb-bcd1-030850f57834">PUT Set PostingDate ItemAdjustment</a></div>
+                    <p class="operation-description">Updates the attribute 'PostingDate' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -697,161 +800,53 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(DateTime)</i> In the request body, supply the new value for the PostingDate.</td>
+                                <td><i>(DateTime)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-7270d5b5-754a-412a-a29b-579d62004cf8">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/postingDate</div>
-                    <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/postingDate</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7270d5b5-754a-412a-a29b-579d62004cf8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="d098e0f5-9ff8-4fcd-bf11-afc43cdc7c9e"></a>
-                    <h3>PUT Set Quantity ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d098e0f5-9ff8-4fcd-bf11-afc43cdc7c9e"></i></h3>
-					<div class="hidden-copylink" id="copy-d098e0f5-9ff8-4fcd-bf11-afc43cdc7c9e"><a href="#d098e0f5-9ff8-4fcd-bf11-afc43cdc7c9e">PUT Set Quantity ItemAdjustmentLine</a></div>
-                    <p class="operation-description">Updates the Quantity for the specified Item Adjustment Line.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">itemAdjustmentKey</td>
-                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">lineId</td>
-                                <td><i>(string)</i> The detail identifier.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment Line is associated to.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(decimal)</i> In the request body, supply the new value for the Quantity.</td>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-d098e0f5-9ff8-4fcd-bf11-afc43cdc7c9e">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/quantity</div>
+                    <div class="hidden-copylink" id="copy2-dc518d12-3c5e-4ebb-bcd1-030850f57834">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/postingDate</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/quantity</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d098e0f5-9ff8-4fcd-bf11-afc43cdc7c9e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/postingDate</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-dc518d12-3c5e-4ebb-bcd1-030850f57834"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="bc1343ab-cd52-458d-b3b9-05d20ece8559"></a>
-                    <h3>PUT Set Remarks ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bc1343ab-cd52-458d-b3b9-05d20ece8559"></i></h3>
-					<div class="hidden-copylink" id="copy-bc1343ab-cd52-458d-b3b9-05d20ece8559"><a href="#bc1343ab-cd52-458d-b3b9-05d20ece8559">PUT Set Remarks ItemAdjustment</a></div>
-                    <p class="operation-description">Updates the Remarks for the specified Item Adjustment.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">itemAdjustmentKey</td>
-                                <td><i>(string)</i> The key for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment is associated to.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Remarks.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-bc1343ab-cd52-458d-b3b9-05d20ece8559">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/remarks</div>
-                    <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/remarks</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bc1343ab-cd52-458d-b3b9-05d20ece8559"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="f6750683-b590-49a4-bafd-e1dcb2a3d4d5"></a>
-                    <h3>PUT Set Unit ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f6750683-b590-49a4-bafd-e1dcb2a3d4d5"></i></h3>
-					<div class="hidden-copylink" id="copy-f6750683-b590-49a4-bafd-e1dcb2a3d4d5"><a href="#f6750683-b590-49a4-bafd-e1dcb2a3d4d5">PUT Set Unit ItemAdjustmentLine</a></div>
-                    <p class="operation-description">Updates the Unit for the specified Item Adjustment Line.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="230c2414-ee90-404f-9941-9baee92211c0"></a>
+                    <h3>PUT Set Quantity ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-230c2414-ee90-404f-9941-9baee92211c0"></i></h3>
+                    <div class="hidden-copylink" id="copy-230c2414-ee90-404f-9941-9baee92211c0"><a href="#230c2414-ee90-404f-9941-9baee92211c0">PUT Set Quantity ItemAdjustmentLine</a></div>
+                    <p class="operation-description">Updates the attribute 'Quantity' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -864,51 +859,108 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment Line is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Unit.</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-f6750683-b590-49a4-bafd-e1dcb2a3d4d5">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unit</div>
+                    <div class="hidden-copylink" id="copy2-230c2414-ee90-404f-9941-9baee92211c0">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/quantity</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unit</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f6750683-b590-49a4-bafd-e1dcb2a3d4d5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/quantity</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-230c2414-ee90-404f-9941-9baee92211c0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7132d212-0614-4ec1-8b9b-872754db8a71"></a>
-                    <h3>PUT Set UnitPrice ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7132d212-0614-4ec1-8b9b-872754db8a71"></i></h3>
-					<div class="hidden-copylink" id="copy-7132d212-0614-4ec1-8b9b-872754db8a71"><a href="#7132d212-0614-4ec1-8b9b-872754db8a71">PUT Set UnitPrice ItemAdjustmentLine</a></div>
-                    <p class="operation-description">Updates the UnitPrice for the specified Item Adjustment Line.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="b7e75b22-4959-4de8-9879-5d6586011dc1"></a>
+                    <h3>PUT Set Remarks ItemAdjustment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b7e75b22-4959-4de8-9879-5d6586011dc1"></i></h3>
+                    <div class="hidden-copylink" id="copy-b7e75b22-4959-4de8-9879-5d6586011dc1"><a href="#b7e75b22-4959-4de8-9879-5d6586011dc1">PUT Set Remarks ItemAdjustment</a></div>
+                    <p class="operation-description">Updates the attribute 'Remarks' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b7e75b22-4959-4de8-9879-5d6586011dc1">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/remarks</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/remarks</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b7e75b22-4959-4de8-9879-5d6586011dc1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="34d4a2cb-254f-4143-8c6f-dd5a7a7de85b"></a>
+                    <h3>PUT Set Unit ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-34d4a2cb-254f-4143-8c6f-dd5a7a7de85b"></i></h3>
+                    <div class="hidden-copylink" id="copy-34d4a2cb-254f-4143-8c6f-dd5a7a7de85b"><a href="#34d4a2cb-254f-4143-8c6f-dd5a7a7de85b">PUT Set Unit ItemAdjustmentLine</a></div>
+                    <p class="operation-description">Updates the attribute 'Unit' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -921,57 +973,118 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment Line is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(decimal)</i> In the request body, supply the new value for the UnitPrice.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-7132d212-0614-4ec1-8b9b-872754db8a71">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unitPrice</div>
+                    <div class="hidden-copylink" id="copy2-34d4a2cb-254f-4143-8c6f-dd5a7a7de85b">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unit</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unitPrice</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7132d212-0614-4ec1-8b9b-872754db8a71"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="DELETE"></a>
-                    <h2>DELETE OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unit</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-34d4a2cb-254f-4143-8c6f-dd5a7a7de85b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="93931302-b38f-48a6-a184-277a6bf89c6e"></a>
-                    <h3>DELETE Item Adjustment Line by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-93931302-b38f-48a6-a184-277a6bf89c6e"></i></h3>
-					<div class="hidden-copylink" id="copy-93931302-b38f-48a6-a184-277a6bf89c6e"><a href="#93931302-b38f-48a6-a184-277a6bf89c6e">DELETE Item Adjustment Line by identifier</a></div>
-                    <p class="operation-description">Deletes the specified Item Adjustment Line.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="5988fce5-2ac2-4bf0-a6b9-0ded6e3b0757"></a>
+                    <h3>PUT Set UnitPrice ItemAdjustmentLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5988fce5-2ac2-4bf0-a6b9-0ded6e3b0757"></i></h3>
+                    <div class="hidden-copylink" id="copy-5988fce5-2ac2-4bf0-a6b9-0ded6e3b0757"><a href="#5988fce5-2ac2-4bf0-a6b9-0ded6e3b0757">PUT Set UnitPrice ItemAdjustmentLine</a></div>
+                    <p class="operation-description">Updates the attribute 'UnitPrice' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5988fce5-2ac2-4bf0-a6b9-0ded6e3b0757">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unitPrice</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}/unitPrice</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5988fce5-2ac2-4bf0-a6b9-0ded6e3b0757"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f7bbee70-f468-45b2-ad59-37d2bcb14d97"></a>
+                    <h3>DELETE Item Adjustment Line by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f7bbee70-f468-45b2-ad59-37d2bcb14d97"></i></h3>
+                    <div class="hidden-copylink" id="copy-f7bbee70-f468-45b2-ad59-37d2bcb14d97"><a href="#f7bbee70-f468-45b2-ad59-37d2bcb14d97">DELETE Item Adjustment Line by identifier</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -980,7 +1093,7 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> The company key to which the requested Item Adjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">lineId</td>
@@ -988,97 +1101,105 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The operation was successful.</td>
+                                <td>NoContent. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-93931302-b38f-48a6-a184-277a6bf89c6e">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}</div>
+                    <div class="hidden-copylink" id="copy2-f7bbee70-f468-45b2-ad59-37d2bcb14d97">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /materialsManagement/itemAdjustments{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-93931302-b38f-48a6-a184-277a6bf89c6e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /materialsManagement/itemAdjustments{companyKey}/{itemAdjustmentKey}/documentLines/{lineId}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f7bbee70-f468-45b2-ad59-37d2bcb14d97"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7536333c-27ea-4e90-a793-3622709dc328"></a>
-                    <h3>DELETE ItemAdjustment by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7536333c-27ea-4e90-a793-3622709dc328"></i></h3>
-					<div class="hidden-copylink" id="copy-7536333c-27ea-4e90-a793-3622709dc328"><a href="#7536333c-27ea-4e90-a793-3622709dc328">DELETE ItemAdjustment by identifier</a></div>
-                    <p class="operation-description">Deletes the specified Item Adjustment by its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="9d1620de-805c-4474-a7c9-929db85733a2"></a>
+                    <h3>DELETE ItemAdjustment by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9d1620de-805c-4474-a7c9-929db85733a2"></i></h3>
+                    <div class="hidden-copylink" id="copy-9d1620de-805c-4474-a7c9-929db85733a2"><a href="#9d1620de-805c-4474-a7c9-929db85733a2">DELETE ItemAdjustment by identifier</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Item Adjustment.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Item Adjustment was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Item Adjustment does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-7536333c-27ea-4e90-a793-3622709dc328">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{id}</div>
+                    <div class="hidden-copylink" id="copy2-9d1620de-805c-4474-a7c9-929db85733a2">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /materialsManagement/itemAdjustments/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7536333c-27ea-4e90-a793-3622709dc328"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /materialsManagement/itemAdjustments/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9d1620de-805c-4474-a7c9-929db85733a2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="baaee0df-343c-4179-8760-f71779aa0851"></a>
-                    <h3>DELETE ItemAdjustment by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-baaee0df-343c-4179-8760-f71779aa0851"></i></h3>
-					<div class="hidden-copylink" id="copy-baaee0df-343c-4179-8760-f71779aa0851"><a href="#baaee0df-343c-4179-8760-f71779aa0851">DELETE ItemAdjustment by key</a></div>
-                    <p class="operation-description">Deletes the specified Item Adjustment by its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="b49789bc-b2c3-43b3-bc32-67852e8e5cec"></a>
+                    <h3>DELETE ItemAdjustment by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b49789bc-b2c3-43b3-bc32-67852e8e5cec"></i></h3>
+                    <div class="hidden-copylink" id="copy-b49789bc-b2c3-43b3-bc32-67852e8e5cec"><a href="#b49789bc-b2c3-43b3-bc32-67852e8e5cec">DELETE ItemAdjustment by key</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">companyKey</td>
-                                <td><i>(string)</i> Company key to which the requested Item Adjustment is associated to.</td>
+                                <td><i>(string)</i> The company key.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">itemAdjustmentKey</td>
@@ -1086,336 +1207,388 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Item Adjustment was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Item Adjustment does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-baaee0df-343c-4179-8760-f71779aa0851">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div>
+                    <div class="hidden-copylink" id="copy2-b49789bc-b2c3-43b3-bc32-67852e8e5cec">api/{tenantKey}/{orgKey}/materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-baaee0df-343c-4179-8760-f71779aa0851"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /materialsManagement/itemAdjustments/{companyKey}/{itemAdjustmentKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b49789bc-b2c3-43b3-bc32-67852e8e5cec"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
-					<br />
-                    <a class="anchor" name="ItemAdjustmentResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemAdjustmentResourceResourceDiv')">ItemAdjustmentResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ItemAdjustmentResourceResourceDiv" style="display:none">
+                    <br />
+                    <a class="anchor" name="ApiItemAdjustmentDocumentLinesResource"></a>
+                    <h4>ApiItemAdjustmentDocumentLinesResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiItemAdjustmentDocumentLinesResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiItemAdjustmentDocumentLinesResource"><a href="#ApiItemAdjustmentDocumentLinesResource">ApiItemAdjustmentDocumentLinesResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
-                            <tr>
-                                <td class="highlighted">itemAdjustmentKey</td>
-                                <td  class="wrap"><i>(string)</i> The key for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">documentDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> The document date for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">totalValue</td>
-                                <td  class="wrap"><i>(decimal)</i> The total value for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">postingDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> The posting date for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">isExternallyManaged</td>
-                                <td  class="wrap"><i>(bool)</i> Indicates whether the Item Adjustment is externally managed.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">warehouse</td>
-                                <td  class="wrap"><i>(string)</i> The warehouse for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">company</td>
-                                <td  class="wrap"><i>(string)</i> The company for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">currency</td>
-                                <td  class="wrap"><i>(string)</i> The currency for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">adjustmentReason</td>
-                                <td  class="wrap"><i>(string)</i> The adjustment reason for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">isInValue</td>
-                                <td  class="wrap"><i>(bool)</i> Indicates whether the Item Adjustment is in value.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">documentLines</td>
-                                <td  class="wrap"><i>(List of ItemAdjustmentLineResource)</i> The document lines for the Item Adjustment.<br/>See <a href="#ItemAdjustmentLineResource">ItemAdjustmentLineResource.</a></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">remarks</td>
-                                <td  class="wrap"><i>(string)</i> The remarks for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">note</td>
-                                <td  class="wrap"><i>(string)</i> The note for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">isPrinted</td>
-                                <td  class="wrap"><i>(bool)</i> Indicates if the Item Adjustment has been printed. Internally determined.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">externalId</td>
-                                <td  class="wrap"><i>(string)</i> The external identification for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">externalVersion</td>
-                                <td  class="wrap"><i>(string)</i> The external version for the Item Adjustment.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">adjustmentType</td>
-                                <td  class="wrap"><i>(enum AdjustmentType)</i> The adjustment's type for the Item Adjustment.<br/>See <a href="#AdjustmentType">AdjustmentType.</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
-                    <a class="anchor" name="ItemAdjustmentLineResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemAdjustmentLineResourceResourceDiv')">ItemAdjustmentLineResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ItemAdjustmentLineResourceResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">description</td>
-                                <td  class="wrap"><i>(string)</i> The description for the Item Adjustment Line.</td>
-                            </tr>
                             <tr>
                                 <td class="highlighted">quantity</td>
                                 <td  class="wrap"><i>(decimal)</i> The quantity for the Item Adjustment Line.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">unitPrice</td>
                                 <td  class="wrap"><i>(decimal)</i> The unit price for the Item Adjustment Line.</td>
                             </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td  class="wrap"><i>(decimal)</i> The value for the Item Adjustment Line.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">conversionFactor</td>
-                                <td  class="wrap"><i>(decimal)</i> The conversion factor for the Item Adjustment Line.</td>
-                            </tr>
+
                             <tr>
                                 <td class="highlighted">unit</td>
                                 <td  class="wrap"><i>(string)</i> The unit for the Item Adjustment Line.</td>
                             </tr>
-                            <tr>
-                                <td class="highlighted">currency</td>
-                                <td  class="wrap"><i>(string)</i> The currency for the Item Adjustment Line.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">unitCost</td>
-                                <td  class="wrap"><i>(decimal)</i> The unit cost for the Item Adjustment Line.</td>
-                            </tr>
+
                             <tr>
                                 <td class="highlighted">materialsItem</td>
                                 <td  class="wrap"><i>(string)</i> The materials item for the Item Adjustment Line.</td>
                             </tr>
-                            <tr>
-                                <td class="highlighted">itemType</td>
-                                <td  class="wrap"><i>(enum ItemType)</i> The item's type for the Item Adjustment Line.<br/>See <a href="#ItemType">ItemType.</a></td>
-                            </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">inventoryAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> The inventory amount for the Item Adjustment Line.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">baseUnit</td>
-                                <td  class="wrap"><i>(string)</i> The base unit for the Item Adjustment Line.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
                     <a class="anchor" name="ApiItemAdjustmentResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiItemAdjustmentResourceResourceDiv')">ApiItemAdjustmentResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiItemAdjustmentResourceResourceDiv" style="display:none">
+                    <h4>ApiItemAdjustmentResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiItemAdjustmentResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiItemAdjustmentResource"><a href="#ApiItemAdjustmentResource">ApiItemAdjustmentResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">itemAdjustmentKey</td>
                                 <td  class="wrap"><i>(string)</i> The key for the Item Adjustment.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">documentDate</td>
                                 <td  class="wrap"><i>(DateTime)</i> The document date for the Item Adjustment.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">postingDate</td>
                                 <td  class="wrap"><i>(DateTime)</i> The posting date for the Item Adjustment.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">warehouse</td>
                                 <td  class="wrap"><i>(string)</i> The warehouse for the Item Adjustment.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">company</td>
                                 <td  class="wrap"><i>(string)</i> The company for the Item Adjustment.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">adjustmentReason</td>
                                 <td  class="wrap"><i>(string)</i> The adjustment reason for the Item Adjustment.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
+
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">documentLines</td>
                                 <td title="(List of ApiItemAdjustmentDocumentLinesResource) The document lines for the Item Adjustment. See ApiItemAdjustmentDocumentLinesResource." class="wrap"><i>(List of ApiItemAdjustmentDocumentLinesResource)</i> The document lines for the Item Adjustment.<br/>See <a href="#ApiItemAdjustmentDocumentLinesResource">ApiItemAdjustmentDocumentLinesResource.</a></td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">remarks</td>
                                 <td  class="wrap"><i>(string)</i> The remarks for the Item Adjustment.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">note</td>
                                 <td  class="wrap"><i>(string)</i> The note for the Item Adjustment.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
-                    <a class="anchor" name="ApiItemAdjustmentDocumentLinesResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiItemAdjustmentDocumentLinesResourceResourceDiv')">ApiItemAdjustmentDocumentLinesResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiItemAdjustmentDocumentLinesResourceResourceDiv" style="display:none">
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ItemAdjustmentLineResource"></a>
+                    <h4>ItemAdjustmentLineResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ItemAdjustmentLineResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ItemAdjustmentLineResource"><a href="#ItemAdjustmentLineResource">ItemAdjustmentLineResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Item Adjustment Line.</td>
+                            </tr>
+
                             <tr>
                                 <td class="highlighted">quantity</td>
                                 <td  class="wrap"><i>(decimal)</i> The quantity for the Item Adjustment Line.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">unitPrice</td>
                                 <td  class="wrap"><i>(decimal)</i> The unit price for the Item Adjustment Line.</td>
                             </tr>
+
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td  class="wrap"><i>(decimal)</i> The value for the Item Adjustment Line.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">conversionFactor</td>
+                                <td  class="wrap"><i>(decimal)</i> The conversion factor for the Item Adjustment Line.</td>
+                            </tr>
+
                             <tr>
                                 <td class="highlighted">unit</td>
                                 <td  class="wrap"><i>(string)</i> The unit for the Item Adjustment Line.</td>
                             </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the Item Adjustment Line.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> The unit cost for the Item Adjustment Line.</td>
+                            </tr>
+
                             <tr>
                                 <td class="highlighted">materialsItem</td>
                                 <td  class="wrap"><i>(string)</i> The materials item for the Item Adjustment Line.</td>
                             </tr>
+
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> The item's type for the Item Adjustment Line.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">inventoryAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The inventory amount for the Item Adjustment Line.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">baseUnit</td>
+                                <td  class="wrap"><i>(string)</i> The base unit for the Item Adjustment Line.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ItemAdjustmentResource"></a>
+                    <h4>ItemAdjustmentResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ItemAdjustmentResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ItemAdjustmentResource"><a href="#ItemAdjustmentResource">ItemAdjustmentResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemAdjustmentKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The document date for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">totalValue</td>
+                                <td  class="wrap"><i>(decimal)</i> The total value for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The posting date for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the Item Adjustment is externally managed.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The warehouse for the Item Adjustment.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Warehouse. These records are accessibly through the <a href="materialscore.warehouses.html">Warehouses</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company for the Item Adjustment.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency for the Item Adjustment.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Currency. These records are accessibly through the <a href="corepatterns.currencies.html">Currencies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">adjustmentReason</td>
+                                <td  class="wrap"><i>(string)</i> The adjustment reason for the Item Adjustment.<br /><i>(fk)</i> Allowed value: the natural key of a record of type AdjustmentReason. These records are accessibly through the <a href="materialsmanagement.adjustmentreasons.html">AdjustmentReasons</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isInValue</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the Item Adjustment is in value.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentLines</td>
+                                <td  class="wrap"><i>(List of ItemAdjustmentLineResource)</i> The document lines for the Item Adjustment.<br/>See <a href="#ItemAdjustmentLineResource">ItemAdjustmentLineResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The remarks for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The note for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the Item Adjustment has been printed. Internally determined.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external identification for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the Item Adjustment.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">adjustmentType</td>
+                                <td  class="wrap"><i>(enum AdjustmentType)</i> The adjustment's type for the Item Adjustment.<br/>See <a href="#AdjustmentType">AdjustmentType.</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Enumerations</h2>
-					<br />
+                    <br />
                     <a class="anchor" name="AdjustmentType"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'AdjustmentTypeValueListDiv')">AdjustmentType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="AdjustmentTypeValueListDiv" style="display:none">
+                    <h4>AdjustmentType <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-AdjustmentType"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-AdjustmentType"><a href="#AdjustmentType">AdjustmentType</a></div>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">1</td>
                                 <td>Entry</td>
-								<td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">2</td>
                                 <td>Issue</td>
-								<td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
 
-					<br />
-					<br />
-					</div>
+                    <br />
+                    <br />
                     <a class="anchor" name="ItemType"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemTypeValueListDiv')">ItemType<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ItemTypeValueListDiv" style="display:none">
+                    <h4>ItemType <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ItemType"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-ItemType"><a href="#ItemType">ItemType</a></div>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">1</td>
                                 <td>Item</td>
-								<td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">2</td>
                                 <td>Service</td>
-								<td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
 
-					<br />
-					<br />
-					</div>
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </body>
-	<script>
-		var clipboard = new Clipboard('.copy-clipboard');
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
 
-		clipboard.on('success', function(e) {
-		  showTooltip(e.trigger, 'Copied!', 'left');
-		});
-		
-		clipboard.on('error', function(e) {
-		  showTooltip(e.trigger, 'Error!', 'left');
-		});
-	</script>
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
 </html>

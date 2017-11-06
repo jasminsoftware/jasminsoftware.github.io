@@ -5,254 +5,298 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
-	<script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-	<title>Materials Management | Materials Setup</title>
+    <title>Jasmin Developers - Materials Management | Materials Setup</title>
     </header>
 
     <body>
         <div class="header">
             <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div class="title">Jasmin Developers - Web API Reference</div>
             <div id="search" class="search">
                 <i class="search-icon fa fa-search" aria-hidden="true"></i>
                 <input class="typeahead" type="text" placeholder="Search">
             </div>
         </div>
         <div class="sidebar" id="sidebar">
-	<a  class="menu-item " href="index.html">
-		Overview
-	</a>
-	<a class="menu-item" href="accountspayable.html">
-		Accounts Payable
-	</a>
-	<a class="menu-item" href="accountsreceivable.html">
-		Accounts Receivable
-	</a>
-	<a class="menu-item" href="financials.html">
-		Financials
-	</a>
-	<a class="menu-item" href="goodsreceipt.html">
-		Goods Receipt
-	</a>
-	<a class="menu-item" href="logistics.html">
-		Logistics
-	</a>
-	<a class="menu-item" href="masterdatabusinessentities.html">
-		Master Data Business Entities
-	</a>
-	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
-		Materials Management
+    <a  class="menu-item " href="index.html">
+        Overview
     </a>
-	<a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
-		Adjustment Reason
-	</a>
-	<a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
-		Item Adjustment
-	</a>
-	<a class="menu-subitem " href="materialscore.itemsubtypes.html">
-		Item Subtype
-	</a>
-	<a class="menu-subitem " href="materialscore.materialsitems.html">
-		Materials Item
-	</a>
-	<a class="menu-subitem menu-item-selected" href="materialscore.materialssetups.html">
-		Materials Setup
-	</a>
-	<a class="menu-subitem " href="materialscore.warehouses.html">
-		Warehouse
-	</a>
-	<a class="menu-item" href="onlinestore.html">
-		Online Store
-	</a>
-	<a class="menu-item" href="platform.html">
-		Platform
-	</a>
-	<a class="menu-item" href="purchases.html">
-		Purchases
-	</a>
-	<a class="menu-item" href="sales.html">
-		Sales
-	</a>
-	<a class="menu-item" href="shipping.html">
-		Shipping
-	</a>
-	<a class="menu-item" href="taxes.html">
-		Taxes
-	</a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+        Adjustment Reason
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
+        Item Adjustment
+    </a>
+    <a class="menu-subitem " href="materialscore.itemsubtypes.html">
+        Item Subtype
+    </a>
+    <a class="menu-subitem " href="materialscore.materialsitems.html">
+        Materials Item
+    </a>
+    <a class="menu-subitem menu-item-selected" href="materialscore.materialssetups.html">
+        Materials Setup
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.stocktransferorders.html">
+        Stock Transfer Order
+    </a>
+    <a class="menu-subitem " href="materialscore.warehouses.html">
+        Warehouse
+    </a>
+    <a class="menu-item" href="onlinestore.html">
+        Online Store
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
 </div>
         <div class="content">
             <div class="content-section">
                 <div class="content-section-col1">
                     <h1>Materials Management | Materials Setup</h1>
-                    <h3>Overview</h3>
+                    <p>
+                    Service to manage entities of type 'MaterialsSetup'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
                     <table>
                         <tbody>
                             <tr>
                                 <td>URL</td>
                                 <td class="breakword url-cell">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-materialscore-materialssetups"></i></td>
-								<div class="hidden-copylink" id="copy-materialscore-materialssetups">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups</div>
+                                <div class="hidden-copylink" id="copy-materialscore-materialssetups">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
                                 <td><a href="#GET">GET</a>, <a href="#PUT">PUT</a></td>
                             </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td class="breakword">Service to manage entities of type 'MaterialsSetup'.</td>
-                            </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="content-section-col2"></div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="GET"></a>
-                    <h2>GET OPERATIONS</h2>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#48e2e532-4b03-4d90-abad-d0889e434cb4">GET MaterialsSetups</a></li>
+                            <li><a href="#d2f6dbce-5faa-40bc-bbe0-a6d37122f1de">GET MaterialsSetups (paged)</a></li>
+                            <li><a href="#70bd0404-a78f-4187-9a07-823c321bee08">GET MaterialsSetup by identifier</a></li>
+                            <li><a href="#4d42a2e3-47e5-424d-b77a-695a68ad0c73">GET MaterialsSetup by key</a></li>
+                            <li><a href="#df20f01b-8554-4b70-9bc1-c9e8222c040e">GET Print MaterialsSetup by identifier</a></li>
+                            <li><a href="#12b95f1b-abd0-4c7c-bafa-9174861eb323">GET Print MaterialsSetup by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#c1626674-0b7c-45f5-8292-90a6dea86086">PUT Set IsActive MaterialsSetup</a></li>
+                            <li><a href="#6529d2bd-e965-4a31-8aea-a3e0fd88dbc8">PUT Set Company MaterialsSetup</a></li>
+                            <li><a href="#35ebff3d-63b7-42b8-91b0-a849df173dae">PUT Set NegativeStock MaterialsSetup</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#MaterialsSetupResource">MaterialsSetupResource</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="4765a0a2-f067-4c91-a51f-4eb7f9af40fd"></a>
-                    <h3>GET MaterialsSetups <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4765a0a2-f067-4c91-a51f-4eb7f9af40fd"></i></h3>
-					<div class="hidden-copylink" id="copy-4765a0a2-f067-4c91-a51f-4eb7f9af40fd"><a href="#4765a0a2-f067-4c91-a51f-4eb7f9af40fd">GET MaterialsSetups</a></div>
-                    <p class="operation-description">Returns all Materials Setup user has access to.</p>
-				<p>Response:</p>
-					<table>
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="48e2e532-4b03-4d90-abad-d0889e434cb4"></a>
+                    <h3>GET MaterialsSetups <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-48e2e532-4b03-4d90-abad-d0889e434cb4"></i></h3>
+                    <div class="hidden-copylink" id="copy-48e2e532-4b03-4d90-abad-d0889e434cb4"><a href="#48e2e532-4b03-4d90-abad-d0889e434cb4">GET MaterialsSetups</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Materials Setup. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-4765a0a2-f067-4c91-a51f-4eb7f9af40fd">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups</div>
+                    <div class="hidden-copylink" id="copy2-48e2e532-4b03-4d90-abad-d0889e434cb4">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/materialsSetups</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4765a0a2-f067-4c91-a51f-4eb7f9af40fd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/materialsSetups</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-48e2e532-4b03-4d90-abad-d0889e434cb4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="baf41078-60c8-4d4e-9186-65f58105afed"></a>
-                    <h3>GET MaterialsSetups (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-baf41078-60c8-4d4e-9186-65f58105afed"></i></h3>
-					<div class="hidden-copylink" id="copy-baf41078-60c8-4d4e-9186-65f58105afed"><a href="#baf41078-60c8-4d4e-9186-65f58105afed">GET MaterialsSetups (paged)</a></div>
-                    <p class="operation-description">Returns a paginated list of Materials Setup user has access to.</p>
-					<p>The following elements are optional:</p>
+                    <a class="anchor" name="d2f6dbce-5faa-40bc-bbe0-a6d37122f1de"></a>
+                    <h3>GET MaterialsSetups (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d2f6dbce-5faa-40bc-bbe0-a6d37122f1de"></i></h3>
+                    <div class="hidden-copylink" id="copy-d2f6dbce-5faa-40bc-bbe0-a6d37122f1de"><a href="#d2f6dbce-5faa-40bc-bbe0-a6d37122f1de">GET MaterialsSetups (paged)</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Materials Setup. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-baf41078-60c8-4d4e-9186-65f58105afed">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups</div>
+                    <div class="hidden-copylink" id="copy2-d2f6dbce-5faa-40bc-bbe0-a6d37122f1de">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/materialsSetups</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-baf41078-60c8-4d4e-9186-65f58105afed"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/materialsSetups</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d2f6dbce-5faa-40bc-bbe0-a6d37122f1de"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="d8cceb2e-9214-4eef-93df-d0d52e222ab1"></a>
-                    <h3>GET MaterialsSetup by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d8cceb2e-9214-4eef-93df-d0d52e222ab1"></i></h3>
-					<div class="hidden-copylink" id="copy-d8cceb2e-9214-4eef-93df-d0d52e222ab1"><a href="#d8cceb2e-9214-4eef-93df-d0d52e222ab1">GET MaterialsSetup by identifier</a></div>
-                    <p class="operation-description">Returns information for a given Materials Setup, by specifying its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="70bd0404-a78f-4187-9a07-823c321bee08"></a>
+                    <h3>GET MaterialsSetup by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-70bd0404-a78f-4187-9a07-823c321bee08"></i></h3>
+                    <div class="hidden-copylink" id="copy-70bd0404-a78f-4187-9a07-823c321bee08"><a href="#70bd0404-a78f-4187-9a07-823c321bee08">GET MaterialsSetup by identifier</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Materials Setup.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Materials Setup. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-d8cceb2e-9214-4eef-93df-d0d52e222ab1">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{id}</div>
+                    <div class="hidden-copylink" id="copy2-70bd0404-a78f-4187-9a07-823c321bee08">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d8cceb2e-9214-4eef-93df-d0d52e222ab1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-70bd0404-a78f-4187-9a07-823c321bee08"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="51792d8b-32da-48aa-a144-cd2c7171c9d3"></a>
-                    <h3>GET MaterialsSetup by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-51792d8b-32da-48aa-a144-cd2c7171c9d3"></i></h3>
-					<div class="hidden-copylink" id="copy-51792d8b-32da-48aa-a144-cd2c7171c9d3"><a href="#51792d8b-32da-48aa-a144-cd2c7171c9d3">GET MaterialsSetup by key</a></div>
-                    <p class="operation-description">Returns information for a given Materials Setup, by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="4d42a2e3-47e5-424d-b77a-695a68ad0c73"></a>
+                    <h3>GET MaterialsSetup by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4d42a2e3-47e5-424d-b77a-695a68ad0c73"></i></h3>
+                    <div class="hidden-copylink" id="copy-4d42a2e3-47e5-424d-b77a-695a68ad0c73"><a href="#4d42a2e3-47e5-424d-b77a-695a68ad0c73">GET MaterialsSetup by key</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -261,98 +305,106 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Materials Setup. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#MaterialsSetupResource">MaterialsSetupResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-51792d8b-32da-48aa-a144-cd2c7171c9d3">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}</div>
+                    <div class="hidden-copylink" id="copy2-4d42a2e3-47e5-424d-b77a-695a68ad0c73">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{company}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-51792d8b-32da-48aa-a144-cd2c7171c9d3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{company}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4d42a2e3-47e5-424d-b77a-695a68ad0c73"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ba617a75-0d21-4db3-83df-f997b7481615"></a>
-                    <h3>GET Print MaterialsSetup by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ba617a75-0d21-4db3-83df-f997b7481615"></i></h3>
-					<div class="hidden-copylink" id="copy-ba617a75-0d21-4db3-83df-f997b7481615"><a href="#ba617a75-0d21-4db3-83df-f997b7481615">GET Print MaterialsSetup by identifier</a></div>
-                    <p class="operation-description">Prints the specified MaterialsSetup.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="df20f01b-8554-4b70-9bc1-c9e8222c040e"></a>
+                    <h3>GET Print MaterialsSetup by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-df20f01b-8554-4b70-9bc1-c9e8222c040e"></i></h3>
+                    <div class="hidden-copylink" id="copy-df20f01b-8554-4b70-9bc1-c9e8222c040e"><a href="#df20f01b-8554-4b70-9bc1-c9e8222c040e">GET Print MaterialsSetup by identifier</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the MaterialsSetup.</td>
+                                <td><i>(string)</i> The identifier of the resource that should be printed.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed MaterialsSetup.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-ba617a75-0d21-4db3-83df-f997b7481615">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{id}/print</div>
+                    <div class="hidden-copylink" id="copy2-df20f01b-8554-4b70-9bc1-c9e8222c040e">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{id}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{id}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ba617a75-0d21-4db3-83df-f997b7481615"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-df20f01b-8554-4b70-9bc1-c9e8222c040e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="66de2959-3210-4f7f-94c6-31ff4d8a3118"></a>
-                    <h3>GET Print MaterialsSetup by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-66de2959-3210-4f7f-94c6-31ff4d8a3118"></i></h3>
-					<div class="hidden-copylink" id="copy-66de2959-3210-4f7f-94c6-31ff4d8a3118"><a href="#66de2959-3210-4f7f-94c6-31ff4d8a3118">GET Print MaterialsSetup by key</a></div>
-                    <p class="operation-description">Prints the specified MaterialsSetup by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="12b95f1b-abd0-4c7c-bafa-9174861eb323"></a>
+                    <h3>GET Print MaterialsSetup by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-12b95f1b-abd0-4c7c-bafa-9174861eb323"></i></h3>
+                    <div class="hidden-copylink" id="copy-12b95f1b-abd0-4c7c-bafa-9174861eb323"><a href="#12b95f1b-abd0-4c7c-bafa-9174861eb323">GET Print MaterialsSetup by key</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -361,59 +413,65 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed MaterialsSetup.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-66de2959-3210-4f7f-94c6-31ff4d8a3118">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/print</div>
+                    <div class="hidden-copylink" id="copy2-12b95f1b-abd0-4c7c-bafa-9174861eb323">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{company}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-66de2959-3210-4f7f-94c6-31ff4d8a3118"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="PUT"></a>
-                    <h2>PUT OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>GET /materialsCore/materialsSetups/{company}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-12b95f1b-abd0-4c7c-bafa-9174861eb323"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="bae227d3-0c9d-41d8-b23c-739eb5eaaad8"></a>
-                    <h3>PUT Set Company MaterialsSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bae227d3-0c9d-41d8-b23c-739eb5eaaad8"></i></h3>
-					<div class="hidden-copylink" id="copy-bae227d3-0c9d-41d8-b23c-739eb5eaaad8"><a href="#bae227d3-0c9d-41d8-b23c-739eb5eaaad8">PUT Set Company MaterialsSetup</a></div>
-                    <p class="operation-description">Updates the Company for the specified Materials Setup.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6529d2bd-e965-4a31-8aea-a3e0fd88dbc8"></a>
+                    <h3>PUT Set Company MaterialsSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6529d2bd-e965-4a31-8aea-a3e0fd88dbc8"></i></h3>
+                    <div class="hidden-copylink" id="copy-6529d2bd-e965-4a31-8aea-a3e0fd88dbc8"><a href="#6529d2bd-e965-4a31-8aea-a3e0fd88dbc8">PUT Set Company MaterialsSetup</a></div>
+                    <p class="operation-description">Updates the attribute 'Company' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -422,47 +480,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-bae227d3-0c9d-41d8-b23c-739eb5eaaad8">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/company</div>
+                    <div class="hidden-copylink" id="copy2-6529d2bd-e965-4a31-8aea-a3e0fd88dbc8">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/company</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/materialsSetups/{company}/company</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bae227d3-0c9d-41d8-b23c-739eb5eaaad8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/materialsSetups/{company}/company</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6529d2bd-e965-4a31-8aea-a3e0fd88dbc8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a4f07950-95b2-4ec2-96c4-d2e787a82530"></a>
-                    <h3>PUT Set IsActive MaterialsSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a4f07950-95b2-4ec2-96c4-d2e787a82530"></i></h3>
-					<div class="hidden-copylink" id="copy-a4f07950-95b2-4ec2-96c4-d2e787a82530"><a href="#a4f07950-95b2-4ec2-96c4-d2e787a82530">PUT Set IsActive MaterialsSetup</a></div>
-                    <p class="operation-description">Updates the IsActive for the specified MaterialsSetup.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="c1626674-0b7c-45f5-8292-90a6dea86086"></a>
+                    <h3>PUT Set IsActive MaterialsSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c1626674-0b7c-45f5-8292-90a6dea86086"></i></h3>
+                    <div class="hidden-copylink" id="copy-c1626674-0b7c-45f5-8292-90a6dea86086"><a href="#c1626674-0b7c-45f5-8292-90a6dea86086">PUT Set IsActive MaterialsSetup</a></div>
+                    <p class="operation-description">Updates the attribute 'IsActive' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -471,47 +531,53 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-a4f07950-95b2-4ec2-96c4-d2e787a82530">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/isActive</div>
+                    <div class="hidden-copylink" id="copy2-c1626674-0b7c-45f5-8292-90a6dea86086">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/isActive</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/materialsSetups/{company}/isActive</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a4f07950-95b2-4ec2-96c4-d2e787a82530"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/materialsSetups/{company}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c1626674-0b7c-45f5-8292-90a6dea86086"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="8b67f1b2-b121-4b9e-9446-bc6a7f4a69f4"></a>
-                    <h3>PUT Set NegativeStock MaterialsSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8b67f1b2-b121-4b9e-9446-bc6a7f4a69f4"></i></h3>
-					<div class="hidden-copylink" id="copy-8b67f1b2-b121-4b9e-9446-bc6a7f4a69f4"><a href="#8b67f1b2-b121-4b9e-9446-bc6a7f4a69f4">PUT Set NegativeStock MaterialsSetup</a></div>
-                    <p class="operation-description">Updates the NegativeStock for the specified Materials Setup.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="35ebff3d-63b7-42b8-91b0-a849df173dae"></a>
+                    <h3>PUT Set NegativeStock MaterialsSetup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-35ebff3d-63b7-42b8-91b0-a849df173dae"></i></h3>
+                    <div class="hidden-copylink" id="copy-35ebff3d-63b7-42b8-91b0-a849df173dae"><a href="#35ebff3d-63b7-42b8-91b0-a849df173dae">PUT Set NegativeStock MaterialsSetup</a></div>
+                    <p class="operation-description">Updates the attribute 'NegativeStock' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -520,77 +586,82 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the NegativeStock.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-8b67f1b2-b121-4b9e-9446-bc6a7f4a69f4">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/negativeStock</div>
+                    <div class="hidden-copylink" id="copy2-35ebff3d-63b7-42b8-91b0-a849df173dae">api/{tenantKey}/{orgKey}/materialsCore/materialsSetups/{company}/negativeStock</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/materialsSetups/{company}/negativeStock</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8b67f1b2-b121-4b9e-9446-bc6a7f4a69f4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/materialsSetups/{company}/negativeStock</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-35ebff3d-63b7-42b8-91b0-a849df173dae"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
-					<br />
+                    <br />
                     <a class="anchor" name="MaterialsSetupResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'MaterialsSetupResourceResourceDiv')">MaterialsSetupResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="MaterialsSetupResourceResourceDiv" style="display:none">
+                    <h4>MaterialsSetupResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-MaterialsSetupResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-MaterialsSetupResource"><a href="#MaterialsSetupResource">MaterialsSetupResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td  class="wrap"><i>(string)</i> The company for the Materials Setup.</td>
+                                <td  class="wrap"><i>(string)</i> The company for the Materials Setup.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">negativeStock</td>
                                 <td  class="wrap"><i>(bool)</i> Indicates whether the warehouse can accept negative stock values.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </body>
-	<script>
-		var clipboard = new Clipboard('.copy-clipboard');
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
 
-		clipboard.on('success', function(e) {
-		  showTooltip(e.trigger, 'Copied!', 'left');
-		});
-		
-		clipboard.on('error', function(e) {
-		  showTooltip(e.trigger, 'Error!', 'left');
-		});
-	</script>
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
 </html>

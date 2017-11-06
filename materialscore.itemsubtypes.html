@@ -5,254 +5,313 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
-	<script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-	<title>Materials Management | Item Subtype</title>
+    <title>Jasmin Developers - Materials Management | Item Subtype</title>
     </header>
 
     <body>
         <div class="header">
             <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div class="title">Jasmin Developers - Web API Reference</div>
             <div id="search" class="search">
                 <i class="search-icon fa fa-search" aria-hidden="true"></i>
                 <input class="typeahead" type="text" placeholder="Search">
             </div>
         </div>
         <div class="sidebar" id="sidebar">
-	<a  class="menu-item " href="index.html">
-		Overview
-	</a>
-	<a class="menu-item" href="accountspayable.html">
-		Accounts Payable
-	</a>
-	<a class="menu-item" href="accountsreceivable.html">
-		Accounts Receivable
-	</a>
-	<a class="menu-item" href="financials.html">
-		Financials
-	</a>
-	<a class="menu-item" href="goodsreceipt.html">
-		Goods Receipt
-	</a>
-	<a class="menu-item" href="logistics.html">
-		Logistics
-	</a>
-	<a class="menu-item" href="masterdatabusinessentities.html">
-		Master Data Business Entities
-	</a>
-	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
-		Materials Management
+    <a  class="menu-item " href="index.html">
+        Overview
     </a>
-	<a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
-		Adjustment Reason
-	</a>
-	<a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
-		Item Adjustment
-	</a>
-	<a class="menu-subitem menu-item-selected" href="materialscore.itemsubtypes.html">
-		Item Subtype
-	</a>
-	<a class="menu-subitem " href="materialscore.materialsitems.html">
-		Materials Item
-	</a>
-	<a class="menu-subitem " href="materialscore.materialssetups.html">
-		Materials Setup
-	</a>
-	<a class="menu-subitem " href="materialscore.warehouses.html">
-		Warehouse
-	</a>
-	<a class="menu-item" href="onlinestore.html">
-		Online Store
-	</a>
-	<a class="menu-item" href="platform.html">
-		Platform
-	</a>
-	<a class="menu-item" href="purchases.html">
-		Purchases
-	</a>
-	<a class="menu-item" href="sales.html">
-		Sales
-	</a>
-	<a class="menu-item" href="shipping.html">
-		Shipping
-	</a>
-	<a class="menu-item" href="taxes.html">
-		Taxes
-	</a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+        Adjustment Reason
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
+        Item Adjustment
+    </a>
+    <a class="menu-subitem menu-item-selected" href="materialscore.itemsubtypes.html">
+        Item Subtype
+    </a>
+    <a class="menu-subitem " href="materialscore.materialsitems.html">
+        Materials Item
+    </a>
+    <a class="menu-subitem " href="materialscore.materialssetups.html">
+        Materials Setup
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.stocktransferorders.html">
+        Stock Transfer Order
+    </a>
+    <a class="menu-subitem " href="materialscore.warehouses.html">
+        Warehouse
+    </a>
+    <a class="menu-item" href="onlinestore.html">
+        Online Store
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
 </div>
         <div class="content">
             <div class="content-section">
                 <div class="content-section-col1">
                     <h1>Materials Management | Item Subtype</h1>
-                    <h3>Overview</h3>
+                    <p>
+                    Service to manage entities of type 'ItemSubType'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
                     <table>
                         <tbody>
                             <tr>
                                 <td>URL</td>
                                 <td class="breakword url-cell">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-materialscore-itemsubtypes"></i></td>
-								<div class="hidden-copylink" id="copy-materialscore-itemsubtypes">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
+                                <div class="hidden-copylink" id="copy-materialscore-itemsubtypes">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
                                 <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
                             </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td class="breakword">Service to manage entities of type 'ItemSubType'.</td>
-                            </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="content-section-col2"></div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="GET"></a>
-                    <h2>GET OPERATIONS</h2>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#6616aa42-574e-43cb-83ba-78831e6ce6b5">GET ItemSubtypes</a></li>
+                            <li><a href="#56f55398-7b1c-4828-b5ff-30c66f5f25c8">GET ItemSubtypes (paged)</a></li>
+                            <li><a href="#a008144d-5183-4a5c-8457-4008b85e9d57">GET ItemSubtype by identifier</a></li>
+                            <li><a href="#aaa692b7-d655-4a1d-95b2-6bed781bda40">GET ItemSubtype by key</a></li>
+                            <li><a href="#8cfe8c43-dd0e-49bd-8997-434f825ec808">GET Print ItemSubtype by identifier</a></li>
+                            <li><a href="#6f284525-f5cd-4001-89f1-a1ede8ac86f9">GET Print ItemSubtype by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#b28ec907-2675-4827-969e-5670b9c7f3bd">POST ItemSubtypes</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#2dc41b1e-e4b0-41ba-9588-5874bd6bfe75">PUT Set IsActive ItemSubtype</a></li>
+                            <li><a href="#22d26fe5-5e22-4c2e-9034-a7d6357ace37">PUT Set ItemSubtypeKey ItemSubtype</a></li>
+                            <li><a href="#0ce083c3-47ed-4ef6-8cb9-bd6e7431949b">PUT Set Description ItemSubtype</a></li>
+                            <li><a href="#9e0de211-0e6b-4684-8572-f2913d9d56d8">PUT Set FiscalClassification ItemSubtype</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#40b7a433-f9a1-49e3-a55d-2adc7510dfe9">DELETE ItemSubtype by identifier</a></li>
+                            <li><a href="#58d5f5f8-2c20-4dde-a90c-35476af93031">DELETE ItemSubtype by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiItemSubtypeResource">ApiItemSubtypeResource</a></li>
+                        <li><a href="#ItemSubtypeResource">ItemSubtypeResource</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="9da53cda-b104-4399-b8a2-1944a21a69e1"></a>
-                    <h3>GET ItemSubtypes <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9da53cda-b104-4399-b8a2-1944a21a69e1"></i></h3>
-					<div class="hidden-copylink" id="copy-9da53cda-b104-4399-b8a2-1944a21a69e1"><a href="#9da53cda-b104-4399-b8a2-1944a21a69e1">GET ItemSubtypes</a></div>
-                    <p class="operation-description">Returns all Item Subtype user has access to.</p>
-				<p>Response:</p>
-					<table>
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6616aa42-574e-43cb-83ba-78831e6ce6b5"></a>
+                    <h3>GET ItemSubtypes <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6616aa42-574e-43cb-83ba-78831e6ce6b5"></i></h3>
+                    <div class="hidden-copylink" id="copy-6616aa42-574e-43cb-83ba-78831e6ce6b5"><a href="#6616aa42-574e-43cb-83ba-78831e6ce6b5">GET ItemSubtypes</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Item Subtype. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-9da53cda-b104-4399-b8a2-1944a21a69e1">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
+                    <div class="hidden-copylink" id="copy2-6616aa42-574e-43cb-83ba-78831e6ce6b5">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9da53cda-b104-4399-b8a2-1944a21a69e1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6616aa42-574e-43cb-83ba-78831e6ce6b5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="592a5d8e-df26-4dc8-839e-9bf996d67bbf"></a>
-                    <h3>GET ItemSubtypes (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-592a5d8e-df26-4dc8-839e-9bf996d67bbf"></i></h3>
-					<div class="hidden-copylink" id="copy-592a5d8e-df26-4dc8-839e-9bf996d67bbf"><a href="#592a5d8e-df26-4dc8-839e-9bf996d67bbf">GET ItemSubtypes (paged)</a></div>
-                    <p class="operation-description">Returns a paginated list of Item Subtype user has access to.</p>
-					<p>The following elements are optional:</p>
+                    <a class="anchor" name="56f55398-7b1c-4828-b5ff-30c66f5f25c8"></a>
+                    <h3>GET ItemSubtypes (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-56f55398-7b1c-4828-b5ff-30c66f5f25c8"></i></h3>
+                    <div class="hidden-copylink" id="copy-56f55398-7b1c-4828-b5ff-30c66f5f25c8"><a href="#56f55398-7b1c-4828-b5ff-30c66f5f25c8">GET ItemSubtypes (paged)</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Item Subtype. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-592a5d8e-df26-4dc8-839e-9bf996d67bbf">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
+                    <div class="hidden-copylink" id="copy2-56f55398-7b1c-4828-b5ff-30c66f5f25c8">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-592a5d8e-df26-4dc8-839e-9bf996d67bbf"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-56f55398-7b1c-4828-b5ff-30c66f5f25c8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="930f7e8d-7e56-4c4a-b0a9-d531e12dccfa"></a>
-                    <h3>GET ItemSubtype by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-930f7e8d-7e56-4c4a-b0a9-d531e12dccfa"></i></h3>
-					<div class="hidden-copylink" id="copy-930f7e8d-7e56-4c4a-b0a9-d531e12dccfa"><a href="#930f7e8d-7e56-4c4a-b0a9-d531e12dccfa">GET ItemSubtype by identifier</a></div>
-                    <p class="operation-description">Returns information for a given Item Subtype, by specifying its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="a008144d-5183-4a5c-8457-4008b85e9d57"></a>
+                    <h3>GET ItemSubtype by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a008144d-5183-4a5c-8457-4008b85e9d57"></i></h3>
+                    <div class="hidden-copylink" id="copy-a008144d-5183-4a5c-8457-4008b85e9d57"><a href="#a008144d-5183-4a5c-8457-4008b85e9d57">GET ItemSubtype by identifier</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Item Subtype.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Item Subtype. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-930f7e8d-7e56-4c4a-b0a9-d531e12dccfa">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{id}</div>
+                    <div class="hidden-copylink" id="copy2-a008144d-5183-4a5c-8457-4008b85e9d57">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-930f7e8d-7e56-4c4a-b0a9-d531e12dccfa"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a008144d-5183-4a5c-8457-4008b85e9d57"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="47bf3e00-480a-4954-b3eb-aaae4ce05b33"></a>
-                    <h3>GET ItemSubtype by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-47bf3e00-480a-4954-b3eb-aaae4ce05b33"></i></h3>
-					<div class="hidden-copylink" id="copy-47bf3e00-480a-4954-b3eb-aaae4ce05b33"><a href="#47bf3e00-480a-4954-b3eb-aaae4ce05b33">GET ItemSubtype by key</a></div>
-                    <p class="operation-description">Returns information for a given Item Subtype, by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="aaa692b7-d655-4a1d-95b2-6bed781bda40"></a>
+                    <h3>GET ItemSubtype by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-aaa692b7-d655-4a1d-95b2-6bed781bda40"></i></h3>
+                    <div class="hidden-copylink" id="copy-aaa692b7-d655-4a1d-95b2-6bed781bda40"><a href="#aaa692b7-d655-4a1d-95b2-6bed781bda40">GET ItemSubtype by key</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -261,98 +320,106 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Item Subtype. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#ItemSubtypeResource">ItemSubtypeResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-47bf3e00-480a-4954-b3eb-aaae4ce05b33">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}</div>
+                    <div class="hidden-copylink" id="copy2-aaa692b7-d655-4a1d-95b2-6bed781bda40">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{itemSubtypeKey}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-47bf3e00-480a-4954-b3eb-aaae4ce05b33"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{itemSubtypeKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-aaa692b7-d655-4a1d-95b2-6bed781bda40"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="f13f7cf1-a3bf-42bf-9b77-e4533c19d050"></a>
-                    <h3>GET Print ItemSubtype by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f13f7cf1-a3bf-42bf-9b77-e4533c19d050"></i></h3>
-					<div class="hidden-copylink" id="copy-f13f7cf1-a3bf-42bf-9b77-e4533c19d050"><a href="#f13f7cf1-a3bf-42bf-9b77-e4533c19d050">GET Print ItemSubtype by identifier</a></div>
-                    <p class="operation-description">Prints the specified ItemSubtype.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="8cfe8c43-dd0e-49bd-8997-434f825ec808"></a>
+                    <h3>GET Print ItemSubtype by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8cfe8c43-dd0e-49bd-8997-434f825ec808"></i></h3>
+                    <div class="hidden-copylink" id="copy-8cfe8c43-dd0e-49bd-8997-434f825ec808"><a href="#8cfe8c43-dd0e-49bd-8997-434f825ec808">GET Print ItemSubtype by identifier</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the ItemSubtype.</td>
+                                <td><i>(string)</i> The identifier of the resource that should be printed.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed ItemSubtype.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-f13f7cf1-a3bf-42bf-9b77-e4533c19d050">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{id}/print</div>
+                    <div class="hidden-copylink" id="copy2-8cfe8c43-dd0e-49bd-8997-434f825ec808">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{id}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{id}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f13f7cf1-a3bf-42bf-9b77-e4533c19d050"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8cfe8c43-dd0e-49bd-8997-434f825ec808"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="b68e42ee-3179-4dbd-b8f4-f1b0df3cf22a"></a>
-                    <h3>GET Print ItemSubtype by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b68e42ee-3179-4dbd-b8f4-f1b0df3cf22a"></i></h3>
-					<div class="hidden-copylink" id="copy-b68e42ee-3179-4dbd-b8f4-f1b0df3cf22a"><a href="#b68e42ee-3179-4dbd-b8f4-f1b0df3cf22a">GET Print ItemSubtype by key</a></div>
-                    <p class="operation-description">Prints the specified ItemSubtype by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="6f284525-f5cd-4001-89f1-a1ede8ac86f9"></a>
+                    <h3>GET Print ItemSubtype by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6f284525-f5cd-4001-89f1-a1ede8ac86f9"></i></h3>
+                    <div class="hidden-copylink" id="copy-6f284525-f5cd-4001-89f1-a1ede8ac86f9"><a href="#6f284525-f5cd-4001-89f1-a1ede8ac86f9">GET Print ItemSubtype by key</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -361,110 +428,118 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed ItemSubtype.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-b68e42ee-3179-4dbd-b8f4-f1b0df3cf22a">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/print</div>
+                    <div class="hidden-copylink" id="copy2-6f284525-f5cd-4001-89f1-a1ede8ac86f9">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{itemSubtypeKey}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b68e42ee-3179-4dbd-b8f4-f1b0df3cf22a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="POST"></a>
-                    <h2>POST OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>GET /materialsCore/itemSubtypes/{itemSubtypeKey}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6f284525-f5cd-4001-89f1-a1ede8ac86f9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="65b0fa20-7fd9-4e3a-8134-b8ce304c69a2"></a>
-                    <h3>POST ItemSubtypes <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-65b0fa20-7fd9-4e3a-8134-b8ce304c69a2"></i></h3>
-					<div class="hidden-copylink" id="copy-65b0fa20-7fd9-4e3a-8134-b8ce304c69a2"><a href="#65b0fa20-7fd9-4e3a-8134-b8ce304c69a2">POST ItemSubtypes</a></div>
-                    <p class="operation-description">Creates a new Item Subtype.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b28ec907-2675-4827-969e-5670b9c7f3bd"></a>
+                    <h3>POST ItemSubtypes <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b28ec907-2675-4827-969e-5670b9c7f3bd"></i></h3>
+                    <div class="hidden-copylink" id="copy-b28ec907-2675-4827-969e-5670b9c7f3bd"><a href="#b28ec907-2675-4827-969e-5670b9c7f3bd">POST ItemSubtypes</a></div>
+                    <p class="operation-description">Creates a new resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">itemSubtypeResource</td>
-                                <td><i>(ApiItemSubtypeResource)</i> In the request body, supply a resource containing the Item Subtype information.<br/>See <a href="#ApiItemSubtypeResource">ApiItemSubtypeResource.</a></td>
+                                <td><i>(ApiItemSubtypeResource)</i> The request body should contain the resource that should be created.<br/>See <a href="#ApiItemSubtypeResource">ApiItemSubtypeResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns the Item Subtype identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiItemSubtypeResource">ApiItemSubtypeResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new resource identifier. The resource header location property contains the URL for the new resource. See <a href="#ApiItemSubtypeResource">ApiItemSubtypeResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">201</td>
-                                <td>The operation was successful and the Item Subtype was created.</td>
+                                <td>Created. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-65b0fa20-7fd9-4e3a-8134-b8ce304c69a2">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
+                    <div class="hidden-copylink" id="copy2-b28ec907-2675-4827-969e-5670b9c7f3bd">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>POST /materialsCore/itemSubtypes</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-65b0fa20-7fd9-4e3a-8134-b8ce304c69a2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="PUT"></a>
-                    <h2>PUT OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>POST /materialsCore/itemSubtypes</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b28ec907-2675-4827-969e-5670b9c7f3bd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="6d2d514e-a528-49c9-aea2-30378904fd1f"></a>
-                    <h3>PUT Set Description ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6d2d514e-a528-49c9-aea2-30378904fd1f"></i></h3>
-					<div class="hidden-copylink" id="copy-6d2d514e-a528-49c9-aea2-30378904fd1f"><a href="#6d2d514e-a528-49c9-aea2-30378904fd1f">PUT Set Description ItemSubtype</a></div>
-                    <p class="operation-description">Updates the Description for the specified Item Subtype.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0ce083c3-47ed-4ef6-8cb9-bd6e7431949b"></a>
+                    <h3>PUT Set Description ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0ce083c3-47ed-4ef6-8cb9-bd6e7431949b"></i></h3>
+                    <div class="hidden-copylink" id="copy-0ce083c3-47ed-4ef6-8cb9-bd6e7431949b"><a href="#0ce083c3-47ed-4ef6-8cb9-bd6e7431949b">PUT Set Description ItemSubtype</a></div>
+                    <p class="operation-description">Updates the attribute 'Description' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -473,47 +548,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-6d2d514e-a528-49c9-aea2-30378904fd1f">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/description</div>
+                    <div class="hidden-copylink" id="copy2-0ce083c3-47ed-4ef6-8cb9-bd6e7431949b">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/description</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/description</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6d2d514e-a528-49c9-aea2-30378904fd1f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/description</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0ce083c3-47ed-4ef6-8cb9-bd6e7431949b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="78918d56-3d9e-49ef-a9e1-30aac871bf86"></a>
-                    <h3>PUT Set FiscalClassification ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-78918d56-3d9e-49ef-a9e1-30aac871bf86"></i></h3>
-					<div class="hidden-copylink" id="copy-78918d56-3d9e-49ef-a9e1-30aac871bf86"><a href="#78918d56-3d9e-49ef-a9e1-30aac871bf86">PUT Set FiscalClassification ItemSubtype</a></div>
-                    <p class="operation-description">Updates the FiscalClassification for the specified Item Subtype.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="9e0de211-0e6b-4684-8572-f2913d9d56d8"></a>
+                    <h3>PUT Set FiscalClassification ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9e0de211-0e6b-4684-8572-f2913d9d56d8"></i></h3>
+                    <div class="hidden-copylink" id="copy-9e0de211-0e6b-4684-8572-f2913d9d56d8"><a href="#9e0de211-0e6b-4684-8572-f2913d9d56d8">PUT Set FiscalClassification ItemSubtype</a></div>
+                    <p class="operation-description">Updates the attribute 'FiscalClassification' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -522,47 +599,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the FiscalClassification.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-78918d56-3d9e-49ef-a9e1-30aac871bf86">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/fiscalClassification</div>
+                    <div class="hidden-copylink" id="copy2-9e0de211-0e6b-4684-8572-f2913d9d56d8">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/fiscalClassification</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/fiscalClassification</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-78918d56-3d9e-49ef-a9e1-30aac871bf86"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/fiscalClassification</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9e0de211-0e6b-4684-8572-f2913d9d56d8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="cef458c4-5db7-477e-83c1-5d1c8c44b803"></a>
-                    <h3>PUT Set IsActive ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-cef458c4-5db7-477e-83c1-5d1c8c44b803"></i></h3>
-					<div class="hidden-copylink" id="copy-cef458c4-5db7-477e-83c1-5d1c8c44b803"><a href="#cef458c4-5db7-477e-83c1-5d1c8c44b803">PUT Set IsActive ItemSubtype</a></div>
-                    <p class="operation-description">Updates the IsActive for the specified ItemSubtype.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="2dc41b1e-e4b0-41ba-9588-5874bd6bfe75"></a>
+                    <h3>PUT Set IsActive ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2dc41b1e-e4b0-41ba-9588-5874bd6bfe75"></i></h3>
+                    <div class="hidden-copylink" id="copy-2dc41b1e-e4b0-41ba-9588-5874bd6bfe75"><a href="#2dc41b1e-e4b0-41ba-9588-5874bd6bfe75">PUT Set IsActive ItemSubtype</a></div>
+                    <p class="operation-description">Updates the attribute 'IsActive' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -571,47 +650,53 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-cef458c4-5db7-477e-83c1-5d1c8c44b803">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/isActive</div>
+                    <div class="hidden-copylink" id="copy2-2dc41b1e-e4b0-41ba-9588-5874bd6bfe75">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/isActive</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/isActive</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-cef458c4-5db7-477e-83c1-5d1c8c44b803"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2dc41b1e-e4b0-41ba-9588-5874bd6bfe75"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="c3ad3667-622e-44b4-b6d9-bae0b2f039ae"></a>
-                    <h3>PUT Set ItemSubtypeKey ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c3ad3667-622e-44b4-b6d9-bae0b2f039ae"></i></h3>
-					<div class="hidden-copylink" id="copy-c3ad3667-622e-44b4-b6d9-bae0b2f039ae"><a href="#c3ad3667-622e-44b4-b6d9-bae0b2f039ae">PUT Set ItemSubtypeKey ItemSubtype</a></div>
-                    <p class="operation-description">Updates the ItemSubtypeKey for the specified Item Subtype.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="22d26fe5-5e22-4c2e-9034-a7d6357ace37"></a>
+                    <h3>PUT Set ItemSubtypeKey ItemSubtype <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-22d26fe5-5e22-4c2e-9034-a7d6357ace37"></i></h3>
+                    <div class="hidden-copylink" id="copy-22d26fe5-5e22-4c2e-9034-a7d6357ace37"><a href="#22d26fe5-5e22-4c2e-9034-a7d6357ace37">PUT Set ItemSubtypeKey ItemSubtype</a></div>
+                    <p class="operation-description">Updates the attribute 'ItemSubtypeKey' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -620,102 +705,106 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the ItemSubtypeKey.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-c3ad3667-622e-44b4-b6d9-bae0b2f039ae">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/itemSubtypeKey</div>
+                    <div class="hidden-copylink" id="copy2-22d26fe5-5e22-4c2e-9034-a7d6357ace37">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}/itemSubtypeKey</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/itemSubtypeKey</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c3ad3667-622e-44b4-b6d9-bae0b2f039ae"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="DELETE"></a>
-                    <h2>DELETE OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/itemSubtypes/{itemSubtypeKey}/itemSubtypeKey</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-22d26fe5-5e22-4c2e-9034-a7d6357ace37"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ce99dd67-04ac-4d88-969a-1415368d1ce8"></a>
-                    <h3>DELETE ItemSubtype by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ce99dd67-04ac-4d88-969a-1415368d1ce8"></i></h3>
-					<div class="hidden-copylink" id="copy-ce99dd67-04ac-4d88-969a-1415368d1ce8"><a href="#ce99dd67-04ac-4d88-969a-1415368d1ce8">DELETE ItemSubtype by identifier</a></div>
-                    <p class="operation-description">Deletes the specified Item Subtype by its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="40b7a433-f9a1-49e3-a55d-2adc7510dfe9"></a>
+                    <h3>DELETE ItemSubtype by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-40b7a433-f9a1-49e3-a55d-2adc7510dfe9"></i></h3>
+                    <div class="hidden-copylink" id="copy-40b7a433-f9a1-49e3-a55d-2adc7510dfe9"><a href="#40b7a433-f9a1-49e3-a55d-2adc7510dfe9">DELETE ItemSubtype by identifier</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Item Subtype.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Item Subtype was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Item Subtype does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-ce99dd67-04ac-4d88-969a-1415368d1ce8">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{id}</div>
+                    <div class="hidden-copylink" id="copy2-40b7a433-f9a1-49e3-a55d-2adc7510dfe9">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /materialsCore/itemSubtypes/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ce99dd67-04ac-4d88-969a-1415368d1ce8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /materialsCore/itemSubtypes/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-40b7a433-f9a1-49e3-a55d-2adc7510dfe9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="81b2cdb4-7eec-415b-85d2-8e8b73452c4d"></a>
-                    <h3>DELETE ItemSubtype by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-81b2cdb4-7eec-415b-85d2-8e8b73452c4d"></i></h3>
-					<div class="hidden-copylink" id="copy-81b2cdb4-7eec-415b-85d2-8e8b73452c4d"><a href="#81b2cdb4-7eec-415b-85d2-8e8b73452c4d">DELETE ItemSubtype by key</a></div>
-                    <p class="operation-description">Deletes the specified Item Subtype by its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="58d5f5f8-2c20-4dde-a90c-35476af93031"></a>
+                    <h3>DELETE ItemSubtype by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-58d5f5f8-2c20-4dde-a90c-35476af93031"></i></h3>
+                    <div class="hidden-copylink" id="copy-58d5f5f8-2c20-4dde-a90c-35476af93031"><a href="#58d5f5f8-2c20-4dde-a90c-35476af93031">DELETE ItemSubtype by key</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -724,115 +813,129 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Item Subtype was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Item Subtype does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-81b2cdb4-7eec-415b-85d2-8e8b73452c4d">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}</div>
+                    <div class="hidden-copylink" id="copy2-58d5f5f8-2c20-4dde-a90c-35476af93031">api/{tenantKey}/{orgKey}/materialsCore/itemSubtypes/{itemSubtypeKey}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /materialsCore/itemSubtypes/{itemSubtypeKey}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-81b2cdb4-7eec-415b-85d2-8e8b73452c4d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /materialsCore/itemSubtypes/{itemSubtypeKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-58d5f5f8-2c20-4dde-a90c-35476af93031"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
-					<br />
-                    <a class="anchor" name="ItemSubtypeResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ItemSubtypeResourceResourceDiv')">ItemSubtypeResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ItemSubtypeResourceResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">itemSubtypeKey</td>
-                                <td  class="wrap"><i>(string)</i> The key for the Item Subtype.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">description</td>
-                                <td  class="wrap"><i>(string)</i> The description for the Item Subtype.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">fiscalClassification</td>
-                                <td  class="wrap"><i>(string)</i> The Fiscal Classification for the Item Subtype.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
+                    <br />
                     <a class="anchor" name="ApiItemSubtypeResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiItemSubtypeResourceResourceDiv')">ApiItemSubtypeResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiItemSubtypeResourceResourceDiv" style="display:none">
+                    <h4>ApiItemSubtypeResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiItemSubtypeResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiItemSubtypeResource"><a href="#ApiItemSubtypeResource">ApiItemSubtypeResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">itemSubtypeKey</td>
                                 <td  class="wrap"><i>(string)</i> The key for the Item Subtype.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
+
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">description</td>
                                 <td  class="wrap"><i>(string)</i> The description for the Item Subtype.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">fiscalClassification</td>
                                 <td  class="wrap"><i>(string)</i> The Fiscal Classification for the Item Subtype.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ItemSubtypeResource"></a>
+                    <h4>ItemSubtypeResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ItemSubtypeResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ItemSubtypeResource"><a href="#ItemSubtypeResource">ItemSubtypeResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemSubtypeKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Item Subtype.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Item Subtype.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">fiscalClassification</td>
+                                <td  class="wrap"><i>(string)</i> The Fiscal Classification for the Item Subtype.<br /><i>(fk)</i> Allowed value: the natural key of a record of type FiscalClassification. These records are accessibly through the <a href="taxescore.fiscalclassifications.html">FiscalClassifications</a> service.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </body>
-	<script>
-		var clipboard = new Clipboard('.copy-clipboard');
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
 
-		clipboard.on('success', function(e) {
-		  showTooltip(e.trigger, 'Copied!', 'left');
-		});
-		
-		clipboard.on('error', function(e) {
-		  showTooltip(e.trigger, 'Error!', 'left');
-		});
-	</script>
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
 </html>

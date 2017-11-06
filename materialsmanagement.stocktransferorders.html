@@ -1,0 +1,2694 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Materials Management | Stock Transfer Order</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+        Adjustment Reason
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
+        Item Adjustment
+    </a>
+    <a class="menu-subitem " href="materialscore.itemsubtypes.html">
+        Item Subtype
+    </a>
+    <a class="menu-subitem " href="materialscore.materialsitems.html">
+        Materials Item
+    </a>
+    <a class="menu-subitem " href="materialscore.materialssetups.html">
+        Materials Setup
+    </a>
+    <a class="menu-subitem menu-item-selected" href="materialsmanagement.stocktransferorders.html">
+        Stock Transfer Order
+    </a>
+    <a class="menu-subitem " href="materialscore.warehouses.html">
+        Warehouse
+    </a>
+    <a class="menu-item" href="onlinestore.html">
+        Online Store
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Materials Management | Stock Transfer Order</h1>
+                    <p>
+                    Service to manage entities of type 'StockTransferOrder'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-materialsmanagement-stocktransferorders"></i></td>
+                                <div class="hidden-copylink" id="copy-materialsmanagement-stocktransferorders">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#63b1125a-a330-4356-ba79-cc95c16967fc">GET StockTransferOrders</a></li>
+                            <li><a href="#70827d81-e42a-4e78-9140-b0c6d0e313de">GET StockTransferOrders (paged)</a></li>
+                            <li><a href="#c497f7b2-8b27-4219-9ba0-aeec1a43afce">GET StockTransferOrder by identifier</a></li>
+                            <li><a href="#9a3c4bb2-05f1-4135-a51c-9c84bc2426b8">GET StockTransferOrder by key</a></li>
+                            <li><a href="#af1f1323-e248-4700-a2aa-b50a8a0ac8b5">GET Print StockTransferOrder by identifier</a></li>
+                            <li><a href="#4ab62f47-5975-4296-ad8e-6408144ea64a">GET Print StockTransferOrder by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#4b2562c5-570f-408e-86eb-fe09de3f1fd9">POST StockTransferOrders</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#63bd5659-fa70-4e17-83ee-e05bc95a9f76">PUT Set IsActive StockTransferOrder</a></li>
+                            <li><a href="#f823f102-1de9-47ad-81cb-a455b5dca09b">PUT Set Remarks StockTransferOrder</a></li>
+                            <li><a href="#125a93c1-4555-433d-9158-72f06cfa325e">PUT Set Reference StockTransferOrder</a></li>
+                            <li><a href="#a7cef0ce-4e7a-4f84-a0ff-baf26a8adb6e">PUT Set LoadingPoint StockTransferOrder</a></li>
+                            <li><a href="#d66435bc-f9ff-4aa5-a4ee-445ecb8b21a0">PUT Set LoadingStreetName StockTransferOrder</a></li>
+                            <li><a href="#26363da4-fbc3-44f9-b324-910ec485e662">PUT Set LoadingBuildingNumber StockTransferOrder</a></li>
+                            <li><a href="#82a2546f-12a7-4d7d-955d-ef3a3468af68">PUT Set LoadingPostalZone StockTransferOrder</a></li>
+                            <li><a href="#d15cf312-197f-4b5b-aaef-b8d43ee65caa">PUT Set LoadingCityName StockTransferOrder</a></li>
+                            <li><a href="#d296f226-5cfe-4b25-b800-0eced1c7ecf1">PUT Set UnloadingPoint StockTransferOrder</a></li>
+                            <li><a href="#c169848a-7950-42a8-9214-8a8d35339d01">PUT Set UnloadingStreetName StockTransferOrder</a></li>
+                            <li><a href="#b4bbf86d-4233-4641-814f-52ffa02305a5">PUT Set UnloadingBuildingNumber StockTransferOrder</a></li>
+                            <li><a href="#7c869826-adbd-4594-bb51-70fc49a5e60b">PUT Set UnloadingPostalZone StockTransferOrder</a></li>
+                            <li><a href="#8701ff02-c9b4-4981-82a3-07f17797d2b8">PUT Set UnloadingCityName StockTransferOrder</a></li>
+                            <li><a href="#c721849c-2d52-4380-acea-141383e7ed8f">PUT Set VehiclePlateNumber StockTransferOrder</a></li>
+                            <li><a href="#f16753cc-326c-41ba-b755-52c0c801ea4c">PUT Set LoadingDateTime StockTransferOrder</a></li>
+                            <li><a href="#27de3f52-9e7a-4b7d-8ed8-b26c270562a5">PUT Set UnloadingDateTime StockTransferOrder</a></li>
+                            <li><a href="#25021ad5-a0a1-4914-8fa6-a44aa2e80fb0">PUT Set ATDocCodeID StockTransferOrder</a></li>
+                            <li><a href="#061de4ff-809a-44a6-9df5-ba3e66aea967">PUT Set IsATDocCodeIDEditable StockTransferOrder</a></li>
+                            <li><a href="#e520aa2d-7e4d-487d-babb-4819d9bd0cd6">PUT Set LoadingCountry StockTransferOrder</a></li>
+                            <li><a href="#56b01966-2f92-44f3-b47e-47bdb104d42d">PUT Set UnloadingCountry StockTransferOrder</a></li>
+                            <li><a href="#e3375f29-a787-4d79-9f82-c2a53b44f45a">PUT Set UseCurrentDate StockTransferOrder</a></li>
+                            <li><a href="#abb5fa00-b4fa-4215-a839-d12eecee3c00">PUT Set Description StockTransferOrderLine</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#a80b9743-0195-432f-985c-6dbc28d82eec">DELETE StockTransferOrder by identifier</a></li>
+                            <li><a href="#aeb63c81-1e2c-40bf-a906-d66f8efc1613">DELETE StockTransferOrder by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiStockTransferOrderDocumentLinesResource">ApiStockTransferOrderDocumentLinesResource</a></li>
+                        <li><a href="#ApiStockTransferOrderResource">ApiStockTransferOrderResource</a></li>
+                        <li><a href="#StockTransferOrderLineResource">StockTransferOrderLineResource</a></li>
+                        <li><a href="#StockTransferOrderResource">StockTransferOrderResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#ItemType">ItemType</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="63b1125a-a330-4356-ba79-cc95c16967fc"></a>
+                    <h3>GET StockTransferOrders <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-63b1125a-a330-4356-ba79-cc95c16967fc"></i></h3>
+                    <div class="hidden-copylink" id="copy-63b1125a-a330-4356-ba79-cc95c16967fc"><a href="#63b1125a-a330-4356-ba79-cc95c16967fc">GET StockTransferOrders</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#StockTransferOrderResource">StockTransferOrderResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-63b1125a-a330-4356-ba79-cc95c16967fc">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /materialsManagement/stockTransferOrders</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-63b1125a-a330-4356-ba79-cc95c16967fc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="70827d81-e42a-4e78-9140-b0c6d0e313de"></a>
+                    <h3>GET StockTransferOrders (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-70827d81-e42a-4e78-9140-b0c6d0e313de"></i></h3>
+                    <div class="hidden-copylink" id="copy-70827d81-e42a-4e78-9140-b0c6d0e313de"><a href="#70827d81-e42a-4e78-9140-b0c6d0e313de">GET StockTransferOrders (paged)</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#StockTransferOrderResource">StockTransferOrderResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-70827d81-e42a-4e78-9140-b0c6d0e313de">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /materialsManagement/stockTransferOrders</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-70827d81-e42a-4e78-9140-b0c6d0e313de"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c497f7b2-8b27-4219-9ba0-aeec1a43afce"></a>
+                    <h3>GET StockTransferOrder by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c497f7b2-8b27-4219-9ba0-aeec1a43afce"></i></h3>
+                    <div class="hidden-copylink" id="copy-c497f7b2-8b27-4219-9ba0-aeec1a43afce"><a href="#c497f7b2-8b27-4219-9ba0-aeec1a43afce">GET StockTransferOrder by identifier</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The resource identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#StockTransferOrderResource">StockTransferOrderResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c497f7b2-8b27-4219-9ba0-aeec1a43afce">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /materialsManagement/stockTransferOrders/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c497f7b2-8b27-4219-9ba0-aeec1a43afce"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9a3c4bb2-05f1-4135-a51c-9c84bc2426b8"></a>
+                    <h3>GET StockTransferOrder by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9a3c4bb2-05f1-4135-a51c-9c84bc2426b8"></i></h3>
+                    <div class="hidden-copylink" id="copy-9a3c4bb2-05f1-4135-a51c-9c84bc2426b8"><a href="#9a3c4bb2-05f1-4135-a51c-9c84bc2426b8">GET StockTransferOrder by key</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#StockTransferOrderResource">StockTransferOrderResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-9a3c4bb2-05f1-4135-a51c-9c84bc2426b8">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9a3c4bb2-05f1-4135-a51c-9c84bc2426b8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="af1f1323-e248-4700-a2aa-b50a8a0ac8b5"></a>
+                    <h3>GET Print StockTransferOrder by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-af1f1323-e248-4700-a2aa-b50a8a0ac8b5"></i></h3>
+                    <div class="hidden-copylink" id="copy-af1f1323-e248-4700-a2aa-b50a8a0ac8b5"><a href="#af1f1323-e248-4700-a2aa-b50a8a0ac8b5">GET Print StockTransferOrder by identifier</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The identifier of the resource that should be printed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-af1f1323-e248-4700-a2aa-b50a8a0ac8b5">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{id}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /materialsManagement/stockTransferOrders/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-af1f1323-e248-4700-a2aa-b50a8a0ac8b5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4ab62f47-5975-4296-ad8e-6408144ea64a"></a>
+                    <h3>GET Print StockTransferOrder by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4ab62f47-5975-4296-ad8e-6408144ea64a"></i></h3>
+                    <div class="hidden-copylink" id="copy-4ab62f47-5975-4296-ad8e-6408144ea64a"><a href="#4ab62f47-5975-4296-ad8e-6408144ea64a">GET Print StockTransferOrder by key</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-4ab62f47-5975-4296-ad8e-6408144ea64a">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4ab62f47-5975-4296-ad8e-6408144ea64a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4b2562c5-570f-408e-86eb-fe09de3f1fd9"></a>
+                    <h3>POST StockTransferOrders <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4b2562c5-570f-408e-86eb-fe09de3f1fd9"></i></h3>
+                    <div class="hidden-copylink" id="copy-4b2562c5-570f-408e-86eb-fe09de3f1fd9"><a href="#4b2562c5-570f-408e-86eb-fe09de3f1fd9">POST StockTransferOrders</a></div>
+                    <p class="operation-description">Creates a new resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">stockTransferOrderResource</td>
+                                <td><i>(ApiStockTransferOrderResource)</i> The request body should contain the resource that should be created.<br/>See <a href="#ApiStockTransferOrderResource">ApiStockTransferOrderResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new resource identifier. The resource header location property contains the URL for the new resource. See <a href="#ApiStockTransferOrderResource">ApiStockTransferOrderResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-4b2562c5-570f-408e-86eb-fe09de3f1fd9">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /materialsManagement/stockTransferOrders</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4b2562c5-570f-408e-86eb-fe09de3f1fd9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="25021ad5-a0a1-4914-8fa6-a44aa2e80fb0"></a>
+                    <h3>PUT Set ATDocCodeID StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-25021ad5-a0a1-4914-8fa6-a44aa2e80fb0"></i></h3>
+                    <div class="hidden-copylink" id="copy-25021ad5-a0a1-4914-8fa6-a44aa2e80fb0"><a href="#25021ad5-a0a1-4914-8fa6-a44aa2e80fb0">PUT Set ATDocCodeID StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'ATDocCodeID' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-25021ad5-a0a1-4914-8fa6-a44aa2e80fb0">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/aTDocCodeID</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/aTDocCodeID</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-25021ad5-a0a1-4914-8fa6-a44aa2e80fb0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="abb5fa00-b4fa-4215-a839-d12eecee3c00"></a>
+                    <h3>PUT Set Description StockTransferOrderLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-abb5fa00-b4fa-4215-a839-d12eecee3c00"></i></h3>
+                    <div class="hidden-copylink" id="copy-abb5fa00-b4fa-4215-a839-d12eecee3c00"><a href="#abb5fa00-b4fa-4215-a839-d12eecee3c00">PUT Set Description StockTransferOrderLine</a></div>
+                    <p class="operation-description">Updates the attribute 'Description' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-abb5fa00-b4fa-4215-a839-d12eecee3c00">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/documentLines/{lineId}/description</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/documentLines/{lineId}/description</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-abb5fa00-b4fa-4215-a839-d12eecee3c00"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="63bd5659-fa70-4e17-83ee-e05bc95a9f76"></a>
+                    <h3>PUT Set IsActive StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-63bd5659-fa70-4e17-83ee-e05bc95a9f76"></i></h3>
+                    <div class="hidden-copylink" id="copy-63bd5659-fa70-4e17-83ee-e05bc95a9f76"><a href="#63bd5659-fa70-4e17-83ee-e05bc95a9f76">PUT Set IsActive StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'IsActive' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-63bd5659-fa70-4e17-83ee-e05bc95a9f76">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-63bd5659-fa70-4e17-83ee-e05bc95a9f76"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="061de4ff-809a-44a6-9df5-ba3e66aea967"></a>
+                    <h3>PUT Set IsATDocCodeIDEditable StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-061de4ff-809a-44a6-9df5-ba3e66aea967"></i></h3>
+                    <div class="hidden-copylink" id="copy-061de4ff-809a-44a6-9df5-ba3e66aea967"><a href="#061de4ff-809a-44a6-9df5-ba3e66aea967">PUT Set IsATDocCodeIDEditable StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'IsATDocCodeIDEditable' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-061de4ff-809a-44a6-9df5-ba3e66aea967">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/isATDocCodeIDEditable</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/isATDocCodeIDEditable</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-061de4ff-809a-44a6-9df5-ba3e66aea967"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="26363da4-fbc3-44f9-b324-910ec485e662"></a>
+                    <h3>PUT Set LoadingBuildingNumber StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-26363da4-fbc3-44f9-b324-910ec485e662"></i></h3>
+                    <div class="hidden-copylink" id="copy-26363da4-fbc3-44f9-b324-910ec485e662"><a href="#26363da4-fbc3-44f9-b324-910ec485e662">PUT Set LoadingBuildingNumber StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'LoadingBuildingNumber' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-26363da4-fbc3-44f9-b324-910ec485e662">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingBuildingNumber</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingBuildingNumber</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-26363da4-fbc3-44f9-b324-910ec485e662"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d15cf312-197f-4b5b-aaef-b8d43ee65caa"></a>
+                    <h3>PUT Set LoadingCityName StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d15cf312-197f-4b5b-aaef-b8d43ee65caa"></i></h3>
+                    <div class="hidden-copylink" id="copy-d15cf312-197f-4b5b-aaef-b8d43ee65caa"><a href="#d15cf312-197f-4b5b-aaef-b8d43ee65caa">PUT Set LoadingCityName StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'LoadingCityName' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d15cf312-197f-4b5b-aaef-b8d43ee65caa">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingCityName</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingCityName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d15cf312-197f-4b5b-aaef-b8d43ee65caa"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e520aa2d-7e4d-487d-babb-4819d9bd0cd6"></a>
+                    <h3>PUT Set LoadingCountry StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e520aa2d-7e4d-487d-babb-4819d9bd0cd6"></i></h3>
+                    <div class="hidden-copylink" id="copy-e520aa2d-7e4d-487d-babb-4819d9bd0cd6"><a href="#e520aa2d-7e4d-487d-babb-4819d9bd0cd6">PUT Set LoadingCountry StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'LoadingCountry' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e520aa2d-7e4d-487d-babb-4819d9bd0cd6">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingCountry</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingCountry</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e520aa2d-7e4d-487d-babb-4819d9bd0cd6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f16753cc-326c-41ba-b755-52c0c801ea4c"></a>
+                    <h3>PUT Set LoadingDateTime StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f16753cc-326c-41ba-b755-52c0c801ea4c"></i></h3>
+                    <div class="hidden-copylink" id="copy-f16753cc-326c-41ba-b755-52c0c801ea4c"><a href="#f16753cc-326c-41ba-b755-52c0c801ea4c">PUT Set LoadingDateTime StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'LoadingDateTime' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTimeOffset)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f16753cc-326c-41ba-b755-52c0c801ea4c">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingDateTime</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingDateTime</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f16753cc-326c-41ba-b755-52c0c801ea4c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a7cef0ce-4e7a-4f84-a0ff-baf26a8adb6e"></a>
+                    <h3>PUT Set LoadingPoint StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a7cef0ce-4e7a-4f84-a0ff-baf26a8adb6e"></i></h3>
+                    <div class="hidden-copylink" id="copy-a7cef0ce-4e7a-4f84-a0ff-baf26a8adb6e"><a href="#a7cef0ce-4e7a-4f84-a0ff-baf26a8adb6e">PUT Set LoadingPoint StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'LoadingPoint' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a7cef0ce-4e7a-4f84-a0ff-baf26a8adb6e">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingPoint</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingPoint</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a7cef0ce-4e7a-4f84-a0ff-baf26a8adb6e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="82a2546f-12a7-4d7d-955d-ef3a3468af68"></a>
+                    <h3>PUT Set LoadingPostalZone StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-82a2546f-12a7-4d7d-955d-ef3a3468af68"></i></h3>
+                    <div class="hidden-copylink" id="copy-82a2546f-12a7-4d7d-955d-ef3a3468af68"><a href="#82a2546f-12a7-4d7d-955d-ef3a3468af68">PUT Set LoadingPostalZone StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'LoadingPostalZone' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-82a2546f-12a7-4d7d-955d-ef3a3468af68">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingPostalZone</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingPostalZone</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-82a2546f-12a7-4d7d-955d-ef3a3468af68"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d66435bc-f9ff-4aa5-a4ee-445ecb8b21a0"></a>
+                    <h3>PUT Set LoadingStreetName StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d66435bc-f9ff-4aa5-a4ee-445ecb8b21a0"></i></h3>
+                    <div class="hidden-copylink" id="copy-d66435bc-f9ff-4aa5-a4ee-445ecb8b21a0"><a href="#d66435bc-f9ff-4aa5-a4ee-445ecb8b21a0">PUT Set LoadingStreetName StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'LoadingStreetName' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d66435bc-f9ff-4aa5-a4ee-445ecb8b21a0">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingStreetName</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/loadingStreetName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d66435bc-f9ff-4aa5-a4ee-445ecb8b21a0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="125a93c1-4555-433d-9158-72f06cfa325e"></a>
+                    <h3>PUT Set Reference StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-125a93c1-4555-433d-9158-72f06cfa325e"></i></h3>
+                    <div class="hidden-copylink" id="copy-125a93c1-4555-433d-9158-72f06cfa325e"><a href="#125a93c1-4555-433d-9158-72f06cfa325e">PUT Set Reference StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'Reference' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-125a93c1-4555-433d-9158-72f06cfa325e">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/reference</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/reference</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-125a93c1-4555-433d-9158-72f06cfa325e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f823f102-1de9-47ad-81cb-a455b5dca09b"></a>
+                    <h3>PUT Set Remarks StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f823f102-1de9-47ad-81cb-a455b5dca09b"></i></h3>
+                    <div class="hidden-copylink" id="copy-f823f102-1de9-47ad-81cb-a455b5dca09b"><a href="#f823f102-1de9-47ad-81cb-a455b5dca09b">PUT Set Remarks StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'Remarks' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f823f102-1de9-47ad-81cb-a455b5dca09b">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/remarks</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/remarks</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f823f102-1de9-47ad-81cb-a455b5dca09b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b4bbf86d-4233-4641-814f-52ffa02305a5"></a>
+                    <h3>PUT Set UnloadingBuildingNumber StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b4bbf86d-4233-4641-814f-52ffa02305a5"></i></h3>
+                    <div class="hidden-copylink" id="copy-b4bbf86d-4233-4641-814f-52ffa02305a5"><a href="#b4bbf86d-4233-4641-814f-52ffa02305a5">PUT Set UnloadingBuildingNumber StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UnloadingBuildingNumber' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b4bbf86d-4233-4641-814f-52ffa02305a5">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingBuildingNumber</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingBuildingNumber</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b4bbf86d-4233-4641-814f-52ffa02305a5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8701ff02-c9b4-4981-82a3-07f17797d2b8"></a>
+                    <h3>PUT Set UnloadingCityName StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8701ff02-c9b4-4981-82a3-07f17797d2b8"></i></h3>
+                    <div class="hidden-copylink" id="copy-8701ff02-c9b4-4981-82a3-07f17797d2b8"><a href="#8701ff02-c9b4-4981-82a3-07f17797d2b8">PUT Set UnloadingCityName StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UnloadingCityName' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8701ff02-c9b4-4981-82a3-07f17797d2b8">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingCityName</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingCityName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8701ff02-c9b4-4981-82a3-07f17797d2b8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="56b01966-2f92-44f3-b47e-47bdb104d42d"></a>
+                    <h3>PUT Set UnloadingCountry StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-56b01966-2f92-44f3-b47e-47bdb104d42d"></i></h3>
+                    <div class="hidden-copylink" id="copy-56b01966-2f92-44f3-b47e-47bdb104d42d"><a href="#56b01966-2f92-44f3-b47e-47bdb104d42d">PUT Set UnloadingCountry StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UnloadingCountry' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-56b01966-2f92-44f3-b47e-47bdb104d42d">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingCountry</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingCountry</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-56b01966-2f92-44f3-b47e-47bdb104d42d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="27de3f52-9e7a-4b7d-8ed8-b26c270562a5"></a>
+                    <h3>PUT Set UnloadingDateTime StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-27de3f52-9e7a-4b7d-8ed8-b26c270562a5"></i></h3>
+                    <div class="hidden-copylink" id="copy-27de3f52-9e7a-4b7d-8ed8-b26c270562a5"><a href="#27de3f52-9e7a-4b7d-8ed8-b26c270562a5">PUT Set UnloadingDateTime StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UnloadingDateTime' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTimeOffset)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-27de3f52-9e7a-4b7d-8ed8-b26c270562a5">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingDateTime</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingDateTime</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-27de3f52-9e7a-4b7d-8ed8-b26c270562a5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d296f226-5cfe-4b25-b800-0eced1c7ecf1"></a>
+                    <h3>PUT Set UnloadingPoint StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d296f226-5cfe-4b25-b800-0eced1c7ecf1"></i></h3>
+                    <div class="hidden-copylink" id="copy-d296f226-5cfe-4b25-b800-0eced1c7ecf1"><a href="#d296f226-5cfe-4b25-b800-0eced1c7ecf1">PUT Set UnloadingPoint StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UnloadingPoint' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d296f226-5cfe-4b25-b800-0eced1c7ecf1">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingPoint</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingPoint</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d296f226-5cfe-4b25-b800-0eced1c7ecf1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7c869826-adbd-4594-bb51-70fc49a5e60b"></a>
+                    <h3>PUT Set UnloadingPostalZone StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7c869826-adbd-4594-bb51-70fc49a5e60b"></i></h3>
+                    <div class="hidden-copylink" id="copy-7c869826-adbd-4594-bb51-70fc49a5e60b"><a href="#7c869826-adbd-4594-bb51-70fc49a5e60b">PUT Set UnloadingPostalZone StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UnloadingPostalZone' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7c869826-adbd-4594-bb51-70fc49a5e60b">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingPostalZone</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingPostalZone</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7c869826-adbd-4594-bb51-70fc49a5e60b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c169848a-7950-42a8-9214-8a8d35339d01"></a>
+                    <h3>PUT Set UnloadingStreetName StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c169848a-7950-42a8-9214-8a8d35339d01"></i></h3>
+                    <div class="hidden-copylink" id="copy-c169848a-7950-42a8-9214-8a8d35339d01"><a href="#c169848a-7950-42a8-9214-8a8d35339d01">PUT Set UnloadingStreetName StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UnloadingStreetName' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c169848a-7950-42a8-9214-8a8d35339d01">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingStreetName</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/unloadingStreetName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c169848a-7950-42a8-9214-8a8d35339d01"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e3375f29-a787-4d79-9f82-c2a53b44f45a"></a>
+                    <h3>PUT Set UseCurrentDate StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e3375f29-a787-4d79-9f82-c2a53b44f45a"></i></h3>
+                    <div class="hidden-copylink" id="copy-e3375f29-a787-4d79-9f82-c2a53b44f45a"><a href="#e3375f29-a787-4d79-9f82-c2a53b44f45a">PUT Set UseCurrentDate StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'UseCurrentDate' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e3375f29-a787-4d79-9f82-c2a53b44f45a">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/useCurrentDate</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/useCurrentDate</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e3375f29-a787-4d79-9f82-c2a53b44f45a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c721849c-2d52-4380-acea-141383e7ed8f"></a>
+                    <h3>PUT Set VehiclePlateNumber StockTransferOrder <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c721849c-2d52-4380-acea-141383e7ed8f"></i></h3>
+                    <div class="hidden-copylink" id="copy-c721849c-2d52-4380-acea-141383e7ed8f"><a href="#c721849c-2d52-4380-acea-141383e7ed8f">PUT Set VehiclePlateNumber StockTransferOrder</a></div>
+                    <p class="operation-description">Updates the attribute 'VehiclePlateNumber' in the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c721849c-2d52-4380-acea-141383e7ed8f">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/vehiclePlateNumber</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}/vehiclePlateNumber</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c721849c-2d52-4380-acea-141383e7ed8f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a80b9743-0195-432f-985c-6dbc28d82eec"></a>
+                    <h3>DELETE StockTransferOrder by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a80b9743-0195-432f-985c-6dbc28d82eec"></i></h3>
+                    <div class="hidden-copylink" id="copy-a80b9743-0195-432f-985c-6dbc28d82eec"><a href="#a80b9743-0195-432f-985c-6dbc28d82eec">DELETE StockTransferOrder by identifier</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The resource identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a80b9743-0195-432f-985c-6dbc28d82eec">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /materialsManagement/stockTransferOrders/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a80b9743-0195-432f-985c-6dbc28d82eec"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="aeb63c81-1e2c-40bf-a906-d66f8efc1613"></a>
+                    <h3>DELETE StockTransferOrder by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-aeb63c81-1e2c-40bf-a906-d66f8efc1613"></i></h3>
+                    <div class="hidden-copylink" id="copy-aeb63c81-1e2c-40bf-a906-d66f8efc1613"><a href="#aeb63c81-1e2c-40bf-a906-d66f8efc1613">DELETE StockTransferOrder by key</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Document Type.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Series.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-aeb63c81-1e2c-40bf-a906-d66f8efc1613">api/{tenantKey}/{orgKey}/materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /materialsManagement/stockTransferOrders/{companyKey}/{documentType}/{serie}/{seriesNumber}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-aeb63c81-1e2c-40bf-a906-d66f8efc1613"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiStockTransferOrderDocumentLinesResource"></a>
+                    <h4>ApiStockTransferOrderDocumentLinesResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiStockTransferOrderDocumentLinesResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiStockTransferOrderDocumentLinesResource"><a href="#ApiStockTransferOrderDocumentLinesResource">ApiStockTransferOrderDocumentLinesResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> Quantity.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> Unit.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">materialsItem</td>
+                                <td  class="wrap"><i>(string)</i> Item.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ApiStockTransferOrderResource"></a>
+                    <h4>ApiStockTransferOrderResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiStockTransferOrderResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiStockTransferOrderResource"><a href="#ApiStockTransferOrderResource">ApiStockTransferOrderResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td  class="wrap"><i>(string)</i> Document Type.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Series.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td  class="wrap"><i>(int)</i> Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> Point.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> Street.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> Building Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> Postal Code.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> City.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Date/Time.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Date/Time.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isATDocCodeIDEditable</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether de ATDocCodeID is editable or not.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> Country.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> Country.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sourceWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> Source Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">targetWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> Target Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">useCurrentDate</td>
+                                <td  class="wrap"><i>(bool)</i> Use Current Date.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentLines</td>
+                                <td title="(List of ApiStockTransferOrderDocumentLinesResource) Document Lines. See ApiStockTransferOrderDocumentLinesResource." class="wrap"><i>(List of ApiStockTransferOrderDocumentLinesResource)</i> Document Lines.<br/>See <a href="#ApiStockTransferOrderDocumentLinesResource">ApiStockTransferOrderDocumentLinesResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">reference</td>
+                                <td  class="wrap"><i>(string)</i> Reference.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> Point.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> Street.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> Building Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> Postal Code.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> City.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">vehiclePlateNumber</td>
+                                <td  class="wrap"><i>(string)</i> License Plate.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">aTDocCodeID</td>
+                                <td  class="wrap"><i>(string)</i> AT Code.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="StockTransferOrderLineResource"></a>
+                    <h4>StockTransferOrderLineResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-StockTransferOrderLineResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-StockTransferOrderLineResource"><a href="#StockTransferOrderLineResource">StockTransferOrderLineResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> Quantity.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unitPrice</td>
+                                <td  class="wrap"><i>(decimal)</i> Unit Price.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> Unit.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">itemType</td>
+                                <td  class="wrap"><i>(enum ItemType)</i> Item Type.<br/>See <a href="#ItemType">ItemType.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unitCost</td>
+                                <td  class="wrap"><i>(decimal)</i> Unit Cost.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">conversionFactor</td>
+                                <td  class="wrap"><i>(decimal)</i> Conversion Factor.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">baseUnit</td>
+                                <td  class="wrap"><i>(string)</i> Base Unit.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">materialsItem</td>
+                                <td  class="wrap"><i>(string)</i> Item.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td  class="wrap"><i>(decimal)</i> Value.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">inventoryAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Inventory Amount.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="StockTransferOrderResource"></a>
+                    <h4>StockTransferOrderResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-StockTransferOrderResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-StockTransferOrderResource"><a href="#StockTransferOrderResource">StockTransferOrderResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td  class="wrap"><i>(string)</i> Document Type.<br /><i>(fk)</i> Allowed value: the natural key of a record of type DeliveryType. These records are accessibly through the <a href="logisticscore.deliverytypes.html">DeliveryTypes</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Series.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Serie. These records are accessibly through the <a href="businesscore.series.html">Series</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">seriesNumber</td>
+                                <td  class="wrap"><i>(int)</i> Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">payableAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Total.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">autoCreated</td>
+                                <td  class="wrap"><i>(bool)</i> Auto Created.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> Point.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> Street.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> Building Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> Postal Code.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> City.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Date/Time.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingDateTime</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Date/Time.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isATDocCodeIDEditable</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether de ATDocCodeID is editable or not.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">accountingParty</td>
+                                <td  class="wrap"><i>(string)</i> Accounting Party.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Party. These records are accessibly through the <a href="businesscore.parties.html">Parties</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isWsCommunicable</td>
+                                <td  class="wrap"><i>(bool)</i> Is Ws Communicable.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> Country.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Country. These records are accessibly through the <a href="corepatterns.countries.html">Countries</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingCountry</td>
+                                <td  class="wrap"><i>(string)</i> Country.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Country. These records are accessibly through the <a href="corepatterns.countries.html">Countries</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Currency. These records are accessibly through the <a href="corepatterns.currencies.html">Currencies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sourceWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> Source Warehouse.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Warehouse. These records are accessibly through the <a href="materialscore.warehouses.html">Warehouses</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">targetWarehouse</td>
+                                <td  class="wrap"><i>(string)</i> Target Warehouse.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Warehouse. These records are accessibly through the <a href="materialscore.warehouses.html">Warehouses</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">totalValue</td>
+                                <td  class="wrap"><i>(decimal)</i> Total Value.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">useCurrentDate</td>
+                                <td  class="wrap"><i>(bool)</i> Use Current Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternal</td>
+                                <td  class="wrap"><i>(bool)</i> Is External.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isManual</td>
+                                <td  class="wrap"><i>(bool)</i> Is Manual.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isPrinted</td>
+                                <td  class="wrap"><i>(bool)</i> Is Printed.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hash</td>
+                                <td  class="wrap"><i>(string)</i> Hash.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hashControl</td>
+                                <td  class="wrap"><i>(string)</i> Hash Control.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">legalStamp</td>
+                                <td  class="wrap"><i>(string)</i> Legal Stamp.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentLines</td>
+                                <td  class="wrap"><i>(List of StockTransferOrderLineResource)</i> Document Lines.<br/>See <a href="#StockTransferOrderLineResource">StockTransferOrderLineResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">reference</td>
+                                <td  class="wrap"><i>(string)</i> Reference.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">loadingPointAddress</td>
+                                <td  class="wrap"><i>(string)</i> Loading Point Address.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingPoint</td>
+                                <td  class="wrap"><i>(string)</i> Point.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingStreetName</td>
+                                <td  class="wrap"><i>(string)</i> Street.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingBuildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> Building Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingPostalZone</td>
+                                <td  class="wrap"><i>(string)</i> Postal Code.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingCityName</td>
+                                <td  class="wrap"><i>(string)</i> City.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unloadingPointAddress</td>
+                                <td  class="wrap"><i>(string)</i> Unloading Point Address.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">vehiclePlateNumber</td>
+                                <td  class="wrap"><i>(string)</i> License Plate.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">aTDocCodeID</td>
+                                <td  class="wrap"><i>(string)</i> AT Code.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">accountingPartyName</td>
+                                <td  class="wrap"><i>(string)</i> Accounting Party Name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">accountingPartyTaxId</td>
+                                <td  class="wrap"><i>(string)</i> Accounting Party Tax Id.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">accountingPartyAddress</td>
+                                <td  class="wrap"><i>(string)</i> Accounting Party Address.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">fiscalDocumentType</td>
+                                <td  class="wrap"><i>(string)</i> Fiscal Document Type.<br /><i>(fk)</i> Allowed value: the natural key of a record of type FiscalDocumentType. These records are accessibly through the <a href="taxescore.fiscaldocumenttypes.html">FiscalDocumentTypes</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">manualNumber</td>
+                                <td  class="wrap"><i>(int)</i> The delivery's manual serie number. Applicable only when the delivery type series is defined as manual.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">manualDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The manual date. Applicable only when the type series is defined as manual.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">manualSerie</td>
+                                <td  class="wrap"><i>(string)</i> Manual Serie.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+                    <br />
+                    <a class="anchor" name="ItemType"></a>
+                    <h4>ItemType <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ItemType"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-ItemType"><a href="#ItemType">ItemType</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Item</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Service</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

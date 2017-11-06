@@ -5,254 +5,326 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
-	<script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-	<title>Materials Management | Warehouse</title>
+    <title>Jasmin Developers - Materials Management | Warehouse</title>
     </header>
 
     <body>
         <div class="header">
             <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div class="title">Jasmin Developers - Web API Reference</div>
             <div id="search" class="search">
                 <i class="search-icon fa fa-search" aria-hidden="true"></i>
                 <input class="typeahead" type="text" placeholder="Search">
             </div>
         </div>
         <div class="sidebar" id="sidebar">
-	<a  class="menu-item " href="index.html">
-		Overview
-	</a>
-	<a class="menu-item" href="accountspayable.html">
-		Accounts Payable
-	</a>
-	<a class="menu-item" href="accountsreceivable.html">
-		Accounts Receivable
-	</a>
-	<a class="menu-item" href="financials.html">
-		Financials
-	</a>
-	<a class="menu-item" href="goodsreceipt.html">
-		Goods Receipt
-	</a>
-	<a class="menu-item" href="logistics.html">
-		Logistics
-	</a>
-	<a class="menu-item" href="masterdatabusinessentities.html">
-		Master Data Business Entities
-	</a>
-	<a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
-		Materials Management
+    <a  class="menu-item " href="index.html">
+        Overview
     </a>
-	<a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
-		Adjustment Reason
-	</a>
-	<a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
-		Item Adjustment
-	</a>
-	<a class="menu-subitem " href="materialscore.itemsubtypes.html">
-		Item Subtype
-	</a>
-	<a class="menu-subitem " href="materialscore.materialsitems.html">
-		Materials Item
-	</a>
-	<a class="menu-subitem " href="materialscore.materialssetups.html">
-		Materials Setup
-	</a>
-	<a class="menu-subitem menu-item-selected" href="materialscore.warehouses.html">
-		Warehouse
-	</a>
-	<a class="menu-item" href="onlinestore.html">
-		Online Store
-	</a>
-	<a class="menu-item" href="platform.html">
-		Platform
-	</a>
-	<a class="menu-item" href="purchases.html">
-		Purchases
-	</a>
-	<a class="menu-item" href="sales.html">
-		Sales
-	</a>
-	<a class="menu-item" href="shipping.html">
-		Shipping
-	</a>
-	<a class="menu-item" href="taxes.html">
-		Taxes
-	</a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a id="current-menu-item" class="menu-item " href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.adjustmentreasons.html">
+        Adjustment Reason
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.itemadjustments.html">
+        Item Adjustment
+    </a>
+    <a class="menu-subitem " href="materialscore.itemsubtypes.html">
+        Item Subtype
+    </a>
+    <a class="menu-subitem " href="materialscore.materialsitems.html">
+        Materials Item
+    </a>
+    <a class="menu-subitem " href="materialscore.materialssetups.html">
+        Materials Setup
+    </a>
+    <a class="menu-subitem " href="materialsmanagement.stocktransferorders.html">
+        Stock Transfer Order
+    </a>
+    <a class="menu-subitem menu-item-selected" href="materialscore.warehouses.html">
+        Warehouse
+    </a>
+    <a class="menu-item" href="onlinestore.html">
+        Online Store
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
 </div>
         <div class="content">
             <div class="content-section">
                 <div class="content-section-col1">
                     <h1>Materials Management | Warehouse</h1>
-                    <h3>Overview</h3>
+                    <p>
+                    Service to manage entities of type 'Warehouse'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
                     <table>
                         <tbody>
                             <tr>
                                 <td>URL</td>
                                 <td class="breakword url-cell">api/{tenantKey}/{orgKey}/materialsCore/warehouses  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-materialscore-warehouses"></i></td>
-								<div class="hidden-copylink" id="copy-materialscore-warehouses">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
+                                <div class="hidden-copylink" id="copy-materialscore-warehouses">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
                                 <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
                             </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td class="breakword">Service to manage entities of type 'Warehouse'.</td>
-                            </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="content-section-col2"></div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="GET"></a>
-                    <h2>GET OPERATIONS</h2>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#6e700d85-c2e0-44c9-a61f-acc6b5a0f257">GET Warehouses</a></li>
+                            <li><a href="#863b35d1-f15a-4008-9601-8fb3d085823f">GET Warehouses (paged)</a></li>
+                            <li><a href="#e6faee8d-50cf-4196-a293-efe8b8d3d35b">GET Warehouse by identifier</a></li>
+                            <li><a href="#4bb51836-643f-47b0-9dc9-c802864a96a0">GET Warehouse by key</a></li>
+                            <li><a href="#5326dd12-3141-4318-8c74-24b6c8f75a3f">GET Print Warehouse by identifier</a></li>
+                            <li><a href="#69e846a6-45a6-436d-99a6-67bdcaee8948">GET Print Warehouse by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#4e51b22a-22d9-4beb-ae73-71d9426f6a8f">POST Warehouses</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#2ea5f6e1-18d3-4a84-992d-0bb060342c69">PUT Set IsActive Warehouse</a></li>
+                            <li><a href="#ea0e3f59-fefb-404e-81fa-7ffd51107f17">PUT Set WarehouseKey Warehouse</a></li>
+                            <li><a href="#257b4a79-a6a3-4e14-a29e-c10c92ef06c5">PUT Set Company Warehouse</a></li>
+                            <li><a href="#7d3eac77-61fa-4812-9ab3-d552fd2bdad3">PUT Set Description Warehouse</a></li>
+                            <li><a href="#428740ca-a196-4d66-9ac2-ec1222a5f075">PUT Set AllowItemEntries Warehouse</a></li>
+                            <li><a href="#6d78bd77-adcc-413d-b2d6-cc0ea5134ca1">PUT Set AllowItemIssues Warehouse</a></li>
+                            <li><a href="#bd6fb095-1102-475f-a9c3-f5f0024f286f">PUT Set StreetName Warehouse</a></li>
+                            <li><a href="#96a14fe2-0e77-4300-8c4d-04686cef3057">PUT Set BuildingNumber Warehouse</a></li>
+                            <li><a href="#c051a0af-9821-40f5-b0b3-444b700a314a">PUT Set CityName Warehouse</a></li>
+                            <li><a href="#f22666c7-b2e4-48f6-8bd1-80b46a58220c">PUT Set PostalZone Warehouse</a></li>
+                            <li><a href="#943d9a7d-4534-4238-80b2-e75d1f2334fe">PUT Set ClosedExercise Warehouse</a></li>
+                            <li><a href="#62332b08-d4a6-4c7a-b19b-05f46c673983">PUT Set ExternalId Warehouse</a></li>
+                            <li><a href="#3377869e-14e5-4826-9919-5dfffed10773">PUT Set ExternalVersion Warehouse</a></li>
+                            <li><a href="#996637b7-ad8e-43e4-8979-137ee1cb7b17">PUT Set IsExternallyManaged Warehouse</a></li>
+                            <li><a href="#8394d3c4-3da6-4797-b22f-61d02050bf25">PUT Set Region Warehouse</a></li>
+                            <li><a href="#f0615be3-fd29-4ed6-be45-51fbea19454f">PUT Set Country Warehouse</a></li>
+                            <li><a href="#53eec5ed-34f0-48df-b729-eb54346e4daa">PUT Set IsLocked Warehouse</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#ece17257-c339-4747-8846-2cdc0dd52776">DELETE Warehouse by identifier</a></li>
+                            <li><a href="#c9e3e7d3-531b-4623-8426-d9f967acf375">DELETE Warehouse by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiWarehouseResource">ApiWarehouseResource</a></li>
+                        <li><a href="#WarehouseResource">WarehouseResource</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="b9bab380-e7ba-4252-bc1c-52c729d549ec"></a>
-                    <h3>GET Warehouses <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b9bab380-e7ba-4252-bc1c-52c729d549ec"></i></h3>
-					<div class="hidden-copylink" id="copy-b9bab380-e7ba-4252-bc1c-52c729d549ec"><a href="#b9bab380-e7ba-4252-bc1c-52c729d549ec">GET Warehouses</a></div>
-                    <p class="operation-description">Returns all Warehouse user has access to.</p>
-				<p>Response:</p>
-					<table>
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6e700d85-c2e0-44c9-a61f-acc6b5a0f257"></a>
+                    <h3>GET Warehouses <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6e700d85-c2e0-44c9-a61f-acc6b5a0f257"></i></h3>
+                    <div class="hidden-copylink" id="copy-6e700d85-c2e0-44c9-a61f-acc6b5a0f257"><a href="#6e700d85-c2e0-44c9-a61f-acc6b5a0f257">GET Warehouses</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-b9bab380-e7ba-4252-bc1c-52c729d549ec">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
+                    <div class="hidden-copylink" id="copy2-6e700d85-c2e0-44c9-a61f-acc6b5a0f257">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/warehouses</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b9bab380-e7ba-4252-bc1c-52c729d549ec"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/warehouses</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6e700d85-c2e0-44c9-a61f-acc6b5a0f257"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="c75d1311-a837-4c42-ab4e-00c74804e658"></a>
-                    <h3>GET Warehouses (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c75d1311-a837-4c42-ab4e-00c74804e658"></i></h3>
-					<div class="hidden-copylink" id="copy-c75d1311-a837-4c42-ab4e-00c74804e658"><a href="#c75d1311-a837-4c42-ab4e-00c74804e658">GET Warehouses (paged)</a></div>
-                    <p class="operation-description">Returns a paginated list of Warehouse user has access to.</p>
-					<p>The following elements are optional:</p>
+                    <a class="anchor" name="863b35d1-f15a-4008-9601-8fb3d085823f"></a>
+                    <h3>GET Warehouses (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-863b35d1-f15a-4008-9601-8fb3d085823f"></i></h3>
+                    <div class="hidden-copylink" id="copy-863b35d1-f15a-4008-9601-8fb3d085823f"><a href="#863b35d1-f15a-4008-9601-8fb3d085823f">GET Warehouses (paged)</a></div>
+                    <p class="operation-description">Returns all the resources available.</p>
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of resources available. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-c75d1311-a837-4c42-ab4e-00c74804e658">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
+                    <div class="hidden-copylink" id="copy2-863b35d1-f15a-4008-9601-8fb3d085823f">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/warehouses</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c75d1311-a837-4c42-ab4e-00c74804e658"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/warehouses</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-863b35d1-f15a-4008-9601-8fb3d085823f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="f91b0697-f499-4244-b5a3-6fedfec4fc9b"></a>
-                    <h3>GET Warehouse by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f91b0697-f499-4244-b5a3-6fedfec4fc9b"></i></h3>
-					<div class="hidden-copylink" id="copy-f91b0697-f499-4244-b5a3-6fedfec4fc9b"><a href="#f91b0697-f499-4244-b5a3-6fedfec4fc9b">GET Warehouse by identifier</a></div>
-                    <p class="operation-description">Returns information for a given Warehouse, by specifying its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="e6faee8d-50cf-4196-a293-efe8b8d3d35b"></a>
+                    <h3>GET Warehouse by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e6faee8d-50cf-4196-a293-efe8b8d3d35b"></i></h3>
+                    <div class="hidden-copylink" id="copy-e6faee8d-50cf-4196-a293-efe8b8d3d35b"><a href="#e6faee8d-50cf-4196-a293-efe8b8d3d35b">GET Warehouse by identifier</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Warehouse.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-f91b0697-f499-4244-b5a3-6fedfec4fc9b">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{id}</div>
+                    <div class="hidden-copylink" id="copy2-e6faee8d-50cf-4196-a293-efe8b8d3d35b">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/warehouses/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f91b0697-f499-4244-b5a3-6fedfec4fc9b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/warehouses/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e6faee8d-50cf-4196-a293-efe8b8d3d35b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="8e2a73b6-cee2-4e07-a6c5-2e44b99fc12b"></a>
-                    <h3>GET Warehouse by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8e2a73b6-cee2-4e07-a6c5-2e44b99fc12b"></i></h3>
-					<div class="hidden-copylink" id="copy-8e2a73b6-cee2-4e07-a6c5-2e44b99fc12b"><a href="#8e2a73b6-cee2-4e07-a6c5-2e44b99fc12b">GET Warehouse by key</a></div>
-                    <p class="operation-description">Returns information for a given Warehouse, by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="4bb51836-643f-47b0-9dc9-c802864a96a0"></a>
+                    <h3>GET Warehouse by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4bb51836-643f-47b0-9dc9-c802864a96a0"></i></h3>
+                    <div class="hidden-copylink" id="copy-4bb51836-643f-47b0-9dc9-c802864a96a0"><a href="#4bb51836-643f-47b0-9dc9-c802864a96a0">GET Warehouse by key</a></div>
+                    <p class="operation-description">Returns the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -261,98 +333,106 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Warehouse. See <a href="#WarehouseResource">WarehouseResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the resource. See <a href="#WarehouseResource">WarehouseResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-8e2a73b6-cee2-4e07-a6c5-2e44b99fc12b">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}</div>
+                    <div class="hidden-copylink" id="copy2-4bb51836-643f-47b0-9dc9-c802864a96a0">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/warehouses/{warehouseKey}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8e2a73b6-cee2-4e07-a6c5-2e44b99fc12b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/warehouses/{warehouseKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4bb51836-643f-47b0-9dc9-c802864a96a0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="01f8f6d4-543b-496e-9f98-ae9b2c9a40fc"></a>
-                    <h3>GET Print Warehouse by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-01f8f6d4-543b-496e-9f98-ae9b2c9a40fc"></i></h3>
-					<div class="hidden-copylink" id="copy-01f8f6d4-543b-496e-9f98-ae9b2c9a40fc"><a href="#01f8f6d4-543b-496e-9f98-ae9b2c9a40fc">GET Print Warehouse by identifier</a></div>
-                    <p class="operation-description">Prints the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="5326dd12-3141-4318-8c74-24b6c8f75a3f"></a>
+                    <h3>GET Print Warehouse by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5326dd12-3141-4318-8c74-24b6c8f75a3f"></i></h3>
+                    <div class="hidden-copylink" id="copy-5326dd12-3141-4318-8c74-24b6c8f75a3f"><a href="#5326dd12-3141-4318-8c74-24b6c8f75a3f">GET Print Warehouse by identifier</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Warehouse.</td>
+                                <td><i>(string)</i> The identifier of the resource that should be printed.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed Warehouse.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-01f8f6d4-543b-496e-9f98-ae9b2c9a40fc">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{id}/print</div>
+                    <div class="hidden-copylink" id="copy2-5326dd12-3141-4318-8c74-24b6c8f75a3f">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{id}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/warehouses/{id}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-01f8f6d4-543b-496e-9f98-ae9b2c9a40fc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>GET /materialsCore/warehouses/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5326dd12-3141-4318-8c74-24b6c8f75a3f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="c965c536-ea12-4939-a6a2-6aa623483192"></a>
-                    <h3>GET Print Warehouse by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c965c536-ea12-4939-a6a2-6aa623483192"></i></h3>
-					<div class="hidden-copylink" id="copy-c965c536-ea12-4939-a6a2-6aa623483192"><a href="#c965c536-ea12-4939-a6a2-6aa623483192">GET Print Warehouse by key</a></div>
-                    <p class="operation-description">Prints the specified Warehouse by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="69e846a6-45a6-436d-99a6-67bdcaee8948"></a>
+                    <h3>GET Print Warehouse by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-69e846a6-45a6-436d-99a6-67bdcaee8948"></i></h3>
+                    <div class="hidden-copylink" id="copy-69e846a6-45a6-436d-99a6-67bdcaee8948"><a href="#69e846a6-45a6-436d-99a6-67bdcaee8948">GET Print Warehouse by key</a></div>
+                    <p class="operation-description">Prints the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -361,110 +441,118 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed Warehouse.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-c965c536-ea12-4939-a6a2-6aa623483192">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/print</div>
+                    <div class="hidden-copylink" id="copy2-69e846a6-45a6-436d-99a6-67bdcaee8948">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/print</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>GET /materialsCore/warehouses/{warehouseKey}/print</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c965c536-ea12-4939-a6a2-6aa623483192"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="POST"></a>
-                    <h2>POST OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>GET /materialsCore/warehouses/{warehouseKey}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-69e846a6-45a6-436d-99a6-67bdcaee8948"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="2c96a2d5-dd2e-4ae4-b020-c171cb4a49c3"></a>
-                    <h3>POST Warehouses <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2c96a2d5-dd2e-4ae4-b020-c171cb4a49c3"></i></h3>
-					<div class="hidden-copylink" id="copy-2c96a2d5-dd2e-4ae4-b020-c171cb4a49c3"><a href="#2c96a2d5-dd2e-4ae4-b020-c171cb4a49c3">POST Warehouses</a></div>
-                    <p class="operation-description">Creates a new Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4e51b22a-22d9-4beb-ae73-71d9426f6a8f"></a>
+                    <h3>POST Warehouses <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4e51b22a-22d9-4beb-ae73-71d9426f6a8f"></i></h3>
+                    <div class="hidden-copylink" id="copy-4e51b22a-22d9-4beb-ae73-71d9426f6a8f"><a href="#4e51b22a-22d9-4beb-ae73-71d9426f6a8f">POST Warehouses</a></div>
+                    <p class="operation-description">Creates a new resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">warehouseResource</td>
-                                <td><i>(ApiWarehouseResource)</i> In the request body, supply a resource containing the Warehouse information.<br/>See <a href="#ApiWarehouseResource">ApiWarehouseResource.</a></td>
+                                <td><i>(ApiWarehouseResource)</i> The request body should contain the resource that should be created.<br/>See <a href="#ApiWarehouseResource">ApiWarehouseResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns the Warehouse identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiWarehouseResource">ApiWarehouseResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new resource identifier. The resource header location property contains the URL for the new resource. See <a href="#ApiWarehouseResource">ApiWarehouseResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">201</td>
-                                <td>The operation was successful and the Warehouse was created.</td>
+                                <td>Created. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-2c96a2d5-dd2e-4ae4-b020-c171cb4a49c3">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
+                    <div class="hidden-copylink" id="copy2-4e51b22a-22d9-4beb-ae73-71d9426f6a8f">api/{tenantKey}/{orgKey}/materialsCore/warehouses</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>POST /materialsCore/warehouses</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2c96a2d5-dd2e-4ae4-b020-c171cb4a49c3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="PUT"></a>
-                    <h2>PUT OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>POST /materialsCore/warehouses</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4e51b22a-22d9-4beb-ae73-71d9426f6a8f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ac2696d9-6bf7-401a-9211-881411aebfb5"></a>
-                    <h3>PUT Set AllowItemEntries Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ac2696d9-6bf7-401a-9211-881411aebfb5"></i></h3>
-					<div class="hidden-copylink" id="copy-ac2696d9-6bf7-401a-9211-881411aebfb5"><a href="#ac2696d9-6bf7-401a-9211-881411aebfb5">PUT Set AllowItemEntries Warehouse</a></div>
-                    <p class="operation-description">Updates the AllowItemEntries for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="428740ca-a196-4d66-9ac2-ec1222a5f075"></a>
+                    <h3>PUT Set AllowItemEntries Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-428740ca-a196-4d66-9ac2-ec1222a5f075"></i></h3>
+                    <div class="hidden-copylink" id="copy-428740ca-a196-4d66-9ac2-ec1222a5f075"><a href="#428740ca-a196-4d66-9ac2-ec1222a5f075">PUT Set AllowItemEntries Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'AllowItemEntries' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -473,47 +561,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the AllowItemEntries.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-ac2696d9-6bf7-401a-9211-881411aebfb5">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/allowItemEntries</div>
+                    <div class="hidden-copylink" id="copy2-428740ca-a196-4d66-9ac2-ec1222a5f075">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/allowItemEntries</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/allowItemEntries</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ac2696d9-6bf7-401a-9211-881411aebfb5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/allowItemEntries</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-428740ca-a196-4d66-9ac2-ec1222a5f075"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="92d36fea-722a-4e52-b0dc-ea5bd3c39b69"></a>
-                    <h3>PUT Set AllowItemIssues Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-92d36fea-722a-4e52-b0dc-ea5bd3c39b69"></i></h3>
-					<div class="hidden-copylink" id="copy-92d36fea-722a-4e52-b0dc-ea5bd3c39b69"><a href="#92d36fea-722a-4e52-b0dc-ea5bd3c39b69">PUT Set AllowItemIssues Warehouse</a></div>
-                    <p class="operation-description">Updates the AllowItemIssues for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="6d78bd77-adcc-413d-b2d6-cc0ea5134ca1"></a>
+                    <h3>PUT Set AllowItemIssues Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6d78bd77-adcc-413d-b2d6-cc0ea5134ca1"></i></h3>
+                    <div class="hidden-copylink" id="copy-6d78bd77-adcc-413d-b2d6-cc0ea5134ca1"><a href="#6d78bd77-adcc-413d-b2d6-cc0ea5134ca1">PUT Set AllowItemIssues Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'AllowItemIssues' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -522,47 +612,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the AllowItemIssues.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-92d36fea-722a-4e52-b0dc-ea5bd3c39b69">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/allowItemIssues</div>
+                    <div class="hidden-copylink" id="copy2-6d78bd77-adcc-413d-b2d6-cc0ea5134ca1">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/allowItemIssues</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/allowItemIssues</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-92d36fea-722a-4e52-b0dc-ea5bd3c39b69"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/allowItemIssues</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6d78bd77-adcc-413d-b2d6-cc0ea5134ca1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="670c2228-b226-4042-bd22-e1cadcc008e8"></a>
-                    <h3>PUT Set BuildingNumber Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-670c2228-b226-4042-bd22-e1cadcc008e8"></i></h3>
-					<div class="hidden-copylink" id="copy-670c2228-b226-4042-bd22-e1cadcc008e8"><a href="#670c2228-b226-4042-bd22-e1cadcc008e8">PUT Set BuildingNumber Warehouse</a></div>
-                    <p class="operation-description">Updates the BuildingNumber for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="96a14fe2-0e77-4300-8c4d-04686cef3057"></a>
+                    <h3>PUT Set BuildingNumber Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-96a14fe2-0e77-4300-8c4d-04686cef3057"></i></h3>
+                    <div class="hidden-copylink" id="copy-96a14fe2-0e77-4300-8c4d-04686cef3057"><a href="#96a14fe2-0e77-4300-8c4d-04686cef3057">PUT Set BuildingNumber Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'BuildingNumber' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -571,47 +663,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the BuildingNumber.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-670c2228-b226-4042-bd22-e1cadcc008e8">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/buildingNumber</div>
+                    <div class="hidden-copylink" id="copy2-96a14fe2-0e77-4300-8c4d-04686cef3057">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/buildingNumber</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/buildingNumber</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-670c2228-b226-4042-bd22-e1cadcc008e8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/buildingNumber</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-96a14fe2-0e77-4300-8c4d-04686cef3057"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="e878b8a8-989e-43f8-9a4f-440445aa791d"></a>
-                    <h3>PUT Set CityName Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e878b8a8-989e-43f8-9a4f-440445aa791d"></i></h3>
-					<div class="hidden-copylink" id="copy-e878b8a8-989e-43f8-9a4f-440445aa791d"><a href="#e878b8a8-989e-43f8-9a4f-440445aa791d">PUT Set CityName Warehouse</a></div>
-                    <p class="operation-description">Updates the CityName for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="c051a0af-9821-40f5-b0b3-444b700a314a"></a>
+                    <h3>PUT Set CityName Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c051a0af-9821-40f5-b0b3-444b700a314a"></i></h3>
+                    <div class="hidden-copylink" id="copy-c051a0af-9821-40f5-b0b3-444b700a314a"><a href="#c051a0af-9821-40f5-b0b3-444b700a314a">PUT Set CityName Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'CityName' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -620,47 +714,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the CityName.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-e878b8a8-989e-43f8-9a4f-440445aa791d">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/cityName</div>
+                    <div class="hidden-copylink" id="copy2-c051a0af-9821-40f5-b0b3-444b700a314a">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/cityName</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/cityName</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e878b8a8-989e-43f8-9a4f-440445aa791d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/cityName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c051a0af-9821-40f5-b0b3-444b700a314a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="adcc4116-ca4f-4bb1-98bf-4261a80622d4"></a>
-                    <h3>PUT Set ClosedExercise Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-adcc4116-ca4f-4bb1-98bf-4261a80622d4"></i></h3>
-					<div class="hidden-copylink" id="copy-adcc4116-ca4f-4bb1-98bf-4261a80622d4"><a href="#adcc4116-ca4f-4bb1-98bf-4261a80622d4">PUT Set ClosedExercise Warehouse</a></div>
-                    <p class="operation-description">Updates the ClosedExercise for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="943d9a7d-4534-4238-80b2-e75d1f2334fe"></a>
+                    <h3>PUT Set ClosedExercise Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-943d9a7d-4534-4238-80b2-e75d1f2334fe"></i></h3>
+                    <div class="hidden-copylink" id="copy-943d9a7d-4534-4238-80b2-e75d1f2334fe"><a href="#943d9a7d-4534-4238-80b2-e75d1f2334fe">PUT Set ClosedExercise Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'ClosedExercise' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -669,47 +765,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(DateTime)</i> In the request body, supply the new value for the ClosedExercise.</td>
+                                <td><i>(DateTime)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-adcc4116-ca4f-4bb1-98bf-4261a80622d4">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/closedExercise</div>
+                    <div class="hidden-copylink" id="copy2-943d9a7d-4534-4238-80b2-e75d1f2334fe">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/closedExercise</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/closedExercise</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-adcc4116-ca4f-4bb1-98bf-4261a80622d4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/closedExercise</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-943d9a7d-4534-4238-80b2-e75d1f2334fe"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ee1f3a16-e3d5-43d0-852c-924e7ed1385c"></a>
-                    <h3>PUT Set Company Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ee1f3a16-e3d5-43d0-852c-924e7ed1385c"></i></h3>
-					<div class="hidden-copylink" id="copy-ee1f3a16-e3d5-43d0-852c-924e7ed1385c"><a href="#ee1f3a16-e3d5-43d0-852c-924e7ed1385c">PUT Set Company Warehouse</a></div>
-                    <p class="operation-description">Updates the Company for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="257b4a79-a6a3-4e14-a29e-c10c92ef06c5"></a>
+                    <h3>PUT Set Company Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-257b4a79-a6a3-4e14-a29e-c10c92ef06c5"></i></h3>
+                    <div class="hidden-copylink" id="copy-257b4a79-a6a3-4e14-a29e-c10c92ef06c5"><a href="#257b4a79-a6a3-4e14-a29e-c10c92ef06c5">PUT Set Company Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'Company' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -718,47 +816,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-ee1f3a16-e3d5-43d0-852c-924e7ed1385c">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/company</div>
+                    <div class="hidden-copylink" id="copy2-257b4a79-a6a3-4e14-a29e-c10c92ef06c5">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/company</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/company</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ee1f3a16-e3d5-43d0-852c-924e7ed1385c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/company</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-257b4a79-a6a3-4e14-a29e-c10c92ef06c5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="f2afa7c3-6c89-4a50-b6ea-f77d5eefde2f"></a>
-                    <h3>PUT Set Country Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f2afa7c3-6c89-4a50-b6ea-f77d5eefde2f"></i></h3>
-					<div class="hidden-copylink" id="copy-f2afa7c3-6c89-4a50-b6ea-f77d5eefde2f"><a href="#f2afa7c3-6c89-4a50-b6ea-f77d5eefde2f">PUT Set Country Warehouse</a></div>
-                    <p class="operation-description">Updates the Country for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="f0615be3-fd29-4ed6-be45-51fbea19454f"></a>
+                    <h3>PUT Set Country Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f0615be3-fd29-4ed6-be45-51fbea19454f"></i></h3>
+                    <div class="hidden-copylink" id="copy-f0615be3-fd29-4ed6-be45-51fbea19454f"><a href="#f0615be3-fd29-4ed6-be45-51fbea19454f">PUT Set Country Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'Country' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -767,47 +867,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-f2afa7c3-6c89-4a50-b6ea-f77d5eefde2f">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/country</div>
+                    <div class="hidden-copylink" id="copy2-f0615be3-fd29-4ed6-be45-51fbea19454f">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/country</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/country</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f2afa7c3-6c89-4a50-b6ea-f77d5eefde2f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/country</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f0615be3-fd29-4ed6-be45-51fbea19454f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="4da01674-9aa9-48be-9e87-efa32a8efeec"></a>
-                    <h3>PUT Set Description Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4da01674-9aa9-48be-9e87-efa32a8efeec"></i></h3>
-					<div class="hidden-copylink" id="copy-4da01674-9aa9-48be-9e87-efa32a8efeec"><a href="#4da01674-9aa9-48be-9e87-efa32a8efeec">PUT Set Description Warehouse</a></div>
-                    <p class="operation-description">Updates the Description for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="7d3eac77-61fa-4812-9ab3-d552fd2bdad3"></a>
+                    <h3>PUT Set Description Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7d3eac77-61fa-4812-9ab3-d552fd2bdad3"></i></h3>
+                    <div class="hidden-copylink" id="copy-7d3eac77-61fa-4812-9ab3-d552fd2bdad3"><a href="#7d3eac77-61fa-4812-9ab3-d552fd2bdad3">PUT Set Description Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'Description' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -816,47 +918,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Description.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-4da01674-9aa9-48be-9e87-efa32a8efeec">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/description</div>
+                    <div class="hidden-copylink" id="copy2-7d3eac77-61fa-4812-9ab3-d552fd2bdad3">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/description</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/description</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4da01674-9aa9-48be-9e87-efa32a8efeec"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/description</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7d3eac77-61fa-4812-9ab3-d552fd2bdad3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="68be887c-81c3-4c50-be9e-36d6768d50f5"></a>
-                    <h3>PUT Set ExternalId Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-68be887c-81c3-4c50-be9e-36d6768d50f5"></i></h3>
-					<div class="hidden-copylink" id="copy-68be887c-81c3-4c50-be9e-36d6768d50f5"><a href="#68be887c-81c3-4c50-be9e-36d6768d50f5">PUT Set ExternalId Warehouse</a></div>
-                    <p class="operation-description">Updates the ExternalId for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="62332b08-d4a6-4c7a-b19b-05f46c673983"></a>
+                    <h3>PUT Set ExternalId Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-62332b08-d4a6-4c7a-b19b-05f46c673983"></i></h3>
+                    <div class="hidden-copylink" id="copy-62332b08-d4a6-4c7a-b19b-05f46c673983"><a href="#62332b08-d4a6-4c7a-b19b-05f46c673983">PUT Set ExternalId Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'ExternalId' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -865,47 +969,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the ExternalId.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-68be887c-81c3-4c50-be9e-36d6768d50f5">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/externalId</div>
+                    <div class="hidden-copylink" id="copy2-62332b08-d4a6-4c7a-b19b-05f46c673983">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/externalId</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/externalId</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-68be887c-81c3-4c50-be9e-36d6768d50f5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/externalId</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-62332b08-d4a6-4c7a-b19b-05f46c673983"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ad18394a-c32b-4839-a239-e1a2530eb37a"></a>
-                    <h3>PUT Set ExternalVersion Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ad18394a-c32b-4839-a239-e1a2530eb37a"></i></h3>
-					<div class="hidden-copylink" id="copy-ad18394a-c32b-4839-a239-e1a2530eb37a"><a href="#ad18394a-c32b-4839-a239-e1a2530eb37a">PUT Set ExternalVersion Warehouse</a></div>
-                    <p class="operation-description">Updates the ExternalVersion for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="3377869e-14e5-4826-9919-5dfffed10773"></a>
+                    <h3>PUT Set ExternalVersion Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3377869e-14e5-4826-9919-5dfffed10773"></i></h3>
+                    <div class="hidden-copylink" id="copy-3377869e-14e5-4826-9919-5dfffed10773"><a href="#3377869e-14e5-4826-9919-5dfffed10773">PUT Set ExternalVersion Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'ExternalVersion' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -914,47 +1020,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the ExternalVersion.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-ad18394a-c32b-4839-a239-e1a2530eb37a">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/externalVersion</div>
+                    <div class="hidden-copylink" id="copy2-3377869e-14e5-4826-9919-5dfffed10773">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/externalVersion</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/externalVersion</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ad18394a-c32b-4839-a239-e1a2530eb37a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/externalVersion</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3377869e-14e5-4826-9919-5dfffed10773"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="5cd41be2-0c5a-4779-86ae-72380c5fc03e"></a>
-                    <h3>PUT Set IsActive Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5cd41be2-0c5a-4779-86ae-72380c5fc03e"></i></h3>
-					<div class="hidden-copylink" id="copy-5cd41be2-0c5a-4779-86ae-72380c5fc03e"><a href="#5cd41be2-0c5a-4779-86ae-72380c5fc03e">PUT Set IsActive Warehouse</a></div>
-                    <p class="operation-description">Updates the IsActive for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="2ea5f6e1-18d3-4a84-992d-0bb060342c69"></a>
+                    <h3>PUT Set IsActive Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2ea5f6e1-18d3-4a84-992d-0bb060342c69"></i></h3>
+                    <div class="hidden-copylink" id="copy-2ea5f6e1-18d3-4a84-992d-0bb060342c69"><a href="#2ea5f6e1-18d3-4a84-992d-0bb060342c69">PUT Set IsActive Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'IsActive' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -963,47 +1071,53 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-5cd41be2-0c5a-4779-86ae-72380c5fc03e">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/isActive</div>
+                    <div class="hidden-copylink" id="copy2-2ea5f6e1-18d3-4a84-992d-0bb060342c69">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/isActive</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/isActive</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5cd41be2-0c5a-4779-86ae-72380c5fc03e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2ea5f6e1-18d3-4a84-992d-0bb060342c69"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="d19de017-9acc-4940-9ce8-4a8a2594fde1"></a>
-                    <h3>PUT Set IsExternallyManaged Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d19de017-9acc-4940-9ce8-4a8a2594fde1"></i></h3>
-					<div class="hidden-copylink" id="copy-d19de017-9acc-4940-9ce8-4a8a2594fde1"><a href="#d19de017-9acc-4940-9ce8-4a8a2594fde1">PUT Set IsExternallyManaged Warehouse</a></div>
-                    <p class="operation-description">Updates the IsExternallyManaged for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="996637b7-ad8e-43e4-8979-137ee1cb7b17"></a>
+                    <h3>PUT Set IsExternallyManaged Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-996637b7-ad8e-43e4-8979-137ee1cb7b17"></i></h3>
+                    <div class="hidden-copylink" id="copy-996637b7-ad8e-43e4-8979-137ee1cb7b17"><a href="#996637b7-ad8e-43e4-8979-137ee1cb7b17">PUT Set IsExternallyManaged Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'IsExternallyManaged' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1012,47 +1126,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsExternallyManaged.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-d19de017-9acc-4940-9ce8-4a8a2594fde1">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/isExternallyManaged</div>
+                    <div class="hidden-copylink" id="copy2-996637b7-ad8e-43e4-8979-137ee1cb7b17">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/isExternallyManaged</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/isExternallyManaged</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d19de017-9acc-4940-9ce8-4a8a2594fde1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/isExternallyManaged</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-996637b7-ad8e-43e4-8979-137ee1cb7b17"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="8ba66dd7-1745-486c-aa44-781b61665202"></a>
-                    <h3>PUT Set IsLocked Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8ba66dd7-1745-486c-aa44-781b61665202"></i></h3>
-					<div class="hidden-copylink" id="copy-8ba66dd7-1745-486c-aa44-781b61665202"><a href="#8ba66dd7-1745-486c-aa44-781b61665202">PUT Set IsLocked Warehouse</a></div>
-                    <p class="operation-description">Updates the IsLocked for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="53eec5ed-34f0-48df-b729-eb54346e4daa"></a>
+                    <h3>PUT Set IsLocked Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-53eec5ed-34f0-48df-b729-eb54346e4daa"></i></h3>
+                    <div class="hidden-copylink" id="copy-53eec5ed-34f0-48df-b729-eb54346e4daa"><a href="#53eec5ed-34f0-48df-b729-eb54346e4daa">PUT Set IsLocked Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'IsLocked' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1061,47 +1177,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsLocked.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-8ba66dd7-1745-486c-aa44-781b61665202">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/isLocked</div>
+                    <div class="hidden-copylink" id="copy2-53eec5ed-34f0-48df-b729-eb54346e4daa">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/isLocked</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/isLocked</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8ba66dd7-1745-486c-aa44-781b61665202"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/isLocked</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-53eec5ed-34f0-48df-b729-eb54346e4daa"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ca8a9461-588a-458b-b7e5-d830891cb907"></a>
-                    <h3>PUT Set PostalZone Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ca8a9461-588a-458b-b7e5-d830891cb907"></i></h3>
-					<div class="hidden-copylink" id="copy-ca8a9461-588a-458b-b7e5-d830891cb907"><a href="#ca8a9461-588a-458b-b7e5-d830891cb907">PUT Set PostalZone Warehouse</a></div>
-                    <p class="operation-description">Updates the PostalZone for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="f22666c7-b2e4-48f6-8bd1-80b46a58220c"></a>
+                    <h3>PUT Set PostalZone Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f22666c7-b2e4-48f6-8bd1-80b46a58220c"></i></h3>
+                    <div class="hidden-copylink" id="copy-f22666c7-b2e4-48f6-8bd1-80b46a58220c"><a href="#f22666c7-b2e4-48f6-8bd1-80b46a58220c">PUT Set PostalZone Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'PostalZone' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1110,47 +1228,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the PostalZone.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-ca8a9461-588a-458b-b7e5-d830891cb907">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/postalZone</div>
+                    <div class="hidden-copylink" id="copy2-f22666c7-b2e4-48f6-8bd1-80b46a58220c">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/postalZone</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/postalZone</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ca8a9461-588a-458b-b7e5-d830891cb907"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/postalZone</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f22666c7-b2e4-48f6-8bd1-80b46a58220c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="be605a9a-bcff-4163-8e98-cc01932d121e"></a>
-                    <h3>PUT Set Region Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-be605a9a-bcff-4163-8e98-cc01932d121e"></i></h3>
-					<div class="hidden-copylink" id="copy-be605a9a-bcff-4163-8e98-cc01932d121e"><a href="#be605a9a-bcff-4163-8e98-cc01932d121e">PUT Set Region Warehouse</a></div>
-                    <p class="operation-description">Updates the Region for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="8394d3c4-3da6-4797-b22f-61d02050bf25"></a>
+                    <h3>PUT Set Region Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8394d3c4-3da6-4797-b22f-61d02050bf25"></i></h3>
+                    <div class="hidden-copylink" id="copy-8394d3c4-3da6-4797-b22f-61d02050bf25"><a href="#8394d3c4-3da6-4797-b22f-61d02050bf25">PUT Set Region Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'Region' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1159,47 +1279,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Region.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-be605a9a-bcff-4163-8e98-cc01932d121e">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/region</div>
+                    <div class="hidden-copylink" id="copy2-8394d3c4-3da6-4797-b22f-61d02050bf25">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/region</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/region</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-be605a9a-bcff-4163-8e98-cc01932d121e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/region</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8394d3c4-3da6-4797-b22f-61d02050bf25"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="8b74c5a3-c40f-4eda-adcc-4535e555c1aa"></a>
-                    <h3>PUT Set StreetName Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8b74c5a3-c40f-4eda-adcc-4535e555c1aa"></i></h3>
-					<div class="hidden-copylink" id="copy-8b74c5a3-c40f-4eda-adcc-4535e555c1aa"><a href="#8b74c5a3-c40f-4eda-adcc-4535e555c1aa">PUT Set StreetName Warehouse</a></div>
-                    <p class="operation-description">Updates the StreetName for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="bd6fb095-1102-475f-a9c3-f5f0024f286f"></a>
+                    <h3>PUT Set StreetName Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bd6fb095-1102-475f-a9c3-f5f0024f286f"></i></h3>
+                    <div class="hidden-copylink" id="copy-bd6fb095-1102-475f-a9c3-f5f0024f286f"><a href="#bd6fb095-1102-475f-a9c3-f5f0024f286f">PUT Set StreetName Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'StreetName' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1208,47 +1330,49 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the StreetName.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-8b74c5a3-c40f-4eda-adcc-4535e555c1aa">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/streetName</div>
+                    <div class="hidden-copylink" id="copy2-bd6fb095-1102-475f-a9c3-f5f0024f286f">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/streetName</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/streetName</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8b74c5a3-c40f-4eda-adcc-4535e555c1aa"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/streetName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bd6fb095-1102-475f-a9c3-f5f0024f286f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="eee0ff6c-d4c6-4793-a4ab-cf5c3dc3f462"></a>
-                    <h3>PUT Set WarehouseKey Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-eee0ff6c-d4c6-4793-a4ab-cf5c3dc3f462"></i></h3>
-					<div class="hidden-copylink" id="copy-eee0ff6c-d4c6-4793-a4ab-cf5c3dc3f462"><a href="#eee0ff6c-d4c6-4793-a4ab-cf5c3dc3f462">PUT Set WarehouseKey Warehouse</a></div>
-                    <p class="operation-description">Updates the WarehouseKey for the specified Warehouse.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="ea0e3f59-fefb-404e-81fa-7ffd51107f17"></a>
+                    <h3>PUT Set WarehouseKey Warehouse <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ea0e3f59-fefb-404e-81fa-7ffd51107f17"></i></h3>
+                    <div class="hidden-copylink" id="copy-ea0e3f59-fefb-404e-81fa-7ffd51107f17"><a href="#ea0e3f59-fefb-404e-81fa-7ffd51107f17">PUT Set WarehouseKey Warehouse</a></div>
+                    <p class="operation-description">Updates the attribute 'WarehouseKey' in the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1257,102 +1381,106 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the WarehouseKey.</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-eee0ff6c-d4c6-4793-a4ab-cf5c3dc3f462">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/warehouseKey</div>
+                    <div class="hidden-copylink" id="copy2-ea0e3f59-fefb-404e-81fa-7ffd51107f17">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}/warehouseKey</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/warehouseKey</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-eee0ff6c-d4c6-4793-a4ab-cf5c3dc3f462"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="DELETE"></a>
-                    <h2>DELETE OPERATIONS</h2>
+                        <div class="inner-resource-url"><div>PUT /materialsCore/warehouses/{warehouseKey}/warehouseKey</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ea0e3f59-fefb-404e-81fa-7ffd51107f17"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7276f5e0-3ba3-415f-996d-696e70ea94cc"></a>
-                    <h3>DELETE Warehouse by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7276f5e0-3ba3-415f-996d-696e70ea94cc"></i></h3>
-					<div class="hidden-copylink" id="copy-7276f5e0-3ba3-415f-996d-696e70ea94cc"><a href="#7276f5e0-3ba3-415f-996d-696e70ea94cc">DELETE Warehouse by identifier</a></div>
-                    <p class="operation-description">Deletes the specified Warehouse by its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ece17257-c339-4747-8846-2cdc0dd52776"></a>
+                    <h3>DELETE Warehouse by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ece17257-c339-4747-8846-2cdc0dd52776"></i></h3>
+                    <div class="hidden-copylink" id="copy-ece17257-c339-4747-8846-2cdc0dd52776"><a href="#ece17257-c339-4747-8846-2cdc0dd52776">DELETE Warehouse by identifier</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Warehouse.</td>
+                                <td><i>(string)</i> The resource identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Warehouse was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Warehouse does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-7276f5e0-3ba3-415f-996d-696e70ea94cc">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{id}</div>
+                    <div class="hidden-copylink" id="copy2-ece17257-c339-4747-8846-2cdc0dd52776">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{id}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /materialsCore/warehouses/{id}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7276f5e0-3ba3-415f-996d-696e70ea94cc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /materialsCore/warehouses/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ece17257-c339-4747-8846-2cdc0dd52776"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="519544ff-6565-4202-ac64-b45ce862c454"></a>
-                    <h3>DELETE Warehouse by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-519544ff-6565-4202-ac64-b45ce862c454"></i></h3>
-					<div class="hidden-copylink" id="copy-519544ff-6565-4202-ac64-b45ce862c454"><a href="#519544ff-6565-4202-ac64-b45ce862c454">DELETE Warehouse by key</a></div>
-                    <p class="operation-description">Deletes the specified Warehouse by its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="c9e3e7d3-531b-4623-8426-d9f967acf375"></a>
+                    <h3>DELETE Warehouse by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c9e3e7d3-531b-4623-8426-d9f967acf375"></i></h3>
+                    <div class="hidden-copylink" id="copy-c9e3e7d3-531b-4623-8426-d9f967acf375"><a href="#c9e3e7d3-531b-4623-8426-d9f967acf375">DELETE Warehouse by key</a></div>
+                    <p class="operation-description">Deletes the specified resource.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
@@ -1361,219 +1489,259 @@
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Warehouse was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Warehouse does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resource does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-					<div class="hidden-copylink" id="copy2-519544ff-6565-4202-ac64-b45ce862c454">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}</div>
+                    <div class="hidden-copylink" id="copy2-c9e3e7d3-531b-4623-8426-d9f967acf375">api/{tenantKey}/{orgKey}/materialsCore/warehouses/{warehouseKey}</div>
                     <div class="resource-url">
-						<div class="inner-resource-url"><div>DELETE /materialsCore/warehouses/{warehouseKey}</div></div>
-						<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-519544ff-6565-4202-ac64-b45ce862c454"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-					</div>
+                        <div class="inner-resource-url"><div>DELETE /materialsCore/warehouses/{warehouseKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c9e3e7d3-531b-4623-8426-d9f967acf375"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
-					<br />
-                    <a class="anchor" name="WarehouseResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'WarehouseResourceResourceDiv')">WarehouseResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="WarehouseResourceResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">warehouseKey</td>
-                                <td  class="wrap"><i>(string)</i> The key for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">company</td>
-                                <td  class="wrap"><i>(string)</i> The company for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">allowItemEntries</td>
-                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item entries.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">allowItemIssues</td>
-                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item issues.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">isExternallyManaged</td>
-                                <td  class="wrap"><i>(bool)</i> Indicates whether the warehouse is externally managed.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">isLocked</td>
-                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">description</td>
-                                <td  class="wrap"><i>(string)</i> The description for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">streetName</td>
-                                <td  class="wrap"><i>(string)</i> The street name for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">buildingNumber</td>
-                                <td  class="wrap"><i>(string)</i> The building number for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">cityName</td>
-                                <td  class="wrap"><i>(string)</i> The city name for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">postalZone</td>
-                                <td  class="wrap"><i>(string)</i> The postal zone for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">closedExercise</td>
-                                <td  class="wrap"><i>(DateTime)</i> The closed exercise date for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">externalId</td>
-                                <td  class="wrap"><i>(string)</i> The external identification for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">externalVersion</td>
-                                <td  class="wrap"><i>(string)</i> The external version for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">region</td>
-                                <td  class="wrap"><i>(string)</i> The region for the Warehouse.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">country</td>
-                                <td  class="wrap"><i>(string)</i> The country for the Warehouse.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
+                    <br />
                     <a class="anchor" name="ApiWarehouseResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiWarehouseResourceResourceDiv')">ApiWarehouseResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiWarehouseResourceResourceDiv" style="display:none">
+                    <h4>ApiWarehouseResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiWarehouseResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiWarehouseResource"><a href="#ApiWarehouseResource">ApiWarehouseResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">warehouseKey</td>
                                 <td  class="wrap"><i>(string)</i> The key for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">company</td>
                                 <td  class="wrap"><i>(string)</i> The company for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">allowItemEntries</td>
                                 <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item entries.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">allowItemIssues</td>
                                 <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item issues.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">isExternallyManaged</td>
                                 <td  class="wrap"><i>(bool)</i> Indicates whether the warehouse is externally managed.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">isLocked</td>
                                 <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
+
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">description</td>
                                 <td  class="wrap"><i>(string)</i> The description for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">streetName</td>
                                 <td  class="wrap"><i>(string)</i> The street name for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">buildingNumber</td>
                                 <td  class="wrap"><i>(string)</i> The building number for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">cityName</td>
                                 <td  class="wrap"><i>(string)</i> The city name for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">postalZone</td>
                                 <td  class="wrap"><i>(string)</i> The postal zone for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">closedExercise</td>
                                 <td  class="wrap"><i>(DateTime)</i> The closed exercise date for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">externalId</td>
                                 <td  class="wrap"><i>(string)</i> The external identification for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">externalVersion</td>
                                 <td  class="wrap"><i>(string)</i> The external version for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">region</td>
                                 <td  class="wrap"><i>(string)</i> The region for the Warehouse.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">country</td>
                                 <td  class="wrap"><i>(string)</i> The country for the Warehouse.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="WarehouseResource"></a>
+                    <h4>WarehouseResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-WarehouseResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-WarehouseResource"><a href="#WarehouseResource">WarehouseResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouseKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company for the Warehouse.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">allowItemEntries</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item entries.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">allowItemIssues</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if this warehouse accepts item issues.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates whether the warehouse is externally managed.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isLocked</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates if the warehouse is currently locked.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The description for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The street name for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The building number for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The city name for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The postal zone for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">closedExercise</td>
+                                <td  class="wrap"><i>(DateTime)</i> The closed exercise date for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external identification for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the Warehouse.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">region</td>
+                                <td  class="wrap"><i>(string)</i> The region for the Warehouse.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Region. These records are accessibly through the <a href="corepatterns.regions.html">Regions</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The country for the Warehouse.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Country. These records are accessibly through the <a href="corepatterns.countries.html">Countries</a> service.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </body>
-	<script>
-		var clipboard = new Clipboard('.copy-clipboard');
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
 
-		clipboard.on('success', function(e) {
-		  showTooltip(e.trigger, 'Copied!', 'left');
-		});
-		
-		clipboard.on('error', function(e) {
-		  showTooltip(e.trigger, 'Error!', 'left');
-		});
-	</script>
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
 </html>
