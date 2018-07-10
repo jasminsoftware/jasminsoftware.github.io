@@ -1,5 +1,11 @@
 ﻿window.searchIndexList = [
     {
+        url: "bankaccounting.directdebitfiles.html",
+        description: " | Direct Debit File",
+        keywords : "Direct Debit File DirectDebitFile",
+        kind : "service",
+    },
+    {
         url: "financialcore.accountsentries.html#AccountEntry",
         description: "AccountEntry",
         keywords : "AccountEntry",
@@ -201,6 +207,12 @@
         url: "materialscore.materialsitems.html#ApiBaseMaterialsItemResource",
         description: "ApiBaseMaterialsItemResource",
         keywords : "ApiBaseMaterialsItemResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#ApiBasePartyBankAccountResource",
+        description: "ApiBasePartyBankAccountResource",
+        keywords : "ApiBasePartyBankAccountResource",
         kind : "resource",
     },
     {
@@ -1071,6 +1083,12 @@
         url: "taxescore.itemwithholdingtaxschemas.html#ApiItemWithholdingTaxSchemaResource",
         description: "ApiItemWithholdingTaxSchemaResource",
         keywords : "ApiItemWithholdingTaxSchemaResource",
+        kind : "resource",
+    },
+    {
+        url: "taxes.legaldeclarations.html#ApiLegalDeclarationResource",
+        description: "ApiLegalDeclarationResource",
+        keywords : "ApiLegalDeclarationResource",
         kind : "resource",
     },
     {
@@ -1992,6 +2010,12 @@
         kind : "resource",
     },
     {
+        url: "financialcore.partybankaccounts.html#ApiPartyBankAccountResource",
+        description: "ApiPartyBankAccountResource",
+        keywords : "ApiPartyBankAccountResource",
+        kind : "resource",
+    },
+    {
         url: "businesscore.parties.html#ApiPartyPartyAddressesResource",
         description: "ApiPartyPartyAddressesResource",
         keywords : "ApiPartyPartyAddressesResource",
@@ -2235,48 +2259,6 @@
         url: "financialcore.paymenttypes.html#ApiPaymentTypeResource",
         description: "ApiPaymentTypeResource",
         keywords : "ApiPaymentTypeResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#ApiPettyCashPettyCashBalancesResource",
-        description: "ApiPettyCashPettyCashBalancesResource",
-        keywords : "ApiPettyCashPettyCashBalancesResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#ApiPettyCashPettyCashBalancesResource",
-        description: "ApiPettyCashPettyCashBalancesResource",
-        keywords : "ApiPettyCashPettyCashBalancesResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#ApiPettyCashPettyCashBalancesResource",
-        description: "ApiPettyCashPettyCashBalancesResource",
-        keywords : "ApiPettyCashPettyCashBalancesResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#ApiPettyCashPettyCashBalancesResource",
-        description: "ApiPettyCashPettyCashBalancesResource",
-        keywords : "ApiPettyCashPettyCashBalancesResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#ApiPettyCashResource",
-        description: "ApiPettyCashResource",
-        keywords : "ApiPettyCashResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#ApiPettyCashResource",
-        description: "ApiPettyCashResource",
-        keywords : "ApiPettyCashResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#ApiPettyCashResource",
-        description: "ApiPettyCashResource",
-        keywords : "ApiPettyCashResource",
         kind : "resource",
     },
     {
@@ -2658,12 +2640,6 @@
         kind : "resource",
     },
     {
-        url: "taxescore.taxregionalareas.html#ApiTaxRegionalAreaResource",
-        description: "ApiTaxRegionalAreaResource",
-        keywords : "ApiTaxRegionalAreaResource",
-        kind : "resource",
-    },
-    {
         url: "taxescore.taxsubclasses.html#ApiTaxSubClassResource",
         description: "ApiTaxSubClassResource",
         keywords : "ApiTaxSubClassResource",
@@ -2925,6 +2901,30 @@
         url: "materialscore.materialsitems.html#BaseMaterialsItemResource",
         description: "BaseMaterialsItemResource",
         keywords : "BaseMaterialsItemResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#BasePartyBankAccountResource",
+        description: "BasePartyBankAccountResource",
+        keywords : "BasePartyBankAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#BasePartyBankAccountResource",
+        description: "BasePartyBankAccountResource",
+        keywords : "BasePartyBankAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#BasePartyBankAccountResource",
+        description: "BasePartyBankAccountResource",
+        keywords : "BasePartyBankAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#BasePartyBankAccountResource",
+        description: "BasePartyBankAccountResource",
+        keywords : "BasePartyBankAccountResource",
         kind : "resource",
     },
     {
@@ -3504,6 +3504,36 @@
         kind : "resource",
     },
     {
+        url: "bankaccounting.directdebitfiles.html#DirectDebitFileMessageResource",
+        description: "DirectDebitFileMessageResource",
+        keywords : "DirectDebitFileMessageResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.directdebitfiles.html#DirectDebitFileResource",
+        description: "DirectDebitFileResource",
+        keywords : "DirectDebitFileResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.directdebitfiles.html#DirectDebitFileResource",
+        description: "DirectDebitFileResource",
+        keywords : "DirectDebitFileResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.directdebitfiles.html#DirectDebitFileResource",
+        description: "DirectDebitFileResource",
+        keywords : "DirectDebitFileResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.directdebitfiles.html#DirectDebitFileResource",
+        description: "DirectDebitFileResource",
+        keywords : "DirectDebitFileResource",
+        kind : "resource",
+    },
+    {
         url: "corepatterns.drafts.html#DraftDataResource",
         description: "DraftDataResource",
         keywords : "DraftDataResource",
@@ -3828,6 +3858,12 @@
         kind : "service",
     },
     {
+        url: "financialcore.partybankaccounts.html",
+        description: "Financials | Bank Account",
+        keywords : "Bank Account PartyBankAccount",
+        kind : "service",
+    },
+    {
         url: "financialcore.cashflowitems.html",
         description: "Financials | Cash Flow Item",
         keywords : "Cash Flow Item CashFlowItem",
@@ -3867,12 +3903,6 @@
         url: "financialcore.paymenttypes.html",
         description: "Financials | Payment Type",
         keywords : "Payment Type PaymentType",
-        kind : "service",
-    },
-    {
-        url: "financialcore.pettycashes.html",
-        description: "Financials | Petty Cash",
-        keywords : "Petty Cash PettyCash",
         kind : "service",
     },
     {
@@ -4446,30 +4476,6 @@
         kind : "resource",
     },
     {
-        url: "taxes.legaldeclarations.html#LegalDeclarationLineResource",
-        description: "LegalDeclarationLineResource",
-        keywords : "LegalDeclarationLineResource",
-        kind : "resource",
-    },
-    {
-        url: "taxes.legaldeclarations.html#LegalDeclarationLineResource",
-        description: "LegalDeclarationLineResource",
-        keywords : "LegalDeclarationLineResource",
-        kind : "resource",
-    },
-    {
-        url: "taxes.legaldeclarations.html#LegalDeclarationMessageResource",
-        description: "LegalDeclarationMessageResource",
-        keywords : "LegalDeclarationMessageResource",
-        kind : "resource",
-    },
-    {
-        url: "taxes.legaldeclarations.html#LegalDeclarationMessageResource",
-        description: "LegalDeclarationMessageResource",
-        keywords : "LegalDeclarationMessageResource",
-        kind : "resource",
-    },
-    {
         url: "taxes.legaldeclarations.html#LegalDeclarationResource",
         description: "LegalDeclarationResource",
         keywords : "LegalDeclarationResource",
@@ -4629,6 +4635,12 @@
         url: "businesscore.brandmodels.html",
         description: "Master Data Business Entities | Model",
         keywords : "Model BrandModel",
+        kind : "service",
+    },
+    {
+        url: "businesscore.organizationvalidations.html",
+        description: "Master Data Business Entities | Organization Validation",
+        keywords : "Organization Validation ",
         kind : "service",
     },
     {
@@ -5184,6 +5196,30 @@
         kind : "resource",
     },
     {
+        url: "financialcore.partybankaccounts.html#PartyBankAccountResource",
+        description: "PartyBankAccountResource",
+        keywords : "PartyBankAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#PartyBankAccountResource",
+        description: "PartyBankAccountResource",
+        keywords : "PartyBankAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#PartyBankAccountResource",
+        description: "PartyBankAccountResource",
+        keywords : "PartyBankAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.partybankaccounts.html#PartyBankAccountResource",
+        description: "PartyBankAccountResource",
+        keywords : "PartyBankAccountResource",
+        kind : "resource",
+    },
+    {
         url: "businesscore.parties.html#PartyContactResource",
         description: "PartyContactResource",
         keywords : "PartyContactResource",
@@ -5379,36 +5415,6 @@
         url: "financialcore.paymenttypes.html#PaymentTypeSerieResource",
         description: "PaymentTypeSerieResource",
         keywords : "PaymentTypeSerieResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#PettyCashBalanceResource",
-        description: "PettyCashBalanceResource",
-        keywords : "PettyCashBalanceResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#PettyCashResource",
-        description: "PettyCashResource",
-        keywords : "PettyCashResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#PettyCashResource",
-        description: "PettyCashResource",
-        keywords : "PettyCashResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#PettyCashResource",
-        description: "PettyCashResource",
-        keywords : "PettyCashResource",
-        kind : "resource",
-    },
-    {
-        url: "financialcore.pettycashes.html#PettyCashResource",
-        description: "PettyCashResource",
-        keywords : "PettyCashResource",
         kind : "resource",
     },
     {

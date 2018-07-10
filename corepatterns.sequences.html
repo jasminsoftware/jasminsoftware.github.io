@@ -158,33 +158,33 @@
                         <li>
                         GET:
                         <ul>
-                            <li><a href="#8244c769-f503-4a2c-bb40-a568a64ab457">GET Sequences</a></li>
-                            <li><a href="#8a7fc94c-c124-4d94-9de7-4f3f40b28d49">GET Sequences (paged)</a></li>
-                            <li><a href="#7c3b2aa6-23f9-4e15-81fd-6497b1965740">GET Sequence by identifier</a></li>
-                            <li><a href="#5adee38a-f3b0-41d9-9d59-0a80872302f3">GET Sequence by key</a></li>
-                            <li><a href="#a72963ba-a99a-470d-89e1-801574bdef8c">GET Print Sequence by identifier</a></li>
-                            <li><a href="#6addb96c-a056-49ae-8bd0-700d72aacfeb">GET Print Sequence by key</a></li>
-                            <li><a href="#0c041d46-51dc-422e-9dcf-02abd1b7902e">GET Get Default Sequence For Entity Attribute</a></li>
+                            <li><a href="#cf702911-6ea3-42a4-93b1-ba251d902e26">GET Sequences</a></li>
+                            <li><a href="#bcff6dc2-275b-4110-95d2-444ebdb17d87">GET Sequences (paged)</a></li>
+                            <li><a href="#5a3ad971-d679-4eba-bb56-dfe013f92b16">GET Sequence by identifier</a></li>
+                            <li><a href="#1fa3990b-c75c-46a9-9c95-01c32f8bfbf4">GET Sequence by key</a></li>
+                            <li><a href="#eb5fd522-71ca-4617-b955-28423eb9f1d6">GET Print Sequence by identifier</a></li>
+                            <li><a href="#5ced33b8-c20d-41ed-8b6c-64e7c2815634">GET Print Sequence by key</a></li>
+                            <li><a href="#0736be2a-266e-4d9a-8479-bc771a52b33e">GET Get Default Sequence For Entity Attribute</a></li>
                         </ul>
                         </li>
                         <li>
                         POST:
                         <ul>
-                            <li><a href="#a80c38a5-b569-4320-bde2-0ce34266ca35">POST Sequences</a></li>
+                            <li><a href="#4ba2e5fd-2445-4c4c-bb88-077546fdc6a4">POST Sequences</a></li>
                         </ul>
                         </li>
                         <li>
                         PUT:
                         <ul>
-                            <li><a href="#53016e34-f4b2-4c29-b2e0-d01cd8e6dd1b">PUT Set IsActive Sequence</a></li>
-                            <li><a href="#2a3af9e3-173e-4b1f-bba6-8d49501dc593">PUT Set IsDefault Sequence</a></li>
+                            <li><a href="#b8d5ced4-16eb-4890-9c11-30644b06f510">PUT Set IsActive Sequence</a></li>
+                            <li><a href="#8c095964-9a49-4372-a397-3eccdc92209a">PUT Set IsDefault Sequence</a></li>
                         </ul>
                         </li>
                         <li>
                         DELETE:
                         <ul>
-                            <li><a href="#97d004f6-f9e6-450c-bb80-8120b8f5f6cd">DELETE Sequence by identifier</a></li>
-                            <li><a href="#3985b1b1-7583-4af2-b502-45655aa67043">DELETE Sequence by key</a></li>
+                            <li><a href="#7555c83c-01c9-4540-be0a-dbb7cb4fd8a4">DELETE Sequence by identifier</a></li>
+                            <li><a href="#6c665c68-a1b7-4fe7-b500-56c5c5d8f65d">DELETE Sequence by key</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -218,15 +218,15 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="8244c769-f503-4a2c-bb40-a568a64ab457"></a>
-                    <h3>GET Sequences <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8244c769-f503-4a2c-bb40-a568a64ab457"></i></h3>
-                    <div class="hidden-copylink" id="copy-8244c769-f503-4a2c-bb40-a568a64ab457"><a href="#8244c769-f503-4a2c-bb40-a568a64ab457">GET Sequences</a></div>
-                    <p class="operation-description">Returns all Sequence user has access to.</p>
+                    <a class="anchor" name="cf702911-6ea3-42a4-93b1-ba251d902e26"></a>
+                    <h3>GET Sequences <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-cf702911-6ea3-42a4-93b1-ba251d902e26"></i></h3>
+                    <div class="hidden-copylink" id="copy-cf702911-6ea3-42a4-93b1-ba251d902e26"><a href="#cf702911-6ea3-42a4-93b1-ba251d902e26">GET Sequences</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
                 <p>Response:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, this method returns a list of Sequence. See <a href="#SequenceResource">SequenceResource.</a></td>
+                                <td>When successful, the response body contains the list of records available. See <a href="#SequenceResource">SequenceResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -235,36 +235,40 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-8244c769-f503-4a2c-bb40-a568a64ab457">api/{tenantKey}/{orgKey}/corePatterns/sequences</div>
+                    <div class="hidden-copylink" id="copy2-cf702911-6ea3-42a4-93b1-ba251d902e26">api/{tenantKey}/{orgKey}/corePatterns/sequences</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/sequences</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8244c769-f503-4a2c-bb40-a568a64ab457"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-cf702911-6ea3-42a4-93b1-ba251d902e26"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="8a7fc94c-c124-4d94-9de7-4f3f40b28d49"></a>
-                    <h3>GET Sequences (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8a7fc94c-c124-4d94-9de7-4f3f40b28d49"></i></h3>
-                    <div class="hidden-copylink" id="copy-8a7fc94c-c124-4d94-9de7-4f3f40b28d49"><a href="#8a7fc94c-c124-4d94-9de7-4f3f40b28d49">GET Sequences (paged)</a></div>
-                    <p class="operation-description">Returns a paginated list of Sequence user has access to.</p>
+                    <a class="anchor" name="bcff6dc2-275b-4110-95d2-444ebdb17d87"></a>
+                    <h3>GET Sequences (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bcff6dc2-275b-4110-95d2-444ebdb17d87"></i></h3>
+                    <div class="hidden-copylink" id="copy-bcff6dc2-275b-4110-95d2-444ebdb17d87"><a href="#bcff6dc2-275b-4110-95d2-444ebdb17d87">GET Sequences (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
                     <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results. This is a query string parameter.</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items. This is a query string parameter.</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -273,7 +277,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, this method returns a list of Sequence. See <a href="#SequenceResource">SequenceResource.</a></td>
+                                <td>When successful, the response body contains the list of records available. See <a href="#SequenceResource">SequenceResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -282,32 +286,36 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-8a7fc94c-c124-4d94-9de7-4f3f40b28d49">api/{tenantKey}/{orgKey}/corePatterns/sequences</div>
+                    <div class="hidden-copylink" id="copy2-bcff6dc2-275b-4110-95d2-444ebdb17d87">api/{tenantKey}/{orgKey}/corePatterns/sequences</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/sequences</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8a7fc94c-c124-4d94-9de7-4f3f40b28d49"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bcff6dc2-275b-4110-95d2-444ebdb17d87"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7c3b2aa6-23f9-4e15-81fd-6497b1965740"></a>
-                    <h3>GET Sequence by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7c3b2aa6-23f9-4e15-81fd-6497b1965740"></i></h3>
-                    <div class="hidden-copylink" id="copy-7c3b2aa6-23f9-4e15-81fd-6497b1965740"><a href="#7c3b2aa6-23f9-4e15-81fd-6497b1965740">GET Sequence by identifier</a></div>
-                    <p class="operation-description">Returns information for a given Sequence, by specifying its identifier.</p>
+                    <a class="anchor" name="5a3ad971-d679-4eba-bb56-dfe013f92b16"></a>
+                    <h3>GET Sequence by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5a3ad971-d679-4eba-bb56-dfe013f92b16"></i></h3>
+                    <div class="hidden-copylink" id="copy-5a3ad971-d679-4eba-bb56-dfe013f92b16"><a href="#5a3ad971-d679-4eba-bb56-dfe013f92b16">GET Sequence by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Sequence.</td>
+                                <td><i>(string)</i> The record identifier.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -316,7 +324,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, returns a resource of the Sequence. See <a href="#SequenceResource">SequenceResource.</a></td>
+                                <td>When successful, the response body contains the entity record. See <a href="#SequenceResource">SequenceResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -325,26 +333,34 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-7c3b2aa6-23f9-4e15-81fd-6497b1965740">api/{tenantKey}/{orgKey}/corePatterns/sequences/{id}</div>
+                    <div class="hidden-copylink" id="copy2-5a3ad971-d679-4eba-bb56-dfe013f92b16">api/{tenantKey}/{orgKey}/corePatterns/sequences/{id}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/sequences/{id}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7c3b2aa6-23f9-4e15-81fd-6497b1965740"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5a3ad971-d679-4eba-bb56-dfe013f92b16"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="5adee38a-f3b0-41d9-9d59-0a80872302f3"></a>
-                    <h3>GET Sequence by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5adee38a-f3b0-41d9-9d59-0a80872302f3"></i></h3>
-                    <div class="hidden-copylink" id="copy-5adee38a-f3b0-41d9-9d59-0a80872302f3"><a href="#5adee38a-f3b0-41d9-9d59-0a80872302f3">GET Sequence by key</a></div>
-                    <p class="operation-description">Returns information for a given Sequence, by specifying its key.</p>
+                    <a class="anchor" name="1fa3990b-c75c-46a9-9c95-01c32f8bfbf4"></a>
+                    <h3>GET Sequence by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1fa3990b-c75c-46a9-9c95-01c32f8bfbf4"></i></h3>
+                    <div class="hidden-copylink" id="copy-1fa3990b-c75c-46a9-9c95-01c32f8bfbf4"><a href="#1fa3990b-c75c-46a9-9c95-01c32f8bfbf4">GET Sequence by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -359,7 +375,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, returns a resource of the Sequence. See <a href="#SequenceResource">SequenceResource.</a></td>
+                                <td>When successful, the response body contains the entity record. See <a href="#SequenceResource">SequenceResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -368,32 +384,40 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-5adee38a-f3b0-41d9-9d59-0a80872302f3">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}</div>
+                    <div class="hidden-copylink" id="copy2-1fa3990b-c75c-46a9-9c95-01c32f8bfbf4">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/sequences/{sequenceKey}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5adee38a-f3b0-41d9-9d59-0a80872302f3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1fa3990b-c75c-46a9-9c95-01c32f8bfbf4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a72963ba-a99a-470d-89e1-801574bdef8c"></a>
-                    <h3>GET Print Sequence by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a72963ba-a99a-470d-89e1-801574bdef8c"></i></h3>
-                    <div class="hidden-copylink" id="copy-a72963ba-a99a-470d-89e1-801574bdef8c"><a href="#a72963ba-a99a-470d-89e1-801574bdef8c">GET Print Sequence by identifier</a></div>
-                    <p class="operation-description">Prints the specified Sequence.</p>
+                    <a class="anchor" name="eb5fd522-71ca-4617-b955-28423eb9f1d6"></a>
+                    <h3>GET Print Sequence by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-eb5fd522-71ca-4617-b955-28423eb9f1d6"></i></h3>
+                    <div class="hidden-copylink" id="copy-eb5fd522-71ca-4617-b955-28423eb9f1d6"><a href="#eb5fd522-71ca-4617-b955-28423eb9f1d6">GET Print Sequence by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Sequence.</td>
+                                <td><i>(string)</i> The record identifier.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -403,7 +427,7 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -412,7 +436,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, returns a stream with the file of the printed Sequence.</td>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -421,26 +445,30 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-a72963ba-a99a-470d-89e1-801574bdef8c">api/{tenantKey}/{orgKey}/corePatterns/sequences/{id}/print</div>
+                    <div class="hidden-copylink" id="copy2-eb5fd522-71ca-4617-b955-28423eb9f1d6">api/{tenantKey}/{orgKey}/corePatterns/sequences/{id}/print</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/sequences/{id}/print</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a72963ba-a99a-470d-89e1-801574bdef8c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-eb5fd522-71ca-4617-b955-28423eb9f1d6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="6addb96c-a056-49ae-8bd0-700d72aacfeb"></a>
-                    <h3>GET Print Sequence by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6addb96c-a056-49ae-8bd0-700d72aacfeb"></i></h3>
-                    <div class="hidden-copylink" id="copy-6addb96c-a056-49ae-8bd0-700d72aacfeb"><a href="#6addb96c-a056-49ae-8bd0-700d72aacfeb">GET Print Sequence by key</a></div>
-                    <p class="operation-description">Prints the specified Sequence by specifying its key.</p>
+                    <a class="anchor" name="5ced33b8-c20d-41ed-8b6c-64e7c2815634"></a>
+                    <h3>GET Print Sequence by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5ced33b8-c20d-41ed-8b6c-64e7c2815634"></i></h3>
+                    <div class="hidden-copylink" id="copy-5ced33b8-c20d-41ed-8b6c-64e7c2815634"><a href="#5ced33b8-c20d-41ed-8b6c-64e7c2815634">GET Print Sequence by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -456,7 +484,7 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template. This is a query string parameter.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -465,7 +493,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, returns a stream with the file of the printed Sequence.</td>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -474,25 +502,33 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-6addb96c-a056-49ae-8bd0-700d72aacfeb">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}/print</div>
+                    <div class="hidden-copylink" id="copy2-5ced33b8-c20d-41ed-8b6c-64e7c2815634">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}/print</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/sequences/{sequenceKey}/print</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6addb96c-a056-49ae-8bd0-700d72aacfeb"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5ced33b8-c20d-41ed-8b6c-64e7c2815634"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="0c041d46-51dc-422e-9dcf-02abd1b7902e"></a>
-                    <h3>GET Get Default Sequence For Entity Attribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0c041d46-51dc-422e-9dcf-02abd1b7902e"></i></h3>
-                    <div class="hidden-copylink" id="copy-0c041d46-51dc-422e-9dcf-02abd1b7902e"><a href="#0c041d46-51dc-422e-9dcf-02abd1b7902e">GET Get Default Sequence For Entity Attribute</a></div>
+                    <a class="anchor" name="0736be2a-266e-4d9a-8479-bc771a52b33e"></a>
+                    <h3>GET Get Default Sequence For Entity Attribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0736be2a-266e-4d9a-8479-bc771a52b33e"></i></h3>
+                    <div class="hidden-copylink" id="copy-0736be2a-266e-4d9a-8479-bc771a52b33e"><a href="#0736be2a-266e-4d9a-8479-bc771a52b33e">GET Get Default Sequence For Entity Attribute</a></div>
                     <p class="operation-description">Custom operation 'GetDefaultSequenceForEntityAttribute'.</p>
                     <p>The following elements are required:</p>
                     <table>
@@ -516,7 +552,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, this method returns a list of StandardSequenceResource resources. See <a href="#StandardSequenceResource">StandardSequenceResource.</a></td>
+                                <td>When successful, the response body contains a list of resources of type 'StandardSequenceResource'. See <a href="#StandardSequenceResource">StandardSequenceResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -525,17 +561,21 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operations was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-0c041d46-51dc-422e-9dcf-02abd1b7902e">api/{tenantKey}/{orgKey}/corePatterns/sequences/getDefaultSequenceForEntityAttribute?entityName={entityName}&amp;attributeName={attributeName}&amp;groupingKey={groupingKey}</div>
+                    <div class="hidden-copylink" id="copy2-0736be2a-266e-4d9a-8479-bc771a52b33e">api/{tenantKey}/{orgKey}/corePatterns/sequences/getDefaultSequenceForEntityAttribute?entityName={entityName}&amp;attributeName={attributeName}&amp;groupingKey={groupingKey}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/sequences/getDefaultSequenceForEntityAttribute?entityName={entityName}&amp;attributeName={attributeName}&amp;groupingKey={groupingKey}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0c041d46-51dc-422e-9dcf-02abd1b7902e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0736be2a-266e-4d9a-8479-bc771a52b33e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -547,16 +587,16 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a80c38a5-b569-4320-bde2-0ce34266ca35"></a>
-                    <h3>POST Sequences <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a80c38a5-b569-4320-bde2-0ce34266ca35"></i></h3>
-                    <div class="hidden-copylink" id="copy-a80c38a5-b569-4320-bde2-0ce34266ca35"><a href="#a80c38a5-b569-4320-bde2-0ce34266ca35">POST Sequences</a></div>
-                    <p class="operation-description">Creates a new Sequence.</p>
+                    <a class="anchor" name="4ba2e5fd-2445-4c4c-bb88-077546fdc6a4"></a>
+                    <h3>POST Sequences <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4ba2e5fd-2445-4c4c-bb88-077546fdc6a4"></i></h3>
+                    <div class="hidden-copylink" id="copy-4ba2e5fd-2445-4c4c-bb88-077546fdc6a4"><a href="#4ba2e5fd-2445-4c4c-bb88-077546fdc6a4">POST Sequences</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">sequenceResource</td>
-                                <td><i>(ApiSequenceResource)</i> In the request body, supply a resource containing the Sequence information.<br/>See <a href="#ApiSequenceResource">ApiSequenceResource.</a></td>
+                                <td><i>(ApiSequenceResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiSequenceResource">ApiSequenceResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -565,7 +605,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, returns the Sequence identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiSequenceResource">ApiSequenceResource.</a></td>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiSequenceResource">ApiSequenceResource.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -574,17 +614,21 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">201</td>
-                                <td>The operation was successful and the Sequence was created.</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-a80c38a5-b569-4320-bde2-0ce34266ca35">api/{tenantKey}/{orgKey}/corePatterns/sequences</div>
+                    <div class="hidden-copylink" id="copy2-4ba2e5fd-2445-4c4c-bb88-077546fdc6a4">api/{tenantKey}/{orgKey}/corePatterns/sequences</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>POST /corePatterns/sequences</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a80c38a5-b569-4320-bde2-0ce34266ca35"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4ba2e5fd-2445-4c4c-bb88-077546fdc6a4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -596,10 +640,10 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="53016e34-f4b2-4c29-b2e0-d01cd8e6dd1b"></a>
-                    <h3>PUT Set IsActive Sequence <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-53016e34-f4b2-4c29-b2e0-d01cd8e6dd1b"></i></h3>
-                    <div class="hidden-copylink" id="copy-53016e34-f4b2-4c29-b2e0-d01cd8e6dd1b"><a href="#53016e34-f4b2-4c29-b2e0-d01cd8e6dd1b">PUT Set IsActive Sequence</a></div>
-                    <p class="operation-description">Updates the IsActive for the specified Sequence.</p>
+                    <a class="anchor" name="b8d5ced4-16eb-4890-9c11-30644b06f510"></a>
+                    <h3>PUT Set IsActive Sequence <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b8d5ced4-16eb-4890-9c11-30644b06f510"></i></h3>
+                    <div class="hidden-copylink" id="copy-b8d5ced4-16eb-4890-9c11-30644b06f510"><a href="#b8d5ced4-16eb-4890-9c11-30644b06f510">PUT Set IsActive Sequence</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -609,7 +653,7 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -618,7 +662,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, this method returns an empty response body.</td>
+                                <td>When successful, the response body is empty.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -627,26 +671,34 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-53016e34-f4b2-4c29-b2e0-d01cd8e6dd1b">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}/isActive</div>
+                    <div class="hidden-copylink" id="copy2-b8d5ced4-16eb-4890-9c11-30644b06f510">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}/isActive</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>PUT /corePatterns/sequences/{sequenceKey}/isActive</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-53016e34-f4b2-4c29-b2e0-d01cd8e6dd1b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b8d5ced4-16eb-4890-9c11-30644b06f510"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="2a3af9e3-173e-4b1f-bba6-8d49501dc593"></a>
-                    <h3>PUT Set IsDefault Sequence <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2a3af9e3-173e-4b1f-bba6-8d49501dc593"></i></h3>
-                    <div class="hidden-copylink" id="copy-2a3af9e3-173e-4b1f-bba6-8d49501dc593"><a href="#2a3af9e3-173e-4b1f-bba6-8d49501dc593">PUT Set IsDefault Sequence</a></div>
-                    <p class="operation-description">Updates the IsDefault for the specified Sequence.</p>
+                    <a class="anchor" name="8c095964-9a49-4372-a397-3eccdc92209a"></a>
+                    <h3>PUT Set IsDefault Sequence <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8c095964-9a49-4372-a397-3eccdc92209a"></i></h3>
+                    <div class="hidden-copylink" id="copy-8c095964-9a49-4372-a397-3eccdc92209a"><a href="#8c095964-9a49-4372-a397-3eccdc92209a">PUT Set IsDefault Sequence</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsDefault' in the specified entity record.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -656,7 +708,7 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsDefault.</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -665,7 +717,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, this method returns an empty response body.</td>
+                                <td>When successful, the response body is empty.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -674,17 +726,21 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-2a3af9e3-173e-4b1f-bba6-8d49501dc593">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}/isDefault</div>
+                    <div class="hidden-copylink" id="copy2-8c095964-9a49-4372-a397-3eccdc92209a">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}/isDefault</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>PUT /corePatterns/sequences/{sequenceKey}/isDefault</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2a3af9e3-173e-4b1f-bba6-8d49501dc593"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8c095964-9a49-4372-a397-3eccdc92209a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -696,16 +752,16 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="97d004f6-f9e6-450c-bb80-8120b8f5f6cd"></a>
-                    <h3>DELETE Sequence by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-97d004f6-f9e6-450c-bb80-8120b8f5f6cd"></i></h3>
-                    <div class="hidden-copylink" id="copy-97d004f6-f9e6-450c-bb80-8120b8f5f6cd"><a href="#97d004f6-f9e6-450c-bb80-8120b8f5f6cd">DELETE Sequence by identifier</a></div>
-                    <p class="operation-description">Deletes the specified Sequence by its identifier.</p>
+                    <a class="anchor" name="7555c83c-01c9-4540-be0a-dbb7cb4fd8a4"></a>
+                    <h3>DELETE Sequence by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7555c83c-01c9-4540-be0a-dbb7cb4fd8a4"></i></h3>
+                    <div class="hidden-copylink" id="copy-7555c83c-01c9-4540-be0a-dbb7cb4fd8a4"><a href="#7555c83c-01c9-4540-be0a-dbb7cb4fd8a4">DELETE Sequence by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Sequence.</td>
+                                <td><i>(string)</i> The record identifier.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -714,7 +770,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, returns an empty response body.</td>
+                                <td>When successful, the response body is empty.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -723,30 +779,34 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Sequence was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Sequence does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-97d004f6-f9e6-450c-bb80-8120b8f5f6cd">api/{tenantKey}/{orgKey}/corePatterns/sequences/{id}</div>
+                    <div class="hidden-copylink" id="copy2-7555c83c-01c9-4540-be0a-dbb7cb4fd8a4">api/{tenantKey}/{orgKey}/corePatterns/sequences/{id}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>DELETE /corePatterns/sequences/{id}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-97d004f6-f9e6-450c-bb80-8120b8f5f6cd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7555c83c-01c9-4540-be0a-dbb7cb4fd8a4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="3985b1b1-7583-4af2-b502-45655aa67043"></a>
-                    <h3>DELETE Sequence by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3985b1b1-7583-4af2-b502-45655aa67043"></i></h3>
-                    <div class="hidden-copylink" id="copy-3985b1b1-7583-4af2-b502-45655aa67043"><a href="#3985b1b1-7583-4af2-b502-45655aa67043">DELETE Sequence by key</a></div>
-                    <p class="operation-description">Deletes the specified Sequence by its key.</p>
+                    <a class="anchor" name="6c665c68-a1b7-4fe7-b500-56c5c5d8f65d"></a>
+                    <h3>DELETE Sequence by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6c665c68-a1b7-4fe7-b500-56c5c5d8f65d"></i></h3>
+                    <div class="hidden-copylink" id="copy-6c665c68-a1b7-4fe7-b500-56c5c5d8f65d"><a href="#6c665c68-a1b7-4fe7-b500-56c5c5d8f65d">DELETE Sequence by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
@@ -761,7 +821,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>If successful, returns an empty response body.</td>
+                                <td>When successful, the response body is empty.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -770,21 +830,25 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">204</td>
-                                <td>The Sequence was successfully deleted.</td>
+                                <td>Deleted. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Sequence does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-3985b1b1-7583-4af2-b502-45655aa67043">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}</div>
+                    <div class="hidden-copylink" id="copy2-6c665c68-a1b7-4fe7-b500-56c5c5d8f65d">api/{tenantKey}/{orgKey}/corePatterns/sequences/{sequenceKey}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>DELETE /corePatterns/sequences/{sequenceKey}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3985b1b1-7583-4af2-b502-45655aa67043"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6c665c68-a1b7-4fe7-b500-56c5c5d8f65d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -1041,12 +1105,12 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">entity</td>
-                                <td  class="wrap"><i>(string)</i> The sequence’s entity.</td>
+                                <td  class="wrap"><i>(string)</i> The sequence’s entity.<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaEntity.</td>
                             </tr>
 
                             <tr>
                                 <td class="highlighted">entityAttribute</td>
-                                <td  class="wrap"><i>(string)</i> The sequence’s entity attribute.</td>
+                                <td  class="wrap"><i>(string)</i> The sequence’s entity attribute.<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaAttribute.</td>
                             </tr>
 
                             <tr>
