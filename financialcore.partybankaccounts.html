@@ -1,0 +1,1848 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Financials | Bank Account</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a id="current-menu-item" class="menu-item " href="financials.html">
+        Financials
+    </a>
+    <a class="menu-subitem " href="financialcore.accountpostings.html">
+        Account Posting
+    </a>
+    <a class="menu-subitem " href="financialcore.accounttransactions.html">
+        Account Transaction
+    </a>
+    <a class="menu-subitem " href="financialcore.accountingentries.html">
+        Accounting Entry
+    </a>
+    <a class="menu-subitem " href="financialcore.accountsentries.html">
+        Accounts Entry
+    </a>
+    <a class="menu-subitem menu-item-selected" href="financialcore.partybankaccounts.html">
+        Bank Account
+    </a>
+    <a class="menu-subitem " href="financialcore.cashflowitems.html">
+        Cash Flow Item
+    </a>
+    <a class="menu-subitem " href="financialcore.financialaccounts.html">
+        Financial Account
+    </a>
+    <a class="menu-subitem " href="financialcore.financialinstitutions.html">
+        Financial Institution
+    </a>
+    <a class="menu-subitem " href="financialcore.financialsetups.html">
+        Financial Setup
+    </a>
+    <a class="menu-subitem " href="financialcore.paymentmethods.html">
+        Payment Method
+    </a>
+    <a class="menu-subitem " href="financialcore.paymentterms.html">
+        Payment Term
+    </a>
+    <a class="menu-subitem " href="financialcore.paymenttypes.html">
+        Payment Type
+    </a>
+    <a class="menu-subitem " href="financialcore.receipttypes.html">
+        Receipt Type
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-item" href="onlinestore.html">
+        Online Store
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Bank Account</h1>
+                    <p>
+                    Service to manage entities of type 'PartyBankAccount'.
+                    </p>
+                    <p>
+                    This service extends <a href="businesscore.parties.html">Parties</a>.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-financialcore-partybankaccounts"></i></td>
+                                <div class="hidden-copylink" id="copy-financialcore-partybankaccounts">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#480ff882-6a84-49fd-afb3-e3da08db50d4">GET PartyBankAccounts</a></li>
+                            <li><a href="#eb36e0b1-6dee-49ba-9344-119fd339ebfe">GET PartyBankAccounts (paged)</a></li>
+                            <li><a href="#1a514d78-bfad-4c53-9092-28cef66392f8">GET PartyBankAccount by identifier</a></li>
+                            <li><a href="#5b5219b1-1858-4d8e-9161-065d2ea2bf1f">GET PartyBankAccount by key</a></li>
+                            <li><a href="#1cff08c5-630a-40e3-abc6-d53a53d60718">GET PartyBankAccounts (with Party)</a></li>
+                            <li><a href="#a5896c7c-e1e5-4a2a-84fc-ed21fb57c1f8">GET PartyBankAccounts (with Party) (paged)</a></li>
+                            <li><a href="#3dfed572-5971-44a7-a577-9fda3bcf0515">GET PartyBankAccount (with Party) by identifier</a></li>
+                            <li><a href="#493f7d42-1011-482c-a6a6-b2d8b8bc20c6">GET PartyBankAccount (with Party) by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#c5ab9a1d-29eb-4378-996a-7e506ff32ddd">POST PartyBankAccounts</a></li>
+                            <li><a href="#9bd2ed32-908d-488e-b6c2-91027225c35e">POST PartyBankAccounts (with ApiBasePartyBankAccount)</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#1731ad84-1d88-409d-bdbd-bb497e567111">PUT Set IsActive PartyBankAccount</a></li>
+                            <li><a href="#d221da8b-11ab-424c-8b25-d3bd56e31c5b">PUT Set IBAN PartyBankAccount</a></li>
+                            <li><a href="#24bae52b-aa9f-429b-afc3-aadd5c69736c">PUT Set IsAuthorizationActive PartyBankAccount</a></li>
+                            <li><a href="#e71d45c9-134d-4d41-903d-c4a4e519ddde">PUT Set DebitAuthorizationNumber PartyBankAccount</a></li>
+                            <li><a href="#eed2ec8b-47c9-4264-a6df-ca481d3c0ce5">PUT Set DirectDebitAmountLimit PartyBankAccount</a></li>
+                            <li><a href="#0e88580b-b79f-4d22-99f1-ec350605d9fc">PUT Set Currency PartyBankAccount</a></li>
+                            <li><a href="#eaf40b09-b1e2-430a-a444-f6370cde9b71">PUT Set FinancialInstitution PartyBankAccount</a></li>
+                            <li><a href="#ec32cb0b-0596-4525-b4a1-4bd6b0595c3a">PUT Set SWIFT PartyBankAccount</a></li>
+                            <li><a href="#7929ef73-2dad-44d0-8f32-980eb8e39dc6">PUT Set DirectDebitStartDate PartyBankAccount</a></li>
+                            <li><a href="#e207d6d9-2824-468e-b38a-b4d68880c9f2">PUT Set HasPreviousPayments PartyBankAccount</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#e41d17e3-a42a-4b70-a0d8-f38f25933405">DELETE PartyBankAccount by identifier</a></li>
+                            <li><a href="#0ddf13d0-e091-4055-9aad-7bfee69abdaa">DELETE PartyBankAccount by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiBasePartyBankAccountResource">ApiBasePartyBankAccountResource</a></li>
+                        <li><a href="#ApiPartyBankAccountResource">ApiPartyBankAccountResource</a></li>
+                        <li><a href="#BasePartyBankAccountResource">BasePartyBankAccountResource</a></li>
+                        <li><a href="#PartyBankAccountResource">PartyBankAccountResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="480ff882-6a84-49fd-afb3-e3da08db50d4"></a>
+                    <h3>GET PartyBankAccounts <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-480ff882-6a84-49fd-afb3-e3da08db50d4"></i></h3>
+                    <div class="hidden-copylink" id="copy-480ff882-6a84-49fd-afb3-e3da08db50d4"><a href="#480ff882-6a84-49fd-afb3-e3da08db50d4">GET PartyBankAccounts</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#PartyBankAccountResource">PartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-480ff882-6a84-49fd-afb3-e3da08db50d4">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-480ff882-6a84-49fd-afb3-e3da08db50d4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eb36e0b1-6dee-49ba-9344-119fd339ebfe"></a>
+                    <h3>GET PartyBankAccounts (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-eb36e0b1-6dee-49ba-9344-119fd339ebfe"></i></h3>
+                    <div class="hidden-copylink" id="copy-eb36e0b1-6dee-49ba-9344-119fd339ebfe"><a href="#eb36e0b1-6dee-49ba-9344-119fd339ebfe">GET PartyBankAccounts (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#PartyBankAccountResource">PartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-eb36e0b1-6dee-49ba-9344-119fd339ebfe">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-eb36e0b1-6dee-49ba-9344-119fd339ebfe"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1a514d78-bfad-4c53-9092-28cef66392f8"></a>
+                    <h3>GET PartyBankAccount by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1a514d78-bfad-4c53-9092-28cef66392f8"></i></h3>
+                    <div class="hidden-copylink" id="copy-1a514d78-bfad-4c53-9092-28cef66392f8"><a href="#1a514d78-bfad-4c53-9092-28cef66392f8">GET PartyBankAccount by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#PartyBankAccountResource">PartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1a514d78-bfad-4c53-9092-28cef66392f8">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{id}/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts/{id}/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1a514d78-bfad-4c53-9092-28cef66392f8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5b5219b1-1858-4d8e-9161-065d2ea2bf1f"></a>
+                    <h3>GET PartyBankAccount by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5b5219b1-1858-4d8e-9161-065d2ea2bf1f"></i></h3>
+                    <div class="hidden-copylink" id="copy-5b5219b1-1858-4d8e-9161-065d2ea2bf1f"><a href="#5b5219b1-1858-4d8e-9161-065d2ea2bf1f">GET PartyBankAccount by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#PartyBankAccountResource">PartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5b5219b1-1858-4d8e-9161-065d2ea2bf1f">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts/{partyKey}/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5b5219b1-1858-4d8e-9161-065d2ea2bf1f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1cff08c5-630a-40e3-abc6-d53a53d60718"></a>
+                    <h3>GET PartyBankAccounts (with Party) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1cff08c5-630a-40e3-abc6-d53a53d60718"></i></h3>
+                    <div class="hidden-copylink" id="copy-1cff08c5-630a-40e3-abc6-d53a53d60718"><a href="#1cff08c5-630a-40e3-abc6-d53a53d60718">GET PartyBankAccounts (with Party)</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available. Each record contains both data from the entity and the base entity.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#BasePartyBankAccountResource">BasePartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1cff08c5-630a-40e3-abc6-d53a53d60718">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1cff08c5-630a-40e3-abc6-d53a53d60718"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a5896c7c-e1e5-4a2a-84fc-ed21fb57c1f8"></a>
+                    <h3>GET PartyBankAccounts (with Party) (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a5896c7c-e1e5-4a2a-84fc-ed21fb57c1f8"></i></h3>
+                    <div class="hidden-copylink" id="copy-a5896c7c-e1e5-4a2a-84fc-ed21fb57c1f8"><a href="#a5896c7c-e1e5-4a2a-84fc-ed21fb57c1f8">GET PartyBankAccounts (with Party) (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available. Each record contains both data from the entity and the base entity.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#BasePartyBankAccountResource">BasePartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a5896c7c-e1e5-4a2a-84fc-ed21fb57c1f8">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a5896c7c-e1e5-4a2a-84fc-ed21fb57c1f8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3dfed572-5971-44a7-a577-9fda3bcf0515"></a>
+                    <h3>GET PartyBankAccount (with Party) by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3dfed572-5971-44a7-a577-9fda3bcf0515"></i></h3>
+                    <div class="hidden-copylink" id="copy-3dfed572-5971-44a7-a577-9fda3bcf0515"><a href="#3dfed572-5971-44a7-a577-9fda3bcf0515">GET PartyBankAccount (with Party) by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier. The record contains both data from the entity and the base entity.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#BasePartyBankAccountResource">BasePartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-3dfed572-5971-44a7-a577-9fda3bcf0515">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3dfed572-5971-44a7-a577-9fda3bcf0515"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="493f7d42-1011-482c-a6a6-b2d8b8bc20c6"></a>
+                    <h3>GET PartyBankAccount (with Party) by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-493f7d42-1011-482c-a6a6-b2d8b8bc20c6"></i></h3>
+                    <div class="hidden-copylink" id="copy-493f7d42-1011-482c-a6a6-b2d8b8bc20c6"><a href="#493f7d42-1011-482c-a6a6-b2d8b8bc20c6">GET PartyBankAccount (with Party) by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key. The record contains both data from the entity and the base entity.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#BasePartyBankAccountResource">BasePartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-493f7d42-1011-482c-a6a6-b2d8b8bc20c6">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/partyBankAccounts/{partyKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-493f7d42-1011-482c-a6a6-b2d8b8bc20c6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c5ab9a1d-29eb-4378-996a-7e506ff32ddd"></a>
+                    <h3>POST PartyBankAccounts <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c5ab9a1d-29eb-4378-996a-7e506ff32ddd"></i></h3>
+                    <div class="hidden-copylink" id="copy-c5ab9a1d-29eb-4378-996a-7e506ff32ddd"><a href="#c5ab9a1d-29eb-4378-996a-7e506ff32ddd">POST PartyBankAccounts</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyBankAccountResource</td>
+                                <td><i>(ApiPartyBankAccountResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiPartyBankAccountResource">ApiPartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiPartyBankAccountResource">ApiPartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c5ab9a1d-29eb-4378-996a-7e506ff32ddd">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /financialCore/partyBankAccounts/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c5ab9a1d-29eb-4378-996a-7e506ff32ddd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9bd2ed32-908d-488e-b6c2-91027225c35e"></a>
+                    <h3>POST PartyBankAccounts (with ApiBasePartyBankAccount) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9bd2ed32-908d-488e-b6c2-91027225c35e"></i></h3>
+                    <div class="hidden-copylink" id="copy-9bd2ed32-908d-488e-b6c2-91027225c35e"><a href="#9bd2ed32-908d-488e-b6c2-91027225c35e">POST PartyBankAccounts (with ApiBasePartyBankAccount)</a></div>
+                    <p class="operation-description">Creates a new entity record. The record shoud contain both data from the entity and the base entity.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyBankAccountResource</td>
+                                <td><i>(ApiPartyBankAccountResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiPartyBankAccountResource">ApiPartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiBasePartyBankAccountResource">ApiBasePartyBankAccountResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-9bd2ed32-908d-488e-b6c2-91027225c35e">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /financialCore/partyBankAccounts</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9bd2ed32-908d-488e-b6c2-91027225c35e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0e88580b-b79f-4d22-99f1-ec350605d9fc"></a>
+                    <h3>PUT Set Currency PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0e88580b-b79f-4d22-99f1-ec350605d9fc"></i></h3>
+                    <div class="hidden-copylink" id="copy-0e88580b-b79f-4d22-99f1-ec350605d9fc"><a href="#0e88580b-b79f-4d22-99f1-ec350605d9fc">PUT Set Currency PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Currency' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-0e88580b-b79f-4d22-99f1-ec350605d9fc">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/currency</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/currency</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0e88580b-b79f-4d22-99f1-ec350605d9fc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e71d45c9-134d-4d41-903d-c4a4e519ddde"></a>
+                    <h3>PUT Set DebitAuthorizationNumber PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e71d45c9-134d-4d41-903d-c4a4e519ddde"></i></h3>
+                    <div class="hidden-copylink" id="copy-e71d45c9-134d-4d41-903d-c4a4e519ddde"><a href="#e71d45c9-134d-4d41-903d-c4a4e519ddde">PUT Set DebitAuthorizationNumber PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'DebitAuthorizationNumber' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e71d45c9-134d-4d41-903d-c4a4e519ddde">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/debitAuthorizationNumber</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/debitAuthorizationNumber</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e71d45c9-134d-4d41-903d-c4a4e519ddde"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eed2ec8b-47c9-4264-a6df-ca481d3c0ce5"></a>
+                    <h3>PUT Set DirectDebitAmountLimit PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-eed2ec8b-47c9-4264-a6df-ca481d3c0ce5"></i></h3>
+                    <div class="hidden-copylink" id="copy-eed2ec8b-47c9-4264-a6df-ca481d3c0ce5"><a href="#eed2ec8b-47c9-4264-a6df-ca481d3c0ce5">PUT Set DirectDebitAmountLimit PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'DirectDebitAmountLimit' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-eed2ec8b-47c9-4264-a6df-ca481d3c0ce5">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/directDebitAmountLimit</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/directDebitAmountLimit</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-eed2ec8b-47c9-4264-a6df-ca481d3c0ce5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7929ef73-2dad-44d0-8f32-980eb8e39dc6"></a>
+                    <h3>PUT Set DirectDebitStartDate PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7929ef73-2dad-44d0-8f32-980eb8e39dc6"></i></h3>
+                    <div class="hidden-copylink" id="copy-7929ef73-2dad-44d0-8f32-980eb8e39dc6"><a href="#7929ef73-2dad-44d0-8f32-980eb8e39dc6">PUT Set DirectDebitStartDate PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'DirectDebitStartDate' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7929ef73-2dad-44d0-8f32-980eb8e39dc6">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/directDebitStartDate</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/directDebitStartDate</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7929ef73-2dad-44d0-8f32-980eb8e39dc6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="eaf40b09-b1e2-430a-a444-f6370cde9b71"></a>
+                    <h3>PUT Set FinancialInstitution PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-eaf40b09-b1e2-430a-a444-f6370cde9b71"></i></h3>
+                    <div class="hidden-copylink" id="copy-eaf40b09-b1e2-430a-a444-f6370cde9b71"><a href="#eaf40b09-b1e2-430a-a444-f6370cde9b71">PUT Set FinancialInstitution PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'FinancialInstitution' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-eaf40b09-b1e2-430a-a444-f6370cde9b71">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/financialInstitution</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/financialInstitution</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-eaf40b09-b1e2-430a-a444-f6370cde9b71"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e207d6d9-2824-468e-b38a-b4d68880c9f2"></a>
+                    <h3>PUT Set HasPreviousPayments PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e207d6d9-2824-468e-b38a-b4d68880c9f2"></i></h3>
+                    <div class="hidden-copylink" id="copy-e207d6d9-2824-468e-b38a-b4d68880c9f2"><a href="#e207d6d9-2824-468e-b38a-b4d68880c9f2">PUT Set HasPreviousPayments PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'HasPreviousPayments' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e207d6d9-2824-468e-b38a-b4d68880c9f2">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/hasPreviousPayments</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/hasPreviousPayments</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e207d6d9-2824-468e-b38a-b4d68880c9f2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d221da8b-11ab-424c-8b25-d3bd56e31c5b"></a>
+                    <h3>PUT Set IBAN PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d221da8b-11ab-424c-8b25-d3bd56e31c5b"></i></h3>
+                    <div class="hidden-copylink" id="copy-d221da8b-11ab-424c-8b25-d3bd56e31c5b"><a href="#d221da8b-11ab-424c-8b25-d3bd56e31c5b">PUT Set IBAN PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IBAN' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d221da8b-11ab-424c-8b25-d3bd56e31c5b">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/iBAN</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/iBAN</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d221da8b-11ab-424c-8b25-d3bd56e31c5b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1731ad84-1d88-409d-bdbd-bb497e567111"></a>
+                    <h3>PUT Set IsActive PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1731ad84-1d88-409d-bdbd-bb497e567111"></i></h3>
+                    <div class="hidden-copylink" id="copy-1731ad84-1d88-409d-bdbd-bb497e567111"><a href="#1731ad84-1d88-409d-bdbd-bb497e567111">PUT Set IsActive PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1731ad84-1d88-409d-bdbd-bb497e567111">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1731ad84-1d88-409d-bdbd-bb497e567111"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="24bae52b-aa9f-429b-afc3-aadd5c69736c"></a>
+                    <h3>PUT Set IsAuthorizationActive PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-24bae52b-aa9f-429b-afc3-aadd5c69736c"></i></h3>
+                    <div class="hidden-copylink" id="copy-24bae52b-aa9f-429b-afc3-aadd5c69736c"><a href="#24bae52b-aa9f-429b-afc3-aadd5c69736c">PUT Set IsAuthorizationActive PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsAuthorizationActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-24bae52b-aa9f-429b-afc3-aadd5c69736c">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/isAuthorizationActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/isAuthorizationActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-24bae52b-aa9f-429b-afc3-aadd5c69736c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ec32cb0b-0596-4525-b4a1-4bd6b0595c3a"></a>
+                    <h3>PUT Set SWIFT PartyBankAccount <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ec32cb0b-0596-4525-b4a1-4bd6b0595c3a"></i></h3>
+                    <div class="hidden-copylink" id="copy-ec32cb0b-0596-4525-b4a1-4bd6b0595c3a"><a href="#ec32cb0b-0596-4525-b4a1-4bd6b0595c3a">PUT Set SWIFT PartyBankAccount</a></div>
+                    <p class="operation-description">Updates the value of attribute 'SWIFT' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-ec32cb0b-0596-4525-b4a1-4bd6b0595c3a">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}/sWIFT</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/partyBankAccounts/{partyKey}/sWIFT</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ec32cb0b-0596-4525-b4a1-4bd6b0595c3a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e41d17e3-a42a-4b70-a0d8-f38f25933405"></a>
+                    <h3>DELETE PartyBankAccount by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e41d17e3-a42a-4b70-a0d8-f38f25933405"></i></h3>
+                    <div class="hidden-copylink" id="copy-e41d17e3-a42a-4b70-a0d8-f38f25933405"><a href="#e41d17e3-a42a-4b70-a0d8-f38f25933405">DELETE PartyBankAccount by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e41d17e3-a42a-4b70-a0d8-f38f25933405">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /financialCore/partyBankAccounts/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e41d17e3-a42a-4b70-a0d8-f38f25933405"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0ddf13d0-e091-4055-9aad-7bfee69abdaa"></a>
+                    <h3>DELETE PartyBankAccount by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0ddf13d0-e091-4055-9aad-7bfee69abdaa"></i></h3>
+                    <div class="hidden-copylink" id="copy-0ddf13d0-e091-4055-9aad-7bfee69abdaa"><a href="#0ddf13d0-e091-4055-9aad-7bfee69abdaa">DELETE PartyBankAccount by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-0ddf13d0-e091-4055-9aad-7bfee69abdaa">api/{tenantKey}/{orgKey}/financialCore/partyBankAccounts/{partyKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /financialCore/partyBankAccounts/{partyKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0ddf13d0-e091-4055-9aad-7bfee69abdaa"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiBasePartyBankAccountResource"></a>
+                    <h4>ApiBasePartyBankAccountResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiBasePartyBankAccountResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiBasePartyBankAccountResource"><a href="#ApiBasePartyBankAccountResource">ApiBasePartyBankAccountResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isAuthorizationActive</td>
+                                <td  class="wrap"><i>(bool)</i> Authorize method of payment by direct debit.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitAmountLimit</td>
+                                <td  class="wrap"><i>(decimal)</i> The direct debit amount limit (value in EUR). (0.00 means no limit).</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit currency (EUR).</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hasPreviousPayments</td>
+                                <td  class="wrap"><i>(bool)</i> Has Previous Payments.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party's country.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isPerson</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates that this entity is a person.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> The party International Bank Account Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">debitAuthorizationNumber</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit authorization number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> The associated financial institution.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> The society for Worldwide Interbank Financial Telecommunication number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitStartDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date or the mandate signature or date of the first mandate.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> The search term.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax identifier. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The electronic mail for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street's name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building's number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city's name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact's name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact's title.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party's Identity Username.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external identifier for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party's main address.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party's main contact.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the party.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ApiPartyBankAccountResource"></a>
+                    <h4>ApiPartyBankAccountResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiPartyBankAccountResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiPartyBankAccountResource"><a href="#ApiPartyBankAccountResource">ApiPartyBankAccountResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isAuthorizationActive</td>
+                                <td  class="wrap"><i>(bool)</i> Authorize method of payment by direct debit.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitAmountLimit</td>
+                                <td  class="wrap"><i>(decimal)</i> The direct debit amount limit (value in EUR). (0.00 means no limit).</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit currency (EUR).</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hasPreviousPayments</td>
+                                <td  class="wrap"><i>(bool)</i> Has Previous Payments.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> The party International Bank Account Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">debitAuthorizationNumber</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit authorization number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> The associated financial institution.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> The society for Worldwide Interbank Financial Telecommunication number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitStartDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date or the mandate signature or date of the first mandate.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="BasePartyBankAccountResource"></a>
+                    <h4>BasePartyBankAccountResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-BasePartyBankAccountResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-BasePartyBankAccountResource"><a href="#BasePartyBankAccountResource">BasePartyBankAccountResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isAuthorizationActive</td>
+                                <td  class="wrap"><i>(bool)</i> Authorize method of payment by direct debit.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitAmountLimit</td>
+                                <td  class="wrap"><i>(decimal)</i> The direct debit amount limit (value in EUR). (0.00 means no limit).</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit currency (EUR).</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hasPreviousPayments</td>
+                                <td  class="wrap"><i>(bool)</i> Has Previous Payments.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The name for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> A flag indicating if the party is externally managed.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The party's country.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isPerson</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates that this entity is a person.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> The party International Bank Account Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">debitAuthorizationNumber</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit authorization number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> The associated financial institution.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> The society for Worldwide Interbank Financial Telecommunication number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitStartDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date or the mandate signature or date of the first mandate.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> The search term.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The party tax identifier. The unique code assigned by a country's tax authority to establish an entity's fiscal identification and responsibilities.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The electronic mail for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The telephone for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The mobile for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">websiteUrl</td>
+                                <td  class="wrap"><i>(string)</i> The website url for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> The notes for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">picture</td>
+                                <td  class="wrap"><i>(string)</i> The picture for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address street's name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The party main address building's number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The party main address postal zone.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The party main address city's name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">contactName</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact's name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">contactTitle</td>
+                                <td  class="wrap"><i>(string)</i> The party main contact's title.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">username</td>
+                                <td  class="wrap"><i>(string)</i> The party's Identity Username.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalId</td>
+                                <td  class="wrap"><i>(string)</i> The external identifier for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">externalVersion</td>
+                                <td  class="wrap"><i>(string)</i> The external version for the party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The party's main address.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">contact</td>
+                                <td  class="wrap"><i>(string)</i> The party's main contact.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> The culture for the party.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="PartyBankAccountResource"></a>
+                    <h4>PartyBankAccountResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-PartyBankAccountResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-PartyBankAccountResource"><a href="#PartyBankAccountResource">PartyBankAccountResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">isAuthorizationActive</td>
+                                <td  class="wrap"><i>(bool)</i> Authorize method of payment by direct debit.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitAmountLimit</td>
+                                <td  class="wrap"><i>(decimal)</i> The direct debit amount limit (value in EUR). (0.00 means no limit).</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit currency (EUR).<br /><i>(fk)</i> Allowed value: the natural key of a record of type Currency. These records are accessibly through the <a href="corepatterns.currencies.html">Currencies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hasPreviousPayments</td>
+                                <td  class="wrap"><i>(bool)</i> Has Previous Payments.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for the party. Uniquely identifies the entity/party within the organization.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">iBAN</td>
+                                <td  class="wrap"><i>(string)</i> The party International Bank Account Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">debitAuthorizationNumber</td>
+                                <td  class="wrap"><i>(string)</i> The direct debit authorization number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialInstitution</td>
+                                <td  class="wrap"><i>(string)</i> The associated financial institution.<br /><i>(fk)</i> Allowed value: the natural key of a record of type FinancialInstitution. These records are accessibly through the <a href="financialcore.financialinstitutions.html">FinancialInstitutions</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sWIFT</td>
+                                <td  class="wrap"><i>(string)</i> The society for Worldwide Interbank Financial Telecommunication number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">directDebitStartDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date or the mandate signature or date of the first mandate.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>
