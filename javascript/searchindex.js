@@ -1,9 +1,57 @@
 ﻿window.searchIndexList = [
     {
+        url: "bankaccounting.reconciliations.html",
+        description: " | Bank Reconciliation",
+        keywords : "Bank Reconciliation Reconciliation",
+        kind : "service",
+    },
+    {
         url: "bankaccounting.directdebitfiles.html",
         description: " | Direct Debit File",
         keywords : "Direct Debit File DirectDebitFile",
         kind : "service",
+    },
+    {
+        url: "bankaccounting.processreconciliationrequests.html",
+        description: " | Process Reconciliation Request",
+        keywords : "Process Reconciliation Request ",
+        kind : "service",
+    },
+    {
+        url: "identity.accessgroups.html#AccessGroupData",
+        description: "AccessGroupData",
+        keywords : "AccessGroupData",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html#AccessGroupData",
+        description: "AccessGroupData",
+        keywords : "AccessGroupData",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html#AccessGroupResource",
+        description: "AccessGroupResource",
+        keywords : "AccessGroupResource",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html#AccessGroupResource",
+        description: "AccessGroupResource",
+        keywords : "AccessGroupResource",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html#AccessGroupResource",
+        description: "AccessGroupResource",
+        keywords : "AccessGroupResource",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html#AccessGroupResource",
+        description: "AccessGroupResource",
+        keywords : "AccessGroupResource",
+        kind : "resource",
     },
     {
         url: "financialcore.accountsentries.html#AccountEntry",
@@ -42,9 +90,45 @@
         kind : "resource",
     },
     {
+        url: "financialcore.accounts.html#AccountResource",
+        description: "AccountResource",
+        keywords : "AccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.accounts.html#AccountResource",
+        description: "AccountResource",
+        keywords : "AccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.accounts.html#AccountResource",
+        description: "AccountResource",
+        keywords : "AccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.accounts.html#AccountResource",
+        description: "AccountResource",
+        keywords : "AccountResource",
+        kind : "resource",
+    },
+    {
         url: "accountspayable.processopenitems.html",
         description: "Accounts Payable | Create Payment",
         keywords : "Create Payment ",
+        kind : "service",
+    },
+    {
+        url: "accountspayable.payments.html",
+        description: "Accounts Payable | Payment",
+        keywords : "Payment",
+        kind : "service",
+    },
+    {
+        url: "accountspayable.summaryvalues.html",
+        description: "Accounts Payable | Summary Value",
+        keywords : "Summary Value ",
         kind : "service",
     },
     {
@@ -60,6 +144,12 @@
         kind : "service",
     },
     {
+        url: "accountsreceivable.summaryvalues.html",
+        description: "Accounts Receivable | Summary Value",
+        keywords : "Summary Value ",
+        kind : "service",
+    },
+    {
         url: "financialcore.accounttransactions.html#AccountTransactionResource",
         description: "AccountTransactionResource",
         keywords : "AccountTransactionResource",
@@ -141,12 +231,24 @@
         url: "materialsmanagement.adjustmentreasons.html#AdjustmentReasonResource",
         description: "AdjustmentReasonResource",
         keywords : "AdjustmentReasonResource",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html#ApiAccessGroupResource",
+        description: "ApiAccessGroupResource",
+        keywords : "ApiAccessGroupResource",
         kind : "resource",
     },
     {
         url: "financialcore.accountpostings.html#ApiAccountPostingResource",
         description: "ApiAccountPostingResource",
         keywords : "ApiAccountPostingResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.accounts.html#ApiAccountResource",
+        description: "ApiAccountResource",
+        keywords : "ApiAccountResource",
         kind : "resource",
     },
     {
@@ -183,12 +285,6 @@
         url: "salescore.customerparties.html#ApiBaseCustomerPartyResource",
         description: "ApiBaseCustomerPartyResource",
         keywords : "ApiBaseCustomerPartyResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#ApiBaseECommerceItemResource",
-        description: "ApiBaseECommerceItemResource",
-        keywords : "ApiBaseECommerceItemResource",
         kind : "resource",
     },
     {
@@ -462,18 +558,6 @@
         kind : "resource",
     },
     {
-        url: "ecommerce.ecommerceitems.html#ApiECommerceItemResource",
-        description: "ApiECommerceItemResource",
-        keywords : "ApiECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommercesetups.html#ApiECommerceSetupResource",
-        description: "ApiECommerceSetupResource",
-        keywords : "ApiECommerceSetupResource",
-        kind : "resource",
-    },
-    {
         url: "taxescore.economicactivityclassifications.html#ApiEconomicActivityClassificationResource",
         description: "ApiEconomicActivityClassificationResource",
         keywords : "ApiEconomicActivityClassificationResource",
@@ -570,15 +654,57 @@
         kind : "resource",
     },
     {
+        url: "invoicereceipt.expenses.html#ApiExpenseDocumentLinesResource",
+        description: "ApiExpenseDocumentLinesResource",
+        keywords : "ApiExpenseDocumentLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "invoicereceipt.expenses.html#ApiExpenseDocumentLinesResource",
+        description: "ApiExpenseDocumentLinesResource",
+        keywords : "ApiExpenseDocumentLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "invoicereceipt.expenses.html#ApiExpenseDocumentLinesResource",
+        description: "ApiExpenseDocumentLinesResource",
+        keywords : "ApiExpenseDocumentLinesResource",
+        kind : "resource",
+    },
+    {
         url: "invoicereceipt.expenses.html#ApiExpenseResource",
         description: "ApiExpenseResource",
         keywords : "ApiExpenseResource",
         kind : "resource",
     },
     {
+        url: "invoicereceipt.expenses.html#ApiExpenseResource",
+        description: "ApiExpenseResource",
+        keywords : "ApiExpenseResource",
+        kind : "resource",
+    },
+    {
+        url: "invoicereceipt.expenses.html#ApiExpenseResource",
+        description: "ApiExpenseResource",
+        keywords : "ApiExpenseResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccountentries.html#ApiFinancialAccountEntryResource",
+        description: "ApiFinancialAccountEntryResource",
+        keywords : "ApiFinancialAccountEntryResource",
+        kind : "resource",
+    },
+    {
         url: "financialcore.financialaccounts.html#ApiFinancialAccountResource",
         description: "ApiFinancialAccountResource",
         keywords : "ApiFinancialAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccounttransfers.html#ApiFinancialAccountTransferResource",
+        description: "ApiFinancialAccountTransferResource",
+        keywords : "ApiFinancialAccountTransferResource",
         kind : "resource",
     },
     {
@@ -981,12 +1107,6 @@
         url: "materialsmanagement.itemadjustments.html#ApiItemAdjustmentResource",
         description: "ApiItemAdjustmentResource",
         keywords : "ApiItemAdjustmentResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.itemcategories.html#ApiItemCategoryResource",
-        description: "ApiItemCategoryResource",
-        keywords : "ApiItemCategoryResource",
         kind : "resource",
     },
     {
@@ -2010,6 +2130,12 @@
         kind : "resource",
     },
     {
+        url: "corepatterns.organizationconfigurations.html#ApiOrganizationConfigurationResource",
+        description: "ApiOrganizationConfigurationResource",
+        keywords : "ApiOrganizationConfigurationResource",
+        kind : "resource",
+    },
+    {
         url: "financialcore.partybankaccounts.html#ApiPartyBankAccountResource",
         description: "ApiPartyBankAccountResource",
         keywords : "ApiPartyBankAccountResource",
@@ -2205,6 +2331,42 @@
         url: "taxescore.paymentmethodfiscalclassifications.html#ApiPaymentMethodFiscalClassificationResource",
         description: "ApiPaymentMethodFiscalClassificationResource",
         keywords : "ApiPaymentMethodFiscalClassificationResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.paymentmethods.html#ApiPaymentMethodPaymentMethodParametersResource",
+        description: "ApiPaymentMethodPaymentMethodParametersResource",
+        keywords : "ApiPaymentMethodPaymentMethodParametersResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.paymentmethods.html#ApiPaymentMethodPaymentMethodParametersResource",
+        description: "ApiPaymentMethodPaymentMethodParametersResource",
+        keywords : "ApiPaymentMethodPaymentMethodParametersResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.paymentmethods.html#ApiPaymentMethodPaymentMethodParametersResource",
+        description: "ApiPaymentMethodPaymentMethodParametersResource",
+        keywords : "ApiPaymentMethodPaymentMethodParametersResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.paymentmethods.html#ApiPaymentMethodPaymentMethodParametersResource",
+        description: "ApiPaymentMethodPaymentMethodParametersResource",
+        keywords : "ApiPaymentMethodPaymentMethodParametersResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.paymentmethods.html#ApiPaymentMethodResource",
+        description: "ApiPaymentMethodResource",
+        keywords : "ApiPaymentMethodResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.paymentmethods.html#ApiPaymentMethodResource",
+        description: "ApiPaymentMethodResource",
+        keywords : "ApiPaymentMethodResource",
         kind : "resource",
     },
     {
@@ -2445,6 +2607,12 @@
         url: "financialcore.receipttypes.html#ApiReceiptTypeResource",
         description: "ApiReceiptTypeResource",
         keywords : "ApiReceiptTypeResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.processreconciliationrequests.html#ApiReconciliationRequest",
+        description: "ApiReconciliationRequest",
+        keywords : "ApiReconciliationRequest",
         kind : "resource",
     },
     {
@@ -2823,30 +2991,6 @@
         url: "salescore.customerparties.html#BaseCustomerPartyResource",
         description: "BaseCustomerPartyResource",
         keywords : "BaseCustomerPartyResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#BaseECommerceItemResource",
-        description: "BaseECommerceItemResource",
-        keywords : "BaseECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#BaseECommerceItemResource",
-        description: "BaseECommerceItemResource",
-        keywords : "BaseECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#BaseECommerceItemResource",
-        description: "BaseECommerceItemResource",
-        keywords : "BaseECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#BaseECommerceItemResource",
-        description: "BaseECommerceItemResource",
-        keywords : "BaseECommerceItemResource",
         kind : "resource",
     },
     {
@@ -3552,6 +3696,12 @@
         kind : "resource",
     },
     {
+        url: "corepatterns.drafts.html#DraftDataResource",
+        description: "DraftDataResource",
+        keywords : "DraftDataResource",
+        kind : "resource",
+    },
+    {
         url: "corepatterns.drafts.html#DraftResource",
         description: "DraftResource",
         keywords : "DraftResource",
@@ -3579,66 +3729,6 @@
         url: "corepatterns.drafts.html#DraftsGroupData",
         description: "DraftsGroupData",
         keywords : "DraftsGroupData",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommercelistitems.html#ECommerceItemDetail",
-        description: "ECommerceItemDetail",
-        keywords : "ECommerceItemDetail",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#ECommerceItemResource",
-        description: "ECommerceItemResource",
-        keywords : "ECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#ECommerceItemResource",
-        description: "ECommerceItemResource",
-        keywords : "ECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#ECommerceItemResource",
-        description: "ECommerceItemResource",
-        keywords : "ECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommerceitems.html#ECommerceItemResource",
-        description: "ECommerceItemResource",
-        keywords : "ECommerceItemResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommercelistitems.html#ECommerceListItem",
-        description: "ECommerceListItem",
-        keywords : "ECommerceListItem",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommercesetups.html#ECommerceSetupResource",
-        description: "ECommerceSetupResource",
-        keywords : "ECommerceSetupResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommercesetups.html#ECommerceSetupResource",
-        description: "ECommerceSetupResource",
-        keywords : "ECommerceSetupResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommercesetups.html#ECommerceSetupResource",
-        description: "ECommerceSetupResource",
-        keywords : "ECommerceSetupResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.ecommercesetups.html#ECommerceSetupResource",
-        description: "ECommerceSetupResource",
-        keywords : "ECommerceSetupResource",
         kind : "resource",
     },
     {
@@ -3699,6 +3789,36 @@
         url: "operations.emailtemplates.html#EmailTemplateResource",
         description: "EmailTemplateResource",
         keywords : "EmailTemplateResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.entitylockreasons.html#EntityLockReasonResource",
+        description: "EntityLockReasonResource",
+        keywords : "EntityLockReasonResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.entitylockreasons.html#EntityLockReasonResource",
+        description: "EntityLockReasonResource",
+        keywords : "EntityLockReasonResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.entitylockreasons.html#EntityLockReasonResource",
+        description: "EntityLockReasonResource",
+        keywords : "EntityLockReasonResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.entitylockreasons.html#EntityLockReasonResource",
+        description: "EntityLockReasonResource",
+        keywords : "EntityLockReasonResource",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html#EntityRecord",
+        description: "EntityRecord",
+        keywords : "EntityRecord",
         kind : "resource",
     },
     {
@@ -3786,9 +3906,27 @@
         kind : "resource",
     },
     {
-        url: "financialcore.financialaccounts.html#FinancialAccountResource",
-        description: "FinancialAccountResource",
-        keywords : "FinancialAccountResource",
+        url: "financialcore.financialaccountentries.html#FinancialAccountEntryResource",
+        description: "FinancialAccountEntryResource",
+        keywords : "FinancialAccountEntryResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccountentries.html#FinancialAccountEntryResource",
+        description: "FinancialAccountEntryResource",
+        keywords : "FinancialAccountEntryResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccountentries.html#FinancialAccountEntryResource",
+        description: "FinancialAccountEntryResource",
+        keywords : "FinancialAccountEntryResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccountentries.html#FinancialAccountEntryResource",
+        description: "FinancialAccountEntryResource",
+        keywords : "FinancialAccountEntryResource",
         kind : "resource",
     },
     {
@@ -3807,6 +3945,36 @@
         url: "financialcore.financialaccounts.html#FinancialAccountResource",
         description: "FinancialAccountResource",
         keywords : "FinancialAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccounts.html#FinancialAccountResource",
+        description: "FinancialAccountResource",
+        keywords : "FinancialAccountResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccounttransfers.html#FinancialAccountTransferResource",
+        description: "FinancialAccountTransferResource",
+        keywords : "FinancialAccountTransferResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccounttransfers.html#FinancialAccountTransferResource",
+        description: "FinancialAccountTransferResource",
+        keywords : "FinancialAccountTransferResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccounttransfers.html#FinancialAccountTransferResource",
+        description: "FinancialAccountTransferResource",
+        keywords : "FinancialAccountTransferResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.financialaccounttransfers.html#FinancialAccountTransferResource",
+        description: "FinancialAccountTransferResource",
+        keywords : "FinancialAccountTransferResource",
         kind : "resource",
     },
     {
@@ -3832,6 +4000,12 @@
         description: "FinancialInstitutionResource",
         keywords : "FinancialInstitutionResource",
         kind : "resource",
+    },
+    {
+        url: "financialcore.accounts.html",
+        description: "Financials | Account",
+        keywords : "Account",
+        kind : "service",
     },
     {
         url: "financialcore.accountpostings.html",
@@ -3876,6 +4050,18 @@
         kind : "service",
     },
     {
+        url: "financialcore.financialaccountentries.html",
+        description: "Financials | Financial Account Entry",
+        keywords : "Financial Account Entry FinancialAccountEntry",
+        kind : "service",
+    },
+    {
+        url: "financialcore.financialaccounttransfers.html",
+        description: "Financials | Financial Account Transfer",
+        keywords : "Financial Account Transfer FinancialAccountTransfer",
+        kind : "service",
+    },
+    {
         url: "financialcore.financialinstitutions.html",
         description: "Financials | Financial Institution",
         keywords : "Financial Institution FinancialInstitution",
@@ -3883,8 +4069,20 @@
     },
     {
         url: "financialcore.financialsetups.html",
-        description: "Financials | Financial Setup",
-        keywords : "Financial Setup FinancialSetup",
+        description: "Financials | Financial Settings",
+        keywords : "Financial Settings FinancialSetup",
+        kind : "service",
+    },
+    {
+        url: "financialcore.indicators.html",
+        description: "Financials | Indicator",
+        keywords : "Indicator ",
+        kind : "service",
+    },
+    {
+        url: "financialcore.insights.html",
+        description: "Financials | Insight",
+        keywords : "Insight ",
         kind : "service",
     },
     {
@@ -4344,30 +4542,6 @@
         kind : "resource",
     },
     {
-        url: "ecommerce.itemcategories.html#ItemCategoryResource",
-        description: "ItemCategoryResource",
-        keywords : "ItemCategoryResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.itemcategories.html#ItemCategoryResource",
-        description: "ItemCategoryResource",
-        keywords : "ItemCategoryResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.itemcategories.html#ItemCategoryResource",
-        description: "ItemCategoryResource",
-        keywords : "ItemCategoryResource",
-        kind : "resource",
-    },
-    {
-        url: "ecommerce.itemcategories.html#ItemCategoryResource",
-        description: "ItemCategoryResource",
-        keywords : "ItemCategoryResource",
-        kind : "resource",
-    },
-    {
         url: "businesscore.items.html#ItemResource",
         description: "ItemResource",
         keywords : "ItemResource",
@@ -4476,6 +4650,18 @@
         kind : "resource",
     },
     {
+        url: "financialcore.indicators.html#KpiCardData",
+        description: "KpiCardData",
+        keywords : "KpiCardData",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.indicators.html#KpiChartData",
+        description: "KpiChartData",
+        keywords : "KpiChartData",
+        kind : "resource",
+    },
+    {
         url: "taxes.legaldeclarations.html#LegalDeclarationResource",
         description: "LegalDeclarationResource",
         keywords : "LegalDeclarationResource",
@@ -4524,12 +4710,6 @@
         kind : "service",
     },
     {
-        url: "logisticscore.logisticssetups.html",
-        description: "Logistics | Materials Setup",
-        keywords : "Materials Setup LogisticsSetup",
-        kind : "service",
-    },
-    {
         url: "logisticscore.memoreasons.html",
         description: "Logistics | Memo Reason",
         keywords : "Memo Reason MemoReason",
@@ -4539,6 +4719,12 @@
         url: "logisticscore.shippingmethods.html",
         description: "Logistics | Shipping Method",
         keywords : "Shipping Method ShippingMethod",
+        kind : "service",
+    },
+    {
+        url: "logisticscore.logisticssetups.html",
+        description: "Logistics | Stock Settings",
+        keywords : "Stock Settings LogisticsSetup",
         kind : "service",
     },
     {
@@ -4675,8 +4861,8 @@
     },
     {
         url: "materialscore.materialssetups.html",
-        description: "Materials Management | Materials Setup",
-        keywords : "Materials Setup MaterialsSetup",
+        description: "Materials Management | Stock Settings",
+        keywords : "Stock Settings MaterialsSetup",
         kind : "service",
     },
     {
@@ -4902,7 +5088,25 @@
         kind : "resource",
     },
     {
+        url: "sales.summaryvalues.html#NamedSummarizedValue",
+        description: "NamedSummarizedValue",
+        keywords : "NamedSummarizedValue",
+        kind : "resource",
+    },
+    {
         url: "purchases.summaryvalues.html#NamedSummarizedValue",
+        description: "NamedSummarizedValue",
+        keywords : "NamedSummarizedValue",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.summaryvalues.html#NamedSummarizedValue",
+        description: "NamedSummarizedValue",
+        keywords : "NamedSummarizedValue",
+        kind : "resource",
+    },
+    {
+        url: "accountsreceivable.summaryvalues.html#NamedSummarizedValue",
         description: "NamedSummarizedValue",
         keywords : "NamedSummarizedValue",
         kind : "resource",
@@ -4962,28 +5166,34 @@
         kind : "resource",
     },
     {
-        url: "ecommerce.ecommerceitems.html",
-        description: "Online Store | ECommerce Item",
-        keywords : "ECommerce Item ECommerceItem",
-        kind : "service",
+        url: "reporting.offlinereports.html#OfflineReportResource",
+        description: "OfflineReportResource",
+        keywords : "OfflineReportResource",
+        kind : "resource",
     },
     {
-        url: "ecommerce.ecommercelistitems.html",
-        description: "Online Store | ECommerce List Items",
-        keywords : "ECommerce List Items ",
-        kind : "service",
+        url: "reporting.offlinereports.html#OfflineReportResource",
+        description: "OfflineReportResource",
+        keywords : "OfflineReportResource",
+        kind : "resource",
     },
     {
-        url: "ecommerce.ecommercesetups.html",
-        description: "Online Store | ECommerce Setup",
-        keywords : "ECommerce Setup ECommerceSetup",
-        kind : "service",
+        url: "reporting.offlinereports.html#OfflineReportResource",
+        description: "OfflineReportResource",
+        keywords : "OfflineReportResource",
+        kind : "resource",
     },
     {
-        url: "ecommerce.itemcategories.html",
-        description: "Online Store | Item Category",
-        keywords : "Item Category ItemCategory",
-        kind : "service",
+        url: "reporting.offlinereports.html#OfflineReportResource",
+        description: "OfflineReportResource",
+        keywords : "OfflineReportResource",
+        kind : "resource",
+    },
+    {
+        url: "reporting.offlinereports.html#OfflineReportResource",
+        description: "OfflineReportResource",
+        keywords : "OfflineReportResource",
+        kind : "resource",
     },
     {
         url: "accountspayable.processopenitems.html#OpenAccountPosting",
@@ -5130,6 +5340,30 @@
         kind : "resource",
     },
     {
+        url: "sales.summaryvalues.html#OrderToBillResource",
+        description: "OrderToBillResource",
+        keywords : "OrderToBillResource",
+        kind : "resource",
+    },
+    {
+        url: "purchases.summaryvalues.html#OrderToInvoiceResource",
+        description: "OrderToInvoiceResource",
+        keywords : "OrderToInvoiceResource",
+        kind : "resource",
+    },
+    {
+        url: "purchases.summaryvalues.html#OrderToReceiveResource",
+        description: "OrderToReceiveResource",
+        keywords : "OrderToReceiveResource",
+        kind : "resource",
+    },
+    {
+        url: "sales.summaryvalues.html#OrderToShipResource",
+        description: "OrderToShipResource",
+        keywords : "OrderToShipResource",
+        kind : "resource",
+    },
+    {
         url: "salescore.ordertypes.html#OrderTypeResource",
         description: "OrderTypeResource",
         keywords : "OrderTypeResource",
@@ -5187,6 +5421,30 @@
         url: "purchasescore.ordertypes.html#OrderTypeSerieResource",
         description: "OrderTypeSerieResource",
         keywords : "OrderTypeSerieResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.organizationconfigurations.html#OrganizationConfigurationResource",
+        description: "OrganizationConfigurationResource",
+        keywords : "OrganizationConfigurationResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.organizationconfigurations.html#OrganizationConfigurationResource",
+        description: "OrganizationConfigurationResource",
+        keywords : "OrganizationConfigurationResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.organizationconfigurations.html#OrganizationConfigurationResource",
+        description: "OrganizationConfigurationResource",
+        keywords : "OrganizationConfigurationResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.organizationconfigurations.html#OrganizationConfigurationResource",
+        description: "OrganizationConfigurationResource",
+        keywords : "OrganizationConfigurationResource",
         kind : "resource",
     },
     {
@@ -5316,9 +5574,9 @@
         kind : "resource",
     },
     {
-        url: "taxescore.paymentmethodfiscalclassifications.html#PaymentMethodFiscalClassificationResource",
-        description: "PaymentMethodFiscalClassificationResource",
-        keywords : "PaymentMethodFiscalClassificationResource",
+        url: "accountspayable.payments.html#PaymentLineResource",
+        description: "PaymentLineResource",
+        keywords : "PaymentLineResource",
         kind : "resource",
     },
     {
@@ -5337,6 +5595,18 @@
         url: "taxescore.paymentmethodfiscalclassifications.html#PaymentMethodFiscalClassificationResource",
         description: "PaymentMethodFiscalClassificationResource",
         keywords : "PaymentMethodFiscalClassificationResource",
+        kind : "resource",
+    },
+    {
+        url: "taxescore.paymentmethodfiscalclassifications.html#PaymentMethodFiscalClassificationResource",
+        description: "PaymentMethodFiscalClassificationResource",
+        keywords : "PaymentMethodFiscalClassificationResource",
+        kind : "resource",
+    },
+    {
+        url: "financialcore.paymentmethods.html#PaymentMethodParameterResource",
+        description: "PaymentMethodParameterResource",
+        keywords : "PaymentMethodParameterResource",
         kind : "resource",
     },
     {
@@ -5361,6 +5631,42 @@
         url: "financialcore.paymentmethods.html#PaymentMethodResource",
         description: "PaymentMethodResource",
         keywords : "PaymentMethodResource",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.payments.html#PaymentReportingLineResource",
+        description: "PaymentReportingLineResource",
+        keywords : "PaymentReportingLineResource",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.payments.html#PaymentResource",
+        description: "PaymentResource",
+        keywords : "PaymentResource",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.payments.html#PaymentResource",
+        description: "PaymentResource",
+        keywords : "PaymentResource",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.payments.html#PaymentResource",
+        description: "PaymentResource",
+        keywords : "PaymentResource",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.payments.html#PaymentResource",
+        description: "PaymentResource",
+        keywords : "PaymentResource",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.payments.html#PaymentTaxResource",
+        description: "PaymentTaxResource",
+        keywords : "PaymentTaxResource",
         kind : "resource",
     },
     {
@@ -5418,6 +5724,24 @@
         kind : "resource",
     },
     {
+        url: "accountspayable.payments.html#PaymentWTaxResource",
+        description: "PaymentWTaxResource",
+        keywords : "PaymentWTaxResource",
+        kind : "resource",
+    },
+    {
+        url: "sales.summaryvalues.html#PendingQuotationResource",
+        description: "PendingQuotationResource",
+        keywords : "PendingQuotationResource",
+        kind : "resource",
+    },
+    {
+        url: "identity.accessgroups.html",
+        description: "Platform | Access Group",
+        keywords : "Access Group AccessGroup",
+        kind : "service",
+    },
+    {
         url: "corepatterns.addresses.html",
         description: "Platform | Address",
         keywords : "Address",
@@ -5466,6 +5790,18 @@
         kind : "service",
     },
     {
+        url: "reporting.offlinereports.html",
+        description: "Platform | Data Report",
+        keywords : "Data Report OfflineReport",
+        kind : "service",
+    },
+    {
+        url: "operations.dbversions.html",
+        description: "Platform | Db Version",
+        keywords : "Db Version ",
+        kind : "service",
+    },
+    {
         url: "corepatterns.drafts.html",
         description: "Platform | Draft",
         keywords : "Draft",
@@ -5475,6 +5811,12 @@
         url: "operations.emailtemplates.html",
         description: "Platform | Email Template",
         keywords : "Email Template EmailTemplate",
+        kind : "service",
+    },
+    {
+        url: "corepatterns.entitylockreasons.html",
+        description: "Platform | Entity Lock Reason",
+        keywords : "Entity Lock Reason EntityLockReason",
         kind : "service",
     },
     {
@@ -5499,6 +5841,12 @@
         url: "corepatterns.operations.html",
         description: "Platform | Operation",
         keywords : "Operation",
+        kind : "service",
+    },
+    {
+        url: "corepatterns.organizationconfigurations.html",
+        description: "Platform | Organization Configuration",
+        keywords : "Organization Configuration OrganizationConfiguration",
         kind : "service",
     },
     {
@@ -5628,6 +5976,18 @@
         kind : "resource",
     },
     {
+        url: "sales.productnews.html#ProductNews",
+        description: "ProductNews",
+        keywords : "ProductNews",
+        kind : "resource",
+    },
+    {
+        url: "sales.productnews.html#ProductNews",
+        description: "ProductNews",
+        keywords : "ProductNews",
+        kind : "resource",
+    },
+    {
         url: "invoicereceipt.memos.html",
         description: "Purchases | Credit or Debit Note",
         keywords : "Credit or Debit Note Memo",
@@ -5695,8 +6055,8 @@
     },
     {
         url: "purchasescore.purchasessetups.html",
-        description: "Purchases | Purchases Setup",
-        keywords : "Purchases Setup PurchasesSetup",
+        description: "Purchases | Purchase Settings",
+        keywords : "Purchase Settings PurchasesSetup",
         kind : "service",
     },
     {
@@ -5739,6 +6099,12 @@
         url: "purchasescore.purchasesitems.html#PurchasesItemResource",
         description: "PurchasesItemResource",
         keywords : "PurchasesItemResource",
+        kind : "resource",
+    },
+    {
+        url: "accountspayable.summaryvalues.html#PurchasesOpenListData",
+        description: "PurchasesOpenListData",
+        keywords : "PurchasesOpenListData",
         kind : "resource",
     },
     {
@@ -5904,9 +6270,51 @@
         kind : "resource",
     },
     {
-        url: "corepatterns.regions.html#RegionResource",
-        description: "RegionResource",
-        keywords : "RegionResource",
+        url: "bankaccounting.processreconciliationrequests.html#ReconciliationRequest",
+        description: "ReconciliationRequest",
+        keywords : "ReconciliationRequest",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.processreconciliationrequests.html#ReconciliationRequest",
+        description: "ReconciliationRequest",
+        keywords : "ReconciliationRequest",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.processreconciliationrequests.html#ReconciliationRequestDetail",
+        description: "ReconciliationRequestDetail",
+        keywords : "ReconciliationRequestDetail",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.processreconciliationrequests.html#ReconciliationRequestDetail",
+        description: "ReconciliationRequestDetail",
+        keywords : "ReconciliationRequestDetail",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.reconciliations.html#ReconciliationResource",
+        description: "ReconciliationResource",
+        keywords : "ReconciliationResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.reconciliations.html#ReconciliationResource",
+        description: "ReconciliationResource",
+        keywords : "ReconciliationResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.reconciliations.html#ReconciliationResource",
+        description: "ReconciliationResource",
+        keywords : "ReconciliationResource",
+        kind : "resource",
+    },
+    {
+        url: "bankaccounting.reconciliations.html#ReconciliationResource",
+        description: "ReconciliationResource",
+        keywords : "ReconciliationResource",
         kind : "resource",
     },
     {
@@ -5925,6 +6333,18 @@
         url: "corepatterns.regions.html#RegionResource",
         description: "RegionResource",
         keywords : "RegionResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.regions.html#RegionResource",
+        description: "RegionResource",
+        keywords : "RegionResource",
+        kind : "resource",
+    },
+    {
+        url: "taxescore.authoritycommunicationrequests.html#RequestCommunicationToTaxAuthority",
+        description: "RequestCommunicationToTaxAuthority",
+        keywords : "RequestCommunicationToTaxAuthority",
         kind : "resource",
     },
     {
@@ -6000,6 +6420,12 @@
         kind : "service",
     },
     {
+        url: "sales.productnews.html",
+        description: "Sales | Product News",
+        keywords : "Product News ",
+        kind : "service",
+    },
+    {
         url: "sales.quotations.html",
         description: "Sales | Quotation",
         keywords : "Quotation",
@@ -6025,8 +6451,8 @@
     },
     {
         url: "salescore.salessetups.html",
-        description: "Sales | Sales Setup",
-        keywords : "Sales Setup SalesSetup",
+        description: "Sales | Sales Settings",
+        keywords : "Sales Settings SalesSetup",
         kind : "service",
     },
     {
@@ -6036,6 +6462,12 @@
         kind : "service",
     },
     {
+        url: "sales.summaryvalues.html",
+        description: "Sales | Summary Value",
+        keywords : "Summary Value ",
+        kind : "service",
+    },
+    {
         url: "salescore.saleschannels.html#SalesChannelResource",
         description: "SalesChannelResource",
         keywords : "SalesChannelResource",
@@ -6093,6 +6525,12 @@
         url: "salescore.salesitems.html#SalesItemResource",
         description: "SalesItemResource",
         keywords : "SalesItemResource",
+        kind : "resource",
+    },
+    {
+        url: "accountsreceivable.summaryvalues.html#SalesOpenListData",
+        description: "SalesOpenListData",
+        keywords : "SalesOpenListData",
         kind : "resource",
     },
     {
@@ -6303,6 +6741,42 @@
         url: "shipping.shippingrequests.html#ShippingRequestResource",
         description: "ShippingRequestResource",
         keywords : "ShippingRequestResource",
+        kind : "resource",
+    },
+    {
+        url: "shipping.deliveries.html#StandardDeliveryDocumentLinesResource",
+        description: "StandardDeliveryDocumentLinesResource",
+        keywords : "StandardDeliveryDocumentLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "shipping.deliveries.html#StandardDeliveryResource",
+        description: "StandardDeliveryResource",
+        keywords : "StandardDeliveryResource",
+        kind : "resource",
+    },
+    {
+        url: "billing.invoices.html#StandardInvoiceDocumentLinesResource",
+        description: "StandardInvoiceDocumentLinesResource",
+        keywords : "StandardInvoiceDocumentLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "billing.invoices.html#StandardInvoiceResource",
+        description: "StandardInvoiceResource",
+        keywords : "StandardInvoiceResource",
+        kind : "resource",
+    },
+    {
+        url: "billing.memos.html#StandardMemosDocumentLinesResource",
+        description: "StandardMemosDocumentLinesResource",
+        keywords : "StandardMemosDocumentLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "billing.memos.html#StandardMemosResource",
+        description: "StandardMemosResource",
+        keywords : "StandardMemosResource",
         kind : "resource",
     },
     {
@@ -6534,9 +7008,21 @@
         kind : "service",
     },
     {
+        url: "taxescore.taxpostings.html",
+        description: "Taxes | Tax Posting",
+        keywords : "Tax Posting TaxPosting",
+        kind : "service",
+    },
+    {
         url: "taxescore.taxregionalareas.html",
         description: "Taxes | Tax Regional Area",
         keywords : "Tax Regional Area TaxRegionalArea",
+        kind : "service",
+    },
+    {
+        url: "taxescore.taxessetups.html",
+        description: "Taxes | Tax Settings",
+        keywords : "Tax Settings TaxesSetup",
         kind : "service",
     },
     {
@@ -6549,12 +7035,6 @@
         url: "taxescore.taxtypecodes.html",
         description: "Taxes | Tax Type Code",
         keywords : "Tax Type Code TaxTypeCode",
-        kind : "service",
-    },
-    {
-        url: "taxescore.taxessetups.html",
-        description: "Taxes | Taxes Setup",
-        keywords : "Taxes Setup TaxesSetup",
         kind : "service",
     },
     {
@@ -6594,6 +7074,30 @@
         kind : "resource",
     },
     {
+        url: "taxescore.taxpostings.html#TaxPostingResource",
+        description: "TaxPostingResource",
+        keywords : "TaxPostingResource",
+        kind : "resource",
+    },
+    {
+        url: "taxescore.taxpostings.html#TaxPostingResource",
+        description: "TaxPostingResource",
+        keywords : "TaxPostingResource",
+        kind : "resource",
+    },
+    {
+        url: "taxescore.taxpostings.html#TaxPostingResource",
+        description: "TaxPostingResource",
+        keywords : "TaxPostingResource",
+        kind : "resource",
+    },
+    {
+        url: "taxescore.taxpostings.html#TaxPostingResource",
+        description: "TaxPostingResource",
+        keywords : "TaxPostingResource",
+        kind : "resource",
+    },
+    {
         url: "taxescore.taxregionalareas.html#TaxRegionalAreaResource",
         description: "TaxRegionalAreaResource",
         keywords : "TaxRegionalAreaResource",
@@ -6663,6 +7167,12 @@
         url: "taxescore.taxtypecodes.html#TaxTypeCodeResource",
         description: "TaxTypeCodeResource",
         keywords : "TaxTypeCodeResource",
+        kind : "resource",
+    },
+    {
+        url: "taxescore.taxtypecodes.html#TaxTypeInfoResource",
+        description: "TaxTypeInfoResource",
+        keywords : "TaxTypeInfoResource",
         kind : "resource",
     },
     {

@@ -5,349 +5,792 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-	<title>Sales | Summary Value</title>
+    <title>Jasmin Developers - Sales | Summary Value</title>
     </header>
 
     <body>
         <div class="header">
             <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div class="title">Jasmin Developers - Web API Reference</div>
             <div id="search" class="search">
                 <i class="search-icon fa fa-search" aria-hidden="true"></i>
                 <input class="typeahead" type="text" placeholder="Search">
             </div>
         </div>
         <div class="sidebar" id="sidebar">
-	<a  class="menu-item " href="index.html">
-		Overview
-	</a>
-	<a class="menu-item" href="accountspayable.html">
-		Accounts Payable
-	</a>
-	<a class="menu-item" href="accountsreceivable.html">
-		Accounts Receivable
-	</a>
-	<a class="menu-item" href="financials.html">
-		Financials
-	</a>
-	<a class="menu-item" href="goodsreceipt.html">
-		Goods Receipt
-	</a>
-	<a class="menu-item" href="logistics.html">
-		Logistics
-	</a>
-	<a class="menu-item" href="masterdatabusinessentities.html">
-		Master Data Business Entities
-	</a>
-	<a class="menu-item" href="materialsmanagement.html">
-		Materials Management
-	</a>
-	<a class="menu-item" href="onlinestore.html">
-		Online Store
-	</a>
-	<a class="menu-item" href="platform.html">
-		Platform
-	</a>
-	<a class="menu-item" href="purchases.html">
-		Purchases
-	</a>
-	<a id="current-menu-item" class="menu-item " href="sales.html">
-		Sales
+    <a  class="menu-item " href="index.html">
+        Overview
     </a>
-	<a class="menu-subitem " href="billing.companyinvoices.html">
-		Company Invoice
-	</a>
-	<a class="menu-subitem " href="salescore.customergroups.html">
-		Customer Group
-	</a>
-	<a class="menu-subitem " href="sales.customerinfos.html">
-		Customer Info
-	</a>
-	<a class="menu-subitem " href="salescore.customerparties.html">
-		Customer Party
-	</a>
-	<a class="menu-subitem " href="sales.indicators.html">
-		Indicator
-	</a>
-	<a class="menu-subitem " href="billing.invoices.html">
-		Invoice
-	</a>
-	<a class="menu-subitem " href="salescore.invoicetypes.html">
-		Invoice Type
-	</a>
-	<a class="menu-subitem " href="sales.iteminfos.html">
-		Item Info
-	</a>
-	<a class="menu-subitem " href="billing.memos.html">
-		Memo
-	</a>
-	<a class="menu-subitem " href="salescore.memotypes.html">
-		Memo Type
-	</a>
-	<a class="menu-subitem " href="sales.orders.html">
-		Order
-	</a>
-	<a class="menu-subitem " href="salescore.ordertypes.html">
-		Order Type
-	</a>
-	<a class="menu-subitem " href="salescore.pricelists.html">
-		Price List
-	</a>
-	<a class="menu-subitem " href="billing.processorders.html">
-		Process Order
-	</a>
-	<a class="menu-subitem " href="billing.processreturnorders.html">
-		Process Return Order
-	</a>
-	<a class="menu-subitem " href="sales.quotations.html">
-		Quotation
-	</a>
-	<a class="menu-subitem " href="salescore.quotationtypes.html">
-		Quotation Type
-	</a>
-	<a class="menu-subitem " href="salescore.saleschannels.html">
-		Sales Channel
-	</a>
-	<a class="menu-subitem " href="salescore.salesitems.html">
-		Sales Item
-	</a>
-	<a class="menu-subitem " href="salescore.salessetups.html">
-		Sales Setup
-	</a>
-	<a class="menu-subitem " href="salescore.salespersons.html">
-		Salesperson
-	</a>
-	<a class="menu-subitem menu-item-selected" href="sales.summaryvalues.html">
-		Summary Value
-	</a>
-	<a class="menu-item" href="shipping.html">
-		Shipping
-	</a>
-	<a class="menu-item" href="taxes.html">
-		Taxes
-	</a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a id="current-menu-item" class="menu-item " href="sales.html">
+        Sales
+    </a>
+    <a class="menu-subitem " href="billing.companyinvoices.html">
+        Company Invoice
+    </a>
+    <a class="menu-subitem " href="billing.memos.html">
+        Credit or Debit Note
+    </a>
+    <a class="menu-subitem " href="salescore.customergroups.html">
+        Customer Group
+    </a>
+    <a class="menu-subitem " href="salescore.customerparties.html">
+        Customer Party
+    </a>
+    <a class="menu-subitem " href="sales.indicators.html">
+        Indicator
+    </a>
+    <a class="menu-subitem " href="billing.invoices.html">
+        Invoice
+    </a>
+    <a class="menu-subitem " href="salescore.invoicetypes.html">
+        Invoice Type
+    </a>
+    <a class="menu-subitem " href="salescore.memotypes.html">
+        Memo Type
+    </a>
+    <a class="menu-subitem " href="sales.orders.html">
+        Order
+    </a>
+    <a class="menu-subitem " href="salescore.ordertypes.html">
+        Order Type
+    </a>
+    <a class="menu-subitem " href="salescore.pricelists.html">
+        Price List
+    </a>
+    <a class="menu-subitem " href="billing.processorders.html">
+        Process Order
+    </a>
+    <a class="menu-subitem " href="billing.processreturnorders.html">
+        Process Return Order
+    </a>
+    <a class="menu-subitem " href="sales.productnews.html">
+        Product News
+    </a>
+    <a class="menu-subitem " href="sales.quotations.html">
+        Quotation
+    </a>
+    <a class="menu-subitem " href="salescore.quotationtypes.html">
+        Quotation Type
+    </a>
+    <a class="menu-subitem " href="salescore.saleschannels.html">
+        Sales Channel
+    </a>
+    <a class="menu-subitem " href="salescore.salesitems.html">
+        Sales Item
+    </a>
+    <a class="menu-subitem " href="salescore.salessetups.html">
+        Sales Settings
+    </a>
+    <a class="menu-subitem " href="salescore.salespersons.html">
+        Salesperson
+    </a>
+    <a class="menu-subitem menu-item-selected" href="sales.summaryvalues.html">
+        Summary Value
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
 </div>
         <div class="content">
             <div class="content-section">
                 <div class="content-section-col1">
                     <h1>Sales | Summary Value</h1>
-                    <h3>Overview</h3>
+                    <p>
+                    
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
                     <table>
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/sales/summaryValues</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/sales/summaryValues  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-sales-summaryvalues"></i></td>
+                                <div class="hidden-copylink" id="copy-sales-summaryvalues">api/{tenantKey}/{orgKey}/sales/summaryValues</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
                                 <td><a href="#GET">GET</a></td>
                             </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#c85a584d-d2a7-43c2-b7ab-cef7a45df0a8">GET Get Pending Quotations List Count</a></li>
+                            <li><a href="#8754da8d-f40d-4e67-bfe5-4bd4eeb95107">GET Get Orders To Ship List Count</a></li>
+                            <li><a href="#405a0f62-6cc8-4175-9a64-00b56b80aefa">GET Get Orders To Bill List Count</a></li>
+                            <li><a href="#ac28ff57-ed1e-4565-a48d-b8384cd3d512">GET Get Orders To Ship List Data</a></li>
+                            <li><a href="#99d9f37f-b3a5-4554-a001-d789c08862e9">GET Get Pending Quotations List Data</a></li>
+                            <li><a href="#66d8295a-d96b-4f3e-bf31-022b5af48389">GET Get Orders To Bill List Data</a></li>
+                            <li><a href="#bfca29b0-1f4b-4ae2-ad59-13f219576ef4">GET Get Sales In Progress Card Data</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#NamedSummarizedValue">NamedSummarizedValue</a></li>
+                        <li><a href="#OrderToBillResource">OrderToBillResource</a></li>
+                        <li><a href="#OrderToShipResource">OrderToShipResource</a></li>
+                        <li><a href="#PendingQuotationResource">PendingQuotationResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c85a584d-d2a7-43c2-b7ab-cef7a45df0a8"></a>
+                    <h3>GET Get Pending Quotations List Count <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c85a584d-d2a7-43c2-b7ab-cef7a45df0a8"></i></h3>
+                    <div class="hidden-copylink" id="copy-c85a584d-d2a7-43c2-b7ab-cef7a45df0a8"><a href="#c85a584d-d2a7-43c2-b7ab-cef7a45df0a8">GET Get Pending Quotations List Count</a></div>
+                    <p class="operation-description">Custom operation 'GetPendingQuotationsListCount'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
                             <tr>
-                                <td>Description</td>
-                                <td></td>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">code</td>
+                                <td><i>(string)</i> Code This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains an item of type 'number'.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="content-section-col2"></div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="GET"></a>
-                    <h2>GET OPERATIONS</h2>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="5eb07d59-16f3-4ac2-86d5-c33f3c81d4d6"></a>
-                    <h3>GET Get Customer Current Accounts Chart Results</h3>
-                    <p class="operation-description">Custom operation 'GetCustomerCurrentAccountsChartResults'.</p>
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns a list of CustomerCurrentAccountsChartResult resources. See <a href="#CustomerCurrentAccountsChartResult">CustomerCurrentAccountsChartResult.</a></td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operations was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /sales/summaryValues/getCustomerCurrentAccountsChartResults</pre>
+                    <div class="hidden-copylink" id="copy2-c85a584d-d2a7-43c2-b7ab-cef7a45df0a8">api/{tenantKey}/{orgKey}/sales/summaryValues/getPendingQuotationsListCount/{company}/{code}?company={company}&amp;code={code}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /sales/summaryValues/getPendingQuotationsListCount/{company}/{code}?company={company}&amp;code={code}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c85a584d-d2a7-43c2-b7ab-cef7a45df0a8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="121f690c-ccec-4dff-a580-2a8826694e54"></a>
-                    <h3>GET Get Current Accounts Chart Results</h3>
-                    <p class="operation-description">Custom operation 'GetCurrentAccountsChartResults'.</p>
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns a list of CurrentAccountsChartResult resources. See <a href="#CurrentAccountsChartResult">CurrentAccountsChartResult.</a></td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
+                    <a class="anchor" name="8754da8d-f40d-4e67-bfe5-4bd4eeb95107"></a>
+                    <h3>GET Get Orders To Ship List Count <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8754da8d-f40d-4e67-bfe5-4bd4eeb95107"></i></h3>
+                    <div class="hidden-copylink" id="copy-8754da8d-f40d-4e67-bfe5-4bd4eeb95107"><a href="#8754da8d-f40d-4e67-bfe5-4bd4eeb95107">GET Get Orders To Ship List Count</a></div>
+                    <p class="operation-description">Custom operation 'GetOrdersToShipListCount'.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operations was successful.</td>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company This is a query string parameter.</td>
                             </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">GET /sales/summaryValues/getCurrentAccountsChartResults</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="129d18ba-959a-40b3-b923-1dfc629ddbb9"></a>
-                    <h3>GET Get Named Summarized Values By Code</h3>
-                    <p class="operation-description">Custom operation 'GetNamedSummarizedValuesByCode'.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
                             <tr>
-                                <td class="highlighted">codes</td>
-                                <td><i>(string)</i> Codes</td>
+                                <td class="highlighted">code</td>
+                                <td><i>(string)</i> Code This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of NamedSummarizedValue resources. See <a href="#NamedSummarizedValue">NamedSummarizedValue.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains an item of type 'number'.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8754da8d-f40d-4e67-bfe5-4bd4eeb95107">api/{tenantKey}/{orgKey}/sales/summaryValues/getOrdersToShipListCount/{company}/{code}?company={company}&amp;code={code}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /sales/summaryValues/getOrdersToShipListCount/{company}/{code}?company={company}&amp;code={code}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8754da8d-f40d-4e67-bfe5-4bd4eeb95107"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="405a0f62-6cc8-4175-9a64-00b56b80aefa"></a>
+                    <h3>GET Get Orders To Bill List Count <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-405a0f62-6cc8-4175-9a64-00b56b80aefa"></i></h3>
+                    <div class="hidden-copylink" id="copy-405a0f62-6cc8-4175-9a64-00b56b80aefa"><a href="#405a0f62-6cc8-4175-9a64-00b56b80aefa">GET Get Orders To Bill List Count</a></div>
+                    <p class="operation-description">Custom operation 'GetOrdersToBillListCount'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">code</td>
+                                <td><i>(string)</i> Code This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains an item of type 'number'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-405a0f62-6cc8-4175-9a64-00b56b80aefa">api/{tenantKey}/{orgKey}/sales/summaryValues/getOrdersToBillListCount/{company}/{code}?company={company}&amp;code={code}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /sales/summaryValues/getOrdersToBillListCount/{company}/{code}?company={company}&amp;code={code}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-405a0f62-6cc8-4175-9a64-00b56b80aefa"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ac28ff57-ed1e-4565-a48d-b8384cd3d512"></a>
+                    <h3>GET Get Orders To Ship List Data <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ac28ff57-ed1e-4565-a48d-b8384cd3d512"></i></h3>
+                    <div class="hidden-copylink" id="copy-ac28ff57-ed1e-4565-a48d-b8384cd3d512"><a href="#ac28ff57-ed1e-4565-a48d-b8384cd3d512">GET Get Orders To Ship List Data</a></div>
+                    <p class="operation-description">Custom operation 'GetOrdersToShipListData'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">code</td>
+                                <td><i>(string)</i> Code This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a list of resources of type 'OrderToShipResource'. See <a href="#OrderToShipResource">OrderToShipResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operations was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /sales/summaryValues/getNamedSummarizedValuesByCode</pre>
+                    <div class="hidden-copylink" id="copy2-ac28ff57-ed1e-4565-a48d-b8384cd3d512">api/{tenantKey}/{orgKey}/sales/summaryValues/getOrdersToShipListData/{company}/{code}?company={company}&amp;code={code}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /sales/summaryValues/getOrdersToShipListData/{company}/{code}?company={company}&amp;code={code}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ac28ff57-ed1e-4565-a48d-b8384cd3d512"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="99d9f37f-b3a5-4554-a001-d789c08862e9"></a>
+                    <h3>GET Get Pending Quotations List Data <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-99d9f37f-b3a5-4554-a001-d789c08862e9"></i></h3>
+                    <div class="hidden-copylink" id="copy-99d9f37f-b3a5-4554-a001-d789c08862e9"><a href="#99d9f37f-b3a5-4554-a001-d789c08862e9">GET Get Pending Quotations List Data</a></div>
+                    <p class="operation-description">Custom operation 'GetPendingQuotationsListData'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">code</td>
+                                <td><i>(string)</i> Code This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a list of resources of type 'PendingQuotationResource'. See <a href="#PendingQuotationResource">PendingQuotationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-99d9f37f-b3a5-4554-a001-d789c08862e9">api/{tenantKey}/{orgKey}/sales/summaryValues/getPendingQuotationsListData/{company}/{code}?company={company}&amp;code={code}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /sales/summaryValues/getPendingQuotationsListData/{company}/{code}?company={company}&amp;code={code}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-99d9f37f-b3a5-4554-a001-d789c08862e9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="66d8295a-d96b-4f3e-bf31-022b5af48389"></a>
+                    <h3>GET Get Orders To Bill List Data <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-66d8295a-d96b-4f3e-bf31-022b5af48389"></i></h3>
+                    <div class="hidden-copylink" id="copy-66d8295a-d96b-4f3e-bf31-022b5af48389"><a href="#66d8295a-d96b-4f3e-bf31-022b5af48389">GET Get Orders To Bill List Data</a></div>
+                    <p class="operation-description">Custom operation 'GetOrdersToBillListData'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">code</td>
+                                <td><i>(string)</i> Code This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a list of resources of type 'OrderToBillResource'. See <a href="#OrderToBillResource">OrderToBillResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-66d8295a-d96b-4f3e-bf31-022b5af48389">api/{tenantKey}/{orgKey}/sales/summaryValues/getOrdersToBillListData/{company}/{code}?company={company}&amp;code={code}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /sales/summaryValues/getOrdersToBillListData/{company}/{code}?company={company}&amp;code={code}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-66d8295a-d96b-4f3e-bf31-022b5af48389"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bfca29b0-1f4b-4ae2-ad59-13f219576ef4"></a>
+                    <h3>GET Get Sales In Progress Card Data <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bfca29b0-1f4b-4ae2-ad59-13f219576ef4"></i></h3>
+                    <div class="hidden-copylink" id="copy-bfca29b0-1f4b-4ae2-ad59-13f219576ef4"><a href="#bfca29b0-1f4b-4ae2-ad59-13f219576ef4">GET Get Sales In Progress Card Data</a></div>
+                    <p class="operation-description">Custom operation 'GetSalesInProgressCardData'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a resource of type 'NamedSummarizedValue'. See <a href="#NamedSummarizedValue">NamedSummarizedValue.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-bfca29b0-1f4b-4ae2-ad59-13f219576ef4">api/{tenantKey}/{orgKey}/sales/summaryValues/getSalesInProgressCardData/{company}?company={company}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /sales/summaryValues/getSalesInProgressCardData/{company}?company={company}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bfca29b0-1f4b-4ae2-ad59-13f219576ef4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
-					<br />
-                    <a class="anchor" name="CustomerCurrentAccountsChartResult"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'CustomerCurrentAccountsChartResultResourceDiv')">CustomerCurrentAccountsChartResult<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="CustomerCurrentAccountsChartResultResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">timestamp</td>
-                                <td  class="wrap"><i>(string)</i> Timestamp</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">receivables</td>
-                                <td  class="wrap"><i>(decimal)</i> Receivables</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
-                    <a class="anchor" name="CurrentAccountsChartResult"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'CurrentAccountsChartResultResourceDiv')">CurrentAccountsChartResult<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="CurrentAccountsChartResultResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">timestamp</td>
-                                <td  class="wrap"><i>(string)</i> Timestamp</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">payables</td>
-                                <td  class="wrap"><i>(decimal)</i> Payables</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">receivables</td>
-                                <td  class="wrap"><i>(decimal)</i> Receivables</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
+                    <br />
                     <a class="anchor" name="NamedSummarizedValue"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'NamedSummarizedValueResourceDiv')">NamedSummarizedValue<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="NamedSummarizedValueResourceDiv" style="display:none">
-					<p>The following elements are optional:</p>
+                    <h4>NamedSummarizedValue <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-NamedSummarizedValue"></i></h4>
+                    <div class="hidden-copylink" id="copy-NamedSummarizedValue"><a href="#NamedSummarizedValue">NamedSummarizedValue</a></div>
+	
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">caption</td>
-                                <td  class="wrap"><i>(string)</i> Caption</td>
+                                <td class="highlighted">amount</td>
+                                <td  class="wrap"><i>(decimal)</i> Amount.</td>
                             </tr>
+
                             <tr>
-                                <td class="highlighted">result</td>
-                                <td  class="wrap"><i>(string)</i> Result</td>
+                                <td class="highlighted">typeAmount</td>
+                                <td  class="wrap"><i>(string)</i> Type Amount.</td>
                             </tr>
+
                             <tr>
-                                <td class="highlighted">info</td>
-                                <td  class="wrap"><i>(string)</i> Info</td>
+                                <td class="highlighted">fractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Fraction Digits.</td>
                             </tr>
+
                             <tr>
-                                <td class="highlighted">captionLink</td>
-                                <td  class="wrap"><i>(string)</i> Caption Link</td>
+                                <td class="highlighted">currencySymbol</td>
+                                <td  class="wrap"><i>(string)</i> Currency Symbol.</td>
                             </tr>
+
                             <tr>
-                                <td class="highlighted">resultLink</td>
-                                <td  class="wrap"><i>(string)</i> Result Link</td>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.</td>
                             </tr>
-                            <tr>
-                                <td class="highlighted">infoLink</td>
-                                <td  class="wrap"><i>(string)</i> Info Link</td>
-                            </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="OrderToBillResource"></a>
+                    <h4>OrderToBillResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-OrderToBillResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-OrderToBillResource"><a href="#OrderToBillResource">OrderToBillResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sourceDocLink</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc Link.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Document Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyName</td>
+                                <td  class="wrap"><i>(string)</i> Party Name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyLink</td>
+                                <td  class="wrap"><i>(string)</i> Party Link.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">amount</td>
+                                <td  class="wrap"><i>(decimal)</i> Amount.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">symbol</td>
+                                <td  class="wrap"><i>(string)</i> Symbol.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">fractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Fraction Digits.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td  class="wrap"><i>(string)</i> Operation.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operationLink</td>
+                                <td  class="wrap"><i>(string)</i> Operation Link.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="OrderToShipResource"></a>
+                    <h4>OrderToShipResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-OrderToShipResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-OrderToShipResource"><a href="#OrderToShipResource">OrderToShipResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sourceDocLink</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc Link.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">deliveryDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Delivery Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyName</td>
+                                <td  class="wrap"><i>(string)</i> Party Name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyLink</td>
+                                <td  class="wrap"><i>(string)</i> Party Link.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> Quantity.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">openQuantity</td>
+                                <td  class="wrap"><i>(decimal)</i> Open Quantity.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">openAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Open Amount.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">symbol</td>
+                                <td  class="wrap"><i>(string)</i> Symbol.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">fractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Fraction Digits.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td  class="wrap"><i>(string)</i> Operation.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operationLink</td>
+                                <td  class="wrap"><i>(string)</i> Operation Link.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="PendingQuotationResource"></a>
+                    <h4>PendingQuotationResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-PendingQuotationResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-PendingQuotationResource"><a href="#PendingQuotationResource">PendingQuotationResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">sourceDoc</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sourceDocLink</td>
+                                <td  class="wrap"><i>(string)</i> Source Doc Link.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">validUntil</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Valid Until.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyId</td>
+                                <td  class="wrap"><i>(Guid)</i> Party Id.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyName</td>
+                                <td  class="wrap"><i>(string)</i> Party Name.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyLink</td>
+                                <td  class="wrap"><i>(string)</i> Party Link.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyPhone</td>
+                                <td  class="wrap"><i>(string)</i> Party Phone.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyEmail</td>
+                                <td  class="wrap"><i>(string)</i> Party Email.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">amount</td>
+                                <td  class="wrap"><i>(decimal)</i> Amount.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">symbol</td>
+                                <td  class="wrap"><i>(string)</i> Symbol.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">fractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> Fraction Digits.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td  class="wrap"><i>(string)</i> Operation.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operationLink</td>
+                                <td  class="wrap"><i>(string)</i> Operation Link.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
 </html>

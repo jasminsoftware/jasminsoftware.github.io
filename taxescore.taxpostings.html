@@ -5,1882 +5,811 @@
     <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
     <script src="javascript/thirdparty/handlebars-latest.js"></script>
     <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
     <script src="javascript/searchindex.js"></script>
     <script src="javascript/script.js"></script>
     <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-	<title>Taxes | Tax Posting</title>
+    <title>Jasmin Developers - Taxes | Tax Posting</title>
     </header>
 
     <body>
         <div class="header">
             <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            <div class="title">JASMIN DEVELOPERS NETWORK - API REFERENCE</div>
+            <div class="title">Jasmin Developers - Web API Reference</div>
             <div id="search" class="search">
                 <i class="search-icon fa fa-search" aria-hidden="true"></i>
                 <input class="typeahead" type="text" placeholder="Search">
             </div>
         </div>
         <div class="sidebar" id="sidebar">
-	<a  class="menu-item " href="index.html">
-		Overview
-	</a>
-	<a class="menu-item" href="accountspayable.html">
-		Accounts Payable
-	</a>
-	<a class="menu-item" href="accountsreceivable.html">
-		Accounts Receivable
-	</a>
-	<a class="menu-item" href="financials.html">
-		Financials
-	</a>
-	<a class="menu-item" href="goodsreceipt.html">
-		Goods Receipt
-	</a>
-	<a class="menu-item" href="logistics.html">
-		Logistics
-	</a>
-	<a class="menu-item" href="masterdatabusinessentities.html">
-		Master Data Business Entities
-	</a>
-	<a class="menu-item" href="materialsmanagement.html">
-		Materials Management
-	</a>
-	<a class="menu-item" href="onlinestore.html">
-		Online Store
-	</a>
-	<a class="menu-item" href="platform.html">
-		Platform
-	</a>
-	<a class="menu-item" href="purchases.html">
-		Purchases
-	</a>
-	<a class="menu-item" href="sales.html">
-		Sales
-	</a>
-	<a class="menu-item" href="shipping.html">
-		Shipping
-	</a>
-	<a id="current-menu-item" class="menu-item " href="taxes.html">
-		Taxes
+    <a  class="menu-item " href="index.html">
+        Overview
     </a>
-	<a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
-		AT Communication Request
-	</a>
-	<a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
-		Economic Activity Classification
-	</a>
-	<a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
-		Exemption Reason Code
-	</a>
-	<a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
-		Fiscal Document Type
-	</a>
-	<a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
-		Fiscal Witholding Tax Type
-	</a>
-	<a class="menu-subitem " href="taxescore.itemtaxschemas.html">
-		Item Tax Schema
-	</a>
-	<a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
-		Item WHT Schema
-	</a>
-	<a class="menu-subitem " href="taxes.obligations.html">
-		Obligation
-	</a>
-	<a class="menu-subitem " href="taxescore.taxsummaries.html">
-		Open Tax Item
-	</a>
-	<a class="menu-subitem " href="taxescore.partytaxschemas.html">
-		Party Tax Schema
-	</a>
-	<a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
-		Party WHT Schema
-	</a>
-	<a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
-		Payment Method Fiscal Class
-	</a>
-	<a class="menu-subitem " href="taxes.legaldeclarations.html">
-		SAF-T (PT)
-	</a>
-	<a class="menu-subitem " href="taxescore.taxclasses.html">
-		Tax Class
-	</a>
-	<a class="menu-subitem " href="taxescore.fiscalclassifications.html">
-		Tax Classification
-	</a>
-	<a class="menu-subitem menu-item-selected" href="taxescore.taxpostings.html">
-		Tax Posting
-	</a>
-	<a class="menu-subitem " href="taxescore.taxregionalareas.html">
-		Tax Regional Area
-	</a>
-	<a class="menu-subitem " href="taxescore.taxsubclasses.html">
-		Tax Sub Class
-	</a>
-	<a class="menu-subitem " href="taxescore.taxtypecodes.html">
-		Tax Type Code
-	</a>
-	<a class="menu-subitem " href="taxescore.taxessetups.html">
-		Taxes Setup
-	</a>
-	<a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
-		WHT Code
-	</a>
-	<a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
-		WHT Type
-	</a>
-	<a class="menu-subitem " href="taxescore.wtaxpostings.html">
-		Withholding Tax Posting
-	</a>
-	<a class="menu-subitem " href="taxescore.wtaxsummaries.html">
-		Withholding Tax Summary
-	</a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a id="current-menu-item" class="menu-item " href="taxes.html">
+        Taxes
+    </a>
+    <a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+        AT Communication Request
+    </a>
+    <a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+        Economic Activity Classification
+    </a>
+    <a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+        Exemption Reason Code
+    </a>
+    <a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+        Fiscal Document Type
+    </a>
+    <a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+        Fiscal Witholding Tax Type
+    </a>
+    <a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+        Item Tax Schema
+    </a>
+    <a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
+        Item WHT Schema
+    </a>
+    <a class="menu-subitem " href="taxes.obligations.html">
+        Obligation
+    </a>
+    <a class="menu-subitem " href="taxescore.partytaxschemas.html">
+        Party Tax Schema
+    </a>
+    <a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
+        Party WHT Schema
+    </a>
+    <a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+        Payment Method Fiscal Class
+    </a>
+    <a class="menu-subitem " href="taxes.legaldeclarations.html">
+        SAF-T (PT)
+    </a>
+    <a class="menu-subitem " href="taxescore.taxclasses.html">
+        Tax Class
+    </a>
+    <a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+        Tax Classification
+    </a>
+    <a class="menu-subitem menu-item-selected" href="taxescore.taxpostings.html">
+        Tax Posting
+    </a>
+    <a class="menu-subitem " href="taxescore.taxregionalareas.html">
+        Tax Regional Area
+    </a>
+    <a class="menu-subitem " href="taxescore.taxessetups.html">
+        Tax Settings
+    </a>
+    <a class="menu-subitem " href="taxescore.taxsubclasses.html">
+        Tax Sub Class
+    </a>
+    <a class="menu-subitem " href="taxescore.taxtypecodes.html">
+        Tax Type Code
+    </a>
+    <a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
+        WHT Code
+    </a>
+    <a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+        WHT Type
+    </a>
 </div>
         <div class="content">
             <div class="content-section">
                 <div class="content-section-col1">
                     <h1>Taxes | Tax Posting</h1>
-                    <h3>Overview</h3>
+                    <p>
+                    Service to manage entities of type 'TaxPosting'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
                     <table>
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>api/{tenantKey}/{orgKey}/taxesCore/taxPostings</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/taxesCore/taxPostings  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-taxescore-taxpostings"></i></td>
+                                <div class="hidden-copylink" id="copy-taxescore-taxpostings">api/{tenantKey}/{orgKey}/taxesCore/taxPostings</div>
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
-                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
-                            </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td>Service to manage entities of type 'TaxPosting'.</td>
+                                <td><a href="#GET">GET</a></td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="content-section-col2"></div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="GET"></a>
-                    <h2>GET OPERATIONS</h2>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#e95f1a17-5331-49c5-b64e-f64eb330f6d4">GET TaxPostings</a></li>
+                            <li><a href="#5b986a21-beff-489f-8f51-4ab558d392d3">GET TaxPostings (paged)</a></li>
+                            <li><a href="#df6b9f9f-c30d-4403-8938-d0eb796376dd">GET TaxPosting by identifier</a></li>
+                            <li><a href="#c1551573-1016-4ccb-aeed-d97e18cb5bdd">GET TaxPosting by key</a></li>
+                            <li><a href="#a86e8077-8d27-414e-b005-41d5692bafc6">GET Print TaxPosting by identifier</a></li>
+                            <li><a href="#89597354-7bd0-4996-8931-ca16df404486">GET Print TaxPosting by key</a></li>
+                            <li><a href="#88288e33-8a1e-4c0b-a230-7ddefe3fe1f4">GET Original Print TaxPostingOriginal by identifier</a></li>
+                            <li><a href="#4add1963-bae2-45b7-b2db-ce18829a5479">GET Original Print TaxPosting by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#TaxPostingResource">TaxPostingResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#FiscalSpace">FiscalSpace</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="77ed24cb-4b12-40d0-a94d-06774c54e1b4"></a>
-                    <h3>GET TaxPostings</h3>
-                    <p class="operation-description">Returns all Tax Posting user has access to.</p>
-				<p>Response:</p>
-					<table>
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e95f1a17-5331-49c5-b64e-f64eb330f6d4"></a>
+                    <h3>GET TaxPostings <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e95f1a17-5331-49c5-b64e-f64eb330f6d4"></i></h3>
+                    <div class="hidden-copylink" id="copy-e95f1a17-5331-49c5-b64e-f64eb330f6d4"><a href="#e95f1a17-5331-49c5-b64e-f64eb330f6d4">GET TaxPostings</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Tax Posting. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxPostings</pre>
+                    <div class="hidden-copylink" id="copy2-e95f1a17-5331-49c5-b64e-f64eb330f6d4">api/{tenantKey}/{orgKey}/taxesCore/taxPostings</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e95f1a17-5331-49c5-b64e-f64eb330f6d4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a6e3aaf7-b293-4ebc-b707-8d04ca8e0d11"></a>
-                    <h3>GET TaxPostings (paged)</h3>
-                    <p class="operation-description">Returns a paginated list of Tax Posting user has access to.</p>
-					<p>The following elements are optional:</p>
+                    <a class="anchor" name="5b986a21-beff-489f-8f51-4ab558d392d3"></a>
+                    <h3>GET TaxPostings (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5b986a21-beff-489f-8f51-4ab558d392d3"></i></h3>
+                    <div class="hidden-copylink" id="copy-5b986a21-beff-489f-8f51-4ab558d392d3"><a href="#5b986a21-beff-489f-8f51-4ab558d392d3">GET TaxPostings (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">page</td>
-                                <td><i>(int)</i> The number of the page you want to consume the results.</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> Specify how many items you want each page to return, up to 1000 items.</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, this method returns a list of Tax Posting. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxPostings</pre>
+                    <div class="hidden-copylink" id="copy2-5b986a21-beff-489f-8f51-4ab558d392d3">api/{tenantKey}/{orgKey}/taxesCore/taxPostings</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5b986a21-beff-489f-8f51-4ab558d392d3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="f0f78d61-86f7-4001-9192-1143f144c00c"></a>
-                    <h3>GET TaxPosting by identifier</h3>
-                    <p class="operation-description">Returns information for a given Tax Posting, by specifying its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="df6b9f9f-c30d-4403-8938-d0eb796376dd"></a>
+                    <h3>GET TaxPosting by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-df6b9f9f-c30d-4403-8938-d0eb796376dd"></i></h3>
+                    <div class="hidden-copylink" id="copy-df6b9f9f-c30d-4403-8938-d0eb796376dd"><a href="#df6b9f9f-c30d-4403-8938-d0eb796376dd">GET TaxPosting by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Tax Posting.</td>
+                                <td><i>(string)</i> The record identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Tax Posting. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxPostings/{id}</pre>
+                    <div class="hidden-copylink" id="copy2-df6b9f9f-c30d-4403-8938-d0eb796376dd">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-df6b9f9f-c30d-4403-8938-d0eb796376dd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="47275a93-df4e-4ec7-ae37-4a290309792b"></a>
-                    <h3>GET TaxPosting by key</h3>
-                    <p class="operation-description">Returns information for a given Tax Posting, by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="c1551573-1016-4ccb-aeed-d97e18cb5bdd"></a>
+                    <h3>GET TaxPosting by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c1551573-1016-4ccb-aeed-d97e18cb5bdd"></i></h3>
+                    <div class="hidden-copylink" id="copy-c1551573-1016-4ccb-aeed-d97e18cb5bdd"><a href="#c1551573-1016-4ccb-aeed-d97e18cb5bdd">GET TaxPosting by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
+                                <td><i>(int)</i> The tax's posting key.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a resource of the Tax Posting. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxPostings/{taxPostingKey}</pre>
+                    <div class="hidden-copylink" id="copy2-c1551573-1016-4ccb-aeed-d97e18cb5bdd">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{taxPostingKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{taxPostingKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c1551573-1016-4ccb-aeed-d97e18cb5bdd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="26c82292-6eb2-48e3-b1f1-023e45a30356"></a>
-                    <h3>GET Print TaxPosting by identifier</h3>
-                    <p class="operation-description">Prints the specified TaxPosting.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="a86e8077-8d27-414e-b005-41d5692bafc6"></a>
+                    <h3>GET Print TaxPosting by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a86e8077-8d27-414e-b005-41d5692bafc6"></i></h3>
+                    <div class="hidden-copylink" id="copy-a86e8077-8d27-414e-b005-41d5692bafc6"><a href="#a86e8077-8d27-414e-b005-41d5692bafc6">GET Print TaxPosting by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the TaxPosting.</td>
+                                <td><i>(string)</i> The record identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed TaxPosting.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxPostings/{id}/print</pre>
+                    <div class="hidden-copylink" id="copy2-a86e8077-8d27-414e-b005-41d5692bafc6">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{id}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a86e8077-8d27-414e-b005-41d5692bafc6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="0f030374-70b7-4a4c-ac14-7b4b1ff3a83d"></a>
-                    <h3>GET Print TaxPosting by key</h3>
-                    <p class="operation-description">Prints the specified TaxPosting by specifying its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="89597354-7bd0-4996-8931-ca16df404486"></a>
+                    <h3>GET Print TaxPosting by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-89597354-7bd0-4996-8931-ca16df404486"></i></h3>
+                    <div class="hidden-copylink" id="copy-89597354-7bd0-4996-8931-ca16df404486"><a href="#89597354-7bd0-4996-8931-ca16df404486">GET Print TaxPosting by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
+                                <td><i>(int)</i> The tax's posting key.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-					<p>The following elements are optional:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template.</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
+                    <br />
+                <p>Response:</p>
+                    <table>
                         <tbody>
-							<tr>
-								<td>If successful, returns a stream with the file of the printed TaxPosting.</td>
-							</tr>
-						</tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
                     </table>
-					<br />
-				<p>Response status codes:</p>
+                <p>Response status codes:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">GET /taxesCore/taxPostings/{taxPostingKey}/print</pre>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="POST"></a>
-                    <h2>POST OPERATIONS</h2>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="cfb017e4-4aa9-4cfd-bcfd-bcc813188caf"></a>
-                    <h3>POST TaxPostings</h3>
-                    <p class="operation-description">Creates a new Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
                             <tr>
-                                <td class="highlighted">taxPostingResource</td>
-                                <td><i>(ApiTaxPostingResource)</i> In the request body, supply a resource containing the Tax Posting information.<br/>See <a href="#ApiTaxPostingResource">ApiTaxPostingResource.</a></td>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, returns the Tax Posting identifier in the response body and the URL in the response header Location property, or an error message. See <a href="#ApiTaxPostingResource">ApiTaxPostingResource.</a></td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">201</td>
-                                <td>The operation was successful and the Tax Posting was created.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">POST /taxesCore/taxPostings</pre>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="PUT"></a>
-                    <h2>PUT OPERATIONS</h2>
+                    <div class="hidden-copylink" id="copy2-89597354-7bd0-4996-8931-ca16df404486">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{taxPostingKey}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{taxPostingKey}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-89597354-7bd0-4996-8931-ca16df404486"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="af870a2f-e595-4637-9b2e-224c6434a761"></a>
-                    <h3>PUT Set Company TaxPosting</h3>
-                    <p class="operation-description">Updates the Company for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Company.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/company</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="bafd0824-de29-4bd9-84ee-037daf57d3b7"></a>
-                    <h3>PUT Set CompanyTaxId TaxPosting</h3>
-                    <p class="operation-description">Updates the CompanyTaxId for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the CompanyTaxId.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/companyTaxId</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="0bf9500b-0526-4e05-b747-4cda79cb41e6"></a>
-                    <h3>PUT Set Country TaxPosting</h3>
-                    <p class="operation-description">Updates the Country for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Country.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/country</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="4f01b9b2-2e16-42a1-8844-76247db4a0de"></a>
-                    <h3>PUT Set Currency TaxPosting</h3>
-                    <p class="operation-description">Updates the Currency for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the Currency.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/currency</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="fc7bfbe2-d629-402c-89f0-706804737bc2"></a>
-                    <h3>PUT Set ExchangeRate TaxPosting</h3>
-                    <p class="operation-description">Updates the ExchangeRate for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(decimal)</i> In the request body, supply the new value for the ExchangeRate.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/exchangeRate</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="5055919b-8da9-4605-ad89-9b75ba3fd9f9"></a>
-                    <h3>PUT Set ExchangeRateDate TaxPosting</h3>
-                    <p class="operation-description">Updates the ExchangeRateDate for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(DateTime)</i> In the request body, supply the new value for the ExchangeRateDate.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/exchangeRateDate</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="3a67e236-8a17-4c17-849b-89e4672188bd"></a>
-                    <h3>PUT Set ExemptionReasonCode TaxPosting</h3>
-                    <p class="operation-description">Updates the ExemptionReasonCode for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the ExemptionReasonCode.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/exemptionReasonCode</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="8ebd8bab-6cbe-40f0-9906-f0bca5362a39"></a>
-                    <h3>PUT Set FiscalSpace TaxPosting</h3>
-                    <p class="operation-description">Updates the FiscalSpace for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(enum FiscalSpace)</i> In the request body, supply the new value for the FiscalSpace.<br/>See <a href="#FiscalSpace">FiscalSpace.</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/fiscalSpace</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="c4efed9d-f71a-4991-8b44-e719464fc4ad"></a>
-                    <h3>PUT Set IsActive TaxPosting</h3>
-                    <p class="operation-description">Updates the IsActive for the specified TaxPosting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsActive.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/isActive</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="c0f29903-9cfe-4d6d-80ad-a64552150672"></a>
-                    <h3>PUT Set IsExempt TaxPosting</h3>
-                    <p class="operation-description">Updates the IsExempt for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(bool)</i> In the request body, supply the new value for the IsExempt.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/isExempt</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="904d5953-c156-48a9-b2bf-60e370ce63e8"></a>
-                    <h3>PUT Set IssueDate TaxPosting</h3>
-                    <p class="operation-description">Updates the IssueDate for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(DateTime)</i> In the request body, supply the new value for the IssueDate.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/issueDate</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="39552821-6b45-4d84-830c-43ee1713591f"></a>
-                    <h3>PUT Set PostDoc TaxPosting</h3>
-                    <p class="operation-description">Updates the PostDoc for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the PostDoc.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/postDoc</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="5167a1e6-645a-4d4e-9cf6-edd7553824df"></a>
-                    <h3>PUT Set PostDocId TaxPosting</h3>
-                    <p class="operation-description">Updates the PostDocId for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(Guid)</i> In the request body, supply the new value for the PostDocId.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/postDocId</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="07d235c6-938f-4892-bb09-f35f4d3ffb50"></a>
-                    <h3>PUT Set PostDocSchemaEntity TaxPosting</h3>
-                    <p class="operation-description">Updates the PostDocSchemaEntity for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the PostDocSchemaEntity.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/postDocSchemaEntity</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="c0db9274-c1a7-465a-b31b-6048e841c53d"></a>
-                    <h3>PUT Set PostingDate TaxPosting</h3>
-                    <p class="operation-description">Updates the PostingDate for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(DateTime)</i> In the request body, supply the new value for the PostingDate.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/postingDate</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="f09397d6-2eb7-4337-8f53-f054037d17c1"></a>
-                    <h3>PUT Set SchemaEntity TaxPosting</h3>
-                    <p class="operation-description">Updates the SchemaEntity for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the SchemaEntity.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/schemaEntity</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="f5f0f1e4-f651-4283-a72d-88e6b1785ec4"></a>
-                    <h3>PUT Set SourceDoc TaxPosting</h3>
-                    <p class="operation-description">Updates the SourceDoc for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the SourceDoc.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/sourceDoc</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="cf27dbdc-7ada-4de6-a381-ec4bd2d3cdb2"></a>
-                    <h3>PUT Set SourceDocId TaxPosting</h3>
-                    <p class="operation-description">Updates the SourceDocId for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(Guid)</i> In the request body, supply the new value for the SourceDocId.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/sourceDocId</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="415a9531-2ea6-4e26-a9f7-962f8286a419"></a>
-                    <h3>PUT Set TaxableAmount TaxPosting</h3>
-                    <p class="operation-description">Updates the TaxableAmount for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(decimal)</i> In the request body, supply the new value for the TaxableAmount.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/taxableAmount</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="d3010fcb-4d44-4242-9a11-63469d608668"></a>
-                    <h3>PUT Set TaxAmount TaxPosting</h3>
-                    <p class="operation-description">Updates the TaxAmount for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(decimal)</i> In the request body, supply the new value for the TaxAmount.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/taxAmount</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="e1ecf8cd-0963-450a-ab13-ecada4f1b769"></a>
-                    <h3>PUT Set TaxPercentage TaxPosting</h3>
-                    <p class="operation-description">Updates the TaxPercentage for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(decimal)</i> In the request body, supply the new value for the TaxPercentage.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/taxPercentage</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="b5cd30df-2795-4c94-8f4a-e4b25e0646c8"></a>
-                    <h3>PUT Set TaxPostingKey TaxPosting</h3>
-                    <p class="operation-description">Updates the TaxPostingKey for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(int)</i> In the request body, supply the new value for the TaxPostingKey.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/taxPostingKey</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="cd23cf0b-be2c-451a-9d38-331c76eb4b31"></a>
-                    <h3>PUT Set TaxSummary TaxPosting</h3>
-                    <p class="operation-description">Updates the TaxSummary for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the TaxSummary.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/taxSummary</pre>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="29677d71-6168-42e2-ad97-473b7a82ae96"></a>
-                    <h3>PUT Set TaxTypeCode TaxPosting</h3>
-                    <p class="operation-description">Updates the TaxTypeCode for the specified Tax Posting.</p>
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">value</td>
-                                <td><i>(string)</i> In the request body, supply the new value for the TaxTypeCode.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, this method returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>The operation was successful.</td>
-                            </tr>
-						</tbody>
-                    </table>
-                    <br />
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <pre class="endpoint">PUT /taxesCore/taxPostings/{taxPostingKey}/taxTypeCode</pre>
-                </div>
-            </div>
-			<div class="content-section">
-                <div class="content-section-col1">
-					<a class="anchor" name="DELETE"></a>
-                    <h2>DELETE OPERATIONS</h2>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="b0e4638b-986e-4261-917e-c869a2f5aeb7"></a>
-                    <h3>DELETE TaxPosting by identifier</h3>
-                    <p class="operation-description">Deletes the specified Tax Posting by its identifier.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="88288e33-8a1e-4c0b-a230-7ddefe3fe1f4"></a>
+                    <h3>GET Original Print TaxPostingOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-88288e33-8a1e-4c0b-a230-7ddefe3fe1f4"></i></h3>
+                    <div class="hidden-copylink" id="copy-88288e33-8a1e-4c0b-a230-7ddefe3fe1f4"><a href="#88288e33-8a1e-4c0b-a230-7ddefe3fe1f4">GET Original Print TaxPostingOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">id</td>
-                                <td><i>(string)</i> The identifier for the Tax Posting.</td>
+                                <td><i>(string)</i> The record identifier.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">204</td>
-                                <td>The Tax Posting was successfully deleted.</td>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
                             </tr>
-                            <tr>
-                                <td class="highlighted">400</td>
-                                <td>The Tax Posting does not exist.</td>
-                            </tr>
-						</tbody>
+                        </tbody>
                     </table>
                     <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">DELETE /taxesCore/taxPostings/{id}</pre>
+                    <div class="hidden-copylink" id="copy2-88288e33-8a1e-4c0b-a230-7ddefe3fe1f4">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{id}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{id}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-88288e33-8a1e-4c0b-a230-7ddefe3fe1f4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="a70e28c9-86d9-4e65-bca0-d7642ad6c53b"></a>
-                    <h3>DELETE TaxPosting by key</h3>
-                    <p class="operation-description">Deletes the specified Tax Posting by its key.</p>
-					<p>The following elements are required:</p>
+                    <a class="anchor" name="4add1963-bae2-45b7-b2db-ce18829a5479"></a>
+                    <h3>GET Original Print TaxPosting by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4add1963-bae2-45b7-b2db-ce18829a5479"></i></h3>
+                    <div class="hidden-copylink" id="copy-4add1963-bae2-45b7-b2db-ce18829a5479"><a href="#4add1963-bae2-45b7-b2db-ce18829a5479">GET Original Print TaxPosting by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> Chave única desta tabela</td>
+                                <td><i>(int)</i> The tax's posting key.</td>
                             </tr>
                         </tbody>
                     </table>
-					<br />
-				<p>Response:</p>
-					<table>
-                        <tbody>
-							<tr>
-								<td>If successful, returns an empty response body.</td>
-							</tr>
-						</tbody>
-                    </table>
-					<br />
-				<p>Response status codes:</p>
+                    <br />
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">204</td>
-                                <td>The Tax Posting was successfully deleted.</td>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">400</td>
-                                <td>The Tax Posting does not exist.</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
                             </tr>
-						</tbody>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br />
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <pre class="endpoint">DELETE /taxesCore/taxPostings/{taxPostingKey}</pre>
+                    <div class="hidden-copylink" id="copy2-4add1963-bae2-45b7-b2db-ce18829a5479">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{taxPostingKey}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{taxPostingKey}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4add1963-bae2-45b7-b2db-ce18829a5479"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
-					<br />
+                    <br />
                     <a class="anchor" name="TaxPostingResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'TaxPostingResourceResourceDiv')">TaxPostingResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="TaxPostingResourceResourceDiv" style="display:none">
+                    <h4>TaxPostingResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-TaxPostingResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-TaxPostingResource"><a href="#TaxPostingResource">TaxPostingResource</a></div>
 	
-					<p>The following elements are required:</p>
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">taxableAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> Valor Base para o cálculo</td>
+                                <td  class="wrap"><i>(decimal)</i> The taxable amount.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">taxAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> Valor da taxa</td>
+                                <td  class="wrap"><i>(decimal)</i> The tax's amount.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">taxPercentage</td>
-                                <td  class="wrap"><i>(decimal)</i> Percentagem da taxa</td>
+                                <td  class="wrap"><i>(decimal)</i> The tax's percentage.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">exchangeRate</td>
-                                <td  class="wrap"><i>(decimal)</i> Taxa de conversão entre a moeda da transacção e a moeda da taxa</td>
+                                <td  class="wrap"><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">taxPostingKey</td>
-                                <td  class="wrap"><i>(int)</i> Chave única desta tabela</td>
+                                <td  class="wrap"><i>(int)</i> The tax's posting key.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">issueDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> Data da transação original</td>
+                                <td  class="wrap"><i>(DateTime)</i> Data da transação original.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">postingDate</td>
                                 <td  class="wrap"><i>(DateTime)</i> Data em que a transacção é contabilizada.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">sourceDocId</td>
                                 <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">sourceDoc</td>
-                                <td  class="wrap"><i>(string)</i> Identificação (legível do documento que deu origem a esta transacção de taxa)</td>
+                                <td  class="wrap"><i>(string)</i> Identificação (legível do documento que deu origem a esta transacção de taxa).</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">currency</td>
-                                <td  class="wrap"><i>(string)</i> Currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Currency. These records are accessibly through the <a href="corepatterns.currencies.html">Currencies</a> service.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">country</td>
-                                <td  class="wrap"><i>(string)</i> Country</td>
+                                <td  class="wrap"><i>(string)</i> Country.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Country. These records are accessibly through the <a href="corepatterns.countries.html">Countries</a> service.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">taxTypeCode</td>
-                                <td  class="wrap"><i>(string)</i> Tax Type Code</td>
+                                <td  class="wrap"><i>(string)</i> Tax Type Code.<br /><i>(fk)</i> Allowed value: the natural key of a record of type TaxTypeCode. These records are accessibly through the <a href="taxescore.taxtypecodes.html">TaxTypeCodes</a> service.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">taxSummary</td>
-                                <td  class="wrap"><i>(string)</i> Tax Summary</td>
+                                <td  class="wrap"><i>(string)</i> Tax Summary.<br /><i>(fk)</i> Allowed value: the natural key of a record of type TaxSummary.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">schemaEntity</td>
-                                <td  class="wrap"><i>(string)</i> Schema Entity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaEntity.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">postDocSchemaEntity</td>
-                                <td  class="wrap"><i>(string)</i> Post. Doc. Schema Entity</td>
+                                <td  class="wrap"><i>(string)</i> Post. Doc. Schema Entity.<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaEntity.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td  class="wrap"><i>(string)</i> Company</td>
+                                <td  class="wrap"><i>(string)</i> Company.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
                             </tr>
+
+                            <tr>
+                                <td class="highlighted">deductiblePercentage</td>
+                                <td  class="wrap"><i>(decimal)</i> Deductible.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">deductibleAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Deductible Amount.</td>
+                            </tr>
+
+
                         </tbody>
                     </table>
-					<p>The following elements are optional:</p>
+
+                    <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">isExempt</td>
-                                <td  class="wrap"><i>(bool)</i> Exempto de taxas</td>
+                                <td  class="wrap"><i>(bool)</i> Is exempt.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">exchangeRateDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> Data do cambio anterior</td>
+                                <td  class="wrap"><i>(DateTime)</i> The exchange rate creation date.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">companyTaxId</td>
-                                <td  class="wrap"><i>(string)</i> Numero fiscal do terceiro envolvido na transacção</td>
+                                <td  class="wrap"><i>(string)</i> The company's tax identifier.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">postDocId</td>
                                 <td  class="wrap"><i>(Guid)</i> Posting Doc. Id.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">postDoc</td>
                                 <td  class="wrap"><i>(string)</i> Posting Doc.</td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">fiscalSpace</td>
-                                <td  class="wrap"><i>(enum FiscalSpace)</i> Tax Regional Area<br/>See <a href="#FiscalSpace">FiscalSpace.</a></td>
+                                <td  class="wrap"><i>(enum FiscalSpace)</i> Tax Regional Area.<br/>See <a href="#FiscalSpace">FiscalSpace.</a></td>
                             </tr>
+
                             <tr>
                                 <td class="highlighted">exemptionReasonCode</td>
-                                <td  class="wrap"><i>(string)</i> Exemption Reason Code</td>
+                                <td  class="wrap"><i>(string)</i> Exemption Reason Code.<br /><i>(fk)</i> Allowed value: the natural key of a record of type ExemptionReasonCode. These records are accessibly through the <a href="taxescore.exemptionreasoncodes.html">ExemptionReasonCodes</a> service.</td>
                             </tr>
+
+
                         </tbody>
                     </table>
-					<br />
-					<br />
-					</div>
-                    <a class="anchor" name="ApiTaxPostingResource"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'ApiTaxPostingResourceResourceDiv')">ApiTaxPostingResource<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="ApiTaxPostingResourceResourceDiv" style="display:none">
-	
-					<p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxableAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> Valor Base para o cálculo</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">taxAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> Valor da taxa</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">taxPercentage</td>
-                                <td  class="wrap"><i>(decimal)</i> Percentagem da taxa</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">exchangeRate</td>
-                                <td  class="wrap"><i>(decimal)</i> Taxa de conversão entre a moeda da transacção e a moeda da taxa</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td  class="wrap"><i>(int)</i> Chave única desta tabela</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">issueDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> Data da transação original</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">postingDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> Data em que a transacção é contabilizada.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">sourceDocId</td>
-                                <td  class="wrap"><i>(Guid)</i> Source Doc. Id.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">sourceDoc</td>
-                                <td  class="wrap"><i>(string)</i> Identificação (legível do documento que deu origem a esta transacção de taxa)</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">currency</td>
-                                <td  class="wrap"><i>(string)</i> Currency</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">country</td>
-                                <td  class="wrap"><i>(string)</i> Country</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">taxTypeCode</td>
-                                <td  class="wrap"><i>(string)</i> Tax Type Code</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">taxSummary</td>
-                                <td  class="wrap"><i>(string)</i> Tax Summary</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">schemaEntity</td>
-                                <td  class="wrap"><i>(string)</i> Schema Entity</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">postDocSchemaEntity</td>
-                                <td  class="wrap"><i>(string)</i> Post. Doc. Schema Entity</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">company</td>
-                                <td  class="wrap"><i>(string)</i> Company</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">isExempt</td>
-                                <td  class="wrap"><i>(bool)</i> Exempto de taxas</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">exchangeRateDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> Data do cambio anterior</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">companyTaxId</td>
-                                <td  class="wrap"><i>(string)</i> Numero fiscal do terceiro envolvido na transacção</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">postDocId</td>
-                                <td  class="wrap"><i>(Guid)</i> Posting Doc. Id.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">postDoc</td>
-                                <td  class="wrap"><i>(string)</i> Posting Doc.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">fiscalSpace</td>
-                                <td  class="wrap"><i>(enum FiscalSpace)</i> Tax Regional Area<br/>See <a href="#FiscalSpace">FiscalSpace.</a></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">exemptionReasonCode</td>
-                                <td  class="wrap"><i>(string)</i> Exemption Reason Code</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<br />
-					<br />
-					</div>
+
+                    <br />
+                    <br />
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Enumerations</h2>
-					<br />
+                    <br />
                     <a class="anchor" name="FiscalSpace"></a>
-					<h4 style="cursor:pointer" onclick="toggleVisibility(this, 'FiscalSpaceValueListDiv')">FiscalSpace<i style="margin-left:5px;" class="fa fa-chevron-down" aria-hidden="true"></i></h4>
-					<div id="FiscalSpaceValueListDiv" style="display:none">
+                    <h4>FiscalSpace <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-FiscalSpace"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-FiscalSpace"><a href="#FiscalSpace">FiscalSpace</a></div>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">1</td>
                                 <td>National</td>
-								<td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">2</td>
                                 <td>EU</td>
-								<td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="highlighted">3</td>
                                 <td>Other</td>
-								<td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
 
-					<br />
-					<br />
-					</div>
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
 </html>
