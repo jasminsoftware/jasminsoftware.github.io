@@ -1,0 +1,1645 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Financials | Financial Account Entry</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a id="current-menu-item" class="menu-item " href="financials.html">
+        Financials
+    </a>
+    <a class="menu-subitem " href="financialcore.accounts.html">
+        Account
+    </a>
+    <a class="menu-subitem " href="financialcore.accountpostings.html">
+        Account Posting
+    </a>
+    <a class="menu-subitem " href="financialcore.accounttransactions.html">
+        Account Transaction
+    </a>
+    <a class="menu-subitem " href="financialcore.accountingentries.html">
+        Accounting Entry
+    </a>
+    <a class="menu-subitem " href="financialcore.accountsentries.html">
+        Accounts Entry
+    </a>
+    <a class="menu-subitem " href="financialcore.partybankaccounts.html">
+        Bank Account
+    </a>
+    <a class="menu-subitem " href="financialcore.cashflowitems.html">
+        Cash Flow Item
+    </a>
+    <a class="menu-subitem " href="financialcore.financialaccounts.html">
+        Financial Account
+    </a>
+    <a class="menu-subitem menu-item-selected" href="financialcore.financialaccountentries.html">
+        Financial Account Entry
+    </a>
+    <a class="menu-subitem " href="financialcore.financialaccounttransfers.html">
+        Financial Account Transfer
+    </a>
+    <a class="menu-subitem " href="financialcore.financialinstitutions.html">
+        Financial Institution
+    </a>
+    <a class="menu-subitem " href="financialcore.financialsetups.html">
+        Financial Settings
+    </a>
+    <a class="menu-subitem " href="financialcore.indicators.html">
+        Indicator
+    </a>
+    <a class="menu-subitem " href="financialcore.insights.html">
+        Insight
+    </a>
+    <a class="menu-subitem " href="financialcore.paymentmethods.html">
+        Payment Method
+    </a>
+    <a class="menu-subitem " href="financialcore.paymentterms.html">
+        Payment Term
+    </a>
+    <a class="menu-subitem " href="financialcore.paymenttypes.html">
+        Payment Type
+    </a>
+    <a class="menu-subitem " href="financialcore.receipttypes.html">
+        Receipt Type
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Financials | Financial Account Entry</h1>
+                    <p>
+                    Service to manage entities of type 'FinancialAccountEntry'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-financialcore-financialaccountentries"></i></td>
+                                <div class="hidden-copylink" id="copy-financialcore-financialaccountentries">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#64d639a8-eca1-45c3-ace7-2d381248a7b8">GET FinancialAccountEntries</a></li>
+                            <li><a href="#5a5af125-6192-4d3e-b506-ec143eaec9f2">GET FinancialAccountEntries (paged)</a></li>
+                            <li><a href="#94c8ae64-5cf0-4d51-a6b4-f6dabfc63a77">GET FinancialAccountEntry by identifier</a></li>
+                            <li><a href="#e1e48a8a-c3ce-4c7b-ba95-a48d4aa445b4">GET FinancialAccountEntry by key</a></li>
+                            <li><a href="#8a64a8e3-a468-49d3-ac71-03dddafbf572">GET Print FinancialAccountEntry by identifier</a></li>
+                            <li><a href="#0a4f0c68-5e47-48fa-be0d-05d6e5a66b4d">GET Print FinancialAccountEntry by key</a></li>
+                            <li><a href="#07d461af-24a4-4f7a-adf2-44ce9254ac3e">GET Original Print FinancialAccountEntryOriginal by identifier</a></li>
+                            <li><a href="#f128a089-25dd-40b3-84ac-958fb972e13d">GET Original Print FinancialAccountEntry by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#9ee2d76c-876a-4fcb-a90f-7d52aeb37b73">POST FinancialAccountEntries</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#7e4a4723-1e96-4fef-92eb-7b3b9f78e81b">PUT Set IsActive FinancialAccountEntry</a></li>
+                            <li><a href="#78cdc88d-d273-4b2b-bd4e-3200c401e026">PUT Set DocumentDate FinancialAccountEntry</a></li>
+                            <li><a href="#7db00acf-6e69-4f02-97f0-9005aba6ab49">PUT Set ExchangeRate FinancialAccountEntry</a></li>
+                            <li><a href="#a5eb506d-85a6-4b7e-ab53-6214f177e8dc">PUT Set Currency FinancialAccountEntry</a></li>
+                            <li><a href="#fffd58ae-3ce1-4fc3-8719-f51b6282bf5b">PUT Set FinancialAccount FinancialAccountEntry</a></li>
+                            <li><a href="#d93e32f9-f25f-4c1b-8cfa-a4278ac0bb54">PUT Set CashFlowItem FinancialAccountEntry</a></li>
+                            <li><a href="#b932ed55-2caf-4f74-9200-2a8a47fdd93f">PUT Set Amount FinancialAccountEntry</a></li>
+                            <li><a href="#a3173fab-fc99-4f6a-8fd1-95e5887067ff">PUT Set Note FinancialAccountEntry</a></li>
+                            <li><a href="#39b9a56d-092a-4e3d-85c0-739bf45a12d4">PUT Set Remarks FinancialAccountEntry</a></li>
+                            <li><a href="#631d18e9-3931-46c0-a2ee-4a600531e2c2">PUT Set Account FinancialAccountEntry</a></li>
+                            <li><a href="#43dd18d3-c0a9-448d-bc90-cfb50dbdcb53">PUT Set TaxRate FinancialAccountEntry</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#8702b4e6-0889-43a4-8585-6d34b1172ea9">DELETE FinancialAccountEntry by identifier</a></li>
+                            <li><a href="#24c6307c-d2fd-4345-9300-e2262037226c">DELETE FinancialAccountEntry by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiFinancialAccountEntryResource">ApiFinancialAccountEntryResource</a></li>
+                        <li><a href="#FinancialAccountEntryResource">FinancialAccountEntryResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="64d639a8-eca1-45c3-ace7-2d381248a7b8"></a>
+                    <h3>GET FinancialAccountEntries <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-64d639a8-eca1-45c3-ace7-2d381248a7b8"></i></h3>
+                    <div class="hidden-copylink" id="copy-64d639a8-eca1-45c3-ace7-2d381248a7b8"><a href="#64d639a8-eca1-45c3-ace7-2d381248a7b8">GET FinancialAccountEntries</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#FinancialAccountEntryResource">FinancialAccountEntryResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-64d639a8-eca1-45c3-ace7-2d381248a7b8">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-64d639a8-eca1-45c3-ace7-2d381248a7b8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5a5af125-6192-4d3e-b506-ec143eaec9f2"></a>
+                    <h3>GET FinancialAccountEntries (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5a5af125-6192-4d3e-b506-ec143eaec9f2"></i></h3>
+                    <div class="hidden-copylink" id="copy-5a5af125-6192-4d3e-b506-ec143eaec9f2"><a href="#5a5af125-6192-4d3e-b506-ec143eaec9f2">GET FinancialAccountEntries (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#FinancialAccountEntryResource">FinancialAccountEntryResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5a5af125-6192-4d3e-b506-ec143eaec9f2">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5a5af125-6192-4d3e-b506-ec143eaec9f2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="94c8ae64-5cf0-4d51-a6b4-f6dabfc63a77"></a>
+                    <h3>GET FinancialAccountEntry by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-94c8ae64-5cf0-4d51-a6b4-f6dabfc63a77"></i></h3>
+                    <div class="hidden-copylink" id="copy-94c8ae64-5cf0-4d51-a6b4-f6dabfc63a77"><a href="#94c8ae64-5cf0-4d51-a6b4-f6dabfc63a77">GET FinancialAccountEntry by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#FinancialAccountEntryResource">FinancialAccountEntryResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-94c8ae64-5cf0-4d51-a6b4-f6dabfc63a77">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-94c8ae64-5cf0-4d51-a6b4-f6dabfc63a77"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e1e48a8a-c3ce-4c7b-ba95-a48d4aa445b4"></a>
+                    <h3>GET FinancialAccountEntry by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e1e48a8a-c3ce-4c7b-ba95-a48d4aa445b4"></i></h3>
+                    <div class="hidden-copylink" id="copy-e1e48a8a-c3ce-4c7b-ba95-a48d4aa445b4"><a href="#e1e48a8a-c3ce-4c7b-ba95-a48d4aa445b4">GET FinancialAccountEntry by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#FinancialAccountEntryResource">FinancialAccountEntryResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e1e48a8a-c3ce-4c7b-ba95-a48d4aa445b4">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries/{companyKey}/{entryKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e1e48a8a-c3ce-4c7b-ba95-a48d4aa445b4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8a64a8e3-a468-49d3-ac71-03dddafbf572"></a>
+                    <h3>GET Print FinancialAccountEntry by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8a64a8e3-a468-49d3-ac71-03dddafbf572"></i></h3>
+                    <div class="hidden-copylink" id="copy-8a64a8e3-a468-49d3-ac71-03dddafbf572"><a href="#8a64a8e3-a468-49d3-ac71-03dddafbf572">GET Print FinancialAccountEntry by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8a64a8e3-a468-49d3-ac71-03dddafbf572">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{id}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8a64a8e3-a468-49d3-ac71-03dddafbf572"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0a4f0c68-5e47-48fa-be0d-05d6e5a66b4d"></a>
+                    <h3>GET Print FinancialAccountEntry by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0a4f0c68-5e47-48fa-be0d-05d6e5a66b4d"></i></h3>
+                    <div class="hidden-copylink" id="copy-0a4f0c68-5e47-48fa-be0d-05d6e5a66b4d"><a href="#0a4f0c68-5e47-48fa-be0d-05d6e5a66b4d">GET Print FinancialAccountEntry by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-0a4f0c68-5e47-48fa-be0d-05d6e5a66b4d">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries/{companyKey}/{entryKey}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0a4f0c68-5e47-48fa-be0d-05d6e5a66b4d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="07d461af-24a4-4f7a-adf2-44ce9254ac3e"></a>
+                    <h3>GET Original Print FinancialAccountEntryOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-07d461af-24a4-4f7a-adf2-44ce9254ac3e"></i></h3>
+                    <div class="hidden-copylink" id="copy-07d461af-24a4-4f7a-adf2-44ce9254ac3e"><a href="#07d461af-24a4-4f7a-adf2-44ce9254ac3e">GET Original Print FinancialAccountEntryOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-07d461af-24a4-4f7a-adf2-44ce9254ac3e">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{id}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries/{id}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-07d461af-24a4-4f7a-adf2-44ce9254ac3e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f128a089-25dd-40b3-84ac-958fb972e13d"></a>
+                    <h3>GET Original Print FinancialAccountEntry by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f128a089-25dd-40b3-84ac-958fb972e13d"></i></h3>
+                    <div class="hidden-copylink" id="copy-f128a089-25dd-40b3-84ac-958fb972e13d"><a href="#f128a089-25dd-40b3-84ac-958fb972e13d">GET Original Print FinancialAccountEntry by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f128a089-25dd-40b3-84ac-958fb972e13d">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /financialCore/financialAccountEntries/{companyKey}/{entryKey}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f128a089-25dd-40b3-84ac-958fb972e13d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9ee2d76c-876a-4fcb-a90f-7d52aeb37b73"></a>
+                    <h3>POST FinancialAccountEntries <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9ee2d76c-876a-4fcb-a90f-7d52aeb37b73"></i></h3>
+                    <div class="hidden-copylink" id="copy-9ee2d76c-876a-4fcb-a90f-7d52aeb37b73"><a href="#9ee2d76c-876a-4fcb-a90f-7d52aeb37b73">POST FinancialAccountEntries</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">financialAccountEntryResource</td>
+                                <td><i>(ApiFinancialAccountEntryResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiFinancialAccountEntryResource">ApiFinancialAccountEntryResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiFinancialAccountEntryResource">ApiFinancialAccountEntryResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-9ee2d76c-876a-4fcb-a90f-7d52aeb37b73">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /financialCore/financialAccountEntries</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9ee2d76c-876a-4fcb-a90f-7d52aeb37b73"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="631d18e9-3931-46c0-a2ee-4a600531e2c2"></a>
+                    <h3>PUT Set Account FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-631d18e9-3931-46c0-a2ee-4a600531e2c2"></i></h3>
+                    <div class="hidden-copylink" id="copy-631d18e9-3931-46c0-a2ee-4a600531e2c2"><a href="#631d18e9-3931-46c0-a2ee-4a600531e2c2">PUT Set Account FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Account' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-631d18e9-3931-46c0-a2ee-4a600531e2c2">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/account</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/account</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-631d18e9-3931-46c0-a2ee-4a600531e2c2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b932ed55-2caf-4f74-9200-2a8a47fdd93f"></a>
+                    <h3>PUT Set Amount FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b932ed55-2caf-4f74-9200-2a8a47fdd93f"></i></h3>
+                    <div class="hidden-copylink" id="copy-b932ed55-2caf-4f74-9200-2a8a47fdd93f"><a href="#b932ed55-2caf-4f74-9200-2a8a47fdd93f">PUT Set Amount FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Amount' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b932ed55-2caf-4f74-9200-2a8a47fdd93f">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/amount</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/amount</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b932ed55-2caf-4f74-9200-2a8a47fdd93f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d93e32f9-f25f-4c1b-8cfa-a4278ac0bb54"></a>
+                    <h3>PUT Set CashFlowItem FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d93e32f9-f25f-4c1b-8cfa-a4278ac0bb54"></i></h3>
+                    <div class="hidden-copylink" id="copy-d93e32f9-f25f-4c1b-8cfa-a4278ac0bb54"><a href="#d93e32f9-f25f-4c1b-8cfa-a4278ac0bb54">PUT Set CashFlowItem FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'CashFlowItem' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d93e32f9-f25f-4c1b-8cfa-a4278ac0bb54">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/cashFlowItem</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/cashFlowItem</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d93e32f9-f25f-4c1b-8cfa-a4278ac0bb54"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a5eb506d-85a6-4b7e-ab53-6214f177e8dc"></a>
+                    <h3>PUT Set Currency FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a5eb506d-85a6-4b7e-ab53-6214f177e8dc"></i></h3>
+                    <div class="hidden-copylink" id="copy-a5eb506d-85a6-4b7e-ab53-6214f177e8dc"><a href="#a5eb506d-85a6-4b7e-ab53-6214f177e8dc">PUT Set Currency FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Currency' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a5eb506d-85a6-4b7e-ab53-6214f177e8dc">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/currency</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/currency</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a5eb506d-85a6-4b7e-ab53-6214f177e8dc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="78cdc88d-d273-4b2b-bd4e-3200c401e026"></a>
+                    <h3>PUT Set DocumentDate FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-78cdc88d-d273-4b2b-bd4e-3200c401e026"></i></h3>
+                    <div class="hidden-copylink" id="copy-78cdc88d-d273-4b2b-bd4e-3200c401e026"><a href="#78cdc88d-d273-4b2b-bd4e-3200c401e026">PUT Set DocumentDate FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'DocumentDate' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-78cdc88d-d273-4b2b-bd4e-3200c401e026">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/documentDate</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/documentDate</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-78cdc88d-d273-4b2b-bd4e-3200c401e026"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7db00acf-6e69-4f02-97f0-9005aba6ab49"></a>
+                    <h3>PUT Set ExchangeRate FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7db00acf-6e69-4f02-97f0-9005aba6ab49"></i></h3>
+                    <div class="hidden-copylink" id="copy-7db00acf-6e69-4f02-97f0-9005aba6ab49"><a href="#7db00acf-6e69-4f02-97f0-9005aba6ab49">PUT Set ExchangeRate FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ExchangeRate' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7db00acf-6e69-4f02-97f0-9005aba6ab49">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/exchangeRate</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/exchangeRate</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7db00acf-6e69-4f02-97f0-9005aba6ab49"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fffd58ae-3ce1-4fc3-8719-f51b6282bf5b"></a>
+                    <h3>PUT Set FinancialAccount FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fffd58ae-3ce1-4fc3-8719-f51b6282bf5b"></i></h3>
+                    <div class="hidden-copylink" id="copy-fffd58ae-3ce1-4fc3-8719-f51b6282bf5b"><a href="#fffd58ae-3ce1-4fc3-8719-f51b6282bf5b">PUT Set FinancialAccount FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'FinancialAccount' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-fffd58ae-3ce1-4fc3-8719-f51b6282bf5b">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/financialAccount</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/financialAccount</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fffd58ae-3ce1-4fc3-8719-f51b6282bf5b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7e4a4723-1e96-4fef-92eb-7b3b9f78e81b"></a>
+                    <h3>PUT Set IsActive FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7e4a4723-1e96-4fef-92eb-7b3b9f78e81b"></i></h3>
+                    <div class="hidden-copylink" id="copy-7e4a4723-1e96-4fef-92eb-7b3b9f78e81b"><a href="#7e4a4723-1e96-4fef-92eb-7b3b9f78e81b">PUT Set IsActive FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7e4a4723-1e96-4fef-92eb-7b3b9f78e81b">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7e4a4723-1e96-4fef-92eb-7b3b9f78e81b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a3173fab-fc99-4f6a-8fd1-95e5887067ff"></a>
+                    <h3>PUT Set Note FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a3173fab-fc99-4f6a-8fd1-95e5887067ff"></i></h3>
+                    <div class="hidden-copylink" id="copy-a3173fab-fc99-4f6a-8fd1-95e5887067ff"><a href="#a3173fab-fc99-4f6a-8fd1-95e5887067ff">PUT Set Note FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Note' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a3173fab-fc99-4f6a-8fd1-95e5887067ff">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/note</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/note</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a3173fab-fc99-4f6a-8fd1-95e5887067ff"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="39b9a56d-092a-4e3d-85c0-739bf45a12d4"></a>
+                    <h3>PUT Set Remarks FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-39b9a56d-092a-4e3d-85c0-739bf45a12d4"></i></h3>
+                    <div class="hidden-copylink" id="copy-39b9a56d-092a-4e3d-85c0-739bf45a12d4"><a href="#39b9a56d-092a-4e3d-85c0-739bf45a12d4">PUT Set Remarks FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Remarks' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-39b9a56d-092a-4e3d-85c0-739bf45a12d4">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/remarks</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/remarks</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-39b9a56d-092a-4e3d-85c0-739bf45a12d4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="43dd18d3-c0a9-448d-bc90-cfb50dbdcb53"></a>
+                    <h3>PUT Set TaxRate FinancialAccountEntry <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-43dd18d3-c0a9-448d-bc90-cfb50dbdcb53"></i></h3>
+                    <div class="hidden-copylink" id="copy-43dd18d3-c0a9-448d-bc90-cfb50dbdcb53"><a href="#43dd18d3-c0a9-448d-bc90-cfb50dbdcb53">PUT Set TaxRate FinancialAccountEntry</a></div>
+                    <p class="operation-description">Updates the value of attribute 'TaxRate' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-43dd18d3-c0a9-448d-bc90-cfb50dbdcb53">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}/taxRate</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /financialCore/financialAccountEntries/{companyKey}/{entryKey}/taxRate</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-43dd18d3-c0a9-448d-bc90-cfb50dbdcb53"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8702b4e6-0889-43a4-8585-6d34b1172ea9"></a>
+                    <h3>DELETE FinancialAccountEntry by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8702b4e6-0889-43a4-8585-6d34b1172ea9"></i></h3>
+                    <div class="hidden-copylink" id="copy-8702b4e6-0889-43a4-8585-6d34b1172ea9"><a href="#8702b4e6-0889-43a4-8585-6d34b1172ea9">DELETE FinancialAccountEntry by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8702b4e6-0889-43a4-8585-6d34b1172ea9">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /financialCore/financialAccountEntries/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8702b4e6-0889-43a4-8585-6d34b1172ea9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="24c6307c-d2fd-4345-9300-e2262037226c"></a>
+                    <h3>DELETE FinancialAccountEntry by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-24c6307c-d2fd-4345-9300-e2262037226c"></i></h3>
+                    <div class="hidden-copylink" id="copy-24c6307c-d2fd-4345-9300-e2262037226c"><a href="#24c6307c-d2fd-4345-9300-e2262037226c">DELETE FinancialAccountEntry by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td><i>(int)</i> Entry.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-24c6307c-d2fd-4345-9300-e2262037226c">api/{tenantKey}/{orgKey}/financialCore/financialAccountEntries/{companyKey}/{entryKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /financialCore/financialAccountEntries/{companyKey}/{entryKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-24c6307c-d2fd-4345-9300-e2262037226c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiFinancialAccountEntryResource"></a>
+                    <h4>ApiFinancialAccountEntryResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiFinancialAccountEntryResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiFinancialAccountEntryResource"><a href="#ApiFinancialAccountEntryResource">ApiFinancialAccountEntryResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td  class="wrap"><i>(int)</i> Entry.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Value Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financial Account.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">amount</td>
+                                <td  class="wrap"><i>(decimal)</i> Amount.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">taxRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Tax Rate.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Reference.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">account</td>
+                                <td  class="wrap"><i>(string)</i> Account.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="FinancialAccountEntryResource"></a>
+                    <h4>FinancialAccountEntryResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-FinancialAccountEntryResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-FinancialAccountEntryResource"><a href="#FinancialAccountEntryResource">FinancialAccountEntryResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entryKey</td>
+                                <td  class="wrap"><i>(int)</i> Entry.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Value Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Exchange Rate.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Currency. These records are accessibly through the <a href="corepatterns.currencies.html">Currencies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financial Account.<br /><i>(fk)</i> Allowed value: the natural key of a record of type FinancialAccount. These records are accessibly through the <a href="financialcore.financialaccounts.html">FinancialAccounts</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow.<br /><i>(fk)</i> Allowed value: the natural key of a record of type CashFlowItem. These records are accessibly through the <a href="financialcore.cashflowitems.html">CashFlowItems</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">amount</td>
+                                <td  class="wrap"><i>(decimal)</i> Amount.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isBankAccount</td>
+                                <td  class="wrap"><i>(bool)</i> Is Bank Account.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">pettyCashAllowsForeignCurrency</td>
+                                <td  class="wrap"><i>(bool)</i> Petty Cash Allows Foreign Currency.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">generateAccountPending</td>
+                                <td  class="wrap"><i>(bool)</i> Pending payment/receivable.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">accountedAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> Accounted Amount.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">taxRate</td>
+                                <td  class="wrap"><i>(decimal)</i> Tax Rate.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">exchangeRateDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Exchange Rate Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Reference.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">account</td>
+                                <td  class="wrap"><i>(string)</i> Account.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Account. These records are accessibly through the <a href="financialcore.accounts.html">Accounts</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method.<br /><i>(fk)</i> Allowed value: the natural key of a record of type PaymentMethod. These records are accessibly through the <a href="financialcore.paymentmethods.html">PaymentMethods</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party.<br /><i>(fk)</i> Allowed value: the natural key of a record of type Party. These records are accessibly through the <a href="businesscore.parties.html">Parties</a> service.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Data Report</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="identity.accessgroups.html">
+        Access Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem menu-item-selected" href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Data Report</h1>
+                    <p>
+                    Service to manage entities of type 'OfflineReport'.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/reporting/offlineReports  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-reporting-offlinereports"></i></td>
+                                <div class="hidden-copylink" id="copy-reporting-offlinereports">api/{tenantKey}/{orgKey}/reporting/offlineReports</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+                                <td><a href="#GET">GET</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#45fff39b-190c-4826-9657-a97cc9c378a1">GET OfflineReports</a></li>
+                            <li><a href="#1b89b316-a35a-4ed1-b72c-07c61448bcd8">GET OfflineReports (paged)</a></li>
+                            <li><a href="#50cd8aca-ec6f-4005-bf29-46a37baa4712">GET OfflineReport by identifier</a></li>
+                            <li><a href="#629dc6c8-36a2-40e5-ae2e-ca91baaa60d8">GET OfflineReport by key</a></li>
+                            <li><a href="#1141a1f0-04d7-4d55-b75c-a0e2b5637f7f">GET Print OfflineReport by identifier</a></li>
+                            <li><a href="#9999a72f-6e53-4e8c-9e80-fba7246520e1">GET Print OfflineReport by key</a></li>
+                            <li><a href="#d4ab5028-c37a-4a36-bc92-8bbb6a30923d">GET Original Print OfflineReportOriginal by identifier</a></li>
+                            <li><a href="#1df18120-f4f6-4dbb-a33e-c58f9ae078c4">GET Original Print OfflineReport by key</a></li>
+                            <li><a href="#c16729fe-697a-47b7-9d31-159ee32460d6">GET Get Data</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#7079af1c-2ac1-4cd6-802a-5fb2f789e194">DELETE OfflineReport by identifier</a></li>
+                            <li><a href="#94f63161-0f3d-4938-9449-90c2d9f4b3d6">DELETE OfflineReport by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#OfflineReportResource">OfflineReportResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="45fff39b-190c-4826-9657-a97cc9c378a1"></a>
+                    <h3>GET OfflineReports <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-45fff39b-190c-4826-9657-a97cc9c378a1"></i></h3>
+                    <div class="hidden-copylink" id="copy-45fff39b-190c-4826-9657-a97cc9c378a1"><a href="#45fff39b-190c-4826-9657-a97cc9c378a1">GET OfflineReports</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#OfflineReportResource">OfflineReportResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-45fff39b-190c-4826-9657-a97cc9c378a1">api/{tenantKey}/{orgKey}/reporting/offlineReports</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-45fff39b-190c-4826-9657-a97cc9c378a1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1b89b316-a35a-4ed1-b72c-07c61448bcd8"></a>
+                    <h3>GET OfflineReports (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1b89b316-a35a-4ed1-b72c-07c61448bcd8"></i></h3>
+                    <div class="hidden-copylink" id="copy-1b89b316-a35a-4ed1-b72c-07c61448bcd8"><a href="#1b89b316-a35a-4ed1-b72c-07c61448bcd8">GET OfflineReports (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#OfflineReportResource">OfflineReportResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1b89b316-a35a-4ed1-b72c-07c61448bcd8">api/{tenantKey}/{orgKey}/reporting/offlineReports</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1b89b316-a35a-4ed1-b72c-07c61448bcd8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="50cd8aca-ec6f-4005-bf29-46a37baa4712"></a>
+                    <h3>GET OfflineReport by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-50cd8aca-ec6f-4005-bf29-46a37baa4712"></i></h3>
+                    <div class="hidden-copylink" id="copy-50cd8aca-ec6f-4005-bf29-46a37baa4712"><a href="#50cd8aca-ec6f-4005-bf29-46a37baa4712">GET OfflineReport by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#OfflineReportResource">OfflineReportResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-50cd8aca-ec6f-4005-bf29-46a37baa4712">api/{tenantKey}/{orgKey}/reporting/offlineReports/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-50cd8aca-ec6f-4005-bf29-46a37baa4712"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="629dc6c8-36a2-40e5-ae2e-ca91baaa60d8"></a>
+                    <h3>GET OfflineReport by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-629dc6c8-36a2-40e5-ae2e-ca91baaa60d8"></i></h3>
+                    <div class="hidden-copylink" id="copy-629dc6c8-36a2-40e5-ae2e-ca91baaa60d8"><a href="#629dc6c8-36a2-40e5-ae2e-ca91baaa60d8">GET OfflineReport by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#OfflineReportResource">OfflineReportResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-629dc6c8-36a2-40e5-ae2e-ca91baaa60d8">api/{tenantKey}/{orgKey}/reporting/offlineReports/{number}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports/{number}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-629dc6c8-36a2-40e5-ae2e-ca91baaa60d8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1141a1f0-04d7-4d55-b75c-a0e2b5637f7f"></a>
+                    <h3>GET Print OfflineReport by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1141a1f0-04d7-4d55-b75c-a0e2b5637f7f"></i></h3>
+                    <div class="hidden-copylink" id="copy-1141a1f0-04d7-4d55-b75c-a0e2b5637f7f"><a href="#1141a1f0-04d7-4d55-b75c-a0e2b5637f7f">GET Print OfflineReport by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1141a1f0-04d7-4d55-b75c-a0e2b5637f7f">api/{tenantKey}/{orgKey}/reporting/offlineReports/{id}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1141a1f0-04d7-4d55-b75c-a0e2b5637f7f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9999a72f-6e53-4e8c-9e80-fba7246520e1"></a>
+                    <h3>GET Print OfflineReport by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9999a72f-6e53-4e8c-9e80-fba7246520e1"></i></h3>
+                    <div class="hidden-copylink" id="copy-9999a72f-6e53-4e8c-9e80-fba7246520e1"><a href="#9999a72f-6e53-4e8c-9e80-fba7246520e1">GET Print OfflineReport by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-9999a72f-6e53-4e8c-9e80-fba7246520e1">api/{tenantKey}/{orgKey}/reporting/offlineReports/{number}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports/{number}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9999a72f-6e53-4e8c-9e80-fba7246520e1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d4ab5028-c37a-4a36-bc92-8bbb6a30923d"></a>
+                    <h3>GET Original Print OfflineReportOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d4ab5028-c37a-4a36-bc92-8bbb6a30923d"></i></h3>
+                    <div class="hidden-copylink" id="copy-d4ab5028-c37a-4a36-bc92-8bbb6a30923d"><a href="#d4ab5028-c37a-4a36-bc92-8bbb6a30923d">GET Original Print OfflineReportOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d4ab5028-c37a-4a36-bc92-8bbb6a30923d">api/{tenantKey}/{orgKey}/reporting/offlineReports/{id}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports/{id}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d4ab5028-c37a-4a36-bc92-8bbb6a30923d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1df18120-f4f6-4dbb-a33e-c58f9ae078c4"></a>
+                    <h3>GET Original Print OfflineReport by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1df18120-f4f6-4dbb-a33e-c58f9ae078c4"></i></h3>
+                    <div class="hidden-copylink" id="copy-1df18120-f4f6-4dbb-a33e-c58f9ae078c4"><a href="#1df18120-f4f6-4dbb-a33e-c58f9ae078c4">GET Original Print OfflineReport by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1df18120-f4f6-4dbb-a33e-c58f9ae078c4">api/{tenantKey}/{orgKey}/reporting/offlineReports/{number}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports/{number}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1df18120-f4f6-4dbb-a33e-c58f9ae078c4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c16729fe-697a-47b7-9d31-159ee32460d6"></a>
+                    <h3>GET Get Data <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c16729fe-697a-47b7-9d31-159ee32460d6"></i></h3>
+                    <div class="hidden-copylink" id="copy-c16729fe-697a-47b7-9d31-159ee32460d6"><a href="#c16729fe-697a-47b7-9d31-159ee32460d6">GET Get Data</a></div>
+                    <p class="operation-description">Custom operation 'GetData'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> Id This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">parameters</td>
+                                <td><i>(string)</i> A key and value collection. This will replace parameters in the DataSourceUri This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a string.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c16729fe-697a-47b7-9d31-159ee32460d6">api/{tenantKey}/{orgKey}/reporting/offlineReports/getData?id={id}&amp;parameters={parameters}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/offlineReports/getData?id={id}&amp;parameters={parameters}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c16729fe-697a-47b7-9d31-159ee32460d6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7079af1c-2ac1-4cd6-802a-5fb2f789e194"></a>
+                    <h3>DELETE OfflineReport by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7079af1c-2ac1-4cd6-802a-5fb2f789e194"></i></h3>
+                    <div class="hidden-copylink" id="copy-7079af1c-2ac1-4cd6-802a-5fb2f789e194"><a href="#7079af1c-2ac1-4cd6-802a-5fb2f789e194">DELETE OfflineReport by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7079af1c-2ac1-4cd6-802a-5fb2f789e194">api/{tenantKey}/{orgKey}/reporting/offlineReports/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /reporting/offlineReports/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7079af1c-2ac1-4cd6-802a-5fb2f789e194"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="94f63161-0f3d-4938-9449-90c2d9f4b3d6"></a>
+                    <h3>DELETE OfflineReport by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-94f63161-0f3d-4938-9449-90c2d9f4b3d6"></i></h3>
+                    <div class="hidden-copylink" id="copy-94f63161-0f3d-4938-9449-90c2d9f4b3d6"><a href="#94f63161-0f3d-4938-9449-90c2d9f4b3d6">DELETE OfflineReport by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td><i>(int)</i> Number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-94f63161-0f3d-4938-9449-90c2d9f4b3d6">api/{tenantKey}/{orgKey}/reporting/offlineReports/{number}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /reporting/offlineReports/{number}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-94f63161-0f3d-4938-9449-90c2d9f4b3d6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="OfflineReportResource"></a>
+                    <h4>OfflineReportResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-OfflineReportResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-OfflineReportResource"><a href="#OfflineReportResource">OfflineReportResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">number</td>
+                                <td  class="wrap"><i>(int)</i> Number.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">origin</td>
+                                <td  class="wrap"><i>(string)</i> Origin.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">generatedOn</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Generated On.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">expiresOn</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Expires On.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">data</td>
+                                <td  class="wrap"><i>(string)</i> Data.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">dataSourceUri</td>
+                                <td  class="wrap"><i>(string)</i> Data Source Uri.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isUntrustedSourceUri</td>
+                                <td  class="wrap"><i>(bool)</i> Is Untrusted Source Uri.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td  class="wrap"><i>(string)</i> Template.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">templateSourceUri</td>
+                                <td  class="wrap"><i>(string)</i> Template Source Uri.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isUntrustedTemplateUri</td>
+                                <td  class="wrap"><i>(bool)</i> Is Untrusted Template Uri.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>
