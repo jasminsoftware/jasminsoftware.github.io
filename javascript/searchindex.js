@@ -1932,6 +1932,12 @@
         kind : "resource",
     },
     {
+        url: "accountsreceivable.processopenitems.html#ApiOpenAccountPosting",
+        description: "ApiOpenAccountPosting",
+        keywords : "ApiOpenAccountPosting",
+        kind : "resource",
+    },
+    {
         url: "sales.orders.html#ApiOrderDocumentLinesResource",
         description: "ApiOrderDocumentLinesResource",
         keywords : "ApiOrderDocumentLinesResource",
@@ -6390,6 +6396,12 @@
         kind : "service",
     },
     {
+        url: "billing.monitorings.html",
+        description: "Sales | Monitoring",
+        keywords : "Monitoring ",
+        kind : "service",
+    },
+    {
         url: "sales.orders.html",
         description: "Sales | Order",
         keywords : "Order",
@@ -6831,6 +6843,12 @@
         url: "materialsmanagement.stocktransferorders.html#StockTransferOrderResource",
         description: "StockTransferOrderResource",
         keywords : "StockTransferOrderResource",
+        kind : "resource",
+    },
+    {
+        url: "billing.monitorings.html#SubscriptionInfo",
+        description: "SubscriptionInfo",
+        keywords : "SubscriptionInfo",
         kind : "resource",
     },
     {

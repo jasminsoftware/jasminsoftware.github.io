@@ -92,7 +92,7 @@
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
-                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a></td>
+                                <td><a href="#POST">POST</a>, <a href="#GET">GET</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -102,15 +102,16 @@
                     </p>
                     <ul>
                         <li>
-                        GET:
+                        POST:
                         <ul>
-                            <li><a href="#0057e65f-91bb-4db2-8baf-8357d5ff628f">GET Create Receipt</a></li>
+                            <li><a href="#035f31f6-eb02-4e7f-830b-bd0b720a3997">POST Generate Receipt</a></li>
+                            <li><a href="#a5b693fa-bd79-446b-b6d9-3733b1e54ae9">POST Create Receipt</a></li>
                         </ul>
                         </li>
                         <li>
-                        POST:
+                        GET:
                         <ul>
-                            <li><a href="#8c661a20-8d67-424e-b45a-4488d17b0381">POST Create Receipt</a></li>
+                            <li><a href="#5a7111d0-6424-4521-a4ab-0ef79e7e0486">GET Create Receipt</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -119,6 +120,7 @@
                     This service uses the following resources:
                     </p>
                     <ul>
+                        <li><a href="#ApiOpenAccountPosting">ApiOpenAccountPosting</a></li>
                         <li><a href="#OpenAccountPosting">OpenAccountPosting</a></li>
                         <li><a href="#OpenAccountPostingLine">OpenAccountPostingLine</a></li>
                     </ul>
@@ -132,9 +134,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="0057e65f-91bb-4db2-8baf-8357d5ff628f"></a>
-                    <h3>GET Create Receipt <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0057e65f-91bb-4db2-8baf-8357d5ff628f"></i></h3>
-                    <div class="hidden-copylink" id="copy-0057e65f-91bb-4db2-8baf-8357d5ff628f"><a href="#0057e65f-91bb-4db2-8baf-8357d5ff628f">GET Create Receipt</a></div>
+                    <a class="anchor" name="5a7111d0-6424-4521-a4ab-0ef79e7e0486"></a>
+                    <h3>GET Create Receipt <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5a7111d0-6424-4521-a4ab-0ef79e7e0486"></i></h3>
+                    <div class="hidden-copylink" id="copy-5a7111d0-6424-4521-a4ab-0ef79e7e0486"><a href="#5a7111d0-6424-4521-a4ab-0ef79e7e0486">GET Create Receipt</a></div>
                     <p class="operation-description">Returns the list of entity records that can be processed by the 'Receipts' service.</p>
                     <p>The following elements are required:</p>
                     <table>
@@ -152,24 +154,44 @@
                                 <td><i>(string)</i> The company code is the central organizational unit within the system. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">party</td>
-                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent the receipt. It may or may not be the party to whom the goods or services were delivered. This is a query string parameter.</td>
+                                <td class="highlighted">documentType</td>
+                                <td><i>(string)</i> Defines the receipt's purpose. Distinguishes the business transactions to be posted. The default receipt type is defined in the sales setup configuration setting. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentDate</td>
                                 <td><i>(DateTime)</i> The date when the document is issued. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">documentExchangeRate</td>
-                                <td><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency. This is a query string parameter.</td>
+                                <td class="highlighted">postingDate</td>
+                                <td><i>(DateTime)</i> Posting Date This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> Financial Account This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td><i>(string)</i> Cash Flow Item This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent the receipt. It may or may not be the party to whom the goods or services were delivered. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">currency</td>
                                 <td><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">documentType</td>
-                                <td><i>(string)</i> Defines the receipt's purpose. Distinguishes the business transactions to be posted. The default receipt type is defined in the sales setup configuration setting. This is a query string parameter.</td>
+                                <td class="highlighted">exchangeRate</td>
+                                <td><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td><i>(string)</i> Payment Method This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isCheckPaymentMethod</td>
+                                <td><i>(bool)</i> Is Check Payment Method This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -178,24 +200,32 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">dueDateFrom</td>
+                                <td class="highlighted">note</td>
+                                <td><i>(string)</i> Reference This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(string)</i> Check Number This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dueDateFromFilter</td>
                                 <td><i>(DateTime?)</i> The accounting posting starting due date. Ignored if not set, is used to filter the due date. Only account postings with due date greater than or equal to this value will be displayed. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">dueDateUntil</td>
+                                <td class="highlighted">dueDateUntilFilter</td>
                                 <td><i>(DateTime?)</i> The accounting posting end due date. Ignored if not set, is used to filter the due date. Only account postings with due date less than or equal to this value will be displayed. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">paymentMethod</td>
+                                <td class="highlighted">paymentMethodFilter</td>
                                 <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocFilter</td>
+                                <td><i>(string)</i> The original document to be settled. The source documents is usually an invoice but other documents can be included on a receitp (ex: Credit or Debit Notes). Internally determined. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">total</td>
                                 <td><i>(decimal?)</i> Document total. Internally calculated. This is a query string parameter.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">sourceDoc</td>
-                                <td><i>(string)</i> The original document to be settled. The source documents is usually an invoice but other documents can be included on a receitp (ex: Credit or Debit Notes). Internally determined. This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -224,10 +254,10 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-0057e65f-91bb-4db2-8baf-8357d5ff628f">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems/{pageIndex}/{pageSize}?company={company}&amp;party={party}&amp;documentDate={documentDate}&amp;documentExchangeRate={documentExchangeRate}&amp;currency={currency}&amp;documentType={documentType}</div>
+                    <div class="hidden-copylink" id="copy2-5a7111d0-6424-4521-a4ab-0ef79e7e0486">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems/{pageIndex}/{pageSize}?company={company}&amp;documentType={documentType}&amp;documentDate={documentDate}&amp;postingDate={postingDate}&amp;financialAccount={financialAccount}&amp;cashFlowItem={cashFlowItem}&amp;party={party}&amp;currency={currency}&amp;exchangeRate={exchangeRate}&amp;paymentMethod={paymentMethod}&amp;isCheckPaymentMethod={isCheckPaymentMethod}</div>
                     <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /accountsReceivable/processOpenItems/{pageIndex}/{pageSize}?company={company}&amp;party={party}&amp;documentDate={documentDate}&amp;documentExchangeRate={documentExchangeRate}&amp;currency={currency}&amp;documentType={documentType}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0057e65f-91bb-4db2-8baf-8357d5ff628f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="inner-resource-url"><div>GET /accountsReceivable/processOpenItems/{pageIndex}/{pageSize}?company={company}&amp;documentType={documentType}&amp;documentDate={documentDate}&amp;postingDate={postingDate}&amp;financialAccount={financialAccount}&amp;cashFlowItem={cashFlowItem}&amp;party={party}&amp;currency={currency}&amp;exchangeRate={exchangeRate}&amp;paymentMethod={paymentMethod}&amp;isCheckPaymentMethod={isCheckPaymentMethod}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5a7111d0-6424-4521-a4ab-0ef79e7e0486"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -239,9 +269,43 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="8c661a20-8d67-424e-b45a-4488d17b0381"></a>
-                    <h3>POST Create Receipt <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8c661a20-8d67-424e-b45a-4488d17b0381"></i></h3>
-                    <div class="hidden-copylink" id="copy-8c661a20-8d67-424e-b45a-4488d17b0381"><a href="#8c661a20-8d67-424e-b45a-4488d17b0381">POST Create Receipt</a></div>
+                    <a class="anchor" name="035f31f6-eb02-4e7f-830b-bd0b720a3997"></a>
+                    <h3>POST Generate Receipt <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-035f31f6-eb02-4e7f-830b-bd0b720a3997"></i></h3>
+                    <div class="hidden-copylink" id="copy-035f31f6-eb02-4e7f-830b-bd0b720a3997"><a href="#035f31f6-eb02-4e7f-830b-bd0b720a3997">POST Generate Receipt</a></div>
+                    <p class="operation-description">Custom operation 'GenerateReceipt'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">apiOpenAccountPosting</td>
+                                <td><i>(ApiOpenAccountPosting)</i> ApiOpenAccountPosting This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-035f31f6-eb02-4e7f-830b-bd0b720a3997">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems/generateReceipt?apiOpenAccountPosting={apiOpenAccountPosting}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /accountsReceivable/processOpenItems/generateReceipt?apiOpenAccountPosting={apiOpenAccountPosting}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-035f31f6-eb02-4e7f-830b-bd0b720a3997"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a5b693fa-bd79-446b-b6d9-3733b1e54ae9"></a>
+                    <h3>POST Create Receipt <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a5b693fa-bd79-446b-b6d9-3733b1e54ae9"></i></h3>
+                    <div class="hidden-copylink" id="copy-a5b693fa-bd79-446b-b6d9-3733b1e54ae9"><a href="#a5b693fa-bd79-446b-b6d9-3733b1e54ae9">POST Create Receipt</a></div>
                     <p class="operation-description">Instructs the 'Receipts' service to process the specified entity records.</p>
                     <p>The following elements are required:</p>
                     <table>
@@ -281,10 +345,10 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-8c661a20-8d67-424e-b45a-4488d17b0381">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems/{companyKey}</div>
+                    <div class="hidden-copylink" id="copy2-a5b693fa-bd79-446b-b6d9-3733b1e54ae9">api/{tenantKey}/{orgKey}/accountsReceivable/processOpenItems/{companyKey}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>POST /accountsReceivable/processOpenItems/{companyKey}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8c661a20-8d67-424e-b45a-4488d17b0381"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a5b693fa-bd79-446b-b6d9-3733b1e54ae9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -292,46 +356,61 @@
                 <div class="content-section-col1">
                     <h2>Resources</h2>
                     <br />
-                    <a class="anchor" name="OpenAccountPosting"></a>
-                    <h4>OpenAccountPosting <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-OpenAccountPosting"></i></h4>
-                    <div class="hidden-copylink" id="copy-OpenAccountPosting"><a href="#OpenAccountPosting">OpenAccountPosting</a></div>
+                    <a class="anchor" name="ApiOpenAccountPosting"></a>
+                    <h4>ApiOpenAccountPosting <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiOpenAccountPosting"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiOpenAccountPosting"><a href="#ApiOpenAccountPosting">ApiOpenAccountPosting</a></div>
 	
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td  class="wrap"><i>(string)</i> The company code is the central organizational unit within the system.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">party</td>
-                                <td  class="wrap"><i>(string)</i> The customer designated in the account posting as the party to whom should be sent the receipt. It may or may not be the party to whom the goods or services were delivered.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">documentDate</td>
-                                <td  class="wrap"><i>(DateTime)</i> The date when the document is issued.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">documentExchangeRate</td>
-                                <td  class="wrap"><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">currency</td>
-                                <td  class="wrap"><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">selectedCount</td>
-                                <td  class="wrap"><i>(int)</i> Number of lines selected. Internally calculated.</td>
+                                <td  class="wrap"><i>(string)</i> Company.</td>
                             </tr>
 
                             <tr>
                                 <td class="highlighted">documentType</td>
-                                <td  class="wrap"><i>(string)</i> Defines the receipt's purpose. Distinguishes the business transactions to be posted. The default receipt type is defined in the sales setup configuration setting.</td>
+                                <td  class="wrap"><i>(string)</i> Receipt Type.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Document Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financial Account.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow Item.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> Party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Currency.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method.</td>
                             </tr>
 
 
@@ -342,28 +421,128 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">dueDateFrom</td>
-                                <td  class="wrap"><i>(DateTime)</i> The accounting posting starting due date. Ignored if not set, is used to filter the due date. Only account postings with due date greater than or equal to this value will be displayed.</td>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Reference.</td>
                             </tr>
 
                             <tr>
-                                <td class="highlighted">dueDateUntil</td>
-                                <td  class="wrap"><i>(DateTime)</i> The accounting posting end due date. Ignored if not set, is used to filter the due date. Only account postings with due date less than or equal to this value will be displayed.</td>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> Check Number.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="OpenAccountPosting"></a>
+                    <h4>OpenAccountPosting <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-OpenAccountPosting"></i></h4>
+                    <div class="hidden-copylink" id="copy-OpenAccountPosting"><a href="#OpenAccountPosting">OpenAccountPosting</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">selectedCount</td>
+                                <td  class="wrap"><i>(int)</i> Number of lines selected. Internally calculated.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company code is the central organizational unit within the system.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td  class="wrap"><i>(string)</i> Defines the receipt's purpose. Distinguishes the business transactions to be posted. The default receipt type is defined in the sales setup configuration setting.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is issued.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> Posting Date.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> Financial Account.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Cash Flow Item.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> The customer designated in the account posting as the party to whom should be sent the receipt. It may or may not be the party to whom the goods or services were delivered.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's base currency. The default is inferred using the defined exchange rates on the system for the document date and currency.</td>
                             </tr>
 
                             <tr>
                                 <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Payment Method.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isCheckPaymentMethod</td>
+                                <td  class="wrap"><i>(bool)</i> Is Check Payment Method.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> Reference.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(string)</i> Check Number.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">dueDateFromFilter</td>
+                                <td  class="wrap"><i>(DateTime)</i> The accounting posting starting due date. Ignored if not set, is used to filter the due date. Only account postings with due date greater than or equal to this value will be displayed.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">dueDateUntilFilter</td>
+                                <td  class="wrap"><i>(DateTime)</i> The accounting posting end due date. Ignored if not set, is used to filter the due date. Only account postings with due date less than or equal to this value will be displayed.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">paymentMethodFilter</td>
                                 <td  class="wrap"><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sourceDocFilter</td>
+                                <td  class="wrap"><i>(string)</i> The original document to be settled. The source documents is usually an invoice but other documents can be included on a receitp (ex: Credit or Debit Notes). Internally determined.</td>
                             </tr>
 
                             <tr>
                                 <td class="highlighted">total</td>
                                 <td  class="wrap"><i>(decimal)</i> Document total. Internally calculated.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">sourceDoc</td>
-                                <td  class="wrap"><i>(string)</i> The original document to be settled. The source documents is usually an invoice but other documents can be included on a receitp (ex: Credit or Debit Notes). Internally determined.</td>
                             </tr>
 
 
@@ -402,7 +581,7 @@
                             </tr>
 
                             <tr>
-                                <td class="highlighted">paymentMethod</td>
+                                <td class="highlighted">sourceDocPaymentMethod</td>
                                 <td  class="wrap"><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.</td>
                             </tr>
 
@@ -437,7 +616,7 @@
                             </tr>
 
                             <tr>
-                                <td class="highlighted">exchangeRate</td>
+                                <td class="highlighted">sourceDocExchangeRate</td>
                                 <td  class="wrap"><i>(decimal)</i> The price of the document's currency expressed in the company's base currency. In other words, the rate at which the document's currency can be exchanged for the company's currency. The default is inferred using the defined exchange rates on the system for the document date and currency.</td>
                             </tr>
 
