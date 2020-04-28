@@ -492,6 +492,12 @@
         kind : "resource",
     },
     {
+        url: "corepatterns.schemaattributes.html#ApiCustomSchemaAttributeResource",
+        description: "ApiCustomSchemaAttributeResource",
+        keywords : "ApiCustomSchemaAttributeResource",
+        kind : "resource",
+    },
+    {
         url: "shipping.deliveries.html#ApiDeliveryDocumentLinesResource",
         description: "ApiDeliveryDocumentLinesResource",
         keywords : "ApiDeliveryDocumentLinesResource",
@@ -3570,6 +3576,54 @@
         kind : "resource",
     },
     {
+        url: "corepatterns.schemaattributes.html#CustomSchemaAttributeResource",
+        description: "CustomSchemaAttributeResource",
+        keywords : "CustomSchemaAttributeResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#CustomSchemaAttributeResource",
+        description: "CustomSchemaAttributeResource",
+        keywords : "CustomSchemaAttributeResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#CustomSchemaAttributeResource",
+        description: "CustomSchemaAttributeResource",
+        keywords : "CustomSchemaAttributeResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#CustomSchemaAttributeResource",
+        description: "CustomSchemaAttributeResource",
+        keywords : "CustomSchemaAttributeResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#DecimalAttributeTypeOptions",
+        description: "DecimalAttributeTypeOptions",
+        keywords : "DecimalAttributeTypeOptions",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#DecimalAttributeTypeOptions",
+        description: "DecimalAttributeTypeOptions",
+        keywords : "DecimalAttributeTypeOptions",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#DefaultValue",
+        description: "DefaultValue",
+        keywords : "DefaultValue",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#DefaultValue",
+        description: "DefaultValue",
+        keywords : "DefaultValue",
+        kind : "resource",
+    },
+    {
         url: "shipping.deliveries.html#DeliveryLineResource",
         description: "DeliveryLineResource",
         keywords : "DeliveryLineResource",
@@ -4302,12 +4356,6 @@
         kind : "resource",
     },
     {
-        url: "corepatterns.importdatainfos.html#ImportInfoResource",
-        description: "ImportInfoResource",
-        keywords : "ImportInfoResource",
-        kind : "resource",
-    },
-    {
         url: "billing.invoices.html#InvoiceLineResource",
         description: "InvoiceLineResource",
         keywords : "InvoiceLineResource",
@@ -4755,6 +4803,18 @@
         url: "logisticscore.logisticssetups.html#LogisticsSetupResource",
         description: "LogisticsSetupResource",
         keywords : "LogisticsSetupResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#LongTextAttributeTypeOptions",
+        description: "LongTextAttributeTypeOptions",
+        keywords : "LongTextAttributeTypeOptions",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#LongTextAttributeTypeOptions",
+        description: "LongTextAttributeTypeOptions",
+        keywords : "LongTextAttributeTypeOptions",
         kind : "resource",
     },
     {
@@ -5754,6 +5814,12 @@
         kind : "service",
     },
     {
+        url: "corepatterns.clientsettings.html",
+        description: "Platform | Client Setting",
+        keywords : "Client Setting ",
+        kind : "service",
+    },
+    {
         url: "corepatterns.companies.html",
         description: "Platform | Company",
         keywords : "Company",
@@ -5820,6 +5886,12 @@
         kind : "service",
     },
     {
+        url: "corepatterns.schemaattributes.html",
+        description: "Platform | Entity Attribute",
+        keywords : "Entity Attribute SchemaAttribute",
+        kind : "service",
+    },
+    {
         url: "corepatterns.entitylockreasons.html",
         description: "Platform | Entity Lock Reason",
         keywords : "Entity Lock Reason EntityLockReason",
@@ -5874,9 +5946,21 @@
         kind : "service",
     },
     {
+        url: "corepatterns.schemaentities.html",
+        description: "Platform | Schema Entity Management",
+        keywords : "Schema Entity Management SchemaEntity",
+        kind : "service",
+    },
+    {
         url: "corepatterns.sequences.html",
         description: "Platform | Sequence",
         keywords : "Sequence",
+        kind : "service",
+    },
+    {
+        url: "corepatterns.subscriptionvalidations.html",
+        description: "Platform | Subscription Validation",
+        keywords : "Subscription Validation ",
         kind : "service",
     },
     {
@@ -6354,6 +6438,12 @@
         kind : "resource",
     },
     {
+        url: "corepatterns.importdatainfos.html#RevertImport",
+        description: "RevertImport",
+        keywords : "RevertImport",
+        kind : "resource",
+    },
+    {
         url: "billing.companyinvoices.html",
         description: "Sales | Company Invoice",
         keywords : "Company Invoice ",
@@ -6654,6 +6744,12 @@
         kind : "resource",
     },
     {
+        url: "corepatterns.clientsettings.html#ShellGeneralSettings",
+        description: "ShellGeneralSettings",
+        keywords : "ShellGeneralSettings",
+        kind : "resource",
+    },
+    {
         url: "shipping.deliveries.html",
         description: "Shipping | Delivery",
         keywords : "Delivery",
@@ -6753,6 +6849,18 @@
         url: "shipping.shippingrequests.html#ShippingRequestResource",
         description: "ShippingRequestResource",
         keywords : "ShippingRequestResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#ShortTextAttributeTypeOptions",
+        description: "ShortTextAttributeTypeOptions",
+        keywords : "ShortTextAttributeTypeOptions",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#ShortTextAttributeTypeOptions",
+        description: "ShortTextAttributeTypeOptions",
+        keywords : "ShortTextAttributeTypeOptions",
         kind : "resource",
     },
     {
@@ -7194,6 +7302,18 @@
         kind : "resource",
     },
     {
+        url: "corepatterns.schemaattributes.html#TextAttributeTypeOptions",
+        description: "TextAttributeTypeOptions",
+        keywords : "TextAttributeTypeOptions",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#TextAttributeTypeOptions",
+        description: "TextAttributeTypeOptions",
+        keywords : "TextAttributeTypeOptions",
+        kind : "resource",
+    },
+    {
         url: "corepatterns.unitdimensions.html#UnitDimensionResource",
         description: "UnitDimensionResource",
         keywords : "UnitDimensionResource",
@@ -7245,6 +7365,18 @@
         url: "corepatterns.companies.html#UserCompanyResource",
         description: "UserCompanyResource",
         keywords : "UserCompanyResource",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#ValidationRules",
+        description: "ValidationRules",
+        keywords : "ValidationRules",
+        kind : "resource",
+    },
+    {
+        url: "corepatterns.schemaattributes.html#ValidationRules",
+        description: "ValidationRules",
+        keywords : "ValidationRules",
         kind : "resource",
     },
     {

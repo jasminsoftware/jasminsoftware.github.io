@@ -58,6 +58,9 @@
     <a class="menu-subitem " href="corepatterns.addresses.html">
         Address
     </a>
+    <a class="menu-subitem " href="corepatterns.clientsettings.html">
+        Client Setting
+    </a>
     <a class="menu-subitem " href="corepatterns.companies.html">
         Company
     </a>
@@ -91,6 +94,9 @@
     <a class="menu-subitem " href="operations.emailtemplates.html">
         Email Template
     </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
     <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
         Entity Lock Reason
     </a>
@@ -118,8 +124,14 @@
     <a class="menu-subitem " href="corepatterns.regions.html">
         Region
     </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
     <a class="menu-subitem " href="corepatterns.sequences.html">
         Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
     </a>
     <a class="menu-subitem " href="corepatterns.units.html">
         Unit
@@ -145,7 +157,7 @@
                 <div class="content-section-col1">
                     <h1>Platform | Import Data Info</h1>
                     <p>
-                    Service to manage entities of type 'ImportDataInfo'.
+                    Service to manage entities of type 'ImportDataInfo'.				
                     </p>
                     <h2>Overview</h2>
                     <br/>
@@ -158,6 +170,7 @@
                             </tr>
                             <tr>
                                 <td>Methods Supported</td>
+
                                 <td><a href="#POST">POST</a></td>
                             </tr>
                         </tbody>
@@ -170,7 +183,7 @@
                         <li>
                         POST:
                         <ul>
-                            <li><a href="#051f49ab-33b0-46d0-bdf5-202b3d5c62c7">POST Change Data Import</a></li>
+                            <li><a href="#2ac493fe-cf37-46b3-b5c9-cfeee2c16629">POST Revert Import File</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -179,14 +192,7 @@
                     This service uses the following resources:
                     </p>
                     <ul>
-                        <li><a href="#ImportInfoResource">ImportInfoResource</a></li>
-                    </ul>
-                    <h2>All Enumerations</h2>
-                    <p>
-                    This service uses the following enumerations:
-                    </p>
-                    <ul>
-                        <li><a href="#ImportDataState">ImportDataState</a></li>
+                        <li><a href="#RevertImport">RevertImport</a></li>
                     </ul>
                 </div>
             </div>
@@ -198,16 +204,16 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="051f49ab-33b0-46d0-bdf5-202b3d5c62c7"></a>
-                    <h3>POST Change Data Import <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-051f49ab-33b0-46d0-bdf5-202b3d5c62c7"></i></h3>
-                    <div class="hidden-copylink" id="copy-051f49ab-33b0-46d0-bdf5-202b3d5c62c7"><a href="#051f49ab-33b0-46d0-bdf5-202b3d5c62c7">POST Change Data Import</a></div>
-                    <p class="operation-description">Custom operation 'ChangeDataImport'.</p>
+                    <a class="anchor" name="2ac493fe-cf37-46b3-b5c9-cfeee2c16629"></a>
+                    <h3>POST Revert Import File <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2ac493fe-cf37-46b3-b5c9-cfeee2c16629"></i></h3>
+                    <div class="hidden-copylink" id="copy-2ac493fe-cf37-46b3-b5c9-cfeee2c16629"><a href="#2ac493fe-cf37-46b3-b5c9-cfeee2c16629">POST Revert Import File</a></div>
+                    <p class="operation-description">Custom operation 'RevertImportFile'.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">importData</td>
-                                <td><i>(ImportInfoResource)</i> ImportData This is a query string parameter.</td>
+                                <td class="highlighted">templateKey</td>
+                                <td><i>(string)</i> TemplateKey This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -216,17 +222,17 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>When successful, the response body is empty.</td>
+                                <td>When successful, the response body contains a resource of type 'RevertImport'. See <a href="#RevertImport">RevertImport.</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-051f49ab-33b0-46d0-bdf5-202b3d5c62c7">api/{tenantKey}/{orgKey}/corePatterns/importDataInfos/changeDataImport?importData={importData}</div>
+                    <div class="hidden-copylink" id="copy2-2ac493fe-cf37-46b3-b5c9-cfeee2c16629">api/{tenantKey}/{orgKey}/corePatterns/importDataInfos/revertImportFile?templateKey={templateKey}</div>
                     <div class="resource-url">
-                        <div class="inner-resource-url"><div>POST /corePatterns/importDataInfos/changeDataImport?importData={importData}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-051f49ab-33b0-46d0-bdf5-202b3d5c62c7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="inner-resource-url"><div>POST /corePatterns/importDataInfos/revertImportFile?templateKey={templateKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2ac493fe-cf37-46b3-b5c9-cfeee2c16629"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -234,94 +240,26 @@
                 <div class="content-section-col1">
                     <h2>Resources</h2>
                     <br />
-                    <a class="anchor" name="ImportInfoResource"></a>
-                    <h4>ImportInfoResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ImportInfoResource"></i></h4>
-                    <div class="hidden-copylink" id="copy-ImportInfoResource"><a href="#ImportInfoResource">ImportInfoResource</a></div>
-                    <p>The following elements are optional:</p>
+                    <a class="anchor" name="RevertImport"></a>
+                    <h4>RevertImport <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-RevertImport"></i></h4>
+                    <div class="hidden-copylink" id="copy-RevertImport"><a href="#RevertImport">RevertImport</a></div>
+	
+                    <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">importId</td>
-                                <td  class="wrap"><i>(Guid)</i> The import data's identifier.</td>
+                                <td class="highlighted">reverted</td>
+                                <td  class="wrap"><i>(bool)</i> Reverted.
+									</td>
                             </tr>
 
                             <tr>
-                                <td class="highlighted">tenant</td>
-                                <td  class="wrap"><i>(string)</i> The tenant.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">subscription</td>
-                                <td  class="wrap"><i>(string)</i> The subscription.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">importDataState</td>
-                                <td  class="wrap"><i>(enum ImportDataState)</i> The import data's state.<br/>See <a href="#ImportDataState">ImportDataState.</a></td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">azureFileName</td>
-                                <td  class="wrap"><i>(string)</i> The azure file's name.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">detailLog</td>
-                                <td  class="wrap"><i>(string)</i> The detail's log.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">error</td>
-                                <td  class="wrap"><i>(string)</i> The error.</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">drillDownOperation</td>
-                                <td  class="wrap"><i>(string)</i> Drill Down Operation.</td>
+                                <td class="highlighted">message</td>
+                                <td  class="wrap"><i>(string)</i> Message.
+									</td>
                             </tr>
 
 
-                        </tbody>
-                    </table>
-
-                    <br />
-                    <br />
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <h2>Enumerations</h2>
-                    <br />
-                    <a class="anchor" name="ImportDataState"></a>
-                    <h4>ImportDataState <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ImportDataState"></i></i></h4>
-                    <div class="hidden-copylink" id="copy-ImportDataState"><a href="#ImportDataState">ImportDataState</a></div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">1</td>
-                                <td>Pending</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">2</td>
-                                <td>Processing</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">3</td>
-                                <td>Succeeded</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">4</td>
-                                <td>Failed</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">5</td>
-                                <td>Fatal</td>
-                                <td></td>
-                            </tr>
                         </tbody>
                     </table>
 
