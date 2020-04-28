@@ -1,0 +1,2016 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Entity Attribute</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="identity.accessgroups.html">
+        Access Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.clientsettings.html">
+        Client Setting
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem menu-item-selected" href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Entity Attribute</h1>
+                    <p>
+                    Service to manage entities of type 'SchemaAttribute'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-corepatterns-schemaattributes"></i></td>
+                                <div class="hidden-copylink" id="copy-corepatterns-schemaattributes">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#5dcf7d17-dcdd-42d9-ae8a-ebb94cd7ef91">GET SchemaAttributes</a></li>
+                            <li><a href="#f750abb4-d6d3-40dc-a95f-04c5a8568834">GET SchemaAttributes (paged)</a></li>
+                            <li><a href="#b49930cc-65bf-4e51-984e-e49b5d24d7aa">GET SchemaAttribute by identifier</a></li>
+                            <li><a href="#f393092c-f6c7-4313-b5e9-29ebfca0ea6c">GET SchemaAttribute by key</a></li>
+                            <li><a href="#c93df18c-1f87-4786-a357-7f8cc2a6530e">GET Print SchemaAttribute by identifier</a></li>
+                            <li><a href="#acfb3d4c-009f-4c28-b142-f33548b4200c">GET Print SchemaAttribute by key</a></li>
+                            <li><a href="#b7edced2-ad46-4abb-ba73-9131250d7104">GET Original Print SchemaAttributeOriginal by identifier</a></li>
+                            <li><a href="#2e3ad01b-2806-477e-acff-8e50a4810b6d">GET Original Print SchemaAttribute by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#321f7691-96f5-46fc-81a2-14ea8f9c8170">POST CustomSchemaAttributes</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#b8aff47d-3e32-45ba-ae4c-7426436385df">PUT Set IsActive SchemaAttribute</a></li>
+                            <li><a href="#5f0fb590-83d0-46aa-9b89-f5ee69d455ff">PUT Set Key SchemaAttribute</a></li>
+                            <li><a href="#7e5cae89-8c0d-42b7-b351-2848afe25065">PUT Set Visible SchemaAttribute</a></li>
+                            <li><a href="#7ecf7e64-ef69-419f-9bcc-1dc7df3095c4">PUT Set AttributeType SchemaAttribute</a></li>
+                            <li><a href="#936fc081-7643-4174-a6cf-e091f0b23747">PUT Set IsRequired SchemaAttribute</a></li>
+                            <li><a href="#d1138308-3e0c-4548-b771-dc9202b0937d">PUT Set SchemaEntity SchemaAttribute</a></li>
+                            <li><a href="#5cae0686-d0ee-4e57-9484-d53f11653074">PUT Set Label SchemaAttribute</a></li>
+                            <li><a href="#f67ae796-fae9-43c9-8a7f-a2ee7a08b2e2">PUT Set DefaultValue SchemaAttribute</a></li>
+                            <li><a href="#c3013240-e3ec-4bde-8811-362fdb602f20">PUT Set ValidationRules SchemaAttribute</a></li>
+                            <li><a href="#ced4d668-d2bd-43a6-9b3c-931e8b99660b">PUT Set AttributeTypeOptions SchemaAttribute</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#4a81615a-8f6f-4396-b3b4-220c0308f46e">DELETE SchemaAttribute by identifier</a></li>
+                            <li><a href="#48cd117c-5cd8-4deb-bf80-0120c5def35b">DELETE SchemaAttribute by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiCustomSchemaAttributeResource">ApiCustomSchemaAttributeResource</a></li>
+                        <li><a href="#CustomSchemaAttributeResource">CustomSchemaAttributeResource</a></li>
+                        <li><a href="#DecimalAttributeTypeOptions">DecimalAttributeTypeOptions</a></li>
+                        <li><a href="#DefaultValue">DefaultValue</a></li>
+                        <li><a href="#LongTextAttributeTypeOptions">LongTextAttributeTypeOptions</a></li>
+                        <li><a href="#ShortTextAttributeTypeOptions">ShortTextAttributeTypeOptions</a></li>
+                        <li><a href="#TextAttributeTypeOptions">TextAttributeTypeOptions</a></li>
+                        <li><a href="#ValidationRules">ValidationRules</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5dcf7d17-dcdd-42d9-ae8a-ebb94cd7ef91"></a>
+                    <h3>GET SchemaAttributes <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5dcf7d17-dcdd-42d9-ae8a-ebb94cd7ef91"></i></h3>
+                    <div class="hidden-copylink" id="copy-5dcf7d17-dcdd-42d9-ae8a-ebb94cd7ef91"><a href="#5dcf7d17-dcdd-42d9-ae8a-ebb94cd7ef91">GET SchemaAttributes</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#SchemaAttributeResource">SchemaAttributeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5dcf7d17-dcdd-42d9-ae8a-ebb94cd7ef91">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5dcf7d17-dcdd-42d9-ae8a-ebb94cd7ef91"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f750abb4-d6d3-40dc-a95f-04c5a8568834"></a>
+                    <h3>GET SchemaAttributes (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f750abb4-d6d3-40dc-a95f-04c5a8568834"></i></h3>
+                    <div class="hidden-copylink" id="copy-f750abb4-d6d3-40dc-a95f-04c5a8568834"><a href="#f750abb4-d6d3-40dc-a95f-04c5a8568834">GET SchemaAttributes (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#SchemaAttributeResource">SchemaAttributeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f750abb4-d6d3-40dc-a95f-04c5a8568834">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f750abb4-d6d3-40dc-a95f-04c5a8568834"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b49930cc-65bf-4e51-984e-e49b5d24d7aa"></a>
+                    <h3>GET SchemaAttribute by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b49930cc-65bf-4e51-984e-e49b5d24d7aa"></i></h3>
+                    <div class="hidden-copylink" id="copy-b49930cc-65bf-4e51-984e-e49b5d24d7aa"><a href="#b49930cc-65bf-4e51-984e-e49b5d24d7aa">GET SchemaAttribute by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#SchemaAttributeResource">SchemaAttributeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b49930cc-65bf-4e51-984e-e49b5d24d7aa">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b49930cc-65bf-4e51-984e-e49b5d24d7aa"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f393092c-f6c7-4313-b5e9-29ebfca0ea6c"></a>
+                    <h3>GET SchemaAttribute by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f393092c-f6c7-4313-b5e9-29ebfca0ea6c"></i></h3>
+                    <div class="hidden-copylink" id="copy-f393092c-f6c7-4313-b5e9-29ebfca0ea6c"><a href="#f393092c-f6c7-4313-b5e9-29ebfca0ea6c">GET SchemaAttribute by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#SchemaAttributeResource">SchemaAttributeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f393092c-f6c7-4313-b5e9-29ebfca0ea6c">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes/{schemaEntity}/{key}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f393092c-f6c7-4313-b5e9-29ebfca0ea6c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c93df18c-1f87-4786-a357-7f8cc2a6530e"></a>
+                    <h3>GET Print SchemaAttribute by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c93df18c-1f87-4786-a357-7f8cc2a6530e"></i></h3>
+                    <div class="hidden-copylink" id="copy-c93df18c-1f87-4786-a357-7f8cc2a6530e"><a href="#c93df18c-1f87-4786-a357-7f8cc2a6530e">GET Print SchemaAttribute by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c93df18c-1f87-4786-a357-7f8cc2a6530e">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{id}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c93df18c-1f87-4786-a357-7f8cc2a6530e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="acfb3d4c-009f-4c28-b142-f33548b4200c"></a>
+                    <h3>GET Print SchemaAttribute by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-acfb3d4c-009f-4c28-b142-f33548b4200c"></i></h3>
+                    <div class="hidden-copylink" id="copy-acfb3d4c-009f-4c28-b142-f33548b4200c"><a href="#acfb3d4c-009f-4c28-b142-f33548b4200c">GET Print SchemaAttribute by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-acfb3d4c-009f-4c28-b142-f33548b4200c">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes/{schemaEntity}/{key}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-acfb3d4c-009f-4c28-b142-f33548b4200c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b7edced2-ad46-4abb-ba73-9131250d7104"></a>
+                    <h3>GET Original Print SchemaAttributeOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b7edced2-ad46-4abb-ba73-9131250d7104"></i></h3>
+                    <div class="hidden-copylink" id="copy-b7edced2-ad46-4abb-ba73-9131250d7104"><a href="#b7edced2-ad46-4abb-ba73-9131250d7104">GET Original Print SchemaAttributeOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b7edced2-ad46-4abb-ba73-9131250d7104">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{id}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes/{id}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b7edced2-ad46-4abb-ba73-9131250d7104"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2e3ad01b-2806-477e-acff-8e50a4810b6d"></a>
+                    <h3>GET Original Print SchemaAttribute by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2e3ad01b-2806-477e-acff-8e50a4810b6d"></i></h3>
+                    <div class="hidden-copylink" id="copy-2e3ad01b-2806-477e-acff-8e50a4810b6d"><a href="#2e3ad01b-2806-477e-acff-8e50a4810b6d">GET Original Print SchemaAttribute by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-2e3ad01b-2806-477e-acff-8e50a4810b6d">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaAttributes/{schemaEntity}/{key}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2e3ad01b-2806-477e-acff-8e50a4810b6d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="321f7691-96f5-46fc-81a2-14ea8f9c8170"></a>
+                    <h3>POST CustomSchemaAttributes <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-321f7691-96f5-46fc-81a2-14ea8f9c8170"></i></h3>
+                    <div class="hidden-copylink" id="copy-321f7691-96f5-46fc-81a2-14ea8f9c8170"><a href="#321f7691-96f5-46fc-81a2-14ea8f9c8170">POST CustomSchemaAttributes</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaAttributeResource</td>
+                                <td><i>(ApiCustomSchemaAttributeResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiCustomSchemaAttributeResource">ApiCustomSchemaAttributeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiCustomSchemaAttributeResource">ApiCustomSchemaAttributeResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-321f7691-96f5-46fc-81a2-14ea8f9c8170">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/schemaAttributes</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-321f7691-96f5-46fc-81a2-14ea8f9c8170"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7ecf7e64-ef69-419f-9bcc-1dc7df3095c4"></a>
+                    <h3>PUT Set AttributeType SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7ecf7e64-ef69-419f-9bcc-1dc7df3095c4"></i></h3>
+                    <div class="hidden-copylink" id="copy-7ecf7e64-ef69-419f-9bcc-1dc7df3095c4"><a href="#7ecf7e64-ef69-419f-9bcc-1dc7df3095c4">PUT Set AttributeType SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'AttributeType' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7ecf7e64-ef69-419f-9bcc-1dc7df3095c4">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/attributeType</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/attributeType</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7ecf7e64-ef69-419f-9bcc-1dc7df3095c4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ced4d668-d2bd-43a6-9b3c-931e8b99660b"></a>
+                    <h3>PUT Set AttributeTypeOptions SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ced4d668-d2bd-43a6-9b3c-931e8b99660b"></i></h3>
+                    <div class="hidden-copylink" id="copy-ced4d668-d2bd-43a6-9b3c-931e8b99660b"><a href="#ced4d668-d2bd-43a6-9b3c-931e8b99660b">PUT Set AttributeTypeOptions SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'AttributeTypeOptions' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Dictionary<string, object>)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-ced4d668-d2bd-43a6-9b3c-931e8b99660b">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/attributeTypeOptions</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/attributeTypeOptions</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ced4d668-d2bd-43a6-9b3c-931e8b99660b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f67ae796-fae9-43c9-8a7f-a2ee7a08b2e2"></a>
+                    <h3>PUT Set DefaultValue SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f67ae796-fae9-43c9-8a7f-a2ee7a08b2e2"></i></h3>
+                    <div class="hidden-copylink" id="copy-f67ae796-fae9-43c9-8a7f-a2ee7a08b2e2"><a href="#f67ae796-fae9-43c9-8a7f-a2ee7a08b2e2">PUT Set DefaultValue SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'DefaultValue' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(object)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f67ae796-fae9-43c9-8a7f-a2ee7a08b2e2">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/defaultValue</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/defaultValue</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f67ae796-fae9-43c9-8a7f-a2ee7a08b2e2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b8aff47d-3e32-45ba-ae4c-7426436385df"></a>
+                    <h3>PUT Set IsActive SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b8aff47d-3e32-45ba-ae4c-7426436385df"></i></h3>
+                    <div class="hidden-copylink" id="copy-b8aff47d-3e32-45ba-ae4c-7426436385df"><a href="#b8aff47d-3e32-45ba-ae4c-7426436385df">PUT Set IsActive SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b8aff47d-3e32-45ba-ae4c-7426436385df">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b8aff47d-3e32-45ba-ae4c-7426436385df"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="936fc081-7643-4174-a6cf-e091f0b23747"></a>
+                    <h3>PUT Set IsRequired SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-936fc081-7643-4174-a6cf-e091f0b23747"></i></h3>
+                    <div class="hidden-copylink" id="copy-936fc081-7643-4174-a6cf-e091f0b23747"><a href="#936fc081-7643-4174-a6cf-e091f0b23747">PUT Set IsRequired SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsRequired' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-936fc081-7643-4174-a6cf-e091f0b23747">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/isRequired</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/isRequired</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-936fc081-7643-4174-a6cf-e091f0b23747"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5f0fb590-83d0-46aa-9b89-f5ee69d455ff"></a>
+                    <h3>PUT Set Key SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5f0fb590-83d0-46aa-9b89-f5ee69d455ff"></i></h3>
+                    <div class="hidden-copylink" id="copy-5f0fb590-83d0-46aa-9b89-f5ee69d455ff"><a href="#5f0fb590-83d0-46aa-9b89-f5ee69d455ff">PUT Set Key SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Key' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5f0fb590-83d0-46aa-9b89-f5ee69d455ff">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/key</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/key</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5f0fb590-83d0-46aa-9b89-f5ee69d455ff"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5cae0686-d0ee-4e57-9484-d53f11653074"></a>
+                    <h3>PUT Set Label SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5cae0686-d0ee-4e57-9484-d53f11653074"></i></h3>
+                    <div class="hidden-copylink" id="copy-5cae0686-d0ee-4e57-9484-d53f11653074"><a href="#5cae0686-d0ee-4e57-9484-d53f11653074">PUT Set Label SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Label' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5cae0686-d0ee-4e57-9484-d53f11653074">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/label</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/label</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5cae0686-d0ee-4e57-9484-d53f11653074"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d1138308-3e0c-4548-b771-dc9202b0937d"></a>
+                    <h3>PUT Set SchemaEntity SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d1138308-3e0c-4548-b771-dc9202b0937d"></i></h3>
+                    <div class="hidden-copylink" id="copy-d1138308-3e0c-4548-b771-dc9202b0937d"><a href="#d1138308-3e0c-4548-b771-dc9202b0937d">PUT Set SchemaEntity SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'SchemaEntity' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d1138308-3e0c-4548-b771-dc9202b0937d">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/schemaEntity</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/schemaEntity</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d1138308-3e0c-4548-b771-dc9202b0937d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c3013240-e3ec-4bde-8811-362fdb602f20"></a>
+                    <h3>PUT Set ValidationRules SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c3013240-e3ec-4bde-8811-362fdb602f20"></i></h3>
+                    <div class="hidden-copylink" id="copy-c3013240-e3ec-4bde-8811-362fdb602f20"><a href="#c3013240-e3ec-4bde-8811-362fdb602f20">PUT Set ValidationRules SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ValidationRules' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(Dictionary<string, object>)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c3013240-e3ec-4bde-8811-362fdb602f20">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/validationRules</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/validationRules</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c3013240-e3ec-4bde-8811-362fdb602f20"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7e5cae89-8c0d-42b7-b351-2848afe25065"></a>
+                    <h3>PUT Set Visible SchemaAttribute <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7e5cae89-8c0d-42b7-b351-2848afe25065"></i></h3>
+                    <div class="hidden-copylink" id="copy-7e5cae89-8c0d-42b7-b351-2848afe25065"><a href="#7e5cae89-8c0d-42b7-b351-2848afe25065">PUT Set Visible SchemaAttribute</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Visible' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7e5cae89-8c0d-42b7-b351-2848afe25065">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}/visible</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaAttributes/{schemaEntity}/{key}/visible</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7e5cae89-8c0d-42b7-b351-2848afe25065"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4a81615a-8f6f-4396-b3b4-220c0308f46e"></a>
+                    <h3>DELETE SchemaAttribute by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4a81615a-8f6f-4396-b3b4-220c0308f46e"></i></h3>
+                    <div class="hidden-copylink" id="copy-4a81615a-8f6f-4396-b3b4-220c0308f46e"><a href="#4a81615a-8f6f-4396-b3b4-220c0308f46e">DELETE SchemaAttribute by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-4a81615a-8f6f-4396-b3b4-220c0308f46e">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/schemaAttributes/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4a81615a-8f6f-4396-b3b4-220c0308f46e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="48cd117c-5cd8-4deb-bf80-0120c5def35b"></a>
+                    <h3>DELETE SchemaAttribute by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-48cd117c-5cd8-4deb-bf80-0120c5def35b"></i></h3>
+                    <div class="hidden-copylink" id="copy-48cd117c-5cd8-4deb-bf80-0120c5def35b"><a href="#48cd117c-5cd8-4deb-bf80-0120c5def35b">DELETE SchemaAttribute by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Attribute Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-48cd117c-5cd8-4deb-bf80-0120c5def35b">api/{tenantKey}/{orgKey}/corePatterns/schemaAttributes/{schemaEntity}/{key}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/schemaAttributes/{schemaEntity}/{key}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-48cd117c-5cd8-4deb-bf80-0120c5def35b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiCustomSchemaAttributeResource"></a>
+                    <h4>ApiCustomSchemaAttributeResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiCustomSchemaAttributeResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiCustomSchemaAttributeResource"><a href="#ApiCustomSchemaAttributeResource">ApiCustomSchemaAttributeResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Attribute Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">visible</td>
+                                <td  class="wrap"><i>(bool)</i> Visible.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">label</td>
+                                <td  class="wrap"><i>(string)</i> Label.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">attributeType</td>
+                                <td  class="wrap"><i>(string)</i> Attribute Type.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isRequired</td>
+                                <td  class="wrap"><i>(bool)</i> Is Required.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">attributeTypeOptions</td>
+                                <td title="(ShortTextAttributeTypeOptions|TextAttributeTypeOptions|LongTextAttributeTypeOptions|DecimalAttributeTypeOptions) The attribute type options. (Supported for Decimal, ShortText, Text and LongText attribute types). See ShortTextAttributeTypeOptions|TextAttributeTypeOptions|LongTextAttributeTypeOptions|DecimalAttributeTypeOptions." class="wrap"><i>(ShortTextAttributeTypeOptions|TextAttributeTypeOptions|LongTextAttributeTypeOptions|DecimalAttributeTypeOptions)</i> The attribute type options. (Supported for Decimal, ShortText, Text and LongText attribute types).
+												<br/>See 
+													<a href="#ShortTextAttributeTypeOptions">ShortTextAttributeTypeOptions</a>
+														,
+													<a href="#TextAttributeTypeOptions">TextAttributeTypeOptions</a>
+														,
+													<a href="#LongTextAttributeTypeOptions">LongTextAttributeTypeOptions</a>
+														,
+													<a href="#DecimalAttributeTypeOptions">DecimalAttributeTypeOptions</a>
+														.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">validationRules</td>
+                                <td  class="wrap"><i>(ValidationRules)</i> The validation rules.
+												<br/>See 
+													<a href="#ValidationRules">ValidationRules</a>
+														.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">defaultValue</td>
+                                <td  class="wrap"><i>(DefaultValue)</i> The default value.
+												<br/>See 
+													<a href="#DefaultValue">DefaultValue</a>
+														.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="CustomSchemaAttributeResource"></a>
+                    <h4>CustomSchemaAttributeResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-CustomSchemaAttributeResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-CustomSchemaAttributeResource"><a href="#CustomSchemaAttributeResource">CustomSchemaAttributeResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaEntity. These records are accessibly through the <a href="corepatterns.schemaentities.html">SchemaEntities</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Attribute Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">visible</td>
+                                <td  class="wrap"><i>(bool)</i> Visible.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cloneable</td>
+                                <td  class="wrap"><i>(bool)</i> Cloneable.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isPersonalData</td>
+                                <td  class="wrap"><i>(bool)</i> Is Personal Data.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isCustomAttribute</td>
+                                <td  class="wrap"><i>(bool)</i> Is Custom Attribute.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">attributeType</td>
+                                <td  class="wrap"><i>(string)</i> Attribute Type.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isNaturalKey</td>
+                                <td  class="wrap"><i>(bool)</i> Is Natural Key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isDescription</td>
+                                <td  class="wrap"><i>(bool)</i> Is Description.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">labelResourceKey</td>
+                                <td  class="wrap"><i>(string)</i> Label Resource Key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isRequired</td>
+                                <td  class="wrap"><i>(bool)</i> Is Required.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">lookupEntity</td>
+                                <td  class="wrap"><i>(string)</i> Lookup Entity.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaEntity. These records are accessibly through the <a href="corepatterns.schemaentities.html">SchemaEntities</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">defaultValue</td>
+                                <td  class="wrap"><i>(string)</i> Default Value.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">persisted</td>
+                                <td  class="wrap"><i>(bool)</i> Persisted.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isInternal</td>
+                                <td  class="wrap"><i>(bool)</i> Internal.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isSystemBase</td>
+                                <td  class="wrap"><i>(bool)</i> System Base.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isSequenceManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Is Sequence Managed.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">localizable</td>
+                                <td  class="wrap"><i>(bool)</i> Localizable.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">customAttributeDefinition</td>
+                                <td  class="wrap"><i>(string)</i> Custom Attribute Definition.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">label</td>
+                                <td  class="wrap"><i>(string)</i> Label.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">attributeTypeOptions</td>
+                                <td title="(ShortTextAttributeTypeOptions|TextAttributeTypeOptions|LongTextAttributeTypeOptions|DecimalAttributeTypeOptions) The attribute type options. (Supported for Decimal, ShortText, Text and LongText attribute types). See ShortTextAttributeTypeOptions|TextAttributeTypeOptions|LongTextAttributeTypeOptions|DecimalAttributeTypeOptions." class="wrap"><i>(ShortTextAttributeTypeOptions|TextAttributeTypeOptions|LongTextAttributeTypeOptions|DecimalAttributeTypeOptions)</i> The attribute type options. (Supported for Decimal, ShortText, Text and LongText attribute types).
+												<br/>See 
+													<a href="#ShortTextAttributeTypeOptions">ShortTextAttributeTypeOptions</a>
+														,
+													<a href="#TextAttributeTypeOptions">TextAttributeTypeOptions</a>
+														,
+													<a href="#LongTextAttributeTypeOptions">LongTextAttributeTypeOptions</a>
+														,
+													<a href="#DecimalAttributeTypeOptions">DecimalAttributeTypeOptions</a>
+														.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">validationRules</td>
+                                <td  class="wrap"><i>(ValidationRules)</i> The validation rules.
+												<br/>See 
+													<a href="#ValidationRules">ValidationRules</a>
+														.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">defaultValue</td>
+                                <td  class="wrap"><i>(DefaultValue)</i> The default value.
+												<br/>See 
+													<a href="#DefaultValue">DefaultValue</a>
+														.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="DecimalAttributeTypeOptions"></a>
+                    <h4>DecimalAttributeTypeOptions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-DecimalAttributeTypeOptions"></i></h4>
+                    <div class="hidden-copylink" id="copy-DecimalAttributeTypeOptions"><a href="#DecimalAttributeTypeOptions">DecimalAttributeTypeOptions</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">decimalPlaces</td>
+                                <td  class="wrap"><i>(int)</i> Number of decimal places.<br>This attribute is only supported if the attributeType is "Decimal".<br>Example: "decimalPlaces": 2.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="DefaultValue"></a>
+                    <h4>DefaultValue <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-DefaultValue"></i></h4>
+                    <div class="hidden-copylink" id="copy-DefaultValue"><a href="#DefaultValue">DefaultValue</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">defaultValue</td>
+                                <td  class="wrap"><i>(object)</i> The default value.<br>Supported values:<br>If attributeType is "ShortText", "Text", "LongText", "Memo", "URL", "Phone" or "Email": The default value is string.<br>If attributeType is "Boolean": The default value is a boolean true or false.<br>If attributeType is "Number": The default value is a int.<br>If attributeType is "Decimal" or "Percentage": The default value is a decimal.<br>If attributeType is "Date": The default value is a string "None" or "Today".<br>If attributeType is "DateTime": The default value is a string "None" or "Now".<br><b>Example:</b> "defaultValue": 100.00.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="LongTextAttributeTypeOptions"></a>
+                    <h4>LongTextAttributeTypeOptions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-LongTextAttributeTypeOptions"></i></h4>
+                    <div class="hidden-copylink" id="copy-LongTextAttributeTypeOptions"><a href="#LongTextAttributeTypeOptions">LongTextAttributeTypeOptions</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">serviceUrl</td>
+                                <td  class="wrap"><i>(string)</i> The service URL (Requires https and json format). <br>
+		This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>			
+		Supported variable subtitution are:<br><ul>
+			<li>"{model.[attrName]}": Model attribute variable subtitution where attrName is a supported model attribute name</li>
+			<li>"{appContext.tenantKey}": Application context tenant key</li>
+			<li>"{appContext.organizationKey}": Application context organization key</li>
+			<li>"{value}": the text typed in the typeahead control</li>
+			<li>"{api}": Replaced by api/{appContext.tenantKey}/{appContext.organizationKey}</li>
+			<li>"{app}": Replaced by app/{appContext.tenantKey}/{appContext.organizationKey}</li></ul><br>
+		Examples: <br>
+			"serviceUrl": http://restcountries.eu/rest/v2/name/$value$<br>
+				"serviceUrl": /api/$appContext.tenantKey$/$appContext.organizationKey$/salesCore/customerParties/odata?$select=Name,PartyKey&$filter=substringof('$value$',PartyKey).
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">jsonPath</td>
+                                <td  class="wrap"><i>(string)</i> The json path to locate the item list to be used for typeahead.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "jsonPath": $.items[*].
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">valueAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The json key to match the attribute to be used as value.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "valueAttributeName": myKey.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">includeHeaders</td>
+                                <td  class="wrap"><i>(boolean)</i> Indicates if the http application headers should be used on service invocation. Useful for internal services.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "includeHeaders": true.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">restrictValue</td>
+                                <td  class="wrap"><i>(boolean)</i> Indicates that the selected value must exist in the service returned items.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "restrictValue": true.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">fieldType</td>
+                                <td  class="wrap"><i>(string)</i> The field Type (only avalaible for "ShortText", "Text" and "LongText" attribute types).<br>Supported values: "Normal" or "WebServiceTypeahead".<br><b>Example:</b> "fieldType": "Normal".
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">descriptionAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The json key to match the attribute to be used as description.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "descriptionAttributeName": myKey.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ShortTextAttributeTypeOptions"></a>
+                    <h4>ShortTextAttributeTypeOptions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ShortTextAttributeTypeOptions"></i></h4>
+                    <div class="hidden-copylink" id="copy-ShortTextAttributeTypeOptions"><a href="#ShortTextAttributeTypeOptions">ShortTextAttributeTypeOptions</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">serviceUrl</td>
+                                <td  class="wrap"><i>(string)</i> The service URL (Requires https and json format). <br>
+		This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>			
+		Supported variable subtitution are:<br><ul>
+			<li>"{model.[attrName]}": Model attribute variable subtitution where attrName is a supported model attribute name</li>
+			<li>"{appContext.tenantKey}": Application context tenant key</li>
+			<li>"{appContext.organizationKey}": Application context organization key</li>
+			<li>"{value}": the text typed in the typeahead control</li>
+			<li>"{api}": Replaced by api/{appContext.tenantKey}/{appContext.organizationKey}</li>
+			<li>"{app}": Replaced by app/{appContext.tenantKey}/{appContext.organizationKey}</li></ul><br>
+		Examples: <br>
+			"serviceUrl": http://restcountries.eu/rest/v2/name/$value$<br>
+				"serviceUrl": /api/$appContext.tenantKey$/$appContext.organizationKey$/salesCore/customerParties/odata?$select=Name,PartyKey&$filter=substringof('$value$',PartyKey).
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">jsonPath</td>
+                                <td  class="wrap"><i>(string)</i> The json path to locate the item list to be used for typeahead.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "jsonPath": $.items[*].
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">valueAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The json key to match the attribute to be used as value.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "valueAttributeName": myKey.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">includeHeaders</td>
+                                <td  class="wrap"><i>(boolean)</i> Indicates if the http application headers should be used on service invocation. Useful for internal services.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "includeHeaders": true.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">restrictValue</td>
+                                <td  class="wrap"><i>(boolean)</i> Indicates that the selected value must exist in the service returned items.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "restrictValue": true.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">fieldType</td>
+                                <td  class="wrap"><i>(string)</i> The field Type (only avalaible for "ShortText", "Text" and "LongText" attribute types).<br>Supported values: "Normal" or "WebServiceTypeahead".<br><b>Example:</b> "fieldType": "Normal".
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">descriptionAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The json key to match the attribute to be used as description.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "descriptionAttributeName": myKey.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="TextAttributeTypeOptions"></a>
+                    <h4>TextAttributeTypeOptions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-TextAttributeTypeOptions"></i></h4>
+                    <div class="hidden-copylink" id="copy-TextAttributeTypeOptions"><a href="#TextAttributeTypeOptions">TextAttributeTypeOptions</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">serviceUrl</td>
+                                <td  class="wrap"><i>(string)</i> The service URL (Requires https and json format). <br>
+		This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>			
+		Supported variable subtitution are:<br><ul>
+			<li>"{model.[attrName]}": Model attribute variable subtitution where attrName is a supported model attribute name</li>
+			<li>"{appContext.tenantKey}": Application context tenant key</li>
+			<li>"{appContext.organizationKey}": Application context organization key</li>
+			<li>"{value}": the text typed in the typeahead control</li>
+			<li>"{api}": Replaced by api/{appContext.tenantKey}/{appContext.organizationKey}</li>
+			<li>"{app}": Replaced by app/{appContext.tenantKey}/{appContext.organizationKey}</li></ul><br>
+		Examples: <br>
+			"serviceUrl": http://restcountries.eu/rest/v2/name/$value$<br>
+				"serviceUrl": /api/$appContext.tenantKey$/$appContext.organizationKey$/salesCore/customerParties/odata?$select=Name,PartyKey&$filter=substringof('$value$',PartyKey).
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">jsonPath</td>
+                                <td  class="wrap"><i>(string)</i> The json path to locate the item list to be used for typeahead.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "jsonPath": $.items[*].
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">valueAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The json key to match the attribute to be used as value.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "valueAttributeName": myKey.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">includeHeaders</td>
+                                <td  class="wrap"><i>(boolean)</i> Indicates if the http application headers should be used on service invocation. Useful for internal services.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "includeHeaders": true.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">restrictValue</td>
+                                <td  class="wrap"><i>(boolean)</i> Indicates that the selected value must exist in the service returned items.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "restrictValue": true.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">fieldType</td>
+                                <td  class="wrap"><i>(string)</i> The field Type (only avalaible for "ShortText", "Text" and "LongText" attribute types).<br>Supported values: "Normal" or "WebServiceTypeahead".<br><b>Example:</b> "fieldType": "Normal".
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">descriptionAttributeName</td>
+                                <td  class="wrap"><i>(string)</i> The json key to match the attribute to be used as description.<br>This attribute is only supported if the fieldType is "WebServiceTypeahead".<br>Example: "descriptionAttributeName": myKey.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ValidationRules"></a>
+                    <h4>ValidationRules <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ValidationRules"></i></h4>
+                    <div class="hidden-copylink" id="copy-ValidationRules"><a href="#ValidationRules">ValidationRules</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">format</td>
+                                <td  class="wrap"><i>(string)</i> The format type.<br>Supported values:<br>If attributeType is "ShortText", "Text", "LongText" or "Memo" the supported format is "None", "Pattern", "UpperCase", "LowerCase", "ValidCharacters" or "InvalidCharacters".<br>If attributeType is "Boolean", "Number", "Decimal", "Percentage", "Date" or "DateTime": Not supported.<br>If attributeType is "URL", "Phone" or "Email" the supported format is "None" or "Pattern".<br><b>Example:</b> "format": "Pattern".
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">regex</td>
+                                <td  class="wrap"><i>(string)</i> Regex to apply to custom attribute.<br>Required if format is "Pattern".<br><b>Example:</b> "regex": "^.*@Company.com$".
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">regexErrorMessage</td>
+                                <td  class="wrap"><i>(string)</i> Error message for regex.<br>Required if format is "Pattern".<br><b>Example:</b> "regexErrorMessage": "The value must end in @Company.com".
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">minimum</td>
+                                <td  class="wrap"><i>(int)</i> Minimum value.<br>Supported if attributeType is "ShortText", "Text", "LongText", "Memo", "Number", "Decimal" and "Percentage".<br>Not supported if attributeType is Boolean, Date, DateTime, URL, Phone or Email.<br><b>Example: </b>"minimum": 0.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">maximum</td>
+                                <td  class="wrap"><i>(int)</i> Maximum value.<br>Supported if attributeType is "ShortText", "Text", "LongText", "Memo", "Number", "Decimal" and "Percentage".<br>Not supported if attributeType is Boolean, Date, DateTime, URL, Phone or Email.<br><b>Example: </b>"maximum": 100.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

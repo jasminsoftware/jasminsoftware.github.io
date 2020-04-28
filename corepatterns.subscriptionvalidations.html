@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Subscription Validation</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="identity.accessgroups.html">
+        Access Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.clientsettings.html">
+        Client Setting
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem menu-item-selected" href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Subscription Validation</h1>
+                    <p>
+                    				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/corePatterns/subscriptionValidations  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-corepatterns-subscriptionvalidations"></i></td>
+                                <div class="hidden-copylink" id="copy-corepatterns-subscriptionvalidations">api/{tenantKey}/{orgKey}/corePatterns/subscriptionValidations</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#POST">POST</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#8a9b6634-e4a3-4c2f-9dca-cc2353879d04">POST Validate Subscription Item Addition</a></li>
+                            <li><a href="#aee65060-a181-4dd1-b5eb-899d56fcd514">POST Validate Subscription Item Removal</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8a9b6634-e4a3-4c2f-9dca-cc2353879d04"></a>
+                    <h3>POST Validate Subscription Item Addition <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8a9b6634-e4a3-4c2f-9dca-cc2353879d04"></i></h3>
+                    <div class="hidden-copylink" id="copy-8a9b6634-e4a3-4c2f-9dca-cc2353879d04"><a href="#8a9b6634-e4a3-4c2f-9dca-cc2353879d04">POST Validate Subscription Item Addition</a></div>
+                    <p class="operation-description">Custom operation 'ValidateSubscriptionItemAddition'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> ItemKey This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">oldQuantity</td>
+                                <td><i>(int)</i> OldQuantity This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">newQuantity</td>
+                                <td><i>(int)</i> NewQuantity This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains an item of type 'boolean'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8a9b6634-e4a3-4c2f-9dca-cc2353879d04">api/{tenantKey}/{orgKey}/corePatterns/subscriptionValidations/validateSubscriptionItemAddition/{itemKey}/{oldQuantity}/{newQuantity}?itemKey={itemKey}&amp;oldQuantity={oldQuantity}&amp;newQuantity={newQuantity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/subscriptionValidations/validateSubscriptionItemAddition/{itemKey}/{oldQuantity}/{newQuantity}?itemKey={itemKey}&amp;oldQuantity={oldQuantity}&amp;newQuantity={newQuantity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8a9b6634-e4a3-4c2f-9dca-cc2353879d04"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="aee65060-a181-4dd1-b5eb-899d56fcd514"></a>
+                    <h3>POST Validate Subscription Item Removal <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-aee65060-a181-4dd1-b5eb-899d56fcd514"></i></h3>
+                    <div class="hidden-copylink" id="copy-aee65060-a181-4dd1-b5eb-899d56fcd514"><a href="#aee65060-a181-4dd1-b5eb-899d56fcd514">POST Validate Subscription Item Removal</a></div>
+                    <p class="operation-description">Custom operation 'ValidateSubscriptionItemRemoval'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">itemKey</td>
+                                <td><i>(string)</i> ItemKey This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">oldQuantity</td>
+                                <td><i>(int)</i> OldQuantity This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">newQuantity</td>
+                                <td><i>(int)</i> NewQuantity This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains an item of type 'boolean'.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-aee65060-a181-4dd1-b5eb-899d56fcd514">api/{tenantKey}/{orgKey}/corePatterns/subscriptionValidations/validateSubscriptionItemRemoval/{itemKey}/{oldQuantity}/{newQuantity}?itemKey={itemKey}&amp;oldQuantity={oldQuantity}&amp;newQuantity={newQuantity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/subscriptionValidations/validateSubscriptionItemRemoval/{itemKey}/{oldQuantity}/{newQuantity}?itemKey={itemKey}&amp;oldQuantity={oldQuantity}&amp;newQuantity={newQuantity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-aee65060-a181-4dd1-b5eb-899d56fcd514"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>
