@@ -330,6 +330,12 @@
         kind : "resource",
     },
     {
+        url: "salescore.salesitems.html#ApiBaseSalesItemSalesChannelLinesResource",
+        description: "ApiBaseSalesItemSalesChannelLinesResource",
+        keywords : "ApiBaseSalesItemSalesChannelLinesResource",
+        kind : "resource",
+    },
+    {
         url: "salescore.salespersons.html#ApiBaseSalespersonResource",
         description: "ApiBaseSalespersonResource",
         keywords : "ApiBaseSalespersonResource",
@@ -2664,6 +2670,24 @@
         kind : "resource",
     },
     {
+        url: "salescore.salesitems.html#ApiSalesItemPriceListLinesResource",
+        description: "ApiSalesItemPriceListLinesResource",
+        keywords : "ApiSalesItemPriceListLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemPriceListLinesResource",
+        description: "ApiSalesItemPriceListLinesResource",
+        keywords : "ApiSalesItemPriceListLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemResource",
+        description: "ApiSalesItemResource",
+        keywords : "ApiSalesItemResource",
+        kind : "resource",
+    },
+    {
         url: "salescore.salesitems.html#ApiSalesItemResource",
         description: "ApiSalesItemResource",
         keywords : "ApiSalesItemResource",
@@ -2679,6 +2703,48 @@
         url: "salescore.salesitems.html#ApiSalesItemResource",
         description: "ApiSalesItemResource",
         keywords : "ApiSalesItemResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemResource",
+        description: "ApiSalesItemResource",
+        keywords : "ApiSalesItemResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemSalesChannelLinesResource",
+        description: "ApiSalesItemSalesChannelLinesResource",
+        keywords : "ApiSalesItemSalesChannelLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemSalesChannelLinesResource",
+        description: "ApiSalesItemSalesChannelLinesResource",
+        keywords : "ApiSalesItemSalesChannelLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemSalesChannelLinesResource",
+        description: "ApiSalesItemSalesChannelLinesResource",
+        keywords : "ApiSalesItemSalesChannelLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemSalesChannelLinesResource",
+        description: "ApiSalesItemSalesChannelLinesResource",
+        keywords : "ApiSalesItemSalesChannelLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemSalesChannelLinesResource",
+        description: "ApiSalesItemSalesChannelLinesResource",
+        keywords : "ApiSalesItemSalesChannelLinesResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#ApiSalesItemSalesChannelLinesResource",
+        description: "ApiSalesItemSalesChannelLinesResource",
+        keywords : "ApiSalesItemSalesChannelLinesResource",
         kind : "resource",
     },
     {
@@ -3138,6 +3204,12 @@
         kind : "resource",
     },
     {
+        url: "salescore.salesitems.html#BaseSalesItemSalesChannelLinesResource",
+        description: "BaseSalesItemSalesChannelLinesResource",
+        keywords : "BaseSalesItemSalesChannelLinesResource",
+        kind : "resource",
+    },
+    {
         url: "salescore.salespersons.html#BaseSalespersonResource",
         description: "BaseSalespersonResource",
         keywords : "BaseSalespersonResource",
@@ -3309,6 +3381,12 @@
         url: "financialcore.cashflowitems.html#CashFlowItemResource",
         description: "CashFlowItemResource",
         keywords : "CashFlowItemResource",
+        kind : "resource",
+    },
+    {
+        url: "salescore.salesitems.html#CatalogsItem",
+        description: "CatalogsItem",
+        keywords : "CatalogsItem",
         kind : "resource",
     },
     {
@@ -6568,6 +6646,12 @@
         description: "Sales | Summary Value",
         keywords : "Summary Value ",
         kind : "service",
+    },
+    {
+        url: "salescore.salesitems.html#SalesChannelLineResource",
+        description: "SalesChannelLineResource",
+        keywords : "SalesChannelLineResource",
+        kind : "resource",
     },
     {
         url: "salescore.saleschannels.html#SalesChannelResource",
