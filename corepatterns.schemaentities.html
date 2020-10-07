@@ -58,6 +58,9 @@
     <a class="menu-subitem " href="corepatterns.addresses.html">
         Address
     </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
     <a class="menu-subitem " href="corepatterns.clientsettings.html">
         Client Setting
     </a>
@@ -81,6 +84,9 @@
     </a>
     <a class="menu-subitem " href="corepatterns.currencies.html">
         Currency
+    </a>
+    <a class="menu-subitem " href="corepatterns.customentityrecords.html">
+        Custom Entity Record
     </a>
     <a class="menu-subitem " href="reporting.offlinereports.html">
         Data Report
@@ -139,6 +145,9 @@
     <a class="menu-subitem " href="corepatterns.unitdimensions.html">
         Unit Dimension
     </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
     <a class="menu-item" href="purchases.html">
         Purchases
     </a>
@@ -171,7 +180,7 @@
                             <tr>
                                 <td>Methods Supported</td>
 
-                                <td><a href="#GET">GET</a></td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -183,7 +192,38 @@
                         <li>
                         GET:
                         <ul>
-                            <li><a href="#c22ed49d-d250-46ca-a89f-c6200755b8d8">GET Schema Entities OData</a></li>
+                            <li><a href="#49ffc7cb-9244-4889-a05e-e6a6be7cd7dd">GET SchemaEntities</a></li>
+                            <li><a href="#46914a05-1bf4-40fa-9043-e92c10f04128">GET SchemaEntities (paged)</a></li>
+                            <li><a href="#b66010fa-d6e5-474e-8a02-0cb61c2d6dad">GET SchemaEntity by identifier</a></li>
+                            <li><a href="#c344df86-85ad-4d42-a312-30a1600e4c85">GET SchemaEntity by key</a></li>
+                            <li><a href="#b25d6132-69eb-4119-a187-e7e09150640c">GET Print SchemaEntity by identifier</a></li>
+                            <li><a href="#65954ff4-2ce2-4b21-b938-07fc2402600f">GET Print SchemaEntity by key</a></li>
+                            <li><a href="#75174c4f-d23a-41a0-8ca1-641da0b95113">GET Original Print SchemaEntityOriginal by identifier</a></li>
+                            <li><a href="#e4e90faa-4837-438c-ac38-7a4fc2ddc97d">GET Original Print SchemaEntity by key</a></li>
+                            <li><a href="#07752bb1-ab62-47fa-817f-d48dc9fa9096">GET Get Menus For Entity Async</a></li>
+                            <li><a href="#fdf7baea-9774-4a7f-93d0-78dd8dc38f23">GET Schema Entities OData</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#10c2618c-ea2b-418c-bb35-dabc869c4c3d">POST CustomEntities</a></li>
+                            <li><a href="#01277d43-3f1f-4cda-8ed9-41863b467c13">POST Process Menu For Entity Async</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#249963e3-9458-47a6-bb78-1ec26963179a">PUT Set IsActive SchemaEntity</a></li>
+                            <li><a href="#0907faf1-1c26-4502-8907-76cb569b502d">PUT Set Title SchemaEntity</a></li>
+                            <li><a href="#20ed6808-7263-4f7f-b82c-f4d0f3f1f158">PUT Set Remarks SchemaEntity</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#a2263608-e190-4f3b-ac67-6158db553a8c">DELETE SchemaEntity by identifier</a></li>
+                            <li><a href="#d63c6e02-18e6-44c4-9903-bb21e745bc8b">DELETE SchemaEntity by key</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -192,7 +232,20 @@
                     This service uses the following resources:
                     </p>
                     <ul>
+                        <li><a href="#ApiCustomEntityResource">ApiCustomEntityResource</a></li>
+                        <li><a href="#CustomEntityResource">CustomEntityResource</a></li>
                         <li><a href="#ExtensibilitySchemaEntityResource">ExtensibilitySchemaEntityResource</a></li>
+                        <li><a href="#MenuItemOperationResource">MenuItemOperationResource</a></li>
+                        <li><a href="#RootMenuResource">RootMenuResource</a></li>
+                        <li><a href="#SchemaEntitiesAssociationResource">SchemaEntitiesAssociationResource</a></li>
+                        <li><a href="#SchemaEntityPatternResource">SchemaEntityPatternResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#SchemaEntityType">SchemaEntityType</a></li>
                     </ul>
                 </div>
             </div>
@@ -204,9 +257,494 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="c22ed49d-d250-46ca-a89f-c6200755b8d8"></a>
-                    <h3>GET Schema Entities OData <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c22ed49d-d250-46ca-a89f-c6200755b8d8"></i></h3>
-                    <div class="hidden-copylink" id="copy-c22ed49d-d250-46ca-a89f-c6200755b8d8"><a href="#c22ed49d-d250-46ca-a89f-c6200755b8d8">GET Schema Entities OData</a></div>
+                    <a class="anchor" name="49ffc7cb-9244-4889-a05e-e6a6be7cd7dd"></a>
+                    <h3>GET SchemaEntities <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-49ffc7cb-9244-4889-a05e-e6a6be7cd7dd"></i></h3>
+                    <div class="hidden-copylink" id="copy-49ffc7cb-9244-4889-a05e-e6a6be7cd7dd"><a href="#49ffc7cb-9244-4889-a05e-e6a6be7cd7dd">GET SchemaEntities</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#SchemaEntityResource">SchemaEntityResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-49ffc7cb-9244-4889-a05e-e6a6be7cd7dd">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-49ffc7cb-9244-4889-a05e-e6a6be7cd7dd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="46914a05-1bf4-40fa-9043-e92c10f04128"></a>
+                    <h3>GET SchemaEntities (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-46914a05-1bf4-40fa-9043-e92c10f04128"></i></h3>
+                    <div class="hidden-copylink" id="copy-46914a05-1bf4-40fa-9043-e92c10f04128"><a href="#46914a05-1bf4-40fa-9043-e92c10f04128">GET SchemaEntities (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#SchemaEntityResource">SchemaEntityResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-46914a05-1bf4-40fa-9043-e92c10f04128">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-46914a05-1bf4-40fa-9043-e92c10f04128"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b66010fa-d6e5-474e-8a02-0cb61c2d6dad"></a>
+                    <h3>GET SchemaEntity by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b66010fa-d6e5-474e-8a02-0cb61c2d6dad"></i></h3>
+                    <div class="hidden-copylink" id="copy-b66010fa-d6e5-474e-8a02-0cb61c2d6dad"><a href="#b66010fa-d6e5-474e-8a02-0cb61c2d6dad">GET SchemaEntity by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#SchemaEntityResource">SchemaEntityResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b66010fa-d6e5-474e-8a02-0cb61c2d6dad">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b66010fa-d6e5-474e-8a02-0cb61c2d6dad"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c344df86-85ad-4d42-a312-30a1600e4c85"></a>
+                    <h3>GET SchemaEntity by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c344df86-85ad-4d42-a312-30a1600e4c85"></i></h3>
+                    <div class="hidden-copylink" id="copy-c344df86-85ad-4d42-a312-30a1600e4c85"><a href="#c344df86-85ad-4d42-a312-30a1600e4c85">GET SchemaEntity by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Entity Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td><i>(string)</i> Module Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#SchemaEntityResource">SchemaEntityResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c344df86-85ad-4d42-a312-30a1600e4c85">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{key}/{moduleName}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/{key}/{moduleName}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c344df86-85ad-4d42-a312-30a1600e4c85"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b25d6132-69eb-4119-a187-e7e09150640c"></a>
+                    <h3>GET Print SchemaEntity by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b25d6132-69eb-4119-a187-e7e09150640c"></i></h3>
+                    <div class="hidden-copylink" id="copy-b25d6132-69eb-4119-a187-e7e09150640c"><a href="#b25d6132-69eb-4119-a187-e7e09150640c">GET Print SchemaEntity by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b25d6132-69eb-4119-a187-e7e09150640c">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{id}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/{id}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b25d6132-69eb-4119-a187-e7e09150640c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="65954ff4-2ce2-4b21-b938-07fc2402600f"></a>
+                    <h3>GET Print SchemaEntity by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-65954ff4-2ce2-4b21-b938-07fc2402600f"></i></h3>
+                    <div class="hidden-copylink" id="copy-65954ff4-2ce2-4b21-b938-07fc2402600f"><a href="#65954ff4-2ce2-4b21-b938-07fc2402600f">GET Print SchemaEntity by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Entity Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td><i>(string)</i> Module Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-65954ff4-2ce2-4b21-b938-07fc2402600f">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{key}/{moduleName}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/{key}/{moduleName}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-65954ff4-2ce2-4b21-b938-07fc2402600f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="75174c4f-d23a-41a0-8ca1-641da0b95113"></a>
+                    <h3>GET Original Print SchemaEntityOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-75174c4f-d23a-41a0-8ca1-641da0b95113"></i></h3>
+                    <div class="hidden-copylink" id="copy-75174c4f-d23a-41a0-8ca1-641da0b95113"><a href="#75174c4f-d23a-41a0-8ca1-641da0b95113">GET Original Print SchemaEntityOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-75174c4f-d23a-41a0-8ca1-641da0b95113">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{id}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/{id}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-75174c4f-d23a-41a0-8ca1-641da0b95113"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e4e90faa-4837-438c-ac38-7a4fc2ddc97d"></a>
+                    <h3>GET Original Print SchemaEntity by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e4e90faa-4837-438c-ac38-7a4fc2ddc97d"></i></h3>
+                    <div class="hidden-copylink" id="copy-e4e90faa-4837-438c-ac38-7a4fc2ddc97d"><a href="#e4e90faa-4837-438c-ac38-7a4fc2ddc97d">GET Original Print SchemaEntity by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Entity Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td><i>(string)</i> Module Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e4e90faa-4837-438c-ac38-7a4fc2ddc97d">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{key}/{moduleName}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/{key}/{moduleName}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e4e90faa-4837-438c-ac38-7a4fc2ddc97d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="07752bb1-ab62-47fa-817f-d48dc9fa9096"></a>
+                    <h3>GET Get Menus For Entity Async <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-07752bb1-ab62-47fa-817f-d48dc9fa9096"></i></h3>
+                    <div class="hidden-copylink" id="copy-07752bb1-ab62-47fa-817f-d48dc9fa9096"><a href="#07752bb1-ab62-47fa-817f-d48dc9fa9096">GET Get Menus For Entity Async</a></div>
+                    <p class="operation-description">Custom operation 'GetMenusForEntityAsync'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> Entity This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a list of resources of type 'RootMenuResource'. See <a href="#RootMenuResource">RootMenuResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-07752bb1-ab62-47fa-817f-d48dc9fa9096">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/getMenusForEntityAsync?entity={entity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/getMenusForEntityAsync?entity={entity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-07752bb1-ab62-47fa-817f-d48dc9fa9096"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fdf7baea-9774-4a7f-93d0-78dd8dc38f23"></a>
+                    <h3>GET Schema Entities OData <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fdf7baea-9774-4a7f-93d0-78dd8dc38f23"></i></h3>
+                    <div class="hidden-copylink" id="copy-fdf7baea-9774-4a7f-93d0-78dd8dc38f23"><a href="#fdf7baea-9774-4a7f-93d0-78dd8dc38f23">GET Schema Entities OData</a></div>
                     <p class="operation-description">Returns the list of all the entity records available.</p>
                 <p>Response:</p>
                     <table>
@@ -236,16 +774,596 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-c22ed49d-d250-46ca-a89f-c6200755b8d8">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/extensible/odata</div>
+                    <div class="hidden-copylink" id="copy2-fdf7baea-9774-4a7f-93d0-78dd8dc38f23">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/extensible/odata</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /corePatterns/schemaEntities/extensible/odata</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c22ed49d-d250-46ca-a89f-c6200755b8d8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fdf7baea-9774-4a7f-93d0-78dd8dc38f23"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="10c2618c-ea2b-418c-bb35-dabc869c4c3d"></a>
+                    <h3>POST CustomEntities <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-10c2618c-ea2b-418c-bb35-dabc869c4c3d"></i></h3>
+                    <div class="hidden-copylink" id="copy-10c2618c-ea2b-418c-bb35-dabc869c4c3d"><a href="#10c2618c-ea2b-418c-bb35-dabc869c4c3d">POST CustomEntities</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntityResource</td>
+                                <td><i>(ApiCustomEntityResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiCustomEntityResource">ApiCustomEntityResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiCustomEntityResource">ApiCustomEntityResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-10c2618c-ea2b-418c-bb35-dabc869c4c3d">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/schemaEntities</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-10c2618c-ea2b-418c-bb35-dabc869c4c3d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="01277d43-3f1f-4cda-8ed9-41863b467c13"></a>
+                    <h3>POST Process Menu For Entity Async <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-01277d43-3f1f-4cda-8ed9-41863b467c13"></i></h3>
+                    <div class="hidden-copylink" id="copy-01277d43-3f1f-4cda-8ed9-41863b467c13"><a href="#01277d43-3f1f-4cda-8ed9-41863b467c13">POST Process Menu For Entity Async</a></div>
+                    <p class="operation-description">Custom operation 'ProcessMenuForEntityAsync'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">menuItems</td>
+                                <td><i>(List<MenuItemOperationResource>)</i> MenuItems This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> Entity This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-01277d43-3f1f-4cda-8ed9-41863b467c13">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/processMenuForEntityAsync?menuItems={menuItems}&amp;entity={entity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/schemaEntities/processMenuForEntityAsync?menuItems={menuItems}&amp;entity={entity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-01277d43-3f1f-4cda-8ed9-41863b467c13"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="249963e3-9458-47a6-bb78-1ec26963179a"></a>
+                    <h3>PUT Set IsActive SchemaEntity <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-249963e3-9458-47a6-bb78-1ec26963179a"></i></h3>
+                    <div class="hidden-copylink" id="copy-249963e3-9458-47a6-bb78-1ec26963179a"><a href="#249963e3-9458-47a6-bb78-1ec26963179a">PUT Set IsActive SchemaEntity</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Entity Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td><i>(string)</i> Module Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-249963e3-9458-47a6-bb78-1ec26963179a">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{key}/{moduleName}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaEntities/{key}/{moduleName}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-249963e3-9458-47a6-bb78-1ec26963179a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="20ed6808-7263-4f7f-b82c-f4d0f3f1f158"></a>
+                    <h3>PUT Set Remarks SchemaEntity <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-20ed6808-7263-4f7f-b82c-f4d0f3f1f158"></i></h3>
+                    <div class="hidden-copylink" id="copy-20ed6808-7263-4f7f-b82c-f4d0f3f1f158"><a href="#20ed6808-7263-4f7f-b82c-f4d0f3f1f158">PUT Set Remarks SchemaEntity</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Remarks' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Entity Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td><i>(string)</i> Module Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-20ed6808-7263-4f7f-b82c-f4d0f3f1f158">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{key}/{moduleName}/remarks</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaEntities/{key}/{moduleName}/remarks</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-20ed6808-7263-4f7f-b82c-f4d0f3f1f158"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0907faf1-1c26-4502-8907-76cb569b502d"></a>
+                    <h3>PUT Set Title SchemaEntity <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0907faf1-1c26-4502-8907-76cb569b502d"></i></h3>
+                    <div class="hidden-copylink" id="copy-0907faf1-1c26-4502-8907-76cb569b502d"><a href="#0907faf1-1c26-4502-8907-76cb569b502d">PUT Set Title SchemaEntity</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Title' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Entity Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td><i>(string)</i> Module Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-0907faf1-1c26-4502-8907-76cb569b502d">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{key}/{moduleName}/title</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/schemaEntities/{key}/{moduleName}/title</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0907faf1-1c26-4502-8907-76cb569b502d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a2263608-e190-4f3b-ac67-6158db553a8c"></a>
+                    <h3>DELETE SchemaEntity by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a2263608-e190-4f3b-ac67-6158db553a8c"></i></h3>
+                    <div class="hidden-copylink" id="copy-a2263608-e190-4f3b-ac67-6158db553a8c"><a href="#a2263608-e190-4f3b-ac67-6158db553a8c">DELETE SchemaEntity by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a2263608-e190-4f3b-ac67-6158db553a8c">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/schemaEntities/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a2263608-e190-4f3b-ac67-6158db553a8c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d63c6e02-18e6-44c4-9903-bb21e745bc8b"></a>
+                    <h3>DELETE SchemaEntity by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d63c6e02-18e6-44c4-9903-bb21e745bc8b"></i></h3>
+                    <div class="hidden-copylink" id="copy-d63c6e02-18e6-44c4-9903-bb21e745bc8b"><a href="#d63c6e02-18e6-44c4-9903-bb21e745bc8b">DELETE SchemaEntity by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Entity Name.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td><i>(string)</i> Module Name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d63c6e02-18e6-44c4-9903-bb21e745bc8b">api/{tenantKey}/{orgKey}/corePatterns/schemaEntities/{key}/{moduleName}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/schemaEntities/{key}/{moduleName}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d63c6e02-18e6-44c4-9903-bb21e745bc8b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiCustomEntityResource"></a>
+                    <h4>ApiCustomEntityResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiCustomEntityResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiCustomEntityResource"><a href="#ApiCustomEntityResource">ApiCustomEntityResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Entity Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">keyLabel</td>
+                                <td  class="wrap"><i>(string)</i> Key Attribute Label.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">descriptionLabel</td>
+                                <td  class="wrap"><i>(string)</i> Description Attribute Label.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">title</td>
+                                <td  class="wrap"><i>(string)</i> Entity Title.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="CustomEntityResource"></a>
+                    <h4>CustomEntityResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-CustomEntityResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-CustomEntityResource"><a href="#CustomEntityResource">CustomEntityResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Entity Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">moduleName</td>
+                                <td  class="wrap"><i>(string)</i> Module Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternallyManaged</td>
+                                <td  class="wrap"><i>(bool)</i> Is Externally Managed.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">allowExtensibility</td>
+                                <td  class="wrap"><i>(bool)</i> Allow Extensibility.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">keyLabel</td>
+                                <td  class="wrap"><i>(string)</i> Key Attribute Label.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">descriptionLabel</td>
+                                <td  class="wrap"><i>(string)</i> Description Attribute Label.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">title</td>
+                                <td  class="wrap"><i>(string)</i> Entity Title.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">entityType</td>
+                                <td  class="wrap"><i>(enum SchemaEntityType)</i> Indicate the entity type.
+									<br/>See <a href="#SchemaEntityType">SchemaEntityType.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">entityName</td>
+                                <td  class="wrap"><i>(string)</i> Entity Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">baseEntityId</td>
+                                <td  class="wrap"><i>(Guid)</i> Base Entity Id.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">schemaEntityPatterns</td>
+                                <td  class="wrap"><i>(List of SchemaEntityPatternResource)</i> Schema Entity Patterns.
+									<br/>See <a href="#SchemaEntityPatternResource">SchemaEntityPatternResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">associations</td>
+                                <td  class="wrap"><i>(List of SchemaEntitiesAssociationResource)</i> Associations.
+									<br/>See <a href="#SchemaEntitiesAssociationResource">SchemaEntitiesAssociationResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hasState</td>
+                                <td  class="wrap"><i>(bool)</i> If true than can be associated states to the entity.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isGenericExtension</td>
+                                <td  class="wrap"><i>(bool)</i> Is Generic Extension.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">lockingEnabled</td>
+                                <td  class="wrap"><i>(bool)</i> Locking Enabled.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">database</td>
+                                <td  class="wrap"><i>(string)</i> Database.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">hasSequenceAttribute</td>
+                                <td  class="wrap"><i>(bool)</i> Has Sequence Attribute.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isRestrictable</td>
+                                <td  class="wrap"><i>(bool)</i> Is Restrictable.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">jsonSchema</td>
+                                <td  class="wrap"><i>(string)</i> Json Schema.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">userEntityDefinition</td>
+                                <td  class="wrap"><i>(string)</i> User Entity Definition.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> Remarks.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">addedToMenu</td>
+                                <td  class="wrap"><i>(bool)</i> Added To Menu.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
                     <br />
                     <a class="anchor" name="ExtensibilitySchemaEntityResource"></a>
                     <h4>ExtensibilitySchemaEntityResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ExtensibilitySchemaEntityResource"></i></h4>
@@ -260,6 +1378,193 @@
                             </tr>
 
 
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="MenuItemOperationResource"></a>
+                    <h4>MenuItemOperationResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-MenuItemOperationResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-MenuItemOperationResource"><a href="#MenuItemOperationResource">MenuItemOperationResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">label</td>
+                                <td  class="wrap"><i>(string)</i> Label.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">menuName</td>
+                                <td  class="wrap"><i>(string)</i> Menu Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">menuId</td>
+                                <td  class="wrap"><i>(Guid)</i> Menu Id.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">menuItemId</td>
+                                <td  class="wrap"><i>(Guid)</i> Menu Item Id.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">containsOperation</td>
+                                <td  class="wrap"><i>(bool)</i> Contains Operation.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="RootMenuResource"></a>
+                    <h4>RootMenuResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-RootMenuResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-RootMenuResource"><a href="#RootMenuResource">RootMenuResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">label</td>
+                                <td  class="wrap"><i>(string)</i> Label.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">menuName</td>
+                                <td  class="wrap"><i>(string)</i> Menu Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">menuId</td>
+                                <td  class="wrap"><i>(Guid)</i> Menu Id.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="SchemaEntitiesAssociationResource"></a>
+                    <h4>SchemaEntitiesAssociationResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-SchemaEntitiesAssociationResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-SchemaEntitiesAssociationResource"><a href="#SchemaEntitiesAssociationResource">SchemaEntitiesAssociationResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">target</td>
+                                <td  class="wrap"><i>(string)</i> Target.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">attribute</td>
+                                <td  class="wrap"><i>(string)</i> Attribute.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isComposition</td>
+                                <td  class="wrap"><i>(bool)</i> Is Composition.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isManyToMany</td>
+                                <td  class="wrap"><i>(bool)</i> Is Many-To-Many.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="SchemaEntityPatternResource"></a>
+                    <h4>SchemaEntityPatternResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-SchemaEntityPatternResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-SchemaEntityPatternResource"><a href="#SchemaEntityPatternResource">SchemaEntityPatternResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Key.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">interfaceType</td>
+                                <td  class="wrap"><i>(string)</i> Interface Type.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+                    <br />
+                    <a class="anchor" name="SchemaEntityType"></a>
+                    <h4>SchemaEntityType <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-SchemaEntityType"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-SchemaEntityType"><a href="#SchemaEntityType">SchemaEntityType</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>System</td>
+                                <td>System entity intended for internal reasons.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>BusinessProcessEvent</td>
+                                <td>A single event associated with a business process  (ex: a sales entry or a customer order request).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>BusinessDimension</td>
+                                <td>An object involved in a business intelligence effort (ex: customer, item, etc).</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>ValueList</td>
+                                <td>Consists of a predefined set of named constants.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">5</td>
+                                <td>BusinessNoDatabase</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">6</td>
+                                <td>UserEntity</td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
 
