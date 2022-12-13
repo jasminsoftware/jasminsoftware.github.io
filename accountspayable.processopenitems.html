@@ -37,9 +37,6 @@
     <a class="menu-subitem " href="accountspayable.payments.html">
         Payment
     </a>
-    <a class="menu-subitem " href="accountspayable.summaryvalues.html">
-        Summary Value
-    </a>
     <a class="menu-item" href="accountsreceivable.html">
         Accounts Receivable
     </a>
@@ -93,7 +90,7 @@
                             <tr>
                                 <td>Methods Supported</td>
 
-                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a></td>
+                                <td><a href="#POST">POST</a>, <a href="#GET">GET</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -103,15 +100,16 @@
                     </p>
                     <ul>
                         <li>
-                        GET:
+                        POST:
                         <ul>
-                            <li><a href="#03ebc6ff-4a02-424b-91ab-64731f718d81">GET Create Payment</a></li>
+                            <li><a href="#4cb5e212-d661-4734-9a64-66231ffb4857">POST Generate Payment</a></li>
+                            <li><a href="#93ce235f-3154-470f-9e9d-e6a506ab72d2">POST Create Payment</a></li>
                         </ul>
                         </li>
                         <li>
-                        POST:
+                        GET:
                         <ul>
-                            <li><a href="#e3e0eab8-f1ec-4938-bc35-cdd30cff94c5">POST Create Payment</a></li>
+                            <li><a href="#11b86feb-8c13-4718-812f-3a3cded7faf7">GET Create Payment</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -120,6 +118,7 @@
                     This service uses the following resources:
                     </p>
                     <ul>
+                        <li><a href="#ApiOpenAccountPosting">ApiOpenAccountPosting</a></li>
                         <li><a href="#OpenAccountPosting">OpenAccountPosting</a></li>
                         <li><a href="#OpenAccountPostingLine">OpenAccountPostingLine</a></li>
                     </ul>
@@ -133,9 +132,9 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="03ebc6ff-4a02-424b-91ab-64731f718d81"></a>
-                    <h3>GET Create Payment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-03ebc6ff-4a02-424b-91ab-64731f718d81"></i></h3>
-                    <div class="hidden-copylink" id="copy-03ebc6ff-4a02-424b-91ab-64731f718d81"><a href="#03ebc6ff-4a02-424b-91ab-64731f718d81">GET Create Payment</a></div>
+                    <a class="anchor" name="11b86feb-8c13-4718-812f-3a3cded7faf7"></a>
+                    <h3>GET Create Payment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-11b86feb-8c13-4718-812f-3a3cded7faf7"></i></h3>
+                    <div class="hidden-copylink" id="copy-11b86feb-8c13-4718-812f-3a3cded7faf7"><a href="#11b86feb-8c13-4718-812f-3a3cded7faf7">GET Create Payment</a></div>
                     <p class="operation-description">Returns the list of entity records that can be processed by the 'Payments' service.</p>
                     <p>The following elements are required:</p>
                     <table>
@@ -150,27 +149,47 @@
                             </tr>
                             <tr>
                                 <td class="highlighted">company</td>
-                                <td><i>(string)</i> The company code is the central organizational unit within the system. This is a query string parameter.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">documentDate</td>
-                                <td><i>(DateTime)</i> The date when the document is issued. This is a query string parameter.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">exchangeRate</td>
-                                <td><i>(decimal)</i> The price of one country's currency expressed in another country's currency. In other words, the rate at which one currency can be exchanged for another. The default is infered using the defined exchange rates on the system for the document date and currency. This is a query string parameter.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">party</td>
-                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent for payment. It may or may not be the party to whom the goods or services are delivered. This is a query string parameter.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">currency</td>
-                                <td><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party. This is a query string parameter.</td>
+                                <td><i>(string)</i> The company code is the central organizational unit within the system.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">documentType</td>
-                                <td><i>(string)</i> Defines the account posting's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default account posting type is defined in the sales setup configuration setting. This is a query string parameter.</td>
+                                <td><i>(string)</i> Defines the account posting's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default account posting type is defined in the sales setup configuration setting.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td><i>(DateTime)</i> The date when the document is issued.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td><i>(DateTime)</i> The date when the document is created.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td><i>(string)</i> A financial account that represents either a cash drawer or a bank account and must be used to define where to debit the value. A bank account is an account that exists in a financial institution. The financial institution holds someone's money, resulting in a positive balance. It can also be a credit or loans account in which the bank lends money, resulting in a negative balance or debit. Unlike a brokerage account, which allows the investor to buy and sell stocks, a bank account is used for savings. The types of bank accounts include savings accounts and current accounts.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td><i>(string)</i> Incoming and outgoing cash flow caused by the main business activities. The component of the cash flow operations shows how much money is generated by a company's products or services. Generally, the changes made to the cash, banks, accounts receivables and accounts payable affects operational cash. The classification of each of these operations' types is made by using cash flows.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td><i>(string)</i> The customer designated in the account posting as the party to whom should be sent for payment. It may or may not be the party to whom the goods or services are delivered.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td><i>(decimal)</i> The price of one country's currency expressed in another country's currency. In other words, the rate at which one currency can be exchanged for another. The default is infered using the defined exchange rates on the system for the document date and currency.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">paymentMethod</td>
+                                <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">isCheckPaymentMethod</td>
+                                <td><i>(bool)</i> Determines if the used payment method is of type check. Applicable only when the payment is cash payment and the payment method is of type check. Internally determined.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -179,28 +198,44 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">dueDateFrom</td>
+                                <td class="highlighted">note</td>
+                                <td><i>(string)</i> The document note. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">outgoingCheckLot</td>
+                                <td><i>(string)</i> The outgoint lot of the check used for this payment document. Applicable only when the payment is cash payment and the payment method is of type check. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td><i>(int?)</i> The number of the check used for this payment. Applicable only when the payment is cash payment and the payment method is of type check. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">dueDateFromFilter</td>
                                 <td><i>(DateTime?)</i> The initial date in which you can pay. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">dueDateUntil</td>
+                                <td class="highlighted">dueDateUntilFilter</td>
                                 <td><i>(DateTime?)</i> Date in which the payment is due. In some countries it is also known as law date. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">paymentMethod</td>
-                                <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party. This is a query string parameter.</td>
+                                <td class="highlighted">paymentMethodFilter</td>
+                                <td><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments.  This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">sourceDocFilter</td>
+                                <td><i>(string)</i> The source document key to be used as filter. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">referenceFilter</td>
+                                <td><i>(string)</i> The reference document to be used as filter. This is a query string parameter.</td>
                             </tr>
                             <tr>
                                 <td class="highlighted">total</td>
                                 <td><i>(decimal?)</i> Document total. Internally calculated. This is a query string parameter.</td>
                             </tr>
                             <tr>
-                                <td class="highlighted">sourceDoc</td>
-                                <td><i>(string)</i> The source document key. This is a query string parameter.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">reference</td>
-                                <td><i>(string)</i> Reference This is a query string parameter.</td>
+                                <td class="highlighted">serie</td>
+                                <td><i>(string)</i> Serie This is a query string parameter.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -229,10 +264,10 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-03ebc6ff-4a02-424b-91ab-64731f718d81">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems/{pageIndex}/{pageSize}?company={company}&amp;documentDate={documentDate}&amp;exchangeRate={exchangeRate}&amp;party={party}&amp;currency={currency}&amp;documentType={documentType}</div>
+                    <div class="hidden-copylink" id="copy2-11b86feb-8c13-4718-812f-3a3cded7faf7">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems/{pageIndex}/{pageSize}?note={note}&amp;outgoingCheckLot={outgoingCheckLot}&amp;checkNumber={checkNumber}&amp;dueDateFromFilter={dueDateFromFilter}&amp;dueDateUntilFilter={dueDateUntilFilter}&amp;paymentMethodFilter={paymentMethodFilter}&amp;sourceDocFilter={sourceDocFilter}&amp;referenceFilter={referenceFilter}&amp;total={total}&amp;serie={serie}</div>
                     <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /accountsPayable/processOpenItems/{pageIndex}/{pageSize}?company={company}&amp;documentDate={documentDate}&amp;exchangeRate={exchangeRate}&amp;party={party}&amp;currency={currency}&amp;documentType={documentType}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-03ebc6ff-4a02-424b-91ab-64731f718d81"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="inner-resource-url"><div>GET /accountsPayable/processOpenItems/{pageIndex}/{pageSize}?note={note}&amp;outgoingCheckLot={outgoingCheckLot}&amp;checkNumber={checkNumber}&amp;dueDateFromFilter={dueDateFromFilter}&amp;dueDateUntilFilter={dueDateUntilFilter}&amp;paymentMethodFilter={paymentMethodFilter}&amp;sourceDocFilter={sourceDocFilter}&amp;referenceFilter={referenceFilter}&amp;total={total}&amp;serie={serie}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-11b86feb-8c13-4718-812f-3a3cded7faf7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -244,9 +279,43 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="e3e0eab8-f1ec-4938-bc35-cdd30cff94c5"></a>
-                    <h3>POST Create Payment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e3e0eab8-f1ec-4938-bc35-cdd30cff94c5"></i></h3>
-                    <div class="hidden-copylink" id="copy-e3e0eab8-f1ec-4938-bc35-cdd30cff94c5"><a href="#e3e0eab8-f1ec-4938-bc35-cdd30cff94c5">POST Create Payment</a></div>
+                    <a class="anchor" name="4cb5e212-d661-4734-9a64-66231ffb4857"></a>
+                    <h3>POST Generate Payment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4cb5e212-d661-4734-9a64-66231ffb4857"></i></h3>
+                    <div class="hidden-copylink" id="copy-4cb5e212-d661-4734-9a64-66231ffb4857"><a href="#4cb5e212-d661-4734-9a64-66231ffb4857">POST Generate Payment</a></div>
+                    <p class="operation-description">Operation that creates a new payment using the specifed information while processing the specified entity records.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">apiOpenAccountPosting</td>
+                                <td><i>(ApiOpenAccountPosting)</i> ApiOpenAccountPosting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a unique identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-4cb5e212-d661-4734-9a64-66231ffb4857">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems/generatePayment</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /accountsPayable/processOpenItems/generatePayment</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4cb5e212-d661-4734-9a64-66231ffb4857"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="93ce235f-3154-470f-9e9d-e6a506ab72d2"></a>
+                    <h3>POST Create Payment <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-93ce235f-3154-470f-9e9d-e6a506ab72d2"></i></h3>
+                    <div class="hidden-copylink" id="copy-93ce235f-3154-470f-9e9d-e6a506ab72d2"><a href="#93ce235f-3154-470f-9e9d-e6a506ab72d2">POST Create Payment</a></div>
                     <p class="operation-description">Instructs the 'Payments' service to process the specified entity records.</p>
                     <p>The following elements are required:</p>
                     <table>
@@ -286,10 +355,10 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-e3e0eab8-f1ec-4938-bc35-cdd30cff94c5">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems/{companyKey}</div>
+                    <div class="hidden-copylink" id="copy2-93ce235f-3154-470f-9e9d-e6a506ab72d2">api/{tenantKey}/{orgKey}/accountsPayable/processOpenItems/{companyKey}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>POST /accountsPayable/processOpenItems/{companyKey}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e3e0eab8-f1ec-4938-bc35-cdd30cff94c5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-93ce235f-3154-470f-9e9d-e6a506ab72d2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -297,9 +366,9 @@
                 <div class="content-section-col1">
                     <h2>Resources</h2>
                     <br />
-                    <a class="anchor" name="OpenAccountPosting"></a>
-                    <h4>OpenAccountPosting <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-OpenAccountPosting"></i></h4>
-                    <div class="hidden-copylink" id="copy-OpenAccountPosting"><a href="#OpenAccountPosting">OpenAccountPosting</a></div>
+                    <a class="anchor" name="ApiOpenAccountPosting"></a>
+                    <h4>ApiOpenAccountPosting <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiOpenAccountPosting"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiOpenAccountPosting"><a href="#ApiOpenAccountPosting">ApiOpenAccountPosting</a></div>
 	
                     <p>The following elements are required:</p>
                     <table>
@@ -311,14 +380,32 @@
                             </tr>
 
                             <tr>
+                                <td class="highlighted">documentType</td>
+                                <td  class="wrap"><i>(string)</i> Defines the account posting's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default account posting type is defined in the sales setup configuration setting.
+									</td>
+                            </tr>
+
+                            <tr>
                                 <td class="highlighted">documentDate</td>
                                 <td  class="wrap"><i>(DateTime)</i> The date when the document is issued.
 									</td>
                             </tr>
 
                             <tr>
-                                <td class="highlighted">exchangeRate</td>
-                                <td  class="wrap"><i>(decimal)</i> The price of one country's currency expressed in another country's currency. In other words, the rate at which one currency can be exchanged for another. The default is infered using the defined exchange rates on the system for the document date and currency.
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is created.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> A financial account that represents either a cash drawer or a bank account and must be used to define where to debit the value. A bank account is an account that exists in a financial institution. The financial institution holds someone's money, resulting in a positive balance. It can also be a credit or loans account in which the bank lends money, resulting in a negative balance or debit. Unlike a brokerage account, which allows the investor to buy and sell stocks, a bank account is used for savings. The types of bank accounts include savings accounts and current accounts.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Incoming and outgoing cash flow caused by the main business activities. The component of the cash flow operations shows how much money is generated by a company's products or services. Generally, the changes made to the cash, banks, accounts receivables and accounts payable affects operational cash. The classification of each of these operations' types is made by using cash flows.
 									</td>
                             </tr>
 
@@ -335,14 +422,14 @@
                             </tr>
 
                             <tr>
-                                <td class="highlighted">selectedCount</td>
-                                <td  class="wrap"><i>(int)</i> Number of lines selected. Internally calculated.
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> The price of one country's currency expressed in another country's currency. In other words, the rate at which one currency can be exchanged for another. The default is infered using the defined exchange rates on the system for the document date and currency.
 									</td>
                             </tr>
 
                             <tr>
-                                <td class="highlighted">documentType</td>
-                                <td  class="wrap"><i>(string)</i> Defines the account posting's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default account posting type is defined in the sales setup configuration setting.
+                                <td class="highlighted">paymentMethod</td>
+                                <td  class="wrap"><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments. The default is defined on the customer party.
 									</td>
                             </tr>
 
@@ -354,14 +441,99 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">dueDateFrom</td>
-                                <td  class="wrap"><i>(DateTime)</i> The initial date in which you can pay.
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The document note.
 									</td>
                             </tr>
 
                             <tr>
-                                <td class="highlighted">dueDateUntil</td>
-                                <td  class="wrap"><i>(DateTime)</i> Date in which the payment is due. In some countries it is also known as law date.
+                                <td class="highlighted">outgoingCheckLot</td>
+                                <td  class="wrap"><i>(string)</i> The outgoint lot of the check used for this payment document. Applicable only when the payment is cash payment and the payment method is of type check.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(int)</i> The number of the check used for this payment. Applicable only when the payment is cash payment and the payment method is of type check.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Serie.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="OpenAccountPosting"></a>
+                    <h4>OpenAccountPosting <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-OpenAccountPosting"></i></h4>
+                    <div class="hidden-copylink" id="copy-OpenAccountPosting"><a href="#OpenAccountPosting">OpenAccountPosting</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">selectedCount</td>
+                                <td  class="wrap"><i>(int)</i> Number of lines selected. Internally calculated.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The company code is the central organizational unit within the system.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentType</td>
+                                <td  class="wrap"><i>(string)</i> Defines the account posting's purpose. Distinguishes the business transactions to be posted. Part of the document natural key. The default account posting type is defined in the sales setup configuration setting.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is issued.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postingDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date when the document is created.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">financialAccount</td>
+                                <td  class="wrap"><i>(string)</i> A financial account that represents either a cash drawer or a bank account and must be used to define where to debit the value. A bank account is an account that exists in a financial institution. The financial institution holds someone's money, resulting in a positive balance. It can also be a credit or loans account in which the bank lends money, resulting in a negative balance or debit. Unlike a brokerage account, which allows the investor to buy and sell stocks, a bank account is used for savings. The types of bank accounts include savings accounts and current accounts.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cashFlowItem</td>
+                                <td  class="wrap"><i>(string)</i> Incoming and outgoing cash flow caused by the main business activities. The component of the cash flow operations shows how much money is generated by a company's products or services. Generally, the changes made to the cash, banks, accounts receivables and accounts payable affects operational cash. The classification of each of these operations' types is made by using cash flows.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">party</td>
+                                <td  class="wrap"><i>(string)</i> The customer designated in the account posting as the party to whom should be sent for payment. It may or may not be the party to whom the goods or services are delivered.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> Money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values. The default is defined on the customer party.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">exchangeRate</td>
+                                <td  class="wrap"><i>(decimal)</i> The price of one country's currency expressed in another country's currency. In other words, the rate at which one currency can be exchanged for another. The default is infered using the defined exchange rates on the system for the document date and currency.
 									</td>
                             </tr>
 
@@ -372,20 +544,75 @@
                             </tr>
 
                             <tr>
+                                <td class="highlighted">isCheckPaymentMethod</td>
+                                <td  class="wrap"><i>(bool)</i> Determines if the used payment method is of type check. Applicable only when the payment is cash payment and the payment method is of type check. Internally determined.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The document note.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">outgoingCheckLot</td>
+                                <td  class="wrap"><i>(string)</i> The outgoint lot of the check used for this payment document. Applicable only when the payment is cash payment and the payment method is of type check.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">checkNumber</td>
+                                <td  class="wrap"><i>(int)</i> The number of the check used for this payment. Applicable only when the payment is cash payment and the payment method is of type check.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">dueDateFromFilter</td>
+                                <td  class="wrap"><i>(DateTime)</i> The initial date in which you can pay.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">dueDateUntilFilter</td>
+                                <td  class="wrap"><i>(DateTime)</i> Date in which the payment is due. In some countries it is also known as law date.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">paymentMethodFilter</td>
+                                <td  class="wrap"><i>(string)</i> Financial transfer method used by the entity responsible for paying a transaction. For example, cash, transfer or check payments.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">sourceDocFilter</td>
+                                <td  class="wrap"><i>(string)</i> The source document key to be used as filter.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">referenceFilter</td>
+                                <td  class="wrap"><i>(string)</i> The reference document to be used as filter.
+									</td>
+                            </tr>
+
+                            <tr>
                                 <td class="highlighted">total</td>
                                 <td  class="wrap"><i>(decimal)</i> Document total. Internally calculated.
 									</td>
                             </tr>
 
                             <tr>
-                                <td class="highlighted">sourceDoc</td>
-                                <td  class="wrap"><i>(string)</i> The source document key.
-									</td>
-                            </tr>
-
-                            <tr>
-                                <td class="highlighted">reference</td>
-                                <td  class="wrap"><i>(string)</i> Reference.
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Serie.
 									</td>
                             </tr>
 
@@ -489,7 +716,7 @@
 
                             <tr>
                                 <td class="highlighted">reference</td>
-                                <td  class="wrap"><i>(string)</i> Reference.
+                                <td  class="wrap"><i>(string)</i> The document note.
 									</td>
                             </tr>
 

@@ -52,20 +52,23 @@
     <a id="current-menu-item" class="menu-item " href="platform.html">
         Platform
     </a>
-    <a class="menu-subitem " href="identity.accessgroups.html">
-        Access Group
-    </a>
     <a class="menu-subitem " href="corepatterns.addresses.html">
         Address
     </a>
     <a class="menu-subitem " href="corepatterns.assignments.html">
         Assignment
     </a>
-    <a class="menu-subitem " href="corepatterns.clientsettings.html">
-        Client Setting
+    <a class="menu-subitem " href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem " href="shell.clientcontextvalues.html">
+        Client Context Value
     </a>
     <a class="menu-subitem " href="corepatterns.companies.html">
         Company
+    </a>
+    <a class="menu-subitem " href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
     </a>
     <a class="menu-subitem " href="corepatterns.contacts.html">
         Contact
@@ -97,6 +100,9 @@
     <a class="menu-subitem " href="corepatterns.drafts.html">
         Draft
     </a>
+    <a class="menu-subitem " href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
     <a class="menu-subitem " href="operations.emailtemplates.html">
         Email Template
     </a>
@@ -106,8 +112,14 @@
     <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
         Entity Lock Reason
     </a>
+    <a class="menu-subitem " href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
     <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
         Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="identity.groups.html">
+        Group
     </a>
     <a class="menu-subitem menu-item-selected" href="corepatterns.importdatainfos.html">
         Import Data Info
@@ -130,6 +142,9 @@
     <a class="menu-subitem " href="corepatterns.regions.html">
         Region
     </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
     <a class="menu-subitem " href="corepatterns.schemaentities.html">
         Schema Entity Management
     </a>
@@ -147,6 +162,9 @@
     </a>
     <a class="menu-subitem " href="operations.upgradeversions.html">
         Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
     </a>
     <a class="menu-item" href="purchases.html">
         Purchases
@@ -180,7 +198,7 @@
                             <tr>
                                 <td>Methods Supported</td>
 
-                                <td><a href="#POST">POST</a></td>
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -190,9 +208,17 @@
                     </p>
                     <ul>
                         <li>
+                        GET:
+                        <ul>
+                            <li><a href="#8b3511a6-59a6-4d0c-85ed-73dd654b159f">GET Validate Import Data State</a></li>
+                            <li><a href="#350ac65a-ad24-4352-8197-1d482671b917">GET Get Last Imports</a></li>
+                        </ul>
+                        </li>
+                        <li>
                         POST:
                         <ul>
-                            <li><a href="#ab58988f-2f7d-4ab5-95d9-c0bbe11acdb2">POST Revert Import File</a></li>
+                            <li><a href="#99e2b458-d2ff-4eb3-97db-9bac7dbe825f">POST Change Data Import</a></li>
+                            <li><a href="#fee62c6e-ba11-4b98-9669-ef267f2d0c57">POST Revert Import File</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -201,8 +227,117 @@
                     This service uses the following resources:
                     </p>
                     <ul>
+                        <li><a href="#ImportDataInfoResource">ImportDataInfoResource</a></li>
+                        <li><a href="#ImportInfoResource">ImportInfoResource</a></li>
                         <li><a href="#RevertImport">RevertImport</a></li>
                     </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#ImportDataState">ImportDataState</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8b3511a6-59a6-4d0c-85ed-73dd654b159f"></a>
+                    <h3>GET Validate Import Data State <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8b3511a6-59a6-4d0c-85ed-73dd654b159f"></i></h3>
+                    <div class="hidden-copylink" id="copy-8b3511a6-59a6-4d0c-85ed-73dd654b159f"><a href="#8b3511a6-59a6-4d0c-85ed-73dd654b159f">GET Validate Import Data State</a></div>
+                    <p class="operation-description">Custom operation 'ValidateImportDataState'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(Guid)</i> Id.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a resource of type 'ImportDataInfoResource'. See <a href="#ImportDataInfoResource">ImportDataInfoResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8b3511a6-59a6-4d0c-85ed-73dd654b159f">api/{tenantKey}/{orgKey}/corePatterns/importDataInfos/validateImportDataState</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/importDataInfos/validateImportDataState</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8b3511a6-59a6-4d0c-85ed-73dd654b159f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="350ac65a-ad24-4352-8197-1d482671b917"></a>
+                    <h3>GET Get Last Imports <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-350ac65a-ad24-4352-8197-1d482671b917"></i></h3>
+                    <div class="hidden-copylink" id="copy-350ac65a-ad24-4352-8197-1d482671b917"><a href="#350ac65a-ad24-4352-8197-1d482671b917">GET Get Last Imports</a></div>
+                    <p class="operation-description">Custom operation 'GetLastImports'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">templateId</td>
+                                <td><i>(string)</i> TemplateId.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a list of resources of type 'ImportDataInfoResource'. See <a href="#ImportDataInfoResource">ImportDataInfoResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-350ac65a-ad24-4352-8197-1d482671b917">api/{tenantKey}/{orgKey}/corePatterns/importDataInfos/getLastImports</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/importDataInfos/getLastImports</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-350ac65a-ad24-4352-8197-1d482671b917"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
                 </div>
             </div>
             <div class="content-section">
@@ -213,16 +348,50 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="ab58988f-2f7d-4ab5-95d9-c0bbe11acdb2"></a>
-                    <h3>POST Revert Import File <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ab58988f-2f7d-4ab5-95d9-c0bbe11acdb2"></i></h3>
-                    <div class="hidden-copylink" id="copy-ab58988f-2f7d-4ab5-95d9-c0bbe11acdb2"><a href="#ab58988f-2f7d-4ab5-95d9-c0bbe11acdb2">POST Revert Import File</a></div>
+                    <a class="anchor" name="99e2b458-d2ff-4eb3-97db-9bac7dbe825f"></a>
+                    <h3>POST Change Data Import <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-99e2b458-d2ff-4eb3-97db-9bac7dbe825f"></i></h3>
+                    <div class="hidden-copylink" id="copy-99e2b458-d2ff-4eb3-97db-9bac7dbe825f"><a href="#99e2b458-d2ff-4eb3-97db-9bac7dbe825f">POST Change Data Import</a></div>
+                    <p class="operation-description">Custom operation 'ChangeDataImport'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">importData</td>
+                                <td><i>(ImportInfoResource)</i> ImportData.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-99e2b458-d2ff-4eb3-97db-9bac7dbe825f">api/{tenantKey}/{orgKey}/corePatterns/importDataInfos/changeDataImport</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/importDataInfos/changeDataImport</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-99e2b458-d2ff-4eb3-97db-9bac7dbe825f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fee62c6e-ba11-4b98-9669-ef267f2d0c57"></a>
+                    <h3>POST Revert Import File <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fee62c6e-ba11-4b98-9669-ef267f2d0c57"></i></h3>
+                    <div class="hidden-copylink" id="copy-fee62c6e-ba11-4b98-9669-ef267f2d0c57"><a href="#fee62c6e-ba11-4b98-9669-ef267f2d0c57">POST Revert Import File</a></div>
                     <p class="operation-description">Custom operation 'RevertImportFile'.</p>
                     <p>The following elements are required:</p>
                     <table>
                         <tbody>
                             <tr>
                                 <td class="highlighted">templateKey</td>
-                                <td><i>(string)</i> TemplateKey This is a query string parameter.</td>
+                                <td><i>(string)</i> TemplateKey.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -238,16 +407,162 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-ab58988f-2f7d-4ab5-95d9-c0bbe11acdb2">api/{tenantKey}/{orgKey}/corePatterns/importDataInfos/revertImportFile?templateKey={templateKey}</div>
+                    <div class="hidden-copylink" id="copy2-fee62c6e-ba11-4b98-9669-ef267f2d0c57">api/{tenantKey}/{orgKey}/corePatterns/importDataInfos/revertImportFile</div>
                     <div class="resource-url">
-                        <div class="inner-resource-url"><div>POST /corePatterns/importDataInfos/revertImportFile?templateKey={templateKey}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ab58988f-2f7d-4ab5-95d9-c0bbe11acdb2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="inner-resource-url"><div>POST /corePatterns/importDataInfos/revertImportFile</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fee62c6e-ba11-4b98-9669-ef267f2d0c57"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
                     <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ImportDataInfoResource"></a>
+                    <h4>ImportDataInfoResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ImportDataInfoResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ImportDataInfoResource"><a href="#ImportDataInfoResource">ImportDataInfoResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(int)</i> The key for the import data info.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">importDataTemplate</td>
+                                <td  class="wrap"><i>(string)</i> The template for the import data.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">originalFileName</td>
+                                <td  class="wrap"><i>(string)</i> The original file's name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">azureFileName</td>
+                                <td  class="wrap"><i>(string)</i> The azure file's name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">importDataState</td>
+                                <td  class="wrap"><i>(enum ImportDataState)</i> The import data's state.
+									<br/>See <a href="#ImportDataState">ImportDataState.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">importName</td>
+                                <td  class="wrap"><i>(string)</i> The import's name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">detailLog</td>
+                                <td  class="wrap"><i>(string)</i> The detail's log.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">error</td>
+                                <td  class="wrap"><i>(string)</i> The error.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">lastProgressUpdateOn</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Contains the date time of the third party importer progress update.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">drillDownOperation</td>
+                                <td  class="wrap"><i>(string)</i> Drill Down Operation.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">reverted</td>
+                                <td  class="wrap"><i>(bool)</i> Reverted.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ImportInfoResource"></a>
+                    <h4>ImportInfoResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ImportInfoResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ImportInfoResource"><a href="#ImportInfoResource">ImportInfoResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">importId</td>
+                                <td  class="wrap"><i>(Guid)</i> The import data's identifier.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">tenant</td>
+                                <td  class="wrap"><i>(string)</i> The tenant.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscription</td>
+                                <td  class="wrap"><i>(string)</i> The subscription.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">importDataState</td>
+                                <td  class="wrap"><i>(enum ImportDataState)</i> The import data's state.
+									<br/>See <a href="#ImportDataState">ImportDataState.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">azureFileName</td>
+                                <td  class="wrap"><i>(string)</i> The azure file's name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">detailLog</td>
+                                <td  class="wrap"><i>(string)</i> The detail's log.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">error</td>
+                                <td  class="wrap"><i>(string)</i> The error.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">drillDownOperation</td>
+                                <td  class="wrap"><i>(string)</i> Drill Down Operation.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
                     <br />
                     <a class="anchor" name="RevertImport"></a>
                     <h4>RevertImport <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-RevertImport"></i></h4>
@@ -269,6 +584,47 @@
                             </tr>
 
 
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+                    <br />
+                    <a class="anchor" name="ImportDataState"></a>
+                    <h4>ImportDataState <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ImportDataState"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-ImportDataState"><a href="#ImportDataState">ImportDataState</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Pending</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Processing</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Succeeded</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>Failed</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">5</td>
+                                <td>Fatal</td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
 
