@@ -1,0 +1,1228 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Group</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
+    <a class="menu-subitem " href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem " href="shell.clientcontextvalues.html">
+        Client Context Value
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="corepatterns.customentityrecords.html">
+        Custom Entity Record
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem menu-item-selected" href="identity.groups.html">
+        Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Group</h1>
+                    <p>
+                    Service to manage entities of type 'Group'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/identity/groups  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-identity-groups"></i></td>
+                                <div class="hidden-copylink" id="copy-identity-groups">api/{tenantKey}/{orgKey}/identity/groups</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#a0097e6b-2830-47f1-af20-3e5838483417">GET Groups</a></li>
+                            <li><a href="#d5e060c4-5db9-48c8-b981-b46218b25c36">GET Groups (paged)</a></li>
+                            <li><a href="#57e8c8b8-5d80-4931-bfcf-1121aca08135">GET Group by identifier</a></li>
+                            <li><a href="#dc0712c2-728a-49b6-a0e6-c285c56af82d">GET Group by key</a></li>
+                            <li><a href="#6b135974-c0e4-4637-8198-9ea27f9ff8f2">GET Print Group by identifier</a></li>
+                            <li><a href="#233d9303-3c04-44cc-8523-bcec9e10264c">GET Print Group by key</a></li>
+                            <li><a href="#b5a94f0d-d429-4e81-ac6c-557b5b25ac2a">GET Original Print GroupOriginal by identifier</a></li>
+                            <li><a href="#c057fee4-f476-4ebe-8598-427870b3ffd6">GET Original Print Group by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#10980639-810b-4c66-a5e4-3da6b0130d16">POST UserGroups</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#61d3835c-af7a-4dff-a2b5-c24d4baca726">PUT Set IsActive Group</a></li>
+                            <li><a href="#62ab660a-3e6b-45bd-a33b-6ed26e4d425b">PUT Set GroupKey Group</a></li>
+                            <li><a href="#fb27917f-e72b-4c68-b5c7-93aa6df3f9d3">PUT Set Name Group</a></li>
+                            <li><a href="#586e847b-f366-4ef3-8f9b-defa8ef83548">PUT Set Email Group</a></li>
+                            <li><a href="#3bc646f3-f448-4370-a192-27c48186b991">PUT Set Notes Group</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#af25162c-d2ec-4c0b-8875-6e5c5db7151d">DELETE Group by identifier</a></li>
+                            <li><a href="#91f7d76f-0585-43bc-8c7b-d74243ea552f">DELETE Group by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiUserGroupsResource">ApiUserGroupsResource</a></li>
+                        <li><a href="#GroupResource">GroupResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a0097e6b-2830-47f1-af20-3e5838483417"></a>
+                    <h3>GET Groups <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a0097e6b-2830-47f1-af20-3e5838483417"></i></h3>
+                    <div class="hidden-copylink" id="copy-a0097e6b-2830-47f1-af20-3e5838483417"><a href="#a0097e6b-2830-47f1-af20-3e5838483417">GET Groups</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#GroupResource">GroupResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a0097e6b-2830-47f1-af20-3e5838483417">api/{tenantKey}/{orgKey}/identity/groups</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a0097e6b-2830-47f1-af20-3e5838483417"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d5e060c4-5db9-48c8-b981-b46218b25c36"></a>
+                    <h3>GET Groups (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d5e060c4-5db9-48c8-b981-b46218b25c36"></i></h3>
+                    <div class="hidden-copylink" id="copy-d5e060c4-5db9-48c8-b981-b46218b25c36"><a href="#d5e060c4-5db9-48c8-b981-b46218b25c36">GET Groups (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#GroupResource">GroupResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d5e060c4-5db9-48c8-b981-b46218b25c36">api/{tenantKey}/{orgKey}/identity/groups?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups?page={page}&amp;pageSize={pageSize}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d5e060c4-5db9-48c8-b981-b46218b25c36"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="57e8c8b8-5d80-4931-bfcf-1121aca08135"></a>
+                    <h3>GET Group by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-57e8c8b8-5d80-4931-bfcf-1121aca08135"></i></h3>
+                    <div class="hidden-copylink" id="copy-57e8c8b8-5d80-4931-bfcf-1121aca08135"><a href="#57e8c8b8-5d80-4931-bfcf-1121aca08135">GET Group by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#GroupResource">GroupResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-57e8c8b8-5d80-4931-bfcf-1121aca08135">api/{tenantKey}/{orgKey}/identity/groups/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-57e8c8b8-5d80-4931-bfcf-1121aca08135"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="dc0712c2-728a-49b6-a0e6-c285c56af82d"></a>
+                    <h3>GET Group by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-dc0712c2-728a-49b6-a0e6-c285c56af82d"></i></h3>
+                    <div class="hidden-copylink" id="copy-dc0712c2-728a-49b6-a0e6-c285c56af82d"><a href="#dc0712c2-728a-49b6-a0e6-c285c56af82d">GET Group by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#GroupResource">GroupResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-dc0712c2-728a-49b6-a0e6-c285c56af82d">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups/{groupKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-dc0712c2-728a-49b6-a0e6-c285c56af82d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6b135974-c0e4-4637-8198-9ea27f9ff8f2"></a>
+                    <h3>GET Print Group by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6b135974-c0e4-4637-8198-9ea27f9ff8f2"></i></h3>
+                    <div class="hidden-copylink" id="copy-6b135974-c0e4-4637-8198-9ea27f9ff8f2"><a href="#6b135974-c0e4-4637-8198-9ea27f9ff8f2">GET Print Group by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6b135974-c0e4-4637-8198-9ea27f9ff8f2">api/{tenantKey}/{orgKey}/identity/groups/{id}/print?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups/{id}/print?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6b135974-c0e4-4637-8198-9ea27f9ff8f2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="233d9303-3c04-44cc-8523-bcec9e10264c"></a>
+                    <h3>GET Print Group by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-233d9303-3c04-44cc-8523-bcec9e10264c"></i></h3>
+                    <div class="hidden-copylink" id="copy-233d9303-3c04-44cc-8523-bcec9e10264c"><a href="#233d9303-3c04-44cc-8523-bcec9e10264c">GET Print Group by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-233d9303-3c04-44cc-8523-bcec9e10264c">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups/{groupKey}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-233d9303-3c04-44cc-8523-bcec9e10264c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b5a94f0d-d429-4e81-ac6c-557b5b25ac2a"></a>
+                    <h3>GET Original Print GroupOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b5a94f0d-d429-4e81-ac6c-557b5b25ac2a"></i></h3>
+                    <div class="hidden-copylink" id="copy-b5a94f0d-d429-4e81-ac6c-557b5b25ac2a"><a href="#b5a94f0d-d429-4e81-ac6c-557b5b25ac2a">GET Original Print GroupOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b5a94f0d-d429-4e81-ac6c-557b5b25ac2a">api/{tenantKey}/{orgKey}/identity/groups/{id}/printOriginal?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups/{id}/printOriginal?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b5a94f0d-d429-4e81-ac6c-557b5b25ac2a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c057fee4-f476-4ebe-8598-427870b3ffd6"></a>
+                    <h3>GET Original Print Group by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c057fee4-f476-4ebe-8598-427870b3ffd6"></i></h3>
+                    <div class="hidden-copylink" id="copy-c057fee4-f476-4ebe-8598-427870b3ffd6"><a href="#c057fee4-f476-4ebe-8598-427870b3ffd6">GET Original Print Group by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c057fee4-f476-4ebe-8598-427870b3ffd6">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/groups/{groupKey}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c057fee4-f476-4ebe-8598-427870b3ffd6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="10980639-810b-4c66-a5e4-3da6b0130d16"></a>
+                    <h3>POST UserGroups <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-10980639-810b-4c66-a5e4-3da6b0130d16"></i></h3>
+                    <div class="hidden-copylink" id="copy-10980639-810b-4c66-a5e4-3da6b0130d16"><a href="#10980639-810b-4c66-a5e4-3da6b0130d16">POST UserGroups</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupResource</td>
+                                <td><i>(ApiUserGroupsResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiUserGroupsResource">ApiUserGroupsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiUserGroupsResource">ApiUserGroupsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-10980639-810b-4c66-a5e4-3da6b0130d16">api/{tenantKey}/{orgKey}/identity/groups</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /identity/groups</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-10980639-810b-4c66-a5e4-3da6b0130d16"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="586e847b-f366-4ef3-8f9b-defa8ef83548"></a>
+                    <h3>PUT Set Email Group <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-586e847b-f366-4ef3-8f9b-defa8ef83548"></i></h3>
+                    <div class="hidden-copylink" id="copy-586e847b-f366-4ef3-8f9b-defa8ef83548"><a href="#586e847b-f366-4ef3-8f9b-defa8ef83548">PUT Set Email Group</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Email' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-586e847b-f366-4ef3-8f9b-defa8ef83548">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}/email</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /identity/groups/{groupKey}/email</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-586e847b-f366-4ef3-8f9b-defa8ef83548"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="62ab660a-3e6b-45bd-a33b-6ed26e4d425b"></a>
+                    <h3>PUT Set GroupKey Group <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-62ab660a-3e6b-45bd-a33b-6ed26e4d425b"></i></h3>
+                    <div class="hidden-copylink" id="copy-62ab660a-3e6b-45bd-a33b-6ed26e4d425b"><a href="#62ab660a-3e6b-45bd-a33b-6ed26e4d425b">PUT Set GroupKey Group</a></div>
+                    <p class="operation-description">Updates the value of attribute 'GroupKey' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-62ab660a-3e6b-45bd-a33b-6ed26e4d425b">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}/groupKey</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /identity/groups/{groupKey}/groupKey</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-62ab660a-3e6b-45bd-a33b-6ed26e4d425b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="61d3835c-af7a-4dff-a2b5-c24d4baca726"></a>
+                    <h3>PUT Set IsActive Group <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-61d3835c-af7a-4dff-a2b5-c24d4baca726"></i></h3>
+                    <div class="hidden-copylink" id="copy-61d3835c-af7a-4dff-a2b5-c24d4baca726"><a href="#61d3835c-af7a-4dff-a2b5-c24d4baca726">PUT Set IsActive Group</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-61d3835c-af7a-4dff-a2b5-c24d4baca726">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /identity/groups/{groupKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-61d3835c-af7a-4dff-a2b5-c24d4baca726"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="fb27917f-e72b-4c68-b5c7-93aa6df3f9d3"></a>
+                    <h3>PUT Set Name Group <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-fb27917f-e72b-4c68-b5c7-93aa6df3f9d3"></i></h3>
+                    <div class="hidden-copylink" id="copy-fb27917f-e72b-4c68-b5c7-93aa6df3f9d3"><a href="#fb27917f-e72b-4c68-b5c7-93aa6df3f9d3">PUT Set Name Group</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Name' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-fb27917f-e72b-4c68-b5c7-93aa6df3f9d3">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}/name</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /identity/groups/{groupKey}/name</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-fb27917f-e72b-4c68-b5c7-93aa6df3f9d3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3bc646f3-f448-4370-a192-27c48186b991"></a>
+                    <h3>PUT Set Notes Group <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3bc646f3-f448-4370-a192-27c48186b991"></i></h3>
+                    <div class="hidden-copylink" id="copy-3bc646f3-f448-4370-a192-27c48186b991"><a href="#3bc646f3-f448-4370-a192-27c48186b991">PUT Set Notes Group</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Notes' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-3bc646f3-f448-4370-a192-27c48186b991">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}/notes</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /identity/groups/{groupKey}/notes</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3bc646f3-f448-4370-a192-27c48186b991"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="af25162c-d2ec-4c0b-8875-6e5c5db7151d"></a>
+                    <h3>DELETE Group by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-af25162c-d2ec-4c0b-8875-6e5c5db7151d"></i></h3>
+                    <div class="hidden-copylink" id="copy-af25162c-d2ec-4c0b-8875-6e5c5db7151d"><a href="#af25162c-d2ec-4c0b-8875-6e5c5db7151d">DELETE Group by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-af25162c-d2ec-4c0b-8875-6e5c5db7151d">api/{tenantKey}/{orgKey}/identity/groups/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /identity/groups/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-af25162c-d2ec-4c0b-8875-6e5c5db7151d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="91f7d76f-0585-43bc-8c7b-d74243ea552f"></a>
+                    <h3>DELETE Group by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-91f7d76f-0585-43bc-8c7b-d74243ea552f"></i></h3>
+                    <div class="hidden-copylink" id="copy-91f7d76f-0585-43bc-8c7b-d74243ea552f"><a href="#91f7d76f-0585-43bc-8c7b-d74243ea552f">DELETE Group by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td><i>(string)</i> Group.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-91f7d76f-0585-43bc-8c7b-d74243ea552f">api/{tenantKey}/{orgKey}/identity/groups/{groupKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /identity/groups/{groupKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-91f7d76f-0585-43bc-8c7b-d74243ea552f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiUserGroupsResource"></a>
+                    <h4>ApiUserGroupsResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiUserGroupsResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiUserGroupsResource"><a href="#ApiUserGroupsResource">ApiUserGroupsResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td  class="wrap"><i>(string)</i> Group.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> Name.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">email</td>
+                                <td  class="wrap"><i>(string)</i> Email.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> Notes.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="GroupResource"></a>
+                    <h4>GroupResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-GroupResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-GroupResource"><a href="#GroupResource">GroupResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">groupKey</td>
+                                <td  class="wrap"><i>(string)</i> Group.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> Name.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">email</td>
+                                <td  class="wrap"><i>(string)</i> Email.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">notes</td>
+                                <td  class="wrap"><i>(string)</i> Notes.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">users</td>
+                                <td  class="wrap"><i>(User)</i> Users.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

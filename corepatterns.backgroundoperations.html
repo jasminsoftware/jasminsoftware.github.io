@@ -1,0 +1,1824 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | BackgroundOperation</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
+    <a class="menu-subitem menu-item-selected" href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem " href="shell.clientcontextvalues.html">
+        Client Context Value
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="corepatterns.customentityrecords.html">
+        Custom Entity Record
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="identity.groups.html">
+        Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | BackgroundOperation</h1>
+                    <p>
+                    Service to manage entities of type 'BackgroundOperation'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-corepatterns-backgroundoperations"></i></td>
+                                <div class="hidden-copylink" id="copy-corepatterns-backgroundoperations">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#b001c4ca-abaa-4a0a-a745-6483049d4ad4">GET BackgroundOperations</a></li>
+                            <li><a href="#ed220e47-6bea-4c62-8ac3-45fa1e992306">GET BackgroundOperations (paged)</a></li>
+                            <li><a href="#13e29507-b751-4f94-aa4f-3ff79571071c">GET BackgroundOperation by identifier</a></li>
+                            <li><a href="#c75f1543-1793-44ca-a885-b4fc12e60f86">GET BackgroundOperation by key</a></li>
+                            <li><a href="#0e544449-4a5e-4320-ad75-2571c2d8ca48">GET Print BackgroundOperation by identifier</a></li>
+                            <li><a href="#13c6906e-25f2-4230-af5b-6a89c604f51b">GET Print BackgroundOperation by key</a></li>
+                            <li><a href="#078fc784-d26b-4a90-bc98-fdeb8fd34a5c">GET Original Print BackgroundOperationOriginal by identifier</a></li>
+                            <li><a href="#f279fe9c-e029-4c63-aa70-bc0efdc79489">GET Original Print BackgroundOperation by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#366d14f5-b5e9-4d46-a5aa-dcdda5890784">POST BackgroundOperations</a></li>
+                            <li><a href="#45141c30-8a2c-4490-a72d-6feadd5bea96">POST BackgroundOperation </a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#f3832286-a2f8-4e10-a7f4-2179ab0117ea">PUT Set IsActive BackgroundOperation</a></li>
+                            <li><a href="#63e068c3-da9d-4ff2-9f6a-095789b89c92">PUT Set BackgroundOperationKey BackgroundOperation</a></li>
+                            <li><a href="#48a67ebf-2319-4c83-8569-dddb9ca03333">PUT Set EventType BackgroundOperation</a></li>
+                            <li><a href="#ca586fdc-1e35-4aa5-924f-001b721c6b35">PUT Set Operation BackgroundOperation</a></li>
+                            <li><a href="#e64f4780-cb41-43c5-a1c7-f94cf3d4ceeb">PUT Set SchemaEntity BackgroundOperation</a></li>
+                            <li><a href="#97b95075-ef9f-489b-9e4b-d397e4691155">PUT Set EntityUri BackgroundOperation</a></li>
+                            <li><a href="#009e2f7b-2c5f-4c4f-a15f-bf1a921091fd">PUT Set EntityKey BackgroundOperation</a></li>
+                            <li><a href="#49ea3ae7-3a13-4b1e-a896-c8af9fc29e3d">PUT Set UserName BackgroundOperation</a></li>
+                            <li><a href="#26072aed-7d69-4bd6-9229-2e0c82a6e832">PUT Set BackgroundOperationStatus BackgroundOperation</a></li>
+                            <li><a href="#bc0404c3-fb22-4265-b343-b8095784377a">PUT Set Description BackgroundOperationDetail</a></li>
+                            <li><a href="#92b50071-f15e-41a3-87ed-62a19003db82">PUT Set BackgroundOperationDetailStatus BackgroundOperationDetail</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#6d225274-ec39-4b88-9a1d-4ae2f5bd05c0">DELETE Background Operation Detail by identifier</a></li>
+                            <li><a href="#e8e3ead5-0f1a-4e37-96ca-ee59ca8ff652">DELETE BackgroundOperation by identifier</a></li>
+                            <li><a href="#a97476ee-9614-42c1-81f7-962ab50509c5">DELETE BackgroundOperation by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiBackgroundOperationBackgroundOperationDetailsResource">ApiBackgroundOperationBackgroundOperationDetailsResource</a></li>
+                        <li><a href="#ApiBackgroundOperationResource">ApiBackgroundOperationResource</a></li>
+                        <li><a href="#BackgroundOperationDetailResource">BackgroundOperationDetailResource</a></li>
+                        <li><a href="#BackgroundOperationResource">BackgroundOperationResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#BackgroundOperationDetailStatus">BackgroundOperationDetailStatus</a></li>
+                        <li><a href="#BackgroundOperationStatus">BackgroundOperationStatus</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b001c4ca-abaa-4a0a-a745-6483049d4ad4"></a>
+                    <h3>GET BackgroundOperations <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b001c4ca-abaa-4a0a-a745-6483049d4ad4"></i></h3>
+                    <div class="hidden-copylink" id="copy-b001c4ca-abaa-4a0a-a745-6483049d4ad4"><a href="#b001c4ca-abaa-4a0a-a745-6483049d4ad4">GET BackgroundOperations</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#BackgroundOperationResource">BackgroundOperationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b001c4ca-abaa-4a0a-a745-6483049d4ad4">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b001c4ca-abaa-4a0a-a745-6483049d4ad4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ed220e47-6bea-4c62-8ac3-45fa1e992306"></a>
+                    <h3>GET BackgroundOperations (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ed220e47-6bea-4c62-8ac3-45fa1e992306"></i></h3>
+                    <div class="hidden-copylink" id="copy-ed220e47-6bea-4c62-8ac3-45fa1e992306"><a href="#ed220e47-6bea-4c62-8ac3-45fa1e992306">GET BackgroundOperations (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#BackgroundOperationResource">BackgroundOperationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-ed220e47-6bea-4c62-8ac3-45fa1e992306">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations?page={page}&amp;pageSize={pageSize}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ed220e47-6bea-4c62-8ac3-45fa1e992306"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="13e29507-b751-4f94-aa4f-3ff79571071c"></a>
+                    <h3>GET BackgroundOperation by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-13e29507-b751-4f94-aa4f-3ff79571071c"></i></h3>
+                    <div class="hidden-copylink" id="copy-13e29507-b751-4f94-aa4f-3ff79571071c"><a href="#13e29507-b751-4f94-aa4f-3ff79571071c">GET BackgroundOperation by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#BackgroundOperationResource">BackgroundOperationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-13e29507-b751-4f94-aa4f-3ff79571071c">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-13e29507-b751-4f94-aa4f-3ff79571071c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c75f1543-1793-44ca-a885-b4fc12e60f86"></a>
+                    <h3>GET BackgroundOperation by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c75f1543-1793-44ca-a885-b4fc12e60f86"></i></h3>
+                    <div class="hidden-copylink" id="copy-c75f1543-1793-44ca-a885-b4fc12e60f86"><a href="#c75f1543-1793-44ca-a885-b4fc12e60f86">GET BackgroundOperation by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#BackgroundOperationResource">BackgroundOperationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c75f1543-1793-44ca-a885-b4fc12e60f86">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations/{backgroundOperationKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c75f1543-1793-44ca-a885-b4fc12e60f86"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0e544449-4a5e-4320-ad75-2571c2d8ca48"></a>
+                    <h3>GET Print BackgroundOperation by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0e544449-4a5e-4320-ad75-2571c2d8ca48"></i></h3>
+                    <div class="hidden-copylink" id="copy-0e544449-4a5e-4320-ad75-2571c2d8ca48"><a href="#0e544449-4a5e-4320-ad75-2571c2d8ca48">GET Print BackgroundOperation by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-0e544449-4a5e-4320-ad75-2571c2d8ca48">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{id}/print?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations/{id}/print?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0e544449-4a5e-4320-ad75-2571c2d8ca48"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="13c6906e-25f2-4230-af5b-6a89c604f51b"></a>
+                    <h3>GET Print BackgroundOperation by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-13c6906e-25f2-4230-af5b-6a89c604f51b"></i></h3>
+                    <div class="hidden-copylink" id="copy-13c6906e-25f2-4230-af5b-6a89c604f51b"><a href="#13c6906e-25f2-4230-af5b-6a89c604f51b">GET Print BackgroundOperation by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-13c6906e-25f2-4230-af5b-6a89c604f51b">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations/{backgroundOperationKey}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-13c6906e-25f2-4230-af5b-6a89c604f51b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="078fc784-d26b-4a90-bc98-fdeb8fd34a5c"></a>
+                    <h3>GET Original Print BackgroundOperationOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-078fc784-d26b-4a90-bc98-fdeb8fd34a5c"></i></h3>
+                    <div class="hidden-copylink" id="copy-078fc784-d26b-4a90-bc98-fdeb8fd34a5c"><a href="#078fc784-d26b-4a90-bc98-fdeb8fd34a5c">GET Original Print BackgroundOperationOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-078fc784-d26b-4a90-bc98-fdeb8fd34a5c">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{id}/printOriginal?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations/{id}/printOriginal?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-078fc784-d26b-4a90-bc98-fdeb8fd34a5c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f279fe9c-e029-4c63-aa70-bc0efdc79489"></a>
+                    <h3>GET Original Print BackgroundOperation by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f279fe9c-e029-4c63-aa70-bc0efdc79489"></i></h3>
+                    <div class="hidden-copylink" id="copy-f279fe9c-e029-4c63-aa70-bc0efdc79489"><a href="#f279fe9c-e029-4c63-aa70-bc0efdc79489">GET Original Print BackgroundOperation by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f279fe9c-e029-4c63-aa70-bc0efdc79489">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/backgroundOperations/{backgroundOperationKey}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f279fe9c-e029-4c63-aa70-bc0efdc79489"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="366d14f5-b5e9-4d46-a5aa-dcdda5890784"></a>
+                    <h3>POST BackgroundOperations <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-366d14f5-b5e9-4d46-a5aa-dcdda5890784"></i></h3>
+                    <div class="hidden-copylink" id="copy-366d14f5-b5e9-4d46-a5aa-dcdda5890784"><a href="#366d14f5-b5e9-4d46-a5aa-dcdda5890784">POST BackgroundOperations</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationResource</td>
+                                <td><i>(ApiBackgroundOperationResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiBackgroundOperationResource">ApiBackgroundOperationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiBackgroundOperationResource">ApiBackgroundOperationResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-366d14f5-b5e9-4d46-a5aa-dcdda5890784">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/backgroundOperations</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-366d14f5-b5e9-4d46-a5aa-dcdda5890784"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="45141c30-8a2c-4490-a72d-6feadd5bea96"></a>
+                    <h3>POST BackgroundOperation  <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-45141c30-8a2c-4490-a72d-6feadd5bea96"></i></h3>
+                    <div class="hidden-copylink" id="copy-45141c30-8a2c-4490-a72d-6feadd5bea96"><a href="#45141c30-8a2c-4490-a72d-6feadd5bea96">POST BackgroundOperation </a></div>
+                    <p class="operation-description">Inserts a new 'Background Operation Detail' in the 'BackgroundOperation'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiBackgroundOperationBackgroundOperationDetailsResource)</i> The ApiBackgroundOperationBackgroundOperationDetailsResource instance.<br/>See <a href="#ApiBackgroundOperationBackgroundOperationDetailsResource">ApiBackgroundOperationBackgroundOperationDetailsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>NoContent. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-45141c30-8a2c-4490-a72d-6feadd5bea96">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-45141c30-8a2c-4490-a72d-6feadd5bea96"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="92b50071-f15e-41a3-87ed-62a19003db82"></a>
+                    <h3>PUT Set BackgroundOperationDetailStatus BackgroundOperationDetail <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-92b50071-f15e-41a3-87ed-62a19003db82"></i></h3>
+                    <div class="hidden-copylink" id="copy-92b50071-f15e-41a3-87ed-62a19003db82"><a href="#92b50071-f15e-41a3-87ed-62a19003db82">PUT Set BackgroundOperationDetailStatus BackgroundOperationDetail</a></div>
+                    <p class="operation-description">Updates the value of attribute 'BackgroundOperationDetailStatus' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum BackgroundOperationDetailStatus)</i> The request body should contain the new value for the attribute.<br/>See <a href="#BackgroundOperationDetailStatus">BackgroundOperationDetailStatus.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-92b50071-f15e-41a3-87ed-62a19003db82">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails/{lineId}/backgroundOperationDetailStatus</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails/{lineId}/backgroundOperationDetailStatus</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-92b50071-f15e-41a3-87ed-62a19003db82"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="63e068c3-da9d-4ff2-9f6a-095789b89c92"></a>
+                    <h3>PUT Set BackgroundOperationKey BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-63e068c3-da9d-4ff2-9f6a-095789b89c92"></i></h3>
+                    <div class="hidden-copylink" id="copy-63e068c3-da9d-4ff2-9f6a-095789b89c92"><a href="#63e068c3-da9d-4ff2-9f6a-095789b89c92">PUT Set BackgroundOperationKey BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'BackgroundOperationKey' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-63e068c3-da9d-4ff2-9f6a-095789b89c92">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationKey</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationKey</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-63e068c3-da9d-4ff2-9f6a-095789b89c92"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="26072aed-7d69-4bd6-9229-2e0c82a6e832"></a>
+                    <h3>PUT Set BackgroundOperationStatus BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-26072aed-7d69-4bd6-9229-2e0c82a6e832"></i></h3>
+                    <div class="hidden-copylink" id="copy-26072aed-7d69-4bd6-9229-2e0c82a6e832"><a href="#26072aed-7d69-4bd6-9229-2e0c82a6e832">PUT Set BackgroundOperationStatus BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'BackgroundOperationStatus' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum BackgroundOperationStatus)</i> The request body should contain the new value for the attribute.<br/>See <a href="#BackgroundOperationStatus">BackgroundOperationStatus.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-26072aed-7d69-4bd6-9229-2e0c82a6e832">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationStatus</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationStatus</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-26072aed-7d69-4bd6-9229-2e0c82a6e832"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bc0404c3-fb22-4265-b343-b8095784377a"></a>
+                    <h3>PUT Set Description BackgroundOperationDetail <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bc0404c3-fb22-4265-b343-b8095784377a"></i></h3>
+                    <div class="hidden-copylink" id="copy-bc0404c3-fb22-4265-b343-b8095784377a"><a href="#bc0404c3-fb22-4265-b343-b8095784377a">PUT Set Description BackgroundOperationDetail</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Description' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-bc0404c3-fb22-4265-b343-b8095784377a">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails/{lineId}/description</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails/{lineId}/description</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bc0404c3-fb22-4265-b343-b8095784377a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="009e2f7b-2c5f-4c4f-a15f-bf1a921091fd"></a>
+                    <h3>PUT Set EntityKey BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-009e2f7b-2c5f-4c4f-a15f-bf1a921091fd"></i></h3>
+                    <div class="hidden-copylink" id="copy-009e2f7b-2c5f-4c4f-a15f-bf1a921091fd"><a href="#009e2f7b-2c5f-4c4f-a15f-bf1a921091fd">PUT Set EntityKey BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'EntityKey' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-009e2f7b-2c5f-4c4f-a15f-bf1a921091fd">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/entityKey</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/entityKey</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-009e2f7b-2c5f-4c4f-a15f-bf1a921091fd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="97b95075-ef9f-489b-9e4b-d397e4691155"></a>
+                    <h3>PUT Set EntityUri BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-97b95075-ef9f-489b-9e4b-d397e4691155"></i></h3>
+                    <div class="hidden-copylink" id="copy-97b95075-ef9f-489b-9e4b-d397e4691155"><a href="#97b95075-ef9f-489b-9e4b-d397e4691155">PUT Set EntityUri BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'EntityUri' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-97b95075-ef9f-489b-9e4b-d397e4691155">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/entityUri</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/entityUri</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-97b95075-ef9f-489b-9e4b-d397e4691155"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="48a67ebf-2319-4c83-8569-dddb9ca03333"></a>
+                    <h3>PUT Set EventType BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-48a67ebf-2319-4c83-8569-dddb9ca03333"></i></h3>
+                    <div class="hidden-copylink" id="copy-48a67ebf-2319-4c83-8569-dddb9ca03333"><a href="#48a67ebf-2319-4c83-8569-dddb9ca03333">PUT Set EventType BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'EventType' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-48a67ebf-2319-4c83-8569-dddb9ca03333">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/eventType</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/eventType</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-48a67ebf-2319-4c83-8569-dddb9ca03333"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f3832286-a2f8-4e10-a7f4-2179ab0117ea"></a>
+                    <h3>PUT Set IsActive BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f3832286-a2f8-4e10-a7f4-2179ab0117ea"></i></h3>
+                    <div class="hidden-copylink" id="copy-f3832286-a2f8-4e10-a7f4-2179ab0117ea"><a href="#f3832286-a2f8-4e10-a7f4-2179ab0117ea">PUT Set IsActive BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f3832286-a2f8-4e10-a7f4-2179ab0117ea">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f3832286-a2f8-4e10-a7f4-2179ab0117ea"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ca586fdc-1e35-4aa5-924f-001b721c6b35"></a>
+                    <h3>PUT Set Operation BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ca586fdc-1e35-4aa5-924f-001b721c6b35"></i></h3>
+                    <div class="hidden-copylink" id="copy-ca586fdc-1e35-4aa5-924f-001b721c6b35"><a href="#ca586fdc-1e35-4aa5-924f-001b721c6b35">PUT Set Operation BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Operation' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-ca586fdc-1e35-4aa5-924f-001b721c6b35">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/operation</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/operation</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ca586fdc-1e35-4aa5-924f-001b721c6b35"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e64f4780-cb41-43c5-a1c7-f94cf3d4ceeb"></a>
+                    <h3>PUT Set SchemaEntity BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e64f4780-cb41-43c5-a1c7-f94cf3d4ceeb"></i></h3>
+                    <div class="hidden-copylink" id="copy-e64f4780-cb41-43c5-a1c7-f94cf3d4ceeb"><a href="#e64f4780-cb41-43c5-a1c7-f94cf3d4ceeb">PUT Set SchemaEntity BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'SchemaEntity' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e64f4780-cb41-43c5-a1c7-f94cf3d4ceeb">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/schemaEntity</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/schemaEntity</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e64f4780-cb41-43c5-a1c7-f94cf3d4ceeb"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="49ea3ae7-3a13-4b1e-a896-c8af9fc29e3d"></a>
+                    <h3>PUT Set UserName BackgroundOperation <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-49ea3ae7-3a13-4b1e-a896-c8af9fc29e3d"></i></h3>
+                    <div class="hidden-copylink" id="copy-49ea3ae7-3a13-4b1e-a896-c8af9fc29e3d"><a href="#49ea3ae7-3a13-4b1e-a896-c8af9fc29e3d">PUT Set UserName BackgroundOperation</a></div>
+                    <p class="operation-description">Updates the value of attribute 'UserName' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-49ea3ae7-3a13-4b1e-a896-c8af9fc29e3d">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/userName</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/backgroundOperations/{backgroundOperationKey}/userName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-49ea3ae7-3a13-4b1e-a896-c8af9fc29e3d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6d225274-ec39-4b88-9a1d-4ae2f5bd05c0"></a>
+                    <h3>DELETE Background Operation Detail by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6d225274-ec39-4b88-9a1d-4ae2f5bd05c0"></i></h3>
+                    <div class="hidden-copylink" id="copy-6d225274-ec39-4b88-9a1d-4ae2f5bd05c0"><a href="#6d225274-ec39-4b88-9a1d-4ae2f5bd05c0">DELETE Background Operation Detail by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>NoContent. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6d225274-ec39-4b88-9a1d-4ae2f5bd05c0">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails/{lineId}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/backgroundOperations/{backgroundOperationKey}/backgroundOperationDetails/{lineId}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6d225274-ec39-4b88-9a1d-4ae2f5bd05c0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e8e3ead5-0f1a-4e37-96ca-ee59ca8ff652"></a>
+                    <h3>DELETE BackgroundOperation by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e8e3ead5-0f1a-4e37-96ca-ee59ca8ff652"></i></h3>
+                    <div class="hidden-copylink" id="copy-e8e3ead5-0f1a-4e37-96ca-ee59ca8ff652"><a href="#e8e3ead5-0f1a-4e37-96ca-ee59ca8ff652">DELETE BackgroundOperation by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e8e3ead5-0f1a-4e37-96ca-ee59ca8ff652">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/backgroundOperations/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e8e3ead5-0f1a-4e37-96ca-ee59ca8ff652"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a97476ee-9614-42c1-81f7-962ab50509c5"></a>
+                    <h3>DELETE BackgroundOperation by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a97476ee-9614-42c1-81f7-962ab50509c5"></i></h3>
+                    <div class="hidden-copylink" id="copy-a97476ee-9614-42c1-81f7-962ab50509c5"><a href="#a97476ee-9614-42c1-81f7-962ab50509c5">DELETE BackgroundOperation by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td><i>(string)</i> Background Operation.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a97476ee-9614-42c1-81f7-962ab50509c5">api/{tenantKey}/{orgKey}/corePatterns/backgroundOperations/{backgroundOperationKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/backgroundOperations/{backgroundOperationKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a97476ee-9614-42c1-81f7-962ab50509c5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiBackgroundOperationBackgroundOperationDetailsResource"></a>
+                    <h4>ApiBackgroundOperationBackgroundOperationDetailsResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiBackgroundOperationBackgroundOperationDetailsResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiBackgroundOperationBackgroundOperationDetailsResource"><a href="#ApiBackgroundOperationBackgroundOperationDetailsResource">ApiBackgroundOperationBackgroundOperationDetailsResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">backgroundOperationDetailStatus</td>
+                                <td  class="wrap"><i>(enum BackgroundOperationDetailStatus)</i> Background Operation Detail Status.
+									<br/>See <a href="#BackgroundOperationDetailStatus">BackgroundOperationDetailStatus.</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ApiBackgroundOperationResource"></a>
+                    <h4>ApiBackgroundOperationResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiBackgroundOperationResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiBackgroundOperationResource"><a href="#ApiBackgroundOperationResource">ApiBackgroundOperationResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td  class="wrap"><i>(string)</i> Background Operation.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td  class="wrap"><i>(string)</i> Operation.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">eventType</td>
+                                <td  class="wrap"><i>(string)</i> Event Type.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">entityUri</td>
+                                <td  class="wrap"><i>(string)</i> Entity Uri.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">backgroundOperationDetails</td>
+                                <td title="(List of ApiBackgroundOperationBackgroundOperationDetailsResource) Background Operation Details. See ApiBackgroundOperationBackgroundOperationDetailsResource." class="wrap"><i>(List of ApiBackgroundOperationBackgroundOperationDetailsResource)</i> Background Operation Details.
+									<br/>See <a href="#ApiBackgroundOperationBackgroundOperationDetailsResource">ApiBackgroundOperationBackgroundOperationDetailsResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">entityKey</td>
+                                <td  class="wrap"><i>(string)</i> Entity.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">userName</td>
+                                <td  class="wrap"><i>(string)</i> User Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">backgroundOperationStatus</td>
+                                <td  class="wrap"><i>(enum BackgroundOperationStatus)</i> Background Operation Status.
+									<br/>See <a href="#BackgroundOperationStatus">BackgroundOperationStatus.</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="BackgroundOperationDetailResource"></a>
+                    <h4>BackgroundOperationDetailResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-BackgroundOperationDetailResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-BackgroundOperationDetailResource"><a href="#BackgroundOperationDetailResource">BackgroundOperationDetailResource</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">backgroundOperationDetailStatus</td>
+                                <td  class="wrap"><i>(enum BackgroundOperationDetailStatus)</i> Background Operation Detail Status.
+									<br/>See <a href="#BackgroundOperationDetailStatus">BackgroundOperationDetailStatus.</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="BackgroundOperationResource"></a>
+                    <h4>BackgroundOperationResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-BackgroundOperationResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-BackgroundOperationResource"><a href="#BackgroundOperationResource">BackgroundOperationResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">backgroundOperationKey</td>
+                                <td  class="wrap"><i>(string)</i> Background Operation.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">operation</td>
+                                <td  class="wrap"><i>(string)</i> Operation.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Operation. These records are accessibly through the <a href="corepatterns.operations.html">Operations</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaEntity. These records are accessibly through the <a href="corepatterns.schemaentities.html">SchemaEntities</a> service.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">eventType</td>
+                                <td  class="wrap"><i>(string)</i> Event Type.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">entityUri</td>
+                                <td  class="wrap"><i>(string)</i> Entity Uri.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">backgroundOperationDetails</td>
+                                <td  class="wrap"><i>(List of BackgroundOperationDetailResource)</i> Background Operation Details.
+									<br/>See <a href="#BackgroundOperationDetailResource">BackgroundOperationDetailResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">entityKey</td>
+                                <td  class="wrap"><i>(string)</i> Entity.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">userName</td>
+                                <td  class="wrap"><i>(string)</i> User Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">backgroundOperationStatus</td>
+                                <td  class="wrap"><i>(enum BackgroundOperationStatus)</i> Background Operation Status.
+									<br/>See <a href="#BackgroundOperationStatus">BackgroundOperationStatus.</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+                    <br />
+                    <a class="anchor" name="BackgroundOperationDetailStatus"></a>
+                    <h4>BackgroundOperationDetailStatus <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-BackgroundOperationDetailStatus"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-BackgroundOperationDetailStatus"><a href="#BackgroundOperationDetailStatus">BackgroundOperationDetailStatus</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>InProgress</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Succeded</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>Failed</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="BackgroundOperationStatus"></a>
+                    <h4>BackgroundOperationStatus <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-BackgroundOperationStatus"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-BackgroundOperationStatus"><a href="#BackgroundOperationStatus">BackgroundOperationStatus</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>InProgress</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Completed</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>CompletedWithErrors</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

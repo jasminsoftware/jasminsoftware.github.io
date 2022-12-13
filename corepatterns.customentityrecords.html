@@ -1,0 +1,1277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Custom Entity Record</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
+    <a class="menu-subitem " href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem " href="shell.clientcontextvalues.html">
+        Client Context Value
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem menu-item-selected" href="corepatterns.customentityrecords.html">
+        Custom Entity Record
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="identity.groups.html">
+        Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Custom Entity Record</h1>
+                    <p>
+                    Service to manage entities of type 'UserEntityRecord'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+								<td class="breakword url-cell">api/{tenantKey}/{orgKey}/customentities/{entity}  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-customentities-{entity}"></i></td>
+                                <div class="hidden-copylink" id="copy-customentities-{entity}">{entity}</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#b36da96b-c03a-474b-ad0f-e8c12a74ce8f">GET CustomEntityRecords</a></li>
+                            <li><a href="#62cb23c5-f96a-470b-85e6-9bbd29a8fa90">GET CustomEntityRecords (paged)</a></li>
+                            <li><a href="#176eef6a-0979-4df5-8635-35b57aed23d6">GET CustomEntityRecord by identifier</a></li>
+                            <li><a href="#05f66736-2c36-4d76-b635-7ccd373cde94">GET CustomEntityRecord by key</a></li>
+                            <li><a href="#8012e20e-ad69-4155-910e-5415c959dece">GET CustomEntityRecord by key</a></li>
+                            <li><a href="#956e9877-d9f0-4e91-a699-405d23e66b92">GET CustomEntityRecord OData</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#5813e65d-a966-43fe-9d60-d42573f48a73">POST CustomEntityRecords</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+						 <li><a href="#putSetCustomAttributeCustomEntityRecord">PUT Set Custom Attribute CustomEntityRecord</a></li>
+                            <li><a href="#1a985593-e90e-4933-9ca0-57bd945e4b09">PUT Set IsActive CustomEntityRecord</a></li>
+                            <li><a href="#a6b1c788-74c9-4df9-9cc9-36dcd31a79e7">PUT Set IsActive CustomEntityRecord</a></li>
+                            <li><a href="#c7d267db-13c1-43ef-b576-12aac65335b2">PUT Set Description CustomEntityRecord</a></li>
+                            <li><a href="#6b62748f-8d09-44b7-9f64-73e5b480002c">PUT Set Description CustomEntityRecord</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#1eac33d1-7495-4a0e-bc0e-c832838e1174">DELETE CustomEntityRecord by identifier</a></li>
+                            <li><a href="#28836cf9-fea9-4d5b-bde5-293512141ae5">DELETE CustomEntityRecord by key</a></li>
+                            <li><a href="#60ccf895-e764-40d8-a637-897aaae239a4">DELETE CustomEntityRecord by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiCustomEntityRecordResource">ApiCustomEntityRecordResource</a></li>
+                        <li><a href="#CustomEntityRecordResource">CustomEntityRecordResource</a></li>
+                        <li><a href="#CustomEntityRecordResource.">CustomEntityRecordResource.</a></li>
+                        <li><a href="#ExtensibilityCustomAttributeValueResource">ExtensibilityCustomAttributeValueResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b36da96b-c03a-474b-ad0f-e8c12a74ce8f"></a>
+                    <h3>GET CustomEntityRecords <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b36da96b-c03a-474b-ad0f-e8c12a74ce8f"></i></h3>
+                    <div class="hidden-copylink" id="copy-b36da96b-c03a-474b-ad0f-e8c12a74ce8f"><a href="#b36da96b-c03a-474b-ad0f-e8c12a74ce8f">GET CustomEntityRecords</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#CustomEntityRecordResource">CustomEntityRecordResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b36da96b-c03a-474b-ad0f-e8c12a74ce8f">api/{tenantKey}/{orgKey}/customentities/{entity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /customentities/{entity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b36da96b-c03a-474b-ad0f-e8c12a74ce8f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="62cb23c5-f96a-470b-85e6-9bbd29a8fa90"></a>
+                    <h3>GET CustomEntityRecords (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-62cb23c5-f96a-470b-85e6-9bbd29a8fa90"></i></h3>
+                    <div class="hidden-copylink" id="copy-62cb23c5-f96a-470b-85e6-9bbd29a8fa90"><a href="#62cb23c5-f96a-470b-85e6-9bbd29a8fa90">GET CustomEntityRecords (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#CustomEntityRecordResource">CustomEntityRecordResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-62cb23c5-f96a-470b-85e6-9bbd29a8fa90">api/{tenantKey}/{orgKey}/customentities/{entity}?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /customentities/{entity}?page={page}&amp;pageSize={pageSize}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-62cb23c5-f96a-470b-85e6-9bbd29a8fa90"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="176eef6a-0979-4df5-8635-35b57aed23d6"></a>
+                    <h3>GET CustomEntityRecord by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-176eef6a-0979-4df5-8635-35b57aed23d6"></i></h3>
+                    <div class="hidden-copylink" id="copy-176eef6a-0979-4df5-8635-35b57aed23d6"><a href="#176eef6a-0979-4df5-8635-35b57aed23d6">GET CustomEntityRecord by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#CustomEntityRecordResource">CustomEntityRecordResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-176eef6a-0979-4df5-8635-35b57aed23d6">api/{tenantKey}/{orgKey}/customentities/{entity}/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /customentities/{entity}/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-176eef6a-0979-4df5-8635-35b57aed23d6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="05f66736-2c36-4d76-b635-7ccd373cde94"></a>
+                    <h3>GET CustomEntityRecord by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-05f66736-2c36-4d76-b635-7ccd373cde94"></i></h3>
+                    <div class="hidden-copylink" id="copy-05f66736-2c36-4d76-b635-7ccd373cde94"><a href="#05f66736-2c36-4d76-b635-7ccd373cde94">GET CustomEntityRecord by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#CustomEntityRecordResource">CustomEntityRecordResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-05f66736-2c36-4d76-b635-7ccd373cde94">api/{tenantKey}/{orgKey}/customentities/{entity}/{companyKey}/{key}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /customentities/{entity}/{companyKey}/{key}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-05f66736-2c36-4d76-b635-7ccd373cde94"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8012e20e-ad69-4155-910e-5415c959dece"></a>
+                    <h3>GET CustomEntityRecord by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8012e20e-ad69-4155-910e-5415c959dece"></i></h3>
+                    <div class="hidden-copylink" id="copy-8012e20e-ad69-4155-910e-5415c959dece"><a href="#8012e20e-ad69-4155-910e-5415c959dece">GET CustomEntityRecord by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#CustomEntityRecordResource">CustomEntityRecordResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8012e20e-ad69-4155-910e-5415c959dece">api/{tenantKey}/{orgKey}/customentities/{entity}/{key}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /customentities/{entity}/{key}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8012e20e-ad69-4155-910e-5415c959dece"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="956e9877-d9f0-4e91-a699-405d23e66b92"></a>
+                    <h3>GET CustomEntityRecord OData <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-956e9877-d9f0-4e91-a699-405d23e66b92"></i></h3>
+                    <div class="hidden-copylink" id="copy-956e9877-d9f0-4e91-a699-405d23e66b92"><a href="#956e9877-d9f0-4e91-a699-405d23e66b92">GET CustomEntityRecord OData</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#CustomEntityRecordResource.">CustomEntityRecordResource..</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-956e9877-d9f0-4e91-a699-405d23e66b92">api/{tenantKey}/{orgKey}/customentities/{entity}/odata</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /customentities/{entity}/odata</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-956e9877-d9f0-4e91-a699-405d23e66b92"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5813e65d-a966-43fe-9d60-d42573f48a73"></a>
+                    <h3>POST CustomEntityRecords <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5813e65d-a966-43fe-9d60-d42573f48a73"></i></h3>
+                    <div class="hidden-copylink" id="copy-5813e65d-a966-43fe-9d60-d42573f48a73"><a href="#5813e65d-a966-43fe-9d60-d42573f48a73">POST CustomEntityRecords</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">customEntityRecordResource</td>
+                                <td><i>(ApiCustomEntityRecordResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiCustomEntityRecordResource">ApiCustomEntityRecordResource.</a></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">customAttributes</td>
+                                <td><i>(JSON Document)</i> A key-value pair in JSON format that represents the extensibility custom attributes for this entity.<br />The key should be the custom attribute name prefixed with "custom_", e.g. "custom_attributeName".<br />While the "customAttributes" element is optional, please notice that specific custom attributes might be marked as required.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiCustomEntityRecordResource">ApiCustomEntityRecordResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5813e65d-a966-43fe-9d60-d42573f48a73">api/{tenantKey}/{orgKey}/customentities/{entity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /customentities/{entity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5813e65d-a966-43fe-9d60-d42573f48a73"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c7d267db-13c1-43ef-b576-12aac65335b2"></a>
+                    <h3>PUT Set Description CustomEntityRecord <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c7d267db-13c1-43ef-b576-12aac65335b2"></i></h3>
+                    <div class="hidden-copylink" id="copy-c7d267db-13c1-43ef-b576-12aac65335b2"><a href="#c7d267db-13c1-43ef-b576-12aac65335b2">PUT Set Description CustomEntityRecord</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Description' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c7d267db-13c1-43ef-b576-12aac65335b2">api/{tenantKey}/{orgKey}/customentities/{entity}/{companyKey}/{key}/description</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /customentities/{entity}/{companyKey}/{key}/description</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c7d267db-13c1-43ef-b576-12aac65335b2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6b62748f-8d09-44b7-9f64-73e5b480002c"></a>
+                    <h3>PUT Set Description CustomEntityRecord <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6b62748f-8d09-44b7-9f64-73e5b480002c"></i></h3>
+                    <div class="hidden-copylink" id="copy-6b62748f-8d09-44b7-9f64-73e5b480002c"><a href="#6b62748f-8d09-44b7-9f64-73e5b480002c">PUT Set Description CustomEntityRecord</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Description' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6b62748f-8d09-44b7-9f64-73e5b480002c">api/{tenantKey}/{orgKey}/customentities/{entity}/{key}/description</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /customentities/{entity}/{key}/description</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6b62748f-8d09-44b7-9f64-73e5b480002c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1a985593-e90e-4933-9ca0-57bd945e4b09"></a>
+                    <h3>PUT Set IsActive CustomEntityRecord <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1a985593-e90e-4933-9ca0-57bd945e4b09"></i></h3>
+                    <div class="hidden-copylink" id="copy-1a985593-e90e-4933-9ca0-57bd945e4b09"><a href="#1a985593-e90e-4933-9ca0-57bd945e4b09">PUT Set IsActive CustomEntityRecord</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1a985593-e90e-4933-9ca0-57bd945e4b09">api/{tenantKey}/{orgKey}/customentities/{entity}/{companyKey}/{key}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /customentities/{entity}/{companyKey}/{key}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1a985593-e90e-4933-9ca0-57bd945e4b09"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a6b1c788-74c9-4df9-9cc9-36dcd31a79e7"></a>
+                    <h3>PUT Set IsActive CustomEntityRecord <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a6b1c788-74c9-4df9-9cc9-36dcd31a79e7"></i></h3>
+                    <div class="hidden-copylink" id="copy-a6b1c788-74c9-4df9-9cc9-36dcd31a79e7"><a href="#a6b1c788-74c9-4df9-9cc9-36dcd31a79e7">PUT Set IsActive CustomEntityRecord</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a6b1c788-74c9-4df9-9cc9-36dcd31a79e7">api/{tenantKey}/{orgKey}/customentities/{entity}/{key}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /customentities/{entity}/{key}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a6b1c788-74c9-4df9-9cc9-36dcd31a79e7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+
+			<div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="putSetCustomAttributeCustomEntityRecord"></a>
+                    <h3>PUT Set Custom Attribute CustomEntityRecord <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-putSetCustomAttributeCustomEntityRecord"></i></h3>
+                    <div class="hidden-copylink" id="copy-putSetCustomAttributeCustomEntityRecord"><a href="#putSetCustomAttributeCustomEntityRecord">PUT Set Custom Attribute CustomEntityRecord</a></div>
+                    <p class="operation-description">Updates the value of 'CustomAttribute' in the specified entity record.</p>
+
+					 <p>The following elements are required:</p>
+					  <table>
+                        <tbody>
+							<tr>
+								<td class="highlighted">companyKey</td>
+								<td><i>(string)</i> The company key.</td>
+							</tr>
+							<tr>
+								<td class="highlighted">schemaEntity</td>
+								<td><i>(string)</i> Schema Entity</td>
+							</tr>
+							<tr>
+								<td class="highlighted">key</td>
+								<td><i>(string)</i> Key</td>
+							</tr>
+							<tr>
+								<td class="highlighted">customAttributeName</td>
+								<td><i>(string)</i> The custom attribute name.</td>
+							</tr>
+							<tr>
+								<td class="highlighted">value</td>
+								<td><i>(ExtensibilityCustomAttributeValueResource)</i> The request body should contain the new value for the custom attribute. <br/>See <a href="#ExtensibilityCustomAttributeValueResource">ExtensibilityCustomAttributeValueResource.</a></td>
+							</tr>
+                        </tbody>
+                    </table>
+					 <br />
+					<p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+								<td> When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+					<p>Response status codes:</p>
+                    <table>
+                        <tbody>
+						    <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+							 <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+							 <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+						</tbody>
+                    </table>
+
+					</div>
+
+					<div class="content-section-col2">
+						<p>Resource URL:</p>
+						<div class="hidden-copylink" id="copy2-putSetCustomAttributeCustomEntityRecord">api/{tenantKey}/{orgKey}/customentities/{entity}/{customAttributeName}</div>
+						<div class="resource-url">
+							<div class="inner-resource-url"><div>PUT /customentities/{entity}/{customAttributeName}</div></div>
+							<div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-putSetCustomAttributeCustomEntityRecord"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+						</div>
+					 </div>
+
+					  </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1eac33d1-7495-4a0e-bc0e-c832838e1174"></a>
+                    <h3>DELETE CustomEntityRecord by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1eac33d1-7495-4a0e-bc0e-c832838e1174"></i></h3>
+                    <div class="hidden-copylink" id="copy-1eac33d1-7495-4a0e-bc0e-c832838e1174"><a href="#1eac33d1-7495-4a0e-bc0e-c832838e1174">DELETE CustomEntityRecord by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1eac33d1-7495-4a0e-bc0e-c832838e1174">api/{tenantKey}/{orgKey}/customentities/{entity}/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /customentities/{entity}/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1eac33d1-7495-4a0e-bc0e-c832838e1174"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="28836cf9-fea9-4d5b-bde5-293512141ae5"></a>
+                    <h3>DELETE CustomEntityRecord by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-28836cf9-fea9-4d5b-bde5-293512141ae5"></i></h3>
+                    <div class="hidden-copylink" id="copy-28836cf9-fea9-4d5b-bde5-293512141ae5"><a href="#28836cf9-fea9-4d5b-bde5-293512141ae5">DELETE CustomEntityRecord by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-28836cf9-fea9-4d5b-bde5-293512141ae5">api/{tenantKey}/{orgKey}/customentities/{entity}/{companyKey}/{key}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /customentities/{entity}/{companyKey}/{key}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-28836cf9-fea9-4d5b-bde5-293512141ae5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="60ccf895-e764-40d8-a637-897aaae239a4"></a>
+                    <h3>DELETE CustomEntityRecord by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-60ccf895-e764-40d8-a637-897aaae239a4"></i></h3>
+                    <div class="hidden-copylink" id="copy-60ccf895-e764-40d8-a637-897aaae239a4"><a href="#60ccf895-e764-40d8-a637-897aaae239a4">DELETE CustomEntityRecord by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td><i>(string)</i> Key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">entity</td>
+                                <td><i>(string)</i> The entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-60ccf895-e764-40d8-a637-897aaae239a4">api/{tenantKey}/{orgKey}/customentities/{entity}/{key}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /customentities/{entity}/{key}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-60ccf895-e764-40d8-a637-897aaae239a4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiCustomEntityRecordResource"></a>
+                    <h4>ApiCustomEntityRecordResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiCustomEntityRecordResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiCustomEntityRecordResource"><a href="#ApiCustomEntityRecordResource">ApiCustomEntityRecordResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="CustomEntityRecordResource"></a>
+                    <h4>CustomEntityRecordResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-CustomEntityRecordResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-CustomEntityRecordResource"><a href="#CustomEntityRecordResource">CustomEntityRecordResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type SchemaEntity. These records are accessibly through the <a href="corepatterns.schemaentities.html">SchemaEntities</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">key</td>
+                                <td  class="wrap"><i>(string)</i> Key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> Description.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="CustomEntityRecordResource."></a>
+                    <h4>CustomEntityRecordResource. <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-CustomEntityRecordResource."></i></h4>
+                    <div class="hidden-copylink" id="copy-CustomEntityRecordResource."><a href="#CustomEntityRecordResource.">CustomEntityRecordResource.</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">opts</td>
+                                <td  class="wrap"><i>(ODataQueryOptions)</i> OData query option.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+					<a class="anchor" name="ExtensibilityCustomAttributeValueResource"></a>
+                    <h4>ExtensibilityCustomAttributeValueResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ExtensibilityCustomAttributeValueResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ExtensibilityCustomAttributeValueResource"><a href="#ExtensibilityCustomAttributeValueResource">ExtensibilityCustomAttributeValueResource</a></div>
+
+					<p>The following elements are required:</p>
+					 <table>
+                        <tbody>
+							<tr>
+								<td class="highlighted">value</td>
+								<td><i>(object)</i> The custom attribute value.</td>
+							</tr>
+						</tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

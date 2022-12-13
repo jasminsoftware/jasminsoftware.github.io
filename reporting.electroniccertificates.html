@@ -1,0 +1,1558 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Electronic Certificate</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
+    <a class="menu-subitem " href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem " href="shell.clientcontextvalues.html">
+        Client Context Value
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="corepatterns.customentityrecords.html">
+        Custom Entity Record
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem menu-item-selected" href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="identity.groups.html">
+        Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Electronic Certificate</h1>
+                    <p>
+                    Service to manage entities of type 'ElectronicCertificate'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/reporting/electronicCertificates  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-reporting-electroniccertificates"></i></td>
+                                <div class="hidden-copylink" id="copy-reporting-electroniccertificates">api/{tenantKey}/{orgKey}/reporting/electronicCertificates</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#PUT">PUT</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#bb43a765-1641-49aa-be03-630af5deb642">GET ElectronicCertificates</a></li>
+                            <li><a href="#6bae7173-c52a-45ef-a906-82bf299371d6">GET ElectronicCertificates (paged)</a></li>
+                            <li><a href="#3c54102c-894c-4ad6-a354-8989dd061349">GET ElectronicCertificate by identifier</a></li>
+                            <li><a href="#a2dc013a-bb07-46a9-a196-fb9d1582b329">GET ElectronicCertificate by key</a></li>
+                            <li><a href="#ecf06535-c5a9-45e0-89e5-02a304a8c7ba">GET Print ElectronicCertificate by identifier</a></li>
+                            <li><a href="#3a52af2d-9ef2-424c-8b0a-36753aa6b6a2">GET Print ElectronicCertificate by key</a></li>
+                            <li><a href="#dae4905e-83d2-43cb-8215-f6a6dba53a99">GET Original Print ElectronicCertificateOriginal by identifier</a></li>
+                            <li><a href="#84533ef6-9749-4710-a948-3d3c28d94a0d">GET Original Print ElectronicCertificate by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#c3fa07da-3381-48b8-a9b0-563504c75f68">PUT Set IsActive ElectronicCertificate</a></li>
+                            <li><a href="#1447220d-69b3-49b5-9607-ac03f134dfcc">PUT Set Company ElectronicCertificate</a></li>
+                            <li><a href="#2953238a-e81b-4395-a51a-a0fc3980b60d">PUT Set UsedSignatures ElectronicCertificate</a></li>
+                            <li><a href="#5c503c36-230b-40b8-8493-59c44c65e881">PUT Set AvailableSignatures ElectronicCertificate</a></li>
+                            <li><a href="#763f2fea-1f59-41f2-af92-88b9febe45b3">PUT Set AuthorizerID ElectronicCertificate</a></li>
+                            <li><a href="#93beff79-5bb5-4c60-9086-da5daf779214">PUT Set Titular ElectronicCertificate</a></li>
+                            <li><a href="#5bc32376-87c3-41bf-976f-bbae3f4eae3f">PUT Set IncludedSignatures ElectronicCertificate</a></li>
+                            <li><a href="#ea152127-319d-4e93-aec8-f644dabba096">PUT Set ValidFrom ElectronicCertificate</a></li>
+                            <li><a href="#c29ffc88-99bd-4213-8a98-bbc35372a9f5">PUT Set ValidUntil ElectronicCertificate</a></li>
+                            <li><a href="#b4ca3d35-4066-4efb-b7de-6d2ab026f4e9">PUT Set AuthorizerName ElectronicCertificate</a></li>
+                            <li><a href="#91d33201-7e65-42bc-8b96-9e1383635000">PUT Set ExpiresOn ElectronicCertificate</a></li>
+                            <li><a href="#d53669e6-4baa-401e-8a67-1207b85ef946">PUT Set Secret ElectronicCertificate</a></li>
+                            <li><a href="#d0401c8b-4ca7-4fd0-8025-b58588295d7c">PUT Set ElectronicCertificateStatus ElectronicCertificate</a></li>
+                            <li><a href="#bb49c541-15dd-4b52-90ed-f09d4d586b63">PUT Set SkipCallActivateOwner ElectronicCertificate</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ElectronicCertificateResource">ElectronicCertificateResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#ElectronicCertificateStatus">ElectronicCertificateStatus</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bb43a765-1641-49aa-be03-630af5deb642"></a>
+                    <h3>GET ElectronicCertificates <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bb43a765-1641-49aa-be03-630af5deb642"></i></h3>
+                    <div class="hidden-copylink" id="copy-bb43a765-1641-49aa-be03-630af5deb642"><a href="#bb43a765-1641-49aa-be03-630af5deb642">GET ElectronicCertificates</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#ElectronicCertificateResource">ElectronicCertificateResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-bb43a765-1641-49aa-be03-630af5deb642">api/{tenantKey}/{orgKey}/reporting/electronicCertificates</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bb43a765-1641-49aa-be03-630af5deb642"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6bae7173-c52a-45ef-a906-82bf299371d6"></a>
+                    <h3>GET ElectronicCertificates (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6bae7173-c52a-45ef-a906-82bf299371d6"></i></h3>
+                    <div class="hidden-copylink" id="copy-6bae7173-c52a-45ef-a906-82bf299371d6"><a href="#6bae7173-c52a-45ef-a906-82bf299371d6">GET ElectronicCertificates (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#ElectronicCertificateResource">ElectronicCertificateResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6bae7173-c52a-45ef-a906-82bf299371d6">api/{tenantKey}/{orgKey}/reporting/electronicCertificates?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates?page={page}&amp;pageSize={pageSize}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6bae7173-c52a-45ef-a906-82bf299371d6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3c54102c-894c-4ad6-a354-8989dd061349"></a>
+                    <h3>GET ElectronicCertificate by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3c54102c-894c-4ad6-a354-8989dd061349"></i></h3>
+                    <div class="hidden-copylink" id="copy-3c54102c-894c-4ad6-a354-8989dd061349"><a href="#3c54102c-894c-4ad6-a354-8989dd061349">GET ElectronicCertificate by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#ElectronicCertificateResource">ElectronicCertificateResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-3c54102c-894c-4ad6-a354-8989dd061349">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3c54102c-894c-4ad6-a354-8989dd061349"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a2dc013a-bb07-46a9-a196-fb9d1582b329"></a>
+                    <h3>GET ElectronicCertificate by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a2dc013a-bb07-46a9-a196-fb9d1582b329"></i></h3>
+                    <div class="hidden-copylink" id="copy-a2dc013a-bb07-46a9-a196-fb9d1582b329"><a href="#a2dc013a-bb07-46a9-a196-fb9d1582b329">GET ElectronicCertificate by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#ElectronicCertificateResource">ElectronicCertificateResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a2dc013a-bb07-46a9-a196-fb9d1582b329">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates/{company}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a2dc013a-bb07-46a9-a196-fb9d1582b329"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ecf06535-c5a9-45e0-89e5-02a304a8c7ba"></a>
+                    <h3>GET Print ElectronicCertificate by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ecf06535-c5a9-45e0-89e5-02a304a8c7ba"></i></h3>
+                    <div class="hidden-copylink" id="copy-ecf06535-c5a9-45e0-89e5-02a304a8c7ba"><a href="#ecf06535-c5a9-45e0-89e5-02a304a8c7ba">GET Print ElectronicCertificate by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-ecf06535-c5a9-45e0-89e5-02a304a8c7ba">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{id}/print?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates/{id}/print?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ecf06535-c5a9-45e0-89e5-02a304a8c7ba"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3a52af2d-9ef2-424c-8b0a-36753aa6b6a2"></a>
+                    <h3>GET Print ElectronicCertificate by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3a52af2d-9ef2-424c-8b0a-36753aa6b6a2"></i></h3>
+                    <div class="hidden-copylink" id="copy-3a52af2d-9ef2-424c-8b0a-36753aa6b6a2"><a href="#3a52af2d-9ef2-424c-8b0a-36753aa6b6a2">GET Print ElectronicCertificate by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-3a52af2d-9ef2-424c-8b0a-36753aa6b6a2">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates/{company}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3a52af2d-9ef2-424c-8b0a-36753aa6b6a2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="dae4905e-83d2-43cb-8215-f6a6dba53a99"></a>
+                    <h3>GET Original Print ElectronicCertificateOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-dae4905e-83d2-43cb-8215-f6a6dba53a99"></i></h3>
+                    <div class="hidden-copylink" id="copy-dae4905e-83d2-43cb-8215-f6a6dba53a99"><a href="#dae4905e-83d2-43cb-8215-f6a6dba53a99">GET Original Print ElectronicCertificateOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-dae4905e-83d2-43cb-8215-f6a6dba53a99">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{id}/printOriginal?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates/{id}/printOriginal?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-dae4905e-83d2-43cb-8215-f6a6dba53a99"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="84533ef6-9749-4710-a948-3d3c28d94a0d"></a>
+                    <h3>GET Original Print ElectronicCertificate by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-84533ef6-9749-4710-a948-3d3c28d94a0d"></i></h3>
+                    <div class="hidden-copylink" id="copy-84533ef6-9749-4710-a948-3d3c28d94a0d"><a href="#84533ef6-9749-4710-a948-3d3c28d94a0d">GET Original Print ElectronicCertificate by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-84533ef6-9749-4710-a948-3d3c28d94a0d">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /reporting/electronicCertificates/{company}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-84533ef6-9749-4710-a948-3d3c28d94a0d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="763f2fea-1f59-41f2-af92-88b9febe45b3"></a>
+                    <h3>PUT Set AuthorizerID ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-763f2fea-1f59-41f2-af92-88b9febe45b3"></i></h3>
+                    <div class="hidden-copylink" id="copy-763f2fea-1f59-41f2-af92-88b9febe45b3"><a href="#763f2fea-1f59-41f2-af92-88b9febe45b3">PUT Set AuthorizerID ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'AuthorizerID' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-763f2fea-1f59-41f2-af92-88b9febe45b3">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/authorizerID</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/authorizerID</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-763f2fea-1f59-41f2-af92-88b9febe45b3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b4ca3d35-4066-4efb-b7de-6d2ab026f4e9"></a>
+                    <h3>PUT Set AuthorizerName ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b4ca3d35-4066-4efb-b7de-6d2ab026f4e9"></i></h3>
+                    <div class="hidden-copylink" id="copy-b4ca3d35-4066-4efb-b7de-6d2ab026f4e9"><a href="#b4ca3d35-4066-4efb-b7de-6d2ab026f4e9">PUT Set AuthorizerName ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'AuthorizerName' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b4ca3d35-4066-4efb-b7de-6d2ab026f4e9">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/authorizerName</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/authorizerName</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b4ca3d35-4066-4efb-b7de-6d2ab026f4e9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5c503c36-230b-40b8-8493-59c44c65e881"></a>
+                    <h3>PUT Set AvailableSignatures ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5c503c36-230b-40b8-8493-59c44c65e881"></i></h3>
+                    <div class="hidden-copylink" id="copy-5c503c36-230b-40b8-8493-59c44c65e881"><a href="#5c503c36-230b-40b8-8493-59c44c65e881">PUT Set AvailableSignatures ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'AvailableSignatures' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5c503c36-230b-40b8-8493-59c44c65e881">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/availableSignatures</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/availableSignatures</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5c503c36-230b-40b8-8493-59c44c65e881"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1447220d-69b3-49b5-9607-ac03f134dfcc"></a>
+                    <h3>PUT Set Company ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1447220d-69b3-49b5-9607-ac03f134dfcc"></i></h3>
+                    <div class="hidden-copylink" id="copy-1447220d-69b3-49b5-9607-ac03f134dfcc"><a href="#1447220d-69b3-49b5-9607-ac03f134dfcc">PUT Set Company ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Company' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1447220d-69b3-49b5-9607-ac03f134dfcc">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/company</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/company</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1447220d-69b3-49b5-9607-ac03f134dfcc"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d0401c8b-4ca7-4fd0-8025-b58588295d7c"></a>
+                    <h3>PUT Set ElectronicCertificateStatus ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d0401c8b-4ca7-4fd0-8025-b58588295d7c"></i></h3>
+                    <div class="hidden-copylink" id="copy-d0401c8b-4ca7-4fd0-8025-b58588295d7c"><a href="#d0401c8b-4ca7-4fd0-8025-b58588295d7c">PUT Set ElectronicCertificateStatus ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ElectronicCertificateStatus' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum ElectronicCertificateStatus)</i> The request body should contain the new value for the attribute.<br/>See <a href="#ElectronicCertificateStatus">ElectronicCertificateStatus.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d0401c8b-4ca7-4fd0-8025-b58588295d7c">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/electronicCertificateStatus</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/electronicCertificateStatus</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d0401c8b-4ca7-4fd0-8025-b58588295d7c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="91d33201-7e65-42bc-8b96-9e1383635000"></a>
+                    <h3>PUT Set ExpiresOn ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-91d33201-7e65-42bc-8b96-9e1383635000"></i></h3>
+                    <div class="hidden-copylink" id="copy-91d33201-7e65-42bc-8b96-9e1383635000"><a href="#91d33201-7e65-42bc-8b96-9e1383635000">PUT Set ExpiresOn ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ExpiresOn' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-91d33201-7e65-42bc-8b96-9e1383635000">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/expiresOn</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/expiresOn</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-91d33201-7e65-42bc-8b96-9e1383635000"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="5bc32376-87c3-41bf-976f-bbae3f4eae3f"></a>
+                    <h3>PUT Set IncludedSignatures ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5bc32376-87c3-41bf-976f-bbae3f4eae3f"></i></h3>
+                    <div class="hidden-copylink" id="copy-5bc32376-87c3-41bf-976f-bbae3f4eae3f"><a href="#5bc32376-87c3-41bf-976f-bbae3f4eae3f">PUT Set IncludedSignatures ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IncludedSignatures' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-5bc32376-87c3-41bf-976f-bbae3f4eae3f">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/includedSignatures</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/includedSignatures</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5bc32376-87c3-41bf-976f-bbae3f4eae3f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c3fa07da-3381-48b8-a9b0-563504c75f68"></a>
+                    <h3>PUT Set IsActive ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c3fa07da-3381-48b8-a9b0-563504c75f68"></i></h3>
+                    <div class="hidden-copylink" id="copy-c3fa07da-3381-48b8-a9b0-563504c75f68"><a href="#c3fa07da-3381-48b8-a9b0-563504c75f68">PUT Set IsActive ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c3fa07da-3381-48b8-a9b0-563504c75f68">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c3fa07da-3381-48b8-a9b0-563504c75f68"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d53669e6-4baa-401e-8a67-1207b85ef946"></a>
+                    <h3>PUT Set Secret ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d53669e6-4baa-401e-8a67-1207b85ef946"></i></h3>
+                    <div class="hidden-copylink" id="copy-d53669e6-4baa-401e-8a67-1207b85ef946"><a href="#d53669e6-4baa-401e-8a67-1207b85ef946">PUT Set Secret ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Secret' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d53669e6-4baa-401e-8a67-1207b85ef946">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/secret</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/secret</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d53669e6-4baa-401e-8a67-1207b85ef946"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="bb49c541-15dd-4b52-90ed-f09d4d586b63"></a>
+                    <h3>PUT Set SkipCallActivateOwner ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-bb49c541-15dd-4b52-90ed-f09d4d586b63"></i></h3>
+                    <div class="hidden-copylink" id="copy-bb49c541-15dd-4b52-90ed-f09d4d586b63"><a href="#bb49c541-15dd-4b52-90ed-f09d4d586b63">PUT Set SkipCallActivateOwner ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'SkipCallActivateOwner' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-bb49c541-15dd-4b52-90ed-f09d4d586b63">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/skipCallActivateOwner</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/skipCallActivateOwner</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-bb49c541-15dd-4b52-90ed-f09d4d586b63"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="93beff79-5bb5-4c60-9086-da5daf779214"></a>
+                    <h3>PUT Set Titular ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-93beff79-5bb5-4c60-9086-da5daf779214"></i></h3>
+                    <div class="hidden-copylink" id="copy-93beff79-5bb5-4c60-9086-da5daf779214"><a href="#93beff79-5bb5-4c60-9086-da5daf779214">PUT Set Titular ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Titular' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-93beff79-5bb5-4c60-9086-da5daf779214">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/titular</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/titular</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-93beff79-5bb5-4c60-9086-da5daf779214"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2953238a-e81b-4395-a51a-a0fc3980b60d"></a>
+                    <h3>PUT Set UsedSignatures ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2953238a-e81b-4395-a51a-a0fc3980b60d"></i></h3>
+                    <div class="hidden-copylink" id="copy-2953238a-e81b-4395-a51a-a0fc3980b60d"><a href="#2953238a-e81b-4395-a51a-a0fc3980b60d">PUT Set UsedSignatures ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'UsedSignatures' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-2953238a-e81b-4395-a51a-a0fc3980b60d">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/usedSignatures</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/usedSignatures</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2953238a-e81b-4395-a51a-a0fc3980b60d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="ea152127-319d-4e93-aec8-f644dabba096"></a>
+                    <h3>PUT Set ValidFrom ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ea152127-319d-4e93-aec8-f644dabba096"></i></h3>
+                    <div class="hidden-copylink" id="copy-ea152127-319d-4e93-aec8-f644dabba096"><a href="#ea152127-319d-4e93-aec8-f644dabba096">PUT Set ValidFrom ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ValidFrom' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-ea152127-319d-4e93-aec8-f644dabba096">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/validFrom</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/validFrom</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-ea152127-319d-4e93-aec8-f644dabba096"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c29ffc88-99bd-4213-8a98-bbc35372a9f5"></a>
+                    <h3>PUT Set ValidUntil ElectronicCertificate <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c29ffc88-99bd-4213-8a98-bbc35372a9f5"></i></h3>
+                    <div class="hidden-copylink" id="copy-c29ffc88-99bd-4213-8a98-bbc35372a9f5"><a href="#c29ffc88-99bd-4213-8a98-bbc35372a9f5">PUT Set ValidUntil ElectronicCertificate</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ValidUntil' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td><i>(string)</i> Company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c29ffc88-99bd-4213-8a98-bbc35372a9f5">api/{tenantKey}/{orgKey}/reporting/electronicCertificates/{company}/validUntil</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /reporting/electronicCertificates/{company}/validUntil</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c29ffc88-99bd-4213-8a98-bbc35372a9f5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ElectronicCertificateResource"></a>
+                    <h4>ElectronicCertificateResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ElectronicCertificateResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ElectronicCertificateResource"><a href="#ElectronicCertificateResource">ElectronicCertificateResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">electronicCertificateStatus</td>
+                                <td  class="wrap"><i>(enum ElectronicCertificateStatus)</i> Electronic Certificate Status.
+									<br/>See <a href="#ElectronicCertificateStatus">ElectronicCertificateStatus.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">skipCallActivateOwner</td>
+                                <td  class="wrap"><i>(bool)</i> Skip Call Activate Owner.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">usedSignatures</td>
+                                <td  class="wrap"><i>(string)</i> Used Signatures.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">availableSignatures</td>
+                                <td  class="wrap"><i>(string)</i> Available Signatures.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">authorizerID</td>
+                                <td  class="wrap"><i>(string)</i> Authorizer ID.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">titular</td>
+                                <td  class="wrap"><i>(string)</i> Titular.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">includedSignatures</td>
+                                <td  class="wrap"><i>(string)</i> Included Signatures.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">validFrom</td>
+                                <td  class="wrap"><i>(string)</i> Valid From.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">validUntil</td>
+                                <td  class="wrap"><i>(string)</i> Valid Until.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">authorizerName</td>
+                                <td  class="wrap"><i>(string)</i> Authorizer Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">expiresOn</td>
+                                <td  class="wrap"><i>(string)</i> Expires On.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">secret</td>
+                                <td  class="wrap"><i>(string)</i> Secret.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+                    <br />
+                    <a class="anchor" name="ElectronicCertificateStatus"></a>
+                    <h4>ElectronicCertificateStatus <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ElectronicCertificateStatus"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-ElectronicCertificateStatus"><a href="#ElectronicCertificateStatus">ElectronicCertificateStatus</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Inactive</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Active</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

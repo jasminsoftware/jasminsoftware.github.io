@@ -1,0 +1,1228 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Extensibility View Definition</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
+    <a class="menu-subitem " href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem " href="shell.clientcontextvalues.html">
+        Client Context Value
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="corepatterns.customentityrecords.html">
+        Custom Entity Record
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem menu-item-selected" href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="identity.groups.html">
+        Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Extensibility View Definition</h1>
+                    <p>
+                    Service to manage entities of type 'ExtensibilityViewDefinition'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-corepatterns-extensibilityviewdefinitions"></i></td>
+                                <div class="hidden-copylink" id="copy-corepatterns-extensibilityviewdefinitions">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#c4d59b1e-b038-4acb-b3c1-1d410913a35a">GET ExtensibilityViewDefinitions</a></li>
+                            <li><a href="#e07ed44d-3703-41b3-a670-dd2650e4018e">GET ExtensibilityViewDefinitions (paged)</a></li>
+                            <li><a href="#f43f5ec4-4763-4f25-af46-22de77ac0895">GET ExtensibilityViewDefinition by identifier</a></li>
+                            <li><a href="#0e782d81-bb99-4ca2-bda0-d23e75ab9467">GET ExtensibilityViewDefinition by key</a></li>
+                            <li><a href="#e7144fde-a222-427e-a817-f5ee360c38af">GET Print ExtensibilityViewDefinition by identifier</a></li>
+                            <li><a href="#d467f87f-70e7-49f8-98ea-a43884896bf1">GET Print ExtensibilityViewDefinition by key</a></li>
+                            <li><a href="#92c47a48-43c2-47ac-bb91-9cfc403e26e2">GET Original Print ExtensibilityViewDefinitionOriginal by identifier</a></li>
+                            <li><a href="#390ce005-541d-438e-979b-d092402d3465">GET Original Print ExtensibilityViewDefinition by key</a></li>
+                            <li><a href="#28bc20aa-18e6-4042-9b11-1f486a09ffa0">GET Get Extensibility View Definition By Entity And Culture</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#9c30e78c-6cc1-4d3b-b6f1-c05bcb9afd87">POST ExtensibilityViewDefinitions</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#96ad986d-a983-4f22-9235-d94cfb5cbb68">PUT Set IsActive ExtensibilityViewDefinition</a></li>
+                            <li><a href="#cd1cf766-4777-4ffe-b865-841d22602ceb">PUT Set Culture ExtensibilityViewDefinition</a></li>
+                            <li><a href="#d2cef126-49bf-4ada-8a37-e85a2c65213d">PUT Set SchemaEntity ExtensibilityViewDefinition</a></li>
+                            <li><a href="#8fa75a4d-fb2a-4886-b300-ca1dbfcb68d7">PUT Set ViewDefinition ExtensibilityViewDefinition</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#6dbe6902-8164-4f6d-9c48-e7ea0a35f056">DELETE ExtensibilityViewDefinition by identifier</a></li>
+                            <li><a href="#e1cb532d-d40e-4ec1-9152-d657895857c3">DELETE ExtensibilityViewDefinition by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiExtensibilityViewDefinitionResource">ApiExtensibilityViewDefinitionResource</a></li>
+                        <li><a href="#ExtensibilityViewDefinitionResource">ExtensibilityViewDefinitionResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c4d59b1e-b038-4acb-b3c1-1d410913a35a"></a>
+                    <h3>GET ExtensibilityViewDefinitions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c4d59b1e-b038-4acb-b3c1-1d410913a35a"></i></h3>
+                    <div class="hidden-copylink" id="copy-c4d59b1e-b038-4acb-b3c1-1d410913a35a"><a href="#c4d59b1e-b038-4acb-b3c1-1d410913a35a">GET ExtensibilityViewDefinitions</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#ExtensibilityViewDefinitionResource">ExtensibilityViewDefinitionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c4d59b1e-b038-4acb-b3c1-1d410913a35a">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c4d59b1e-b038-4acb-b3c1-1d410913a35a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e07ed44d-3703-41b3-a670-dd2650e4018e"></a>
+                    <h3>GET ExtensibilityViewDefinitions (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e07ed44d-3703-41b3-a670-dd2650e4018e"></i></h3>
+                    <div class="hidden-copylink" id="copy-e07ed44d-3703-41b3-a670-dd2650e4018e"><a href="#e07ed44d-3703-41b3-a670-dd2650e4018e">GET ExtensibilityViewDefinitions (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#ExtensibilityViewDefinitionResource">ExtensibilityViewDefinitionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e07ed44d-3703-41b3-a670-dd2650e4018e">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions?page={page}&amp;pageSize={pageSize}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e07ed44d-3703-41b3-a670-dd2650e4018e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="f43f5ec4-4763-4f25-af46-22de77ac0895"></a>
+                    <h3>GET ExtensibilityViewDefinition by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-f43f5ec4-4763-4f25-af46-22de77ac0895"></i></h3>
+                    <div class="hidden-copylink" id="copy-f43f5ec4-4763-4f25-af46-22de77ac0895"><a href="#f43f5ec4-4763-4f25-af46-22de77ac0895">GET ExtensibilityViewDefinition by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#ExtensibilityViewDefinitionResource">ExtensibilityViewDefinitionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-f43f5ec4-4763-4f25-af46-22de77ac0895">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-f43f5ec4-4763-4f25-af46-22de77ac0895"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="0e782d81-bb99-4ca2-bda0-d23e75ab9467"></a>
+                    <h3>GET ExtensibilityViewDefinition by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0e782d81-bb99-4ca2-bda0-d23e75ab9467"></i></h3>
+                    <div class="hidden-copylink" id="copy-0e782d81-bb99-4ca2-bda0-d23e75ab9467"><a href="#0e782d81-bb99-4ca2-bda0-d23e75ab9467">GET ExtensibilityViewDefinition by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#ExtensibilityViewDefinitionResource">ExtensibilityViewDefinitionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-0e782d81-bb99-4ca2-bda0-d23e75ab9467">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0e782d81-bb99-4ca2-bda0-d23e75ab9467"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e7144fde-a222-427e-a817-f5ee360c38af"></a>
+                    <h3>GET Print ExtensibilityViewDefinition by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e7144fde-a222-427e-a817-f5ee360c38af"></i></h3>
+                    <div class="hidden-copylink" id="copy-e7144fde-a222-427e-a817-f5ee360c38af"><a href="#e7144fde-a222-427e-a817-f5ee360c38af">GET Print ExtensibilityViewDefinition by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e7144fde-a222-427e-a817-f5ee360c38af">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{id}/print?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions/{id}/print?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e7144fde-a222-427e-a817-f5ee360c38af"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d467f87f-70e7-49f8-98ea-a43884896bf1"></a>
+                    <h3>GET Print ExtensibilityViewDefinition by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d467f87f-70e7-49f8-98ea-a43884896bf1"></i></h3>
+                    <div class="hidden-copylink" id="copy-d467f87f-70e7-49f8-98ea-a43884896bf1"><a href="#d467f87f-70e7-49f8-98ea-a43884896bf1">GET Print ExtensibilityViewDefinition by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d467f87f-70e7-49f8-98ea-a43884896bf1">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/print</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/print</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d467f87f-70e7-49f8-98ea-a43884896bf1"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="92c47a48-43c2-47ac-bb91-9cfc403e26e2"></a>
+                    <h3>GET Original Print ExtensibilityViewDefinitionOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-92c47a48-43c2-47ac-bb91-9cfc403e26e2"></i></h3>
+                    <div class="hidden-copylink" id="copy-92c47a48-43c2-47ac-bb91-9cfc403e26e2"><a href="#92c47a48-43c2-47ac-bb91-9cfc403e26e2">GET Original Print ExtensibilityViewDefinitionOriginal by identifier</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified resord does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-92c47a48-43c2-47ac-bb91-9cfc403e26e2">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{id}/printOriginal?template={template}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions/{id}/printOriginal?template={template}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-92c47a48-43c2-47ac-bb91-9cfc403e26e2"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="390ce005-541d-438e-979b-d092402d3465"></a>
+                    <h3>GET Original Print ExtensibilityViewDefinition by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-390ce005-541d-438e-979b-d092402d3465"></i></h3>
+                    <div class="hidden-copylink" id="copy-390ce005-541d-438e-979b-d092402d3465"><a href="#390ce005-541d-438e-979b-d092402d3465">GET Original Print ExtensibilityViewDefinition by key</a></div>
+                    <p class="operation-description">Prints the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">template</td>
+                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a stream with the printed file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-390ce005-541d-438e-979b-d092402d3465">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/printOriginal</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/printOriginal</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-390ce005-541d-438e-979b-d092402d3465"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="28bc20aa-18e6-4042-9b11-1f486a09ffa0"></a>
+                    <h3>GET Get Extensibility View Definition By Entity And Culture <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-28bc20aa-18e6-4042-9b11-1f486a09ffa0"></i></h3>
+                    <div class="hidden-copylink" id="copy-28bc20aa-18e6-4042-9b11-1f486a09ffa0"><a href="#28bc20aa-18e6-4042-9b11-1f486a09ffa0">GET Get Extensibility View Definition By Entity And Culture</a></div>
+                    <p class="operation-description">Custom operation 'GetExtensibilityViewDefinitionByEntityAndCulture'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">schemaEntityId</td>
+                                <td><i>(Guid)</i> SchemaEntityId.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a resource of type 'ExtensibilityViewDefinitionResource'. See <a href="#ExtensibilityViewDefinitionResource">ExtensibilityViewDefinitionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-28bc20aa-18e6-4042-9b11-1f486a09ffa0">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/getExtensibilityViewDefinitionByEntityAndCulture</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /corePatterns/extensibilityViewDefinitions/getExtensibilityViewDefinitionByEntityAndCulture</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-28bc20aa-18e6-4042-9b11-1f486a09ffa0"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9c30e78c-6cc1-4d3b-b6f1-c05bcb9afd87"></a>
+                    <h3>POST ExtensibilityViewDefinitions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9c30e78c-6cc1-4d3b-b6f1-c05bcb9afd87"></i></h3>
+                    <div class="hidden-copylink" id="copy-9c30e78c-6cc1-4d3b-b6f1-c05bcb9afd87"><a href="#9c30e78c-6cc1-4d3b-b6f1-c05bcb9afd87">POST ExtensibilityViewDefinitions</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">extensibilityViewDefinitionResource</td>
+                                <td><i>(ApiExtensibilityViewDefinitionResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiExtensibilityViewDefinitionResource">ApiExtensibilityViewDefinitionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiExtensibilityViewDefinitionResource">ApiExtensibilityViewDefinitionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-9c30e78c-6cc1-4d3b-b6f1-c05bcb9afd87">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /corePatterns/extensibilityViewDefinitions</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9c30e78c-6cc1-4d3b-b6f1-c05bcb9afd87"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="cd1cf766-4777-4ffe-b865-841d22602ceb"></a>
+                    <h3>PUT Set Culture ExtensibilityViewDefinition <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-cd1cf766-4777-4ffe-b865-841d22602ceb"></i></h3>
+                    <div class="hidden-copylink" id="copy-cd1cf766-4777-4ffe-b865-841d22602ceb"><a href="#cd1cf766-4777-4ffe-b865-841d22602ceb">PUT Set Culture ExtensibilityViewDefinition</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Culture' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-cd1cf766-4777-4ffe-b865-841d22602ceb">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/culture</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/culture</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-cd1cf766-4777-4ffe-b865-841d22602ceb"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="96ad986d-a983-4f22-9235-d94cfb5cbb68"></a>
+                    <h3>PUT Set IsActive ExtensibilityViewDefinition <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-96ad986d-a983-4f22-9235-d94cfb5cbb68"></i></h3>
+                    <div class="hidden-copylink" id="copy-96ad986d-a983-4f22-9235-d94cfb5cbb68"><a href="#96ad986d-a983-4f22-9235-d94cfb5cbb68">PUT Set IsActive ExtensibilityViewDefinition</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-96ad986d-a983-4f22-9235-d94cfb5cbb68">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-96ad986d-a983-4f22-9235-d94cfb5cbb68"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d2cef126-49bf-4ada-8a37-e85a2c65213d"></a>
+                    <h3>PUT Set SchemaEntity ExtensibilityViewDefinition <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d2cef126-49bf-4ada-8a37-e85a2c65213d"></i></h3>
+                    <div class="hidden-copylink" id="copy-d2cef126-49bf-4ada-8a37-e85a2c65213d"><a href="#d2cef126-49bf-4ada-8a37-e85a2c65213d">PUT Set SchemaEntity ExtensibilityViewDefinition</a></div>
+                    <p class="operation-description">Updates the value of attribute 'SchemaEntity' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d2cef126-49bf-4ada-8a37-e85a2c65213d">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/schemaEntity</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/schemaEntity</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d2cef126-49bf-4ada-8a37-e85a2c65213d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8fa75a4d-fb2a-4886-b300-ca1dbfcb68d7"></a>
+                    <h3>PUT Set ViewDefinition ExtensibilityViewDefinition <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8fa75a4d-fb2a-4886-b300-ca1dbfcb68d7"></i></h3>
+                    <div class="hidden-copylink" id="copy-8fa75a4d-fb2a-4886-b300-ca1dbfcb68d7"><a href="#8fa75a4d-fb2a-4886-b300-ca1dbfcb68d7">PUT Set ViewDefinition ExtensibilityViewDefinition</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ViewDefinition' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8fa75a4d-fb2a-4886-b300-ca1dbfcb68d7">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/viewDefinition</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}/viewDefinition</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8fa75a4d-fb2a-4886-b300-ca1dbfcb68d7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6dbe6902-8164-4f6d-9c48-e7ea0a35f056"></a>
+                    <h3>DELETE ExtensibilityViewDefinition by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6dbe6902-8164-4f6d-9c48-e7ea0a35f056"></i></h3>
+                    <div class="hidden-copylink" id="copy-6dbe6902-8164-4f6d-9c48-e7ea0a35f056"><a href="#6dbe6902-8164-4f6d-9c48-e7ea0a35f056">DELETE ExtensibilityViewDefinition by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6dbe6902-8164-4f6d-9c48-e7ea0a35f056">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/extensibilityViewDefinitions/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6dbe6902-8164-4f6d-9c48-e7ea0a35f056"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e1cb532d-d40e-4ec1-9152-d657895857c3"></a>
+                    <h3>DELETE ExtensibilityViewDefinition by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e1cb532d-d40e-4ec1-9152-d657895857c3"></i></h3>
+                    <div class="hidden-copylink" id="copy-e1cb532d-d40e-4ec1-9152-d657895857c3"><a href="#e1cb532d-d40e-4ec1-9152-d657895857c3">DELETE ExtensibilityViewDefinition by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td><i>(string)</i> Culture.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td><i>(string)</i> Schema Entity.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e1cb532d-d40e-4ec1-9152-d657895857c3">api/{tenantKey}/{orgKey}/corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /corePatterns/extensibilityViewDefinitions/{culture}/{schemaEntity}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e1cb532d-d40e-4ec1-9152-d657895857c3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiExtensibilityViewDefinitionResource"></a>
+                    <h4>ApiExtensibilityViewDefinitionResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiExtensibilityViewDefinitionResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiExtensibilityViewDefinitionResource"><a href="#ApiExtensibilityViewDefinitionResource">ApiExtensibilityViewDefinitionResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Culture.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">viewDefinition</td>
+                                <td  class="wrap"><i>(string)</i> View Definition.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ExtensibilityViewDefinitionResource"></a>
+                    <h4>ExtensibilityViewDefinitionResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ExtensibilityViewDefinitionResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ExtensibilityViewDefinitionResource"><a href="#ExtensibilityViewDefinitionResource">ExtensibilityViewDefinitionResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">culture</td>
+                                <td  class="wrap"><i>(string)</i> Culture.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">schemaEntity</td>
+                                <td  class="wrap"><i>(string)</i> Schema Entity.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">viewDefinition</td>
+                                <td  class="wrap"><i>(string)</i> View Definition.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

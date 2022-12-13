@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Client Context Value</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
+    <a class="menu-subitem " href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem menu-item-selected" href="shell.clientcontextvalues.html">
+        Client Context Value
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem " href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="corepatterns.customentityrecords.html">
+        Custom Entity Record
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="identity.groups.html">
+        Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Client Context Value</h1>
+                    <p>
+                    				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/shell/clientContextValues  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-shell-clientcontextvalues"></i></td>
+                                <div class="hidden-copylink" id="copy-shell-clientcontextvalues">api/{tenantKey}/{orgKey}/shell/clientContextValues</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#7ab2addb-6a7d-45e5-b85f-4eef7895aa08">GET Get Client Context</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ClientContext">ClientContext</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7ab2addb-6a7d-45e5-b85f-4eef7895aa08"></a>
+                    <h3>GET Get Client Context <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7ab2addb-6a7d-45e5-b85f-4eef7895aa08"></i></h3>
+                    <div class="hidden-copylink" id="copy-7ab2addb-6a7d-45e5-b85f-4eef7895aa08"><a href="#7ab2addb-6a7d-45e5-b85f-4eef7895aa08">GET Get Client Context</a></div>
+                    <p class="operation-description">Custom operation 'GetClientContext'.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains a resource of type 'ClientContext'. See <a href="#ClientContext">ClientContext.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7ab2addb-6a7d-45e5-b85f-4eef7895aa08">api/{tenantKey}/{orgKey}/shell/clientContextValues/getClientContext</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /shell/clientContextValues/getClientContext</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7ab2addb-6a7d-45e5-b85f-4eef7895aa08"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ClientContext"></a>
+                    <h4>ClientContext <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ClientContext"></i></h4>
+                    <div class="hidden-copylink" id="copy-ClientContext"><a href="#ClientContext">ClientContext</a></div>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">productName</td>
+                                <td  class="wrap"><i>(string)</i> Product Name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">appTheme</td>
+                                <td  class="wrap"><i>(string)</i> App Theme.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">clientId</td>
+                                <td  class="wrap"><i>(string)</i> Client Id.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionId</td>
+                                <td  class="wrap"><i>(string)</i> Subscription Id.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">countryKey</td>
+                                <td  class="wrap"><i>(string)</i> Country Key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionParametersClaims</td>
+                                <td  class="wrap"><i>(string)</i> Subscription Parameters Claims.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionKey</td>
+                                <td  class="wrap"><i>(string)</i> Subscription Key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionAlias</td>
+                                <td  class="wrap"><i>(string)</i> Subscription Alias.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionManagementUrl</td>
+                                <td  class="wrap"><i>(string)</i> Subscription Management Url.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionStartDate</td>
+                                <td  class="wrap"><i>(string)</i> Subscription Start Date.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionEndDate</td>
+                                <td  class="wrap"><i>(string)</i> Subscription End Date.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">subscriptionPlan</td>
+                                <td  class="wrap"><i>(string)</i> Subscription Plan.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">token</td>
+                                <td  class="wrap"><i>(string)</i> Token.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">pnsExternalUri</td>
+                                <td  class="wrap"><i>(string)</i> Pns External Uri.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">databaseVersion</td>
+                                <td  class="wrap"><i>(string)</i> Database Version.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">menuLastModifiedDate</td>
+                                <td  class="wrap"><i>(DateTimeOffset)</i> Menu Last Modified Date.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">helpCenterBaseUrl</td>
+                                <td  class="wrap"><i>(string)</i> Help Center Base Url.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

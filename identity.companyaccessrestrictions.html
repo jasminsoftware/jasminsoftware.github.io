@@ -1,0 +1,1569 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Platform | Company Access Restriction</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a id="current-menu-item" class="menu-item " href="platform.html">
+        Platform
+    </a>
+    <a class="menu-subitem " href="corepatterns.addresses.html">
+        Address
+    </a>
+    <a class="menu-subitem " href="corepatterns.assignments.html">
+        Assignment
+    </a>
+    <a class="menu-subitem " href="corepatterns.backgroundoperations.html">
+        BackgroundOperation
+    </a>
+    <a class="menu-subitem " href="shell.clientcontextvalues.html">
+        Client Context Value
+    </a>
+    <a class="menu-subitem " href="corepatterns.companies.html">
+        Company
+    </a>
+    <a class="menu-subitem menu-item-selected" href="identity.companyaccessrestrictions.html">
+        Company Access Restriction
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacts.html">
+        Contact
+    </a>
+    <a class="menu-subitem " href="corepatterns.contactgroups.html">
+        Contact Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.contacttypes.html">
+        Contact Type
+    </a>
+    <a class="menu-subitem " href="corepatterns.countries.html">
+        Country
+    </a>
+    <a class="menu-subitem " href="corepatterns.cultures.html">
+        Culture
+    </a>
+    <a class="menu-subitem " href="corepatterns.currencies.html">
+        Currency
+    </a>
+    <a class="menu-subitem " href="corepatterns.customentityrecords.html">
+        Custom Entity Record
+    </a>
+    <a class="menu-subitem " href="reporting.offlinereports.html">
+        Data Report
+    </a>
+    <a class="menu-subitem " href="operations.dbversions.html">
+        Db Version
+    </a>
+    <a class="menu-subitem " href="corepatterns.drafts.html">
+        Draft
+    </a>
+    <a class="menu-subitem " href="reporting.electroniccertificates.html">
+        Electronic Certificate
+    </a>
+    <a class="menu-subitem " href="operations.emailtemplates.html">
+        Email Template
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaattributes.html">
+        Entity Attribute
+    </a>
+    <a class="menu-subitem " href="corepatterns.entitylockreasons.html">
+        Entity Lock Reason
+    </a>
+    <a class="menu-subitem " href="corepatterns.extensibilityviewdefinitions.html">
+        Extensibility View Definition
+    </a>
+    <a class="menu-subitem " href="corepatterns.fiscaltimezones.html">
+        Fiscal Time Zone
+    </a>
+    <a class="menu-subitem " href="identity.groups.html">
+        Group
+    </a>
+    <a class="menu-subitem " href="corepatterns.importdatainfos.html">
+        Import Data Info
+    </a>
+    <a class="menu-subitem " href="operations.notifications.html">
+        Notification
+    </a>
+    <a class="menu-subitem " href="corepatterns.operations.html">
+        Operation
+    </a>
+    <a class="menu-subitem " href="corepatterns.organizationconfigurations.html">
+        Organization Configuration
+    </a>
+    <a class="menu-subitem " href="corepatterns.postalzones.html">
+        Postal Code
+    </a>
+    <a class="menu-subitem " href="corepatterns.powerbiinfos.html">
+        Power Bi Info
+    </a>
+    <a class="menu-subitem " href="corepatterns.regions.html">
+        Region
+    </a>
+    <a class="menu-subitem " href="identity.roles.html">
+        Role
+    </a>
+    <a class="menu-subitem " href="corepatterns.schemaentities.html">
+        Schema Entity Management
+    </a>
+    <a class="menu-subitem " href="corepatterns.sequences.html">
+        Sequence
+    </a>
+    <a class="menu-subitem " href="corepatterns.subscriptionvalidations.html">
+        Subscription Validation
+    </a>
+    <a class="menu-subitem " href="corepatterns.units.html">
+        Unit
+    </a>
+    <a class="menu-subitem " href="corepatterns.unitdimensions.html">
+        Unit Dimension
+    </a>
+    <a class="menu-subitem " href="operations.upgradeversions.html">
+        Upgrade Version
+    </a>
+    <a class="menu-subitem " href="identity.users.html">
+        User
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Platform | Company Access Restriction</h1>
+                    <p>
+                    Service to manage entities of type 'CompanyAccessRestriction'.				
+                    </p>
+                    <p>
+                    This service extends <a href="corepatterns.companies.html">Companies</a>.
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-identity-companyaccessrestrictions"></i></td>
+                                <div class="hidden-copylink" id="copy-identity-companyaccessrestrictions">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#40d1ebc5-4b6e-41ef-a777-b91e4e21b97d">GET CompanyAccessRestrictions</a></li>
+                            <li><a href="#084cbf6d-4f63-491d-8c5d-eff8d0e4ceef">GET CompanyAccessRestrictions (paged)</a></li>
+                            <li><a href="#568c6b96-4761-43eb-9a86-1a0bd07ef33c">GET CompanyAccessRestriction by identifier</a></li>
+                            <li><a href="#d3a57091-1925-4b6c-8068-ebf582f74a8b">GET CompanyAccessRestriction by key</a></li>
+                            <li><a href="#49ff9ff0-071d-457d-854c-49eb667ded84">GET CompanyAccessRestrictions (with Company)</a></li>
+                            <li><a href="#1581f6ca-82de-41d4-9916-cdf3bc532ec8">GET CompanyAccessRestrictions (with Company) (paged)</a></li>
+                            <li><a href="#db1cbe6e-522d-4dcc-a9ec-8e736cc5efa5">GET CompanyAccessRestriction (with Company) by identifier</a></li>
+                            <li><a href="#99d42299-3372-42e2-b929-56ba18b7a6bb">GET CompanyAccessRestriction (with Company) by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#e2d7ec34-c997-4f82-8523-b814cc1ef1ca">POST CompanyAccessRestrictions</a></li>
+                            <li><a href="#1f3a4c4b-55da-484b-b719-0bb962383a18">POST CompanyAccessRestrictions (with ApiBaseCompanyAccessRestriction)</a></li>
+                            <li><a href="#1bcddc09-b450-4d16-b7dc-d548eea1890e">POST Company Access Restriction </a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#265fe737-906e-49e0-b727-64b513b42bf8">PUT Set IsActive CompanyAccessRestriction</a></li>
+                            <li><a href="#17e26950-072e-4451-b20e-dd6e630a5bca">PUT Set Group RestrictedGroup</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#efa1b353-e6d7-4185-a8c2-1d2d54e3040f">DELETE Restricted Group by identifier</a></li>
+                            <li><a href="#6414fd35-96ea-44e9-b4ec-e2b7fdefb1a7">DELETE CompanyAccessRestriction by identifier</a></li>
+                            <li><a href="#9ec728aa-8f06-4e61-950e-38f24b7bea17">DELETE CompanyAccessRestriction by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiBaseCompanyAccessRestrictionResource">ApiBaseCompanyAccessRestrictionResource</a></li>
+                        <li><a href="#ApiBaseCompanyAccessRestrictionRestrictedGroupsResource">ApiBaseCompanyAccessRestrictionRestrictedGroupsResource</a></li>
+                        <li><a href="#ApiCompanyAccessRestrictionResource">ApiCompanyAccessRestrictionResource</a></li>
+                        <li><a href="#ApiCompanyAccessRestrictionRestrictedGroupsResource">ApiCompanyAccessRestrictionRestrictedGroupsResource</a></li>
+                        <li><a href="#BaseCompanyAccessRestrictionResource">BaseCompanyAccessRestrictionResource</a></li>
+                        <li><a href="#BaseCompanyAccessRestrictionRestrictedGroupsResource">BaseCompanyAccessRestrictionRestrictedGroupsResource</a></li>
+                        <li><a href="#CompanyAccessRestrictionResource">CompanyAccessRestrictionResource</a></li>
+                        <li><a href="#RestrictedGroupResource">RestrictedGroupResource</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="40d1ebc5-4b6e-41ef-a777-b91e4e21b97d"></a>
+                    <h3>GET CompanyAccessRestrictions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-40d1ebc5-4b6e-41ef-a777-b91e4e21b97d"></i></h3>
+                    <div class="hidden-copylink" id="copy-40d1ebc5-4b6e-41ef-a777-b91e4e21b97d"><a href="#40d1ebc5-4b6e-41ef-a777-b91e4e21b97d">GET CompanyAccessRestrictions</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#CompanyAccessRestrictionResource">CompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-40d1ebc5-4b6e-41ef-a777-b91e4e21b97d">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-40d1ebc5-4b6e-41ef-a777-b91e4e21b97d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="084cbf6d-4f63-491d-8c5d-eff8d0e4ceef"></a>
+                    <h3>GET CompanyAccessRestrictions (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-084cbf6d-4f63-491d-8c5d-eff8d0e4ceef"></i></h3>
+                    <div class="hidden-copylink" id="copy-084cbf6d-4f63-491d-8c5d-eff8d0e4ceef"><a href="#084cbf6d-4f63-491d-8c5d-eff8d0e4ceef">GET CompanyAccessRestrictions (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#CompanyAccessRestrictionResource">CompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-084cbf6d-4f63-491d-8c5d-eff8d0e4ceef">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/extension?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions/extension?page={page}&amp;pageSize={pageSize}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-084cbf6d-4f63-491d-8c5d-eff8d0e4ceef"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="568c6b96-4761-43eb-9a86-1a0bd07ef33c"></a>
+                    <h3>GET CompanyAccessRestriction by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-568c6b96-4761-43eb-9a86-1a0bd07ef33c"></i></h3>
+                    <div class="hidden-copylink" id="copy-568c6b96-4761-43eb-9a86-1a0bd07ef33c"><a href="#568c6b96-4761-43eb-9a86-1a0bd07ef33c">GET CompanyAccessRestriction by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#CompanyAccessRestrictionResource">CompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-568c6b96-4761-43eb-9a86-1a0bd07ef33c">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{id}/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions/{id}/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-568c6b96-4761-43eb-9a86-1a0bd07ef33c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="d3a57091-1925-4b6c-8068-ebf582f74a8b"></a>
+                    <h3>GET CompanyAccessRestriction by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-d3a57091-1925-4b6c-8068-ebf582f74a8b"></i></h3>
+                    <div class="hidden-copylink" id="copy-d3a57091-1925-4b6c-8068-ebf582f74a8b"><a href="#d3a57091-1925-4b6c-8068-ebf582f74a8b">GET CompanyAccessRestriction by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The key for de company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#CompanyAccessRestrictionResource">CompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-d3a57091-1925-4b6c-8068-ebf582f74a8b">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{companyKey}/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions/{companyKey}/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-d3a57091-1925-4b6c-8068-ebf582f74a8b"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="49ff9ff0-071d-457d-854c-49eb667ded84"></a>
+                    <h3>GET CompanyAccessRestrictions (with Company) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-49ff9ff0-071d-457d-854c-49eb667ded84"></i></h3>
+                    <div class="hidden-copylink" id="copy-49ff9ff0-071d-457d-854c-49eb667ded84"><a href="#49ff9ff0-071d-457d-854c-49eb667ded84">GET CompanyAccessRestrictions (with Company)</a></div>
+                    <p class="operation-description">Returns the list of all the entity records available. Each record contains both data from the entity and the base entity.</p>
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#BaseCompanyAccessRestrictionResource">BaseCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-49ff9ff0-071d-457d-854c-49eb667ded84">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-49ff9ff0-071d-457d-854c-49eb667ded84"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1581f6ca-82de-41d4-9916-cdf3bc532ec8"></a>
+                    <h3>GET CompanyAccessRestrictions (with Company) (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1581f6ca-82de-41d4-9916-cdf3bc532ec8"></i></h3>
+                    <div class="hidden-copylink" id="copy-1581f6ca-82de-41d4-9916-cdf3bc532ec8"><a href="#1581f6ca-82de-41d4-9916-cdf3bc532ec8">GET CompanyAccessRestrictions (with Company) (paged)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available. Each record contains both data from the entity and the base entity.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">page</td>
+                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">pageSize</td>
+                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#BaseCompanyAccessRestrictionResource">BaseCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1581f6ca-82de-41d4-9916-cdf3bc532ec8">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions?page={page}&amp;pageSize={pageSize}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1581f6ca-82de-41d4-9916-cdf3bc532ec8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="db1cbe6e-522d-4dcc-a9ec-8e736cc5efa5"></a>
+                    <h3>GET CompanyAccessRestriction (with Company) by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-db1cbe6e-522d-4dcc-a9ec-8e736cc5efa5"></i></h3>
+                    <div class="hidden-copylink" id="copy-db1cbe6e-522d-4dcc-a9ec-8e736cc5efa5"><a href="#db1cbe6e-522d-4dcc-a9ec-8e736cc5efa5">GET CompanyAccessRestriction (with Company) by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier. The record contains both data from the entity and the base entity.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#BaseCompanyAccessRestrictionResource">BaseCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-db1cbe6e-522d-4dcc-a9ec-8e736cc5efa5">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-db1cbe6e-522d-4dcc-a9ec-8e736cc5efa5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="99d42299-3372-42e2-b929-56ba18b7a6bb"></a>
+                    <h3>GET CompanyAccessRestriction (with Company) by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-99d42299-3372-42e2-b929-56ba18b7a6bb"></i></h3>
+                    <div class="hidden-copylink" id="copy-99d42299-3372-42e2-b929-56ba18b7a6bb"><a href="#99d42299-3372-42e2-b929-56ba18b7a6bb">GET CompanyAccessRestriction (with Company) by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key. The record contains both data from the entity and the base entity.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The key for de company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#BaseCompanyAccessRestrictionResource">BaseCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-99d42299-3372-42e2-b929-56ba18b7a6bb">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{companyKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /identity/companyAccessRestrictions/{companyKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-99d42299-3372-42e2-b929-56ba18b7a6bb"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e2d7ec34-c997-4f82-8523-b814cc1ef1ca"></a>
+                    <h3>POST CompanyAccessRestrictions <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e2d7ec34-c997-4f82-8523-b814cc1ef1ca"></i></h3>
+                    <div class="hidden-copylink" id="copy-e2d7ec34-c997-4f82-8523-b814cc1ef1ca"><a href="#e2d7ec34-c997-4f82-8523-b814cc1ef1ca">POST CompanyAccessRestrictions</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyAccessRestrictionResource</td>
+                                <td><i>(ApiCompanyAccessRestrictionResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiCompanyAccessRestrictionResource">ApiCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiCompanyAccessRestrictionResource">ApiCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e2d7ec34-c997-4f82-8523-b814cc1ef1ca">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/extension</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /identity/companyAccessRestrictions/extension</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e2d7ec34-c997-4f82-8523-b814cc1ef1ca"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1f3a4c4b-55da-484b-b719-0bb962383a18"></a>
+                    <h3>POST CompanyAccessRestrictions (with ApiBaseCompanyAccessRestriction) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1f3a4c4b-55da-484b-b719-0bb962383a18"></i></h3>
+                    <div class="hidden-copylink" id="copy-1f3a4c4b-55da-484b-b719-0bb962383a18"><a href="#1f3a4c4b-55da-484b-b719-0bb962383a18">POST CompanyAccessRestrictions (with ApiBaseCompanyAccessRestriction)</a></div>
+                    <p class="operation-description">Creates a new entity record. The record shoud contain both data from the entity and the base entity.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyAccessRestrictionResource</td>
+                                <td><i>(ApiCompanyAccessRestrictionResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiCompanyAccessRestrictionResource">ApiCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiBaseCompanyAccessRestrictionResource">ApiBaseCompanyAccessRestrictionResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1f3a4c4b-55da-484b-b719-0bb962383a18">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /identity/companyAccessRestrictions</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1f3a4c4b-55da-484b-b719-0bb962383a18"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1bcddc09-b450-4d16-b7dc-d548eea1890e"></a>
+                    <h3>POST Company Access Restriction  <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1bcddc09-b450-4d16-b7dc-d548eea1890e"></i></h3>
+                    <div class="hidden-copylink" id="copy-1bcddc09-b450-4d16-b7dc-d548eea1890e"><a href="#1bcddc09-b450-4d16-b7dc-d548eea1890e">POST Company Access Restriction </a></div>
+                    <p class="operation-description">Inserts a new 'Restricted Group' in the 'Company Access Restriction'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The key for de company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiCompanyAccessRestrictionRestrictedGroupsResource)</i> The ApiCompanyAccessRestrictionRestrictedGroupsResource instance.<br/>See <a href="#ApiCompanyAccessRestrictionRestrictedGroupsResource">ApiCompanyAccessRestrictionRestrictedGroupsResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>NoContent. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1bcddc09-b450-4d16-b7dc-d548eea1890e">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{companyKey}/restrictedGroups</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /identity/companyAccessRestrictions/{companyKey}/restrictedGroups</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1bcddc09-b450-4d16-b7dc-d548eea1890e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="17e26950-072e-4451-b20e-dd6e630a5bca"></a>
+                    <h3>PUT Set Group RestrictedGroup <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-17e26950-072e-4451-b20e-dd6e630a5bca"></i></h3>
+                    <div class="hidden-copylink" id="copy-17e26950-072e-4451-b20e-dd6e630a5bca"><a href="#17e26950-072e-4451-b20e-dd6e630a5bca">PUT Set Group RestrictedGroup</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Group' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The key for de company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-17e26950-072e-4451-b20e-dd6e630a5bca">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{companyKey}/restrictedGroups/{lineId}/group</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /identity/companyAccessRestrictions/{companyKey}/restrictedGroups/{lineId}/group</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-17e26950-072e-4451-b20e-dd6e630a5bca"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="265fe737-906e-49e0-b727-64b513b42bf8"></a>
+                    <h3>PUT Set IsActive CompanyAccessRestriction <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-265fe737-906e-49e0-b727-64b513b42bf8"></i></h3>
+                    <div class="hidden-copylink" id="copy-265fe737-906e-49e0-b727-64b513b42bf8"><a href="#265fe737-906e-49e0-b727-64b513b42bf8">PUT Set IsActive CompanyAccessRestriction</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The key for de company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-265fe737-906e-49e0-b727-64b513b42bf8">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{companyKey}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /identity/companyAccessRestrictions/{companyKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-265fe737-906e-49e0-b727-64b513b42bf8"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="efa1b353-e6d7-4185-a8c2-1d2d54e3040f"></a>
+                    <h3>DELETE Restricted Group by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-efa1b353-e6d7-4185-a8c2-1d2d54e3040f"></i></h3>
+                    <div class="hidden-copylink" id="copy-efa1b353-e6d7-4185-a8c2-1d2d54e3040f"><a href="#efa1b353-e6d7-4185-a8c2-1d2d54e3040f">DELETE Restricted Group by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The key for de company.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>NoContent. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-efa1b353-e6d7-4185-a8c2-1d2d54e3040f">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{companyKey}/restrictedGroups/{lineId}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /identity/companyAccessRestrictions/{companyKey}/restrictedGroups/{lineId}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-efa1b353-e6d7-4185-a8c2-1d2d54e3040f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6414fd35-96ea-44e9-b4ec-e2b7fdefb1a7"></a>
+                    <h3>DELETE CompanyAccessRestriction by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6414fd35-96ea-44e9-b4ec-e2b7fdefb1a7"></i></h3>
+                    <div class="hidden-copylink" id="copy-6414fd35-96ea-44e9-b4ec-e2b7fdefb1a7"><a href="#6414fd35-96ea-44e9-b4ec-e2b7fdefb1a7">DELETE CompanyAccessRestriction by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6414fd35-96ea-44e9-b4ec-e2b7fdefb1a7">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /identity/companyAccessRestrictions/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6414fd35-96ea-44e9-b4ec-e2b7fdefb1a7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="9ec728aa-8f06-4e61-950e-38f24b7bea17"></a>
+                    <h3>DELETE CompanyAccessRestriction by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-9ec728aa-8f06-4e61-950e-38f24b7bea17"></i></h3>
+                    <div class="hidden-copylink" id="copy-9ec728aa-8f06-4e61-950e-38f24b7bea17"><a href="#9ec728aa-8f06-4e61-950e-38f24b7bea17">DELETE CompanyAccessRestriction by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The key for de company.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-9ec728aa-8f06-4e61-950e-38f24b7bea17">api/{tenantKey}/{orgKey}/identity/companyAccessRestrictions/{companyKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /identity/companyAccessRestrictions/{companyKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-9ec728aa-8f06-4e61-950e-38f24b7bea17"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiBaseCompanyAccessRestrictionResource"></a>
+                    <h4>ApiBaseCompanyAccessRestrictionResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiBaseCompanyAccessRestrictionResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiBaseCompanyAccessRestrictionResource"><a href="#ApiBaseCompanyAccessRestrictionResource">ApiBaseCompanyAccessRestrictionResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for de company.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The company's name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The company's tax identifier.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The company's country.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">baseCurrency</td>
+                                <td  class="wrap"><i>(string)</i> The company's base currency.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">restrictedGroups</td>
+                                <td title="(List of ApiBaseCompanyAccessRestrictionRestrictedGroupsResource) Restricted Groups. See ApiBaseCompanyAccessRestrictionRestrictedGroupsResource." class="wrap"><i>(List of ApiBaseCompanyAccessRestrictionRestrictedGroupsResource)</i> Restricted Groups.
+									<br/>See <a href="#ApiBaseCompanyAccessRestrictionRestrictedGroupsResource">ApiBaseCompanyAccessRestrictionRestrictedGroupsResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternal</td>
+                                <td  class="wrap"><i>(bool)</i> Is External.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">showExchangeRateReversed</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates wheter the exchange rate for the base currency is presented with reversed logic.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The company's telephone.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">teleFax</td>
+                                <td  class="wrap"><i>(string)</i> The company's telefax.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The company's mobile.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The company's electronic mail.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">equityCapital</td>
+                                <td  class="wrap"><i>(string)</i> The equity capital is defined as the amount of capital provided by the company's owner(s).
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">registrationOffice</td>
+                                <td  class="wrap"><i>(string)</i> The company's registration office.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">registrationNumber</td>
+                                <td  class="wrap"><i>(string)</i> The company's registration number.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The company's building number.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The company's street name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The company's city name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The company's postal code.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The company's address.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">logo</td>
+                                <td  class="wrap"><i>(string)</i> The company's image.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">forceFromOrganizationConfiguration</td>
+                                <td  class="wrap"><i>(bool)</i> Force From Configuration.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">companyRegistrationData</td>
+                                <td  class="wrap"><i>(string)</i> Company Registration Data.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ApiBaseCompanyAccessRestrictionRestrictedGroupsResource"></a>
+                    <h4>ApiBaseCompanyAccessRestrictionRestrictedGroupsResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiBaseCompanyAccessRestrictionRestrictedGroupsResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiBaseCompanyAccessRestrictionRestrictedGroupsResource"><a href="#ApiBaseCompanyAccessRestrictionRestrictedGroupsResource">ApiBaseCompanyAccessRestrictionRestrictedGroupsResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">group</td>
+                                <td  class="wrap"><i>(string)</i> Group.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ApiCompanyAccessRestrictionResource"></a>
+                    <h4>ApiCompanyAccessRestrictionResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiCompanyAccessRestrictionResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiCompanyAccessRestrictionResource"><a href="#ApiCompanyAccessRestrictionResource">ApiCompanyAccessRestrictionResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for de company.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">restrictedGroups</td>
+                                <td title="(List of ApiCompanyAccessRestrictionRestrictedGroupsResource) Restricted Groups. See ApiCompanyAccessRestrictionRestrictedGroupsResource." class="wrap"><i>(List of ApiCompanyAccessRestrictionRestrictedGroupsResource)</i> Restricted Groups.
+									<br/>See <a href="#ApiCompanyAccessRestrictionRestrictedGroupsResource">ApiCompanyAccessRestrictionRestrictedGroupsResource.</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ApiCompanyAccessRestrictionRestrictedGroupsResource"></a>
+                    <h4>ApiCompanyAccessRestrictionRestrictedGroupsResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiCompanyAccessRestrictionRestrictedGroupsResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiCompanyAccessRestrictionRestrictedGroupsResource"><a href="#ApiCompanyAccessRestrictionRestrictedGroupsResource">ApiCompanyAccessRestrictionRestrictedGroupsResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">group</td>
+                                <td  class="wrap"><i>(string)</i> Group.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="BaseCompanyAccessRestrictionResource"></a>
+                    <h4>BaseCompanyAccessRestrictionResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-BaseCompanyAccessRestrictionResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-BaseCompanyAccessRestrictionResource"><a href="#BaseCompanyAccessRestrictionResource">BaseCompanyAccessRestrictionResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for de company.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">name</td>
+                                <td  class="wrap"><i>(string)</i> The company's name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">companyTaxID</td>
+                                <td  class="wrap"><i>(string)</i> The company's tax identifier.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">country</td>
+                                <td  class="wrap"><i>(string)</i> The company's country.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">baseCurrency</td>
+                                <td  class="wrap"><i>(string)</i> The company's base currency.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">restrictedGroups</td>
+                                <td title="(List of BaseCompanyAccessRestrictionRestrictedGroupsResource) Restricted Groups. See BaseCompanyAccessRestrictionRestrictedGroupsResource." class="wrap"><i>(List of BaseCompanyAccessRestrictionRestrictedGroupsResource)</i> Restricted Groups.
+									<br/>See <a href="#BaseCompanyAccessRestrictionRestrictedGroupsResource">BaseCompanyAccessRestrictionRestrictedGroupsResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">isExternal</td>
+                                <td  class="wrap"><i>(bool)</i> Is External.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">showExchangeRateReversed</td>
+                                <td  class="wrap"><i>(bool)</i> Indicates wheter the exchange rate for the base currency is presented with reversed logic.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">searchTerm</td>
+                                <td  class="wrap"><i>(string)</i> Search Term.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">telephone</td>
+                                <td  class="wrap"><i>(string)</i> The company's telephone.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">teleFax</td>
+                                <td  class="wrap"><i>(string)</i> The company's telefax.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">mobile</td>
+                                <td  class="wrap"><i>(string)</i> The company's mobile.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">electronicMail</td>
+                                <td  class="wrap"><i>(string)</i> The company's electronic mail.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">equityCapital</td>
+                                <td  class="wrap"><i>(string)</i> The equity capital is defined as the amount of capital provided by the company's owner(s).
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">registrationOffice</td>
+                                <td  class="wrap"><i>(string)</i> The company's registration office.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">registrationNumber</td>
+                                <td  class="wrap"><i>(string)</i> The company's registration number.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">buildingNumber</td>
+                                <td  class="wrap"><i>(string)</i> The company's building number.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">streetName</td>
+                                <td  class="wrap"><i>(string)</i> The company's street name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">cityName</td>
+                                <td  class="wrap"><i>(string)</i> The company's city name.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">postalZone</td>
+                                <td  class="wrap"><i>(string)</i> The company's postal code.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">address</td>
+                                <td  class="wrap"><i>(string)</i> The company's address.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">logo</td>
+                                <td  class="wrap"><i>(string)</i> The company's image.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">forceFromOrganizationConfiguration</td>
+                                <td  class="wrap"><i>(bool)</i> Force From Configuration.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">companyRegistrationData</td>
+                                <td  class="wrap"><i>(string)</i> Company Registration Data.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="BaseCompanyAccessRestrictionRestrictedGroupsResource"></a>
+                    <h4>BaseCompanyAccessRestrictionRestrictedGroupsResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-BaseCompanyAccessRestrictionRestrictedGroupsResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-BaseCompanyAccessRestrictionRestrictedGroupsResource"><a href="#BaseCompanyAccessRestrictionRestrictedGroupsResource">BaseCompanyAccessRestrictionRestrictedGroupsResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">group</td>
+                                <td  class="wrap"><i>(string)</i> Group.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="CompanyAccessRestrictionResource"></a>
+                    <h4>CompanyAccessRestrictionResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-CompanyAccessRestrictionResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-CompanyAccessRestrictionResource"><a href="#CompanyAccessRestrictionResource">CompanyAccessRestrictionResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td  class="wrap"><i>(string)</i> The key for de company.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">restrictedGroups</td>
+                                <td  class="wrap"><i>(List of RestrictedGroupResource)</i> Restricted Groups.
+									<br/>See <a href="#RestrictedGroupResource">RestrictedGroupResource.</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="RestrictedGroupResource"></a>
+                    <h4>RestrictedGroupResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-RestrictedGroupResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-RestrictedGroupResource"><a href="#RestrictedGroupResource">RestrictedGroupResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">group</td>
+                                <td  class="wrap"><i>(string)</i> Group.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>
