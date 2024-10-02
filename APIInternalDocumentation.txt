@@ -1,0 +1,377 @@
+﻿<#+
+	private void FixPublicAPIDocumentation()
+	{
+		PreProcessFiles("*.html");
+
+		this.RemoveInternalFromModuleServiceFile("billing.invoices.html", "POST Integrate", "IntegrationInvoiceResource");
+		this.RemoveInternalFromModuleServiceFile("billing.memos.html", "POST Integrate", "IntegrationMemoResource");
+		this.RemoveInternalFromModuleServiceFile("sales.quotations.html", "POST Integrate", "IntegrationQuotationResource");
+
+		PostProcessFiles("*.html");
+	}
+
+	private bool IsVSHost()
+    {
+        return this.Host.ToString() == "Microsoft.VisualStudio.TextTemplating.VSHost.TextTemplatingService";
+    }
+
+	private void PreProcessFiles(string wildCard)
+    {
+        // If not VS...
+
+        if (!this.IsVSHost())
+        {
+            string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
+            
+            string workingDirectory = this.GetTfPath();
+            int timeOut = 60000;
+        
+            // TF Checkout
+
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.FileName = "TF.exe";
+            startInfo.Arguments = string.Format(@"checkout ""{0}\{1}""", templateDirectory, wildCard);
+            startInfo.WorkingDirectory = workingDirectory;
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+
+            System.Diagnostics.Process process = System.Diagnostics.Process.Start(startInfo);
+
+            process.WaitForExit(timeOut);			
+        }
+    }	
+
+	private string GetTfPath()
+    {
+		/*string path = ConfigurationManager.AppSettings["TFLocation"];
+		
+		if (!Directory.Exists(path))
+		{
+			path = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\";
+		}
+		        
+		return path;*/
+
+		return @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\";
+    }
+
+    private void PostProcessFiles(string wildCard)
+    {
+        // If not VS...
+
+        if (!this.IsVSHost())
+        {
+            string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
+            
+            string workingDirectory = this.GetTfPath();
+            int timeOut = 60000;
+            
+            // checkin
+            
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.FileName = "TF.exe";
+            startInfo.Arguments = string.Format(CultureInfo.CurrentCulture, "checkin /comment:\"***Auto-Build***: Generated Code\" /noprompt /override:\"***Auto-Build***: Generated Code\" \"{0}\\{1}\"", templateDirectory, wildCard);
+            startInfo.WorkingDirectory = workingDirectory;
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+
+            System.Diagnostics.Process process = System.Diagnostics.Process.Start(startInfo);
+
+            process.WaitForExit(timeOut);
+        }
+    }	
+
+	private void RemoveInternalFromModuleServiceFile(string filename, string operationName, string resourceName)
+	{
+		string operationId = "";
+		// This TextTemplate will update the previously generated filename to remove all services, operations and resources that should not be public.
+
+		// Get Module Name
+
+		bool isVSHost = this.IsVSHost();
+		
+		EnvDTE.DTE dte = null;
+		Action<String> checkOutAction = null;
+		Action<IEnumerable<String>> projectSyncAction = null;
+
+		if (isVSHost)
+		{
+			// we must handle project and source control.
+
+			var hostServiceProvider = (IServiceProvider)Host;
+			dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof(EnvDTE.DTE));
+
+			ITextTemplatingEngineHost host = (ITextTemplatingEngineHost)Host;
+			checkOutAction = (String actualFileName) => dte.SourceControl.CheckOutItem(actualFileName);
+
+			EnvDTE.ProjectItem templateProjectItem = dte.Solution.FindProjectItem(host.TemplateFile);
+			projectSyncAction = (IEnumerable<String> keepFileNames) => ProjectSync(templateProjectItem, keepFileNames);
+		}
+
+		// Reset the generation environment
+
+		this.GenerationEnvironment = new System.Text.StringBuilder();
+
+		// Use Generated script as source.
+
+		string generatedDocumentationPath = this.Host.ResolvePath(filename);
+		string currentPath = this.Host.ResolvePath(@"");
+
+		string[] lines = System.IO.File.ReadAllLines(generatedDocumentationPath);
+
+		// Control whether or not to write current line to the target file.
+		bool stopWriting = false;
+		bool postOperationsFound = false;
+		bool resourcesFound = false;
+		int index = 0;
+		foreach (string line in lines)
+		{
+			// start looking for reports
+			if (line.TrimStart(' ').Equals("<h2>POST Operations</h2>"))
+			{
+				postOperationsFound = true;
+			}
+
+			if (line.TrimStart(' ').Equals("<h2>Resources</h2>"))
+			{
+				postOperationsFound = false;
+				resourcesFound = true;
+			}
+
+			if (line.TrimStart(' ').StartsWith(@"<li><a href"))
+			{
+				// Getting the operationId
+				if (operationId == "" && operationName != "" && line.Contains(operationName))
+				{
+					operationId = line.TrimStart(' ').Substring(14, 36);
+				}
+
+				if ((operationId != "" && line.Contains(operationId)) ||
+					line.Contains(resourceName))
+				{
+					// Ignore this line
+				}
+				else if (!stopWriting)
+				{
+					WriteLine(line);
+				}
+			}
+			else if (postOperationsFound && line.TrimStart(' ').Replace("\"", "'").Equals(@"<div class='content-section'>"))
+			{
+				if (stopWriting)
+				{
+					stopWriting = false;
+				}
+				else if (lines[index+2].TrimStart(' ').Replace("\"", "'").Equals(@"<a class='anchor' name='" + operationId + "'></a>"))
+				{
+					stopWriting = true;
+				}
+
+				if (!stopWriting)
+				{
+					WriteLine(line);
+				}
+			}
+			else if (resourcesFound && line.TrimStart(' ').Replace("\"", "'").StartsWith(@"<a class='anchor' name='"))
+			{
+				if (stopWriting)
+				{
+					stopWriting = false;
+				}
+				else if (line.TrimStart(' ').Replace("\"", "'").Equals(@"<a class='anchor' name='" + resourceName + "'></a>"))
+				{
+					stopWriting = true;
+				}
+
+				if (!stopWriting)
+				{
+					WriteLine(line);
+				}
+			}
+			else
+			{
+				if (!stopWriting)
+				{
+					WriteLine(line);
+				}
+			}
+
+			index ++;
+		}
+
+		string[] paths = {@currentPath, filename};
+		string outputFilePath = Path.Combine(paths);
+
+		// Write the output
+
+		string fileName = outputFilePath;
+		string fileContent = this.GenerationEnvironment.ToString().Replace("\"\"", "\"").Replace("none", "");
+
+		CreateFile(fileName, fileContent, dte, checkOutAction, projectSyncAction, isVSHost);
+
+		// Reset the generation environment
+
+		this.GenerationEnvironment = new System.Text.StringBuilder();
+
+		this.RemoveInternalFromSearchIndexFile(filename + "#" + resourceName);
+
+		// Reset the generation environment
+
+		this.GenerationEnvironment = new System.Text.StringBuilder();
+	}
+
+	private void RemoveInternalFromSearchIndexFile(string urlToRemove)
+	{
+		string filename = "searchindex.js";
+
+		// This TextTemplate will update the previously generated filename fo remove all services, operations and resources that should not be public.
+
+		// Get Module Name
+
+		bool isVSHost = Host.ToString() == "Microsoft.VisualStudio.TextTemplating.VSHost.TextTemplatingService";
+		
+		EnvDTE.DTE dte = null;
+		Action<String> checkOutAction = null;
+		Action<IEnumerable<String>> projectSyncAction = null;
+
+		if (isVSHost)
+		{
+			// we must handle project and source control.
+
+			var hostServiceProvider = (IServiceProvider)Host;
+			dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof(EnvDTE.DTE));
+
+			ITextTemplatingEngineHost host = (ITextTemplatingEngineHost)Host;
+			checkOutAction = (String actualFileName) => dte.SourceControl.CheckOutItem(actualFileName);
+
+			EnvDTE.ProjectItem templateProjectItem = dte.Solution.FindProjectItem(host.TemplateFile);
+			projectSyncAction = (IEnumerable<String> keepFileNames) => ProjectSync(templateProjectItem, keepFileNames);
+		}
+
+		// Reset the generation environment
+
+		this.GenerationEnvironment = new System.Text.StringBuilder();
+
+		// Use Generated script as source.
+
+		string generatedSearchIndexPath = this.Host.ResolvePath(@"..\API\javascript\" + filename);
+		string currentPath = this.Host.ResolvePath(@"");
+
+		string[] lines = System.IO.File.ReadAllLines(generatedSearchIndexPath);
+
+		// Control whether or not to write current line to the target file.
+		bool stopWriting = false;
+		int index = 0;
+		foreach (string line in lines)
+		{
+			// start looking for reports
+			if (line.TrimStart(' ').Equals("{"))
+			{
+				if (stopWriting)
+				{
+					stopWriting = false;
+				}
+				else if (lines[index + 1].TrimStart(' ').Replace("\"", "'").Equals(@"url: '" + urlToRemove + "',"))
+				{
+					stopWriting = true;
+				}
+
+				if (!stopWriting)
+				{
+					WriteLine(line);
+				}
+			}
+			else
+			{
+				if (!stopWriting)
+				{
+					WriteLine(line);
+				}
+			}
+
+			index ++;
+		}
+
+		string outputFilePath = generatedSearchIndexPath;
+
+		// Write the output
+
+		string fileName = outputFilePath;
+		string fileContent = this.GenerationEnvironment.ToString().Replace("\"\"", "\"").Replace("none", "");
+
+		CreateFile(fileName, fileContent, dte, checkOutAction, projectSyncAction, isVSHost);
+
+
+		// Reset the generation environment
+
+		this.GenerationEnvironment = new System.Text.StringBuilder();
+	}
+
+	private bool IsFileContentDifferent(String fileName, String newContent) {
+        return !(File.Exists(fileName) && File.ReadAllText(fileName) == newContent);
+    }
+
+	private void CheckoutFileIfRequired(String fileName, EnvDTE.DTE dte, Action<String> checkOutAction) 
+	{
+		if (dte	!= null && checkOutAction != null)
+		{
+			var sc = dte.SourceControl;
+			if (sc != null && sc.IsItemUnderSCC(fileName) && !sc.IsItemCheckedOut(fileName))
+			{
+				checkOutAction.EndInvoke(checkOutAction.BeginInvoke(fileName, null, null));
+			}
+		}
+    }
+
+	private void CreateFile(String fileName, String content, EnvDTE.DTE dte, Action<String> checkOutAction, Action<IEnumerable<String>> projectSyncAction, bool isVSHost) 
+	{
+        if (IsFileContentDifferent(fileName, content)) 
+		{
+			if (isVSHost)
+			{
+				CheckoutFileIfRequired(fileName, dte, checkOutAction);
+			}
+
+			File.WriteAllText(fileName, content);
+
+			List<String> generatedFileNames = new List<String>();
+			generatedFileNames.Add(fileName);
+
+			// if (isVSHost)
+			// {
+			//     projectSyncAction.EndInvoke(projectSyncAction.BeginInvoke(generatedFileNames, null, null));
+			// }
+        }
+    }
+
+	private void ProjectSync(EnvDTE.ProjectItem templateProjectItem, IEnumerable<String> keepFileNames) 
+	{
+		// ATTENTION - THIS WILL NOT WORK HAS EXPECTED DO NOT INCLUDE 
+		// AS IS THIS IWLL TRY TO INCLUDE (AGAIN) THE 02_[MODULENAME]_Reporting.cs file.
+
+        var keepFileNameSet = new HashSet<String>(keepFileNames);
+        var projectFiles = new Dictionary<String, EnvDTE.ProjectItem>();
+        var originalFilePrefix = Path.GetFileNameWithoutExtension(templateProjectItem.get_FileNames(0)) + ".";
+        foreach(EnvDTE.ProjectItem projectItem in templateProjectItem.ProjectItems)
+		{
+            projectFiles.Add(projectItem.get_FileNames(0), projectItem);
+		}
+        // Remove unused items from the project
+        // foreach(var pair in projectFiles)
+		// {
+        //     if (!keepFileNames.Contains(pair.Key) && !(Path.GetFileNameWithoutExtension(pair.Key) + ".").StartsWith(originalFilePrefix))
+		// 	{
+        //         pair.Value.Delete();
+		// 	}
+		// }
+
+        // Add missing files to the project
+        foreach(String fileName in keepFileNameSet)
+		{
+            if (!projectFiles.ContainsKey(fileName))
+			{
+                // templateProjectItem.ProjectItems.AddFromFile(fileName);
+			}
+		}
+    }
+#>

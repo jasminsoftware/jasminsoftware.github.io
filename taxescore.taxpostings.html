@@ -103,6 +103,9 @@
     <a class="menu-subitem " href="taxescore.reasontypecvs.html">
         Reason Type
     </a>
+    <a class="menu-subitem " href="taxes.legaldeclarationcvs.html">
+        SAF-T (CV)
+    </a>
     <a class="menu-subitem " href="taxes.legaldeclarations.html">
         SAF-T (PT)
     </a>
@@ -174,14 +177,9 @@
                         <li>
                         GET:
                         <ul>
-                            <li><a href="#0939f15a-bb89-4833-b355-62ef0a92bac6">GET TaxPostings</a></li>
-                            <li><a href="#2b53098a-2b32-40dc-838d-e09d3be38765">GET TaxPostings (paged)</a></li>
-                            <li><a href="#434c5cab-c302-4e7e-93fe-80a3ff86159f">GET TaxPosting by identifier</a></li>
-                            <li><a href="#7f08e6bf-212d-40c4-b551-95cc210756d7">GET TaxPosting by key</a></li>
-                            <li><a href="#352b0946-8705-4115-bfc4-17d4d9c51081">GET Print TaxPosting by identifier</a></li>
-                            <li><a href="#3720e3f6-6aac-4338-91e3-10f2e01bd0e5">GET Print TaxPosting by key</a></li>
-                            <li><a href="#597fe76a-9b96-4d2c-b77d-73ea6116bfa4">GET Original Print TaxPostingOriginal by identifier</a></li>
-                            <li><a href="#e4d08c51-f5ad-4427-a495-88ba9b8ac23d">GET Original Print TaxPosting by key</a></li>
+                            <li><a href="#969bf56c-9139-4636-9b7b-9466c57478dd">GET TaxPostings (odata)</a></li>
+                            <li><a href="#5392d44a-0b44-4068-b4e8-9323dbf71cdd">GET TaxPosting by identifier</a></li>
+                            <li><a href="#b3512711-4b14-4286-8ec9-6974ca7781df">GET TaxPosting by key</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -209,57 +207,16 @@
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="0939f15a-bb89-4833-b355-62ef0a92bac6"></a>
-                    <h3>GET TaxPostings <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-0939f15a-bb89-4833-b355-62ef0a92bac6"></i></h3>
-                    <div class="hidden-copylink" id="copy-0939f15a-bb89-4833-b355-62ef0a92bac6"><a href="#0939f15a-bb89-4833-b355-62ef0a92bac6">GET TaxPostings</a></div>
-                    <p class="operation-description">Returns the list of all the entity records available.</p>
-                <p>Response:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>When successful, the response body contains the list of records available. See <a href="#TaxPostingResource">TaxPostingResource.</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>OK. The operation was completed successfully.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">400</td>
-                                <td>BadRequest. The request parameters are invalid.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-0939f15a-bb89-4833-b355-62ef0a92bac6">api/{tenantKey}/{orgKey}/taxesCore/taxPostings</div>
-                    <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-0939f15a-bb89-4833-b355-62ef0a92bac6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="2b53098a-2b32-40dc-838d-e09d3be38765"></a>
-                    <h3>GET TaxPostings (paged) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2b53098a-2b32-40dc-838d-e09d3be38765"></i></h3>
-                    <div class="hidden-copylink" id="copy-2b53098a-2b32-40dc-838d-e09d3be38765"><a href="#2b53098a-2b32-40dc-838d-e09d3be38765">GET TaxPostings (paged)</a></div>
+                    <a class="anchor" name="969bf56c-9139-4636-9b7b-9466c57478dd"></a>
+                    <h3>GET TaxPostings (odata) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-969bf56c-9139-4636-9b7b-9466c57478dd"></i></h3>
+                    <div class="hidden-copylink" id="copy-969bf56c-9139-4636-9b7b-9466c57478dd"><a href="#969bf56c-9139-4636-9b7b-9466c57478dd">GET TaxPostings (odata)</a></div>
                     <p class="operation-description">Returns a page of the list of all the entity records available.</p>
                     <p>The following elements are optional:</p>
                     <table>
                         <tbody>
                             <tr>
-                                <td class="highlighted">page</td>
-                                <td><i>(int)</i> The index of the page of the list that should be returned. This is a query string parameter.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">pageSize</td>
-                                <td><i>(int)</i> The number of page elements that should be returned (max. is 1000). This is a query string parameter.</td>
+                                <td class="highlighted">opts</td>
+                                <td><i>(ODataQueryOptions)</i> OData query option.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -288,18 +245,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-2b53098a-2b32-40dc-838d-e09d3be38765">api/{tenantKey}/{orgKey}/taxesCore/taxPostings?page={page}&amp;pageSize={pageSize}</div>
+                    <div class="hidden-copylink" id="copy2-969bf56c-9139-4636-9b7b-9466c57478dd">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/odata</div>
                     <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings?page={page}&amp;pageSize={pageSize}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2b53098a-2b32-40dc-838d-e09d3be38765"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/odata</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-969bf56c-9139-4636-9b7b-9466c57478dd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="434c5cab-c302-4e7e-93fe-80a3ff86159f"></a>
-                    <h3>GET TaxPosting by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-434c5cab-c302-4e7e-93fe-80a3ff86159f"></i></h3>
-                    <div class="hidden-copylink" id="copy-434c5cab-c302-4e7e-93fe-80a3ff86159f"><a href="#434c5cab-c302-4e7e-93fe-80a3ff86159f">GET TaxPosting by identifier</a></div>
+                    <a class="anchor" name="5392d44a-0b44-4068-b4e8-9323dbf71cdd"></a>
+                    <h3>GET TaxPosting by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-5392d44a-0b44-4068-b4e8-9323dbf71cdd"></i></h3>
+                    <div class="hidden-copylink" id="copy-5392d44a-0b44-4068-b4e8-9323dbf71cdd"><a href="#5392d44a-0b44-4068-b4e8-9323dbf71cdd">GET TaxPosting by identifier</a></div>
                     <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
                     <p>The following elements are required:</p>
                     <table>
@@ -339,18 +296,18 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-434c5cab-c302-4e7e-93fe-80a3ff86159f">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{id}</div>
+                    <div class="hidden-copylink" id="copy2-5392d44a-0b44-4068-b4e8-9323dbf71cdd">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{id}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{id}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-434c5cab-c302-4e7e-93fe-80a3ff86159f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-5392d44a-0b44-4068-b4e8-9323dbf71cdd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <div class="content-section-col1">
-                    <a class="anchor" name="7f08e6bf-212d-40c4-b551-95cc210756d7"></a>
-                    <h3>GET TaxPosting by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7f08e6bf-212d-40c4-b551-95cc210756d7"></i></h3>
-                    <div class="hidden-copylink" id="copy-7f08e6bf-212d-40c4-b551-95cc210756d7"><a href="#7f08e6bf-212d-40c4-b551-95cc210756d7">GET TaxPosting by key</a></div>
+                    <a class="anchor" name="b3512711-4b14-4286-8ec9-6974ca7781df"></a>
+                    <h3>GET TaxPosting by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b3512711-4b14-4286-8ec9-6974ca7781df"></i></h3>
+                    <div class="hidden-copylink" id="copy-b3512711-4b14-4286-8ec9-6974ca7781df"><a href="#b3512711-4b14-4286-8ec9-6974ca7781df">GET TaxPosting by key</a></div>
                     <p class="operation-description">Returns the entity record that matches the specified key.</p>
                     <p>The following elements are required:</p>
                     <table>
@@ -390,246 +347,10 @@
                 </div>
                 <div class="content-section-col2">
                     <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-7f08e6bf-212d-40c4-b551-95cc210756d7">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{taxPostingKey}</div>
+                    <div class="hidden-copylink" id="copy2-b3512711-4b14-4286-8ec9-6974ca7781df">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{taxPostingKey}</div>
                     <div class="resource-url">
                         <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{taxPostingKey}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7f08e6bf-212d-40c4-b551-95cc210756d7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="352b0946-8705-4115-bfc4-17d4d9c51081"></a>
-                    <h3>GET Print TaxPosting by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-352b0946-8705-4115-bfc4-17d4d9c51081"></i></h3>
-                    <div class="hidden-copylink" id="copy-352b0946-8705-4115-bfc4-17d4d9c51081"><a href="#352b0946-8705-4115-bfc4-17d4d9c51081">GET Print TaxPosting by identifier</a></div>
-                    <p class="operation-description">Prints the specified entity record.</p>
-                    <p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">id</td>
-                                <td><i>(string)</i> The record identifier.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                    <p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                <p>Response:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>When successful, the response body contains a stream with the printed file.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>OK. The operation was completed successfully.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">404</td>
-                                <td>NotFound. The specified resord does not exist.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-352b0946-8705-4115-bfc4-17d4d9c51081">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{id}/print?template={template}</div>
-                    <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{id}/print?template={template}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-352b0946-8705-4115-bfc4-17d4d9c51081"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="3720e3f6-6aac-4338-91e3-10f2e01bd0e5"></a>
-                    <h3>GET Print TaxPosting by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3720e3f6-6aac-4338-91e3-10f2e01bd0e5"></i></h3>
-                    <div class="hidden-copylink" id="copy-3720e3f6-6aac-4338-91e3-10f2e01bd0e5"><a href="#3720e3f6-6aac-4338-91e3-10f2e01bd0e5">GET Print TaxPosting by key</a></div>
-                    <p class="operation-description">Prints the specified entity record.</p>
-                    <p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> The tax's posting key.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                    <p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                <p>Response:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>When successful, the response body contains a stream with the printed file.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>OK. The operation was completed successfully.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">400</td>
-                                <td>BadRequest. The request parameters are invalid.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">404</td>
-                                <td>NotFound. The specified record does not exist.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-3720e3f6-6aac-4338-91e3-10f2e01bd0e5">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{taxPostingKey}/print</div>
-                    <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{taxPostingKey}/print</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3720e3f6-6aac-4338-91e3-10f2e01bd0e5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="597fe76a-9b96-4d2c-b77d-73ea6116bfa4"></a>
-                    <h3>GET Original Print TaxPostingOriginal by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-597fe76a-9b96-4d2c-b77d-73ea6116bfa4"></i></h3>
-                    <div class="hidden-copylink" id="copy-597fe76a-9b96-4d2c-b77d-73ea6116bfa4"><a href="#597fe76a-9b96-4d2c-b77d-73ea6116bfa4">GET Original Print TaxPostingOriginal by identifier</a></div>
-                    <p class="operation-description">Prints the specified entity record.</p>
-                    <p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">id</td>
-                                <td><i>(string)</i> The record identifier.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                    <p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                <p>Response:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>When successful, the response body contains a stream with the printed file.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>OK. The operation was completed successfully.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">404</td>
-                                <td>NotFound. The specified resord does not exist.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-597fe76a-9b96-4d2c-b77d-73ea6116bfa4">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{id}/printOriginal?template={template}</div>
-                    <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{id}/printOriginal?template={template}</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-597fe76a-9b96-4d2c-b77d-73ea6116bfa4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="content-section-col1">
-                    <a class="anchor" name="e4d08c51-f5ad-4427-a495-88ba9b8ac23d"></a>
-                    <h3>GET Original Print TaxPosting by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e4d08c51-f5ad-4427-a495-88ba9b8ac23d"></i></h3>
-                    <div class="hidden-copylink" id="copy-e4d08c51-f5ad-4427-a495-88ba9b8ac23d"><a href="#e4d08c51-f5ad-4427-a495-88ba9b8ac23d">GET Original Print TaxPosting by key</a></div>
-                    <p class="operation-description">Prints the specified entity record.</p>
-                    <p>The following elements are required:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">taxPostingKey</td>
-                                <td><i>(int)</i> The tax's posting key.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                    <p>The following elements are optional:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">template</td>
-                                <td><i>(string)</i> The report template that should be used. This is a query string parameter.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                <p>Response:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>When successful, the response body contains a stream with the printed file.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <p>Response status codes:</p>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="highlighted">200</td>
-                                <td>OK. The operation was completed successfully.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">400</td>
-                                <td>BadRequest. The request parameters are invalid.</td>
-                            </tr>
-                            <tr>
-                                <td class="highlighted">404</td>
-                                <td>NotFound. The specified record does not exist.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="content-section-col2">
-                    <p>Resource URL:</p>
-                    <div class="hidden-copylink" id="copy2-e4d08c51-f5ad-4427-a495-88ba9b8ac23d">api/{tenantKey}/{orgKey}/taxesCore/taxPostings/{taxPostingKey}/printOriginal</div>
-                    <div class="resource-url">
-                        <div class="inner-resource-url"><div>GET /taxesCore/taxPostings/{taxPostingKey}/printOriginal</div></div>
-                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e4d08c51-f5ad-4427-a495-88ba9b8ac23d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b3512711-4b14-4286-8ec9-6974ca7781df"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -646,13 +367,19 @@
                         <tbody>
                             <tr>
                                 <td class="highlighted">taxableAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> The taxable amount.
+                                <td  class="wrap"><i>(MoneyResource)</i> The taxable amount.
+												<br/>See 
+													<a href="#MoneyResource">MoneyResource</a>
+														.
 									</td>
                             </tr>
 
                             <tr>
                                 <td class="highlighted">taxAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> The tax's amount.
+                                <td  class="wrap"><i>(MoneyResource)</i> The tax's amount.
+												<br/>See 
+													<a href="#MoneyResource">MoneyResource</a>
+														.
 									</td>
                             </tr>
 
@@ -748,7 +475,10 @@
 
                             <tr>
                                 <td class="highlighted">deductibleAmount</td>
-                                <td  class="wrap"><i>(decimal)</i> Deductible Amount.
+                                <td  class="wrap"><i>(MoneyResource)</i> Deductible Amount.
+												<br/>See 
+													<a href="#MoneyResource">MoneyResource</a>
+														.
 									</td>
                             </tr>
 

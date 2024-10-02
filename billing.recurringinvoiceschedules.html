@@ -1,0 +1,2109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Sales | Recurring Invoice Schedule</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a id="current-menu-item" class="menu-item " href="sales.html">
+        Sales
+    </a>
+    <a class="menu-subitem " href="salescore.associatesalesitemstosaleschannels.html">
+        Associate Sales Items To Sales Channel
+    </a>
+    <a class="menu-subitem " href="salescore.changesalesitems.html">
+        Change Sales Item
+    </a>
+    <a class="menu-subitem " href="billing.companyinvoices.html">
+        Company Invoice
+    </a>
+    <a class="menu-subitem " href="billing.memos.html">
+        Credit or Debit Note
+    </a>
+    <a class="menu-subitem " href="salescore.customergroups.html">
+        Customer Group
+    </a>
+    <a class="menu-subitem " href="salescore.customerparties.html">
+        Customer Party
+    </a>
+    <a class="menu-subitem " href="sales.indicators.html">
+        Indicator
+    </a>
+    <a class="menu-subitem " href="billing.invoices.html">
+        Invoice
+    </a>
+    <a class="menu-subitem " href="salescore.invoicetypes.html">
+        Invoice Type
+    </a>
+    <a class="menu-subitem " href="salescore.memotypes.html">
+        Memo Type
+    </a>
+    <a class="menu-subitem " href="billing.monitorings.html">
+        Monitoring
+    </a>
+    <a class="menu-subitem " href="sales.orders.html">
+        Order
+    </a>
+    <a class="menu-subitem " href="salescore.ordertypes.html">
+        Order Type
+    </a>
+    <a class="menu-subitem " href="salescore.posdevices.html">
+        Pos Device
+    </a>
+    <a class="menu-subitem " href="salescore.pricelists.html">
+        Price List
+    </a>
+    <a class="menu-subitem " href="billing.processorders.html">
+        Process Order
+    </a>
+    <a class="menu-subitem " href="billing.processreturnorders.html">
+        Process Return Order
+    </a>
+    <a class="menu-subitem " href="sales.productnews.html">
+        Product News
+    </a>
+    <a class="menu-subitem " href="sales.quotations.html">
+        Quotation
+    </a>
+    <a class="menu-subitem " href="salescore.quotationtypes.html">
+        Quotation Type
+    </a>
+    <a class="menu-subitem menu-item-selected" href="billing.recurringinvoiceschedules.html">
+        Recurring Invoice Schedule
+    </a>
+    <a class="menu-subitem " href="billing.recurringinvoicetemplates.html">
+        Recurring Invoice Template
+    </a>
+    <a class="menu-subitem " href="salescore.saleschannels.html">
+        Sales Channel
+    </a>
+    <a class="menu-subitem " href="salescore.salesitems.html">
+        Sales Item
+    </a>
+    <a class="menu-subitem " href="salescore.salessetups.html">
+        Sales Settings
+    </a>
+    <a class="menu-subitem " href="salescore.salespersons.html">
+        Salesperson
+    </a>
+    <a class="menu-subitem " href="salescore.stores.html">
+        Store
+    </a>
+    <a class="menu-subitem " href="sales.summaryvalues.html">
+        Summary Value
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a class="menu-item" href="taxes.html">
+        Taxes
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Sales | Recurring Invoice Schedule</h1>
+                    <p>
+                    Service to manage entities of type 'RecurringInvoiceSchedule'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-billing-recurringinvoiceschedules"></i></td>
+                                <div class="hidden-copylink" id="copy-billing-recurringinvoiceschedules">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#PUT">PUT</a>, <a href="#POST">POST</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#b7314896-6734-4f11-a32c-b21980ca3bc7">GET RecurringInvoiceSchedules (odata)</a></li>
+                            <li><a href="#68e16940-5bf7-420f-a5c0-5d657ee54a83">GET RecurringInvoiceSchedule by identifier</a></li>
+                            <li><a href="#3a615e0f-8455-4140-a672-0687d9fa395f">GET RecurringInvoiceSchedule by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#1c67f7a1-6453-4aca-8d48-f21c67ab6868">PUT Set IsActive RecurringInvoiceSchedule</a></li>
+                            <li><a href="#808e77ac-a64f-4525-a95e-477152a66c07">PUT Set RecurringInvoiceScheduleKey RecurringInvoiceSchedule</a></li>
+                            <li><a href="#7a7155da-90ba-495d-91cb-58b4421527d3">PUT Set Date RecurringInvoiceSchedule</a></li>
+                            <li><a href="#7b875b45-1083-4112-ab81-25c4a6697217">PUT Set DocumentStatus RecurringInvoiceSchedule</a></li>
+                            <li><a href="#8f44156a-57b5-42fa-bf0c-ee24ad3db400">PUT Set Total RecurringInvoiceSchedule</a></li>
+                            <li><a href="#c5c7d485-fea5-45d3-876b-7d0471393fbe">PUT Set NoteToRecipient RecurringInvoiceSchedule</a></li>
+                            <li><a href="#8ef3cf99-60fa-4a85-8a1b-9d96c058ed48">PUT Set Serie RecurringInvoiceSchedule</a></li>
+                            <li><a href="#6752a781-0535-450e-80a0-486910d92435">PUT Set Invoice RecurringInvoiceSchedule</a></li>
+                            <li><a href="#87a6962e-0d27-4682-a36d-dbda18121a35">PUT Set RecurringInvoiceTemplate RecurringInvoiceSchedule</a></li>
+                            <li><a href="#2096466a-22c0-4125-af18-d8d616132c35">PUT Set Remarks RecurringInvoiceSchedule</a></li>
+                            <li><a href="#45fe0341-0cfe-4770-a65a-a395695a9133">PUT Set SalesItem RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#6d28974c-f04c-4a48-bd46-5637fc2b7db9">PUT Set Unit RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#18ab1258-b7f2-4710-a573-c39601ef33f5">PUT Set PartyTaxSchema RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#1839c20e-bfd2-4913-a30f-ad040e706fae">PUT Set ItemTaxSchema RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#4175b8a6-5a1f-4401-8da0-fc74901b3b0e">PUT Set Warehouse RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#547337da-c3c7-4b16-afa8-f862cc12b0fd">PUT Set UnitPrice RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#44264a65-6607-4696-a3a4-daf86727aea6">PUT Set Currency RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#c0d58c2f-ebd6-494c-855f-aa5f1cf86c35">PUT Set Description RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#a052a3a9-7ec3-426a-b004-89aa1bb93608">PUT Set Quantity RecurringInvoiceScheduleLine</a></li>
+                            <li><a href="#1efaa0c3-191c-492a-b1a7-7a0a2047ec1d">PUT Set Discount RecurringInvoiceScheduleLine</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#62eec865-d79e-4884-8f96-9b43a77ac6d4">POST Recurring Invoice Schedule Line</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#c3d2875d-94c2-420f-b7dc-c14026034098">DELETE Recurring Invoice Schedule Line by identifier</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource">ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource</a></li>
+                        <li><a href="#ApiRecurringInvoiceScheduleResource">ApiRecurringInvoiceScheduleResource</a></li>
+                        <li><a href="#MoneyResource">MoneyResource</a></li>
+                        <li><a href="#RecurringInvoiceScheduleResource">RecurringInvoiceScheduleResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#DocumentStatus">DocumentStatus</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b7314896-6734-4f11-a32c-b21980ca3bc7"></a>
+                    <h3>GET RecurringInvoiceSchedules (odata) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b7314896-6734-4f11-a32c-b21980ca3bc7"></i></h3>
+                    <div class="hidden-copylink" id="copy-b7314896-6734-4f11-a32c-b21980ca3bc7"><a href="#b7314896-6734-4f11-a32c-b21980ca3bc7">GET RecurringInvoiceSchedules (odata)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">opts</td>
+                                <td><i>(ODataQueryOptions)</i> OData query option.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#RecurringInvoiceScheduleResource">RecurringInvoiceScheduleResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b7314896-6734-4f11-a32c-b21980ca3bc7">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/odata</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /billing/recurringInvoiceSchedules/odata</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b7314896-6734-4f11-a32c-b21980ca3bc7"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="68e16940-5bf7-420f-a5c0-5d657ee54a83"></a>
+                    <h3>GET RecurringInvoiceSchedule by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-68e16940-5bf7-420f-a5c0-5d657ee54a83"></i></h3>
+                    <div class="hidden-copylink" id="copy-68e16940-5bf7-420f-a5c0-5d657ee54a83"><a href="#68e16940-5bf7-420f-a5c0-5d657ee54a83">GET RecurringInvoiceSchedule by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#RecurringInvoiceScheduleResource">RecurringInvoiceScheduleResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-68e16940-5bf7-420f-a5c0-5d657ee54a83">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /billing/recurringInvoiceSchedules/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-68e16940-5bf7-420f-a5c0-5d657ee54a83"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3a615e0f-8455-4140-a672-0687d9fa395f"></a>
+                    <h3>GET RecurringInvoiceSchedule by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3a615e0f-8455-4140-a672-0687d9fa395f"></i></h3>
+                    <div class="hidden-copylink" id="copy-3a615e0f-8455-4140-a672-0687d9fa395f"><a href="#3a615e0f-8455-4140-a672-0687d9fa395f">GET RecurringInvoiceSchedule by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#RecurringInvoiceScheduleResource">RecurringInvoiceScheduleResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-3a615e0f-8455-4140-a672-0687d9fa395f">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3a615e0f-8455-4140-a672-0687d9fa395f"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="62eec865-d79e-4884-8f96-9b43a77ac6d4"></a>
+                    <h3>POST Recurring Invoice Schedule Line <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-62eec865-d79e-4884-8f96-9b43a77ac6d4"></i></h3>
+                    <div class="hidden-copylink" id="copy-62eec865-d79e-4884-8f96-9b43a77ac6d4"><a href="#62eec865-d79e-4884-8f96-9b43a77ac6d4">POST Recurring Invoice Schedule Line</a></div>
+                    <p class="operation-description">Inserts a new 'Recurring Invoice Schedule Line' in the 'Recurring Invoice Schedule'.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource)</i> The ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource instance.<br/>See <a href="#ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource">ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>NoContent. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-62eec865-d79e-4884-8f96-9b43a77ac6d4">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-62eec865-d79e-4884-8f96-9b43a77ac6d4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="44264a65-6607-4696-a3a4-daf86727aea6"></a>
+                    <h3>PUT Set Currency RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-44264a65-6607-4696-a3a4-daf86727aea6"></i></h3>
+                    <div class="hidden-copylink" id="copy-44264a65-6607-4696-a3a4-daf86727aea6"><a href="#44264a65-6607-4696-a3a4-daf86727aea6">PUT Set Currency RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Currency' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-44264a65-6607-4696-a3a4-daf86727aea6">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/currency</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/currency</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-44264a65-6607-4696-a3a4-daf86727aea6"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7a7155da-90ba-495d-91cb-58b4421527d3"></a>
+                    <h3>PUT Set Date RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7a7155da-90ba-495d-91cb-58b4421527d3"></i></h3>
+                    <div class="hidden-copylink" id="copy-7a7155da-90ba-495d-91cb-58b4421527d3"><a href="#7a7155da-90ba-495d-91cb-58b4421527d3">PUT Set Date RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Date' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(DateTime)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7a7155da-90ba-495d-91cb-58b4421527d3">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/date</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/date</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7a7155da-90ba-495d-91cb-58b4421527d3"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c0d58c2f-ebd6-494c-855f-aa5f1cf86c35"></a>
+                    <h3>PUT Set Description RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c0d58c2f-ebd6-494c-855f-aa5f1cf86c35"></i></h3>
+                    <div class="hidden-copylink" id="copy-c0d58c2f-ebd6-494c-855f-aa5f1cf86c35"><a href="#c0d58c2f-ebd6-494c-855f-aa5f1cf86c35">PUT Set Description RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Description' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c0d58c2f-ebd6-494c-855f-aa5f1cf86c35">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/description</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/description</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c0d58c2f-ebd6-494c-855f-aa5f1cf86c35"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1efaa0c3-191c-492a-b1a7-7a0a2047ec1d"></a>
+                    <h3>PUT Set Discount RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1efaa0c3-191c-492a-b1a7-7a0a2047ec1d"></i></h3>
+                    <div class="hidden-copylink" id="copy-1efaa0c3-191c-492a-b1a7-7a0a2047ec1d"><a href="#1efaa0c3-191c-492a-b1a7-7a0a2047ec1d">PUT Set Discount RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Discount' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1efaa0c3-191c-492a-b1a7-7a0a2047ec1d">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/discount</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/discount</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1efaa0c3-191c-492a-b1a7-7a0a2047ec1d"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7b875b45-1083-4112-ab81-25c4a6697217"></a>
+                    <h3>PUT Set DocumentStatus RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7b875b45-1083-4112-ab81-25c4a6697217"></i></h3>
+                    <div class="hidden-copylink" id="copy-7b875b45-1083-4112-ab81-25c4a6697217"><a href="#7b875b45-1083-4112-ab81-25c4a6697217">PUT Set DocumentStatus RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'DocumentStatus' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(enum DocumentStatus)</i> The request body should contain the new value for the attribute.<br/>See <a href="#DocumentStatus">DocumentStatus.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7b875b45-1083-4112-ab81-25c4a6697217">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/documentStatus</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/documentStatus</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7b875b45-1083-4112-ab81-25c4a6697217"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6752a781-0535-450e-80a0-486910d92435"></a>
+                    <h3>PUT Set Invoice RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6752a781-0535-450e-80a0-486910d92435"></i></h3>
+                    <div class="hidden-copylink" id="copy-6752a781-0535-450e-80a0-486910d92435"><a href="#6752a781-0535-450e-80a0-486910d92435">PUT Set Invoice RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Invoice' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6752a781-0535-450e-80a0-486910d92435">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/invoice</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/invoice</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6752a781-0535-450e-80a0-486910d92435"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1c67f7a1-6453-4aca-8d48-f21c67ab6868"></a>
+                    <h3>PUT Set IsActive RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1c67f7a1-6453-4aca-8d48-f21c67ab6868"></i></h3>
+                    <div class="hidden-copylink" id="copy-1c67f7a1-6453-4aca-8d48-f21c67ab6868"><a href="#1c67f7a1-6453-4aca-8d48-f21c67ab6868">PUT Set IsActive RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1c67f7a1-6453-4aca-8d48-f21c67ab6868">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1c67f7a1-6453-4aca-8d48-f21c67ab6868"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="1839c20e-bfd2-4913-a30f-ad040e706fae"></a>
+                    <h3>PUT Set ItemTaxSchema RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-1839c20e-bfd2-4913-a30f-ad040e706fae"></i></h3>
+                    <div class="hidden-copylink" id="copy-1839c20e-bfd2-4913-a30f-ad040e706fae"><a href="#1839c20e-bfd2-4913-a30f-ad040e706fae">PUT Set ItemTaxSchema RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'ItemTaxSchema' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-1839c20e-bfd2-4913-a30f-ad040e706fae">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/itemTaxSchema</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/itemTaxSchema</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-1839c20e-bfd2-4913-a30f-ad040e706fae"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c5c7d485-fea5-45d3-876b-7d0471393fbe"></a>
+                    <h3>PUT Set NoteToRecipient RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c5c7d485-fea5-45d3-876b-7d0471393fbe"></i></h3>
+                    <div class="hidden-copylink" id="copy-c5c7d485-fea5-45d3-876b-7d0471393fbe"><a href="#c5c7d485-fea5-45d3-876b-7d0471393fbe">PUT Set NoteToRecipient RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'NoteToRecipient' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c5c7d485-fea5-45d3-876b-7d0471393fbe">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/noteToRecipient</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/noteToRecipient</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c5c7d485-fea5-45d3-876b-7d0471393fbe"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="18ab1258-b7f2-4710-a573-c39601ef33f5"></a>
+                    <h3>PUT Set PartyTaxSchema RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-18ab1258-b7f2-4710-a573-c39601ef33f5"></i></h3>
+                    <div class="hidden-copylink" id="copy-18ab1258-b7f2-4710-a573-c39601ef33f5"><a href="#18ab1258-b7f2-4710-a573-c39601ef33f5">PUT Set PartyTaxSchema RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'PartyTaxSchema' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-18ab1258-b7f2-4710-a573-c39601ef33f5">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/partyTaxSchema</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/partyTaxSchema</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-18ab1258-b7f2-4710-a573-c39601ef33f5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="a052a3a9-7ec3-426a-b004-89aa1bb93608"></a>
+                    <h3>PUT Set Quantity RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-a052a3a9-7ec3-426a-b004-89aa1bb93608"></i></h3>
+                    <div class="hidden-copylink" id="copy-a052a3a9-7ec3-426a-b004-89aa1bb93608"><a href="#a052a3a9-7ec3-426a-b004-89aa1bb93608">PUT Set Quantity RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Quantity' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-a052a3a9-7ec3-426a-b004-89aa1bb93608">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/quantity</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/quantity</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-a052a3a9-7ec3-426a-b004-89aa1bb93608"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="808e77ac-a64f-4525-a95e-477152a66c07"></a>
+                    <h3>PUT Set RecurringInvoiceScheduleKey RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-808e77ac-a64f-4525-a95e-477152a66c07"></i></h3>
+                    <div class="hidden-copylink" id="copy-808e77ac-a64f-4525-a95e-477152a66c07"><a href="#808e77ac-a64f-4525-a95e-477152a66c07">PUT Set RecurringInvoiceScheduleKey RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'RecurringInvoiceScheduleKey' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-808e77ac-a64f-4525-a95e-477152a66c07">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleKey</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleKey</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-808e77ac-a64f-4525-a95e-477152a66c07"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="87a6962e-0d27-4682-a36d-dbda18121a35"></a>
+                    <h3>PUT Set RecurringInvoiceTemplate RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-87a6962e-0d27-4682-a36d-dbda18121a35"></i></h3>
+                    <div class="hidden-copylink" id="copy-87a6962e-0d27-4682-a36d-dbda18121a35"><a href="#87a6962e-0d27-4682-a36d-dbda18121a35">PUT Set RecurringInvoiceTemplate RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'RecurringInvoiceTemplate' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-87a6962e-0d27-4682-a36d-dbda18121a35">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceTemplate</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceTemplate</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-87a6962e-0d27-4682-a36d-dbda18121a35"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="2096466a-22c0-4125-af18-d8d616132c35"></a>
+                    <h3>PUT Set Remarks RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-2096466a-22c0-4125-af18-d8d616132c35"></i></h3>
+                    <div class="hidden-copylink" id="copy-2096466a-22c0-4125-af18-d8d616132c35"><a href="#2096466a-22c0-4125-af18-d8d616132c35">PUT Set Remarks RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Remarks' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-2096466a-22c0-4125-af18-d8d616132c35">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/remarks</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/remarks</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-2096466a-22c0-4125-af18-d8d616132c35"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="45fe0341-0cfe-4770-a65a-a395695a9133"></a>
+                    <h3>PUT Set SalesItem RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-45fe0341-0cfe-4770-a65a-a395695a9133"></i></h3>
+                    <div class="hidden-copylink" id="copy-45fe0341-0cfe-4770-a65a-a395695a9133"><a href="#45fe0341-0cfe-4770-a65a-a395695a9133">PUT Set SalesItem RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'SalesItem' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-45fe0341-0cfe-4770-a65a-a395695a9133">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/salesItem</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/salesItem</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-45fe0341-0cfe-4770-a65a-a395695a9133"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8ef3cf99-60fa-4a85-8a1b-9d96c058ed48"></a>
+                    <h3>PUT Set Serie RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8ef3cf99-60fa-4a85-8a1b-9d96c058ed48"></i></h3>
+                    <div class="hidden-copylink" id="copy-8ef3cf99-60fa-4a85-8a1b-9d96c058ed48"><a href="#8ef3cf99-60fa-4a85-8a1b-9d96c058ed48">PUT Set Serie RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Serie' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8ef3cf99-60fa-4a85-8a1b-9d96c058ed48">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/serie</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/serie</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8ef3cf99-60fa-4a85-8a1b-9d96c058ed48"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8f44156a-57b5-42fa-bf0c-ee24ad3db400"></a>
+                    <h3>PUT Set Total RecurringInvoiceSchedule <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8f44156a-57b5-42fa-bf0c-ee24ad3db400"></i></h3>
+                    <div class="hidden-copylink" id="copy-8f44156a-57b5-42fa-bf0c-ee24ad3db400"><a href="#8f44156a-57b5-42fa-bf0c-ee24ad3db400">PUT Set Total RecurringInvoiceSchedule</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Total' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8f44156a-57b5-42fa-bf0c-ee24ad3db400">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/total</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/total</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8f44156a-57b5-42fa-bf0c-ee24ad3db400"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="6d28974c-f04c-4a48-bd46-5637fc2b7db9"></a>
+                    <h3>PUT Set Unit RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-6d28974c-f04c-4a48-bd46-5637fc2b7db9"></i></h3>
+                    <div class="hidden-copylink" id="copy-6d28974c-f04c-4a48-bd46-5637fc2b7db9"><a href="#6d28974c-f04c-4a48-bd46-5637fc2b7db9">PUT Set Unit RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Unit' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-6d28974c-f04c-4a48-bd46-5637fc2b7db9">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/unit</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/unit</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-6d28974c-f04c-4a48-bd46-5637fc2b7db9"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="547337da-c3c7-4b16-afa8-f862cc12b0fd"></a>
+                    <h3>PUT Set UnitPrice RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-547337da-c3c7-4b16-afa8-f862cc12b0fd"></i></h3>
+                    <div class="hidden-copylink" id="copy-547337da-c3c7-4b16-afa8-f862cc12b0fd"><a href="#547337da-c3c7-4b16-afa8-f862cc12b0fd">PUT Set UnitPrice RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'UnitPrice' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(decimal)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-547337da-c3c7-4b16-afa8-f862cc12b0fd">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/unitPrice</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/unitPrice</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-547337da-c3c7-4b16-afa8-f862cc12b0fd"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4175b8a6-5a1f-4401-8da0-fc74901b3b0e"></a>
+                    <h3>PUT Set Warehouse RecurringInvoiceScheduleLine <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4175b8a6-5a1f-4401-8da0-fc74901b3b0e"></i></h3>
+                    <div class="hidden-copylink" id="copy-4175b8a6-5a1f-4401-8da0-fc74901b3b0e"><a href="#4175b8a6-5a1f-4401-8da0-fc74901b3b0e">PUT Set Warehouse RecurringInvoiceScheduleLine</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Warehouse' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The detail identifier.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-4175b8a6-5a1f-4401-8da0-fc74901b3b0e">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/warehouse</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}/warehouse</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4175b8a6-5a1f-4401-8da0-fc74901b3b0e"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="c3d2875d-94c2-420f-b7dc-c14026034098"></a>
+                    <h3>DELETE Recurring Invoice Schedule Line by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-c3d2875d-94c2-420f-b7dc-c14026034098"></i></h3>
+                    <div class="hidden-copylink" id="copy-c3d2875d-94c2-420f-b7dc-c14026034098"><a href="#c3d2875d-94c2-420f-b7dc-c14026034098">DELETE Recurring Invoice Schedule Line by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td><i>(string)</i> The recurring invoice schedule key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">lineId</td>
+                                <td><i>(string)</i> The line identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>NoContent. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-c3d2875d-94c2-420f-b7dc-c14026034098">api/{tenantKey}/{orgKey}/billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /billing/recurringInvoiceSchedules/{companyKey}/{recurringInvoiceScheduleKey}/recurringInvoiceScheduleLines/{lineId}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-c3d2875d-94c2-420f-b7dc-c14026034098"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource"></a>
+                    <h4>ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource"><a href="#ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource">ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">salesItem</td>
+                                <td  class="wrap"><i>(string)</i> The sales item representing the good or service.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unit</td>
+                                <td  class="wrap"><i>(string)</i> The line item sales unit. The default sales unit is defined on the sales item.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">partyTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The customer party tax schema. The tax schema identifies the group of taxes a party is liable for. The tax schema is defined in the customer party.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">itemTaxSchema</td>
+                                <td  class="wrap"><i>(string)</i> The line item tax schema. The tax schema identifies the group of taxes a item is liable for. The default tax schema is defined on the sales item.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">unitPrice</td>
+                                <td  class="wrap"><i>(MoneyResource)</i> The line item unit price. The default price is loaded from sales item prices when there is a match on the combination of price list, currency, tax included and unit.
+												<br/>See 
+													<a href="#MoneyResource">MoneyResource</a>
+														.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The money’s unit. Inferred from the template currency.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">warehouse</td>
+                                <td  class="wrap"><i>(string)</i> The line item warehouse. The default is defined on the materials item.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The line item description. The default is defined on the sales item.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">quantity</td>
+                                <td  class="wrap"><i>(decimal)</i> The line item quantity. The default 1.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">discount</td>
+                                <td  class="wrap"><i>(decimal)</i> The line's item discount percentage. The default is 0.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="ApiRecurringInvoiceScheduleResource"></a>
+                    <h4>ApiRecurringInvoiceScheduleResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiRecurringInvoiceScheduleResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiRecurringInvoiceScheduleResource"><a href="#ApiRecurringInvoiceScheduleResource">ApiRecurringInvoiceScheduleResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td  class="wrap"><i>(string)</i> The recurring invoice schedule key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">date</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date of schedule.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency of the recurring invoice.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The recurring template company. The company code is the central organizational unit within the system.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">total</td>
+                                <td  class="wrap"><i>(MoneyResource)</i> The recurring schedule total. The total without taxes.
+												<br/>See 
+													<a href="#MoneyResource">MoneyResource</a>
+														.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">invoiceType</td>
+                                <td  class="wrap"><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">accountingParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer designated in the document as the party to whom the invoice should be sent for payment.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">buyerCustomerParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer party. Party that the invoice is for.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">recurringInvoiceTemplate</td>
+                                <td  class="wrap"><i>(string)</i> The recurring invoice template.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentStatus</td>
+                                <td  class="wrap"><i>(enum DocumentStatus)</i> The schedule status. Internally determined.
+									<br/>See <a href="#DocumentStatus">DocumentStatus.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleLines</td>
+                                <td title="(List of ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource) The recurring schedule lines. See ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource." class="wrap"><i>(List of ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource)</i> The recurring schedule lines.
+									<br/>See <a href="#ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource">ApiRecurringInvoiceScheduleRecurringInvoiceScheduleLinesResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">noteToRecipient</td>
+                                <td  class="wrap"><i>(string)</i> The note to the invoice recipient.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The template invoice description.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">salesPerson</td>
+                                <td  class="wrap"><i>(string)</i> The sales person. The seller of the invoice.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">invoice</td>
+                                <td  class="wrap"><i>(string)</i> The invoice created by billing request.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The invoice’s remarks.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="MoneyResource"></a>
+                    <h4>MoneyResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-MoneyResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-MoneyResource"><a href="#MoneyResource">MoneyResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">amount</td>
+                                <td  class="wrap"><i>(decimal)</i> The amount.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">baseAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The base amount.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">reportingAmount</td>
+                                <td  class="wrap"><i>(decimal)</i> The reporting amount.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">fractionDigits</td>
+                                <td  class="wrap"><i>(int)</i> The fraction digits.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">symbol</td>
+                                <td  class="wrap"><i>(string)</i> The symbol.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p><b>Notes:</b> For the POST operation it is not necessary to send the fields: BaseAmount, ReportingAmount, FractionDigits and Symbol. Will be ignored.</p>
+                    <br />
+                    <br />
+                    <a class="anchor" name="RecurringInvoiceScheduleResource"></a>
+                    <h4>RecurringInvoiceScheduleResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-RecurringInvoiceScheduleResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-RecurringInvoiceScheduleResource"><a href="#RecurringInvoiceScheduleResource">RecurringInvoiceScheduleResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleKey</td>
+                                <td  class="wrap"><i>(string)</i> The recurring invoice schedule key.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">date</td>
+                                <td  class="wrap"><i>(DateTime)</i> The date of schedule.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">currency</td>
+                                <td  class="wrap"><i>(string)</i> The currency of the recurring invoice.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Currency. These records are accessibly through the <a href="corepatterns.currencies.html">Currencies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> The recurring template company. The company code is the central organizational unit within the system.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">total</td>
+                                <td  class="wrap"><i>(MoneyResource)</i> The recurring schedule total. The total without taxes.
+												<br/>See 
+													<a href="#MoneyResource">MoneyResource</a>
+														.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">invoiceType</td>
+                                <td  class="wrap"><i>(string)</i> Defines the invoice's purpose. Distinguishes the business transactions to be posted.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type InvoiceType. These records are accessibly through the <a href="salescore.invoicetypes.html">InvoiceTypes</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">accountingParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer designated in the document as the party to whom the invoice should be sent for payment.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Party. These records are accessibly through the <a href="businesscore.parties.html">Parties</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">buyerCustomerParty</td>
+                                <td  class="wrap"><i>(string)</i> The customer party. Party that the invoice is for.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type CustomerParty. These records are accessibly through the <a href="salescore.customerparties.html">CustomerParties</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">recurringInvoiceTemplate</td>
+                                <td  class="wrap"><i>(string)</i> The recurring invoice template.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type RecurringInvoiceTemplate. These records are accessibly through the <a href="billing.recurringinvoicetemplates.html">RecurringInvoiceTemplates</a> service.</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">documentStatus</td>
+                                <td  class="wrap"><i>(enum DocumentStatus)</i> The schedule status. Internally determined.
+									<br/>See <a href="#DocumentStatus">DocumentStatus.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">recurringInvoiceScheduleLines</td>
+                                <td title="(List of RecurringInvoiceScheduleLineResource) The recurring schedule lines. See RecurringInvoiceScheduleLineResource." class="wrap"><i>(List of RecurringInvoiceScheduleLineResource)</i> The recurring schedule lines.
+									<br/>See <a href="#RecurringInvoiceScheduleLineResource">RecurringInvoiceScheduleLineResource.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">noteToRecipient</td>
+                                <td  class="wrap"><i>(string)</i> The note to the invoice recipient.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">serie</td>
+                                <td  class="wrap"><i>(string)</i> Defines the sequence to generate the series number. Part of the document natural key. The default serie is defined on the invoice type.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Serie. These records are accessibly through the <a href="businesscore.series.html">Series</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">description</td>
+                                <td  class="wrap"><i>(string)</i> The template invoice description.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">salesPerson</td>
+                                <td  class="wrap"><i>(string)</i> The sales person. The seller of the invoice.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Salesperson. These records are accessibly through the <a href="salescore.salespersons.html">Salespersons</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">invoice</td>
+                                <td  class="wrap"><i>(string)</i> The invoice created by billing request.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Invoice. These records are accessibly through the <a href="billing.invoices.html">Invoices</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The invoice’s remarks.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+                    <br />
+                    <a class="anchor" name="DocumentStatus"></a>
+                    <h4>DocumentStatus <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-DocumentStatus"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-DocumentStatus"><a href="#DocumentStatus">DocumentStatus</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Open</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Completed</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>

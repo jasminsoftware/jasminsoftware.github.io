@@ -1,0 +1,29 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="Microsoft.VisualStudio.Interop"#>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Newtonsoft.Json.dll" #>
+<#@ assembly name="Primavera.Modeling.Core3.dll" #>
+<#@ assembly name="Primavera.Modeling.Serialization3.dll" #>
+<#@ assembly name="Primavera.Modeling.Metadata.dll" #>
+
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace = "System.Globalization" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="Newtonsoft.Json.Linq" #>
+<#@ import namespace = "Primavera.Modeling.Core" #>
+<#@ import namespace="Primavera.Modeling.Metadata"#>
+<#@ import namespace="Primavera.Modeling.Serialization"#>
+
+<#@ import namespace="Microsoft.VisualStudio.TextTemplating"#>
+
+<#@ output extension=".cs" encoding="UTF-8" #>
+<#
+	FixPublicAPIDocumentation();
+	// NOTE: MarketReportingTemplate.txt file is included at line's _Files folder - (Ex: \Develpment\_Files or \Mainline\_Files)
+#>
+
+<#@ include file="..\..\..\..\_Files\APIInternalDocumentation.txt" #>

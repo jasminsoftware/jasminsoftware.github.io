@@ -1,0 +1,976 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="javascript/thirdparty/jquery-3.2.0.min.js"></script>
+    <script src="javascript/thirdparty/handlebars-latest.js"></script>
+    <script src="javascript/thirdparty/typeahead.bundle.js"></script>
+    <script src="javascript/thirdparty/clipboard.min.js"></script>
+    <script src="javascript/searchindex.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalizer.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <title>Jasmin Developers - Taxes | SAF-T (CV)</title>
+    </header>
+
+    <body>
+        <div class="header">
+            <i id="menu-button" class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            <div class="title">Jasmin Developers - Web API Reference</div>
+            <div id="search" class="search">
+                <i class="search-icon fa fa-search" aria-hidden="true"></i>
+                <input class="typeahead" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+    <a  class="menu-item " href="index.html">
+        Overview
+    </a>
+    <a class="menu-item" href="accountspayable.html">
+        Accounts Payable
+    </a>
+    <a class="menu-item" href="accountsreceivable.html">
+        Accounts Receivable
+    </a>
+    <a class="menu-item" href="financials.html">
+        Financials
+    </a>
+    <a class="menu-item" href="goodsreceipt.html">
+        Goods Receipt
+    </a>
+    <a class="menu-item" href="logistics.html">
+        Logistics
+    </a>
+    <a class="menu-item" href="masterdatabusinessentities.html">
+        Master Data Business Entities
+    </a>
+    <a class="menu-item" href="materialsmanagement.html">
+        Materials Management
+    </a>
+    <a class="menu-item" href="platform.html">
+        Platform
+    </a>
+    <a class="menu-item" href="purchases.html">
+        Purchases
+    </a>
+    <a class="menu-item" href="sales.html">
+        Sales
+    </a>
+    <a class="menu-item" href="shipping.html">
+        Shipping
+    </a>
+    <a id="current-menu-item" class="menu-item " href="taxes.html">
+        Taxes
+    </a>
+    <a class="menu-subitem " href="taxescore.authoritycommunicationrequests.html">
+        AT Communication Request
+    </a>
+    <a class="menu-subitem " href="taxescore.authoritycommunicationrequestcvs.html">
+        DNRE Communication Request
+    </a>
+    <a class="menu-subitem " href="taxescore.economicactivityclassifications.html">
+        Economic Activity Classification
+    </a>
+    <a class="menu-subitem " href="taxescore.exemptionreasoncodes.html">
+        Exemption Reason Code
+    </a>
+    <a class="menu-subitem " href="taxescore.fiscaldocumenttypes.html">
+        Fiscal Document Type
+    </a>
+    <a class="menu-subitem " href="taxescore.fiscalwitholdingtaxtypes.html">
+        Fiscal Witholding Tax Type
+    </a>
+    <a class="menu-subitem " href="taxescore.itemtaxschemas.html">
+        Item Tax Schema
+    </a>
+    <a class="menu-subitem " href="taxescore.itemwithholdingtaxschemas.html">
+        Item WHT Schema
+    </a>
+    <a class="menu-subitem " href="taxes.obligations.html">
+        Obligation
+    </a>
+    <a class="menu-subitem " href="taxescore.partytaxschemas.html">
+        Party Tax Schema
+    </a>
+    <a class="menu-subitem " href="taxescore.partywithholdingtaxschemas.html">
+        Party WHT Schema
+    </a>
+    <a class="menu-subitem " href="taxescore.paymentmethodfiscalclassifications.html">
+        Payment Method Fiscal Class
+    </a>
+    <a class="menu-subitem " href="taxescore.reasontypecvs.html">
+        Reason Type
+    </a>
+    <a class="menu-subitem menu-item-selected" href="taxes.legaldeclarationcvs.html">
+        SAF-T (CV)
+    </a>
+    <a class="menu-subitem " href="taxes.legaldeclarations.html">
+        SAF-T (PT)
+    </a>
+    <a class="menu-subitem " href="taxescore.seriescommunications.html">
+        Series Communications
+    </a>
+    <a class="menu-subitem " href="taxescore.taxclasses.html">
+        Tax Class
+    </a>
+    <a class="menu-subitem " href="taxescore.fiscalclassifications.html">
+        Tax Classification
+    </a>
+    <a class="menu-subitem " href="taxescore.fiscalissuereasons.html">
+        Tax Issue Reason
+    </a>
+    <a class="menu-subitem " href="taxescore.taxpostings.html">
+        Tax Posting
+    </a>
+    <a class="menu-subitem " href="taxescore.taxregionalareas.html">
+        Tax Regional Area
+    </a>
+    <a class="menu-subitem " href="taxescore.taxessetups.html">
+        Tax Settings
+    </a>
+    <a class="menu-subitem " href="taxescore.taxsubclasses.html">
+        Tax Sub Class
+    </a>
+    <a class="menu-subitem " href="taxescore.taxtypecodes.html">
+        Tax Type Code
+    </a>
+    <a class="menu-subitem " href="taxescore.taxessetupcvs.html">
+        Taxes Setup CV
+    </a>
+    <a class="menu-subitem " href="taxescore.withholdingtaxcodes.html">
+        WHT Code
+    </a>
+    <a class="menu-subitem " href="taxescore.withholdingtaxtypes.html">
+        WHT Type
+    </a>
+</div>
+        <div class="content">
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h1>Taxes | SAF-T (CV)</h1>
+                    <p>
+                    Service to manage entities of type 'LegalDeclarationCV'.				
+                    </p>
+                    <h2>Overview</h2>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>URL</td>
+                                <td class="breakword url-cell">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs  <i title="Copy to clipboard" class="copy-clipboard fa fa-clipboard clipboard-url" aria-hidden="true" data-clipboard-target="#copy-taxes-legaldeclarationcvs"></i></td>
+                                <div class="hidden-copylink" id="copy-taxes-legaldeclarationcvs">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs</div>
+                            </tr>
+                            <tr>
+                                <td>Methods Supported</td>
+
+                                <td><a href="#GET">GET</a>, <a href="#POST">POST</a>, <a href="#PUT">PUT</a>, <a href="#DELETE">DELETE</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>All Operations</h2>
+                    <p>
+                    This service includes the following operations:
+                    </p>
+                    <ul>
+                        <li>
+                        GET:
+                        <ul>
+                            <li><a href="#3f633cab-8bbb-48c7-96fd-2fbada2cc5a4">GET LegalDeclarationCVs (odata)</a></li>
+                            <li><a href="#4b2dcd9e-2deb-47f2-89a6-16722147ad10">GET LegalDeclarationCV by identifier</a></li>
+                            <li><a href="#428ea008-7359-4f2d-986f-9b14c27525ac">GET LegalDeclarationCV by key</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        POST:
+                        <ul>
+                            <li><a href="#48094ecd-cb45-46e1-a44f-8b4856083614">POST LegalDeclarationCVs</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        PUT:
+                        <ul>
+                            <li><a href="#7887f778-9b15-419b-a94e-9d5ccd447dc5">PUT Set IsActive LegalDeclarationCV</a></li>
+                            <li><a href="#e98a7657-67fb-4e2c-afb2-176248e9420c">PUT Set Note LegalDeclarationCV</a></li>
+                            <li><a href="#8c30012f-1f01-40f1-8bb7-6a3059bfdf2a">PUT Set Remarks LegalDeclarationCV</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        DELETE:
+                        <ul>
+                            <li><a href="#08b8ade2-5867-4b1e-bd57-3de7eebacd78">DELETE LegalDeclarationCV by identifier</a></li>
+                            <li><a href="#b081e899-e0d3-4bad-bf5c-1c39e0fba328">DELETE LegalDeclarationCV by key</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <h2>All Resources</h2>
+                    <p>
+                    This service uses the following resources:
+                    </p>
+                    <ul>
+                        <li><a href="#ApiLegalDeclarationCVResource">ApiLegalDeclarationCVResource</a></li>
+                        <li><a href="#LegalDeclarationCVResource">LegalDeclarationCVResource</a></li>
+                    </ul>
+                    <h2>All Enumerations</h2>
+                    <p>
+                    This service uses the following enumerations:
+                    </p>
+                    <ul>
+                        <li><a href="#AuditFileVersionCV">AuditFileVersionCV</a></li>
+                        <li><a href="#LegalDeclarationCVType">LegalDeclarationCVType</a></li>
+                        <li><a href="#LegalDeclarationState">LegalDeclarationState</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="GET"></a>
+                    <h2>GET Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="3f633cab-8bbb-48c7-96fd-2fbada2cc5a4"></a>
+                    <h3>GET LegalDeclarationCVs (odata) <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-3f633cab-8bbb-48c7-96fd-2fbada2cc5a4"></i></h3>
+                    <div class="hidden-copylink" id="copy-3f633cab-8bbb-48c7-96fd-2fbada2cc5a4"><a href="#3f633cab-8bbb-48c7-96fd-2fbada2cc5a4">GET LegalDeclarationCVs (odata)</a></div>
+                    <p class="operation-description">Returns a page of the list of all the entity records available.</p>
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">opts</td>
+                                <td><i>(ODataQueryOptions)</i> OData query option.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the list of records available. See <a href="#LegalDeclarationCVResource">LegalDeclarationCVResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-3f633cab-8bbb-48c7-96fd-2fbada2cc5a4">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/odata</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxes/legalDeclarationCVs/odata</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-3f633cab-8bbb-48c7-96fd-2fbada2cc5a4"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="4b2dcd9e-2deb-47f2-89a6-16722147ad10"></a>
+                    <h3>GET LegalDeclarationCV by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-4b2dcd9e-2deb-47f2-89a6-16722147ad10"></i></h3>
+                    <div class="hidden-copylink" id="copy-4b2dcd9e-2deb-47f2-89a6-16722147ad10"><a href="#4b2dcd9e-2deb-47f2-89a6-16722147ad10">GET LegalDeclarationCV by identifier</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#LegalDeclarationCVResource">LegalDeclarationCVResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-4b2dcd9e-2deb-47f2-89a6-16722147ad10">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxes/legalDeclarationCVs/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-4b2dcd9e-2deb-47f2-89a6-16722147ad10"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="428ea008-7359-4f2d-986f-9b14c27525ac"></a>
+                    <h3>GET LegalDeclarationCV by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-428ea008-7359-4f2d-986f-9b14c27525ac"></i></h3>
+                    <div class="hidden-copylink" id="copy-428ea008-7359-4f2d-986f-9b14c27525ac"><a href="#428ea008-7359-4f2d-986f-9b14c27525ac">GET LegalDeclarationCV by key</a></div>
+                    <p class="operation-description">Returns the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">legalDeclarationKey</td>
+                                <td><i>(string)</i> The legal declaration's key. By default, it is a sequential number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the entity record. See <a href="#LegalDeclarationCVResource">LegalDeclarationCVResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-428ea008-7359-4f2d-986f-9b14c27525ac">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>GET /taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-428ea008-7359-4f2d-986f-9b14c27525ac"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="POST"></a>
+                    <h2>POST Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="48094ecd-cb45-46e1-a44f-8b4856083614"></a>
+                    <h3>POST LegalDeclarationCVs <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-48094ecd-cb45-46e1-a44f-8b4856083614"></i></h3>
+                    <div class="hidden-copylink" id="copy-48094ecd-cb45-46e1-a44f-8b4856083614"><a href="#48094ecd-cb45-46e1-a44f-8b4856083614">POST LegalDeclarationCVs</a></div>
+                    <p class="operation-description">Creates a new entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">legalDeclarationCVResource</td>
+                                <td><i>(ApiLegalDeclarationCVResource)</i> The request body should contain the entity record that should be created.<br/>See <a href="#ApiLegalDeclarationCVResource">ApiLegalDeclarationCVResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body contains the new entity record identifier. The resource header location property contains the URL for the new entity record. See <a href="#ApiLegalDeclarationCVResource">ApiLegalDeclarationCVResource.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">201</td>
+                                <td>Created. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-48094ecd-cb45-46e1-a44f-8b4856083614">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>POST /taxes/legalDeclarationCVs</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-48094ecd-cb45-46e1-a44f-8b4856083614"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="PUT"></a>
+                    <h2>PUT Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="7887f778-9b15-419b-a94e-9d5ccd447dc5"></a>
+                    <h3>PUT Set IsActive LegalDeclarationCV <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-7887f778-9b15-419b-a94e-9d5ccd447dc5"></i></h3>
+                    <div class="hidden-copylink" id="copy-7887f778-9b15-419b-a94e-9d5ccd447dc5"><a href="#7887f778-9b15-419b-a94e-9d5ccd447dc5">PUT Set IsActive LegalDeclarationCV</a></div>
+                    <p class="operation-description">Updates the value of attribute 'IsActive' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">legalDeclarationKey</td>
+                                <td><i>(string)</i> The legal declaration's key. By default, it is a sequential number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(bool)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-7887f778-9b15-419b-a94e-9d5ccd447dc5">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}/isActive</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}/isActive</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-7887f778-9b15-419b-a94e-9d5ccd447dc5"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="e98a7657-67fb-4e2c-afb2-176248e9420c"></a>
+                    <h3>PUT Set Note LegalDeclarationCV <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-e98a7657-67fb-4e2c-afb2-176248e9420c"></i></h3>
+                    <div class="hidden-copylink" id="copy-e98a7657-67fb-4e2c-afb2-176248e9420c"><a href="#e98a7657-67fb-4e2c-afb2-176248e9420c">PUT Set Note LegalDeclarationCV</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Note' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">legalDeclarationKey</td>
+                                <td><i>(string)</i> The legal declaration's key. By default, it is a sequential number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-e98a7657-67fb-4e2c-afb2-176248e9420c">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}/note</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}/note</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-e98a7657-67fb-4e2c-afb2-176248e9420c"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="8c30012f-1f01-40f1-8bb7-6a3059bfdf2a"></a>
+                    <h3>PUT Set Remarks LegalDeclarationCV <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-8c30012f-1f01-40f1-8bb7-6a3059bfdf2a"></i></h3>
+                    <div class="hidden-copylink" id="copy-8c30012f-1f01-40f1-8bb7-6a3059bfdf2a"><a href="#8c30012f-1f01-40f1-8bb7-6a3059bfdf2a">PUT Set Remarks LegalDeclarationCV</a></div>
+                    <p class="operation-description">Updates the value of attribute 'Remarks' in the specified entity record.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">legalDeclarationKey</td>
+                                <td><i>(string)</i> The legal declaration's key. By default, it is a sequential number.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">value</td>
+                                <td><i>(string)</i> The request body should contain the new value for the attribute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">200</td>
+                                <td>OK. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-8c30012f-1f01-40f1-8bb7-6a3059bfdf2a">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}/remarks</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>PUT /taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}/remarks</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-8c30012f-1f01-40f1-8bb7-6a3059bfdf2a"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="DELETE"></a>
+                    <h2>DELETE Operations</h2>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="08b8ade2-5867-4b1e-bd57-3de7eebacd78"></a>
+                    <h3>DELETE LegalDeclarationCV by identifier <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-08b8ade2-5867-4b1e-bd57-3de7eebacd78"></i></h3>
+                    <div class="hidden-copylink" id="copy-08b8ade2-5867-4b1e-bd57-3de7eebacd78"><a href="#08b8ade2-5867-4b1e-bd57-3de7eebacd78">DELETE LegalDeclarationCV by identifier</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified identifier.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">id</td>
+                                <td><i>(string)</i> The record identifier.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-08b8ade2-5867-4b1e-bd57-3de7eebacd78">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/{id}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /taxes/legalDeclarationCVs/{id}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-08b8ade2-5867-4b1e-bd57-3de7eebacd78"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <a class="anchor" name="b081e899-e0d3-4bad-bf5c-1c39e0fba328"></a>
+                    <h3>DELETE LegalDeclarationCV by key <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-b081e899-e0d3-4bad-bf5c-1c39e0fba328"></i></h3>
+                    <div class="hidden-copylink" id="copy-b081e899-e0d3-4bad-bf5c-1c39e0fba328"><a href="#b081e899-e0d3-4bad-bf5c-1c39e0fba328">DELETE LegalDeclarationCV by key</a></div>
+                    <p class="operation-description">Deletes the entity record that matches the specified key.</p>
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">companyKey</td>
+                                <td><i>(string)</i> The company key.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">legalDeclarationKey</td>
+                                <td><i>(string)</i> The legal declaration's key. By default, it is a sequential number.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                <p>Response:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>When successful, the response body is empty.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <p>Response status codes:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">204</td>
+                                <td>Deleted. The operation was completed successfully.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">400</td>
+                                <td>BadRequest. The request parameters are invalid.</td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">404</td>
+                                <td>NotFound. The specified record does not exist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-section-col2">
+                    <p>Resource URL:</p>
+                    <div class="hidden-copylink" id="copy2-b081e899-e0d3-4bad-bf5c-1c39e0fba328">api/{tenantKey}/{orgKey}/taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}</div>
+                    <div class="resource-url">
+                        <div class="inner-resource-url"><div>DELETE /taxes/legalDeclarationCVs/{companyKey}/{legalDeclarationKey}</div></div>
+                        <div class="copy-clipboard clipboard-example" data-clipboard-target="#copy2-b081e899-e0d3-4bad-bf5c-1c39e0fba328"><div><i title="Copy to clipboard" class="fa fa-clipboard" aria-hidden="true"></i></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Resources</h2>
+                    <br />
+                    <a class="anchor" name="ApiLegalDeclarationCVResource"></a>
+                    <h4>ApiLegalDeclarationCVResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-ApiLegalDeclarationCVResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-ApiLegalDeclarationCVResource"><a href="#ApiLegalDeclarationCVResource">ApiLegalDeclarationCVResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">legalDeclarationKey</td>
+                                <td  class="wrap"><i>(string)</i> The legal declaration's key. By default, it is a sequential number.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The document's date.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">startDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The legal declaration's initial date. Sets the date from which documents should be included on SAF-T.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">endDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The legal declaration's final date. Sets the date up to which documents should be included on SAF-T.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">auditFileVersion</td>
+                                <td  class="wrap"><i>(enum AuditFileVersionCV)</i> The audit file's version. Indicates the SAF-T version used in the legal declaration.
+									<br/>See <a href="#AuditFileVersionCV">AuditFileVersionCV.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">legalDeclarationType</td>
+                                <td  class="wrap"><i>(enum LegalDeclarationCVType)</i> The legal declaration's purpose.
+									<br/>See <a href="#LegalDeclarationCVType">LegalDeclarationCVType.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">year</td>
+                                <td  class="wrap"><i>(int)</i> Year.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The legal declaration's note.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The legal declaration's remarks.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="LegalDeclarationCVResource"></a>
+                    <h4>LegalDeclarationCVResource <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-LegalDeclarationCVResource"></i></h4>
+                    <div class="hidden-copylink" id="copy-LegalDeclarationCVResource"><a href="#LegalDeclarationCVResource">LegalDeclarationCVResource</a></div>
+	
+                    <p>The following elements are required:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">legalDeclarationKey</td>
+                                <td  class="wrap"><i>(string)</i> The legal declaration's key. By default, it is a sequential number.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">documentDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The document's date.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">startDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The legal declaration's initial date. Sets the date from which documents should be included on SAF-T.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">endDate</td>
+                                <td  class="wrap"><i>(DateTime)</i> The legal declaration's final date. Sets the date up to which documents should be included on SAF-T.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">company</td>
+                                <td  class="wrap"><i>(string)</i> Company.
+									<br /><i>(fk)</i> Allowed value: the natural key of a record of type Company. These records are accessibly through the <a href="corepatterns.companies.html">Companies</a> service.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">status</td>
+                                <td  class="wrap"><i>(enum LegalDeclarationState)</i> The legal declaration's status.
+									<br/>See <a href="#LegalDeclarationState">LegalDeclarationState.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">auditFileVersion</td>
+                                <td  class="wrap"><i>(enum AuditFileVersionCV)</i> The audit file's version. Indicates the SAF-T version used in the legal declaration.
+									<br/>See <a href="#AuditFileVersionCV">AuditFileVersionCV.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">legalDeclarationType</td>
+                                <td  class="wrap"><i>(enum LegalDeclarationCVType)</i> The legal declaration's purpose.
+									<br/>See <a href="#LegalDeclarationCVType">LegalDeclarationCVType.</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">year</td>
+                                <td  class="wrap"><i>(int)</i> Year.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <p>The following elements are optional:</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">note</td>
+                                <td  class="wrap"><i>(string)</i> The legal declaration's note.
+									</td>
+                            </tr>
+
+                            <tr>
+                                <td class="highlighted">remarks</td>
+                                <td  class="wrap"><i>(string)</i> The legal declaration's remarks.
+									</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-section-col1">
+                    <h2>Enumerations</h2>
+                    <br />
+                    <a class="anchor" name="AuditFileVersionCV"></a>
+                    <h4>AuditFileVersionCV <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-AuditFileVersionCV"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-AuditFileVersionCV"><a href="#AuditFileVersionCV">AuditFileVersionCV</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Version10101</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="LegalDeclarationCVType"></a>
+                    <h4>LegalDeclarationCVType <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-LegalDeclarationCVType"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-LegalDeclarationCVType"><a href="#LegalDeclarationCVType">LegalDeclarationCVType</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Inventory</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                    <a class="anchor" name="LegalDeclarationState"></a>
+                    <h4>LegalDeclarationState <i title="Copy to clipboard" class="copy-clipboard fa fa-link" aria-hidden="true" data-clipboard-target="#copy-LegalDeclarationState"></i></i></h4>
+                    <div class="hidden-copylink" id="copy-LegalDeclarationState"><a href="#LegalDeclarationState">LegalDeclarationState</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="highlighted">1</td>
+                                <td>Pending</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">2</td>
+                                <td>Processing</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">3</td>
+                                <td>Succeeded</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="highlighted">4</td>
+                                <td>Failed</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var clipboard = new Clipboard('.copy-clipboard');
+
+        clipboard.on('success', function(e) {
+          showTooltip(e.trigger, 'Copied!', 'left');
+        });
+        
+        clipboard.on('error', function(e) {
+          showTooltip(e.trigger, 'Error!', 'left');
+        });
+    </script>
+</html>
